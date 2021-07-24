@@ -1,0 +1,7 @@
+instructions:
+1- you should change non-unicode language to arabic
+2- it's prefered to have java version 8.11 or better
+3- if this program is installation you can open it after restart from the notrification icon
+
+----------
+created by: Abo-Ahmed Software

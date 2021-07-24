@@ -1,0 +1,28 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>E:\Programming Track\software projects\Netbeans Projects\Quran_Tests\dist\Quran_Tests.jar</jar>
+  <outfile>E:\Programming Track\software projects\«Œ »«—  «·ﬁ—«‰ «·ﬂ—Ì„\«Œ »«—«  «·ﬁ—¬‰.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon></icon>
+  <jre>
+    <path></path>
+    <minVersion>1.0.0_10</minVersion>
+    <maxVersion>9.0.0_10</maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <splash>
+    <file>E:\Programming Track\software projects\«Œ »«—  «·ﬁ—«‰ «·ﬂ—Ì„\quran.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>false</timeoutErr>
+  </splash>
+</launch4jConfig>

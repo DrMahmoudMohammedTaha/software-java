@@ -1,0 +1,32 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>H:\software projects\advanced installer\«Œ »«—  «·ﬁ—«‰ «·ﬂ—Ì„ ‰”Œ… 2\Quran_Tests.jar</jar>
+  <outfile>H:\software projects\advanced installer\«Œ »«—  «·ﬁ—«‰ «·ﬂ—Ì„ ‰”Œ… 2\Quran_Quiz.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon></icon>
+  <singleInstance>
+    <mutexName>«Œ »«—«  «·ﬁ—«‰</mutexName>
+    <windowTitle></windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <minVersion>1.1.1_11</minVersion>
+    <maxVersion>9.9.9_11</maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <splash>
+    <file>H:\software projects\advanced installer\«Œ »«—  «·ﬁ—«‰ «·ﬂ—Ì„ ‰”Œ… 2\quran.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>30</timeout>
+    <timeoutErr>false</timeoutErr>
+  </splash>
+</launch4jConfig>
