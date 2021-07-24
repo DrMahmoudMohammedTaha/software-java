@@ -1,0 +1,270 @@
+--------------------
+Wrapper Build System
+using E:\wrapper_3.5.14_src\build.xml
+--------------------
+Buildfile: E:\wrapper_3.5.14_src\build.xml
+
+init-setup:
+
+init-windows:
+     [echo] vcvars.bat=c:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\SetEnv.Cmd
+
+init-unix:
+
+init-bits-warning:
+
+init-bits-mismatch-warning:
+
+init:
+
+init:msg:
+     [echo] **********************************************************************
+     [echo] * About to build a 64-bit version of Java Service Wrapper Community 3.5.14.
+     [echo] * The OS Name is "windows", resolved from "Windows 2003".
+     [echo] * The Architecture is "x86", resolved from "amd64".
+     [echo] * The distribution name will be: wrapper-windows-x86-64-3.5.14
+     [echo] **********************************************************************
+
+init:java-missing:
+
+convert:
+
+update-info:
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\src\java\org\tanukisoftware\wrapper
+
+compile-java-warn:
+     [echo] **********************************************************************
+     [echo] * WARNING
+     [echo] * The jar is being built for Java version 1.4.  This will not be
+     [echo] * compatible with older JVMs.
+     [echo] **********************************************************************
+
+compile-java:core:
+    [javac] Compiling 1 source file to E:\wrapper_3.5.14_src\build\classes
+
+check:junit:
+     [echo] **********************************************************************
+     [echo] * JUnit jar not found.  Not running tests.
+     [echo] **********************************************************************
+
+compile-java:junit:
+
+compile-java:
+
+update-info-c:
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\src\c
+
+msvc-missing:
+
+compile-c-windows-vcvars:
+     [echo] Java.vendor=Sun Microsystems Inc.
+     [exec] Configuring the Visual Studio environment...
+     [exec] call "c:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\SetEnv.Cmd" /XP64 /RETAIL 
+     [exec] Targeting Windows XP X64 RETAIL
+     [exec] 
+     [exec] Run the make file...
+     [exec] nmake /f Makefile-windows-x86-64.nmake /c all
+     [exec] 	cl /D "WIN32" /D "WIN64" /D "NDEBUG" /FD /EHsc /MT /W3 /nologo /c /Zi /errorReport:prompt /D "_CRT_SECURE_NO_DEPRECATE" /D "UNICODE" /D "_UNICODE" /D "_WIN32_WINNT=0x0500" /O2 /GL /D "_CONSOLE" /Fo"wrapper32_VC8__Win64_Release\\" /Fd"wrapper32_VC8__Win64_Release\\" wrapperinfo.c
+     [exec] wrapperinfo.c
+     [exec] 	link /NOLOGO /MANIFEST /DEBUG /MACHINE:AMD64 /ERRORREPORT:PROMPT DelayImp.lib /INCREMENTAL:NO /SUBSYSTEM:CONSOLE /MANIFESTFILE:"wrapper32_VC8__Win64_Release\wrapper.exe.intermediate.manifest" /PDB:"wrapper32_VC8__Win64_Release\wrapper.pdb" /OPT:REF /OPT:ICF /LTCG wrapper32_VC8__Win64_Release\wrapper_i18n.obj wrapper32_VC8__Win64_Release\logger.obj wrapper32_VC8__Win64_Release\property.obj wrapper32_VC8__Win64_Release\wrapper.obj wrapper32_VC8__Win64_Release\wrapper_win.obj wrapper32_VC8__Win64_Release\wrappereventloop.obj wrapper32_VC8__Win64_Release\wrapper_file.obj wrapper32_VC8__Win64_Release\wrapperinfo.obj mpr.lib shell32.lib netapi32.lib wsock32.lib shlwapi.lib advapi32.lib user32.lib Crypt32.lib Wintrust.lib pdh.lib bufferoverflowU.lib wrapper32_VC8__Win64_Release\wrapper.res /OUT:"..\..\bin\wrapper.exe"
+     [exec] Generating code
+     [exec] Finished generating code
+     [exec] 	cl /D "WIN32" /D "WIN64" /D "NDEBUG" /FD /EHsc /MT /W3 /nologo /c /Zi /errorReport:prompt /D "_CRT_SECURE_NO_DEPRECATE" /D "UNICODE" /D "_UNICODE" /D "_WIN32_WINNT=0x0500" /Od  /I "..\" /I ".\" /I "C:\Program Files\Java\jdk1.6.0_25\include" /I "C:\Program Files\Java\jdk1.6.0_25\include\win32" /D "_WINDOWS" /D "_USRDLL" /D "DECODERJNI_VC8_EXPORTS" /D "_WINDLL" /Fo"wrapperJNI32_VC8__Win64_Release\\" /Fd"wrapperJNI32_VC8__Win64_Release\\" wrapperinfo.c
+     [exec] wrapperinfo.c
+     [exec] 	link /NOLOGO /MANIFEST /DEBUG /MACHINE:AMD64 /ERRORREPORT:PROMPT DelayImp.lib /INCREMENTAL /DLL /SUBSYSTEM:WINDOWS /MANIFESTFILE:"wrapperJNI32_VC8__Win64_Release\wrapper.dll.intermediate.manifest" /PDB:"wrapperJNI32_VC8__Win64_Release\wrapper.pdb" wrapperJNI32_VC8__Win64_Release\wrapper_i18n.obj wrapperJNI32_VC8__Win64_Release\wrapperjni.obj wrapperJNI32_VC8__Win64_Release\wrapperjni_win.obj wrapperJNI32_VC8__Win64_Release\wrapperinfo.obj shell32.lib advapi32.lib user32.lib bufferoverflowU.lib wrapperJNI32_VC8__Win64_Release\wrapper.res /OUT:"..\..\lib\wrapper.dll"
+
+compile-c-windows-check:
+
+compile-c-windows-check2:
+
+compile-c-unix-check:
+
+compile-c-unix:
+
+compile-c:
+
+compile:
+
+jar:jar:
+      [jar] Building jar: E:\wrapper_3.5.14_src\lib\wrapper.jar
+
+jar:
+
+test:
+
+bin-bat:
+
+bin-sh:
+
+bin:
+
+conf:
+   [delete] Deleting: E:\wrapper_3.5.14_src\conf\demoapp.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\conf
+
+test-setup:
+
+init-windows-nt:
+
+init-windows-2000:
+
+init-windows-xp:
+
+init-windows-2003:
+
+init-windows-vista:
+
+init-windows-7:
+
+init-windows:
+
+init-linux:
+
+init-solaris:
+
+init-aix:
+
+init-hpux:
+
+init-macosx:
+
+init-osf1:
+
+init-freebsd:
+
+init-irix:
+
+init:
+
+test-setup-common:
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\template.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\backgroundthreads.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\longrunningbackgroundthreads.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\daemonthreads.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\simplewrapperlistener.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\nestedwrapperlistener.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\noreturn.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\quickcomplete.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\envvars.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\percentoutput.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\logoutput.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\hugelogoutput.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\loadedlogoutput.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\loadedgcoutput.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\loadedsplitoutput.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\restarter.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\delayediorestarter.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\stopwhilestarting.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\stopwhilestartingforcestop.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\shutdownhook.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\shutdownlock.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\outputloader.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\memory.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\filter.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\onexit.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\loadedwrapperlistener.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\systemproperty.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\executablejar.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\executablejarinitfail.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\executablejarcp.conf
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+
+test-setup-bat:
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestBackgroundThreads.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestLongRunningBackgroundThreads.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestDaemonThreads.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestSimpleWrapperListener.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestNestedWrapperListener.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestNoReturn.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestQuickComplete.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestEnvironmentVariables.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestPercentOutput.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestLogOutput.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestHugeLogOutput.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestLoadedLogOutput.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestLoadedGCOutput.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestLoadedSplitOutput.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestRestarter.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestDelayedIORestarter.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestStopWhileStarting.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestStopWhileStartingForceStop.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestShutdownHook.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestShutdownLock.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestOutputLoader.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestMemory.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestFilter.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestOnExit.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestLoadedWrapperListener.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestSystemProperty.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestExecutableJar.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestExecutableJarInitFail.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+   [delete] Deleting: E:\wrapper_3.5.14_src\test\TestExecutableJarCP.bat
+     [copy] Copying 1 file to E:\wrapper_3.5.14_src\test
+
+test-setup-sh:
+
+test-setup-unix:
+
+test-setup:
+
+main:
+
+BUILD SUCCESSFUL
+Total time: 10 seconds

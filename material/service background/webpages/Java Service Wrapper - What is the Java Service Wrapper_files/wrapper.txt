@@ -1,0 +1,88 @@
+$(document).ready(main);
+
+var referrerList = [
+  {url: '.+tanukisoftware\.com\/.+'},
+  {url: '.+tanukisoftware\.org\/.+'},
+  {url: '.+tsl\.local\/.+'}
+];
+
+/* This function is called when the document is ready */
+function main() {
+  if($("#sidebar").length && $("#content").length) {
+    floatDiv($("#sidebar"), $("#content").outerHeight(true));
+  }
+
+  // only collapse if the user is browsing the site
+  if(matchReferrer(referrerList) == true) {
+    $("div[class$='collapse']").toggle(); 
+    $("span[class$='details']").toggleClass('details-flip');
+  }
+
+}
+
+function matchReferrer(referrerList) {
+  
+  var referrer = document.referrer.toLowerCase();
+  
+  for(var i=0; i < referrerList.length; i++) {
+    if(referrer.match(referrerList[i].url) != null ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function floatDiv(fltdiv, max_height) {
+  
+  // Animation flickers in Mozilla, so we disable it :(
+  // If workaround is used (queue animation), the performance
+  // is pretty bad, eat 100% CPU
+  //
+  // IE6+ looks good but a bit of flicker
+  // TODO: implement animation (smooth) for this with jquery animate
+
+  if ($.browser.mozilla || $.browser.msie) {
+    // no animation
+    return true;
+  }
+
+  step = 10;
+  fltdiv_top = fltdiv.offset().top;
+  fltdiv_height = fltdiv.height();
+
+  $(window).scroll(function () { 
+    if($(this).scrollTop() > fltdiv_top) {
+      
+      delta = $(this).scrollTop() - fltdiv_top;
+      
+      if( delta+step+fltdiv_height >= max_height ) {
+        top_value = max_height - fltdiv_height;
+      } else {
+        top_value = delta + step;
+      }
+
+      fltdiv.css("top", top_value);
+
+    } else {
+
+      fltdiv.css("top", 0);
+
+    }
+  });
+
+}
+
+function setEqualHeight(columns) {
+
+    var tallest_column = 0;
+    columns.each(
+        function() {
+            current_height = $(this).height();
+            if(current_height > tallest_column)
+            {
+                tallest_column  = current_height;
+            }
+        }
+    );
+    columns.height(tallest_column);
+}

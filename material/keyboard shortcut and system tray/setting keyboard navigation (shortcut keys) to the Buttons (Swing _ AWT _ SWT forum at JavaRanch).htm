@@ -1,0 +1,858 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+        <link rel="alternate" type="application/rss+xml" title="JavaRanch: setting keyboard navigation (shortcut keys) to the Buttons" href="http://www.coderanch.com/forums/rss/topicPosts/341332">
+    <meta name="description" content="Hi, I need to set hot keys / shortcut keys /mnemonics whatever u call...to the objects of class Button. I found an option to set Mnemonics to an insta">
+
+<style type="text/css">@import url( /templates/default/styles/style.css?1415845615535 );</style>
+
+    <style type="text/css">@import url( /templates/default/styles/SyntaxHighlighter.css?1415845615535 );</style>
+
+<title>setting keyboard navigation (shortcut keys) to the Buttons (Swing / AWT / SWT forum at JavaRanch)</title>
+
+    <link rel="canonical" href="http://www.coderanch.com/t/341332/GUI/java/setting-keyboard-navigation-shortcut-keys">
+    <link rel="alternate" media="handheld" href="http://www.coderanch.com/mobile/t/341332/GUI/java/setting-keyboard-navigation-shortcut-keys?foo=a">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-saloon-os.xml" title="JavaRanch Saloon">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-faq-os.xml" title="JavaRanch FAQ">
+<style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style></head>
+
+<body class="en_US"><div style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;" id="WzTtDiV"></div>
+<script src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/jquery.js"></script>
+
+
+    <div class="shngl" id="topShngl" align="center">
+        <a href="http://www.coderanch.com/forums/banner/redirect/636" target="_blank"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/aspose-2014.gif" alt="aspose file tools" border="0"></a><a style="text-decoration:none" href="http://www.javaranch.com/advertising.jsp" title="Click on this asterisk to learn more about advertising like this on CodeRanch!">*</a>
+    </div>
+    <div id="sujtp" align="center"></div>
+
+
+
+<table width="100%" border="0">
+    <tbody><tr>
+        <td>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td align="center">
+
+                            <img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/moosefly.gif" alt="The moose likes Swing / AWT / SWT and the fly likes setting keyboard navigation (shortcut keys) to the Buttons" title="" vspace="1" border="0">
+                    </td>
+                    <td class="logo" valign="middle">
+                        A friendly place for programming greenhorns!
+                    </td>
+
+                    <td valign="middle" width="100%" align="center">
+                        <span class="boardtitle">Big Moose Saloon</span>
+                        <table border="0" cellpadding="2" cellspacing="0">
+                            <tbody><tr>
+                                <td nowrap="nowrap" valign="top" align="center">&nbsp;
+                                    <a id="search" class="mainmenu" href="http://www.coderanch.com/forums/search/filters/2"><b>Search</b></a>
+                                    | <a id="faq" class="mainmenu nonForumLink" href="http://www.coderanch.com/how-to/java/Java-FAQ"><b>Java FAQ</b></a>
+                                    | <a id="latest" class="mainmenu" href="http://www.coderanch.com/forums/recentTopics/list">Recent Topics</a>
+                                    | <a id="flagged" class="mainmenu" href="http://www.coderanch.com/forums/posts/flagged">Flagged Topics</a>
+                                    | <a id="hottest" class="mainmenu" href="http://www.coderanch.com/forums/hottestTopics/list">Hot Topics</a>
+                                    | <a id="moderationlog" class="mainmenu" href="http://www.coderanch.com/forums/posts/zeroReplies">Zero Replies</a>
+
+
+                                    <br>
+
+
+                                        <a id="login" class="mainmenu" href="http://www.coderanch.com/forums/user/login">Register / Login</a>
+                                        <br>
+
+                                    </td>
+                                </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/userLocalTime.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/jquery_002.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/post_show.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/post.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/pagination.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/wz_tooltip.js"></script>
+
+
+<script type="text/javascript">
+var CONTEXT_PATH = "";
+function showEmail(beforeAt, afterAt)
+{
+	return beforeAt + "@" + afterAt;
+}
+
+function addBookmark(relationType, relationId)
+{
+	var w = window.open('/forums/bookmarks/insert/' + relationType + '/' + relationId + '', 'bookmark_add', 'width=700, height=200, scrollbars=auto, resizable=true');
+	w.focus();
+}
+var forumUrlPrefix = "/forums";
+var imagesServedFrom = "http://cache-www.coderanch.com";
+
+
+    function reportToModerationPrompt(postId, topicId) {
+        var reason = prompt("Please explain why you feel this post is either abusive or in violation of forum policies or needs to be copied or moved to a different forum:");
+
+        if (reason == null || reason == "") {
+            alert("You have cancelled reporting this thread or missed providing a reason.  If you still want to report this thread, please click report again.");
+            return false;
+        } else {
+        	var link = '/jforum?module=posts&action=reportToModerator&post_id=' + postId + '&topic_id=' + topicId;
+            link += "&reason=" + encodeURIComponent(reason);
+        }
+        submitForm(link);
+
+        return true;
+    }
+
+    var watchImage = "http://cache-www.coderanch.com/templates/default/images/watch_topic_start.gif";
+    var unwatchImage = "http://cache-www.coderanch.com/templates/default/images/stop_watching.gif";
+    var watchURL = "/forums/posts/watch/0/341332";
+    var unwatchURL = "/forums/posts/unwatch/0/341332";
+    var unwatchHandler = function() { turnOn=false; toggleWatch(); return false; };
+    var watchHandler = function() { turnOn=true; toggleWatch(); return false; };
+    var turnOn, remove;
+
+    function toggleWatch () {
+        $.ajax({
+            url: turnOn ? watchURL : unwatchURL,
+            type: 'POST',
+            dataType: 'json',
+            headers: {'OWASP_CSRFTOKEN': 'WU74-GKBJ-YRI0-C01D-K6JX-M3JB-MPZI-5T5L'},
+            success: function (data) {
+                //$("#messages").html(data.message);
+                if (turnOn) {
+                    $(".toggleWatchImage")[0].src = unwatchImage;
+                    $(".toggleWatchImage")[1].src = unwatchImage;
+                    $(".toggleWatchLink")[0].href = unwatchURL;
+                    $(".toggleWatchLink")[1].href = unwatchURL;
+                    $(".toggleWatchLink")[0].onclick = unwatchHandler;
+                    $(".toggleWatchLink")[1].onclick = unwatchHandler;
+                } else {
+                    if (remove) {
+                        // for unwatching locked topics
+                        $(".toggleWatchImage")[0].style.visibility = "hidden";
+                        $(".toggleWatchImage")[1].style.visibility = "hidden";
+                        $(".toggleWatchLink")[0].href = "#";
+                        $(".toggleWatchLink")[1].href = "#";
+                        $(".toggleWatchLink")[0].onclick = "return false;";
+                        $(".toggleWatchLink")[1].onclick = "return false;";
+                    } else {
+                        $(".toggleWatchImage")[0].src = watchImage;
+                        $(".toggleWatchImage")[1].src = watchImage;
+                        $(".toggleWatchLink")[0].href = watchURL;
+                        $(".toggleWatchLink")[1].href = watchURL;
+                        $(".toggleWatchLink")[0].onclick = watchHandler;
+                        $(".toggleWatchLink")[1].onclick = watchHandler;
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+
+
+<form id="helperForm" name="helperForm" action="#" method="post"><input name="OWASP_CSRFTOKEN" value="WU74-GKBJ-YRI0-C01D-K6JX-M3JB-MPZI-5T5L" type="hidden"></form>
+<script>
+function submitForm(newAction) {
+	var form = document.helperForm;
+	form.action = newAction;
+	helperForm.submit();
+}</script>
+
+
+<table width="97%" align="center" border="0" cellpadding="10" cellspacing="0">
+    <tbody><tr>
+        <td class="bodyline">
+        <span class="nav">
+            <a class="maintitle" href="http://www.javaranch.com/">JavaRanch</a> » <a class="maintitle" href="http://www.coderanch.com/forums">Java Forums</a> »
+            <a class="maintitle" href="http://www.coderanch.com/forums/c/1/java">Java</a> »
+            <a class="maintitle" href="http://www.coderanch.com/forums/f-2/GUI">Swing / AWT / SWT</a>
+        </span>
+
+
+
+            
+<table class="threadbar" width="100%" border="0" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <td valign="middle" align="left">
+    			<img class="opaque" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/bookmark_it.gif" alt="Bookmark &quot;setting keyboard navigation (shortcut keys) to the Buttons&quot;" height="25" width="82">
+		<img class="opaque" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/watch_topic_start.gif" alt="Watch &quot;setting keyboard navigation (shortcut keys) to the Buttons&quot;" height="25" width="82">
+    </td>
+    <td align="right">
+      	<img class="opaque" title="You must login or register" alt="New topic" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/post.gif" height="25px" width="82px">
+    </td>    
+  </tr>
+</tbody></table>
+
+            <a name="1502920">
+
+
+                </a><table id="postTable" class="forumline" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody><tr>
+                    <th class="author" nowrap="nowrap" width="18%">Author</th>
+                    <th class="subject">
+                        <h1>                           <span id="topicFlags" class="flag"></span>
+                            <span id="topicSubject">setting keyboard navigation (shortcut keys) to the Buttons</span>
+                        </h1>
+                    </th>
+                </tr>
+
+
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row1 userPostInfo" rowspan="2" valign="top" align="left">
+                            <a name="1502920"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/56105/raj-lakshmi">raj lakshmi</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Greenhorn
+    <br>
+
+<br>
+
+
+    Joined: Sep 03, 2003<br>
+    Posts: 7
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row1" valign="top">
+<div class="postinfo row1">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 23, 2005 10:44:00".toLocaleDateTime();</script>8/23/2005 12:44 PM<noscript><span class="lastPostTime">Aug 23, 2005 04:44:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1502920" class="likesHiddenDiv">
+				<img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row1 postbody" id="post_text_1502920" valign="top">
+
+                            <span class="postbody">
+                                    Hi,<br> I need to set hot keys / shortcut keys /mnemonics whatever u call...to the objects of class Button.<br>
+ I found an option to set Mnemonics to an instance of JButton but plz 
+let me know a way to create shrt keys to a plain java.awt.Button class 
+without using any event handling mechanisms or so ..<br> Tell me is it possible first of all without using any event handling mechanisms?<br>  <br> thanks in advance.
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row1" colspan="2" height="1"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row2 userPostInfo" rowspan="2" valign="top" align="left">
+                            <a name="1502921"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/98354/Shan-Accent">Shan Accent</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Greenhorn
+    <br>
+
+<br>
+
+
+    Joined: May 08, 2005<br>
+    Posts: 23
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row2" valign="top">
+<div class="postinfo row2">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 23, 2005 10:58:00".toLocaleDateTime();</script>8/23/2005 12:58 PM<noscript><span class="lastPostTime">Aug 23, 2005 04:58:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1502921" class="likesHiddenDiv">
+				<img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row2 postbody" id="post_text_1502921" valign="top">
+
+                            <span class="postbody">
+                                    AWT's Button doesn't have a method 
+for this, the only solution I can think of is adding a keylistener to 
+the button.<br>  <br> Button btn = new Button("Press Me");<br> btn.addKeyListener(myKeyListener);
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row2" colspan="2" height="1"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row1 userPostInfo" rowspan="2" valign="top" align="left">
+                            <a name="1502922"></a>
+<span class="authorNameNoLink" title="You must login or register">raj lakshmi</span>
+
+
+<br>
+
+<span class="gensmall">
+    Greenhorn
+    <br>
+
+<br>
+
+
+    Joined: Sep 03, 2003<br>
+    Posts: 7
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row1" valign="top">
+<div class="postinfo row1">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 23, 2005 11:15:00".toLocaleDateTime();</script>8/23/2005 1:15 PM<noscript><span class="lastPostTime">Aug 23, 2005 05:15:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1502922" class="likesHiddenDiv">
+				<img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row1 postbody" id="post_text_1502922" valign="top">
+
+                            <span class="postbody">
+                                    hi raj thank you for your 
+response...can u plz detail of how to handle the shortcut keys after 
+adding this listener.<br> hope I am nt bugging fr a minute thing!! very new to awt  <img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/3b63d1616c5dfcf29f8a7a031aaa7cad.gif">
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row1" colspan="2" height="1"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row2 userPostInfo" rowspan="2" valign="top" align="left">
+                            <a name="1502923"></a>
+<span class="authorNameNoLink" title="You must login or register">Shan Accent</span>
+
+
+<br>
+
+<span class="gensmall">
+    Greenhorn
+    <br>
+
+<br>
+
+
+    Joined: May 08, 2005<br>
+    Posts: 23
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row2" valign="top">
+<div class="postinfo row2">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 23, 2005 11:34:00".toLocaleDateTime();</script>8/23/2005 1:34 PM<noscript><span class="lastPostTime">Aug 23, 2005 05:34:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1502923" class="likesHiddenDiv">
+				<img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row2 postbody" id="post_text_1502923" valign="top">
+
+                            <span class="postbody">
+                                    create the myKeyListener class and 
+implement KeyListener interface then override the following interface 
+methods.<br>  <br>       public void keyPressed(KeyEvent e) {<br>         // TODO Auto-generated method stub<br>         System.out.println("keyPPressed");<br>         //Get the key code and process what key you want.<br>       }<br>  <br>       public void keyReleased(KeyEvent e) {<br>         // TODO Auto-generated method stub<br>       }<br>  <br>       public void keyTyped(KeyEvent e) {<br>         // TODO Auto-generated method stub<br>       }<br>  <br> <br> Note:<br>  It works only when it focused on the particular button or key listener component.
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row2" colspan="2" height="1"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row1 userPostInfo" rowspan="2" valign="top" align="left">
+                            <a name="1502924"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/51176/Michael-Dunn">Michael Dunn</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Ranch Hand
+    <br>
+
+<br>
+
+
+    Joined: Jun 09, 2003<br>
+    Posts: 4632
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row1" valign="top">
+<div class="postinfo row1">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 23, 2005 21:44:00".toLocaleDateTime();</script>8/23/2005 11:44 PM<noscript><span class="lastPostTime">Aug 23, 2005 15:44:00</span></noscript></span>
+	    
+
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1502924" class="likesHiddenDiv">
+				<img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row1 postbody" id="post_text_1502924" valign="top">
+
+                            <span class="postbody">
+                                    here's one way<br>  <br> <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><div style="margin-top:5px;"><label>Note: Text content in the code blocks is automatically word-wrapped</label></div></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">import</span><span>&nbsp;java.awt.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;java.awt.event.*;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;javax.swing.*;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">class</span><span>&nbsp;Testing&nbsp;</span><span class="keyword">extends</span><span>&nbsp;JFrame&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;Testing()&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;setLocation(<span class="number">400</span><span>,</span><span class="number">200</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;setDefaultCloseOperation(EXIT_ON_CLOSE);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;JPanel&nbsp;jp&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;JPanel(</span><span class="keyword">new</span><span>&nbsp;GridLayout(</span><span class="number">2</span><span>,</span><span class="number">1</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;JTextField&nbsp;tf&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;JTextField(</span><span class="string">"Focus&nbsp;here&nbsp;and&nbsp;press&nbsp;F8"</span><span>,</span><span class="number">20</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;JButton&nbsp;btn&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;JButton(</span><span class="string">"Click&nbsp;or&nbsp;press&nbsp;F8"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;jp.add(tf);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;jp.add(btn);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;getContentPane().add(jp);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;pack();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;btn.addActionListener(<span class="keyword">new</span><span>&nbsp;ActionListener(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;actionPerformed(ActionEvent&nbsp;ae){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doSomething();}});&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;KeyboardFocusManager.getCurrentKeyboardFocusManager()&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addKeyEventDispatcher(<span class="keyword">new</span><span>&nbsp;KeyEventDispatcher(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">boolean</span><span>&nbsp;dispatchKeyEvent(KeyEvent&nbsp;e){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(e.getID()&nbsp;==&nbsp;KeyEvent.KEY_PRESSED)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(e.getKeyCode()&nbsp;==&nbsp;KeyEvent.VK_F8&nbsp;)&nbsp;doSomething();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">false</span><span>;}});&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;doSomething()&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;JOptionPane.showMessageDialog(<span class="keyword">this</span><span>,</span><span class="string">"doing&nbsp;something..."</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main&nbsp;(String[]&nbsp;args){</span><span class="keyword">new</span><span>&nbsp;Testing().setVisible(</span><span class="keyword">true</span><span>);}&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java" cols="60" rows="10">import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+ 
+class Testing extends JFrame
+{
+  public Testing()
+  {
+    setLocation(400,200);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    JPanel jp = new JPanel(new GridLayout(2,1));
+    JTextField tf = new JTextField("Focus here and press F8",20);
+    JButton btn = new JButton("Click or press F8");
+    jp.add(tf);
+    jp.add(btn);
+    getContentPane().add(jp);
+    pack();
+    btn.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent ae){
+        doSomething();}});
+    KeyboardFocusManager.getCurrentKeyboardFocusManager()
+     .addKeyEventDispatcher(new KeyEventDispatcher(){
+        public boolean dispatchKeyEvent(KeyEvent e){
+          if(e.getID() == KeyEvent.KEY_PRESSED)
+          {
+            if(e.getKeyCode() == KeyEvent.VK_F8 ) doSomething();
+          }
+          return false;}});
+  }
+  public void doSomething()
+  {
+    JOptionPane.showMessageDialog(this,"doing something...");
+  }
+  public static void main (String[] args){new Testing().setVisible(true);}
+}
+</textarea><br>  <br> but the better method (apparently) is to use KeyBindings<br> <a href="http://java.sun.com/docs/books/tutorial/uiswing/misc/keybinding.html" target="_blank">http://java.sun.com/docs/books/tutorial/uiswing/misc/keybinding.html</a>
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row1" colspan="2" height="1"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row2 userPostInfo" rowspan="2" valign="top" align="left">
+                            <a name="1502925"></a>
+<span class="authorNameNoLink" title="You must login or register">raj lakshmi</span>
+
+
+<br>
+
+<span class="gensmall">
+    Greenhorn
+    <br>
+
+<br>
+
+
+    Joined: Sep 03, 2003<br>
+    Posts: 7
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row2" valign="top">
+<div class="postinfo row2">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 24, 2005 09:30:00".toLocaleDateTime();</script>8/24/2005 11:30 AM<noscript><span class="lastPostTime">Aug 24, 2005 03:30:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1502925" class="likesHiddenDiv">
+				<img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row2 postbody" id="post_text_1502925" valign="top">
+
+                            <span class="postbody">
+                                    Hi thanks fr ur replies...I could complete the task with the tips given by you people.<br>  <br> thanks.  <img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/3b63d1616c5dfcf29f8a7a031aaa7cad.gif">
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row2" colspan="2" height="1"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+            <tr>
+            <td width="18%" bgcolor="#DEC7A4"><img src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/bunkhouse_smoke.gif"></td>
+            <td valign="top" width="82%" align="left" bgcolor="#DEC7A4">
+                &nbsp;<br>
+                    <div class="shngl" align="left">
+                        <span style="font-size: 12px; line-height: 1.5em;">
+I agree.  Here's the link:  <a href="http://www.coderanch.com/forums/banner/redirect/578">http://aspose.com/file-tools</a></span>
+                    </div>
+                &nbsp;<br>
+                </td>
+                </tr>
+                <tr class="postbody" align="left">
+                    <td colspan="2">
+                    subject: setting keyboard navigation (shortcut keys) to the Buttons
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td class="catbottom" colspan="2" height="28">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td align="center"><span class="gensmall">&nbsp;</span></td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+
+
+            <table width="100%" align="center">
+
+				
+				<tbody><tr>
+    				<td>
+                
+                	
+                	<div class="similarThreadsSec">
+                		<div class="hdr">Similar Threads</div>
+
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/114794/HTML-CSS-JavaScript/Shortcut-keys">
+	           	Shortcut keys (urgent)
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row1">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/516549/HTML-CSS-JavaScript/frameset-shortcut-keys">
+	           	frameset and shortcut keys problem 
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/558631/GUI/java/keyEvent-handling">
+	           	keyEvent handling?
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row1">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/183537/java-developer-SCJD/certification/URLyBird-Menu-Mnemonics">
+	           	URLyBird Menu Mnemonics
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/367242/java/java/Shortcut-Keys">
+	           	Shortcut Keys
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+                        
+                        
+                            
+                	</div>
+                
+                
+    				</td>
+    			</tr>
+
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+<a name="quick"></a>
+
+
+		</td>
+	</tr>
+</tbody></table>
+<div class="gensmall center">
+<script>
+document.write("All times above are in your local time zone & format.");
+document.write("The current ranch time (not your local time) is ");
+document.write("Nov 28, 2014 07:09:34".bold() + ".");
+</script>All times above are in your local time zone &amp; format.The current ranch time (not your local time) is <b>Nov 28, 2014 07:09:34</b>.<noscript>All times are in JavaRanch time: GMT-6 in summer, GMT-7 in winter</noscript>
+</div>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2371260-2']);
+	_gaq.push(['_gat._anonymizeIp']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<br>
+<div class="float-divider"></div>
+<div id="footer">
+ <div class="footerLinksDiv center">
+	<a class="nonForumLink" href="http://www.coderanch.com/how-to/code/ContactUs">Contact Us</a>
+	| Powered by <a href="http://www.jforum.net/" target="_blank">JForum</a>
+	| <span class="copyrightOwner">Copyright © 1998-2014 <a href="http://www.javaranch.com/paul-wheaton.jsp">Paul Wheaton</a></span>
+ </div>
+</div>
+<div class="float-divider"></div>
+<!-- SyntaxHighlighter 1.5.1 -->
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shCore.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushCss.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushJava.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushCpp.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushPython.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushRuby.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushSql.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushXml.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushPlain.js"></script>
+<script type="text/javascript" src="setting%20keyboard%20navigation%20%28shortcut%20keys%29%20to%20the%20Buttons%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushPhp.js"></script>
+                                                
+
+<script type="text/javascript">
+<!--
+dp.sh.ClipboardSwf = '/templates/default/js/clipboard.swf';
+dp.sh.HighlightAll('code');
+-->
+</script>
+
+
+
+
+<script type="text/javascript">
+	function blkd(eId, fId){
+		if (/bot|googlebot|bingbot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) return;
+
+		var s=document.getElementById(eId);
+		if (s==null || s.clientHeight > 20) return; 
+
+		var imgs = document.getElementById(eId).getElementsByTagName("img");
+		for (i = 0; i < imgs.length; i++) {
+			if (imgs[i].src.indexOf(window.location.origin) != 0 && imgs[i].src.indexOf("/") != 0) continue;
+			var img = imgs[i].src.split("/");
+			if (img.length < 5) continue; 
+			imgs[i].className = "";
+			var name = img.length > 4 ? img[4] : img[img.length - 1];
+			for (j = 5; j < img.length; j++) name = name + "/" + img[j];
+			imgs[i].src = "/t/34/b/09/" + name.replace(/\//g, "~");
+		}
+
+		$('#' + fId).append($('#' + eId).html());
+	}
+
+	$(window).load(function() {
+		blkd('topShngl', 'sujtp');
+		blkd('lowShngl', 'vppf');
+    });
+</script>
+
+
+
+</body></html>

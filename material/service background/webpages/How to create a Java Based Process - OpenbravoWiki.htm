@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" lang="en"><head>
+<title>How to create a Java Based Process - OpenbravoWiki</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="MediaWiki 1.16.5">
+<link rel="shortcut icon" href="http://wiki.openbravo.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.openbravo.com/w/opensearch_desc.php" title="OpenbravoWiki (en)">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/2.5/es/">
+<link rel="alternate" type="application/atom+xml" title="OpenbravoWiki Atom feed" href="http://wiki.openbravo.com/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/wikiprintable.css" media="print">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/shared.css">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/oldshared.css">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/cologneblue.css">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/index_003.css">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/index_004.css" media="print">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/index_002.css">
+<link rel="stylesheet" href="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/index.css">
+<script src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/munchkin.js" async="" type="text/javascript"></script><script>
+var skin="openbravo",
+stylepath="/w/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://wiki.openbravo.com",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="How_to_create_a_Java_Based_Process",
+wgTitle="How to create a Java Based Process",
+wgAction="view",
+wgArticleId=14411,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=154920,
+wgVersion="1.16.5",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "OpenbravoWiki", "5": "OpenbravoWiki talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "102": "POS", "103": "POS talk", "106": "Archive", "107": "Archive talk", "108": "ERP 2.50", "200": "Partners", "201": "Partners talk", "202": "Community", "203": "Community talk", "204": "jesushernan", "205": "jesushernan talk", "3000": "ManualDoc", "3001": "Projects", "3002": "Retail", "3003": "Coworking Spaces"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "openbravowiki": 4, "openbravowiki_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "pos": 102, "pos_talk": 103, "archive": 106, "archive_talk": 107, "erp_2.50": 108, "partners": 200, "partners_talk": 201, "community": 202, "community_talk": 203, "jesushernan": 204, "jesushernan_talk": 205, "manualdoc": 3000, "projects": 3001, "retail": 3002, "coworking spaces": 3003, "image": 6, "image_talk": 7},
+wgSiteName="OpenbravoWiki",
+wgCategories=["HowTo"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgRestrictionRead=[];
+</script><script src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/wikibits.js"></script>
+<script src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/ajax.js"></script>
+<script src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/index.php"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-How_to_create_a_Java_Based_Process skin-openbravo">
+<div class="top_page_menu">
+<div class="web_options">
+<div class="option-off-last"><a href="http://wiki.openbravo.com/wiki/Special:UserLogin" title="Special:UserLogin">Log in / create account</a></div>
+</div>
+<div class="web_ring">
+<div class="menu-off-first"><a href="http://www.openbravo.com/" target="_blank" title="Openbravo Web">Openbravo.com</a></div>
+<div class="menu-off"><a href="http://www.openbravo.com/partners/restricted-area/" target="_blank" title="Partner Portal">Partner Portal</a></div>
+<div class="menu-off"><a href="http://issues.openbravo.com/" target="_blank" title="Bug Tracker">Issues</a></div>
+<div class="menu-off"><a href="http://planet.openbravo.com/" target="_blank" title="Openbravo Blogs">Blogs</a></div>
+<div class="menu-off"><a href="http://forge.openbravo.com/" target="_blank" title="Openbravo Forge">Forge</a></div>
+<div class="menu-off"><a href="http://exchange.openbravo.com/" target="_blank" title="Openbravo Exchange">Exchange</a></div>
+<div class="menu-off"><a href="https://university.openbravo.com/login/index.php" target="_blank" title="Openbravo University">University</a></div>
+<div class="menu-off"><a href="http://www.openbravo.com/downloads/" target="_blank" title="Openbravo Downloads" class="orange">Downloads</a></div>
+</div>
+</div>
+
+<div class="top_page">
+<a href="http://wiki.openbravo.com/wiki/Main_Page" target="_self" title="Openbravo Wiki" class="logo_corp"></a>
+<div class="main_sub_menu">
+
+</div>
+</div>
+<div class="subme"><div class="subme3"><a href="http://wiki.openbravo.com/w/index.php?title=How_to_create_a_Java_Based_Process&amp;action=edit" title="How to create a Java Based Process">View source</a> |
+<a href="http://wiki.openbravo.com/w/index.php?title=Talk:How_to_create_a_Java_Based_Process&amp;action=edit&amp;redlink=1" class="new" title="Talk:How to create a Java Based Process (page does not exist)">Discuss this page</a> |
+<a href="http://wiki.openbravo.com/w/index.php?title=How_to_create_a_Java_Based_Process&amp;action=history" title="How to create a Java Based Process" rel="archives">Page history</a> | <a href="http://wiki.openbravo.com/w/index.php?title=How_to_create_a_Java_Based_Process&amp;printable=yes" rel="alternate">Printable version</a>&nbsp;&nbsp;&nbsp;</div></div><div id="content">
+
+<div id="quickbar"><a href="http://www.openbravo.com/content/social-media-openbravo"><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/social-blogs-sidebar-banner.png" alt="" border="0" width="190"></a><div id="seccio1"><div class="imgtop"></div><div id="seccio"><h6>Toolbox</h6><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Main_Page" title="Main Page">Main Page</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Special:Upload" title="Special:Upload">Upload file</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Special:WhatLinksHere/How_to_create_a_Java_Based_Process" title="Special:WhatLinksHere/How to create a Java Based Process">What links here</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Special:Recentchanges">Recent changes</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Help" title="Help">Help</a><br><br><div id="p-collection">
+  <h6>PDF Books</h6>
+<img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Special:Collection/add_article/?arttitle=How_to_create_a_Java_Based_Process&amp;oldid=0" rel="nofollow">Add page</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> 							<a href="http://wiki.openbravo.com/wiki/Special:Collection" rel="nofollow">Show collection (0 pages)</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> 							<a href="http://wiki.openbravo.com/wiki/Help:Collections">Collections help</a>		<span id="tooBigCategoryText" style="display:none">The category contains more than %PARAM% pages, only the first %PARAM% pages can be added to your collection.
+Do you want to add them?</span></div><br><h6>Search</h6><!-- Google CSE Search Box Begins  -->
+<form action="http://wiki.openbravo.com/wiki/GoogleSearch" id="cse-search-box" name="cse-search-box" style="padding-top: 5px;">
+<!--input type="hidden" name="cx" value="011453255337127362045:62zrqkyzxr8" /> previous code -->
+<input name="cx" value="016261834176026591033:iixz6okg2eq" type="hidden">
+<input name="cof" value="FORID:11" type="hidden">
+<input style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="14" class="paloform" type="text">
+<input name="sa" value="Search" class="palosearch" type="submit">
+<input value="wiki.openbravo.com/wiki/How_to_create_a_Java_Based_Process" name="siteurl" type="hidden"><input value="www.google.com.eg/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;cad=rja&amp;uact=8&amp;ved=0CDgQFjAD&amp;url=http%3A%2F%2Fwiki.openbravo.com%2Fwiki%2FHow_to_create_a_Java_Based_Process&amp;ei=O4hnVMX_G8OSPLzwgdAL&amp;usg=AFQjCNHZq4Wr0j8Y8hat60ZocXBZzgGAtA&amp;bvm=bv.79142246,d.ZWU" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+<script type="text/javascript" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/brand"></script>
+<!-- Google CSE Search Box Ends --></div><div class="imgbottom"></div></div><div id="seccio1"><div class="imgtop"></div><div id="seccio"><h6>Participate</h6><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Communication_channels">Communicate</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Bug_Reporting_Guidelines">Report a bug</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/Contributor%27s_Guide">Contribute</a><br><img src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/flecha1.jpg" alt="" border="0"> <a href="http://wiki.openbravo.com/wiki/IRC_Channel">Talk to us now!</a><br></div><div class="imgbottom"></div></div><br>
+</div>
+<div id="article"><h1 class="pagetitle">How to create a Java Based Process</h1><div style="border:solid 1px #BBBBAA; padding:0em 1em 0em 1em; margin:0.5em 0.5em 0.5em 0.5em; background-color:#F7F8FF;">
+<table style="background-color:#F7F8FF">
+<tbody><tr>
+<td valign="top"><a href="http://wiki.openbravo.com/wiki/File:Bulbgraph.png" class="image"><img alt="Bulbgraph.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/Bulbgraph.png" height="22" width="18"></a>&nbsp;&nbsp; </td><td><span style="background-color:#F7F8FF">GUI
+ for processes explained in this document is generated using 2.50 
+infrastructure and are kept for backwards compatibility. If you are 
+working with <b>3.0MP20</b> or greater, consider implementing a <a href="http://wiki.openbravo.com/wiki/How_to_create_a_Standard_Process_Definition" title="How to create a Standard Process Definition">Standard Process Definition</a> instead.</span>
+</td></tr></tbody></table></div>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_to_create_a_Java_Based_Process"><span class="tocnumber">1</span> <span class="toctext">How to create a Java Based Process</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Example_Module"><span class="tocnumber">2</span> <span class="toctext">Example Module</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Development_Steps"><span class="tocnumber">3</span> <span class="toctext">Development Steps</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Java_class_declaration"><span class="tocnumber">3.1</span> <span class="toctext">Java class declaration</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Defining_the_user_interface"><span class="tocnumber">3.2</span> <span class="toctext">Defining the user interface</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Add_the_process_form_to_the_menu"><span class="tocnumber">3.3</span> <span class="toctext">Add the process form to the menu</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Build_Step"><span class="tocnumber">3.4</span> <span class="toctext">Build Step</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#The_result"><span class="tocnumber">4</span> <span class="toctext">The result</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Variant:_Running_the_process_from_a_button_in_another_window"><span class="tocnumber">5</span> <span class="toctext">Variant: Running the process from a button in another window</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Variant:_Manual_UI_Pattern"><span class="tocnumber">6</span> <span class="toctext">Variant: Manual UI Pattern</span></a></li>
+</ul>
+</td></tr></tbody></table><script>if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<h2> <span class="mw-headline" id="How_to_create_a_Java_Based_Process"> How to create a Java Based Process </span></h2>
+<p>Java processes are one of the mechanisms Openbravo provides to implement business logic. A java process can be a <a href="http://wiki.openbravo.com/wiki/How_to_develop_a_DAL_background_process" title="How to develop a DAL background process">background</a>
+ process or can have a user interface which allows entering parameters. 
+In this howto we will discuss a java process supported with a user 
+interface with parameters. 
+</p><p>This document discusses the Openbravo infrastructure for Java 
+processes. For a generic description of java processes see this wiki 
+page: <a href="http://wiki.openbravo.com/wiki/Processes" title="Processes">Processes</a>.
+</p>
+<h2> <span class="mw-headline" id="Example_Module"> Example Module </span></h2>
+<p>This howto is supported by an example module which shows example of the code shown and discussed in this howto. 
+</p><p>The code of the example module can be downloaded from this mercurial repository: <a href="https://code.openbravo.com/erp/mods/org.openbravo.client.application.examples/" class="external free" rel="nofollow">https://code.openbravo.com/erp/mods/org.openbravo.client.application.examples/</a>
+</p><p>The example module is available through the Central Repository 
+(See 'Client Application Examples'), for more information see the <a href="http://wiki.openbravo.com/wiki/Projects/ExamplesClientApplication" title="Projects/ExamplesClientApplication" class="mw-redirect">Examples Client Application</a> project page.
+</p><p>For your specific development you should create a new module. Please follow the <a href="http://wiki.openbravo.com/wiki/How_To_Create_and_Package_a_Module" title="How To Create and Package a Module"> How to create and package a module</a> section to create a new module.
+</p>
+<div style="border:solid 1px #BBBBAA; padding:0em 1em 0em 1em; margin:0.5em 0.5em 0.5em 0.5em; background-color:#F7F8FF;">
+<table style="background-color:#F7F8FF">
+<tbody><tr>
+<td valign="top"><a href="http://wiki.openbravo.com/wiki/File:Bulbgraph.png" class="image"><img alt="Bulbgraph.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/Bulbgraph.png" height="22" width="18"></a>&nbsp;&nbsp; </td><td><span style="background-color:#F7F8FF">The example module also contains implementations of other howtos.</span>
+</td></tr></tbody></table></div>
+<h2> <span class="mw-headline" id="Development_Steps"> Development Steps </span></h2>
+<p>The steps to create a java process supported by a user interface are:
+</p>
+<ol><li> create a java class implementing the business logic
+</li><li> enter a new record in 'Report and Process', defining the pattern, the java class (step 1) and the parameters
+</li><li> add the new process to the menu
+</li></ol>
+<h3> <span class="mw-headline" id="Java_class_declaration"> Java class declaration </span></h3>
+<p>First at all, take a look at the Java package in which the java class
+ is defined, it must be included in the java package the module defines.
+ The Java class implementing the process must implement the <i>org.openbravo.scheduling.Process</i> interface, this is done usually extending the class <i>org.openbravo.service.db.DalBaseProcess</i> that provides common code to use DAL in Processes. Extending this class there only needed to overwrite one method:
+</p>
+<pre class="java">&nbsp;
+ <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #993333;">void</span> doExecute<span style="color: #66cc66;">(</span>ProcessBundle bundle<span style="color: #66cc66;">)</span> <span style="color: #000000; font-weight: bold;">throws</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">Exception</span></a>;</pre>
+<p>This method receives a <i>ProcessBundle</i>, this bundle contains all
+ the parameters for the process. When the process finishes it must add a
+ result to this bundle, this result is an <i>OBError</i> instance that will be shown in the pop-up. For further explanations on messages read the <a href="http://wiki.openbravo.com/wiki/Messages" title="Messages">Messages</a> documentation.
+</p><p>Let's explain it using a little example (this class and its 
+parameters are used in the process definition further down in this 
+howto):
+</p>
+<pre class="java"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> ExampleJavaProcess <span style="color: #000000; font-weight: bold;">extends</span> DalBaseProcess <span style="color: #66cc66;">{</span>
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #993333;">void</span> doExecute<span style="color: #66cc66;">(</span>ProcessBundle bundle<span style="color: #66cc66;">)</span> <span style="color: #000000; font-weight: bold;">throws</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">Exception</span></a> <span style="color: #66cc66;">{</span>
+    <span style="color: #000000; font-weight: bold;">try</span> <span style="color: #66cc66;">{</span>
+&nbsp;
+      <span style="color: #808080; font-style: italic;">// retrieve the parameters from the bundle</span>
+      <span style="color: #000000; font-weight: bold;">final</span> <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a> bPartnerId = <span style="color: #66cc66;">(</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a><span style="color: #66cc66;">)</span> bundle.<span style="color: #006600;">getParams</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"cBpartnerId"</span><span style="color: #66cc66;">)</span>;
+      <span style="color: #000000; font-weight: bold;">final</span> <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a> organizationId = <span style="color: #66cc66;">(</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a><span style="color: #66cc66;">)</span> bundle.<span style="color: #006600;">getParams</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"adOrgId"</span><span style="color: #66cc66;">)</span>;
+      <span style="color: #000000; font-weight: bold;">final</span> <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a> tabId = <span style="color: #66cc66;">(</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a><span style="color: #66cc66;">)</span> bundle.<span style="color: #006600;">getParams</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"tabId"</span><span style="color: #66cc66;">)</span>; 
+&nbsp;
+      <span style="color: #000000; font-weight: bold;">final</span> <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a> myString = <span style="color: #66cc66;">(</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a><span style="color: #66cc66;">)</span> bundle.<span style="color: #006600;">getParams</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"mystring"</span><span style="color: #66cc66;">)</span>;
+&nbsp;
+      <span style="color: #808080; font-style: italic;">// implement your process here</span>
+&nbsp;
+      <span style="color: #808080; font-style: italic;">// Show a result</span>
+      <span style="color: #000000; font-weight: bold;">final</span> StringBuilder sb = <span style="color: #000000; font-weight: bold;">new</span> StringBuilder<span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>;
+      sb.<span style="color: #006600;">append</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Read information:&lt;br/&gt;"</span><span style="color: #66cc66;">)</span>;
+      <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">(</span>bPartnerId&nbsp;!= <span style="color: #000000; font-weight: bold;">null</span><span style="color: #66cc66;">)</span> <span style="color: #66cc66;">{</span>
+        <span style="color: #000000; font-weight: bold;">final</span> BusinessPartner bPartner = OBDal.<span style="color: #006600;">getInstance</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span>BusinessPartner.<span style="color: #000000; font-weight: bold;">class</span>, bPartnerId<span style="color: #66cc66;">)</span>;
+        sb.<span style="color: #006600;">append</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Business Partner: "</span> + bPartner.<span style="color: #006600;">getIdentifier</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span> + <span style="color: #ff0000;">"&lt;br/&gt;"</span><span style="color: #66cc66;">)</span>;
+      <span style="color: #66cc66;">}</span>
+      <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">(</span>organizationId&nbsp;!= <span style="color: #000000; font-weight: bold;">null</span><span style="color: #66cc66;">)</span> <span style="color: #66cc66;">{</span>
+        <span style="color: #000000; font-weight: bold;">final</span> Organization organization = OBDal.<span style="color: #006600;">getInstance</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span>Organization.<span style="color: #000000; font-weight: bold;">class</span>,
+            organizationId<span style="color: #66cc66;">)</span>;
+        sb.<span style="color: #006600;">append</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Organization: "</span> + organization.<span style="color: #006600;">getIdentifier</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span> + <span style="color: #ff0000;">"&lt;br/&gt;"</span><span style="color: #66cc66;">)</span>;
+      <span style="color: #66cc66;">}</span>
+      sb.<span style="color: #006600;">append</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"MyString: "</span> + myString + <span style="color: #ff0000;">"&lt;br/&gt;"</span><span style="color: #66cc66;">)</span>;
+&nbsp;
+      <span style="color: #808080; font-style: italic;">// OBError is also used for successful results</span>
+      <span style="color: #000000; font-weight: bold;">final</span> OBError msg = <span style="color: #000000; font-weight: bold;">new</span> OBError<span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>;
+      msg.<span style="color: #006600;">setType</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Success"</span><span style="color: #66cc66;">)</span>;
+      msg.<span style="color: #006600;">setTitle</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Read parameters!"</span><span style="color: #66cc66;">)</span>;
+      msg.<span style="color: #006600;">setMessage</span><span style="color: #66cc66;">(</span>sb.<span style="color: #006600;">toString</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span><span style="color: #66cc66;">)</span>;
+&nbsp;
+      bundle.<span style="color: #006600;">setResult</span><span style="color: #66cc66;">(</span>msg<span style="color: #66cc66;">)</span>;
+&nbsp;
+    <span style="color: #66cc66;">}</span> <span style="color: #000000; font-weight: bold;">catch</span> <span style="color: #66cc66;">(</span><span style="color: #000000; font-weight: bold;">final</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">Exception</span></a> e<span style="color: #66cc66;">)</span> <span style="color: #66cc66;">{</span>
+      e.<span style="color: #006600;">printStackTrace</span><span style="color: #66cc66;">(</span><a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">System</span></a>.<span style="color: #006600;">err</span><span style="color: #66cc66;">)</span>;
+      <span style="color: #000000; font-weight: bold;">final</span> OBError msg = <span style="color: #000000; font-weight: bold;">new</span> OBError<span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>;
+      msg.<span style="color: #006600;">setType</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Error"</span><span style="color: #66cc66;">)</span>;
+      msg.<span style="color: #006600;">setMessage</span><span style="color: #66cc66;">(</span>e.<span style="color: #006600;">getMessage</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span><span style="color: #66cc66;">)</span>;
+      msg.<span style="color: #006600;">setTitle</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"Error occurred"</span><span style="color: #66cc66;">)</span>;
+      bundle.<span style="color: #006600;">setResult</span><span style="color: #66cc66;">(</span>msg<span style="color: #66cc66;">)</span>;
+    <span style="color: #66cc66;">}</span>
+  <span style="color: #66cc66;">}</span>
+<span style="color: #66cc66;">}</span></pre>
+<p>In this example a parameter named <i>cBpartnerId</i> is expected. It is read by the following line:
+</p>
+<pre class="java">&nbsp;
+  <span style="color: #000000; font-weight: bold;">final</span> <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a> bPartnerId = <span style="color: #66cc66;">(</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&amp;bntl=1"><span style="color: #aaaadd; font-weight: bold;">String</span></a><span style="color: #66cc66;">)</span> bundle.<span style="color: #006600;">getParams</span><span style="color: #66cc66;">(</span><span style="color: #66cc66;">)</span>.<span style="color: #006600;">get</span><span style="color: #66cc66;">(</span><span style="color: #ff0000;">"cBpartnerId"</span><span style="color: #66cc66;">)</span>;</pre>
+<p>The name of the parameter to use in the get method depends on the db 
+column name entered in the parameters of the process (see below).
+</p><p>Once the process is finished a new OBError is created to handle the message and it is added as result to the <i>bundle</i>.
+</p>
+<pre class="java">&nbsp;
+  bundle.<span style="color: #006600;">setResult</span><span style="color: #66cc66;">(</span>msg<span style="color: #66cc66;">)</span>;</pre>
+<h3> <span class="mw-headline" id="Defining_the_user_interface"> Defining the user interface </span></h3>
+<p>The java class above shows how to implement the backend business 
+logic. This section explains how to define a user interface which makes 
+it possible to enter parameters.
+</p><p>To define process records one should normally be a System Admin.
+</p><p>The first step is to create a process record, go to Application 
+Dictionary &gt; Report and Process (or easier use quick launch and goto 
+the Report and Process window directly). Create a new process record 
+like shown in the example below. 
+</p><p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessRecord.png" class="image"><img alt="Obexapp CreateProcessRecord.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/700px-Obexapp_CreateProcessRecord.png" height="376" width="700"></a></div></div>
+<p><br>
+The main thing here is to select UI Pattern: Standard. Further below it is explained what UI Pattern Manual means.
+</p><p>Then create a child record in Process Class and enter the fully qualified class name of the java class you created below. 
+</p><p><b>Important: check the default flag! If this is not done then a compile error will occur in the next build step.</b>
+</p><p>Now the parameters of the process need to be defined. Or more 
+exactly their type and visualization. This is done through the Parameter
+ child tab of the process. The example has three parameters: business 
+partner, organization and a string. The screenshots below visualize 
+their settings:
+</p><p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessParam1.png" class="image"><img alt="Obexapp CreateProcessParam1.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/700px-Obexapp_CreateProcessParam1.png" height="177" width="700"></a></div></div>
+<p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessParam2.png" class="image"><img alt="Obexapp CreateProcessParam2.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/700px-Obexapp_CreateProcessParam2.png" height="307" width="700"></a></div></div>
+<p><br>
+Some notes:
+</p>
+<ul><li> the db column name does not have to be a real database column, 
+the value of this field is used to generate the parameter name used in 
+the source code. It is adviced to use simple names without underscores 
+(that's the simplest).
+</li><li> the application element defines the label in the user interface
+</li><li> the 2 reference fields denote the type of the field
+</li></ul>
+<h3> <span class="mw-headline" id="Add_the_process_form_to_the_menu"> Add the process form to the menu </span></h3>
+<p>To make the process window available to the user it has to be added to a menu. This is done like this:
+</p><p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessMenu.png" class="image"><img alt="Obexapp CreateProcessMenu.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/700px-Obexapp_CreateProcessMenu.png" height="143" width="700"></a></div></div>
+<p><br>
+</p>
+<h3> <span class="mw-headline" id="Build_Step"> Build Step </span></h3>
+<p>After creating the process user interface, stop the application and 
+type in the following command in a console (within the development 
+project):
+</p>
+<pre class="bash">ant compile -<span style="color: #0000ff;">Dtab=</span>XXX</pre>
+<p>This will generate the process window.
+</p><p>If you have eclipse running, refresh the development project.
+</p><p>Then start the application and login with the client administrator (normally the system administrator will not have access).
+</p>
+<h2> <span class="mw-headline" id="The_result"> The result </span></h2>
+<p>Goto quick launch and enter the name of the new process or find it in the correct location in the menu.
+</p><p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessResult1.png" class="image"><img alt="Obexapp CreateProcessResult1.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/Obexapp_CreateProcessResult1.png" height="349" width="616"></a></div></div>
+<p><br>
+Enter some values and press ok. The result:
+</p><p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessResult2.png" class="image"><img alt="Obexapp CreateProcessResult2.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/Obexapp_CreateProcessResult2.png" height="349" width="616"></a></div></div>
+<h2> <span class="mw-headline" id="Variant:_Running_the_process_from_a_button_in_another_window"> Variant: Running the process from a button in another window </span></h2>
+<p>A process can also be run from another window (from a button). A 
+button in an Openbravo window needs a (dummy) database column. To 
+accomplish this do the following:
+</p>
+<ul><li> add a column to the table shown in the window
+</li><li> give the column the button reference and select the process 
+</li><li> create a window, tab and field for the column
+</li></ul>
+<p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessColumn.png" class="image"><img alt="Obexapp CreateProcessColumn.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/700px-Obexapp_CreateProcessColumn.png" height="167" width="700"></a></div></div>
+<p><br>
+This will show a button on the right in the window.
+</p><p><br>
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.openbravo.com/wiki/File:Obexapp_CreateProcessColumnDisplay.png" class="image"><img alt="Obexapp CreateProcessColumnDisplay.png" src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/700px-Obexapp_CreateProcessColumnDisplay.png" height="151" width="700"></a></div></div>
+<p><br>
+When a process is run from another window then the ProcessBundle will contain extra default parameters which can be useful:
+</p>
+<ul><li> recordID: the id of the selected record
+</li><li> tabId: the id of the tab from which the process was called
+</li></ul>
+<h2> <span class="mw-headline" id="Variant:_Manual_UI_Pattern"> Variant: Manual UI Pattern </span></h2>
+<p>The difference between <i>Standard</i> and <i>Manual</i> <i>UI Pattern</i> is that no pop-up is automatically generated for <i>Manual UI</i> pattern processes, in this case the pop-up must be manually generated by the class implementing the process.
+</p><p>As shown above, java classes for standard processes implement the 
+Manual processes are implemented by a Java class implementing the <i>org.openbravo.scheduling.Process</i> interface. For manual processes the java class needs to extend <i>org.openbravo.base.secureApp.HttpSecureAppServlet</i>, this is a standard servlet that generates the pop-up.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 99/1000000
+Post-expand include size: 911/2097152 bytes
+Template argument size: 349/2097152 bytes
+Expensive parser function count: 0/100
+#ifexist count: 0/100
+-->
+
+<div class="printfooter">
+<p>Retrieved from "<a href="http://wiki.openbravo.com/wiki/How_to_create_a_Java_Based_Process">http://wiki.openbravo.com/wiki/How_to_create_a_Java_Based_Process</a>"</p>
+
+<p>This page has been accessed 16,653 times. This page was last modified on 19 March 2013, at 13:54. Content is available under <a href="http://creativecommons.org/licenses/by-sa/2.5/es/" class="external ">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.</p>
+</div>
+<br><b><div id="mw-normal-catlinks"><a href="http://wiki.openbravo.com/wiki/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://wiki.openbravo.com/wiki/Category:HowTo" title="Category:HowTo">HowTo</a></span></div></b></div>
+
+</div><br clear="all">
+<script src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-880726-2";
+urchinTracker();
+</script>
+<script src="How%20to%20create%20a%20Java%20Based%20Process%20-%20OpenbravoWiki_files/munchkin_002.js" type="text/javascript"></script>
+<script type="text/javascript">
+mktoMunchkin("788-VNA-120");
+</script>
+
+<div id="footer"><table border="0" width="98%" cellspacing="0"><tbody><tr><td rowspan="1" width="152">&nbsp;</td><td class="bottom" style="font-size:11px;" align="center" valign="top">
+<br>This page has been accessed 16,653 times. This page was last modified on 19 March 2013, at 13:54. Content is available under <a href="http://creativecommons.org/licenses/by-sa/2.5/es/" class="external ">Creative Commons Attribution-ShareAlike 2.5 Spain License</a>.
+<br>To report an error or for administrative issues about this site go to <a href="http://wiki.openbravo.com/wiki/Wiki_Administration">Wiki Administration Page</a></td></tr></tbody></table>
+</div>
+
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.331 secs. -->
+</body></html>

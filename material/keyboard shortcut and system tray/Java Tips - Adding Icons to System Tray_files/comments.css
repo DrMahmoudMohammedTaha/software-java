@@ -1,0 +1,90 @@
+/*the whole area*/
+.commentarea{
+text-align:center
+}
+/*The component heading (Add your comments to this article...)*/
+div.box, div.comm_pages, div.commentheading{
+position:relative;
+left:20px;
+width: 695px;
+ background: url(top.gif) no-repeat top left;
+ padding: 10px 8px 15px 10px;
+}
+
+div.box div, div.comm_pages div, div.commentheading div{
+
+width: 695px;
+background: url(middle.gif) repeat-y left;
+ margin-left: -10px;
+}
+div.box div div, div.comm_pages div div, div.commentheading div div{
+width: 695px;
+padding: 10px 8px 15px 10px; 
+margin-left: 0px;
+background: url(bottom.gif) no-repeat bottom left;
+}
+
+
+/*Text before coinput fields*/
+.commenttext{
+}
+/*Under email --*/
+.commentsmalltext{
+}
+.message{
+font-family:Trebuchet MS,Verdana,Arial,Helvetica,sans-serif;
+font-size:11px
+}
+div.comments-body{
+position:relative;
+left:20px;
+font-family:'Lucida Grande',palatino,georgia,verdana,arial,sans-serif;
+color:#666666;
+font-size:small;
+font-weight:normal;
+line-height:140%;
+width: 695px;
+ background: url(top.gif) no-repeat top left;
+ padding: 10px 8px 15px 10px;
+}
+div.comments-body div{
+width: 695px;
+background: url(middle.gif) repeat-y left;
+ margin-left: -10px;
+}
+div.comments-body div  div{
+width: 695px;
+padding: 10px 8px 15px 10px; 
+margin-left: 0px;
+background: url(bottom.gif) no-repeat bottom left;
+ display: table;
+}
+div.comments-body div  div p{
+width: 675px;
+}
+.comments-post{
+font-family:verdana,arial,sans-serif;
+background: url(b.gif) no-repeat;
+color:#666666;
+width: 670px;
+min-width:670px;
+height: 25px;
+line-height: 25px;
+font-size:x-small;
+font-weight:normal;
+padding: 0px 360px 5px 10px !important;
+padding: 0px 2px 0px 10px;
+text-indent: 4px;
+ background-repeat: no-repeat;
+ background-color: transparent;
+ display: table-row;
+}
+span.comment_code{
+color:#660000;
+font-family:ProFont,Monaco;
+font-size:x-small
+}
+span.comments-user{
+font-weight:bolder;
+font-size:normal
+}

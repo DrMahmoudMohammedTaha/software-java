@@ -1,0 +1,873 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Java Service Wrapper -
+      Hello World Server</title>
+<style media="all" type="text/css">
+            @import url("//wrapper.tanukisoftware.com/doc/style/wrapperv2.css");
+    </style>
+<link type="text/css" rel="stylesheet" href="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/jquery.css">
+<script src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/ga.js" async="" type="text/javascript"></script><script src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/jquery_002.txt" type="text/javascript"></script><script src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/jquery.txt" type="text/javascript"></script><script src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/wrapper.txt" type="text/javascript"></script>
+    <!--[if lte IE 7]>
+    <style>
+      .content { margin-right: -1px; }
+      ul.nav a { zoom: 1; }
+    </style>
+    <![endif]-->
+    <style type="text/css">
+    @-moz-document url-prefix() {
+        ul.menu a, ul.menu li.dis a:hover, ul.menu li.sep a:hover {
+            height: 18px;
+        }
+    }
+    </style>
+    <!-- Google Analytics Asynchronous -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2997611-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function trackExternal(link, category, action) {
+        try {
+          _gaq.push(['_trackEvent', category, action]);
+          setTimeout('document.location = "' + link.href + '"', 100)
+        }catch(err){}
+      }
+
+      function trackEvent(category, action) {
+        try {
+          _gaq.push(['_trackEvent', category, action]);
+        }catch(err){}
+      }
+    </script>
+    
+    <style media="all" type="text/css">
+@import url("//wrapper.tanukisoftware.com/doc/style/wrapper2.css");
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="topbar curved-bottom">
+    
+    <div class="search">
+<form id="cse-search-box" action="//www.google.com/cse">
+<div>
+<input value="012647362898980204321:rsrjv5nzyrc" name="cx" type="hidden"><input value="UTF-8" name="ie" type="hidden"><input style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" size="31" name="q" type="text"><input value="Search" name="sa" type="submit">
+</div>
+<input value="wrapper.tanukisoftware.com/doc/english/app-hello-world-server.html" name="siteurl" type="hidden"><input value="www.google.com.eg/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CCEQFjAA&amp;url=http%3A%2F%2Fwrapper.tanukisoftware.com%2Fdoc%2Fenglish%2Fapp-hello-world-server.html&amp;ei=o1pmVOu3IInAOfuigJAC&amp;usg=AFQjCNFqesit2znDO8nr8tbn7tGN0d2GdA&amp;bvm=bv.79142246,d.ZWU" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+<script src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/brand" type="text/javascript"></script>
+</div>
+        <div class="language">
+            <img alt="World Map" src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/world.png" class="worldmap"><select onchange="javascript:location=this.options[this.selectedIndex].value;"><option value="/doc/english/app-hello-world-server.html" selected="selected">English</option><option value="/doc/japanese/app-hello-world-server.html">Japanese (Nihongo)</option><option value="/doc/german/app-hello-world-server.html">German (Deutsch)</option><option value="/doc/spanish/app-hello-world-server.html">Spanish (Espanol)</option></select>
+        </div>
+        <div class="login">
+            <form action="/doc/english/login.do" method="post" style="margin-bottom:0;"><input name="redirect" value="http://wrapper.tanukisoftware.com/doc/english/app-hello-world-server.html" type="hidden"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2" nowrap="nowrap"><b>Please <input name="login" value="Login" type="submit"> or <input name="register" value="Register" type="submit"></b></td></tr></tbody></table></form>
+        </div>
+      </div>
+    <!-- end .header --></div>
+  
+    <div class="infobar">
+<div class="infobar-logo">
+<ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/"><img alt="JSW Logo" src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/jsw-logo.jpg"></a>
+</li>
+<li>
+<a href="http://www.tanukisoftware.com/"><img alt="TSL Logo" src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/tanukisoftware-logo.jpg"></a>
+</li>
+</ul>
+</div>
+<div class="infobar-trialbuy curved">
+<div class="infobox curved">
+<span>Java Service Wrapper is the easiest way to make your product more reliable.</span>
+</div>
+<ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/requestTrial.jsp"><img alt="Free Trial" src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/freetrial-btn.jpg"></a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp"><img alt="Buy Now" src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/buy-btn.jpg"></a>
+</li>
+</ul>
+</div>
+</div>
+    <div class="sitebar">
+      <ul>
+        <li><a class="tsl" href="http://www.tanukisoftware.com/" onclick="trackExternal(this, 'external', 'www.tanukisoftware.com'); return false;">Tanuki Software</a></li>
+        <li><a class="jsw" href="http://wrapper.tanukisoftware.com/" onclick="trackExternal(this, 'external', 'wrapper.tanukisoftware.com'); return false;">Java Service Wrapper</a></li>
+      </ul>
+    <!-- end .sitebar --></div>
+    <div class="menubar curved">
+      <!-- Start PureCSSMenu.com MENU -->
+    
+    <ul class="menu menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp" class="menui">Home<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html" class="menui">Product<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html" class="menui">Overview</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-features.html" class="menui">Features</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html" class="menui">License</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html" class="menui">FAQ</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp" class="menui">Download<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable" class="menui">Stable Release</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/release-notes.html" class="menui">Release Notes</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/versions.jsp" class="menui">Past Releases</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase" class="menui">Order<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase" class="menui">Buy now</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/distributors.php'); return false;" href="http://www.tanukisoftware.com/en/distributors.php" class="menui">Distributors</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html" class="menui">License Overview</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html#examples" class="menui">License FAQ</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html" class="menui">Documentation<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html" class="menui">Introduction</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html" class="menui">Integration Methods</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/launch.html" class="menui">Launching your Application</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/properties.html" class="menui">Configuration Properties</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/javadocs.html" class="menui">Java API</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/i18n.html" class="menui">Localization / i18n</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/customize.html" class="menui">Customizing Your Application (Windows)</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/security-model.html" class="menui">Security Model</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/jmx.html" class="menui">JMX Control</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/example.html" class="menui">TestWrapper Application</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp" class="menui">Support<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/debugging.html" class="menui">Debugging</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/troubleshooting.html" class="menui">Troubleshooting</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html" class="menui">FAQ</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/howto.html" class="menui">HOWTO</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/qna.html" class="menui">Questions &amp; Answers</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/technical-tips.html" class="menui">Monthly Technical Tips</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/tracker/'); return false;" href="http://sourceforge.net/tracker/?group_id=39428" class="menui">Issue Tracking</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/mail/'); return false;" href="http://sourceforge.net/mail/?group_id=39428" class="menui">Maling List</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp" class="menui">Get Support</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://sourceforge.net/projects/wrapper/" class="menui">Community<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/projects/wrapper/'); return false;" href="http://sourceforge.net/projects/wrapper/" class="menui">SourceForge Project</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/svn/'); return false;" href="http://sourceforge.net/svn/?group_id=39428" class="menui">Source Repository</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://www.tanukisoftware.com/en/" class="menui">About us<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/company.php'); return false;" href="http://www.tanukisoftware.com/en/company.php" class="menui">Company Profile</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/distributors.php'); return false;" href="http://www.tanukisoftware.com/en/distributors.php" class="menui">Distributors</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/customers.php'); return false;" href="http://www.tanukisoftware.com/en/customers.php" class="menui">Customers</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/contact.php'); return false;" href="http://www.tanukisoftware.com/en/contact.php" class="menui">Contact us</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+</ul>
+  <!-- end .menubar --></div>
+
+    
+  <div id="content" class="content main">
+
+    
+
+<ul class="breadCrumb">
+    
+    
+    
+    
+    
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/apps.html">apps</a>
+</li>
+        
+        
+<li>Hello World Server</li>
+        
+    
+
+</ul>
+<title>Hello World Server</title>
+        
+        
+<a name="overview"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Overview</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                As with most applications and development tools, the best place to start is usually with
+                a simple "Hello World!" example.  The usual Java "Hello World" application starts up,
+                prints out "Hello World" and then exits.  That is not very interesting to show off a tool
+                for running and monitoring services.  In the case of the Java Service Wrapper, an example which
+                can be installed and then stay running as a Windows Service, or UNIX daemon is required.
+            </p>
+            
+<p>
+                This page will describe our "Hello World Server" example application and help you through
+                the process of building it.
+            </p>
+            
+<p>
+                The "<a href="http://wrapper.tanukisoftware.com/doc/english/qna-service.html">How can I run my Java application as a Windows Service?</a>" page
+                will make use of this example to walk you through the process of quickly configuring and
+                installing this example to run as a Windows Service with the Java Service Wrapper.
+            </p>
+            
+<p>
+                This example Hello World application launches a daemon thread, which listens on port 9000
+                for simple text based clients, who connect through telnet.  It will then simply echo any input
+                until it finds the input "<span class="monospace">exit</span>", at which point that
+                particular connection will be closed.
+            </p>
+            
+<p>
+                While this is a little more complicated than the typical Hello World example, 
+                it allows you to run an easy server-application, being able to interact with a client program, 
+                following the fundamental server client design model.
+            </p>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+<a name="source"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Example Source Code</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                To keep our example clean and let it work cleanly with our examples, please start with
+                an empty directory at the location of your choice that we will call <span class="monospace">%HELLO_HOME%</span>.
+                Please create <span class="monospace">lib\classes</span> and <span class="monospace">src\java</span>
+                directories within <span class="monospace">%HELLO_HOME%</span>.
+                You should end up with the following:
+            </p>
+            
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Directory Structure</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">%HELLO_HOME%\
+  lib\
+    classes\
+  src\
+    java\</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<p>
+                Next create a single file in the <span class="monospace">src\java</span> directory
+                called <span class="monospace">HelloWorldServer.java</span> and open it in an editor.
+                Copy the following source into the file and save it.
+            </p>
+            
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>HelloWorldServer.java</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class HelloWorldServer
+    implements Runnable
+{
+    private final Socket m_socket;
+    private final int m_num;
+
+    HelloWorldServer( Socket socket, int num )
+    {
+        m_socket = socket;
+        m_num = num;
+        
+        Thread handler = new Thread( this, "handler-" + m_num );
+        handler.start();
+    }
+    
+    public void run()
+    {
+        try
+        {
+            try
+            {
+                System.out.println( m_num + " Connected." );
+                BufferedReader in = new BufferedReader( new InputStreamReader( m_socket.getInputStream() ) );
+                OutputStreamWriter out = new OutputStreamWriter( m_socket.getOutputStream() );
+                out.write( "Welcome connection #" + m_num + "\n\r" );
+                out.flush();
+                
+                while ( true )
+                {
+                    String line = in.readLine();
+                    if ( line == null )
+                    {
+                        System.out.println( m_num + " Closed." );
+                        return;
+                    }
+                    else
+                    {
+                        System.out.println( m_num + " Read: " + line );
+                        if ( line.equals( "exit" ) )
+                        {
+                            System.out.println( m_num + " Closing Connection." );
+                            return;
+                        }
+                        //else if ( line.equals( "crash" ) )
+                        //{
+                        //    System.out.println( m_num + " Simulating a crash of the Server..." );
+                        //    Runtime.getRuntime().halt(0);
+                        //}
+                        else
+                        {
+                            System.out.println( m_num + " Write: echo " + line );
+                            out.write( "echo " + line + "\n\r" );
+                            out.flush();
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                m_socket.close();
+            }
+        }
+        catch ( IOException e )
+        {
+            System.out.println( m_num + " Error: " + e.toString() );
+        }
+    }
+    
+    public static void main( String[] args )
+        throws Exception
+    {
+        int port = 9000;
+        if ( args.length &gt; 0 )
+        {
+            port = Integer.parseInt( args[0] );
+        }
+        System.out.println( "Accepting connections on port: " + port );
+        int nextNum = 1;
+        ServerSocket serverSocket = new ServerSocket( port );
+        while ( true )
+        {
+            Socket socket = serverSocket.accept();
+            HelloWorldServer hw = new HelloWorldServer( socket, nextNum++ );
+        }
+    }
+}</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<p>
+                The application starts up and begins listing on port 9000 for remote connections from
+                any source.  As each new connection is accepted, a dedicated handler thread is created to
+                handle all communication with that connection until it is closed.
+            </p>
+            
+<p>
+                The handler thread will read and then echo any line of text back to the client.  If a
+                line of text containing only the word "<span class="monospace">exit</span>" is received
+                then the client connection will be closed.
+            </p>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+<a name="build"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Building the Example</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                Building the example is simple task.  Start by opening up a Command Prompt (or Shell on UNIX)
+                and go into the <span class="monospace">%HELLO_HOME%</span> directory, which we created above, with using "<span class="monospace">cd</span>" command.
+            </p>
+            
+<p>
+                The example can now be compiled using the following command:
+            </p>
+            
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Compiling the Example:</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">javac -d lib\classes src\java\HelloWorldServer.java</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<p>
+                If you get an error that the <span class="monospace">javac</span> command could not be found,
+                please make sure that you have installed a Java SDK on your system.  If everything went Ok then
+                you should get the prompt back without any additional output after the compiling is done.
+            </p>
+            
+<p>
+                Please check to make sure that the class file was created by running:
+            </p>
+            
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Check for Class File:</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">dir lib\classes</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<p>
+                Congratulations, you have successfully built the <span class="monospace">HelloWorldServer</span> example.
+            </p>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+<a name="running"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Running the Example</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                Running the example can be done executing the following command from within the %HELLO_HOME% directory.
+            </p>
+            
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Run the example:</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">java -classpath lib\classes HelloWorldServer</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<p>
+                If everything is working, you should see the following:
+            </p>
+            
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Example Output:</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">Accepting connections on port: 9000</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="connect"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Connecting as a Client</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    Lets now try connecting a client to our server and see what happens.  Start by opening up a second
+                    Command Prompt and connecting using telnet:
+                </p>
+                
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Connecting with Telnet:</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">telnet localhost 9000</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+                
+<p>
+                    Once connected, you should receive a response showing your connection number.
+                    Then any text you type followed by the enter key will be echoed back to you.
+                </p>
+                
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>Example telnet session:</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">Welcome connection #1
+Test
+echo Test
+Hello there world!
+echo Hello there world!</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+                
+<p>
+                    When you are done having a conversation with the server, you can close your connection by
+                    typing <span class="monospace">exit</span> alone on its own line.
+                </p>
+                
+<p>
+                    Our example server is also capable of accepting telnet connections from any computer that is able to see
+                    the server.  If you have any problems connecting however, please first make sure that there are not
+                    any firewalls in the way.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="crash"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Crashing the Server</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    The above example is great as a simple standalone Java server.  But we would like to show off how the
+                    Java Service Wrapper is able to help make out little example server much more stable so your
+                    organization can begin to rely on it for mission critical systems.
+                </p>
+                
+<p>
+                    To start, we want to add a new <span class="monospace">crash</span> command so we can make
+                    it possible for a connected client to "crash" the JVM.  While it is possible to cause an actual crash
+                    using various known bugs in the JVM, many of them only work on certain platforms or with specific
+                    versions of Java.  For this example we will simulate a crash by calling
+                    <span class="monospace">Runtime.getRuntime().halt(0)</span> to instantly exit the JVM without
+                    shutting down cleanly.
+                </p>
+                
+<p>
+                    Please open the <span class="monospace">HelloWorldServer.java</span> source file back into an
+                    editor and update the code as follows:
+                </p>
+                
+<table class="example">
+<tbody><tr>
+<td class="listingcaption"><i>HelloWorldServer.java (Change)</i></td>
+</tr>
+<tr>
+<td class="listingcell">
+<div class="example">
+<pre class="listingpre">                        ...
+                        System.out.println( m_num + " Read: " + line );
+                        if ( line.equals( "exit" ) )
+                        {
+                            System.out.println( m_num + " Closing Connection." );
+                            return;
+                        }
+                        else if ( line.equals( "crash" ) )
+                        {
+                            System.out.println( m_num + " Simulating a crash of the Server..." );
+                            Runtime.getRuntime().halt(0);
+                        }
+                        else
+                        {
+                            System.out.println( m_num + " Write: echo " + line );
+                            out.write( "echo " + line + "\n\r" );
+                            out.flush();
+                        }
+                        ...</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+                
+<p>
+                    The example can now be recompiled and run using the same commands as above.
+                </p>
+                
+<p>
+                    Now try connecting to the server and sending the command: <span class="monospace">crash</span>.
+                    Our simple little example server will of course die and we will no longer be able to connect and
+                    make use of the server from telnet.  Obviously if this was a mission critical server, the system
+                    administrator would be getting a phone call as soon as one of the users was inconvenienced. 
+                </p>
+                
+<p>
+                    To resolve this problem, please see the "<a href="http://wrapper.tanukisoftware.com/doc/english/qna-service.html">How can I run my Java application as a Windows Service?</a>"
+                    page for instructions on how to turn this simple example server into a Windows Service (or UNIX daemon)
+                    that will be able to recover automatically from our example crash as well as a number of other problems.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+    
+    <!-- end .content --></div>
+    
+    <div class="footer">
+<div class="sitemap curved">
+<ul>
+<li class="sitemapp logo">
+<a href="http://wrapper.tanukisoftware.com/"><img src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/jsw-logo.jpg"></a>
+</li>
+<li class="sitemapp">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html">Product<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html">Overview</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-features.html">Features</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable">Download</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase">Buy Now</a>
+</li>
+<li>
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/distributors.php'); return false;" href="http://www.tanukisoftware.com/en/distributors.php">Distributors</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="sitemapp">
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html">Documentation<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html">Introduction</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html">Integration Methods</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/properties.html">Configuration Properties</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/javadocs.html">Java API</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/i18n.html">Localization / i18n</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="sitemapp">
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp">Support<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/troubleshooting.html">Troubleshooting</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html">FAQ</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/qna.html">Questions &amp; Answers</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp">Get Support</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="sitemapp">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/projects/wrapper/'); return false;" href="http://sourceforge.net/projects/wrapper/">Community<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/projects/wrapper/'); return false;" href="http://sourceforge.net/projects/wrapper/"><img alt="SourceForge Project" src="Java%20Service%20Wrapper%20-%20Hello%20World%20Server_files/sflogo.gif"></a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+</ul>
+</div>
+<div class="clearfloat"></div>
+<div class="languages">
+<ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/">English</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/japanese/">日本語</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/german/">Deutsch</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/spanish/">Español</a>
+</li>
+</ul>
+</div>
+<div class="copyright">
+<p>Copyright (c) 2004-2014, Tanuki Software, Ltd. All Rights Reserved.</p>
+</div>
+</div>
+    <!-- end .container --></div>
+    
+    
+
+</body></html>

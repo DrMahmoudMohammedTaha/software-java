@@ -1,0 +1,95 @@
+ body {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 12px; margin: 0 1px 0 0; padding: 0px; border: 0px; color: #4F4C4D; } 
+ td   {font-size: 12px;}
+ p {margin: 0px; padding-bottom:8px;}
+ a {color: #772222;}
+ a:hover {color: #4F4C4D;}
+/* begin borland-sites block */
+ #borland-sites 	{display: none;}
+/* end borland-sites block */
+
+/* begin logo-area and toolbar block */
+ #logo-area 	{position: relative; height: 70px; float:left; width: 100%; border-bottom: 3px solid black;}
+ #logo-area #logo 			{position: absolute; left: 6px; top: 25px;}
+ #logo-area #toolbar 		{display: none;}
+/* end logo-area and toolbar block */
+
+/* begin primary-nav block */
+ #primary-nav		{display: none;}
+ #primary-nav-top	{display: none;}
+/* end primary-nav block */
+
+/* begin mast block */
+ #mast	{display: none;}
+/* end mast block */
+
+/* begin channels block */ 
+ #channels			{width: 640px;}
+ #channel-spacer	{width: 6px;}
+/* begin nav channel block */
+ #secondary-nav 	{ display: none; width: 176px; vertical-align: top;} 
+ #secondary-nav-mid	{display: none;}
+/* end nav channel block */
+
+/* begin clickpath and primary-channel tools */
+ #clickpath-tools {display: none;}
+/* end clickpath and primary-channel tools */
+
+/* being primary channel block */
+ br.donotprint { display: none; }
+ #primary-channel-landing {padding: 0 10px; vertical-align: top;}
+ #opening {padding-top: 10px; height: auto !important; border-style: solid none; padding-bottom: 10px; margin-top: 10px; background-image: none; }
+ #opening-content ul li {padding-bottom: 3px;}
+ #opening-content {height: auto; border: 0; padding-left: 0px; padding-top: 0; margin-left: 0px;}
+ #opening-buttons {display: none;}
+ .opening-wrapper { position: static; top: 0px; }
+ #opening-content ul { position: static; top: 0px; ; padding-left: 30px; }
+
+ #primary-channel { padding: 10px; vertical-align: top; font-size: 0.9em; float: none; } 
+ #primary-channel h1 {font-size: 1.6em;  margin: 0 0 5px 0; padding: 0px; color: #772222;}
+ #primary-channel .intro-par {font-weight: bold;}
+  
+ #primary-channel h2 {margin: 5px 0px; font-size: 1.2em; }
+ #primary-channel h3 {font-size: 1.2em;  margin: 0px; margin-bottom: 8px; padding: 3px; padding-left: 15px; background: url("../images/primary-channel/h3-bullet.gif") no-repeat 3px 9px; border-bottom: solid 1px #7B7D7B; color: #231F20;} 
+ #primary-channel h4 {font-size: 1em;  margin: 0px; padding: 0px; color: #231F20;} 
+ #primary-channel ul {margin-top: 8px; margin-bottom: 5px; list-style-image: url("../images/primary-channel/bullet-primary-channel.gif"); list-style-type: square; vertical-align: middle;} 
+ #primary-channel ul li {padding-bottom: 3px;}
+ #primary-channel ol {margin-top: 8px; margin-bottom: 5px;} 
+ #primary-channel ol li {padding-bottom: 3px;}
+ #content { width: 5.8in; _width: 6.2in; } /* Apparently inches differ between Mozilla and IE - most likely a box model issue */
+ 
+	/* 2 column layout, for landing pages */
+	#primary-channel .pri-chan-2col-first  {float: left; width: 265px;}
+	#primary-channel .pri-chan-2col-second {float: right; width: 265px;}
+/* end primary channel block */
+
+/* being secondary channel block */
+ #secondary-channel {display: none;}
+/* being secondary channel block */
+
+/* end channels block */ 
+
+.accelerator-header { width: 6in; border-bottom: 1px solid #8F8F8F; border-collapse: collapse; }
+.accelerator-header td { border-right: none; }
+#primary-channel table.accelerator { width: 6in; }
+
+/* Download tables */
+#primary-channel table.events, 
+#primary-channel table.external-news, 
+#primary-channel table.award,
+#primary-channel table.web_seminars,
+#primary-channel table.downloads { width: 6in; }
+#primary-channel table.downloads tr.columns th  { border-top: solid 1px #8F8F8F; }
+#primary-channel table.events td, #primary-channel table.web_seminars td { border-top: 1px solid #8F8F8F; }
+#primary-channel table.downloads td.platform { text-align: center; }
+#primary-channel table.downloads td.version { width: auto; text-align: center; }
+#primary-channel table.downloads td.date { width: auto; text-align: center; }
+#primary-channel table.external-news td.date { width: auto; padding-left: 10px; }
+#primary-channel table.downloads td.size { width: auto; text-align: center; }
+#primary-channel table.downloads td.notes p { margin: 4px 0 5px; padding: 0; }
+/* End downloads */
+
+/* begin footer */
+#footer-wrap { min-width: 100%;}
+#footer {text-align: center; color: #7f7f7f; font-size: 0.8em; padding: 3px; margin-top: 20px; margin-bottom: 5px; width: auto; }
+#footer p {display: none;}
+/* end footer */

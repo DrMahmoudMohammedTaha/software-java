@@ -1,0 +1,1706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>Add A System Tray Icon To Your Swing App. - Java Tutorials | Dream.In.Code</title>
+    
+	
+	<meta name="keywords" content="Add,system,tray,icon,your,swing,app,This,tutorial,how,add,popup,menu,applications,Its,lot,easier">
+	
+
+	<meta name="description" content="Add a system tray icon to your swing app.: ">
+	
+
+	<meta name="identifier-url" content="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/">
+	
+
+	
+		
+			
+			
+			
+			
+				<link rel="canonical" href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/?s=c7ff97106446ccffa6904f57d21c9b97">
+			
+		
+
+			
+			
+			
+			
+				<link rel="up" href="http://www.dreamincode.net/forums/forum/50-java-tutorials/?s=c7ff97106446ccffa6904f57d21c9b97">
+			
+		
+
+			
+			
+			
+			
+				<link rel="author" href="http://www.dreamincode.net/forums/user/530927-farrell2k/?s=c7ff97106446ccffa6904f57d21c9b97">
+			
+		
+	
+
+		
+			
+			
+				<link rel="alternate feed" type="application/rss+xml" title="Programming Forums" href="http://www.dreamincode.net/forums/rss/forums/1-programming-forums/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate feed" type="application/rss+xml" title="Dream.In.Code Blogs RSS feed" href="http://www.dreamincode.net/forums/rss/blog/">
+			
+			
+			
+		
+	
+
+	
+				
+			<link rel="stylesheet" type="text/css" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/awards.css">
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="screen" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/calendar_select.css">
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" media="print" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ipb_print.css">
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="screen" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ipb_editor.css">
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="screen" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ipb_styles.css">
+		
+	
+	
+
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://cdn.dreamincode.net/forums/public/style_css/css_5/ipb_ie.css?v=58" />
+<![endif]-->
+    <!--included content-->
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://www.dreamincode.net/home/favicon.ico">
+	<link rel="alternate" title="dream.in.code Forums" href="http://www.dreamincode.net/rss/featured.php" type="application/rss+xml">
+	<link type="text/css" rel="stylesheet" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/styles_7.css">
+	<link rel="stylesheet" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/google_cse.css" type="text/css">
+	<link rel="stylesheet" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/thickbox.css" type="text/css">
+	<meta property="fb:page_id" content="62219401412">
+
+	<!-- OLD LAYOUT -->
+		<script async="" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/cbgapi.loaded_1"></script><script async="" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/plusone.js" async="" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/lidar.js" async="" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/lidar.js" async="" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/lidar.js" async="" type="text/javascript"></script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/jquery.js"></script>
+		<script type="text/javascript">
+		jQuery.noConflict();
+		</script>
+		<script type="text/javascript">
+		  //<![CDATA[
+		  function loginToggle() {
+			var target = document.getElementById("login").getElementsByTagName("div")[0];
+			!target.className.match(/ visible/) ? target.className += " visible" : target.className = target.className.replace(/ visible/, "");
+			}
+		  //]]>
+		</script>  
+<!-- 		<script type="text/javascript">
+		function utmx_section(){}function utmx(){}
+		(function(){var k='2514943763',d=document,l=d.location,c=d.cookie;function f(n){
+		if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.indexOf(';',i);return escape(c.substring(i+n.
+		length+1,j<0?c.length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;
+		d.write('<sc'+'ript src="'+
+		'http'+(l.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com'
+		+'/siteopt.js?v=1&utmxkey='+k+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='
+		+new Date().valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+		'" type="text/javascript" charset="utf-8"></sc'+'ript>')})();
+		</script>
+ -->
+
+<!-- 
+	<link type="text/css" rel="stylesheet" href="http://cdn.dreamincode.net/syntax/SyntaxHighlighter.css"></link>
+	<script language="javascript" src="http://cdn.dreamincode.net/syntax/shCore.js"></script>
+
+	<link href="http://cdn.dreamincode.net/syntax/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://cdn.dreamincode.net/syntax/prettify.js"></script>
+-->
+<!-- 	
+	<link href="http://cdn.dreamincode.net/forums/public/style_css/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://cdn.dreamincode.net/forums/public/js/3rd_party/prettify/prettify.js"></script>
+
+ -->
+
+
+	
+<!-- Google Website Optimizer Control Script -->
+<!-- End of Google Website Optimizer Control Script -->
+
+<script type="text/javascript">
+(function() {
+var useSSL = 'https:' == document.location.protocol;
+var src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/gpt.js"></script><iframe style="visibility: hidden; display: none;" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/container.htm"></iframe>
+
+<script type="text/javascript">
+googletag.defineSlot('/1014587/DIC_728x90_Header_Default', [728, 90], 'div-gpt-ad-1326943007260-5').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_300x250_FirstPost_Default', [300, 250], 'div-gpt-ad-1326943007260-1').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_336x280_Footer_Default', [336, 280], 'div-gpt-ad-1326943007260-4').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_300x250_TopCenter_Default', [300, 250], 'div-gpt-ad-1326943007260-2').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_160x600_Left_Default', [160, 600], 'div-gpt-ad-1326943007260-0').addService(googletag.pubads());
+googletag.pubads().enableSyncRendering();
+googletag.enableServices();
+</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/pubads_impl_54.js"></script>
+
+<!--/ included content-->
+    <script type="text/javascript">
+      jsDebug = 0; /* Must come before JS includes */
+      USE_RTE = 0;
+      inACP   = false;
+    </script>
+    
+		<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/prototype.js"></script>
+	
+	<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ipb_002.js"></script>
+	
+		<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/scriptaculous-cache.js"></script>
+	
+	<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ipb.js" charset="iso-8859-1"></script>
+	
+
+<script type="text/javascript">
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+
+		
+    <script type="text/javascript">
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://www.dreamincode.net/forums/index.php?s=c7ff97106446ccffa6904f57d21c9b97&';
+		ipb.vars['board_url']			= 'http://www.dreamincode.net/forums';
+		ipb.vars['loading_img'] 		= 'http://cdn.dreamincode.net/forums/public/style_images/master/loading.gif';
+		ipb.vars['active_app']			= 'forums';
+		ipb.vars['upload_url']			= 'http://www.dreamincode.net/forums/uploads';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 ),
+		ipb.vars['is_supmod']			= parseInt( 0 ),
+		ipb.vars['is_admin']			= parseInt( 0 ),
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= 'c7ff97106446ccffa6904f57d21c9b97';
+		ipb.vars['can_befriend']		= true;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= 'dic_';
+		ipb.vars['cookie_domain'] 		= '.dreamincode.net';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://cdn.dreamincode.net/forums/public/style_images/master/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://cdn.dreamincode.net/forums/public/style_images/master/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://cdn.dreamincode.net/forums/public/style_images/master/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://www.dreamincode.net/forums/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['use_live_search'] 	= 0;
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "iso-8859-1";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 1;
+		ipb.vars['image_resize_force']  = 500;
+		ipb.vars['seo_enabled']			= 1;
+		
+		ipb.vars['seo_params']			= {"start":"-","end":"\/","varBlock":"\/page__","varSep":"__"};
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://cdn.dreamincode.net/forums/public/style_images/master/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Resized to #{percent}% (was #{width} x #{height}) - Click image to enlarge</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}&amp;s=c7ff97106446ccffa6904f57d21c9b97' title='Add as Friend'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/user_add.png' alt='Add as Friend' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}&amp;s=c7ff97106446ccffa6904f57d21c9b97' title='Remove Friend'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/user_delete.png' alt='Remove Friend' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+
+
+ 
+
+
+
+
+    <script type="text/javascript">
+      Loader.boot();
+    </script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ips_002.js"></script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ips_004.js"></script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ips_003.js"></script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ips.js"></script>
+
+
+
+
+<style type="text/css">
+pre { overflow: scroll; max-height:500px; background: white; border: 1px solid #66666; padding: 5px; }
+</style>
+
+
+  <script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a.js" async="" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/osd.js" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a.js" async="" type="text/javascript"></script></head><!--included content-->
+
+
+<!-- <body onload="prettyPrint()"> -->
+ <body itemscope="" itemtype="http://schema.org/WebPage"><iframe scrolling="no" id="LOCSTORAGE" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/storageframe.htm" style="width: 1px; height: 1px; position: absolute; top: -7px; left: -7px; border: 0px none;"></iframe>
+<!-- TOP.PHP -->
+<!-- 	<div style="width: 99%; border-bottom: 1px solid black; padding: 5px; text-align: center; font-size: 14px; background: #FFFF99; font-weight: bolder;">
+
+		<a href="http://a.lakequincy.com/c.ashx?publisher=112&placement=7639&creative=7182" target="_blank">Turn your Mobile Apps into m-commerce apps – Learn More!</a>
+	</div> -->
+	
+	 
+	 
+	 <!-- <div style="color: white; height: 27px; margin: 0px auto; border-bottom: 0px solid white; padding: 0px; text-align: center; font-size: 14px; background-color: #1B50E0; font-weight: bolder;">
+	<div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="RON" lqm_format="1x6"></div>		
+	</div>  -->
+
+
+
+
+	<div id="header">
+        <h1 id="logo" style="width: 625px;"><a href="http://www.dreamincode.net/" rel="home"><img alt="&lt;/Dream.In.Code&gt;: Programming &amp; Web Development Community" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/logo_2012.gif" height="110" width="264"></a>
+		<!-- <a href="http://ad.doubleclick.net/clk;253234078;66891089;u?http://www.devexpress.com/go/DreamInCode_Touch_88x325.aspx"><img src="http://cdn.dreamincode.net/home/images/DIC_DX_Build_Touch.png" height="88" border="0" style="margin-top: 10px; margin-left: 10px; padding-left: 5px; border-left: 1px solid #F7F7F7;"></a> -->
+		<!--<div style="position: absolute; top: 0px; left: 265px; width: 325px; height: 110px; border-left: 1px solid #F7F7F7; text-indent: 0pt;"><div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="ros" lqm_format="325x110"></div></div>-->
+		</h1>
+  		<!-- 	<div id="leaderboard">
+  					<div style="overflow: hidden; width: 728px; height: 90px;"></div>
+			</div> -->
+
+
+		<div style="height: 110px;">
+		   
+			<div style="padding-top: 30px; padding-right: 10px; float: right;">
+					<!-- google_ad_section_start(weight=ignore) -->		
+						<!-- Google CSE Search Box Begins  -->
+					
+				  <form style="margin: 0pt;" id="cse-search-box">
+
+						<span style="float: left; font-size: 24px; padding-top: 5px; padding-right: 5px; color: white; font-weight: bolder; text-shadow: 1px 1px 1px rgb(0, 0, 0);">Search:</span>
+						<input name="q" id="query" size="18" style="font-size: 20px; margin-top: 5px; border: 1px solid; border-radius: 5px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" type="text">
+						<input name="sa" value="Search" style="color: white; background: #303030; font-weight: bolder; border: 1px solid black; margin: 0px 0px 0px 5px; padding: 5px; -moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; position: relative; top: -3px;" type="submit">
+
+				  </form>
+					<script type="text/javascript">
+ 					var f = document.getElementById('cse-search-box');
+					var q = f.q;
+					    var b = function() {
+						  if (q.value == '') {
+							q.style.background = '#FFFFFF url(http:\x2F\x2Fwww.google.com\x2Fcse\x2Fintl\x2Fen\x2Fimages\x2Fgoogle_custom_search_watermark.gif) left no-repeat';
+						  }
+						};
+
+						var f = function() {
+						  q.style.background = '#ffffff';
+						};
+						window.onload = b;
+						q.onfocus = f;
+						q.onblur = b;
+
+					</script>
+				  <div style="text-align: right; clear: both;">
+				  <a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=search" style="text-decoration: none;"><span style="font-size: 11px; color: rgb(255, 255, 255); font-weight: bold; text-decoration: underline; text-align: right;">Advanced Forum Search</span></a>
+				  </div>
+					<!-- Google CSE code begins -->
+			</div>
+
+		</div>
+
+
+		  <div id="navigation-login-register">
+					<ul class="navigation">
+					  <li class="first"><a href="http://www.dreamincode.net/forums/">Forums</a></li>
+					  <li>
+			  <a href="http://www.dreamincode.net/forums/forum/76-programming-help/">Programming</a>          
+			</li>
+					  <li>
+					   <a href="http://www.dreamincode.net/forums/forum/74-web-development/">Web Development</a>
+
+			</li>
+			<li><a href="http://www.dreamincode.net/forums/forum/71-computer-support/">Computers</a></li>
+					  <li><a href="http://www.dreamincode.net/forums/forum/78-programming-tutorials/">Tutorials</a></li>
+					  <li><a href="http://www.dreamincode.net/forums/forum/205-snippets/">Snippets</a></li>
+					  <li><a href="http://www.dreamincode.net/forums/?automodule=blog">Dev Blogs</a></li>
+					  <li><a href="http://jobs.dreamincode.net/">Jobs</a></li>
+					  <li class="last">
+					   <a rel="nofollow" href="http://www.dreamincode.net/forums/forum/1-caffeine-lounge/">Lounge</a>
+
+			</li>
+					</ul>
+					  <!-- INCLUDE CLASS PANEL -->
+												<ul id="login-register">
+	<li id="login"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=login">Login</a></li>
+	<li id="register"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1">Join!</a></li>
+	<li id="todaystopics"><a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=search&amp;do=active">Today's Topics</a></li>
+</ul>
+						<!-- /INCLUDE CLASS PANEL -->
+		</div>
+      </div>
+
+
+
+	<div id="div-gpt-ad-1326943007260-5" style="margin: 5px auto; width: 100%; min-height: 90px; text-align: center;">
+	<!-- begin ad tag (tile=1) -->
+	<script type="text/javascript">
+	//<![CDATA[
+	ord = window.ord || Math.floor(Math.random()*1E16);
+	document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=1;dcopt=ist;sz=728x90,970x90,970x250;ord=' + ord + '?"><\/script>');
+	//]]>
+	</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/general"></script><div class="GoogleActiveViewClass" id="DfpVisibilityIdentifier_3382478728480051" data-admeta-dfp="4585/ns.dreamincode/general,728,90,16985138190981232554"><div id="google_ads_div_623466"><iframe style="border: 0px none;" marginheight="0" marginwidth="0" scrolling="no" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a_003.htm" name="google_ads_iframe_623466" id="google_ads_iframe_623466" frameborder="0" height="90" width="728"></iframe></div></div>
+	<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=1;sz=728x90,970x90,970x250;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=1;sz=728x90,970x90,970x250;ord=123456789?" border="0" alt="" /></a></noscript>
+	<!-- end ad tag -->
+	</div>
+
+
+
+<div style=" background: #FFF; margin: 0px auto; border-left: 1px solid #FFF;border-right: 1px solid #FFF;">
+    <!-- /TOP.PHP -->
+
+
+<!--/ included content-->
+    <!-- <?=forums?> | <?=forums?> -->
+
+  <div id="main_content">
+    <div id="content_hold" class="with_sidebar">
+      <div id="content_inner" class="content">
+        <div id="ipbwrapper">
+<ul id="breadcrumb" itemprop="breadcrumb" class="left"><li class="first"><a href="http://www.dreamincode.net/forums/index?s=c7ff97106446ccffa6904f57d21c9b97">Dream.In.Code</a></li>
+  
+            <li><span class="nav_sep">&gt;</span> <a href="http://www.dreamincode.net/forums/forum/78-programming-tutorials/?s=c7ff97106446ccffa6904f57d21c9b97" title="Return to Programming Tutorials">Programming Tutorials</a></li>
+  
+
+
+            <li><span class="nav_sep">&gt;</span> <a href="http://www.dreamincode.net/forums/forum/50-java-tutorials/?s=c7ff97106446ccffa6904f57d21c9b97" title="Return to Java Tutorials">Java Tutorials</a></li>
+  
+
+          </ul><br>
+          <!--included content-->
+<!-- ads_top.php -->
+<!-- 
+	<div id=EchoTopic>
+	<br />
+-->
+
+<!--/ads_top.php -->
+<!--/ included content-->
+          <div id="content" class="clear">
+            <a id="j_content"></a>
+            <!--topicViewTemplate-->
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+	ipb.topic.inSection = 'topicview';
+	ipb.topic.topic_id  = 246260;
+	ipb.topic.forum_id  = 50;
+	ipb.topic.start_id  = 0;
+	// Editor JS: Only needs to be done once per page
+	ipb.editor_values.get('templates')['link'] = new Template("<label for='#{id}_url'>URL</label><input type='text' class='input_text' id='#{id}_url' value='http://' tabindex='10' /><label for='#{id}_urltext'>Link text</label><input type='text' class='input_text _select' id='#{id}_urltext' value='My link' tabindex='11' /><input type='submit' class='input_submit' value='Insert Link' tabindex='12' />");
+ipb.editor_values.get('templates')['image'] = new Template("<label for='#{id}_img'>Image URL</label><input type='text' class='input_text' id='#{id}_img' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Image' tabindex='11' />");
+ipb.editor_values.get('templates')['email'] = new Template("<label for='#{id}_email'>Email Address</label><input type='text' class='input_text' id='#{id}_email' tabindex='10' /><label for='#{id}_emailtext'>Link text</label><input type='text' class='input_text _select' id='#{id}_emailtext' value='Email me' tabindex='11' /><input type='submit' class='input_submit' value='Insert Email' tabindex='12' />");
+ipb.editor_values.get('templates')['media'] = new Template("<label for='#{id}_media'>Media URL</label><input type='text' class='input_text' id='#{id}_media' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Media' tabindex='11' />");
+ipb.editor_values.get('templates')['generic'] = new Template("<div class='rte_title'>#{title}</div><strong>Example</strong><pre>#{example}</pre><label for='#{id}_option' class='optional'>#{option_text}</label><input type='text' class='input_text optional' id='#{id}_option' tabindex='10' /><label for='#{id}_text'>#{value_text}</label><input type='text' class='input_text _select' id='#{id}_text' tabindex='11' /><input type='submit' class='input_submit' value='Add' tabindex='12' />");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+	
+ipb.editor_values.get('templates')['toolbar'] = new Template("<ul id='#{id}_toolbar_#{toolbarid}' class='toolbar' style='display: none'>#{content}</ul>");
+ipb.editor_values.get('templates')['button'] = new Template("<li><span id='#{id}_cmd_custom_#{cmd}' class='rte_control rte_button specialitem' title='#{title}'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/rte_icons/#{img}' alt='Icon' /></span></li>");
+ipb.editor_values.get('templates')['menu_item'] = new Template("<li id='#{id}_cmd_custom_#{cmd}' class='specialitem clickable'>#{title}</li>");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+ipb.editor_values.get('templates')['emoticons_showall'] = new Template("<input class='input_submit emoticons' type='button' id='#{id}_all_emoticons' value='Show all emoticons' />");
+ipb.editor_values.get('templates')['emoticon_wrapper'] = new Template("<h4><span>Emoticons</span></h4><div id='#{id}_emoticon_holder' class='emoticon_holder'></div>");
+
+// Add smilies into the mix
+ipb.editor_values.set( 'show_emoticon_link', false );
+
+ipb.editor_values.set( 'bbcodes', $H({"snapback":{"id":"1","title":"Post Snap Back","desc":"This tag displays a little linked image which links back to a post - used when quoting posts from the board. Opens in same window by default.","tag":"snapback","useoption":"0","example":"[snapback]100[/snapback]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"topic":{"id":"5","title":"Topic Link","desc":"This tag provides an easy way to link to a topic","tag":"topic","useoption":"1","example":"[topic=1]Click me![/topic]","switch_option":"0","menu_option_text":"Enter the topic ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"post":{"id":"6","title":"Post Link","desc":"This tag provides an easy way to link to a post.","tag":"post","useoption":"1","example":"[post=1]Click me![/post]","switch_option":"0","menu_option_text":"Enter the Post ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"spoiler":{"id":"7","title":"Spoiler","desc":"Spoiler tag","tag":"spoiler","useoption":"0","example":"[spoiler]Some hidden text[/spoiler]","switch_option":"0","menu_option_text":"","menu_content_text":"Enter the text to be masked","single_tag":"0","optional_option":"0","image":""},"acronym":{"id":"8","title":"Acronym","desc":"Allows you to make an acronym that will display a description when moused over","tag":"acronym","useoption":"1","example":"[acronym='Laugh Out Loud']lol[/acronym]","switch_option":"0","menu_option_text":"Enter the description for this acronym (EG: Laugh Out Loud)","menu_content_text":"Enter the acronym (EG: lol)","single_tag":"0","optional_option":"0","image":""},"hr":{"id":"12","title":"Horizontal Rule","desc":"Adds a horizontal rule to separate text","tag":"hr","useoption":"0","example":"[hr]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"1","optional_option":"0","image":""},"php":{"id":"14","title":"PHP Code","desc":"Allows you to enter PHP code into a formatted/highlighted syntax box","tag":"php","useoption":"0","example":"[php]$variable = true;\n\nprint_r($variable);[/php]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"html":{"id":"15","title":"HTML Code","desc":"Allows you to enter formatted/syntax-highlighted HTML code","tag":"html","useoption":"0","example":"[html]<body>\n <div class='outer'>\n  <p>Hello World</p>\n </div>\n</body>[/html]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"sql":{"id":"16","title":"SQL Code","desc":"Allows you to enter formatted/syntax-highlighted SQL code","tag":"sql","useoption":"0","example":"[sql]SELECT p.*, t.* FROM posts p LEFT JOIN topics t ON t.tid=p.topic_id WHERE t.tid=7[/sql]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"xml":{"id":"17","title":"XML Code","desc":"Allows you to enter formatted/syntax-highlighted XML code","tag":"xml","useoption":"0","example":"[xml]<outer>\n <inner>\n  <tag param='1'>Test</tag>\n </inner>\n</outer>[/xml]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"member":{"id":"31","title":"Member","desc":"Given a member name, a link is automatically generated to the member's profile","tag":"member","useoption":"1","example":"[member=skyhawk133] runs this site.","switch_option":"0","menu_option_text":"Input Username of Member","menu_content_text":"","single_tag":"1","optional_option":"0","image":"memberbbcode.png"},"extract":{"id":"33","title":"Extract Blog Entry","desc":"This will allow users to define an extract for an entry. Only this piece of the entry will be displayed on the main blog page and will show up in the RSS feed.","tag":"extract","useoption":"0","example":"[extract]This is an example![/extract]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"blog":{"id":"34","title":"Blog Link","desc":"This tag provides an easy way to link to a blog.","tag":"blog","useoption":"1","example":"[blog=100]Click me![/blog]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"entry":{"id":"35","title":"Blog Entry Link","desc":"This tag provides an easy way to link to a blog entry.","tag":"entry","useoption":"1","example":"[entry=100]Click me![/entry]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"twitter":{"id":"36","title":"Twitter","desc":"A tag to link to a user's twitter account","tag":"twitter","useoption":"0","example":"[twitter]userName[/twitter]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"twitter.png"},"inline":{"id":"37","title":"Inline Code","desc":"Formats code inline instead of in a seperate code box. ","tag":"inline","useoption":"0","example":"[inline]style=\"font-size: 12px;\"[/inline]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"il":{"id":"38","title":"Abbreviated Inline (IL)","desc":"Abbreviated version of the [inline] tag. ","tag":"il","useoption":"0","example":"[il]Code Here[/il]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"il2.png"},"code":{"id":"41","title":"Code","desc":"Allows you to enter general code","tag":"code","useoption":"1","example":"[code]$text = 'Some long code here';[/code]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"1","image":""}}) );
+	ipb.vars['emoticon_url'] = "http://cdn.dreamincode.net/forums/public/style_emoticons/default";
+	//Search Setup
+	ipb.vars['search_type']			= 'forum';
+	ipb.vars['search_type_id']		= 50;
+	ipb.vars['search_type_2']		= 'topic';
+	ipb.vars['search_type_id_2']	= 246260;
+//]]>
+</script>
+
+
+
+<div class="topic_controls">
+		
+	<span class="pagination no_pages left">Page 1 of 1</span>
+
+					
+	</div>
+<div class="topic hfeed">
+	<h2 class="maintitle">
+		<span class="main_topic_title">
+			<a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/?s=c7ff97106446ccffa6904f57d21c9b97" style="text-decoration: none;">Add a system tray icon to your swing app.</a>
+			
+		</span>
+		<!-- SKINNOTE: Need to fill in proper URL for topic rating -->
+		<span class="rating">Rate Topic:
+				<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=246260&amp;rating=1&amp;s=c7ff97106446ccffa6904f57d21c9b97" id="topic_rate_1" title="Rate topic 1 star"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=246260&amp;rating=2&amp;s=c7ff97106446ccffa6904f57d21c9b97" id="topic_rate_2" title="Rate topic 2 stars"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=246260&amp;rating=3&amp;s=c7ff97106446ccffa6904f57d21c9b97" id="topic_rate_3" title="Rate topic 3 stars"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=246260&amp;rating=4&amp;s=c7ff97106446ccffa6904f57d21c9b97" id="topic_rate_4" title="Rate topic 4 stars"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=246260&amp;rating=5&amp;s=c7ff97106446ccffa6904f57d21c9b97" id="topic_rate_5" title="Rate topic 5 stars"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a>
+				<span id="rating_text">
+					
+					
+				</span>
+				<script type="text/javascript">
+				//<![CDATA[
+					rating = new ipb.rating( 'topic_rate_', { 
+										url: 'http://www.dreamincode.net/forums/index.php?app=forums&module=ajax&section=topics&do=rateTopic&t=246260&amp;s=c7ff97106446ccffa6904f57d21c9b97&md5check=' + ipb.vars['secure_hash'],
+										cur_rating: 0,
+										rated: 0,
+										allow_rate: 0,
+										multi_rate: 1,
+										show_rate_text: true
+									  } );
+				//]]>
+				</script>
+			<br>
+
+
+
+
+</span>
+	</h2>
+	
+	
+	
+	
+	
+
+  	<!-- topic header ads -->
+	
+<!-- skinnote: Posts by ignored users are not hidden, check _ignored -->
+	
+
+	
+		 
+    
+		<!--Begin Msg Number 1428890 - 1-->
+		<div class="post_block hentry clear  with_rep" id="post_id_1428890">
+			<a id="entry1428890"></a>
+			
+			
+			
+			
+			<div class="post_wrap">
+				
+					<h3>
+				
+						<span class="post_id">
+							<a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/page__view__findpost__p__1428890?s=c7ff97106446ccffa6904f57d21c9b97" rel="bookmark" title="Link to post #1">#1</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href="http://www.dreamincode.net/forums/user/530927-farrell2k/?s=c7ff97106446ccffa6904f57d21c9b97">farrell2k</a>
+								&nbsp;<a href="http://www.dreamincode.net/forums/user/530927-farrell2k/page__f__50?s=c7ff97106446ccffa6904f57d21c9b97" class="__user __id530927 __fid50" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+					
+								<img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+					
+							</span>
+
+				
+					</h3>
+				<div class="author_info">
+					<!--userInfoPane-->
+<ul class="user_details">
+		
+			<li class="avatar"><a href="http://www.dreamincode.net/forums/user/530927-farrell2k/?s=c7ff97106446ccffa6904f57d21c9b97" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/av-530927.jpg" alt="" height="54" width="64"></a></li>
+		
+		
+			<li class="title">D.I.C Lover</li>
+		
+		<li class="group_icon">
+			
+				<img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/expert_group.gif" alt="member icon">
+			
+			</li>
+	</ul>
+	<br>
+		
+			<div class="reputation positive">
+		
+		
+		
+		<span class="number">Reputation: 856</span>
+			</div>
+	<div style="margin: 0 auto;">
+		<ul class="user_controls clear">
+			
+			
+			
+				<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=530927&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="View blog"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class="user_fields">
+                
+		
+			<li>
+				<span class="ft">Posts:</span>
+				<span class="fc">2,620</span>
+			</li>
+			<li>
+				<span class="ft">Joined:</span>
+				<span class="fc">29-July 11</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class="post_body">
+
+
+                                <!--<h1>Add a system tray icon to your swing app.</h1>-->
+
+
+					<p class="posted_info">
+						
+						
+						Posted <abbr class="published" title="2011-09-07T06:30:10+00:00">06 September 2011 - 11:30 PM</abbr>
+					</p>
+					<p class="rep_highlight"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/star_big.png" alt="*"><br>POPULAR</p>
+						<!-- rep_highlight  -->
+					<div id="" class="post entry-content">
+						<!--cached-Sat, 29 Nov 2014 06:31:14 +0000-->This is a tutorial on how to add tray icon with a popup menu to your swing applications. It's a lot easier than it sounds.<br>
+<br>
+You need to find an image for the tray icon. I just searched dog on 
+google image search and found one. When you have your image, resize it 
+to 16x16 and save it as a gif or jpeg in your project directory.<br>
+<br>
+Now you need to create a few objects that represent the system tray, the
+ system tray icon, its popup menu, and the items in the popup menu.<br>
+<br>
+Create an Image object to represent the tray image: Image dogImage = 
+Toolkit.getDefaultToolkit().getImage(./dog.jpg) If you use netbeans 
+place your dog.jpg image in your projects root dir. On my windows box 
+this is My Documents/NetBeansProjects/FrameTest.<br>
+<br>
+Now you need to create a SystemTray object: SystemTray sysTray = SystemTray.getSystemTray();<br>
+<br>
+Your next step is to create the popup menu: Popupmenu menu = new PopupMenu();<br>
+<br>
+Next you need to create a MenuItem object which will be added to the popup menu: MenuItem item1 = new MenuItem("Exit");<br>
+<br>
+Now that you have your menu item, you need to add it to the popup menu with PopUpMenu's .add() method: menu.add(item1);<br>
+<br>
+Next, you add an ActionListener to the menu item so that it does something when you click on it.<br>
+<br>
+You now create your Tray icon object: TrayIcon tray = new 
+TrayIcon(dogImage, "App", menu); SystemTray takes 3 arguments, the Image
+ for the tray, a String for the tooltip when you hover your cursor over 
+the tray icon, and the PopUp Menu.<br>
+<br>
+Finally, you take the TrayIcon you created and add it to the SystemTray.<br>
+<br>
+This may sound complicated, but it was pretty easy to do. Here's my working code.<br>
+<br>
+<div class="syntaxhighlighter  " id="highlighter_434739"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_434739_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_434739" menu="false" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">public</code> <code class="keyword">class</code> <code class="plain">FrameTest {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="plain">JFrame frame;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="plain">Image dogImage;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="plain">SystemTray sysTray;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="plain">PopupMenu menu;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="plain">MenuItem item1;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="plain">TrayIcon trayIcon;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//constructor</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="plain">FrameTest() {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">initComponents();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//basic stuff.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">frame.setSize(</code><code class="value">300</code><code class="plain">,</code><code class="value">300</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">frame.setVisible(</code><code class="keyword">true</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">private</code> <code class="keyword">void</code> <code class="plain">initComponents() {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//create jframe</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">frame = </code><code class="keyword">new</code> <code class="plain">JFrame(</code><code class="string">"Frame Test"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>22</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//check to see if system tray is supported on OS.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>23</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(SystemTray.isSupported()) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>24</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">sysTray = SystemTray.getSystemTray();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>25</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>26</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//create dog image</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>27</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">dogImage&nbsp; = Toolkit.getDefaultToolkit().getImage(</code><code class="string">"./dog.jpg"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>28</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>29</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//create popupmenu</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>30</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">menu = </code><code class="keyword">new</code> <code class="plain">PopupMenu();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>31</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>32</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//create item</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>33</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">item1 = </code><code class="keyword">new</code> <code class="plain">MenuItem(</code><code class="string">"Exit"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>34</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>35</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//add item to menu</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>36</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">menu.add(item1);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>37</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>38</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//add action listener to the item in the popup menu</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>39</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">item1.addActionListener(</code><code class="keyword">new</code> <code class="plain">ActionListener() {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>40</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">void</code> <code class="plain">actionPerformed(ActionEvent e) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>41</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.exit(</code><code class="value">0</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>42</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>43</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>44</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>45</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//create system tray icon.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>46</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">trayIcon = </code><code class="keyword">new</code> <code class="plain">TrayIcon(dogImage, </code><code class="string">"Dog App."</code><code class="plain">, menu);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>47</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>48</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//add the tray icon to the system tray.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>49</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">try</code> <code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>50</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">sysTray.add(trayIcon);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>51</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>52</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">catch</code><code class="plain">(AWTException e) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>53</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">System.out.println(e.getMessage());</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>54</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>55</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>56</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code><code class="comments">//end FrameTest constructor</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>57</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>58</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//main</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>59</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">static</code> <code class="keyword">void</code> <code class="plain">main(String[]args) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>60</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">SwingUtilities.invokeLater(</code><code class="keyword">new</code> <code class="plain">Runnable(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>61</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">void</code> <code class="plain">run() {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>62</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">new</code> <code class="plain">FrameTest();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>63</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>64</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>65</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code><code class="comments">//end main()</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>66</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>67</code></td><td class="content"><code class="plain">}</code><code class="comments">//end FrameTest Class</code></td></tr></tbody></table></div></div></div><br>
+<br>
+One feature I like in applications that take advantage of the system 
+tray is the ability to minimize an application to the system tray. My 
+favorite Bittorrent app, vuze, allows you to do this. As vuze is written
+ in Java, I started thinking about how easy it would be to implement 
+this, and surprisingly, it is very easy.<br>
+<br>
+Here's how to modify the code in my system tray example (above) to 
+minimize your app to the system tray so that it takes up no space on 
+your task bar:<br>
+<br>
+The first thing you need to do is modify the JFrame's default close operation. Search the constructor for:<br>
+<div class="syntaxhighlighter  " id="highlighter_80916"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_80916_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_80916" menu="false" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</code></td></tr></tbody></table></div></div></div><br>
+<br>
+and set it to:<br>
+<div class="syntaxhighlighter  " id="highlighter_322941"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_322941_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_322941" menu="false" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);</code></td></tr></tbody></table></div></div></div><br>
+<br>
+This makes it so that instead of exiting when you click 'x' in the title
+ bar, the applications hides itself from view and takes up no space on 
+your task bar. Great. First part done, but now how do we bring it back? 
+It's surprisingly simple. All we do is set the frame to visible.<br>
+<br>
+We need to add another item to the popup menu we created in my first 
+post. We add this to the top of the class, under MenuItem item1:<br>
+<div class="syntaxhighlighter  " id="highlighter_430947"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_430947_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_430947" menu="false" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">private</code> <code class="plain">MenuItem item2;</code></td></tr></tbody></table></div></div></div><br>
+<br>
+Now, in the initComponents() method we add:<br>
+<div class="syntaxhighlighter  " id="highlighter_110454"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_110454_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_110454" menu="false" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="plain">item2 = </code><code class="keyword">new</code> <code class="plain">MenuItem(</code><code class="string">"Show app"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="comments">//add actionListener to second menu item</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="plain">item2.addActionListener(</code><code class="keyword">new</code> <code class="plain">ActionListerner() {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code> <code class="keyword">void</code> <code class="plain">actionPerformed(ActionEvent e) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">frame.setVisible(</code><code class="keyword">true</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="comments">//add second item to popup menu</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">menu.add(item2);</code></td></tr></tbody></table></div></div></div><br>
+<br>
+That's it! When you close the app by click x at the top of the app, it 
+should hide and minimize to the system tray. Right clicking on the tray 
+icon should allow you to then "show app" to bring it back.
+						
+						<br>
+						<p class="edit">
+								This post has been edited by <b>farrell2k</b>: 08 September 2011 - 02:42 PM
+								
+							</p>
+					</div>
+					
+
+
+                                <div id="div-gpt-ad-1326943007260-1" style="padding-left: 15px;">
+
+<!-- begin ad tag (tile=2) -->
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=' + ord + '?"><\/script>');
+//]]>
+</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/general_003"></script><div class="GoogleActiveViewClass" id="DfpVisibilityIdentifier_6417203557397618" data-admeta-dfp="4585/ns.dreamincode/general,300,250,503079177547446340"><div id="google_ads_div_94941"><iframe style="border: 0px none;" marginheight="0" marginwidth="0" scrolling="no" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a_003.htm" name="google_ads_iframe_94941" id="google_ads_iframe_94941" frameborder="0" height="250" width="300"></iframe></div></div>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" border="0" alt="" /></a></noscript>
+<!-- end ad tag -->
+
+</div>
+<br>
+
+				</div>
+			<div class="rep_bar clear right" id="rep_post_1428890"><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Is This A Good Question/Topic?
+
+</span>
+					
+												
+				
+				
+					<span class="reputation positive rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1428890 );">
+				
+				
+						5
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href="#" class="rep_up" title="Vote this post up"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/add.png" alt="+"></a></li>
+						
+						
+						</ul>
+				</div>
+				<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1428890', { app: 'forums', type: 'pid', typeid: '1428890' }, parseInt('5') );
+				</script>
+				<ul class="post_controls">
+					
+					<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+					
+					
+						<li class="multiquote" id="multiq_1428890" style="">
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1428890&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Quote this post with Multi-Quote"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1428890&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Reply directly to this post"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1428890').show();
+					
+					if( $('toggle_post_1428890') )
+					{
+						$('toggle_post_1428890').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr>
+		
+	
+
+
+	
+		
+<h2 class="maintitle">
+		Replies To: Add a system tray icon to your swing app.
+</h2>	
+     
+    
+		<!--Begin Msg Number 1576147 - 2-->
+		<div class="post_block hentry clear  with_rep" id="post_id_1576147">
+			<a id="entry1576147"></a>
+			
+			
+			
+			
+			<div class="post_wrap">
+				
+					<h3>
+				
+						<span class="post_id">
+							<a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/page__view__findpost__p__1576147?s=c7ff97106446ccffa6904f57d21c9b97" rel="bookmark" title="Link to post #2">#2</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href="http://www.dreamincode.net/forums/user/587648-uzzi7862/?s=c7ff97106446ccffa6904f57d21c9b97">uzzi7862</a>
+								&nbsp;<a href="http://www.dreamincode.net/forums/user/587648-uzzi7862/page__f__50?s=c7ff97106446ccffa6904f57d21c9b97" class="__user __id587648 __fid50" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+					
+								<img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+					
+							</span>
+
+				
+					</h3>
+				<div class="author_info">
+					<!--userInfoPane-->
+<ul class="user_details">
+		
+			<li class="avatar"><a href="http://www.dreamincode.net/forums/user/587648-uzzi7862/?s=c7ff97106446ccffa6904f57d21c9b97" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/016f1e65e9067318b3cf756198f13afe.gif" alt=""></a></li>
+		
+		
+			<li class="title">New D.I.C Head</li>
+		
+		
+	</ul>
+	<br>
+		
+		
+		
+			<div class="reputation zero">
+		
+		<span class="number">Reputation: 0</span>
+			</div>
+	<div style="margin: 0 auto;">
+		<ul class="user_controls clear">
+			
+			
+			
+				<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=587648&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="View blog"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class="user_fields">
+                
+		
+			<li>
+				<span class="ft">Posts:</span>
+				<span class="fc">17</span>
+			</li>
+			<li>
+				<span class="ft">Joined:</span>
+				<span class="fc">28-February 12</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class="post_body">
+
+
+  				<!--<h2>Re: Add a system tray icon to your swing app.</h2>-->
+
+
+					<p class="posted_info">
+						
+						
+						Posted <abbr class="published" title="2012-03-14T12:04:13+00:00">14 March 2012 - 05:04 AM</abbr>
+					</p>
+					
+					<div id="" class="post entry-content">
+						<!--cached-Sat, 29 Nov 2014 06:31:14 +0000-->Hello. Awesome 
+tutorial i have been looking for somthing like this for quite a while 
+now. I was just wondering what could be the cause for my image not 
+displaying on the system tray. Since i have tried a few images and it 
+did not want to work.
+						
+						<br>
+						
+					</div>
+					
+
+
+				</div>
+			<div class="rep_bar clear right" id="rep_post_1576147"><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1576147 );">
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href="#" class="rep_up" title="Vote this post up"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/add.png" alt="+"></a></li>
+						
+						
+							<li><a href="#" class="rep_down" title="Vote this post down"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/delete.png" alt="-"></a></li>
+						
+						</ul>
+				</div>
+				<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1576147', { app: 'forums', type: 'pid', typeid: '1576147' }, parseInt('0') );
+				</script>
+				<ul class="post_controls">
+					
+					<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+					
+					
+						<li class="multiquote" id="multiq_1576147" style="">
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1576147&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Quote this post with Multi-Quote"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1576147&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Reply directly to this post"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1576147').show();
+					
+					if( $('toggle_post_1576147') )
+					{
+						$('toggle_post_1576147').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr>
+		
+	
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1796379 - 3-->
+		<div class="post_block hentry clear  with_rep" id="post_id_1796379">
+			<a id="entry1796379"></a>
+			
+			
+			
+			
+			<div class="post_wrap">
+				
+					<h3>
+				
+						<span class="post_id">
+							<a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/page__view__findpost__p__1796379?s=c7ff97106446ccffa6904f57d21c9b97" rel="bookmark" title="Link to post #3">#3</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href="http://www.dreamincode.net/forums/user/619532-tmcraig/?s=c7ff97106446ccffa6904f57d21c9b97">tmcraig</a>
+								&nbsp;<a href="http://www.dreamincode.net/forums/user/619532-tmcraig/page__f__50?s=c7ff97106446ccffa6904f57d21c9b97" class="__user __id619532 __fid50" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+					
+								<img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+					
+							</span>
+
+				
+					</h3>
+				<div class="author_info">
+					<!--userInfoPane-->
+<ul class="user_details">
+		
+			<li class="avatar"><a href="http://www.dreamincode.net/forums/user/619532-tmcraig/?s=c7ff97106446ccffa6904f57d21c9b97" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/cfb82ab95ccaaceb0a9cd0c169b59187.gif" alt=""></a></li>
+		
+		
+			<li class="title">New D.I.C Head</li>
+		
+		
+	</ul>
+	<br>
+		
+		
+		
+			<div class="reputation zero">
+		
+		<span class="number">Reputation: 0</span>
+			</div>
+	<div style="margin: 0 auto;">
+		<ul class="user_controls clear">
+			
+			
+			
+				<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=619532&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="View blog"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class="user_fields">
+                
+		
+			<li>
+				<span class="ft">Posts:</span>
+				<span class="fc">8</span>
+			</li>
+			<li>
+				<span class="ft">Joined:</span>
+				<span class="fc">01-February 13</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class="post_body">
+
+
+  				<!--<h2>Re: Add a system tray icon to your swing app.</h2>-->
+
+
+					<p class="posted_info">
+						
+						
+						Posted <abbr class="published" title="2013-02-04T09:49:47+00:00">04 February 2013 - 02:49 AM</abbr>
+					</p>
+					
+					<div id="" class="post entry-content">
+						<!--cached-Sat, 29 Nov 2014 06:31:14 +0000-->Good tutorial, <br>
+<br>
+But there seems to be an issue when it comes to windows 7. It creates a blank icon in the sys-tray.<br>
+<br>
+Anyone have a fix for this?<br><br>can we not edit posts??<br>
+<br>
+forgot to add, tried lots of other varieties of this tutorial, and all 
+seem to suffer the same problem. most people mention to use the autosize
+ function. But this only works on XP when people are using wrong sized 
+icons.<br>
+<br>
+Craig<br><br>can we not edit posts??<br>
+<br>
+forgot to add, tried lots of other varieties of this tutorial, and all 
+seem to suffer the same problem. most people mention to use the autosize
+ function. But this only works on XP when people are using wrong sized 
+icons.<br>
+<br>
+Craig
+						
+						<br>
+						
+					</div>
+					
+
+
+				</div>
+			<div class="rep_bar clear right" id="rep_post_1796379"><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1796379 );">
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href="#" class="rep_up" title="Vote this post up"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/add.png" alt="+"></a></li>
+						
+						
+							<li><a href="#" class="rep_down" title="Vote this post down"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/delete.png" alt="-"></a></li>
+						
+						</ul>
+				</div>
+				<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1796379', { app: 'forums', type: 'pid', typeid: '1796379' }, parseInt('0') );
+				</script>
+				<ul class="post_controls">
+					
+					<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+					
+					
+						<li class="multiquote" id="multiq_1796379" style="">
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1796379&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Quote this post with Multi-Quote"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1796379&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Reply directly to this post"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1796379').show();
+					
+					if( $('toggle_post_1796379') )
+					{
+						$('toggle_post_1796379').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr>
+		
+	
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1796896 - 4-->
+		<div class="post_block hentry clear  with_rep" id="post_id_1796896">
+			<a id="entry1796896"></a>
+			
+			
+			
+			
+			<div class="post_wrap">
+				
+					<h3>
+				
+						<span class="post_id">
+							<a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/page__view__findpost__p__1796896?s=c7ff97106446ccffa6904f57d21c9b97" rel="bookmark" title="Link to post #4">#4</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href="http://www.dreamincode.net/forums/user/619973-brainpower49/?s=c7ff97106446ccffa6904f57d21c9b97">Brainpower49</a>
+								&nbsp;<a href="http://www.dreamincode.net/forums/user/619973-brainpower49/page__f__50?s=c7ff97106446ccffa6904f57d21c9b97" class="__user __id619973 __fid50" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+					
+								<img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+					
+							</span>
+
+				
+					</h3>
+				<div class="author_info">
+					<!--userInfoPane-->
+<ul class="user_details">
+		
+			<li class="avatar"><a href="http://www.dreamincode.net/forums/user/619973-brainpower49/?s=c7ff97106446ccffa6904f57d21c9b97" title="View Profile"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/java1.gif" alt="" height="64" width="64"></a></li>
+		
+		
+			<li class="title">New D.I.C Head</li>
+		
+		
+	</ul>
+	<br>
+		
+			<div class="reputation positive">
+		
+		
+		
+		<span class="number">Reputation: 1</span>
+			</div>
+	<div style="margin: 0 auto;">
+		<ul class="user_controls clear">
+			
+			
+			
+				<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=619973&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="View blog"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class="user_fields">
+                
+		
+			<li>
+				<span class="ft">Posts:</span>
+				<span class="fc">5</span>
+			</li>
+			<li>
+				<span class="ft">Joined:</span>
+				<span class="fc">04-February 13</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class="post_body">
+
+
+  				<!--<h2>Re: Add a system tray icon to your swing app.</h2>-->
+
+
+					<p class="posted_info">
+						
+						
+						Posted <abbr class="published" title="2013-02-05T04:05:29+00:00">04 February 2013 - 09:05 PM</abbr>
+					</p>
+					
+					<div id="" class="post entry-content">
+						<!--cached-Sat, 29 Nov 2014 06:31:14 +0000-->Nicely done!<br>
+The tutorial is easy to follow. Plus, I'm not to familiar with java AWT and GUIS.<br>
+Everything was understandable thanks to clear writing and the comments in code (helped much <img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/biggrin.gif" class="bbc_emoticon" alt=":D">).<br>
+I've actually wanted to learn how to do this before. But my search skills weren't that good.<br>
+Taught me a nice amount, Thanks!<br>
+ <img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/bananaman.gif" class="bbc_emoticon" alt=":bananaman:"> <br>
+<br>
+<br>
++1
+						
+						<br>
+						
+					</div>
+					
+
+
+				</div>
+			<div class="rep_bar clear right" id="rep_post_1796896"><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+				
+					<span class="reputation positive rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1796896 );">
+				
+				
+						1
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href="#" class="rep_up" title="Vote this post up"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/add.png" alt="+"></a></li>
+						
+						
+							<li><a href="#" class="rep_down" title="Vote this post down"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/delete.png" alt="-"></a></li>
+						
+						</ul>
+				</div>
+				<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1796896', { app: 'forums', type: 'pid', typeid: '1796896' }, parseInt('1') );
+				</script>
+				<ul class="post_controls">
+					
+					<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+					
+					
+						<li class="multiquote" id="multiq_1796896" style="">
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1796896&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Quote this post with Multi-Quote"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=50&amp;t=246260&amp;qpid=1796896&amp;s=c7ff97106446ccffa6904f57d21c9b97" title="Reply directly to this post"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1796896').show();
+					
+					if( $('toggle_post_1796896') )
+					{
+						$('toggle_post_1796896').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr>
+		
+	
+
+<!-- MOD LINKS -->
+
+<!-- REPUTATION FILTERS -->
+
+
+<!-- THREADED MODE -->
+
+<ul class="topic_jump right clear">
+	<li class="previous"><a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/page__view__old?s=c7ff97106446ccffa6904f57d21c9b97">&#8592; Previous Topic</a></li>
+	<li><strong><a href="http://www.dreamincode.net/forums/forum/50-java-tutorials/?s=c7ff97106446ccffa6904f57d21c9b97" title="Return to Java Tutorials">Java Tutorials</a></strong></li>
+	<li class="next"><a href="http://www.dreamincode.net/forums/topic/246260-add-a-system-tray-icon-to-your-swing-app/page__view__new?s=c7ff97106446ccffa6904f57d21c9b97">Next Topic &#8594;</a></li>
+</ul>
+
+<!-- BOTTOM BUTTONS -->
+<div class="topic_controls clear">
+	
+	<span class="pagination no_pages left">Page 1 of 1</span>
+
+
+</div>
+<!--<hr />-->
+
+<!-- ACTIVE USERS -->
+
+
+<!-- Close topic -->
+</div>
+
+
+
+<!--/topicViewTemplate-->
+            <br class="clear">
+          </div>
+          <!--included content-->
+<!-- ads_bottom-->
+
+<table width="100%" align="center" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+	<td valign="top" align="center">
+		<div id="div-gpt-ad-1326943007260-4" style="width:336px; height:280px;">
+	<script type="text/javascript">
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1326943007260-4'); });
+	</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ads_002"></script>
+	</div>
+		</td>
+<td valign="top" width="100%" align="left">		
+		<div id="related" style="margin-top: -25px;">
+					<style>
+		.related ul { list-style-type: circle; font-size: 12px; font-weight: bold; }
+        .related li { margin-bottom: 5px; background-position: left 7px !important; margin-left: -35px; }
+		.related h2 { font-size: 18px; font-weight: bold; }
+		.related a { color: blue; }
+		</style>
+		<div class="related">
+<h2>Related Java Topics<sup>beta</sup></h2><ul><li><a href="http://www.dreamincode.net/forums/topic/126974-system-tray-issues/" title="2 Replies - Topic Started: September 20, 2009, 9:07 pm" '="">System Tray Issues - Hide From The System Tray While The Form Is Still Visible</a> </li><li><a href="http://www.dreamincode.net/forums/topic/190376-dialog-box/" title="2 Replies - Topic Started: September 14, 2010, 4:52 pm" '="">Dialog Box - Want To Show A Ballon Dialog Baox In System Tray Ico</a> </li><li><a href="http://www.dreamincode.net/forums/topic/306877-help-splash-screen-tutorial/" title="5 Replies - Topic Started: January 12, 2013, 1:25 pm" '="">[HELP] Splash Screen Tutorial</a> </li><li><a href="http://www.dreamincode.net/forums/topic/57211-swing-activate-java-swing-app-keystrokes-alt-f/" title="9 Replies - Topic Started: July 11, 2008, 3:14 am" '="">Swing - Activate Java Swing App - Keystrokes Alt -F</a> </li><li><a href="http://www.dreamincode.net/forums/topic/210350-newbie-java-swing-app/" title="7 Replies - Topic Started: January 17, 2011, 9:31 am" '="">Newbie Java Swing App</a> </li><li><a href="http://www.dreamincode.net/forums/topic/330218-adding-support-jars-in-netbeans-building-maps-into-swing-app/" title="3 Replies - Topic Started: September 28, 2013, 4:31 pm" '="">Adding Support Jars In Netbeans - Building Maps Into Swing App</a> </li><li><a href="http://www.dreamincode.net/forums/topic/268463-creating-windowsosx-tray-icon/" title="1 Replies - Topic Started: February 27, 2012, 11:54 am" '="">Creating Windows/OSX Tray Icon</a> </li><li><a href="http://www.dreamincode.net/forums/topic/254316-adding-icon-to-gridlayout/" title="9 Replies - Topic Started: November 4, 2011, 6:05 pm" '="">Adding Icon To GridLayout</a> </li><li><a href="http://www.dreamincode.net/forums/topic/306750-getting-started-with-javafx-2/" title="12 Replies - Topic Started: January 11, 2013, 7:24 pm" '="">Getting Started With JavaFX 2</a> <sup style="color: red;">Tutorial</sup></li><li><a href="http://www.dreamincode.net/forums/topic/225106-java-swing-app-wont-create-text-file/" title="7 Replies - Topic Started: March 30, 2011, 9:18 am" '="">Java Swing App Won't Create Text File</a> </li></ul></div>			</div>
+		</td>
+        
+	</tr>
+</tbody></table>
+
+<!--/ads_bottom-->
+
+<!--/ included content-->
+
+          <script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/lightbox.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	// Lightbox Configuration
+	LightboxOptions = Object.extend({
+	    fileLoadingImage:        'http://cdn.dreamincode.net/forums/public/style_images/master/lightbox/loading.gif',     
+	    fileBottomNavCloseImage: 'http://cdn.dreamincode.net/forums/public/style_images/master/lightbox/closelabel.gif',
+	    overlayOpacity: 0.8,   // controls transparency of shadow overlay
+	    animate: true,         // toggles resizing animations
+	    resizeSpeed: 7,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
+	    borderSize: 10,         //if you adjust the padding in the CSS, you will need to update this variable
+		// When grouping images this is used to write: Image # of #.
+		// Change it for non-english localization
+		labelImage: "Image",
+		labelOf: "of"
+	}, window.LightboxOptions || {});
+/* Watch for a lightbox image and set up our downloadbutton watcher */
+document.observe('click', (function(event){
+    var target = event.findElement('a[rel^=lightbox]') || event.findElement('area[rel^=lightbox]');
+    if (target) {
+        event.stop();
+        gbl_addDownloadButton();
+    }
+}).bind(this));
+var _to    = '';
+var _last  = '';
+function gbl_addDownloadButton()
+{
+	if ( typeof( ipsLightbox.lightboxImage ) != 'undefined' && ipsLightbox.lightboxImage.src )
+	{
+		if ( _last != ipsLightbox.lightboxImage.src )
+		{
+			if ( ! $('gbl_d') )
+			{
+				$('bottomNav').insert( { top: "<div id='gbl_d' style='text-align:right;padding-bottom:4px;'></div>" } );
+			}
+			
+			$('gbl_d').update( "<a href='"+ ipsLightbox.lightboxImage.src + "' target='_blank'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/lightbox/download-icon.png' /></a>" );
+			
+			_last = ipsLightbox.lightboxImage.src;
+		}
+	}
+	
+	/* Check for init and then keep checking for new image */
+	_to = setTimeout( "gbl_addDownloadButton()", 1000 );
+}
+//]]>
+</script>
+
+        </div><!-- /ipbwrapper -->
+      </div><!-- /content_inner -->
+    </div><!--/content_hold-->	
+
+    <!--included content-->
+			
+<div id="sidebar">
+<div style="margin-left: 35px; padding-top: 10px; text-align: center;">
+<a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ask_a_question_336.png"></a>
+<br>
+<!-- begin ad tag (tile=2) -->
+<div id="div-gpt-ad-1326943007260-2" style="width: 300px; margin-left: 25px;">                                                                   
+<!-- begin ad tag (tile=2) -->
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=' + ord + '?"><\/script>');
+//]]>
+</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/general_002"></script><div class="GoogleActiveViewClass" id="DfpVisibilityIdentifier_1086489760162735" data-admeta-dfp="4585/ns.dreamincode/general,300,600,9227027854749449719"><div id="google_ads_div_505715"><iframe style="border: 0px none;" marginheight="0" marginwidth="0" scrolling="no" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a_003.htm" name="google_ads_iframe_505715" id="google_ads_iframe_505715" frameborder="0" height="600" width="300"></iframe></div></div>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=123456789?" border="0" alt="" /></a></noscript>
+<!-- end ad tag -->
+</div>
+</div>
+<div id="sidebar_inner">
+
+	
+<div class="column1">
+  <!-- google_ad_section_start(weight=ignore) -->
+    <div class="navigation">
+      
+
+		
+		<h2><a href="http://www.dreamincode.net/forums/forum/72-general-discussion/">General Discussion</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/forum/1-caffeine-lounge/" title="This is our off-topic forum for discussions related to non-programming topics including: sports, current events, games, music, movies, food, drink, TV, geek related (toys &amp; technology), debates, life events, rants, and occasionally religion and politics. ">Caffeine Lounge</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/93-corner-cubicle/" title="Off-Topic discussion of IT related topics. This is the forum for professionals and those interested in serious discussion of topics related to the world of IT. It all happens here in the corner cubicle. ">Corner Cubicle</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/110-student-campus/" title="A forum just for students. Talk about colleges, classes, resources for students, homework, and other topics related to life in school. ">Student Campus</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/82-software-development/" title="Discuss topics related to developing software. Including architecture, design patterns, documentation, software industry, and other non-language specific programming topics. ">Software Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/83-industry-news/" title="A place for topics that announce various news from the web/software development industry (product release announcements, updates, new services etc.)">Industry News</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/65-introduce-yourself/" title="A place where you can introduce yourself to the community and greet other new members.">Introduce Yourself</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/201-nightmareincode/" title="*NEW* - Post the worst code you come across and have a good laugh. Because sometimes your code dreams, are really code nightmares. ">Nightmare.In.Code</a></li>
+										</ul>
+		
+		<h2><a href="http://www.dreamincode.net/forums/forum/76-programming-help/">Programming Help</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/forum/15-c-and-c/" title="Expert programming help for C, and C++! Ask questions about homework assignments, or any other C/C++ related problems. C++ is a great language when beginning programming. ">C and C++</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/67-vbnet/" title="Ask questions about Microsoft's VB.NET programming language.">VB.NET</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/32-java/" title="Post your Java questions in here. We're happy to help with homework assignments, work projects, or any other java related questions. Java is common when beginning computer programming.">Java</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/84-c/" title="Object Oriented Programming at its finest. Encompassing power with ease of use, C# has become one of the top programming languages of the new age.">C#</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/30-aspnet/" title="Having some problems with ASP.NET programming? Pop in here and ask your question!">ASP.NET</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/142-net-framework/" title="">.NET Framework</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/21-vb6/" title="Our Visual Basic experts are happy to help with homework assignments, commercial applications, or any other VB question you may have! Visual Basic is good to learn programming. ">VB6</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/28-php/" title="Having some PHP problems? Need some help with a few functions? This is the place to ask! ">PHP</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/70-ruby/" title="This up-and-coming language is easy to learn, fast to develop, and very powerful. Get help with the Ruby on Rails framework or any other Ruby questions you have!">Ruby</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/29-python/" title="">Python</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/31-coldfusion/" title="It's the other white meat... a rapid application development language that will have you hooked in no time! From cfoutput to components, we can help you out!">ColdFusion</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/14-databases/" title="mySQL, PostgreSQL, Access, SQL, and Oracle... you've got a database question... we've got database answers!">Databases</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/62-other-languages/" title="Discuss languages that don't have a specific forum. Including COBOL, Fortran, ADA, Basic, etc. ">Other Languages</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/69-game-development/" title="Get help with anything game development related. Programming, 3D Engines, Art, Design and Math etc.">Game Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/109-mobile-development/" title="Discuss developing applications for mobile phones. Including Android, iPhone, and other mobile platforms. ">Mobile Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/126-52-weeks-of-code/" title="">52 Weeks Of Code</a></li>
+										</ul>
+		
+		<h2><a href="http://www.dreamincode.net/forums/forum/74-web-development/">Web Development</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/forum/63-web-development/" title="Discuss anything that doesn't fit in the other web development forums.">Web Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/4-html-css/" title="Have questions about HTML, XHTML, CSS? We'll get you headed in the right direction! ">HTML &amp; CSS</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/90-javascript/" title="JavaScript and AJAX, it's what Web 2.0 is all about. Post your JavaScript related questions here!">JavaScript</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/3-graphic-design/" title="Photoshop and Corel gurus come on in! Can't figure out how to do that cool effect? Have some questions or cool web images you've made? Post em' here">Graphic Design</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/8-flash-actionscript/" title="Let our Flash and ActionScript experts answer your questions. From simple tweens to advanced flash remoting, we're happy to help!">Flash &amp; ActionScript</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/89-blogging/" title="Wordpress, Blogger, Plugins, Themes, Skins, Pay Per Post, and anything else related to the Blogging industry. ">Blogging</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/59-seo-advertising/" title="Advertising, SEO, AdSense, AdWords, Link Trades, and more! Now that you've created your website, you've gotta drive traffic to it. Discuss current trends and techniques here. ">SEO &amp; Advertising</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/88-web-servers-hosting/" title="Apache, IIS, Shared Hosting, Dedicated Hosting, Colocation. We'll make sure you get your site online and keep it online!">Web Servers &amp; Hosting</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/5-site-check/" title="Post your web site to be reviewed by fellow dream.in.code members. ">Site Check</a></li>
+										</ul>
+
+      	  <!-- DIC_160x600_Left_Default -->
+		<div id="div-gpt-ad-1326943007260-0" style="width:160px; height:600px;">
+		<script type="text/javascript">
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1326943007260-0'); });
+		</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ads"></script><div id="div-gpt-ad-1326943007260-0_ad_container"><div data-type="ad" data-publisher="lqm.dreamincode.site" data-zone="ron" data-format="160x600"><iframe id="dmad1" allowtransparency="false" style="z-index:10" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="600" width="160"></iframe></div>
+
+<script type="text/javascript">
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script'); 
+        _dma.type = 'text/javascript';
+        _dma.async = true; 
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js');}
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000);})();
+</script>
+</div>
+
+		</div>
+	        <br>
+    </div>
+	<!-- google_ad_section_end -->
+</div><div class="column2">
+<!--   	<div id="search">
+  		<h2>Search<sup><span style="color:red; font-size: 10px;">Updated!</span></sup><span class="w00t">w00t</span></h2>
+  		<span style="font-size: 11px; color: #CCCCCC; font-weight: bold;"><B>Over 509,000 Pages!</B></span>
+  	  <form style="margin:0;" id="searchbox_000872085005376217422:zamd_7elal4" action="/home">
+  			<input type="hidden" name="cx" value="000872085005376217422:zamd_7elal4" />
+  			<input type="hidden" name="p" value="google" />
+  			<input type="hidden" name="cof" value="FORID:11" />
+  			<input name="q" type="text" size="9" style="font-size: 14px; font-weight: bolder; margin-left: -2px;" value="" />
+  			<input type="submit" name="sa" value="Go" />
+  	  </form>
+  	  <a href="/forums/index.php?app=core&module=search" style="text-decoration: none;"><span style="font-size: 11px; color: #CCCCCC; font-weight: bold; text-decoration: underline;">Advanced Forum Search</span></a>
+  	</div> -->
+  	<div class="tutorials" style="margin-top: -15px;">
+   		<h2>Follow &amp; Share</h2>
+		<!-- Place this tag in the <head> of your document -->
+<script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement("script");
+po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+
+<!-- Place this tag where you want the badge to render -->
+<div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 170px; height: 85px;"><iframe title="+Badge" data-gapiattached="true" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/badge.htm" name="I0_1417249660039" id="I0_1417249660039" vspace="0" tabindex="0" style="position: static; top: 0px; width: 170px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 85px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><br>
+  		<a href="http://www.dreamincode.net/rss/featured.php" rel="alternate"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/feed-icon32x32.png" alt="Dream.In.Code RSS Feed" style="border:0; margin: 2px;" height="32" width="32"></a>
+  		<a href="http://www.linkedin.com/e/gis/1506187" rel="alternate"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/linkedin-icon32x32.png" alt="Dream.In.Code LinkedIn Group" style="border:0; margin: 2px;" height="32" width="32"></a>
+  		<a href="http://www.twitter.com/dreamincode" rel="alternate"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/twitter-icon32x32.png" alt="Follow Us On Twitter" style="border:0; margin: 2px;" height="32" width="32"></a>
+  		<a href="http://www.facebook.com/pages/DreamInCode/62219401412" rel="alternate"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/facebook.png" alt="Fan Us On Facebook" style="border:0; margin: 2px;" height="32" width="32"></a>
+  <!-- 		<script type="text/javascript">
+  			document.write('<a rel="nofollow" href="http://del.icio.us/post?url=http://www.dreamincode.net&title=Dream.In.Code Programming Community" title="Bookmark This to del.icio.us"><img src="http://cdn.dreamincode.net/home/images/80727937.png" alt="delicious" height="16" width="16" style="margin-left: 2px;" /></a>');
+  			document.write('<a rel="nofollow" href="http://digg.com/submit?phase=2&url='+encodeURIComponent(location.href)+'" title="Digg This!"><img src="http://cdn.dreamincode.net/home/images/89072042.png" alt="digg" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&bkmk='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Google"><img src="http://cdn.dreamincode.net/home/images/10847106.png" alt="google" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow"  href="http://www.newsvine.com/_tools/seed&save?u='+encodeURIComponent(location.href)+'&h='+encodeURIComponent(document.title)+'" title="Bookmark to Newsvine" ><img src="http://cdn.dreamincode.net/home/images/27563199.png" alt="newsvine" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://reddit.com/submit? url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Add to reddit"><img src="http://cdn.dreamincode.net/home/images/10796749.png" alt="reddit" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://www.spurl.net/spurl.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Spurl This!"><img src="http://cdn.dreamincode.net/home/images/67105361.png" alt="spurl" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://technorati.com/faves?add='+encodeURIComponent(location.href)+'" title="Add to Technorati Favorites" ><img src="http://cdn.dreamincode.net/home/images/81723336.png" alt="Technorati" height="16" width="16" /></a>');
+  		</script> -->
+		<p><a href="http://feeds.feedburner.com/dic_featured"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/dic_featured.gif" style="border:0; margin-top: 2px; margin-left: 3px;" alt="" height="26" width="88"></a></p>
+  		<!-- google_ad_section_end -->
+
+
+<!--		<h2>Give It A Try!</h2>
+<div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="ros" lqm_format="160x250"></div>-->
+
+		
+
+
+		<!-- <h2>Celebrate &amp; Win!</h2>
+		<a href="http://www.dreamincode.net/forums/topic/247091-dreamincode-10th-birthday500k-members-contest/"><img src="http://cdn.dreamincode.net/home/images/10yr_170x200.jpg"></a> -->
+  		
+<h2><a href="http://www.dreamincode.net/forums/showforum50.htm">Java Tutorials</a></h2>
+<ul>
+	<li><a href="http://www.dreamincode.net/forums/topic/353210-swing-passive-model-view-presenter-in-5-minutes/">Swing, Passive Model-View-Presenter in 5 minutes.</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/351919-book-review-murachs-java-servlets-and-jsp/">Book Review: Murach's Java Servlets and JSP</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/347981-phobos-a-javafx-games-engine-part-2-javafx-scene-api-and-the-fsm/">Phobos - A JavaFX Games Engine: Part 2 - JavaFX Scene API and the FSM</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/347115-maven-tutorial-2-adding-dependencies/">Maven Tutorial 2 - Adding Dependencies</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/346099-maven-tutorial-1-installation-and-getting-started/">Maven Tutorial 1 - Installation and Getting Started</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/345784-phobos-a-javafx-games-engine-part-1-intro-to-threading-and-dp/">Phobos - A JavaFX Games Engine: Part 1 - Intro to Threading and DP</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/339799-swing-to-javafx/">Swing to JavaFX</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/339702-swing-top-down-2/">Swing, Top-Down 2</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/339462-swing-top-down-with-gridbaglayout/">Swing, Top-Down (with GridBagLayout)</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/333679-basic-java-types-variables-operators/">Basic Java: Types, Variables, Operators</a></li>
+		<li><a href="http://www.dreamincode.net/forums/showforum50.htm"><strong>217 More Java Tutorials...</strong></a></li>	</ul>
+	
+  
+  		<h2>Reference Sheets</h2>
+  		<a href="http://www.dreamincode.net/forums/showtopic17947.htm"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/refsheets5.png" height="157" width="151"></a>
+  
+  		<h2><a href="http://www.dreamincode.net/code">Code Snippets</a></h2>
+<ul>
+
+
+							 <li><a href="http://www.dreamincode.net/forums/forum/206-c-snippets/" title="">C Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/208-c-snippets/" title="">C++ Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/209-java-snippets/" title="">Java Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/210-visual-basic-snippets/" title="For VB6 and older versions. Please post VB.NET Snippets in the VB.NET Snippets section.">Visual Basic Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/211-c#-snippets/" title="">C# Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/212-vbnet-snippets/" title="">VB.NET Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/213-php-snippets/" title="">PHP Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/214-python-snippets/" title="">Python Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/215-ruby-snippets/" title="">Ruby Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/216-coldfusion-snippets/" title="">ColdFusion Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/217-sql-snippets/" title="">SQL Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/218-assembly-snippets/" title="">Assembly Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/219-functional-programming-snippets/" title="For functional languages such as Lisp, Clojure, Scheme, Erlang, Haskell, OCaml, F#, and others.">Functional Programming Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/220-perl-snippets/" title="">Perl Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/221-htmlcss-snippets/" title="">HTML/CSS Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/222-jvscript-snippets/" title="">Javascript Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/223-flashactionscript-snippets/" title="">Flash/ActionScript Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/224-other-languages-snippets/" title="For languages without individualized snippets sections">Other Languages Snippets</a></li>
+							</ul>
+
+
+
+
+  
+  		<!-- google_ad_section_start(weight=ignore) -->
+  		<h2><a rel="nofollow" href="http://www.dreamincode.net/?p=chat">DIC Chatroom</a></h2>
+  		<ul><li><a rel="nofollow" href="http://www.dreamincode.net/?p=chat">Join our IRC Chat</a></li></ul>
+  		<h2>Bye Bye Ads</h2>
+  		<a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?act=paysubs&amp;CODE=index"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/dicpp.gif" height="32" width="141"></a>
+  		<!--<h2>Monthly Drawing</h2>
+  		<a href="/forums/index.php?showtopic=19383" rel="nofollow"><img alt="Thumb Drive" width="130" height="77" src="http://cdn.dreamincode.net/home/images/monthlygiveaway.gif"/></a>-->
+   
+            <!-- google_ad_section_end -->
+  	</div>
+</div>
+<div style="padding-left: 50px; position: relative; clear: both;">
+<iframe src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/likebox.htm" scrolling="no" style="border:none; overflow:hidden; width:300px; height:287px;" allowtransparency="true" frameborder="0"></iframe>
+</div>
+
+  </div> <!-- /sidebar_inner-->
+</div> <!-- /sidebar -->
+
+
+<!--/ included content-->
+  </div><!--/main_content-->
+
+  <div id="footer">
+    <!--included content-->
+<!-- google_ad_section_start(weight=ignore) -->	
+<br><br>
+<div align="center">
+	<strong><a href="http://www.dreamincode.net/forums/index.php?showannouncement=22">FAQ</a> | <a href="http://www.dreamincode.net/forums/blog/1081-dreamincode-team-blog/">Team Blog</a> | <a href="http://www.dreamincode.net/forums/forum/106-site-questions-support/">Feedback/Support</a> | <a href="http://www.dreamincode.net/downloads/MediaKit.pdf" rel="nofollow">Advertising</a><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/pdf.gif" valign="middle" border="0"> | <a href="http://www.dreamincode.net/?p=tos" rel="nofollow">Terms of Use</a> | <a href="http://www.dreamincode.net/?p=privacy" rel="nofollow">Privacy Policy</a> | <a href="http://www.dreamincode.net/?p=about" rel="nofollow">About Us</a> 
+</strong></div><strong>
+
+<br>
+
+
+<br>
+
+<div align="center">Copyright 2001-2014 <a href="http://www.mediagroup1.com/" rel="nofollow"><b>MediaGroup1 LLC</b></a>, All Rights Reserved<br>A <a href="http://www.mediagroup1.com/" rel="nofollow"><b>MediaGroup1 LLC</b></a> Production - Version 6.0.2.1.36<br>Server: secure3</div>
+
+</strong></div><strong>
+
+
+
+
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/thickbox.js"></script>
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1',{nocss: true});
+jQuery(document).ready(function() {
+	jQuery("#cse-search-box").submit(function () {
+	var customSearchControl = new google.search.CustomSearchControl('000872085005376217422:zamd_7elal4');
+	customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+	tb_show("Dream.In.Code Search Results - Powered By <img src='http://www.google.com/cse/images/google_custom_search_smwide.gif'>", "#TB_inline?height=480&width=800");
+	var drawOptions = new google.search.DrawOptions();
+	customSearchControl.draw(document.getElementById("TB_ajaxContent"), drawOptions);
+	customSearchControl.execute(document.getElementById("query").value);
+	return false;
+	});
+});
+</script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a_003" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/defaulten.js" type="text/javascript"></script>
+
+
+
+
+<!-- <style>.hilite { background-color: #ff0; }</style>
+<script type="text/javascript" src="http://cdn.dreamincode.net/home/templates2/se_hilite.js"></script>
+ -->
+
+
+<!-- Google Website Optimizer Tracking Script 
+<script type="text/javascript">
+if(typeof(_gat)!='object')document.write('<sc'+'ript src="http'+
+(document.location.protocol=='https:'?'s://ssl':'://www')+
+'.google-analytics.com/ga.js"></sc'+'ript>')</script>
+<script type="text/javascript">
+try {
+var gwoTracker=_gat._getTracker("UA-69851-6");
+gwoTracker._trackPageview("/2514943763/test");
+}catch(err){}</script>
+ End of Google Website Optimizer Tracking Script -->
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-d4Szpdj6xMw-o"
+};
+</script>
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-d4Szpdj6xMw-o.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+
+<script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/a_002" type="text/javascript"></script>
+
+<!-- <script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110104.1'></script> -->
+
+<script type="text/javascript">
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script'); 
+        _dma.type = 'text/javascript';
+        _dma.async = true; 
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js');}
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000);})();
+</script>
+
+
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/dreamincode.js"></script><script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/ga.js" type="text/javascript"></script><script src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/beacon.js"></script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/v60.js"></script><script type="text/javascript">var pvar = { cid: "ziffdavis", content: "0", server: "secure-us" };var trac = nol_t(pvar);trac.record().post();</script><script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/dreamincode_002.js"></script><script type="text/javascript">try { var ns_pageTracker = _gat._getTracker("UA-25910482-47"); ns_pageTracker._trackPageview(); } catch(err) {} </script><script type="text/javascript">COMSCORE.beacon({c1:2,c2:6036316,c3:"",c4:"",c5:"",c6:"",c15:""});</script>
+
+<!-- google_ad_section_end -->	
+
+
+
+<div align="center">
+</div>
+
+<!--/ included content-->
+
+
+
+
+  </strong></div><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/adscout.gif" id="control_pixel" name="control_pixel" height="1" width="1" border="0"><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/postmessageRelay.htm" id="oauth2relay768381778" name="oauth2relay768381778"></iframe><strong>
+			
+
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/shCore.js"></script>
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/shBrushBash.js"></script>
+
+
+
+
+<script type="text/javascript">
+jQuery(function(){
+  jQuery('pre').removeClass('brush: bash').addClass('brush: java');
+});
+</script>
+<script type="text/javascript" src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/shBrushJava.js"></script>
+
+
+
+
+
+
+
+	<link type="text/css" rel="stylesheet" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/shCore.css">
+	<link type="text/css" rel="stylesheet" href="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/shThemeDefault.css">
+	<script type="text/javascript">
+                SyntaxHighlighter.config.clipboardSwf = 'http://cdn.dreamincode.net/syntax/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+
+
+  
+</strong><div style="display: none;" id="overlay"></div><div style="display: none;" id="lightbox"><div style="width: 250px; height: 250px;" id="outerImageContainer"><div id="imageContainer"><img id="lightboxImage"><div id="hoverNav"><a id="prevLink" href="#"></a><a id="nextLink" href="#"></a></div><div id="loading"><a id="loadingLink" href="#"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/loading.gif"></a></div></div></div><div id="imageDataContainer"><div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><a id="bottomNavClose" href="#"><img src="Add%20A%20System%20Tray%20Icon%20To%20Your%20Swing%20App.%20-%20Java%20Tutorials%20_%20Dream.In.Code_files/closelabel.gif"></a></div></div></div></div><iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_9460390000532"></iframe></body></html>

@@ -1,0 +1,71 @@
+Windows System Tray which is located on the lower right hand side, is a specialized area of desktop where you can see tiny icons of certain process running in the operating system. This enables users to handle respective apps in a easier way.
+The following tutorial covers the basics on creating System Tray application in java with an example program.
+
+
+
+             The java.awt.SystemTray class introduced in Java SE version 6 represents the system tray for a desktop. The system tray can be accessed by calling the static SystemTray.getSystemTray() method as shown in the below code snippet
+ final SystemTray systemTray = SystemTray.getSystemTray();
+         
+Its a best practice to check whether system tray is supported before trying to access it. Java provides a simple function isSupported() which is generally written as SystemTray.isSupported(), to perform this check. If supported it returns Boolean value true else false .
+             Next we need to add an icon to our app, this can be done using TrayIcon class as shown below.
+
+final TrayIcon trayIcon = new TrayIcon(new ImageIcon(icoPath, "omt").getImage(), "Java App");
+
+Very important next step is to add the TrayIcon to System tray as shown below
+systemTray.add(trayIcon);
+
+First parameter is the path to icon, second is the title displayed when you hover mouse over the icon. Apart from using TrayIcon class to display icon, we can display some message using it as shown in the below code snippet.
+trayIcon.displayMessage("System Tray App","Simple Demo",TrayIcon.MessageType.INFO);
+
+
+
+To remove the system tray icon and to stop the process we need to invoke remove() method.
+systemTray.remove(trayIcon);
+
+This will remove the icon from System Tray as well close the process. I have performed this operation inside mouse clicked event in the example. So when you click the icon, process will be closed.
+
+Java_SystemTray.java
+
+import java.awt.SystemTray;
+import java.awt.TrayIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+/**
+ *
+ * @author Machine2
+ */
+public class Java_SystemTray {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String icoPath = "C:/Users/Machine2/Desktop/CTE/Java/Java System Tray icon/java.png";
+
+        if (SystemTray.isSupported()) {
+            final SystemTray systemTray = SystemTray.getSystemTray();
+            final TrayIcon trayIcon = new TrayIcon(new ImageIcon(icoPath, "omt").getImage(), "Java App");
+            trayIcon.setImageAutoSize(true);// Autosize icon base on space
+
+            MouseAdapter mouseAdapter = new MouseAdapter() {
+
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    systemTray.remove(trayIcon);
+                }
+            };
+            trayIcon.addMouseListener(mouseAdapter);
+            try {
+                systemTray.add(trayIcon);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+}
+
+
+Source co

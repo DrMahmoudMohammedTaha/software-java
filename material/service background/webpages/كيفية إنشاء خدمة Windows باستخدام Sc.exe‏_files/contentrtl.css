@@ -1,0 +1,744 @@
+/* Overwrite the default margin from Default.css */
+.gsfx_brnd_PageContainer ol, .gsfx_brnd_PageContainer ul
+{
+    margin: 16px 40px 16px 0px;
+    padding: 0;
+}
+#mainColumn, #mainColumn fieldset,
+#mainColumn fieldset legend,
+#mainColumn table,
+#mainColumn tr, #mainColumn td
+{
+    direction: rtl;
+}
+
+#mainColumn
+{
+    text-align: right;
+}
+
+bdo
+{
+    direction: ltr;
+}
+
+.wp.slc.alphaSubList img
+{
+    margin-right: 0px;
+    margin-left: 3px;
+}
+
+.wp.slc.alphaSubList ul
+{
+    margin-right: 30px;
+}
+
+.wp.lastReview td.label,
+.pz .news .content td.textAlign,
+.wp .searchRefine .wideColumn .innerTable .boldColumn,
+.wp .searchRefine .wideColumn .innerTable .boldSpecialColumn,
+.wp .searchRefine .wideColumn .innerTable .boldColumnTip
+{
+    text-align: left;
+}
+
+.pz .wp .savedNewsgroup table tr th,
+.pz .alignColumn,
+.lcr table th,
+.dllHelpSearch table th,
+.dllHelpResults table th,
+.dllHelpInfo table th,
+.wp .fms .SURVEYINTROTEXT,
+.wp .fms .SURVEYTHANKYOUTEXT,
+.wp .fms .ANSWERTEXT,
+.wp .fms .GHR_QUESTIONTEXT,
+.wp .fms .QUESTIONREQUIRED,
+.wp .fms .NAVIGATION td,
+.wp.m2 .list caption
+{
+    text-align: right;
+}
+
+.dllHelpResults img.prevSrch
+{
+    margin-left: 3px;
+}
+
+.dllHelpResults img.nextSrch
+{
+    margin-right: 3px;
+}
+
+.dllHelpInfo img.prevSrch
+{
+    margin-left: 3px;
+}
+
+.dllHelpInfo img.nextSrch
+{
+    margin-right: 3px;
+}
+
+.kb .si .section .portrait,
+.psContainers
+{
+    float: right;
+    width: 100%;
+}
+
+.wp div.mainTree .tree div.treeLevel
+{
+    margin: 0px 1.25em 0px 0px;
+}
+
+#mainColumn .wp .imageColumn
+{
+    padding: 0px 12px 0px 2px;
+}
+
+.wp .list .image
+{
+    padding: 0px 0px 0px 5px;
+}
+
+.breadcrumbs img
+{
+    margin-right: 0px;
+    margin-left: 3px;
+}
+/* kb articles */
+.kb .kbSC .section .qImg
+{
+    border-left: 3px solid #999999;
+}
+
+.kb .kbSC .section .aImg
+{
+    border-right: 3px solid #999999;
+}
+
+.kb #kb_hotfix_link
+{
+    float: right;
+}
+
+.kb span.kb_expandtext_background, .kb span.kb_collapsetext_background
+{
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+.kbSurvey h2.subTitle img.kb_tabs_toggle
+{
+    float: right;
+    left: auto;
+    right: 7px;
+}
+
+.kbSurvey h2.subTitle span
+{
+    float: right;
+    padding-right: 10px;
+    padding-left: 0px;
+}
+
+.kbSurvey h2.subTitle img.kb_tabs_toggle
+{
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+.kb .section .table td, .kb .section .table th
+{
+    text-align: right;
+    padding: 5px 0px 5px 10px;
+}
+/* Survey */
+.wp .fms .SURVEYHEADERIMAGE
+{
+    margin-left: 0px;
+}
+
+.wp .fms .GHR_QUESTIONTEXT
+{
+    margin-right: 5px;
+}
+
+.wp .fms .PROGRESSBAR
+{
+    border-left: 1px solid #ccddee;
+    border-right: 1px solid #8899aa;
+}
+
+
+.wp .fms .QUESTIONCONTAINER table,
+.wp .fms .NAVBUTTON
+{
+    margin-right: 10px;
+    margin-left: 3px;
+}
+
+.wp .fms .QUESTIONTEXT
+{
+    margin-right: 10px!important;
+    margin-left: 3px;
+}
+
+.wp .fms .ANSWERBOX
+{
+    margin-right: 10px!important;
+}
+
+.srchOppose
+{
+    text-align: left;
+}
+
+#contentArea #mainColumn #fmsSurvey
+{
+    padding-right: 32px;
+    padding-left: 0px;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+/*FMS Inline Survey for KB's. If there are inline survey's for non KB's, this could cause a problem */
+
+
+/* Last Reviewed Webpart */
+.wp.lastReview,
+.webContentLastReviewed
+{
+    text-align: left!important;
+}
+
+a.custip span
+{
+    text-align: right;
+}
+
+a.custip:hover span, a.custip.show span
+{
+    right: 20px;
+    width: 180px;
+}
+
+.wp .LCT
+{
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+
+/* start new LinkContainer css */
+
+.LCT .list td
+{
+    text-align: right;
+    border-left: 0;
+    border-right: 0;
+}
+
+
+.list td.last
+{
+    border-left: 0;
+}
+
+.LCT ul
+{
+    margin-right: 30px;
+    margin-left: 0;
+}
+
+.textColumn ul li
+{
+    width: auto;
+}
+
+#SupportTools .textColumn ul li
+{
+    width: 100%;
+}
+
+.LCT .list ul
+{
+    margin-right: 25px;
+    margin-left: 0;
+}
+
+
+
+.rssImage
+{
+    float: left;
+}
+
+.LCT li.noBullet
+{
+    margin-left: 0;
+    margin-right: -23px;
+}
+
+a.imageBullet
+{
+    _float: right;
+    padding: 2px 0 2px 5px!important;
+    margin: 0px;
+    /*margin-right: -20px;*/
+}
+
+#mainColumn .wp .LCT .textColumn table ul span
+{
+    padding-right: 30px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#mainColumn .wp .LCT .textColumn table ul li
+{
+    margin-right: 30px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#mainColumn .LCT .textColumn ul
+{
+    padding-right: 10px;
+    margin-right: 0px;
+    padding-left: 0px!important;
+    margin-left: 0px!important;
+}
+
+#mainColumn .wp .LCT .textColumn table ul li.noBullet, #mainColumn .wp .LCT .textColumn table ul span.noBullet
+{
+    margin-right: 5px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#mainColumn .wp .LCT .textColumn table ul li span
+{
+    padding-right: 0px;
+}
+
+/* end new LinkContainer css */
+
+.lc .wideColumn #advancedOptions
+{
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+.lc .wideColumn #basicOptions
+{
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+.lcr table.results td:last-child
+{
+    padding-right: 3px;
+    padding-left: 20px;
+}
+
+.lcr table.results td:first-child
+{
+    padding-right: 20px;
+}
+
+.lc .wideColumn
+{
+    padding-left: 20px;
+}
+
+    .lc .wideColumn .innerTable td.boldColumn
+    {
+        padding: 5px 5px 5px 0;
+    }
+
+.lc .searchButton
+{
+    text-align: left;
+}
+
+.lc .submitsearch
+{
+    margin: 8px 0px 15px 15px;
+}
+
+.lcr #ExportToCSV
+{
+    text-align: left;
+    font-size: 70%;
+}
+
+.lc .wideColumn #ToggleButton img
+{
+    margin: 0 0 1px 3px;
+}
+
+.sr img.prevSrch
+{
+    margin-left: 3px;
+}
+
+.sr img.nextSrch
+{
+    margin-right: 3px;
+}
+
+.tocTxt
+{
+    padding-right: 5px;
+}
+
+.pageTitle div
+{
+    *float: right;
+}
+
+    .pageTitle div img
+    {
+        margin-right: 0px;
+        margin-left: 10px;
+    }
+/*Tabbed Content*/
+.scroller
+{
+    margin-left: 0px!important;
+    margin-right: 291px;
+}
+
+.tabMenu
+{
+    z-index: 2;
+    float: right;
+}
+
+.tabStyle
+{
+    margin-left: 0px;
+}
+
+.tabMenu a
+{
+    margin-left: 0px;
+}
+
+.tabStyle div.scroller .LCT .list
+{
+    padding-right: 0px;
+}
+
+.tabStyle div.scroller .LCT .textColumn ul
+{
+    padding-right: 13px;
+}
+
+    .tabStyle div.scroller .LCT .textColumn ul li, .tabStyle div.scroller .LCT .textColumn ul > span
+    {
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+
+        .tabStyle div.scroller .LCT .textColumn ul > span.noBullet, .tabStyle div.scroller .LCT .textColumn ul li.noBullet
+        {
+            padding-right: 0px;
+            margin-right: -4px;
+        }
+
+.tabStyle div.scroller .LCT .list td:first-child ~ td ul
+{
+    margin-right: 5px;
+}
+/*End Tabbed Content*/
+
+
+#divQuery
+{
+    padding-right: 4px;
+}
+
+#showorhide table td
+{
+    text-align: right;
+}
+
+.mainTable .innerTable th
+{
+    text-align: right;
+}
+
+#mainColumn .wp .search #query
+{
+    font-size: 0.8em;
+}
+
+#exactHits
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-left: 20px;
+}
+
+#noResultsDiv
+{
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.kb div.disclaimer.retiredkb img,
+.kb div.disclaimer.cc img,
+.kb div.disclaimer.mt img
+{
+    margin-right: 0px;
+    margin-left: 6px;
+    padding-left: 6px;
+}
+
+.kb div.csDisclaimerLink img,
+.kb div.mtDisclaimerLink img
+{
+    margin-right: 0px;
+    margin-left: 6px;
+    padding-left: 6px;
+}
+
+/***********************************************************************************/
+
+.advsearch .left
+{
+    float: right;
+}
+
+.advsearch .right
+{
+    float: left;
+}
+
+    .advsearch .right .custip img
+    {
+        position: relative;
+    }
+
+
+.advsearch #content #helplink
+{
+    text-align: left;
+}
+
+.advsearch #acListWrapperquery
+{
+    margin-left: 0px;
+    margin-right: -1px;
+}
+
+.advsearch #divquery
+{
+    padding-right: 0px;
+}
+
+.advsearch #tblLive #tdHelpLink
+{
+    text-align: left;
+}
+
+.advsearch .livecatalogtext
+{
+    font-size: 80%;
+}
+
+.advsearch span#poweredbycell
+{
+    margin-left: 37px;
+    margin-right: 0px;
+}
+
+.advsearch td#poweredbycell
+{
+    text-align: left;
+}
+
+    .advsearch td#poweredbycell img
+    {
+        height: 17px;
+        line-height: 17px;
+        width: 78px;
+        vertical-align: top;
+    }
+
+.advsearch #divSubmitLive
+{
+    _padding-left: 4px;
+    _padding-bottom: 2px;
+}
+
+.advsearch input[type|="checkbox"]
+{
+    margin-right: 0px;
+    margin-left: 3px;
+}
+
+.advsearch .searchBoxWrapper
+{
+    left: 0px;
+    right: 263px;
+}
+
+.advsearch #spanSubmit input
+{
+    left: 0px;
+    right: 364px;
+}
+
+.sr
+{
+    margin: 0px 15px 0px 0px;
+}
+
+.resultsFooterLink a, .resultsFooterLink span
+{
+    float: right;
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+
+.sr .resultsHeaderText
+{
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 1px;
+}
+
+.sr .resultsFooterText
+{
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 10px;
+}
+
+.imagesdiv
+{
+    float: right;
+}
+
+#qpfInner1
+{
+    *float: right;
+}
+
+#qpfInner2
+{
+    *float: right;
+}
+
+#qpfInner1 #productDialog
+{
+    margin-left: 20px;
+    margin-right: 0px;
+}
+
+#selprod #content img
+{
+    float: right;
+}
+
+#selprod #content #products
+{
+    margin-right: 50px;
+}
+
+#selprod #content #asst
+{
+    text-align: left;
+}
+
+#gss_easy_warning table td
+{
+    text-align: right;
+}
+
+#mainColumn .psContainers .LCT h3,
+#mainColumn .psContainers .LCT ul,
+#mainColumn .psContainers .LCT ul li,
+#mainColumn .psContainers .LCT .more
+{
+    padding-right: 0px;
+}
+
+    #mainColumn .psContainers .LCT ul li
+    {
+        margin-right: 0px!important;
+    }
+
+#mainColumn .psContainers .LCT .imageColumn
+{
+    padding-right: 0px;
+    padding-left: 10px;
+}
+
+.pageTitle ~ .wp
+{
+    margin-right: 20px!important;
+}
+
+    .pageTitle ~ .wp .LCT .textColumn ul
+    {
+        padding-right: 0px!important;
+    }
+
+        .pageTitle ~ .wp .LCT .textColumn ul li
+        {
+            margin-right: 12px!important;
+        }
+
+    .pageTitle ~ .wp .LCT .textColumn .more
+    {
+        padding-right: 12px!important;
+    }
+
+.sc .columns td.SCMainColumn
+{
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
+#mainColumn .SCMainColumn .LCT .textColumn h3
+{
+    margin-right: 10px;
+}
+
+#mainColumn .SCMainColumn .LCT .textColumn .more
+{
+    text-align: left;
+}
+
+.pageTitle ~ .wp .LCT .textColumn ul li.noBullet
+{
+    margin-right: 0px!important;
+}
+
+#NoTab > .wp
+{
+    margin-right: -30px;
+}
+
+.tabStyle div.scroller .LCT .textColumn table:first-child p
+{
+    padding-right: 0px;
+}
+
+#acListDivproductInput
+{
+    padding-left: 1px!important;
+}
+
+.kb .subSectionHead.headCollapse, .kb .subSectionHead.headExpand
+{
+    background-position: right;
+}
+

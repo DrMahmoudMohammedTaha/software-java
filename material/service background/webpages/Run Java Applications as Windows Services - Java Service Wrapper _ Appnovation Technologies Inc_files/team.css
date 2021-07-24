@@ -1,0 +1,200 @@
+.page-team .region-content-top p {
+  color: #333;
+  font-size: 18px;
+}
+
+#block-views-departments-block {
+  margin-bottom: 9px;
+}
+
+
+.view-id-team.view-display-id-page .team-member {
+  display: inline-block !important;
+  vertical-align: bottom;
+}
+.view-id-team.view-display-id-page .team-inactive {
+  display: none !important;
+}
+.view-id-team.view-display-id-page .view-content {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/* Items team ==================== */
+.view-id-team.view-display-id-page {}
+.view-id-team.view-display-id-page .views-view-grid {
+}
+.view-id-team.view-display-id-page .views-view-grid > div {
+  display: none;
+  min-height: 260px;
+  margin: 6px 3px;
+  position: relative;
+}
+.view-id-team.view-display-id-page .views-view-grid > div.col-6 { }
+.view-id-team.view-display-id-page .views-view-grid .col-first {
+}
+.view-id-team.view-display-id-page .views-view-grid .col-last {
+
+}
+/* =============================== */
+
+/* items ========================= */
+.view-id-team.view-display-id-page .field-content .fteam {
+  display: none;
+}
+.view-id-team.view-display-id-page .team-photo {
+  width: 140px;
+}
+.view-id-team.view-display-id-page .team-photo img {
+  width: 140px;
+  height: 140px;
+}
+.view-id-team.view-display-id-page .team-name {
+  font-weight: bold;
+  font-size: 13px;
+  padding-bottom: 2px;
+  padding-left: 0;
+  width: 140px;
+  float: left;
+  position: absolute;
+  top: 140px;
+  letter-spacing: 1px;
+  background: #ebebeb;
+  opacity: 0.8;
+}
+
+.view-id-team.view-display-id-page .team-job {
+  font-size: 11px;
+  padding-left: 0;
+  width: 134px;
+  line-height: 17px;
+  position: static;
+  top: 130px;
+  color: #000;
+  background: #fff;
+  height: 56px;
+  padding: 26px 3px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: table-cell;
+  vertical-align: middle;
+}
+/* =============================== */
+
+/* Filters ======================= */
+section#content .view-departments .view-content {
+    text-align: center;
+}
+section#content .view-departments ul {
+    margin-bottom: 0px;
+}
+.view-departments {
+  display: inline-block;
+}
+
+.view-departments  li {
+  display: inline-block;
+  list-style-type: none;
+  background-color: #ebebeb;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 27px;
+  padding: 0 5px !important;
+  margin: 0 1px !important;
+  line-height: 28px;
+}
+.view-departments li.first{
+  margin-left: 0 !important;
+}
+.view-departments  li ul li {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.view-departments li li:after {
+  color: #0077AA;
+  content: '/';
+}
+
+.view-departments li.last:after {
+  content: '';
+}
+
+.view-departments span:not(:only-child), .view-departments > li span.views-field.views-field-name .field-content a {
+  display: none;
+}
+
+.view-departments input[type=radio] {
+  display: none;
+}
+
+.active-department-group a.active-department {
+  color: white;
+}
+
+.view-departments li.active-department-group,
+.view-departments .active-department-group li {
+  background-color: #0077aa;
+}
+.view-departments li.active-department-group li:after {
+  color: #7ac1e0;
+}
+
+.active-department-group a {
+  color: #7ac1e0;
+}
+
+/* =============================== */
+
+/* Fancybox ====================== */
+.view-display-id-page a.fancybox {
+  font-weight: bold;
+  font-size: 13px;
+  color: #000000;
+  text-decoration: none !important;
+}
+
+.fancybox-inner .fteam {
+  height: 520px;
+  overflow: hidden;
+}
+
+.fancybox-inner .fteam-photo {
+  margin: 10px;
+}
+
+.fancybox-inner .fteam-name {
+  color: #000;
+  font-weight: bold;
+  font-size: 32px;
+  padding: 10px;
+  position: absolute;
+  top: 446px;
+  width: 340px;
+}
+
+.fancybox-inner .fteam-job {
+  padding: 10px;
+  font-size: 18px;
+  overflow: hidden;
+  position: absolute;
+  top: 480px;
+  width: 340px;
+}
+
+.fancybox-inner .fteam-bio {
+  height: 430px;
+  margin-top: 10px;
+  overflow: auto;
+  padding: 10px;
+  padding-top: 0;
+  width: 400px;
+}
+
+.fancybox-inner .fteam-linkedin {
+  position: absolute;
+  top: 486px;
+  left: 390px;
+}
+/* =============================== */

@@ -1,0 +1,142 @@
+#selectblocker {
+	z-index:10000;
+	position:absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+}
+#lightbox{
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 100%;
+	z-index: 10001;
+	text-align: center;
+	line-height: 0;
+}
+
+#lightbox a img{ 
+	border: none; 
+}
+
+#outerImageContainer{
+	position: relative;
+	background-color: #fff;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	border: 1px solid #000000;
+}
+#outerIframeContainer{
+	position: relative;
+	background-color: #fff;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	border: 1px solid #000000;
+}
+
+#imageContainer{
+	padding: 10px;
+	margin: 0 auto;
+}
+#iframeContainer{
+	padding: 10px;
+	margin: 0 auto;
+}
+#iframecontent {
+	border: 0;
+}
+#iframeTop {
+	height: 10px;
+}
+#loading{
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	height: 25%;
+	width: 100%;
+	text-align: center;
+	line-height: 0;
+}
+#imageDataContainer{
+	background-color: #fff;
+	margin: 0 auto;
+	line-height: 1.4em;
+	border: 1px solid #000000;
+	border-top: 0px;
+}
+#imageData{
+	padding-left:10px;
+	height: 40px;
+}
+#iframeData{
+	padding-left:10px;
+	height: 30px;
+}
+#imageData #imageDetails{ 
+	width: 100%; 
+	float: left; 
+	text-align: left; 
+}
+#iframeData #iframeDetails{ 
+	width: 100%; 
+	float: left; 
+	text-align: left; 
+}
+#imageData #imageNav{ 
+	width: 100%; 
+	float: left; 
+	text-align: left; 
+	color: #000000;
+}
+#imageData #caption{ 
+	color: #000000;
+	padding-right: 5px;
+}
+#iframeDetails #caption{ 
+	font-weight: bold;
+	padding-right: 5px;
+}
+#imageData #navDisplayPrev #numberDisplay #navDisplayNext{ 
+	display: block; 
+	clear: left; 
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;	
+}
+#numberLink { 	
+	font-weight: bold;
+	text-decoration: underline;
+}
+#closeButton{ 
+	position: absolute;
+	top: 0px; 
+	right: 0px; 
+}
+.tooltip {
+	z-index: 9999;
+	width: 180px;
+	text-align:left;
+	color: #000000;
+}
+.tooltip h4 {
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0;
+	padding: 8px 8px 4px;
+	background-color:#FFFFFF;
+	border: 1px solid black;
+	border-bottom: 0px;
+}
+.tooltip p {
+	font-size: 11px;
+	padding: 4px 8px 8px;
+	background-color:#FFFFFF;
+	border: 1px solid black;
+	border-top: 0px;
+}

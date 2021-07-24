@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/reset.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/fluid_grid.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/jquery-ui-1.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/awa.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/users.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/blogs.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/questions.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/jquery.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="Process%20creation%20in%20Java%20and%20Ada_files/vacs.css">
+            <meta name="author" content="stephane.carrez">
+        <title>Process creation in Java and Ada</title>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body class="atlas page-news">
+
+
+
+<div id="awa-hdr">
+    <div id="vacs-top">
+        <h2><span><a href="http://blog.vacs.fr/vacs/">Java 2 Ada</a></span></h2>
+    </div>
+    <div id="awa-top">
+        <ul id="awa-top-nav">
+            <li id="nav-news">
+                 <a href="http://blog.vacs.fr/vacs/index.html" title="View the public blog posts">
+                     News
+                 </a>
+             </li>
+             <li id="nav-tutorials">
+                  <a href="http://blog.vacs.fr/vacs/tutorials.html" title="Tutorials">
+                      Tutorials
+                  </a>
+              </li>
+             <li id="nav-demos">
+                  <a href="http://blog.vacs.fr/vacs/demos.html" title="Demos">
+                      Demos
+                  </a>
+              </li>
+             <li id="nav-tools">
+                  <a href="http://blog.vacs.fr/vacs/tools/electronic/resistor.html" title="Tools">
+                      Tools
+                  </a>
+              </li>
+             <li id="nav-download">
+                  <a href="http://blog.vacs.fr/vacs/download.html" title="Download Free Software">
+                      Download
+                  </a>
+              </li>
+        </ul>
+        
+    </div>
+</div><div id="awa-page" class="container_12">
+            <div id="awa-content">
+            <div class="grid_9">
+                <div class="blog-post" id="p_79">
+                    <div class="post-title">
+                        <h2><a href="http://blog.vacs.fr/vacs/blogs/post.html?post=2012/03/16/Process-creation-in-Java-and-Ada">Process creation in Java and Ada</a></h2>
+                        <p>By stephane.carrez <span id="date">2012-03-16 20:06:26</span></p>
+                    </div>
+                    <ul id="qtags" class="tagedit-list"><li class="tagedit-listelement tagedit-listelement-old"><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Ada">Ada</a></li><li class="tagedit-listelement tagedit-listelement-old"><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Java">Java</a></li><li class="tagedit-listelement tagedit-listelement-old"><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Tutorial">Tutorial</a></li><li class="tagedit-listelement tagedit-listelement-old"><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=pipe">pipe</a></li><li class="tagedit-listelement tagedit-listelement-old"><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=process">process</a></li></ul><div class="post-text"><p>When developping and integrating applications together it is often useful to launch an external program.
+By doing this, many integration and implementation details are simplified (this integration technic also
+avoids license issues for some open source software integration). </p><p>This article explains how to launch an external program in Java and Ada and be able to read the process output
+to get the result.</p><h2>Java Process Creation</h2><p>The process creation is managed by the <tt>ProcessBuilder</tt> Java class.  
+An instance of this class holds the necessary information to create and launch a new process.
+This includes the command line and its arguments, the standard input and outputs,
+the environment variables and the working directory.</p><p>The process builder instance is created by specifying the command and its arguments.
+For this the constructor accepts a variable list of parameters of type <tt>String</tt>.
+</p><pre>import java.lang.ProcessBuilder;
+...
+  final String cmd = "ls";
+  final String arg1 = "-l";
+  final ProcessBuilder pb = new ProcessBuilder(cmd, arg1);
+</pre><p>When the process builder is initialized, we can invoke the <tt>start</tt> method to create a new process.
+Each process is then represented by an instance of the <tt>Process</tt> class.  It is possible to invoke
+<tt>start</tt> serveral times and each call creates a new process.  It is necessary to catch the <tt>IOException</tt>
+which can be raised if the process cannot be created.</p><pre>import java.lang.Process;
+...
+  try {
+    final Process p = pb.start();
+    ...
+
+  } catch (final IOException ex) {
+    System.err.println("IO error: " + ex.getLocalizedMessage());
+  }
+</pre><p>The <tt>Process</tt> class gives access to the process output through an input stream represented by
+the <tt>InputStream</tt> class.  With this input stream, we can read what the process writes on its output.
+We will use a <tt>BufferedReader</tt> class to read that output line by line.</p><pre>import java.io.*;
+...
+  final InputStream is = p.getInputStream();
+  final BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+</pre><p>By using the <tt>readLine</tt> method, we can read a new line after each call.  Once the whole stream is read,
+we have to close it.  Closing the <tt>BufferedReader</tt> will close the <tt>InputStream</tt> associated with it.
+</p><pre>  String line;
+  while ((line = reader.readLine()) != null) {
+    System.out.println(line);
+  }
+  reader.close();
+</pre><p>Last step is to wait for the process termination and get the exit status: we can use the <tt>waitFor</tt> method.
+Since this method can be interrupted, we have to catch the <tt>InterruptedException</tt>.
+</p><pre>  try {
+    ...
+    final int exit = p.waitFor();
+    if (exit != 0) {
+      System.err.printf("Command exited with status %d\n", exit);
+    }
+  }  catch (final InterruptedException ex) {
+    System.err.println("Launch was interrupted...");
+  }
+</pre><p>You can get the complete source from the file: <a href="http://blog.vacs.fr/images/samples/Launch.java">Launch.java</a>
+</p><h2>Ada Process Creation</h2><p>For the Ada example, we will create an application that invokes the <tt>nslookup</tt> utility to resolve a set of
+host names.  The list of host names is provided to <tt>nslookup</tt> by writing on its standard input and
+the result is collected by reading the output.</p><p>We will use the <tt>Pipe_Stream</tt> to launch the process, write on its input and read its output at the same time.
+The process is launched by calling the <tt>Open</tt> procedure and specifying the pipe redirection modes:
+<tt>READ</tt> is for reading the process output, <tt>WRITE</tt> is for writing to its input and <tt>READ_WRITE</tt>
+is for both.
+</p><pre>with Util.Processes;
+with Util.Streams.Pipes;
+...
+   Pipe    : aliased Util.Streams.Pipes.Pipe_Stream;
+
+   Pipe.Open ("nslookup", Util.Processes.READ_WRITE);
+</pre><p>We can read or write on the pipe directly but using a <tt>Print_Stream</tt> to write the text and
+the <tt>Buffered_Stream</tt> to read the result simplifies the implementation.  Both of them are
+connected to the pipe: the <tt>Print_Stream</tt> will use the pipe output stream and the
+<tt>Buffered_Stream</tt> will use the pipe input stream.</p><pre>with Util.Streams.Buffered;
+with Util.Streams.Texts;
+...
+   Buffer  : Util.Streams.Buffered.Buffered_Stream;
+   Print   : Util.Streams.Texts.Print_Stream;
+begin
+      --  Write on the process input stream
+   Buffer.Initialize (null, Pipe'Unchecked_Access, 1024);
+   Print.Initialize (Pipe'Unchecked_Access);
+</pre><p>Before reading the process output, we send the input data to be solved by the process.
+By closing the print stream, we also close the pipe output stream, thus closing the process standard input.
+</p><pre>   Print.Write ("www.google.com" &amp; ASCII.LF);
+   Print.Write ("set type=NS" &amp; ASCII.LF);
+   Print.Write ("www.google.com" &amp; ASCII.LF);
+   Print.Write ("set type=MX" &amp; ASCII.LF);
+   Print.Write ("www.google.com" &amp; ASCII.LF);
+   Print.Close;
+</pre><p>We can now read the program output by using the <tt>Read</tt> procedure and get the result in
+the <tt>Content</tt> string.  The <tt>Close</tt> procedure is invoked on the pipe to close the pipe (input and output)
+and wait for the application termination.
+</p><pre>   Content : Unbounded_String;
+
+   --  Read the 'nslookup' output.
+   Buffer.Read (Content);
+   Pipe.Close;
+</pre><p>Once the process has terminated, we can get the exit status by using the <tt>Get_Exit_Status</tt> function.
+</p><pre>   Ada.Text_IO.Put_Line ("Exit status: "
+       &amp; Integer'Image (Pipe.Get_Exit_Status));
+
+
+</pre><h4>References</h4><p><a href="http://code.google.com/p/ada-util/source/browse/trunk/samples/launch.adb">launch.adb</a><br><br><a href="http://code.google.com/p/ada-util/source/browse/trunk/src/util-streams-pipes.ads">util-streams-pipes.ads</a><br><br><a href="http://code.google.com/p/ada-util/source/browse/trunk/src/util-streams-buffered.ads">util-streams-buffered.ads</a><br><br><a href="http://code.google.com/p/ada-util/source/browse/trunk/src/util-streams-texts.ads">util-streams-texts.ads</a></p></div>                    <div class="post-comments">
+                        <div class="likes">
+                            <div class="like-facebook"><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Process%20creation%20in%20Java%20and%20Ada_files/QjK2hWv6uak.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Process%20creation%20in%20Java%20and%20Ada_files/QjK2hWv6uak_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><div fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Fblog.vacs.fr%2Fvacs%2Fblogs%2Fpost.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;show_faces=true&amp;width=400" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-href="/vacs/blogs/post.html" data-width="400" data-show-faces="true" data-layout="button_count"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe class="" src="Process%20creation%20in%20Java%20and%20Ada_files/like.htm" style="border: medium none; visibility: visible; width: 78px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f3902d4386a8556" height="1000px" width="400px" frameborder="0"></iframe></span></div></div><div class="like-google"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px;"><iframe title="1+" data-gapiattached="true" src="Process%20creation%20in%20Java%20and%20Ada_files/fastbutton.htm" name="I0_1416071252130" id="I0_1416071252130" vspace="0" tabindex="0" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" width="100%" frameborder="0"></iframe></div></div>                        </div>
+                        <div id="comment-add">                                    <h3>Add a comment</h3>
+                                    To add a comment, you must be connected.
+                                    <a id="awa-login" href="http://blog.vacs.fr/vacs/auth/login.html?redirect=/vacs/blogs/post.html%3Fpost%3D2012%2F03%2F16%2FProcess-creation-in-Java-and-Ada%23comment-add">Login</a>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid_3 blog-post-info">
+                  <h2>Tags</h2>
+    <ul class="tag-cloud"><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Ada" style="font-size:24.0px;">Ada</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=release" style="font-size:18.30px;">release</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Tutorial" style="font-size:16.20px;">Tutorial</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Ubuntu" style="font-size:15.90px;">Ubuntu</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Linux" style="font-size:14.70px;">Linux</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Mysql" style="font-size:14.40px;">Mysql</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=performance" style="font-size:14.40px;">performance</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=ReadyNAS" style="font-size:14.10px;">ReadyNAS</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=JSF" style="font-size:13.50px;">JSF</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=bacula" style="font-size:13.50px;">bacula</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Apache" style="font-size:13.20px;">Apache</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Security" style="font-size:13.20px;">Security</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=collaboration" style="font-size:13.20px;">collaboration</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=planning" style="font-size:13.20px;">planning</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=project" style="font-size:13.20px;">project</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=EL" style="font-size:12.90px;">EL</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=J2EE" style="font-size:12.90px;">J2EE</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Java" style="font-size:12.90px;">Java</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=UML" style="font-size:12.90px;">UML</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=generator" style="font-size:12.90px;">generator</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=php" style="font-size:12.90px;">php</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=symfony" style="font-size:12.90px;">symfony</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=upgrade" style="font-size:12.90px;">upgrade</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Facelet" style="font-size:12.60px;">Facelet</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=KVM" style="font-size:12.60px;">KVM</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=MDE" style="font-size:12.60px;">MDE</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Proxy" style="font-size:12.60px;">Proxy</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Servlet" style="font-size:12.60px;">Servlet</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=backup" style="font-size:12.60px;">backup</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=multiprocessing" style="font-size:12.60px;">multiprocessing</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=AWA" style="font-size:12.30px;">AWA</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Bean" style="font-size:12.30px;">Bean</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=COFF" style="font-size:12.30px;">COFF</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=ELF" style="font-size:12.30px;">ELF</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=FreeBSD" style="font-size:12.30px;">FreeBSD</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Jenkins" style="font-size:12.30px;">Jenkins</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=ProjectBar" style="font-size:12.30px;">ProjectBar</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Rewrite" style="font-size:12.30px;">Rewrite</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Sqlite" style="font-size:12.30px;">Sqlite</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=USB" style="font-size:12.30px;">USB</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=application" style="font-size:12.30px;">application</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=binutils" style="font-size:12.30px;">binutils</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=cache" style="font-size:12.30px;">cache</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=crash" style="font-size:12.30px;">crash</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=firefox" style="font-size:12.30px;">firefox</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=framework" style="font-size:12.30px;">framework</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=interview" style="font-size:12.30px;">interview</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=lvm" style="font-size:12.30px;">lvm</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=propel" style="font-size:12.30px;">propel</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=ssh" style="font-size:12.30px;">ssh</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=subversion" style="font-size:12.30px;">subversion</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=web" style="font-size:12.30px;">web</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=68hc11" style="font-size:12.0px;">68hc11</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=AWS" style="font-size:12.0px;">AWS</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Android" style="font-size:12.0px;">Android</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=C" style="font-size:12.0px;">C</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=DNS" style="font-size:12.0px;">DNS</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Debian" style="font-size:12.0px;">Debian</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Demo" style="font-size:12.0px;">Demo</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=EDF" style="font-size:12.0px;">EDF</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Facebook" style="font-size:12.0px;">Facebook</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Faces" style="font-size:12.0px;">Faces</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Hibernate" style="font-size:12.0px;">Hibernate</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=IPSec" style="font-size:12.0px;">IPSec</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=IPv6" style="font-size:12.0px;">IPv6</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Issy" style="font-size:12.0px;">Issy</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=JBoss" style="font-size:12.0px;">JBoss</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Lego" style="font-size:12.0px;">Lego</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=NetBSD" style="font-size:12.0px;">NetBSD</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=OAuth" style="font-size:12.0px;">OAuth</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=Repository" style="font-size:12.0px;">Repository</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=SHA" style="font-size:12.0px;">SHA</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=SaaS" style="font-size:12.0px;">SaaS</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=X11" style="font-size:12.0px;">X11</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=arm" style="font-size:12.0px;">arm</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=computer" style="font-size:12.0px;">computer</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=cookie" style="font-size:12.0px;">cookie</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=cups" style="font-size:12.0px;">cups</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=destruction" style="font-size:12.0px;">destruction</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=driver" style="font-size:12.0px;">driver</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=ejb" style="font-size:12.0px;">ejb</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=failover" style="font-size:12.0px;">failover</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=failure" style="font-size:12.0px;">failure</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=gcc" style="font-size:12.0px;">gcc</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=gnatprep" style="font-size:12.0px;">gnatprep</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=high%20availability" style="font-size:12.0px;">high availability</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=library" style="font-size:12.0px;">library</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=massif" style="font-size:12.0px;">massif</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=migration" style="font-size:12.0px;">migration</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=miserable" style="font-size:12.0px;">miserable</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=monitoring" style="font-size:12.0px;">monitoring</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=mysql" style="font-size:12.0px;">mysql</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=network" style="font-size:12.0px;">network</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=oscilloscope" style="font-size:12.0px;">oscilloscope</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=phpMyAdmin" style="font-size:12.0px;">phpMyAdmin</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=pipe" style="font-size:12.0px;">pipe</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=placard" style="font-size:12.0px;">placard</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=postfix" style="font-size:12.0px;">postfix</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=printing" style="font-size:12.0px;">printing</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=process" style="font-size:12.0px;">process</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=projet" style="font-size:12.0px;">projet</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=pthread" style="font-size:12.0px;">pthread</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=pulse" style="font-size:12.0px;">pulse</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=raid" style="font-size:12.0px;">raid</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=recovery" style="font-size:12.0px;">recovery</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=signal" style="font-size:12.0px;">signal</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=silent" style="font-size:12.0px;">silent</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=ssd" style="font-size:12.0px;">ssd</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=teleinfo" style="font-size:12.0px;">teleinfo</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=testing" style="font-size:12.0px;">testing</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=valgrind" style="font-size:12.0px;">valgrind</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=virtual%20host" style="font-size:12.0px;">virtual host</a></li><li><a href="http://blog.vacs.fr/vacs/blogs/tagged.html?tag=workspace" style="font-size:12.0px;">workspace</a></li></ul>          </div>
+        </div>
+        <div id="awa-clfooter"></div>
+</div>
+
+<div id="awa-footer">
+    <div id="blk_footer">
+        <div id="awa-footer_content">
+            <span>Served by</span>
+            <a href="http://code.google.com/p/ada-awa" title="Ada Web Application">AWA</a> |
+            <a href="http://code.google.com/p/ada-asf" title="Ada Server Faces">ASF</a> |
+            <a href="http://libre.adacore.com/libre/tools/aws/" title="Ada Web Server">AWS</a> |
+            <a href="http://httpd.apache.org/" title="Apache HTTP Server Project">Apache</a> |
+            <a href="http://blog.vacs.fr/vacs/version.html" title="Version">and more...</a>
+        </div>
+    </div>
+</div>        <script src="Process%20creation%20in%20Java%20and%20Ada_files/all.js" async="" id="facebook-jssdk"></script><script src="Process%20creation%20in%20Java%20and%20Ada_files/ga.js" async="" type="text/javascript"></script><script async="" src="Process%20creation%20in%20Java%20and%20Ada_files/cbgapi.loaded_1"></script><script async="" src="Process%20creation%20in%20Java%20and%20Ada_files/cbgapi.loaded_0"></script><script type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/jquery-1.js"></script>
+        <script type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/jquery.js"></script>
+        <script type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/jquery_002.js"></script>
+        <script type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/asf.js"></script>
+        <script type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/asf-message.js"></script>
+        <script type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/awa.js"></script>
+    <script gapi_processed="true" type="text/javascript" src="Process%20creation%20in%20Java%20and%20Ada_files/plusone.js"></script><script type="text/javascript">  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-243827-3']);
+      _gaq.push(['_trackPageview']);
+
+        (function() {
+	    var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+  })();(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.async=true;js.src = "//connect.facebook.net/en/all.js#xfbml=1&;appId=1468868913346737";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Process%20creation%20in%20Java%20and%20Ada_files/postmessageRelay.htm" id="oauth2relay363994049" name="oauth2relay363994049"></iframe></body></html>

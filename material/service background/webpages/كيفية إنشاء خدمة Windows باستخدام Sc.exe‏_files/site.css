@@ -1,0 +1,1579 @@
+body
+{
+}
+
+.Header .mst-nonResponsiveMinWidth {
+    min-width: 916px !important;
+}
+
+.Header .mst-nonResponsiveMinWidth .grid-container{
+    width: 916px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.Header .mst-nonResponsiveMinWidth .column-1 .grid-unit{
+    width: 916px;
+}
+.Header .mstNavMenu
+{
+    display: none;
+}
+
+.Footer .mst-nonResponsiveMinWidth .grid-container{
+    width: 916px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.Footer .mst-nonResponsiveMinWidth .grid-row .grid-unit{
+    width: 214px;
+    margin-left: 20px;    
+}
+
+.Footer .mst-nonResponsiveMinWidth .grid-row .mstFooterLocaleLogo .grid-unit
+{
+    width: 448px;
+}
+.Footer .mst-nonResponsiveMinWidth .grid-row :first-child.grid-unit{
+    margin-left: 0px;
+}
+.Footer .mstLcpFlyout {
+    bottom: 406px !important;
+}
+
+.NavBarSection{
+    border-bottom: 5px solid #eee;
+    padding-bottom: 5px;
+}
+.utility-bar
+{
+    margin-bottom: 0px !important;
+}
+
+.Header
+{
+    margin: 0 auto;
+    z-index: 99;
+    position: relative;
+}
+
+    .Header .stage
+    {
+        padding-left: 0;
+        padding-right: 0;
+        width: 916px;
+    }
+
+.heroSection
+{
+    z-index: 2;
+    position: relative;
+}
+
+.pdf.heroSection .contactUsHeader
+{
+    width: 916px;
+    margin: 20px auto;
+}
+
+.Content
+{
+    margin: 0 auto;
+    width: 916px;
+    position: relative;
+}
+
+.pdf.Content.kb-container {
+    width:1018px;
+}
+
+.kb-container .adWrapper #divID {
+    text-align: left;
+}
+
+#contentArea
+{
+    min-height: 220px;
+}
+
+.Footer
+{
+    margin: 0 auto;
+}
+
+    .Footer .stage
+    {
+        padding-left: 0;
+        padding-right: 0;
+        width: 916px;
+        height: 170px;
+    }
+
+.btn.buttonInHero
+{
+    float: right;
+}
+
+.pdf .expandedHero
+{
+    background-color: #eee;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+    .pdf .expandedHero .banner
+    {
+        background-color: #002050;
+        position: relative;
+        width: 996px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .pdf .expandedHero .banner .content
+        {
+            position: relative;
+            max-width: 916px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+
+    .pdf .expandedHero .offerBanner
+    {
+        background-color: #fff;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .pdf .expandedHero .offerBanner .content
+        {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            color: #000;
+        }
+
+        .pdf .expandedHero .offerBanner .assureContent,
+        .pdf .expandedHero .offerBanner .joinNowContent
+        {
+            display: inline-block;
+            float: right;
+        }
+
+            .pdf .expandedHero .offerBanner .joinNowContent div
+            {
+                padding-right: 20px;
+            }
+
+            .pdf .expandedHero .offerBanner .assureContent a
+            {
+                cursor: pointer;
+            }
+
+
+    .pdf .expandedHero .imgContainer
+    {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        z-index: 3;
+    }
+
+    .pdf .expandedHero img.hero
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pdf .expandedHero .text
+    {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 4;
+    }
+
+    .pdf .expandedHero .txtContainer
+    {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 916px;
+    }
+
+        .pdf .expandedHero .txtContainer .heroValueProp
+        {
+            margin-top: 20px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 300px;
+        }
+        .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc
+        {
+            margin-top: 40px;
+            padding: 40px 40px;
+            background-color: #0072c6;
+            color: #fff;
+        }
+
+            .pdf .expandedHero .txtContainer .heroValueProp p
+            {
+                margin-bottom: 80px;
+            }
+
+            .pdf .expandedHero .txtContainer .heroValueProp h1
+            {
+                margin-top: -10px;
+                width: 280px;
+                color: #fff;
+                word-wrap: normal;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc
+            {
+                width: 448px;
+                max-width: 448px;
+                color: #fff;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc h1
+            {
+                font-size: 60px;
+                width: 368px;
+                line-height: 100%;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc h2
+            {                
+                font-family: "Segoe UI regular", "Segoe UI", Arial, Tahoma, sans-serif;
+                line-height: 100%;
+            }
+
+            .pdf .expandedHero .txtContainer .heroValueProp h4,
+            .pdf .expandedHero .txtContainer .heroValueProp h5,
+            .pdf .expandedHero .txtContainer .heroValueProp h3
+            {
+                color: #fff;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods 
+            {
+                position: relative;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods img,
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods a,
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods span
+            {
+                display: inline-block;
+                color: #fff;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods a,
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods span
+            {
+                vertical-align: middle;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods a.link span
+            {
+                text-decoration: underline;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods span
+            {
+                margin-left: 20px;
+                font-family: "Segoe UI Semibold", "Segoe UI", Arial, Tahoma, sans-serif;
+                font-size: 20px;
+            }
+            .pdf .expandedHero .txtContainer .heroValueProp.answerDeskAcc .contactMethods .imageContainer
+            {
+                display: inline-block;
+                width: 60px;
+            }
+
+    .pdf .expandedHero .deviceSoftwareImg
+    {
+        background-image: url("/library/images/support/cn/devicesoftwarehero.jpg");
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position: 10px -129px;
+        min-height: 278px;
+    }
+
+        .pdf .expandedHero .deviceSoftwareImg .text
+        {
+            position: relative;
+        }
+
+
+
+
+    .pdf .expandedHero .txtContainer .myProductHero-unit
+    {
+        padding: 20px;
+        background-color: white;
+        opacity: 0.9;
+        width: 320px;
+        height: auto;
+    }
+
+        .pdf .expandedHero .txtContainer .myProductHero-unit p
+        {
+            margin-bottom: 20px;
+        }
+
+        .pdf .expandedHero .txtContainer .myProductHero-unit h1
+        {
+            margin-bottom: 20px;
+            line-height: 1;
+            letter-spacing: -1px;
+            word-wrap: break-word;
+            width: 280px;
+            color: #000;
+            padding-right: 20px;
+        }
+
+.billingContent
+{
+    position: relative;
+    height: 200px;
+}
+
+    .billingContent img
+    {
+        float: right;
+    }
+
+    .billingContent div
+    {
+        float: left;
+        background-color: #0072c6;
+        z-index: 1;
+        position: absolute;
+        height: 200px;
+        width: 327px;
+    }
+
+        .billingContent div.header
+        {
+            color: #fff;
+            font-size: 30px;
+            left: 20px;
+            right: 20px;
+            position: relative;
+            font-family: Segoe UI;
+            font-weight: 300;
+            z-index: 2;
+            height: auto;
+            width: auto;
+        }
+
+        .billingContent div.valueProp
+        {
+            color: #fff;
+            font-size: 13px;
+            left: 20px;
+            top: 70px;
+            right: 20px;
+            font-family: Segoe UI;
+            font-weight: normal;
+            z-index: 2;
+            height: auto;
+            width: auto;
+        }
+
+        .billingContent div.linkDiv
+        {
+            top: 100px;
+            left: 130px;
+            position: relative;
+            z-index: 2;
+            height: auto;
+            width: auto;
+        }
+
+            .billingContent div.linkDiv a:link,
+            .billingContent div.linkDiv a:hover,
+            .billingContent div.linkDiv a:visited
+            {
+                color: #fff;
+                font-family: Segoe UI;
+                font-weight: normal;
+                font-size: 13px;
+            }
+
+            .billingContent div.linkDiv a span > img
+            {
+                padding-top: 2px;
+                padding-left: 10px;
+                display: inline-block;
+            }
+
+/*Gibraltar Changes*/
+.transaction .myAccount
+{
+    background-image: url("/library/images/support/cn/smc_hero_myaccount.jpg");
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    background-position: 10px -129px;
+    overflow: hidden;
+}
+
+.pdf .expandedHero .summaryList .text
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.pdf .expandedHero .summaryList .txtContainer
+{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 916px;
+}
+
+.pdf .expandedHero .text div.myAccountHero .heroValueProp
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #68217a;
+    margin: 20px 0;
+}
+
+/* AnswerDesk pages-Offer*/
+.pdf .expandedOffer
+{
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+    .pdf .expandedOffer .offerBanner
+    {
+        background-color: #fff;
+        width: 916px;
+        display: inline-block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #EEE;
+    }
+
+        .pdf .expandedOffer .offerBanner div
+        {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 916px;
+        }
+
+        .pdf .expandedOffer .offerBanner .content
+        {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            color: #000;
+        }
+
+        .pdf .expandedOffer .offerBanner .labelContent
+        {
+            max-width: 600px;
+            float: left;
+        }
+
+        .pdf .expandedOffer .offerBanner .joinNowContent
+        {
+            display: inline-block;
+            float: right;
+        }
+
+        .pdf .expandedOffer .offerBanner .assureMembershipContent
+        {
+            padding-top: 20px;
+            display: inline-block;
+            float: right;
+        }
+
+        .pdf .expandedOffer .offerBanner .joinNowContent div
+        {
+            padding-right: 20px;
+        }
+
+        .pdf .expandedOffer .offerBanner .assureMembershipContent a
+        {
+            cursor: pointer;
+        }
+/* END-Answerdesk-Offer */
+
+/* Product Hub hero headers start*/
+div.productHubHero
+{
+    position: relative;
+}
+
+    div.productHubHero div
+    {
+        display: block;
+        position: absolute;
+        top: 20px;
+    }
+
+.productHubHero
+{
+    background-color: #1570a6;
+}
+
+    .productHubHero h1
+    {
+        /*margin-top: 20px; */
+        color: white;
+        min-width: 175px;
+    }
+
+.valuePropDivProductHub, .valuePropDivWindows, .valuePropDivMSN, .valuePropDivPhone, .valuePropDivOffice, .valuePropDivSkype, .valuePropDivSkydrive, .valuePropDivIE, .valuePropDivOutlookCom
+{
+    width: 300px;
+    height: 125px;
+}
+
+.valuePropDivWindows
+{
+    background-color: #00188f;
+}
+
+.valuePropDivMSN
+{
+    background-color: #68217a;
+}
+
+.valuePropDivPhone
+{
+    background-color: #68217a;
+}
+
+.valuePropDivOffice
+{
+    background-color: #dc3c00;
+}
+
+.valuePropDivSkype
+{
+    background-color: #68217a;
+}
+
+.valuePropDivSkydrive
+{
+    background-color: #008272;
+}
+
+.valuePropDivIE
+{
+    background-color: #0072c6;
+}
+
+.valuePropDivOutlookCom
+{
+    background-color: #0072c6;
+}
+/* Product Hub hero headers end*/
+
+.myAccountFooter h2, .myAccountFooter li
+{
+    padding-right: 20px;
+}
+
+.myAccountFooter li
+{
+    padding: 5px 0;
+}
+
+.msAccount
+{
+    background-color: #eeeeee;
+    padding: 20px;
+}
+
+    .msAccount ul
+    {
+        margin-top: 10px;
+    }
+
+        .msAccount ul li
+        {
+            text-align: left;
+            padding: 5px 0;
+        }
+
+a.printPage img
+{
+    margin-right: 10px;
+}
+
+.pdf .link4
+{
+    color: #737373;
+}
+
+.alsoLikeAds div:nth-child(3n+3)
+{
+    margin-right: 0;
+}
+
+/*It walks around the issue that MSCOM header contains a footer which covers part of the content area.*/
+.Header .footer
+{
+    min-height: 0px;
+}
+
+div.dontFindTransactionHeader
+{
+    margin-bottom: 10px;
+}
+
+ol.dontFindTransaction
+{
+    list-style-type: decimal;
+    list-style-position: outside;
+}
+
+    ol.dontFindTransaction li
+    {
+        margin-left: 20px;
+        line-height: 165%;
+    }
+
+        ol.dontFindTransaction li span
+        {
+            position: relative;
+            left: 5px;
+        }
+
+/* Contact Us*/
+div.contactUs .linkColor
+{
+    color: #1570a6;
+}
+
+.pdf .expandedHero .text div.contactUsHero
+{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.contactUsHero .valuePropDiv
+{
+    background-color: #1570a6;
+    max-width: 300px;
+    height: auto;
+}
+
+    .contactUsHero .valuePropDiv h1
+    {
+        color: white;
+    }
+
+    .contactUsHero .valuePropDiv h5
+    {
+        margin-bottom: 20px;
+        color: white;
+        padding: 10px 40px 10px 0px;
+    }
+
+
+.pdf .expandedHero .contactUsImg
+{
+    background-image: url("/library/images/support/cn/smc_hero_contactus.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 18%;
+    overflow: hidden;
+    min-height: 185px;
+}
+
+    .pdf .expandedHero .contactUsImg .text
+    {
+        position: relative;
+    }
+
+
+/* Home Page*/
+div.HomePage .linkColor
+{
+    color: #1570a6;
+}
+
+.pdf .expandedHero .homeHeroImg
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/smc_home_hero_raw.jpg");
+    background-repeat: no-repeat;
+}
+
+    .pdf .expandedHero .homeHeroImg .text
+    {
+        max-width: 913px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+.expandedHero .homeHeroImg
+{
+    width: 1600px;
+}
+
+.homeHeroImg img
+{
+    float: left;
+}
+
+.HomePageHero .heroValueProp
+{
+    background-color: #68217a;
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+    float: left;
+}
+
+    .HomePageHero .heroValueProp h1
+    {
+        margin-top: 20px;
+        color: white;
+    }
+
+    .HomePageHero .heroValueProp h5
+    {
+        margin-bottom: 20px;
+        color: white;
+        padding: 10px 0px 10px 0px;
+    }
+
+.HomePageHero .homeBillingProp
+{
+    float: right;
+    width: 214px;
+    margin-top: 30px;
+    padding-left: 20px;
+    color: #fff;
+}
+
+div.billingHero
+{
+    background-color: #dc3c00;
+    display: inline-block;
+    width: 356px;
+    float: right;
+    z-index: 5;
+    position: relative;
+    padding: 40px 142px 20px 20px;
+}
+
+.billingHero H2
+{
+    padding-bottom: 30px;
+    color: #fff;
+}
+
+.billingHero H5
+{
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.billingHero H4
+{
+    color: #fff;
+    float: left;
+    margin-right: 10px;
+    width: 154px;
+}
+
+.ProductSelector
+{
+    width: 1076px;
+}
+
+.pb20
+{
+    padding-bottom: 20px;
+}
+
+.pr20
+{
+    padding-right: 20px;
+}
+
+.pr30
+{
+    padding-right: 30px;
+}
+
+.pdf .mr0
+{
+    margin-right: 0;
+}
+
+.hoverUnderline:hover
+{
+    text-decoration: underline;
+}
+
+.pager a
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+    .pager a.link:hover
+    {
+        text-decoration: underline;
+    }
+
+.pager span.selected
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #1570a6;
+    border: 1px solid #1570a6;
+    padding-top: 1px;
+    color: #fff;
+}
+
+.pager a.leftArrow
+{
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.pager a.rightArrow
+{
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+a.backtotop img
+{
+    margin-left: 10px;
+}
+
+.ellipseTxt
+{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+
+.pl20
+{
+    padding-left: 20px;
+}
+
+div.assureHero,
+div.myassureHero
+{
+    position: relative;
+}
+
+.assureHero .valuePropDiv,
+.assureHero .heroValueProp,
+.myassureHero .valuePropDiv,
+.myassureHero .heroValueProp
+{
+    background-color: #0072C6;
+    min-width: 425px;
+    min-height: 140px;
+    min-height: 120px\9 /*IE8 only style*/;
+}
+
+.myassureHero .valuePropDiv,
+.myassureHero .heroValueProp
+{
+    min-width: 375px;
+}
+
+    .assureHero .valuePropDiv h5,
+    .myassureHero .valuePropDiv h5,
+    .assureHero .valuePropDiv h3,
+    .myassureHero .valuePropDiv h3
+    {
+        padding: 10px 40px 40px 0px;
+    }
+
+    .assureHero .heroValueProp h1,
+    .myassureHero .heroValueProp h1
+    {
+        min-width: 450px;
+    }
+
+.pdf .expandedHero .txtContainer .assureBuynow
+{
+    margin-top: 55px;
+}
+
+.pdf .expandedHero .text .assureBuynow .heroValueProp
+{
+    max-width: 425px;
+}
+
+.pdf .expandedHero .text .assureHero .heroValueProp
+{
+    max-width: 475px;
+}
+
+.mt05
+{
+    margin-top: 5px;
+}
+
+.mt40
+{
+    margin-top: 40px;
+}
+
+.mb25
+{
+    margin-bottom: 25px;
+}
+
+.mb40
+{
+    margin-bottom: 40px;
+}
+
+.pb40
+{
+    padding-bottom: 40px;
+}
+
+.pt30
+{
+    padding-top: 30px;
+}
+
+.pb60
+{
+    padding-bottom: 50px;
+}
+
+.pdf .pb30
+{
+    padding-bottom: 30px;
+}
+
+div.line
+{
+    background: #fff no-repeat scroll center;
+    height: 2px;
+}
+
+.pdf .graybg
+{
+    background-color: #eee;
+}
+
+.p1
+{
+    padding: 1px;
+}
+
+.pdf .productVersions
+{
+    margin-bottom: 25px;
+}
+
+.pdf .mesgboxWrapper
+{
+    padding: 0;
+    background-repeat: no-repeat;
+    float: left;
+    width: 682px;
+}
+
+    .pdf .mesgboxWrapper .alertmsgbox
+    {
+        float: right;
+        padding: 20px;
+        position: relative;
+        width: 468px;
+    }
+
+    .pdf .mesgboxWrapper .title
+    {
+        font-size: 20px;
+        line-height: 20px;
+        color: #333333;
+        padding-bottom: 12px;
+    }
+
+    .pdf .mesgboxWrapper .mainText
+    {
+        font-size: 13px;
+        color: #333333;
+    }
+
+/*Fms Fix*/
+#surveyDivBlock,
+.surveyInvitationDiv .pdf #surveyDivBlock,
+.pdf .surveyInvitationDiv
+{
+    z-index: 10000;
+}
+
+/* Mini AnswerDesk*/
+.expandedHero .answerDesk .txtContainer .heroValueProp
+{
+    background-color: #0072C6;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.expandedHero .answerDesk .txtContainer .maxWidth
+{
+    max-width: 350px;
+}
+
+.expandedHero .answerDesk .txtContainer .h1Width
+{
+    width: 350px !important;
+}
+
+.expandedHero .assure, .expandedHero .complete, .expandedHero .pc, .expandedHero .office, .expandedHero .virus, .expandedHero .windows
+{
+    min-height: 275px;
+}
+
+.expandedHero .answerDesk
+{
+    width: 1600px;
+}
+
+    .expandedHero .answerDesk .text
+    {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+.answerDesk .contentWrapper
+{
+    padding: 40px 22px;
+    float: left;
+    text-align: center;
+}
+
+    .answerDesk .contentWrapper img
+    {
+        float: left;
+        padding-right: 30px;
+    }
+
+.answerDesk .txtContainer .heroValueProp h1
+{
+    padding-right: 20px;
+}
+
+/* AnswerDesk Home page*/
+.expandedHero .answerDeskHome
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_home_hero.jpg");
+    background-repeat: no-repeat;
+    background-position: -192px 0;
+    min-height: 690px;
+    width: 1600px;
+}
+
+    .expandedHero .answerDeskHome .txtContainer .heroValueProp
+    {
+        background-color: #0072C6;
+        margin: 40px 20px 40px 0;
+        max-width: 288px;
+        padding: 11px 20px 20px;
+    }
+
+        .expandedHero .answerDeskHome .txtContainer .heroValueProp h1
+        {
+            margin-top: 0;
+        }
+
+    .expandedHero .answerDeskHome .text
+    {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+.answerDeskHome .contentWrapper
+{
+    color: #fff;
+    text-align: center;
+}
+
+    .answerDeskHome .contentWrapper img
+    {
+        margin: 0 15px;
+    }
+
+.answerDeskHome .icon1
+{
+    text-align: center;
+    width: 100%;
+    margin: 35px auto 15px;
+}
+
+.answerDeskHome .icon2
+{
+    text-align: center;
+    width: 100%;
+    margin: 25px auto 9px;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.pdf .row .answerDeskHomeOptions
+{
+    width: 285px;
+}
+
+.answerDeskHomeLine
+{
+    border-top: 1px solid #d2d2d2;
+    float: left;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.answerDeskHomeOptions img
+{
+    width: 285px;
+    height: 105px;
+}
+
+.expandedHero .servicesLandingPage
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_allservices_hero.jpg");
+    background-repeat: no-repeat;
+    min-height: 275px;
+}
+
+.answerDeskNavBar
+{
+    background-color: #eee;
+    width: 100%;
+    position: relative;
+    height: 30px;
+}
+
+    .answerDeskNavBar ul
+    {
+        list-style-type: none;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 914px;
+        z-index: 3;
+    }
+
+    .answerDeskNavBar li
+    {
+        margin: 0;
+        padding: 5px 20px 5px 0;
+        float: left;
+        color: #000;
+    }
+
+    .answerDeskNavBar .underLine
+    {
+        text-decoration: underline;
+        color: #0072c6;
+    }
+
+.servicesHomePage
+{
+    margin-right: 0;
+}
+
+.servicesSupportOptions
+{
+    padding-bottom: 20px;
+}
+
+    .servicesSupportOptions .supportHeaderSection
+    {
+        width: 95%;
+        display: inline-block;
+        margin-right: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+
+    .servicesSupportOptions img
+    {
+        float: left;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+
+    .servicesSupportOptions h2
+    {
+        padding-bottom: 20px;
+    }
+
+    .servicesSupportOptions .row .moreSupportOptions
+    {
+        width: 47%;
+        padding-right: 20px;
+    }
+
+.signInServices
+{
+    margin-top: 40px;
+    float: left;
+}
+
+    .signInServices a
+    {
+        display: block;
+    }
+
+.expandedHero .assure
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_service_assure_hero.png");
+    background-repeat: no-repeat;
+}
+
+.expandedHero .complete
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_service_complete_hero.png");
+    background-repeat: no-repeat;
+}
+
+.expandedHero .pc
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_service_pctuneup_hero.png");
+    background-repeat: no-repeat;
+}
+
+.expandedHero .office
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_service_officepss_hero.png");
+    background-repeat: no-repeat;
+}
+
+.expandedHero .virus
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_service_virusremoval_hero.png");
+    background-repeat: no-repeat;
+}
+
+.expandedHero .windows
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_service_windowspss_hero.png");
+    background-repeat: no-repeat;
+}
+
+.rightContainer
+{
+    width: 28%;
+    float: right;
+    margin-left: 2%;
+    position: relative;
+}
+
+    .rightContainer .moreHelp h3
+    {
+        max-width: 100% !important;
+    }
+
+.leftContainer
+{
+    width: 95%;
+    float: left;
+}
+
+    .leftContainer > h3
+    {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+.MaxWidth
+{
+    max-width: 100%;
+}
+
+.container
+{
+    width: 70%;
+    margin: 0px;
+    float: left;
+}
+
+.asideLeft, .asideRight
+{
+    width: 45%;
+    float: left;
+}
+
+.asideRight
+{
+    margin-left: 10%;
+}
+
+.asideCont
+{
+    width: 100%;
+    float: left;
+}
+
+    .asideCont h3
+    {
+        margin-bottom: 20px;
+    }
+
+    .asideCont p
+    {
+        margin-bottom: 30px;
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+
+.myanswerDesk .get-help-now
+{
+    width: 100%;
+}
+
+.expandedHero .myAnswerdeskAuthenticated
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_myanswerdesk_signedin_hero.png");
+    background-repeat: no-repeat;
+    min-height: 275px;
+}
+
+.accordion .ac-title a
+{
+    text-decoration: none;
+    color: #323232;
+}
+
+.bt
+{
+    border-top: solid 1px #d2d2d2;
+}
+
+.expandedHero .myAnswerDeskHero
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_myanswerdesk_signedout_hero.png");
+    background-repeat: no-repeat;
+    min-height: 275px;
+}
+
+.myAnswerDesk h3, .myAnswerDesk h4
+{
+    font-family: "Segoe UI", Arial, Tahoma, sans-serif;
+}
+
+.MoreHelp
+{
+    position: relative;
+    z-index: 2;
+}
+
+.mstFooterLocFlyoutContainer 
+{
+    z-index: 3;
+}
+
+.textAlignCenter
+{
+    text-align: center;
+}
+
+.expandedHero .myAnswerDeskMembershipsHero
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/answerdesk_minisite_myanswerdesk_signedin_hero.png");
+    background-repeat: no-repeat;
+    min-height: 275px;
+}
+
+.pdf .searchBtnT2
+{
+    background-color: #d2d2d2;
+    border-color: #d2d2d2;
+}
+
+.expandedHero .homePageT1
+{
+    overflow: hidden;
+    background-image: url("/library/images/support/cn/gps_search_hero.jpg");
+    background-repeat: no-repeat;
+    min-height: 275px;
+    -moz-background-position-y: -150px;
+    -o-background-position-y: -150px;
+    background-position-y: -150px;
+}
+
+.expandedHero .homePageT2
+{
+    overflow: hidden;
+    background-color: #0072c6;
+    background-repeat: no-repeat;
+    color: white;
+    min-height: 275px;
+}
+
+.HomeControl,
+.HomeTreatment1,
+.HomeTreatment2
+{
+    display: none;
+}
+
+.dgpsDiv 
+{
+    display: none;
+}
+
+.ProductHubControl,
+.ProductHubT1
+{
+    display: none;
+}
+
+.HeroCursor
+{
+    cursor: pointer;
+}
+
+.pdf .searchResults .pageLink
+{
+    padding: 5px 5px;
+    font-size: 12px;
+    color: #0072c6;
+    text-decoration: none;
+}
+
+    .pdf .searchResults .pageLink.currentPage
+    {
+        background: #0072c6;
+        color: #fff;
+        border: solid 1px #0072c6;
+        padding: 4px;
+    }
+
+    .pdf .searchResults .pageLink img
+    {
+        vertical-align: middle;
+    }
+
+    .pdf .searchResults .pageLink .prev-page
+    {
+        margin-right: 10px;
+    }
+
+    .pdf .searchResults .pageLink img.enabled
+    {
+        display: inline;
+    }
+
+    .pdf .searchResults .pageLink.next-page
+    {
+        margin-left: 10px;
+    }
+
+.pdf .searchResults a
+{
+    color: #1570a6;
+    text-decoration: none;
+}
+
+    .pdf .searchResults a:hover
+    {
+        text-decoration: underline;
+    }
+
+.pdf .searchResults em
+{
+    font-family: "Segoe UI Semibold", "Segoe UI", Arial, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.pdf .searchResults .url
+{
+    color: #009e49;
+}
+
+.pdf .searchResults .description
+{
+    color: #333333;
+    font-family: "Segoe UI Semi", "Segoe UI", Arial, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 22px;
+}
+
+    .pdf .searchResults .description em
+    {
+        color: #333333;
+        font-family: "Segoe UI Semibold", "Segoe UI", Arial, Tahoma, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 22px;
+    }
+
+.pdf .dgpsTopSearchesDiv
+{
+    background-color: #eeeeee;
+}
+
+    .pdf .dgpsTopSearchesDiv ul:last-child
+    {
+        padding-bottom: 20px;
+    }
+
+.pdf .searchResults li hr
+{
+    color: #d2d2d2;
+}
+
+.AccountAndBillingLink a
+{
+    margin-left: 45px;
+}
+
+.pdf .pdf ul.productBar li a span
+{
+    color: #1570a6 !important;
+}

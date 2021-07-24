@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SystemTray (Java Platform SE 6)</title>
+<meta name="keywords" content="java.awt.SystemTray class">
+<meta name="keywords" content="add()">
+<meta name="keywords" content="addPropertyChangeListener()">
+<meta name="keywords" content="getPropertyChangeListeners()">
+<meta name="keywords" content="getSystemTray()">
+<meta name="keywords" content="getTrayIcons()">
+<meta name="keywords" content="getTrayIconSize()">
+<meta name="keywords" content="isSupported()">
+<meta name="keywords" content="remove()">
+<meta name="keywords" content="removePropertyChangeListener()">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://edelstein.pebbles.cs.cmu.edu/jadeite/favicon.ico">
+<link rel="stylesheet" type="text/css" href="SystemTray%20%28Java%20Platform%20SE%206%29_files/stylesheet.css">
+<script type="text/javascript" src="SystemTray%20%28Java%20Platform%20SE%206%29_files/jadeite.js"></script>
+</head>
+<body onload="parent.document.title = 'SystemTray (Java Platform SE 6)';" bgcolor="white">
+<div style="font-size: 75%; background-color: #66EE66; padding: 3px;">
+	<b>This documentation differs from the official API.</b>
+
+	<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html" target="_top">Jadeite</a> adds <i>extra</i> features to the API including:
+		<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html#Font_sizes" target="_top">variable font sizes</a>,
+		<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html#Construction_examples" target="_top">constructions examples</a>,
+		<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html#Placeholders" target="_top">placeholders</a> for classes and methods, and auto-generated “See Also” links.
+
+	Additionally it <i>is missing</i> some items found in standard Javadoc documentation, including:
+		generics type information,
+		“Deprecated” tags and comments,
+		“See Also” links,
+		along with other minor differences.
+
+	Please send any questions or feedback to <a href="mailto:bam@cs.cmu.edu">bam@cs.cmu.edu</a>.
+</div><hr>
+<a name="navbar_top"></a>
+<table width="100%" border="0" cellpadding="1" cellspacing="0">
+	<tbody><tr>
+	<td colspan="2" class="NavBarCell1" bgcolor="#EEEEFF"><a name="navbar_top_firstrow"></a><table border="0" cellpadding="0" cellspacing="3">
+<tbody><tr valign="top" align="center">
+<td class="NavBarCell1" bgcolor="#EEEEFF"><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=overview"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+<td class="NavBarCell1" bgcolor="#EEEEFF"><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=package&amp;package=java.awt"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+<td class="NavBarCell1Rev" bgcolor="#FFFFFF">&nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+</tr></tbody></table></td><td rowspan="3" valign="top" align="right"><em></em></td></tr>
+<tr><td class="NavBarCell2" bgcolor="white"><font size="-2">
+&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemColor"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TextArea.AccessibleAWTTextArea"><b>NEXT CLASS</b></a></font></td>
+<td class="NavBarCell2" bgcolor="white"><font size="-2">
+<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" target="_top"><b>FRAMES</b></a>&nbsp;
+&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" target="_top"><b>NO FRAMES</b></a>&nbsp;
+<script type="text/javascript">if( window == top ) { document.writeln( '<a href="left.php?api=java6&amp;state=allpkgs"><b>All Classes<\/b><\/a>' ); } </script><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/left.php?api=java6&amp;state=allpkgs"><b>All Classes</b></a>
+</font></td>
+	</tr>
+	<tr><td class="NavBarCell3" valign="top"><font size="-2">
+SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<a href="#method_summary">METHOD</a>&nbsp;</font></td>
+<td class="NavBarCell3" valign="top"><font size="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<a href="#method_detail">METHOD</a>&nbsp;</font></td></tr>
+</tbody></table>
+
+<a name="skip-navbar_top"></a>
+<hr>
+	<h2><font size="-1">java.awt</font><br>class SystemTray</h2>
+<div style="white-space: pre; font-family: monospace"><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object" title="class in java.lang">java.lang.Object</a>
+  <img src="SystemTray%20%28Java%20Platform%20SE%206%29_files/inherit.gif" alt="extended by "><b>java.awt.SystemTray</b>
+</div>
+<hr><dl>
+<dt>
+<b>Most common way to construct:</b>
+</dt>
+<dd>
+<p style="margin-top: 5px; margin-bottom: 0px">
+<code>
+<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" title="in java.awt">SystemTray</a> tray = <font style="font-size: 11pt"><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" title="in java.awt">SystemTray</a>.getSystemTray();</font>
+</code>
+</p><p style="margin-top: 5px; margin-bottom: 0px; margin-left: 25px; font-style: italic;">
+<small>Based on 148 examples</small>
+</p>
+</dd></dl>
+<hr>
+<pre>public class <b>SystemTray</b>
+extends <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object" title="class in java.lang">Object</a>
+</pre>
+
+<p>
+The <code>SystemTray</code> class represents the system tray for a
+ desktop.  On Microsoft Windows it is referred to as the "Taskbar
+ Status Area", on Gnome it is referred to as the "Notification
+ Area", on KDE it is referred to as the "System Tray".  The system
+ tray is shared by all applications running on the desktop.
+
+ </p><p> On some platforms the system tray may not be present or may not
+ be supported, in this case {@link SystemTray#getSystemTray()}
+ throws {@link UnsupportedOperationException}.  To detect whether the
+ system tray is supported, use {@link SystemTray#isSupported}.
+ 
+ </p><p>The <code>SystemTray</code> may contain one or more {@link
+ TrayIcon TrayIcons}, which are added to the tray using the {@link
+ #add} method, and removed when no longer needed, using the
+ {@link #remove}.  <code>TrayIcon</code> consists of an
+ image, a popup menu and a set of associated listeners.  Please see
+ the {@link TrayIcon} class for details.
+
+ </p><p>Every Java application has a single <code>SystemTray</code>
+ instance that allows the app to interface with the system tray of
+ the desktop while the app is running.  The <code>SystemTray</code>
+ instance can be obtained from the {@link #getSystemTray} method.
+ An application may not create its own instance of
+ <code>SystemTray</code>.
+ 
+ </p><p>The following code snippet demonstrates how to access
+ and customize the system tray:
+ <code>
+ </code></p><pre><code>     {@link TrayIcon} trayIcon = null;
+     if (SystemTray.isSupported()) {
+         // get the SystemTray instance
+         SystemTray tray = SystemTray.{@link #getSystemTray};
+         // load an image
+         {@link java.awt.Image} image = {@link java.awt.Toolkit#getImage(String) Toolkit.getDefaultToolkit.getImage}(...);
+         // create a action listener to listen for default action executed on the tray icon
+         {@link java.awt.event.ActionListener} listener = new {@link java.awt.event.ActionListener ActionListener}() {
+             public void {@link java.awt.event.ActionListener#actionPerformed actionPerformed}({@link java.awt.event.ActionEvent} e) {
+                 // execute default action of the application
+                 // ...
+             }
+         };
+         // create a popup menu
+         {@link java.awt.PopupMenu} popup = new {@link java.awt.PopupMenu#PopupMenu PopupMenu}();
+         // create menu item for the default action
+         MenuItem defaultItem = new MenuItem(...);
+         defaultItem.addActionListener(listener);
+         popup.add(defaultItem);
+         /// ... add other items
+         // construct a TrayIcon
+         trayIcon = new {@link TrayIcon#TrayIcon(java.awt.Image, String, java.awt.PopupMenu) TrayIcon}(image, "Tray Demo", popup);
+         // set the TrayIcon properties
+         trayIcon.{@link TrayIcon#addActionListener(java.awt.event.ActionListener) addActionListener}(listener);
+         // ...
+         // add the tray image
+         try {
+             tray.{@link SystemTray#add(TrayIcon) add}(trayIcon);
+         } catch (AWTException e) {
+             System.err.println(e);
+         }
+         // ...
+     } else {
+         // disable tray option in your application or
+         // perform other actions
+         ...
+     }
+     // ...
+     // some time later
+     // the application state has changed - update the image
+     if (trayIcon != null) {
+         trayIcon.{@link TrayIcon#setImage(java.awt.Image) setImage}(updatedImage);
+     }
+     // ...
+ </code></pre><code>
+ </code>
+<p></p><hr>
+<p></p>
+<a name="method_summary"></a>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+	<tbody><tr class="TableHeadingColor" bgcolor="#ccccff">
+		<th colspan="2" align="left"><font size="+2"><b>Method Summary</b></font></th>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;void</code></td>
+		<td><div><div class="Left"><code><b><a href="#2039">add</a></b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TrayIcon" title="in java.awt">TrayIcon</a>&nbsp;trayIcon)</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a <code>TrayIcon</code> to the <code>SystemTray</code>.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;void</code></td>
+		<td><div><div class="Left"><code><b><a href="#2043">addPropertyChangeListener</a></b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=String" title="in java.lang">String</a>&nbsp;propertyName, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.beans&amp;class=PropertyChangeListener" title="in java.beans">PropertyChangeListener</a>&nbsp;listener)</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a  to the listener list for a 
+ specific property.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.beans&amp;class=PropertyChangeListener" title="in java.beans">PropertyChangeListener</a>[]</code></td>
+		<td><div><div class="Left"><code><b><a href="#2045">getPropertyChangeListeners</a></b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=String" title="in java.lang">String</a>&nbsp;propertyName)</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an array of all the listeners that have been associated 
+ with the named property.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>static&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" title="in java.awt">SystemTray</a></code></td>
+		<td><div><div class="Left"><code><b><a href="#2037">getSystemTray</a></b>()</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the <code>SystemTray</code> instance that represents the
+ desktop's tray area.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TrayIcon" title="in java.awt">TrayIcon</a>[]</code></td>
+		<td><div><div class="Left"><code><b><a href="#2041">getTrayIcons</a></b>()</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an array of all icons added to the tray by this
+ application.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=Dimension" title="in java.awt">Dimension</a></code></td>
+		<td><div><div class="Left"><code><b><a href="#2042">getTrayIconSize</a></b>()</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the size, in pixels, of the space that a tray icon will
+ occupy in the system tray.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>static&nbsp;boolean</code></td>
+		<td><div><div class="Left"><code><b><a href="#2038">isSupported</a></b>()</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns whether the system tray is supported on the current
+ platform.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;void</code></td>
+		<td><div><div class="Left"><code><b><a href="#2040">remove</a></b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TrayIcon" title="in java.awt">TrayIcon</a>&nbsp;trayIcon)</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes the specified <code>TrayIcon</code> from the
+ <code>SystemTray</code>.
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td style="font-size: 9pt" valign="top" width="1%" align="right"><code>&nbsp;void</code></td>
+		<td><div><div class="Left"><code><b><a href="#2044">removePropertyChangeListener</a></b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=String" title="in java.lang">String</a>&nbsp;propertyName, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.beans&amp;class=PropertyChangeListener" title="in java.beans">PropertyChangeListener</a>&nbsp;listener)</code></div></div>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes a  from the listener list
+ for a specific property.
+		</td>
+	</tr>
+</tbody></table>
+&nbsp;
+<a name="methods_inherited_from_class_java.lang.Object"></a>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+<tbody><tr class="TableSubHeadingColor" bgcolor="#EEEEFF">
+<th align="left"><b>Methods inherited from class java.lang.<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object" title="in java.lang">Object</a></b></th>
+</tr><tr class="TableRowColor" bgcolor="white">
+<td><code>
+<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#clone%28%29">clone</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#equals%28Object%29">equals</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#finalize%28%29">finalize</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#getClass%28%29">getClass</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#hashCode%28%29">hashCode</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#notify%28%29">notify</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#notifyAll%28%29">notifyAll</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#toString%28%29">toString</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#wait%28long%29">wait</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#wait%28long%2C+int%29">wait</a>, <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=Object#wait%28%29">wait</a></code></td></tr></tbody></table>&nbsp;
+<p></p>
+<a name="method_detail"></a>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+<tbody><tr class="TableHeadingColor" bgcolor="#ccccff">
+<th colspan="1" align="left"><font size="+2">
+<b>Method Detail</b></font></th>
+</tr></tbody></table>
+
+<a name="2039"></a><a name="add(TrayIcon)"></a><h3>add</h3>
+<pre>public void <b>add</b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TrayIcon" title="in java.awt">TrayIcon</a>&nbsp;trayIcon)
+         throws <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=AWTException" title="class in java.awt">AWTException</a></pre>
+<dl>
+<dd>
+Adds a <code>TrayIcon</code> to the <code>SystemTray</code>.
+ The tray icon becomes visible in the system tray once it is
+ added.  The order in which icons are displayed in a tray is not
+ specified - it is platform and implementation-dependent.
+
+ <p> All icons added by the application are automatically
+ removed from the <code>SystemTray</code> upon application exit
+ and also when the desktop system tray becomes unavailable.</p><p>
+</p><dl>
+<dt><b>Parameters:</b></dt>
+<dd><code>trayIcon</code> - the <code>TrayIcon</code> to be added</dd>
+<dt><b>Throws:</b></dt>
+<dd><code><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=AWTException" title="class in java.awt">AWTException</a></code> - if the desktop system tray is missing</dd>
+</dl>
+</dd>
+</dl>
+<hr>
+<a name="2043"></a><a name="addPropertyChangeListener(String, PropertyChangeListener)"></a><h3>addPropertyChangeListener</h3>
+<pre>public synchronized void <b>addPropertyChangeListener</b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=String" title="in java.lang">String</a>&nbsp;propertyName,
+                                                   <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.beans&amp;class=PropertyChangeListener" title="in java.beans">PropertyChangeListener</a>&nbsp;listener)</pre>
+<dl>
+<dd>
+Adds a {@code PropertyChangeListener} to the listener list for a 
+ specific property. Currently supported property:
+ <ul>
+    <li>{@code trayIcons}<p>
+        </p><p>
+        This {@code SystemTray}'s array of {@code TrayIcon}s.
+        The array is accessed via {@link SystemTray#getTrayIcons}.<br>
+        This property is changed when a {@code TrayIcon} is added to
+        (or removed from) the {@code SystemTray}.<br> For example, this property
+        is changed when the native {@code SystemTray} becomes unavailable on the
+        desktop<br> and the {@code TrayIcon}s are automatically removed.</p></li>
+ </ul>
+ <p>
+ The {@code listener} listens to property changes only in this context.
+ </p><p>
+ If {@code listener} is {@code null}, no exception is thrown
+ and no action is performed.</p><p>
+</p><dl>
+<dt><b>Parameters:</b></dt>
+<dd><code>propertyName</code> - the specified property</dd>
+<dd><code>listener</code> - the property change listener to be added</dd>
+</dl>
+</dd>
+</dl>
+<hr>
+<a name="2045"></a><a name="getPropertyChangeListeners(String)"></a><h3>getPropertyChangeListeners</h3>
+<pre>public synchronized <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.beans&amp;class=PropertyChangeListener" title="in java.beans">PropertyChangeListener</a>[] <b>getPropertyChangeListeners</b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=String" title="in java.lang">String</a>&nbsp;propertyName)</pre>
+<dl>
+<dd>
+Returns an array of all the listeners that have been associated 
+ with the named property.
+ <p>
+ Only the listeners in this context are returned.</p><p>
+</p><dl>
+<dt><b>Parameters:</b></dt>
+<dd><code>propertyName</code> - the specified property</dd>
+<dt><b>Returns:</b></dt>
+<dd>all of the {@code PropertyChangeListener}s associated with
+         the named property; if no such listeners have been added or
+         if {@code propertyName} is {@code null} or invalid, an empty
+         array is returned</dd></dl>
+</dd>
+</dl>
+<hr>
+<a name="2037"></a><a name="getSystemTray()"></a><h3>getSystemTray</h3>
+<pre>public static <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" title="in java.awt">SystemTray</a> <b>getSystemTray</b>()</pre>
+<dl>
+<dd>
+Gets the <code>SystemTray</code> instance that represents the
+ desktop's tray area.  This always returns the same instance per
+ application.  On some platforms the system tray may not be
+ supported.  You may use the {@link #isSupported} method to
+ check if the system tray is supported.
+
+ <p>If a SecurityManager is installed, the AWTPermission
+ {@code accessSystemTray} must be granted in order to get the
+ {@code SystemTray} instance. Otherwise this method will throw a
+ SecurityException.</p><p>
+</p><dl>
+<dt><b>Returns:</b></dt>
+<dd>the <code>SystemTray</code> instance that represents
+ the desktop's tray area</dd></dl>
+</dd>
+</dl>
+<hr>
+<a name="2041"></a><a name="getTrayIcons()"></a><h3>getTrayIcons</h3>
+<pre>public <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TrayIcon" title="in java.awt">TrayIcon</a>[] <b>getTrayIcons</b>()</pre>
+<dl>
+<dd>
+Returns an array of all icons added to the tray by this
+ application.  You can't access the icons added by another
+ application.  Some browsers partition applets in different
+ code bases into separate contexts, and establish walls between
+ these contexts.  In such a scenario, only the tray icons added
+ from this context will be returned.
+
+ <p> The returned array is a copy of the actual array and may be
+ modified in any way without affecting the system tray.  To
+ remove a <code>TrayIcon</code> from the
+ <code>SystemTray</code>, use the {@link
+ #remove(TrayIcon)} method.</p><p>
+</p><dl>
+<dt><b>Returns:</b></dt>
+<dd>an array of all tray icons added to this tray, or an
+ empty array if none has been added</dd></dl>
+</dd>
+</dl>
+<hr>
+<a name="2042"></a><a name="getTrayIconSize()"></a><h3>getTrayIconSize</h3>
+<pre>public <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=Dimension" title="in java.awt">Dimension</a> <b>getTrayIconSize</b>()</pre>
+<dl>
+<dd>
+Returns the size, in pixels, of the space that a tray icon will
+ occupy in the system tray.  Developers may use this methods to
+ acquire the preferred size for the image property of a tray icon
+ before it is created.  For convenience, there is a similar
+ method {@link TrayIcon#getSize} in the <code>TrayIcon</code> class.<p>
+</p><dl>
+<dt><b>Returns:</b></dt>
+<dd>the default size of a tray icon, in pixels</dd></dl>
+</dd>
+</dl>
+<hr>
+<a name="2038"></a><a name="isSupported()"></a><h3>isSupported</h3>
+<pre>public static boolean <b>isSupported</b>()</pre>
+<dl>
+<dd>
+Returns whether the system tray is supported on the current
+ platform.  In addition to displaying the tray icon, minimal
+ system tray support includes either a popup menu (see {@link
+ TrayIcon#setPopupMenu(PopupMenu)}) or an action event (see
+ {@link TrayIcon#addActionListener(ActionListener)}).
+
+ <p>Developers should not assume that all of the system tray
+ functionality is supported.  To guarantee that the tray icon's
+ default action is always accessible, add the default action to
+ both the action listener and the popup menu.  See the {@link
+ SystemTray example} for an example of how to do this.
+ 
+ </p><p><b>Note</b>: When implementing <code>SystemTray</code> and
+ <code>TrayIcon</code> it is <em>strongly recommended</em> that
+ you assign different gestures to the popup menu and an action
+ event.  Overloading a gesture for both purposes is confusing
+ and may prevent the user from accessing one or the other.</p><p>
+</p><dl>
+<dt><b>Returns:</b></dt>
+<dd><code>false</code> if no system tray access is supported; this
+ method returns <code>true</code> if the minimal system tray access is
+ supported but does not guarantee that all system tray
+ functionality is supported for the current platform</dd></dl>
+</dd>
+</dl>
+<hr>
+<a name="2040"></a><a name="remove(TrayIcon)"></a><h3>remove</h3>
+<pre>public void <b>remove</b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TrayIcon" title="in java.awt">TrayIcon</a>&nbsp;trayIcon)</pre>
+<dl>
+<dd>
+Removes the specified <code>TrayIcon</code> from the
+ <code>SystemTray</code>.
+
+ <p> All icons added by the application are automatically
+ removed from the <code>SystemTray</code> upon application exit
+ and also when the desktop system tray becomes unavailable.
+
+ </p><p> If <code>trayIcon</code> is <code>null</code> or was not
+ added to the system tray, no exception is thrown and no action
+ is performed.</p><p>
+</p><dl>
+<dt><b>Parameters:</b></dt>
+<dd><code>trayIcon</code> - the <code>TrayIcon</code> to be removed</dd>
+</dl>
+</dd>
+</dl>
+<hr>
+<a name="2044"></a><a name="removePropertyChangeListener(String, PropertyChangeListener)"></a><h3>removePropertyChangeListener</h3>
+<pre>public synchronized void <b>removePropertyChangeListener</b>(<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.lang&amp;class=String" title="in java.lang">String</a>&nbsp;propertyName,
+                                                      <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.beans&amp;class=PropertyChangeListener" title="in java.beans">PropertyChangeListener</a>&nbsp;listener)</pre>
+<dl>
+<dd>
+Removes a {@code PropertyChangeListener} from the listener list
+ for a specific property.
+ <p>
+ The {@code PropertyChangeListener} must be from this context.
+ </p><p>
+ If {@code propertyName} or {@code listener} is {@code null} or invalid,
+ no exception is thrown and no action is taken.</p><p>
+</p><dl>
+<dt><b>Parameters:</b></dt>
+<dd><code>propertyName</code> - the specified property</dd>
+<dd><code>listener</code> - the PropertyChangeListener to be removed</dd>
+</dl>
+</dd>
+</dl>
+<hr>
+<a name="navbar_bottom"><!-- --></a>
+<a href="#skip-navbar_bottom" title="Skip navigation links"></a>
+<table width="100%" border="0" cellpadding="1" cellspacing="0">
+	<tbody><tr>
+	<td colspan="2" class="NavBarCell1" bgcolor="#EEEEFF"><a name="navbar_bottom_firstrow"></a>
+<table border="0" cellpadding="0" cellspacing="3">
+<tbody><tr valign="top" align="center">
+<td class="NavBarCell1" bgcolor="#EEEEFF"><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=overview"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+<td class="NavBarCell1" bgcolor="#EEEEFF"><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=package&amp;package=java.awt"><font class="NavBarFont1"><b>Package</b></font></a>&nbsp;</td>
+<td class="NavBarCell1Rev" bgcolor="#FFFFFF">&nbsp;<font class="NavBarFont1Rev"><b>Class</b></font>&nbsp;</td>
+</tr></tbody></table></td><td rowspan="3" valign="top" align="right"><em></em></td></tr>
+<tr><td class="NavBarCell2" bgcolor="white"><font size="-2">
+&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemColor"><b>PREV CLASS</b></a>&nbsp;
+&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=TextArea.AccessibleAWTTextArea"><b>NEXT CLASS</b></a>
+</font></td>
+<td class="NavBarCell2" bgcolor="white"><font size="-2">
+<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" target="_top"><b>FRAMES</b></a>&nbsp;
+&nbsp;<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/main.php?api=java6&amp;state=class&amp;package=java.awt&amp;class=SystemTray" target="_top"><b>NO FRAMES</b></a>&nbsp;
+<script type="text/javascript">if( window == top ) { document.writeln( '<a href="left.php?api=java6&amp;state=allpkgs"><b>All Classes<\/b><\/a>' ); } </script><a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/left.php?api=java6&amp;state=allpkgs"><b>All Classes</b></a>
+</font></td>
+	</tr>
+	<tr><td class="NavBarCell3" valign="top"><font size="-2">
+SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<a href="#method_summary">METHOD</a>&nbsp;</font></td>
+<td class="NavBarCell3" valign="top"><font size="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<a href="#method_detail">METHOD</a>&nbsp;</font></td></tr>
+</tbody></table>
+<a name="skip-navbar_bottom"></a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<hr>
+
+	<div style="font-size: 75%; background-color: #66EE66; padding: 3px;">
+	<b>This documentation differs from the official API.</b>
+
+	<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html" target="_top">Jadeite</a> adds <i>extra</i> features to the API including:
+		<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html#Font_sizes" target="_top">variable font sizes</a>,
+		<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html#Construction_examples" target="_top">constructions examples</a>,
+		<a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html#Placeholders" target="_top">placeholders</a> for classes and methods, and auto-generated “See Also” links.
+
+	Additionally it <i>is missing</i> some items found in standard Javadoc documentation, including:
+		generics type information,
+		“Deprecated” tags and comments,
+		“See Also” links,
+		along with other minor differences.
+
+	Please send any questions or feedback to <a href="mailto:bam@cs.cmu.edu">bam@cs.cmu.edu</a>.
+</div><div style="font-size: 75%; background-color: #66EE66; padding: 3px;">This page displays the <a href="http://edelstein.pebbles.cs.cmu.edu/jadeite/index.html" target="_top">Jadeite</a> version of the documention, which is derived from the offical documentation that contains this copyright notice:<div style="padding: 0.5em 1em">Copyright 2008 Sun Microsystems, Inc. All rights reserved. Use is subject to <a href="http://java.sun.com/javase/6/docs/legal/license.html" target="_top">license terms</a>. Also see the <a href="http://java.sun.com/docs/redist.html" target="_top">documentation redistribution policy</a>.</div>The official Sun™ documentation can be found here at <a href="http://java.sun.com/javase/6/docs/api/" target="_top">http://java.sun.com/javase/6/docs/api/</a>.</div>
+	<!-- <div style="font-size: 75%; padding: 3px;">View <a href="consent.html" target="_top">Study Consent &amp; Confidentiality Statement</a></div> -->
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="SystemTray%20%28Java%20Platform%20SE%206%29_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8400462-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+
+</body></html>

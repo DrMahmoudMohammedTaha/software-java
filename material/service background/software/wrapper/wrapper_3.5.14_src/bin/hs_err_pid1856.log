@@ -1,0 +1,235 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000010002b0a, pid=1856, tid=1832
+#
+# JRE version: 6.0_25-b06
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.0-b11 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [wrapper.dll+0x2b0a]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000006235800):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=1832, stack(0x0000000006b30000,0x0000000006c30000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x0000000000000000
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000000db0dac88, RCX=0x00000000062359d0, RDX=0x0000000006c2df38
+RSP=0x0000000006c2dea0, RBP=0x0000000006c2df28, RSI=0x00000000dafaae58, RDI=0x0000000001e55b22
+R8 =0x0000000000000001, R9 =0x0000000000000002, R10=0x0000000001e61339, R11=0x000000006d9f24f0
+R12=0x0000000000000000, R13=0x00000000db0dac88, R14=0x0000000006c2df40, R15=0x0000000006235800
+RIP=0x0000000010002b0a, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x0000000006c2dea0)
+0x0000000006c2dea0:   0000000000000000 0000000001e55b22
+0x0000000006c2deb0:   0000000006c2ded8 0000000001e61366
+0x0000000006c2dec0:   00000000062359d0 0000000006c2df38
+0x0000000006c2ded0:   00000000e004fd00 0000000006235800
+0x0000000006c2dee0:   00000000e004fd20 0000000006c2dee8
+0x0000000006c2def0:   00000000db0dac88 0000000006c2df40
+0x0000000006c2df00:   00000000db102308 0000000000000000
+0x0000000006c2df10:   00000000db0dac88 0000000000000000
+0x0000000006c2df20:   0000000006c2df48 0000000006c2df88
+0x0000000006c2df30:   0000000001e55b22 00000000db0e70a0
+0x0000000006c2df40:   0000000001e5e358 0000000006c2df48
+0x0000000006c2df50:   00000000db0dee43 0000000006c2df98
+0x0000000006c2df60:   00000000db102308 0000000000000000
+0x0000000006c2df70:   00000000db0dee88 0000000006c2df48
+0x0000000006c2df80:   0000000006c2dfa0 0000000006c2dfe0
+0x0000000006c2df90:   0000000001e55b22 0000000000000000 
+
+Instructions: (pc=0x0000000010002b0a)
+0x0000000010002aea:   cc cc cc cc cc cc 48 89 54 24 10 48 89 4c 24 08
+0x0000000010002afa:   48 83 ec 18 48 c7 04 24 00 00 00 00 48 8b 04 24
+0x0000000010002b0a:   66 c7 00 0a 00 48 83 c4 18 c3 cc cc cc cc cc cc
+0x0000000010002b1a:   cc cc cc cc cc cc 4c 89 4c 24 20 4c 89 44 24 18 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00000000db0dac88 is an oop
+{method} 
+ - klass: {other class}
+RCX=0x00000000062359d0 is an unknown value
+RDX=0x0000000006c2df38 is pointing into the stack for thread: 0x0000000006235800
+RSP=0x0000000006c2dea0 is pointing into the stack for thread: 0x0000000006235800
+RBP=0x0000000006c2df28 is pointing into the stack for thread: 0x0000000006235800
+RSI=0x00000000dafaae58 is an oop
+{instance class} 
+ - klass: {other class}
+RDI=0x0000000001e55b22 is an Interpreter codelet
+return entry points  [0x0000000001e551e0, 0x0000000001e567a0]  5568 bytes
+R8 =0x0000000000000001 is an unknown value
+R9 =0x0000000000000002 is an unknown value
+R10=0x0000000001e61339 is an Interpreter codelet
+method entry point (kind = native)  [0x0000000001e610c0, 0x0000000001e61940]  2176 bytes
+R11=0x000000006d9f24f0 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00000000db0dac88 is an oop
+{method} 
+ - klass: {other class}
+R14=0x0000000006c2df40 is pointing into the stack for thread: 0x0000000006235800
+R15=0x0000000006235800 is a thread
+
+
+Stack: [0x0000000006b30000,0x0000000006c30000],  sp=0x0000000006c2dea0,  free space=1015k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [wrapper.dll+0x2b0a]  Java_org_tanukisoftware_wrapper_WrapperManager_accessViolationInner+0x1a
+j  org.tanukisoftware.wrapper.WrapperManager.accessViolationNative()V+43
+j  org.tanukisoftware.wrapper.test.AbstractActionApp.doAction(Ljava/lang/String;)Z+479
+j  org.tanukisoftware.wrapper.test.Main$MainFrame.actionPerformed(Ljava/awt/event/ActionEvent;)V+197
+j  java.awt.Button.processActionEvent(Ljava/awt/event/ActionEvent;)V+11
+j  java.awt.Button.processEvent(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+566
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$1.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x1e9a17]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.tanukisoftware.wrapper.WrapperManager.accessViolationInner()V+0
+j  org.tanukisoftware.wrapper.WrapperManager.accessViolationNative()V+43
+j  org.tanukisoftware.wrapper.test.AbstractActionApp.doAction(Ljava/lang/String;)Z+479
+j  org.tanukisoftware.wrapper.test.Main$MainFrame.actionPerformed(Ljava/awt/event/ActionEvent;)V+197
+j  java.awt.Button.processActionEvent(Ljava/awt/event/ActionEvent;)V+11
+j  java.awt.Button.processEvent(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+566
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$1.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$2.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$2.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+204
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x0000000006235800 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=1832, stack(0x0000000006b30000,0x0000000006c30000)]
+  0x00000000053c3000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=2692, stack(0x0000000007260000,0x0000000007360000)]
+  0x00000000053c2000 JavaThread "AWT-Shutdown" [_thread_blocked, id=2660, stack(0x0000000007160000,0x0000000007260000)]
+  0x00000000054ae800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2676, stack(0x0000000007060000,0x0000000007160000)]
+  0x0000000006187800 JavaThread "WrapperActionServer_runner" daemon [_thread_in_native, id=2892, stack(0x0000000006c30000,0x0000000006d30000)]
+  0x0000000001c8c000 JavaThread "DestroyJavaVM" [_thread_blocked, id=2460, stack(0x0000000001d50000,0x0000000001e50000)]
+  0x000000000545f800 JavaThread "Wrapper-Connection" daemon [_thread_in_native, id=2388, stack(0x0000000006930000,0x0000000006a30000)]
+  0x0000000005436800 JavaThread "WrapperActionTest_Runner" daemon [_thread_blocked, id=2032, stack(0x0000000006830000,0x0000000006930000)]
+  0x0000000005476800 JavaThread "Wrapper-Control-Event-Monitor" daemon [_thread_blocked, id=964, stack(0x0000000006630000,0x0000000006730000)]
+  0x0000000005381800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1928, stack(0x0000000005f20000,0x0000000006020000)]
+  0x000000000537a800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2068, stack(0x0000000005e20000,0x0000000005f20000)]
+  0x0000000005375000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2416, stack(0x0000000005d20000,0x0000000005e20000)]
+  0x0000000005374000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2360, stack(0x0000000005c20000,0x0000000005d20000)]
+  0x0000000005371800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=724, stack(0x0000000005b20000,0x0000000005c20000)]
+  0x000000000530a800 JavaThread "Finalizer" daemon [_thread_blocked, id=2372, stack(0x0000000005a20000,0x0000000005b20000)]
+  0x000000000530a000 JavaThread "Reference Handler" daemon [_thread_blocked, id=1880, stack(0x0000000005920000,0x0000000005a20000)]
+
+Other Threads:
+  0x0000000005305000 VMThread [stack: 0x0000000005820000,0x0000000005920000] [id=2480]
+  0x0000000005389800 WatcherThread [stack: 0x0000000006020000,0x0000000006120000] [id=1776]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 9536K, used 598K [0x00000000f5560000, 0x00000000f6000000, 0x0000000100000000)
+  eden space 8192K, 7% used [0x00000000f5560000,0x00000000f55f5850,0x00000000f5d60000)
+  from space 1344K, 0% used [0x00000000f5eb0000,0x00000000f5eb0000,0x00000000f6000000)
+  to   space 1344K, 0% used [0x00000000f5d60000,0x00000000f5d60000,0x00000000f5eb0000)
+ PSOldGen        total 21888K, used 803K [0x00000000e0000000, 0x00000000e1560000, 0x00000000f5560000)
+  object space 21888K, 3% used [0x00000000e0000000,0x00000000e00c8cb8,0x00000000e1560000)
+ PSPermGen       total 23424K, used 10379K [0x00000000dae00000, 0x00000000dc4e0000, 0x00000000e0000000)
+  object space 23424K, 44% used [0x00000000dae00000,0x00000000db822ea0,0x00000000dc4e0000)
+
+Code Cache  [0x0000000001e50000, 0x00000000020c0000, 0x0000000004e50000)
+ total_blobs=363 nmethods=11 adapters=306 free_code_cache=49823552 largest_free_block=5952
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	C:\WINDOWS\system32\java.exe
+0x0000000077ec0000 - 0x0000000077ffc000 	C:\WINDOWS\system32\ntdll.dll
+0x0000000077d40000 - 0x0000000077eb3000 	C:\WINDOWS\system32\kernel32.dll
+0x000007ff7fee0000 - 0x000007ff7ffe6000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x000007ff7fd30000 - 0x000007ff7fed0000 	C:\WINDOWS\system32\RPCRT4.dll
+0x000007ff7e9c0000 - 0x000007ff7e9e2000 	C:\WINDOWS\system32\Secur32.dll
+0x000000006d7f0000 - 0x000000006dfa8000 	C:\Program Files\Java\jre6\bin\server\jvm.dll
+0x0000000077c20000 - 0x0000000077d2c000 	C:\WINDOWS\system32\USER32.dll
+0x000007ff7fc90000 - 0x000007ff7fd2c000 	C:\WINDOWS\system32\GDI32.dll
+0x000007ff7e240000 - 0x000007ff7e290000 	C:\WINDOWS\system32\WINMM.dll
+0x000007ff7fc00000 - 0x000007ff7fc86000 	C:\WINDOWS\system32\msvcrt.dll
+0x000007ff7d500000 - 0x000007ff7d539000 	C:\WINDOWS\system32\IMM32.DLL
+0x000000006d760000 - 0x000000006d76e000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x000000006d3b0000 - 0x000000006d3d7000 	C:\Program Files\Java\jre6\bin\java.dll
+0x000007ff7e380000 - 0x000007ff7e390000 	C:\WINDOWS\system32\PSAPI.DLL
+0x000000006d7b0000 - 0x000000006d7c2000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x000000006d540000 - 0x000000006d54a000 	C:\Program Files\Java\jre6\bin\management.dll
+0x0000000010000000 - 0x000000001003f000 	E:\wrapper_3.5.14_src\lib\wrapper.dll
+0x000000006d600000 - 0x000000006d617000 	C:\Program Files\Java\jre6\bin\net.dll
+0x000007ff77310000 - 0x000007ff77340000 	C:\WINDOWS\system32\WS2_32.dll
+0x000007ff77140000 - 0x000007ff7714c000 	C:\WINDOWS\system32\WS2HELP.dll
+0x000007ff771b0000 - 0x000007ff7722d000 	C:\WINDOWS\system32\mswsock.dll
+0x000007ff6d200000 - 0x000007ff6d293000 	C:\WINDOWS\system32\hnetcfg.dll
+0x000007ff77170000 - 0x000007ff7717b000 	C:\WINDOWS\System32\wshtcpip.dll
+0x000000006d000000 - 0x000000006d1c3000 	C:\Program Files\Java\jre6\bin\awt.dll
+0x000007ff78f10000 - 0x000007ff78f51000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x000007ff57140000 - 0x000007ff573c5000 	C:\WINDOWS\system32\ole32.dll
+0x000007ff7f190000 - 0x000007ff7fb9c000 	C:\WINDOWS\system32\SHELL32.dll
+0x000007ff7ef60000 - 0x000007ff7effb000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x000007ff7f000000 - 0x000007ff7f187000 	C:\WINDOWS\WinSxS\AMD64_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.3790.4770_x-ww_3807D667\COMCTL32.dll
+0x000000006d2a0000 - 0x000000006d306000 	C:\Program Files\Java\jre6\bin\fontmanager.dll
+0x000007ff7a410000 - 0x000007ff7a4af000 	C:\WINDOWS\system32\MSCTF.dll
+0x000007ff7ce50000 - 0x000007ff7ce91000 	C:\WINDOWS\system32\apphelp.dll
+0x000007ff58af0000 - 0x000007ff58b4c000 	C:\WINDOWS\system32\msctfime.ime
+0x000007ff77230000 - 0x000007ff772af000 	C:\WINDOWS\system32\UxTheme.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=../lib -Dwrapper.key=2M2f52uvoY-D3IvI -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=1524 -Dwrapper.version=3.5.14 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1 
+java_command: org.tanukisoftware.wrapper.test.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_25
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=EM64T Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Server 2003 family Build 3790 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2096536k(1551400k free), swap 4059472k(3631960k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.0-b11) for windows-amd64 JRE (1.6.0_25-b06), built on Apr 14 2011 00:44:38 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Thu Mar 29 23:07:23 2012
+elapsed time: 41 seconds
+

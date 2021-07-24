@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="height: 100%;" xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>Run Any Application as a Windows Service | Start/boot your Program or EXE as a Windows 2012/8/2008/7/Vista/2003/XP Service</title>
+	<meta name="keywords" content="run as service,run app as service,run at boot,program as a service,service,windows application as service,application as windows service,srvany,install Windows Service,run windows program as service,application as service,windows service,run program as service,create Windows Service,run application as service,srvany.exe,instsrv,instsrv.exe,24/7,uptime,monitor application,xyntservice">
+	<meta name="description" content="Run as a Service: AlwaysUp installs any Windows 8/2012/7/2008/Vista/2003/XP GUI application as a Windows Service, starting it at boot and monitoring it to ensure that it is always running, 24/7, even if it crashes, hangs, or fails. Download the free 30-day trial today.">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="copyright" content="Core Technologies Consulting, LLC, 2004-2014. All Rights Reserved">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="pragma" content="no-cache">
+		<link rel="icon" href="http://www.coretechnologies.com/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="http://www.coretechnologies.com/favicon.ico" type="image/x-icon">
+	
+	<!-- JQuery & Fancybox -->
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/jquery-1.js"></script>
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/jquery_003.js"></script>
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/jquery.js"></script>
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/jquery_002.js"></script>
+	<link rel="stylesheet" href="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/jquery.css" type="text/css" media="screen">
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/ctc-fancybox.js"></script>
+
+	<!-- Scrolling customer logos -->
+	<script type="text/javascript">
+		$(function() { setTimeout( "customerLogoSlideshowAdvance()", 2000 ); });
+	</script>
+
+	<!-- For scrolling to top -->
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/ctc-scroll-to-top.js"></script>
+ 	
+	<!-- IE specific -->
+	<!--[if IE]>
+		<link rel="stylesheet" href="/resources/css/explorer.css" type="text/css" />
+	<![endif]-->
+	<!--[if lt IE 7.]>
+		<script defer type="text/javascript" src="/resources/javascript/pngfix.js"></script>
+	<![endif]-->
+	
+	<!-- Site genreric -->
+	<link rel="StyleSheet" href="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/ctc-common.css" type="text/css" media="screen">
+	<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/ctc-common.js"></script>
+
+	<!-- Google translate - automatic toolbar for non-English browsers -->
+	<script>function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en'}); }</script>
+	<script src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/element.js"></script><link href="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/translateelement.css" charset="UTF-8" rel="stylesheet" type="text/css"><script src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/main.js" charset="UTF-8" type="text/javascript"></script>
+<script src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/element_main.js" charset="UTF-8" type="text/javascript"></script></head>
+
+<body style="position: relative; min-height: 100%; top: 0px;">
+<a name="top"></a>
+
+<div id="centered-page">
+<div id="page-margin">
+
+<div id="navigation">
+	<table width="100%" cellpadding="0" cellspacing="0"><tbody><tr>
+		<td>
+			<a href="http://www.coretechnologies.com/"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/pixel-8x8.gif" alt="Core Technologies Consulting" title="Celebrating our 10th Anniversary!" border="0" height="60" width="150"></a>
+		</td>
+		<td style="padding-top:18px; padding-right:20px" align="right">
+			<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/telephone-24x24.png" title="Call us toll free in the USA" alt="Call us toll free in the USA" align="top" height="24" width="24">&nbsp;<font class="introduction" title="(888) 881-2673"><b>(888) 881-CORE</b></font>
+			<table cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td class="menu-item"><a href="http://www.coretechnologies.com/">Home</a></td>
+				<td class="menu-item">&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/products/">Products</a></td>
+				<td class="menu-item">&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/support/">Support</a></td>
+				<td class="menu-item">&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/company/">Company</a></td>
+				<td class="menu-item">&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/blog/">Blog</a></td>
+				<td class="menu-item">
+					<div id="search-link">&nbsp;|&nbsp;<a href="javascript:showContent('do-search');javascript:hideContent('search-link');document.forms['do-search-form'].reset();document.forms['do-search-form']['q'].focus();" title="Search this site with Google">Search</a></div>
+					<div id="do-search" style="display: none;">
+						<form name="do-search-form" method="get" action="http://www.google.com/search" style="margin:0px 0px 0px 0px">
+							&nbsp;|&nbsp;
+							<input name="sitesearch" value="www.coretechnologies.com" type="hidden">
+							<input name="q" size="12" maxlength="255" type="text">
+							<input value="Search site with Google" type="submit">
+						</form>
+					</div>
+				</td>
+			</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	</tbody></table>
+</div>
+
+<div id="page-content">
+
+<div id="page-content-padding">
+
+
+
+<div itemscope="" itemtype="http://schema.org/SoftwareApplication">
+<meta itemprop="url" content="http://www.coretechnologies.com/products/AlwaysUp/">
+<meta itemprop="downloadUrl" content="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Installer.exe">
+<meta itemprop="operatingSystems" content="Windows 8/7/Vista/XP/Server 2012/2008/2003">
+<meta itemprop="inLanguage" content="en">
+<meta itemprop="softwareApplicationCategory" content="UtilitiesApplication">
+<meta itemprop="softwareApplicationSubCategory" content="Miscellaneous">
+<meta itemprop="inLanguage" content="en">
+<div itemprop="author" itemscope="" itemtype="http://schema.org/Organization">
+	<meta itemprop="name" content="Core Technologies Consulting, LLC">
+	<meta itemprop="url" content="http://www.coretechnologies.com/">
+	<meta itemprop="foundingDate" content="2004-01-10">
+	<meta itemprop="telephone" content="(510) 343-3565">
+</div>
+<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+	<meta itemprop="price" content="$49.99">
+	<meta itemprop="priceCurrency" content="USD">
+</div>
+<div itemprop="screenshot" itemscope="" itemtype="http://schema.org/ImageObject">
+	<meta itemprop="url" content="http://www.coretechnologies.com/images/alwaysup-overview-screenshot-800x600-v7.5.jpg">
+	<meta itemprop="width" content="800">
+	<meta itemprop="height" content="600">
+</div>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top" width="99%">
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+<a href="http://www.coretechnologies.com/">Home</a>&nbsp;&gt;&nbsp;<a href="http://www.coretechnologies.com/products/">Products</a>&nbsp;&gt;&nbsp;AlwaysUp
+</div>
+
+<div class="left-column">
+
+<table border="0" width="100%" cellpadding="2" cellspacing="4"><tbody><tr>
+<td valign="top" width="48">
+<img itemprop="image" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/alwaysup_logo_48x48.jpg" alt="Run any application as a Windows Service | Windows 2012/8/2008 R2/7/Vista/2003/XP supported" title="Run any application as a Windows Service | Windows 2012/8/2008 R2/7/Vista/2003/XP supported" height="48" width="48">
+</td>
+<td valign="top">
+<h1 style="padding-bottom:0px; padding-top:0px;">Easily Run any Application as a Windows Service with AlwaysUp</h1>
+</td>
+</tr></tbody></table>
+
+<h2 class="larger"><span itemprop="description">Start your Windows 8/2012/7/2008/Vista/2003/XP application at boot and keep it running 24x7. Achieve 100% uptime today!</span></h2>
+
+<!-- Action buttons -->
+<div align="center">
+<a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Installer.exe"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/download-button-91x22.png" alt="Free 30-day trial" title="Free 30-day trial" border="0" height="22" width="91"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://www.coretechnologies.com/products/AlwaysUp/purchase.html"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/buy-now-button-82x22.png" alt="All major credit cards accepted" title="All major credit cards accepted" border="0" height="22" width="82"></a>
+</div>
+<hr>
+
+<div class="introduction">
+
+<b><span itemprop="name">AlwaysUp</span></b> runs any application (32/64-bit executable, batch file, shortcut, java, perl, etc.)
+as a 
+<a href="http://www.coretechnologies.com/WindowsServices/FAQ.html#WhatIsAWindowsService">Windows Service</a>,
+monitoring it constantly to ensure 100% uptime.
+It will <b>automatically start your application whenever your computer boots</b>,
+automatically <b>restart your application if it crashes</b>, hangs, or uses too much memory,
+and do everything in its power to ensure that your application is <b>available 24/7</b>.
+And regular, detailed <b>email alerts</b> from AlwaysUp will keep you informed of performance,
+crashes, scheduled restarts and other relevant events.
+
+</div>
+
+<table>
+	<tbody><tr>
+		<td style="padding-right:12px" valign="top">
+			<a href="http://www.coretechnologies.com/images/alwaysup-v7.5-add-dialog-animated.gif" class="zoomPopup" rel="zoomGroup" title="Easily run your application as a Windows Service" target="_blank">
+			<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/alwaysup-v7.gif" alt="Run Application as a Windows Service | Run Any GUI Program, Exe, Script as Windows Service | Free Trial" title="Easily run any Windows 2008 R2/7/Vista/2003/XP GUI application as a Service | Free Trial" border="0" height="297" width="208">
+			</a>
+			<div class="small dimmed" align="center"><i><nobr>(AlwaysUp configuration - click to enlarge)</nobr></i></div>
+		</td>
+		<td valign="top">	
+			<div class="introduction" style="margin:0px 0px 0px 0px;">
+				When run as a Windows Service, your application	can start 
+automatically without someone having to log on, survive user 
+logons/logoffs, and
+				<b>run entirely without user intervention</b>. No programming is required.
+				<br><br>
+				And best of all, after years of constant refinement based on client feedback and many thousands of
+				installations on a variety of PCs, <b>AlwaysUp remains a trusted, reliable solution for many large and small businesses worldwide</b>.
+				<br><br>
+				Take advantage of our <b>risk-free 30-day trial</b> and find out for yourself!			
+			</div>
+		</td>
+
+	</tr>
+</tbody></table>
+
+<br>
+
+<a name="Interface"></a>
+<hr>
+<div style="margin:0px 0px 0px 0px;float:right;">
+<a href="#top"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/top.jpg" alt="Overview: Run as a Service" border="0" height="18" width="50"></a>
+</div>
+<h2 style="font-size:16px; font-weight:bold;">An easy to use Interface to run any Program as a Windows Service</h2>
+<p>
+<b>AlwaysUp</b>'s intuitive GUI makes it <b>very easy</b> to configure any application as a Windows Service.
+Just specify two key items (a name and the path to your application) and you are on your way!
+Come back for the advanced features later.
+</p>
+<p>
+</p><div align="center">
+<a href="http://www.coretechnologies.com/images/alwaysup-overview-screenshot-800x600-v7.5.jpg" class="zoomPopup" rel="zoomGroup" title="AlwaysUp runs any application (program, exe, script, java) as a Windows Service | Free Trial!" target="_blank">
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/alwaysup-overview-screenshot-408x308-v7.jpg" alt="AlwaysUp runs any application (program, exe, script, java) as a Windows Service | Free Trial!" border="0" height="308" width="408">
+<div class="small dimmed" align="center"><i><nobr>(Click to enlarge)</nobr></i></div>
+</a>
+</div>
+<p></p>
+
+<a name="Key_Features"></a>
+<a name="key-features"></a>
+<hr>
+<div style="margin:0px 0px 0px 0px;float:right;">
+<a href="#top"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/top.jpg" alt="Overview: Run as a Service" border="0" height="18" width="50"></a>
+</div>
+<h2 style="font-size:16px; font-weight:bold;">Key Features &amp; Benefits of Running an Application as a Windows Service with AlwaysUp</h2>
+
+<div class="feature-list" style="margin:6px 0px 12px 0px;">
+	<ul>
+		<li>
+Ensure that any application <b>(.exe, <a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunBatchFileAsAService.html">batch file</a>, .com, .pif, script,
+shortcut, <a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPerlScriptAsAService.html">perl script</a>, <a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunJavaApplicationAsAService.html">java app</a>, php, delphi, vb, etc.)</b> runs 24x7
+		</li>
+		<li>
+<b>Very easy to use</b> — install your application as a Windows Service in just a few seconds!
+		</li>
+		<li>
+Able to <b>automatically start your application when your computer boots</b>, to run when no user
+is logged in and to run <b>despite logon/logoffs</b> —
+all to guarantee uptime without manual user intervention
+		</li>
+		<li>
+Converts both <b>GUI and non-GUI</b> applications to run as Services
+		</li>
+		<li>
+Constantly monitors your application and <b>restarts it whenever it fails</b>
+		</li>
+		<li>
+<b>Secure</b> — no need to auto-logon to Windows
+		</li>
+		<li>
+Able to detect and <b>restart "misbehaving" applications</b> that hang, hog the CPU, or consume too much memory
+		</li>
+		<li>
+Able to restart your application (or <b>reboot the computer</b>) at a <b>scheduled time</b>
+		</li>
+		<li>
+Able to <b>boost your application's priority</b> to ensure that it gets preferential treatment on the host computer
+		</li>
+		<li>
+<b>Emails you</b> with details of crashes, restarts and other problems
+		</li>
+		<li>
+Supports the integration of your own <b>custom</b> "sanity check" utilities, executed regularly to test if your application is functioning normally or not
+		</li>
+		<li>
+Automatically <b>dismisses common "Application error" dialog boxes</b> that prevent crashed applications from fully exiting
+		</li>
+		<li>
+The intuitive GUI makes it easy to set up your application as a Windows 
+Service, but no GUI is necessary once your application has been 
+configured
+		</li>
+		<li>
+Supports powerful automation, to <b>automatically dismiss custom dialogs, fill in forms</b>, etc. from your program running as a Windows Service
+		</li>
+		<li>
+Reports all activities to the <b>Windows Event Log</b>
+		</li>
+		<li>
+Works flawlessly in all virtual environments (<b>VMWare, Virtual PC</b>, etc.)
+		</li>
+		<li>
+<b>Very efficient</b>; demands minimal CPU &amp; memory resources
+		</li>
+		<li>
+Compatible with <a href="http://msdn.microsoft.com/en-us/windows/hardware/gg463353.aspx" target="_blank" rel="nofollow">Session 0 Isolation</a> in Windows Server 2012/2008/R2 and Windows 8/7/Vista
+		</li>
+		<li>
+Control AlwaysUp applications from your <b>web browser</b> using our free add-on program,
+<a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpWebService/">AlwaysUp Web Service</a>
+		</li>
+		<li>
+<b>Free, courteous technical support</b> via <a href="http://www.coretechnologies.com/support/" target="_blank">email or phone</a>
+		</li>
+		<li>
+<a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html">Site, OEM and Volume licensing</a> available to suit your needs
+		</li>
+		<li>
+<a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpBranding.html">Branding for Enterprise, Site and OEM licensees</a>
+		</li>
+		<li>
+<b>No programming</b> required
+		</li>
+		<li>
+<b>Future-proof</b>; tailored for Windows 8 &amp; Server 2012 and has earned the
+<a href="http://www.windowsservercatalog.com/item.aspx?idItem=e9effdb6-481e-56da-8207-8d0df30c7c4d&amp;bCatID=1282" target="_blank" rel="nofollow">
+"Certified for Windows Server 2012" logo</a> (and others) from Microsoft.
+		</li>
+		<li>
+<b>Trusted</b> by many of the world's most recognizable companies
+		</li>
+		<li>
+Robust and stable, with an <b>installed base in the tens of thousands</b>
+		</li>
+	</ul>
+</div>
+
+<p>
+<b>But perhaps most important of all</b>, AlwaysUp was designed and implemented by
+<b>Senior Software Engineers with over 20 years of real-world experience</b> developing robust,
+mission-critical applications. Our software is of the <b>highest quality</b>, and we stand by it
+without reservation.
+</p>
+
+<a name="more-information"></a>
+<hr>
+<div style="margin:0px 0px 0px 0px;float:right;">
+<a href="#top"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/top.jpg" alt="Overview: Run as a Service" border="0" height="18" width="50"></a>
+</div>
+<h2 style="font-size:16px; font-weight:bold;">More information to help you convert your application to a Windows Service with AlwaysUp</h2>
+<p>
+</p><table cellpadding="4" cellspacing="4">
+<tbody><tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/Install.html"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/setup-48x48.png" alt="How to Install AlwaysUp on Windows 2012/8/2008 R2/7/Vista/2003/XP" title="How to Install AlwaysUp on Windows 2012/8/2008 R2/7/Vista/2003/XP" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td valign="top"><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/Install.html">Step-by-step instructions for installing AlwaysUp on Windows 2012/8/2008 R2/7/Vista/2003/XP</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_FAQ.html"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/faq.gif" alt="Tips to run your Windows 2012/8/2008/7/Vista/2003/XP Services" title="Tips to run your Windows 2012/8/2008/7/Vista/2003/XP Services" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_FAQ.html">Browse Frequently Asked Questions &amp; Answers about running anything as a Windows Service</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/AddNotepadDemo/"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/movie.gif" alt="See how to easily start your program as a windows serivce" title="See how to easily start your program as a windows serivce" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AddNotepadDemo/">Watch a short demo of AlwaysUp (about 90 seconds long, no sound)</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpWebService/"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/internet_explorer_logo_48x48.jpg" alt="Run as a Windows Service and manage your application from your web browser" title="Run as a Windows Service and manage your application from your web browser" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpWebService/">Manage AlwaysUp Windows Services from your Web Browser</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/toolbox.gif" alt="Create and deploy Windows Services for your entire network/organization" title="Create and deploy Windows Services for your entire network/organization" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html">OEM, Enterprise &amp; Site licensing information (including unlimited and royalty-free)</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpCLT/"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/alwaysup_clt_logo_48x48.gif" alt="Run your OEM program as a Windows Service" title="Run your OEM program as a Windows Service" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpCLT/">Developers - Use our Command Line Tools to ensure that your application starts at boot and is available 24x7</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/Plugins/"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/plugin-48x48.png" alt="Ensure that your app runs properly as a Windows Service" title="Ensure that your app runs properly as a Windows Service" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/Plugins/">Extend / customize AlwaysUp with your own failure detection plugins!</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/ServiceTray/"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/servicetray-logo-48x48.png" alt="Control any Windows Service from the Taskbar" title="Control any Windows Service from the Taskbar" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/ServiceTray/">Easily control/monitor your AlwaysUp Windows Services with a Tray Icon</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/GettingTheMostFromAlwaysUp.html"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/wrench-48x48.png" alt="Best Features for your AlwaysUp Windows Services" title="Best Features for your AlwaysUp Windows Services" align="absmiddle" border="0" height="48" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/GettingTheMostFromAlwaysUp.html">Practical tips on getting the most from your AlwaysUp Windows Services</a></h3></td>
+</tr>
+<tr>
+<td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp-Flyer.pdf" target="_blank"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/alwaysup-flyer-small-48x63.jpg" alt="Run anything as a Windows Service" title="Run anything as a Windows Service" align="absmiddle" border="0" height="63" width="48"></a></td>
+<td><h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp-Flyer.pdf" target="_blank">Printable flyer describing AlwaysUp (PDF)</a></h3></td>
+</tr>
+</tbody></table>
+
+<br>
+<a name="Purchase"></a>
+<a name="purchase"></a>
+<hr>
+<div style="margin:0px 0px 0px 0px;float:right;">
+<a href="#top"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/top.jpg" alt="Overview: Run as a Service" border="0" height="18" width="50"></a>
+</div>
+
+<h2 style="font-size:16px; font-weight:bold;">AlwaysUp Pricing</h2>
+<p>
+</p><div align="center">
+<table id="pricing-table">
+<tbody><tr class="pricing-table-heading"><td><b>Quantity/Type</b></td><td><b>Price per license (USD)</b></td></tr>
+<tr><td>1</td><td>$49.99</td></tr>
+<tr class="pricing-table-alt"><td>2-9</td><td>$44.99 <i class="dimmed">(a 10% discount!)</i></td></tr>
+<tr><td>10-24</td><td>$39.99 <i class="dimmed">(a 20% discount!)</i></td></tr>
+<tr class="pricing-table-alt"><td>25+</td><td>$34.99 <i class="dimmed">(a 30% discount!)</i></td></tr>
+<tr><td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html#LimitedSite" target="_blank">Limited Site (50 PCs)</a></td><td>$999 <i class="dimmed">(save over 40%!)</i></td></tr>
+<tr class="pricing-table-alt"><td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html#UnlimitedSite" target="_blank">Unlimited Site</a></td><td>$1999 <i class="dimmed">(unlimited savings!)</i></td></tr>
+<tr><td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html#LimitedEnterprise" target="_blank">Limited Enterprise (100 PCs)</a></td><td>$1999 <i class="dimmed">(save over 40%!)</i></td></tr>
+<tr class="pricing-table-alt"><td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html#UnlimitedEnterprise" target="_blank">Unlimited Enterprise</a></td><td>$2799 <i class="dimmed">(unlimited savings!)</i></td></tr>
+<tr><td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html#LimitedOEM" target="_blank">Limited OEM (50 PCs/year)</a></td><td>$1299 <i class="dimmed">(perpetual savings!)</i></td></tr>
+<tr class="pricing-table-alt"><td><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html#UnlimitedOEM" target="_blank">Unlimited OEM</a></td><td>$2799 <i class="dimmed">(unlimited savings!)</i></td></tr>
+</tbody></table>
+</div>
+<p></p>
+
+<p>
+</p><div class="larger"><h3 style="font-size:14px;">
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/15-day-money-back-guarantee.gif" alt="Get a refund if you fail to run as a service!" title="Get a refund if you fail to run as a service!" align="absmiddle" height="95" width="104">
+100% Satisfaction / Money Back Guarantee!</h3></div>
+Buy with confidence, knowing that if you are not completely satisfied with AlwaysUp <b>you can request a full refund within 15 days of your purchase</b>.
+<p></p>
+
+<p class="introduction">
+<a href="http://www.coretechnologies.com/products/AlwaysUp/purchase.html"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/cash_register.gif" alt="Purchase AlwaysUp" title="Purchase AlwaysUp" align="middle" border="0" height="48" width="48"></a>
+<a href="http://www.coretechnologies.com/products/AlwaysUp/purchase.html">Click here to purchase AlwaysUp now!</a>
+</p>
+
+</div></td>
+
+<td class="right-column-td"><div class="right-column">
+
+<div class="rbox quick-links first-child">
+<h3>AlwaysUp</h3>
+<div class="separator"></div>
+<div class="content gradient-footer">
+	<ul>
+		<li><a href="http://www.coretechnologies.com/products/AlwaysUp/AddNotepadDemo/">Video (90 seconds)</a></li>
+		<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Screenshots/">Screenshots</a></li>
+		<li><a href="#key-features">Key Features</a></li>
+		<li><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpUserManual.pdf" target="_blank">User's Manual (PDF)</a></li>
+		<li><a itemprop="versionChanges" href="http://www.coretechnologies.com/products/AlwaysUp/VersionHistory.html">Version History</a></li>
+		<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/">80+ How-to Tutorials</a></li>
+		<li><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Versions.html">Licensing</a> | <a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_FAQ.html">FAQ</a></li>
+		<li><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpComments.html">Testimonials</a> | <a href="#more-information">More...</a></li>
+	</ul>
+</div>
+</div>
+
+<!-- Download. -->
+<div class="yellow rbox">
+<h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Installer.exe">Download &amp; Try it Free!</a></h3>
+<div class="separator"></div>
+<div class="content">
+	<table cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td style="padding-right:4px;width:48px">
+				<a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Installer.exe"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/download.gif" alt="Download AlwaysUp and Run as a Service Today!" title="Download AlwaysUp and Run as a Service Today!" border="0" height="48" width="48"></a>
+			</td>
+			<td width="100%"><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_Installer.exe">Version <span itemprop="softwareVersion">8.8</span><br>
+				<time itemprop="datePublished" datetime="2014-06-21">June&nbsp;21&nbsp;2014</time><br>
+				<span itemprop="fileSize">4.2 MB</span> Installer</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="small dimmed" colspan="2" style="padding:8px 6px 0px 6px">
+			<ul style="margin:0px 0px 0px 0px">
+			<li>Unrestricted 30-day trial for new users; upgrade for existing users</li>
+			<li>Windows 8.1/8/7/Vista/XP and Windows Server 2012/2008/2003</li>
+			<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Install.html">How to Install</a></li>
+			</ul>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+</div>
+
+<!-- Purchase. -->
+<div class="white rbox quick-links">
+<h3><a href="http://www.coretechnologies.com/products/AlwaysUp/purchase.html">Buy it Now!</a></h3>
+<div class="separator"></div>
+<div class="content">
+	<table cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td style="padding-right:4px;width:48px">
+				<a href="http://www.coretechnologies.com/products/AlwaysUp/purchase.html">
+        				<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/cash_register.gif" alt="Purchase AlwaysUp and Keep your Programs Running 24/7" title="Purchase AlwaysUp and Keep your Programs Running 24/7" border="0" height="48" width="48">
+				</a>
+			</td>
+			<td width="100%"><a href="http://www.coretechnologies.com/products/AlwaysUp/purchase.html">Only $49.99 (single license)</a></td>
+		</tr>
+		<tr>
+			<td class="small dimmed" colspan="2" style="padding:8px 6px 0px 6px">
+			<ul style="margin:0px 0px 0px 0px">
+			<li>Money back guarantee</li>
+			<li>PayPal / Amazon / Credit Cards accepted</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+</div>
+
+<!-- Animated customers logos. -->
+<div align="center">
+<font size="-1"><b>Our customers include...</b></font>
+<div id="customer-logo-slideshow" style="margin-top:6px;" align="center">
+	<img style="opacity: 0;" src="/customer-logos/logo72.jpg" alt="" class="last-active active" align="middle" border="0" height="150" width="200">
+</div>
+</div>
+
+
+<!-- Customer comments. -->
+<br>
+<script type="text/javascript">
+var comment_scroller_object = new scrollObject("comment_scroller", 175, 190, "up", 10000, 1.15, true);
+{
+var index = 0;
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>As a developer myself I can appreciate the time and effort put into AlwaysUp. The trial experience has been very good, it just works</i></b><br /><font size=\"-2\">- Edhy Rijo, Progytech</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Great little piece of software. Dropbox as a service alone is worth $50</i></b><br /><font size=\"-2\">- Kevin Martin, City of Portland, Bureau of Planning &amp; Sustainability</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I really like AlwaysUp, from its simple and clean UI to the great FAQ and help file. From a fellow software developer nice job and well done!</i></b><br /><font size=\"-2\">- Stephen Edwards</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>An excellent piece of software... we can sleep at night and not worry about waking up with a crashed server</i></b><br /><font size=\"-2\">- www.BHZRD.com</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Your product was very simple to setup and hasn't failed since I installed it</i></b><br /><font size=\"-2\">- Jack Slocum, Surface Finish Technologies, Inc.</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I just want to express my appreciation with AlwaysUp and its companion AlwaysUpWebService. They have solved a complicated problem in an elegant and extensible way.</i></b><br /><font size=\"-2\">- Jens Riboe, Verizon Business</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I have to say that this product is an answer to my prayers. It appears to be working flawlessly and is doing exactly what we require</i></b><br /><font size=\"-2\">- Jim Kaye, Systems Analyst, Cuyahoga County Clerk of Courts</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I just want to thank you for the absolutely excellent service. This product is fantastic and really makes things a lot easier</i></b><br /><font size=\"-2\">- Johann Otto, The Agricultural Research Council, South Africa</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I am loving the AlwaysUp Solution. I have converted all of our batch files which run on different servers to be run as services and I am now experiencing 100% availability and 24 hour uptimes</i></b><br /><font size=\"-2\">- Deon van Rhyn, Solutions Architect, PAYG IT Pty Ltd, South Africa</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I'm very impressed with your customer service! It's always a pleasure to work with an excellent support team</i></b><br /><font size=\"-2\">- Matthew Pattison, Welcom Software Limited</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Your software solved all my problems. It is a great looking and great working peice of software</i></b><br /><font size=\"-2\">- John Younger</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I am very impressed. AlwaysUp is the only tool I have tested that did not have a problem running our Powerbuilder developed applications</i></b><br /><font size=\"-2\">- Clint Lotter, Unilever</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>With AlwaysUp... development is easier and faster, and the services more stable, but should something really bad happen then AlwaysUp will likely save the day...</i></b><br /><font size=\"-2\">- Bent Tranberg, Senior software developer, OTRUM</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Does exactly what it says - simply and cleanly!</i></b><br /><font size=\"-2\">- Richard Moore, VP of SmoothWall (www.smoothwall.net)</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>This is an awesome product.  Its easy to use and reliable. Keep up the good work</i></b><br /><font size=\"-2\">- Lyndon Hughey, Valid Systems</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>AlwaysUp provided an excellent solution to a nagging problem that really helped my team get over the line on a very important pilot project</i></b><br /><font size=\"-2\">- Anonymous</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>AlwaysUp is a great solution for us.  We have had no downtime with the application that AlwaysUp is controlling.</i></b><br /><font size=\"-2\">- Luke Prindle, Wright-Patt Credit Union</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Great product that I would recommend to clients</i></b><br /><font size=\"-2\">- Brent Gilmour, IT Consultant</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>It was nice to find an application that does what is advertised and does it very well.  I have experienced no surprises using Always-Up, it just works</i></b><br /><font size=\"-2\">- Jim McJessy, GeoShack</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>AlwaysUp is a great piece of software that has saved me a lot of hassle. Thank you very much!</i></b><br /><font size=\"-2\">- Andy Greenway</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I'm very impressed with the intuative interface - much more mature and usable than others I've tried</i></b><br /><font size=\"-2\">- Geoffrey Poole, Eco-metrics, Inc.</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I really appreciate all the work you put into the product, and it has helped us quite a bit</i></b><br /><font size=\"-2\">- Steve Diedrich, Carmichael Lynch</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>We thank you for developing the software and hope there will come more nice features in the future. Keep going with this good work!!!</i></b><br /><font size=\"-2\">- Edwin Timmermans, Spaarne Ziekenhuis</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I have bought an OEM licence for AlwaysUp and find it a very useful tool</i></b><br /><font size=\"-2\">- Bob Prangnell, CEO, Beausoft Ltd</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Without AlwaysUp my faxserver would come to a screeching halt. I have been impressed with it from day 1. Thank you for making this software available at a reasonable price.</i></b><br /><font size=\"-2\">- William C Biggs MD FACE</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>When SpamAssassin was installed as a Windows service it was regularly stopping and Windows would not (or could not) restart it. Since using AlwaysUp we have run SpamAssassin with a 100% success rate.</i></b><br /><font size=\"-2\">- Stuart Hunter, Long Road Nominees Pty Ltd</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>EASY AND WORKS!!! It is always refreshing to have a software do what it says it will do and quick turn around on service!!</i></b><br /><font size=\"-2\">- Alan Roesch</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>We use it to keep a our web server running since it is prone to hang or get C++ errors. AlwaysUp keeps us going, and we really do appreciate how well your software is working!</i></b><br /><font size=\"-2\">- Bill Lavinghousez, Greene County Schools</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>I use AlwaysUp and love it. Thank you for the great product.</i></b><br /><font size=\"-2\">- Jim Baker, Printnet Solutions</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>It is a pleasant surprise in the IT world of over promising and underdelivering to find a product that does exactly what it claims to do in a stable and user friendly way</i></b><br /><font size=\"-2\">- Warren Crouch, Caladrius</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Super awesome program. Just what I needed for Dropbox on a client server. I'll be back again I'm sure.</i></b><br /><font size=\"-2\">- Keith Wheeler, Triune Technology Consulting, LLC</font>";
+comment_scroller_object.block[index++] = "<img src=\"/images/quotes.gif\" width=\"32\" height=\"32\" alt=\"\" /><b><i>Great product. I had been using SrvAny but AlwaysUp is much, much better. Easier to setup, easier to use.</i></b><br /><font size=\"-2\">- Michael O'Sullivan, Internal Solutions Developer, ARCA</font>";
+}
+</script>
+<script type="text/javascript">
+	$(document).ready(function() { comment_scroller_object.scroll(); });
+</script>
+
+<div class="rbox white">
+<h3><a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUpComments.html">Our Customers Say...</a></h3>
+<div class="separator"></div>
+<div class="content gradient-footer">
+	<div style="overflow: hidden; position: relative; width: 175px; height: 190px;" id="comment_scroller"><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>As
+ a developer myself I can appreciate the time and effort put into 
+AlwaysUp. The trial experience has been very good, it just works</i></b><br><font size="-2">- Edhy Rijo, Progytech</font></td></tr></tbody></table><table style="position: absolute; top: -190px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Great little piece of software. Dropbox as a service alone is worth $50</i></b><br><font size="-2">- Kevin Martin, City of Portland, Bureau of Planning &amp; Sustainability</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I
+ really like AlwaysUp, from its simple and clean UI to the great FAQ and
+ help file. From a fellow software developer nice job and well done!</i></b><br><font size="-2">- Stephen Edwards</font></td></tr></tbody></table><table style="position: absolute; top: -190px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>An excellent piece of software... we can sleep at night and not worry about waking up with a crashed server</i></b><br><font size="-2">- www.BHZRD.com</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Your product was very simple to setup and hasn't failed since I installed it</i></b><br><font size="-2">- Jack Slocum, Surface Finish Technologies, Inc.</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I
+ just want to express my appreciation with AlwaysUp and its companion 
+AlwaysUpWebService. They have solved a complicated problem in an elegant
+ and extensible way.</i></b><br><font size="-2">- Jens Riboe, Verizon Business</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I
+ have to say that this product is an answer to my prayers. It appears to
+ be working flawlessly and is doing exactly what we require</i></b><br><font size="-2">- Jim Kaye, Systems Analyst, Cuyahoga County Clerk of Courts</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I just want to thank you for the absolutely excellent service. This product is fantastic and really makes things a lot easier</i></b><br><font size="-2">- Johann Otto, The Agricultural Research Council, South Africa</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I
+ am loving the AlwaysUp Solution. I have converted all of our batch 
+files which run on different servers to be run as services and I am now 
+experiencing 100% availability and 24 hour uptimes</i></b><br><font size="-2">- Deon van Rhyn, Solutions Architect, PAYG IT Pty Ltd, South Africa</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I'm very impressed with your customer service! It's always a pleasure to work with an excellent support team</i></b><br><font size="-2">- Matthew Pattison, Welcom Software Limited</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Your software solved all my problems. It is a great looking and great working peice of software</i></b><br><font size="-2">- John Younger</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I
+ am very impressed. AlwaysUp is the only tool I have tested that did not
+ have a problem running our Powerbuilder developed applications</i></b><br><font size="-2">- Clint Lotter, Unilever</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>With
+ AlwaysUp... development is easier and faster, and the services more 
+stable, but should something really bad happen then AlwaysUp will likely
+ save the day...</i></b><br><font size="-2">- Bent Tranberg, Senior software developer, OTRUM</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Does exactly what it says - simply and cleanly!</i></b><br><font size="-2">- Richard Moore, VP of SmoothWall (www.smoothwall.net)</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: visible; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>This is an awesome product.  Its easy to use and reliable. Keep up the good work</i></b><br><font size="-2">- Lyndon Hughey, Valid Systems</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>AlwaysUp
+ provided an excellent solution to a nagging problem that really helped 
+my team get over the line on a very important pilot project</i></b><br><font size="-2">- Anonymous</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>AlwaysUp is a great solution for us.  We have had no downtime with the application that AlwaysUp is controlling.</i></b><br><font size="-2">- Luke Prindle, Wright-Patt Credit Union</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Great product that I would recommend to clients</i></b><br><font size="-2">- Brent Gilmour, IT Consultant</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>It
+ was nice to find an application that does what is advertised and does 
+it very well.  I have experienced no surprises using Always-Up, it just 
+works</i></b><br><font size="-2">- Jim McJessy, GeoShack</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>AlwaysUp is a great piece of software that has saved me a lot of hassle. Thank you very much!</i></b><br><font size="-2">- Andy Greenway</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I'm very impressed with the intuative interface - much more mature and usable than others I've tried</i></b><br><font size="-2">- Geoffrey Poole, Eco-metrics, Inc.</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I really appreciate all the work you put into the product, and it has helped us quite a bit</i></b><br><font size="-2">- Steve Diedrich, Carmichael Lynch</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>We
+ thank you for developing the software and hope there will come more 
+nice features in the future. Keep going with this good work!!!</i></b><br><font size="-2">- Edwin Timmermans, Spaarne Ziekenhuis</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I have bought an OEM licence for AlwaysUp and find it a very useful tool</i></b><br><font size="-2">- Bob Prangnell, CEO, Beausoft Ltd</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Without
+ AlwaysUp my faxserver would come to a screeching halt. I have been 
+impressed with it from day 1. Thank you for making this software 
+available at a reasonable price.</i></b><br><font size="-2">- William C Biggs MD FACE</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>When
+ SpamAssassin was installed as a Windows service it was regularly 
+stopping and Windows would not (or could not) restart it. Since using 
+AlwaysUp we have run SpamAssassin with a 100% success rate.</i></b><br><font size="-2">- Stuart Hunter, Long Road Nominees Pty Ltd</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>EASY AND WORKS!!! It is always refreshing to have a software do what it says it will do and quick turn around on service!!</i></b><br><font size="-2">- Alan Roesch</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>We
+ use it to keep a our web server running since it is prone to hang or 
+get C++ errors. AlwaysUp keeps us going, and we really do appreciate how
+ well your software is working!</i></b><br><font size="-2">- Bill Lavinghousez, Greene County Schools</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>I use AlwaysUp and love it. Thank you for the great product.</i></b><br><font size="-2">- Jim Baker, Printnet Solutions</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>It
+ is a pleasant surprise in the IT world of over promising and 
+underdelivering to find a product that does exactly what it claims to do
+ in a stable and user friendly way</i></b><br><font size="-2">- Warren Crouch, Caladrius</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Super awesome program. Just what I needed for Dropbox on a client server. I'll be back again I'm sure.</i></b><br><font size="-2">- Keith Wheeler, Triune Technology Consulting, LLC</font></td></tr></tbody></table><table style="position: absolute; top: 0px; left: 0px; width: 175px; height: 190px; visibility: hidden; overflow: hidden;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="vertical-align: top;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/quotes.gif" alt="" height="32" width="32"><b><i>Great product. I had been using SrvAny but AlwaysUp is much, much better. Easier to setup, easier to use.</i></b><br><font size="-2">- Michael O'Sullivan, Internal Solutions Developer, ARCA</font></td></tr></tbody></table></div>
+</div>
+</div>
+
+<!-- AlwaysUp is #1. -->
+<br>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td colspan="2" align="center">
+<b>Over 68,000 installations, and counting!<br>&nbsp;</b>
+</td>
+</tr>
+<tr>
+<td align="right" valign="top"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/number1.jpg" alt="AlwaysUp is number 1!" align="absmiddle" border="0" height="27" width="34"></td>
+<td align="left">
+<a href="http://www.coretechnologies.com/products/AlwaysUp/"><img itemprop="image" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/alwaysup-boxshot-140x140.jpg" alt="Run as a Service with AlwaysUp" title="Run as a Service with AlwaysUp" border="0" height="140" width="140"></a>
+</td>
+</tr>
+<tr><td colspan="2" align="center">
+<b><br>Rock-solid for the past 10+ years!<br>&nbsp;</b>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+<!-- Windows compatability logos. -->
+<div style="margin-top:16px; margin-bottom:16px">
+	<div align="center">
+		<br><br>
+		<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/windows-server-2012-certified-purple-92x115.png" alt="Windows Server 2012 Certified (32 &amp; 64-bit)" title="Windows Server 2012 Certified (32 &amp; 64-bit)" width="92">
+		<br><br>
+		<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/windows-8-compatible-92x114.png" alt="Windows 8 Compatible (32 &amp; 64-bit)" title="Windows 8 Compatible (32 &amp; 64-bit)" width="92">
+		<br><br>
+		<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/compatible-with-windows7.jpg" alt="Compatible with Windows 7 (32 &amp; 64-bit)" title="Compatible with Windows 7 (32 &amp; 64-bit)" border="0" height="111" width="91">
+		<br><br>
+		<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/works-with-windows-server-2008-r2-170x61.jpg" alt="Works with Windows Server 2008 R2 (32 &amp; 64-bit)" title="Works with Windows Server 2008 R2 (32 &amp; 64-bit)" border="0" height="61" width="170">
+	</div>
+</div>
+
+<br><br><br>
+
+<!-- Applications. -->
+<div class="yellow rbox quick-links">
+<h3>Compatible With...</h3>
+<div class="separator"></div>
+<div class="content">
+<ul>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunDropboxAsAService.html">Dropbox</a><br>
+</li><li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunVirtualBoxAsAService.html">VirtualBox</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunJavaApplicationAsAService.html"><nobr>Java Applications</nobr></a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunBatchFileAsAService.html"><nobr>Batch Files</nobr></a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunMetaTrader4AsAService.html">MetaTrader</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAlphaFiveApplicationServerAsAService.html"><nobr>Alpha Five</nobr></a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunOutlook2007AsAService.html">Microsoft Outlook 2007</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunMAPIApplicationAsAService.html">MAPI Applications</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunTomcatAsAService.html">Tomcat</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunJBossAsAService.html">JBoss</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunTeamSpeakAsAService.html">TeamSpeak</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunVMwarePlayerAsAService.html">VMware Player</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunFirefoxAsAService.html">Firefox</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPythonScriptAsAService.html">Python Scripts</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunNginxAsAService.html">Nginx</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunFishEyeAsAService.html">FishEye</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunCuteFTPProAsAService.html">Cute FTP</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPerlScriptAsAService.html">Perl Scripts</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunWiresharkTSharkAsAService.html">Wireshark</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunHFSAsAService.html">HFS</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunThunderbirdAsAService.html">Thunderbird</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunRubyScriptAsAService.html">Ruby</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunLivedriveAsAService.html">Livedrive</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSeleniumServerAsAService.html">Selenium</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPlexMediaServerAsAService.html">Plex Media Server</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunGoogleDriveAsAService.html">Google Drive</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunFiddlerAsAService.html">Fiddler</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunNetcamWatcherProAsAService.html">Netcam Watcher Pro</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunFitNesseAsAService.html">FitNesse</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSugarSyncAsAService.html">SugarSync</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPDFCreatorAsAService.html">PDFCreator</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunGbridgeAsAService.html">Gbridge</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunVBScriptAsAService.html">VBScript</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPowerShellScriptAsAService.html">PowerShell Scripts</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSkyDriveAsAService.html">SkyDrive</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunGoogleChromeAsAService.html"><nobr>Google Chrome</nobr></a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunVisualDataFlexAsAService.html">Visual DataFlex</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunGrowlAsAService.html">Growl</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunTracdAsAService.html">Tracd</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunCubbyAsAService.html">Cubby</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunNodeJSAsAService.html">Node.js</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAudiogalaxyAsAService.html">Audiogalaxy</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSpiderOakAsAService.html">SpiderOak</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunLighttpdAsAService.html">lighttpd</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAdobeAIRAsAService.html">Adobe AIR</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunInternetExplorerAsAService.html"><nobr>Internet Explorer</nobr></a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunKioskApplicationAsAService.html">Kiosks</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunITunesAsAService.html">iTunes</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunICloudControlPanelAsAService.html">iCloud Control Panel</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunApacheDerbyAsAService.html">Apache Derby</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSpeedFanAsAService.html">SpeedFan</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPlayApplicationAsAService.html">Play Framework</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunMemcachedAsAService.html">Memcached</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPuTTYAsAService.html">PuTTY</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSageACTProAsAService.html">Sage ACT! Pro</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunEvernoteAsAService.html">Evernote</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAccess2007AsAService.html">Microsoft Access 2007</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunJottacloudAsAService.html">Jottacloud</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPHPScriptAsAService.html">PHP Scripts</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunBuzofAsAService.html">Buzof</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunApacheSolrAsAService.html">Apache Solr</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunXBMCAsAService.html">XBMC</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSafariAsAService.html">Apple Safari</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSyncToyAsAService.html">SyncToy</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunWinFormsAppAsAService.html">WinForms GUI</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSyncdocsAsAService.html">Syncdocs</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunTonidoAsAService.html">Tonido</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunSkyDriveProAsAService.html">SkyDrive Pro</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunBoxSyncAsAService.html">Box Sync</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunDartScriptAsAService.html">Dart Scripts</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunOdriveAsAService.html">odrive</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunOpenOfficeAsAService.html">OpenOffice</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunOutlook2010AsAService.html">Microsoft Outlook 2010</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunOneDriveAsAService.html">OneDrive for Business</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunBoxCryptorAsAService.html">BoxCryptor</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAria2AsAWindowsService.html">Aria2</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunWDMyCloudAsAWindowsService.html">WD My Cloud</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunPyLoadAsAWindowsService.html">pyLoad</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunExcel2013AsAWindowsService.html">Microsoft Excel 2013</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAutoItScriptAsAService.html">AutoIt Scripts</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunOutlook2013AsAWindowsService.html">Microsoft Outlook 2013</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunAeroFSAsAWindowsService.html">AeroFS</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunExcel2010AsAWindowsService.html">Microsoft Excel 2010</a></li>
+<li><a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/RunWord2010AsAWindowsService.html">Microsoft Word 2010</a></li>
+</ul>
+<br>and many more!
+</div>
+</div>
+
+<br><br><br>
+
+<!-- Awards. -->
+<div class="white rbox">
+<h3>Awards</h3>
+<div class="separator"></div>
+<div class="content" align="center">
+<br><br>
+<a href="http://download.cnet.com/AlwaysUp/3000-2084_4-10439107.html" rel="nofollow" target="_blank"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/download_002.gif" alt="Rated 4 Stars" border="0" height="42" width="170"></a>
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/submitfile_com_5_star_editors_choice.gif" alt="Rated 5 Stars and Editor Choice" border="0" height="80" width="130">
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/sofotex_com_5_star.gif" alt="Rated 5 Stars" border="0" height="61" width="121">
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/onekit_com_award5.gif" alt="Rated 5 Stars" border="0" height="75" width="120">
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/freetrialsoft_editors_choice.png" alt="Editor's choice" border="0" height="107" width="98">
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/coredownload_award5.png" alt="Rated 5 stars" border="0" height="64" width="129">
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/1st_download_edchoice.gif" alt="Excellent" border="0" height="80" width="130">
+<br><br><br><br>
+<img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/5cup-award.gif" alt="Excellent" border="0" height="119" width="127">
+</div>
+</div>
+
+</div></td></tr></tbody></table>
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=262847; 
+var sc_invisible=1; 
+</script>
+<script type="text/javascript" language="javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/counter.js"></script>
+<noscript><a href="http://www.statcounter.com" target="_blank" rel="nofollow">
+<img  src="http://c1.statcounter.com/counter.php?sc_project=262847&amp;java=0" alt="website traffic statistics" border="0" /></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+</div> <!-- id="page-content-padding" -->
+
+<div id="footer-separator"></div>
+
+</div> <!-- id="page-content" -->
+
+<div id="page-footer">
+	<a href="http://www.coretechnologies.com/">Home</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/products/">Products</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/support/">Support</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/company/">Company</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/company/privacy.html">Privacy Policy</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/sitemap.html">Site Map</a>
+	<br>
+	<a href="http://www.coretechnologies.com/products/AlwaysUp/">Run Application as Windows Service</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/products/ServiceProtector/">Auto-restart Windows Services</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/products/AlwaysUp/srvany.html">Srvany vs. AlwaysUp</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/products/AlwaysUp/AlwaysUp_FAQ.html">AlwaysUp FAQ</a>
+	<br>
+	<a href="http://www.coretechnologies.com/products/AlwaysUp/Apps/">How to Run Popular Applications as Windows Services</a>
+	&nbsp;|&nbsp;<a href="http://www.coretechnologies.com/WindowsServices/FAQ.html">Windows Services FAQ</a>
+	<p>
+	<!-- Godaddy Site Scanner Seal -->
+	<script type="text/JavaScript">
+//<![CDATA[
+var sealServer=document.location.protocol+"//seals.websiteprotection.com/sealws/4e88413b-eed8-4857-858e-4baf0a0607d7.gif";var certServer=document.location.protocol+"//certs.websiteprotection.com/sealws/?sealId=4e88413b-eed8-4857-858e-4baf0a0607d7";var hostName="coretechnologies.com";document.write(unescape('<div style="text-align:center;margin:0 auto;"><a target="_blank" href="'+certServer+'&pop=true" style="display:inline-block;"><img src="'+sealServer+'" alt="Website Protection&#153; Site Scanner protects this website from security threats." title="This Website Protection site seal is issued to '+ hostName +'. Copyright &copy; 2011, all rights reserved."oncontextmenu="alert(\'Copying Prohibited by Law\'); return false;" border="0" /></a></div>'));
+//]]>
+</script></p><div style="text-align:center;margin:0 auto;"><a target="_blank" href="http://certs.websiteprotection.com/sealws/?sealId=4e88413b-eed8-4857-858e-4baf0a0607d7&amp;pop=true" style="display:inline-block;"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/4e88413b-eed8-4857-858e-4baf0a0607d7.gif" alt="Website Protection™ Site Scanner protects this website from security threats." title="This Website Protection site seal is issued to coretechnologies.com. Copyright © 2011, all rights reserved." oncontextmenu="alert('Copying Prohibited by Law'); return false;" border="0"></a></div>
+
+	<p></p>
+	Copyright © 2004-2014 Core Technologies Consulting, LLC
+	<br>
+	7028-B Thornhill Drive, Oakland CA 94611, 
+USA&nbsp;&nbsp;|&nbsp;&nbsp;Phone: +1 (510) 
+343-3565&nbsp;&nbsp;|&nbsp;&nbsp;FAX: +1 (208) 979-1109
+</div>
+
+</div> <!-- id="page-margin" -->
+
+</div> <!-- id="centered-page" -->
+
+<!-- Google remarketing. -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1069010907;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/conversion.js">
+</script><iframe name="google_conversion_frame" title="Google conversion frame" src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/a.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" height="13" width="300" frameborder="0">&lt;img
+ height="1" width="1" border="0" alt="" 
+src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1069010907/?frame=0&amp;random=1416058750349&amp;cv=7&amp;fst=1416058750349&amp;num=1&amp;fmt=1&amp;guid=ON&amp;u_h=768&amp;u_w=1024&amp;u_ah=728&amp;u_aw=1024&amp;u_cd=24&amp;u_his=1&amp;u_tz=120&amp;u_java=false&amp;u_nplug=3&amp;u_nmime=4&amp;frm=0&amp;url=http%3A//www.coretechnologies.com/products/AlwaysUp/&amp;ref=http%3A//www.google.com.eg/url%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D4%26cad%3Drja%26uact%3D8%26ved%3D0CDYQFjAD%26url%3Dhttp%253A%252F%252Fwww.coretechnologies.com%252Fproducts%252FAlwaysUp%252F%26ei%3DdFdnVO2rOoGTPIGogNAN%26usg%3DAFQjCNFaMZebYnS5AWj2ci7fk3KYnmHwGg%26bvm%3Dbv.79142246%2Cd.ZWU&amp;vis=2"
+ /&gt;</iframe>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1069010907/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="Run%20Any%20Application%20as%20a%20Windows%20Service%20_%20Start_boot%20your%20Program%20or%20EXE%20as%20a%20Windows%202012_8_2008_7_Vista_2003_XP%20Service_files/translate-32.png" height="20" width="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div style="display: none;" class="status-message"></div></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

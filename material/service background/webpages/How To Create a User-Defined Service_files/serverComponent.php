@@ -1,0 +1,2 @@
+
+Bootstrapper._serverTime = '2014-11-15 13:41:51'; Bootstrapper._clientIP = '41.235.241.152'; var psj0 = 'http://nexus.ensighten.com/MSFTsupport/prod/code/8612c2707bd298d7d7d678e1c922b869.js?conditionId0=333006';Bootstrapper.insertScript(psj0);var psj1 = 'http://nexus.ensighten.com/MSFTsupport/prod/code/5ed05b9be54e1d2bba31a14f894a70c4.js?conditionId0=333098';Bootstrapper.loadScriptCallback(psj1, Bootstrapper.callOnPageSpecificCompletion);Bootstrapper.setPageSpecificDataDefinitionIds([])

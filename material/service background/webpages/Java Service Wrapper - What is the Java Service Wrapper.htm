@@ -1,0 +1,1213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Java Service Wrapper -
+      What is the Java Service Wrapper?</title>
+<style media="all" type="text/css">
+            @import url("//wrapper.tanukisoftware.com/doc/style/wrapperv2.css");
+    </style>
+<link type="text/css" rel="stylesheet" href="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/jquery.css">
+<script src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/ga.js" async="" type="text/javascript"></script><script src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/jquery_002.txt" type="text/javascript"></script><script src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/jquery.txt" type="text/javascript"></script><script src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/wrapper.txt" type="text/javascript"></script>
+    <!--[if lte IE 7]>
+    <style>
+      .content { margin-right: -1px; }
+      ul.nav a { zoom: 1; }
+    </style>
+    <![endif]-->
+    <style type="text/css">
+    @-moz-document url-prefix() {
+        ul.menu a, ul.menu li.dis a:hover, ul.menu li.sep a:hover {
+            height: 18px;
+        }
+    }
+    </style>
+    <!-- Google Analytics Asynchronous -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2997611-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function trackExternal(link, category, action) {
+        try {
+          _gaq.push(['_trackEvent', category, action]);
+          setTimeout('document.location = "' + link.href + '"', 100)
+        }catch(err){}
+      }
+
+      function trackEvent(category, action) {
+        try {
+          _gaq.push(['_trackEvent', category, action]);
+        }catch(err){}
+      }
+    </script>
+    
+    <style media="all" type="text/css">
+@import url("//wrapper.tanukisoftware.com/doc/style/wrapper2.css");
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="topbar curved-bottom">
+    
+    <div class="search">
+<form id="cse-search-box" action="//www.google.com/cse">
+<div>
+<input value="012647362898980204321:rsrjv5nzyrc" name="cx" type="hidden"><input value="UTF-8" name="ie" type="hidden"><input style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" size="31" name="q" type="text"><input value="Search" name="sa" type="submit">
+</div>
+<input value="wrapper.tanukisoftware.com/doc/english/introduction.html" name="siteurl" type="hidden"><input value="stackoverflow.com/questions/68113/how-to-create-a-windows-service-from-java-app" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+<script src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/brand" type="text/javascript"></script>
+</div>
+        <div class="language">
+            <img alt="World Map" src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/world.png" class="worldmap"><select onchange="javascript:location=this.options[this.selectedIndex].value;"><option value="/doc/english/introduction.html" selected="selected">English</option><option value="/doc/japanese/introduction.html">Japanese (Nihongo)</option><option value="/doc/german/introduction.html">German (Deutsch)</option><option value="/doc/spanish/introduction.html">Spanish (Espanol)</option></select>
+        </div>
+        <div class="login">
+            <form action="/doc/english/login.do" method="post" style="margin-bottom:0;"><input name="redirect" value="http://wrapper.tanukisoftware.com/doc/english/introduction.html" type="hidden"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2" nowrap="nowrap"><b>Please <input name="login" value="Login" type="submit"> or <input name="register" value="Register" type="submit"></b></td></tr></tbody></table></form>
+        </div>
+      </div>
+    <!-- end .header --></div>
+  
+    <div class="infobar">
+<div class="infobar-logo">
+<ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/"><img alt="JSW Logo" src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/jsw-logo.jpg"></a>
+</li>
+<li>
+<a href="http://www.tanukisoftware.com/"><img alt="TSL Logo" src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/tanukisoftware-logo.jpg"></a>
+</li>
+</ul>
+</div>
+<div class="infobar-trialbuy curved">
+<div class="infobox curved">
+<span>Java Service Wrapper is the easiest way to make your product more reliable.</span>
+</div>
+<ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/requestTrial.jsp"><img alt="Free Trial" src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/freetrial-btn.jpg"></a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp"><img alt="Buy Now" src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/buy-btn.jpg"></a>
+</li>
+</ul>
+</div>
+</div>
+    <div class="sitebar">
+      <ul>
+        <li><a class="tsl" href="http://www.tanukisoftware.com/" onclick="trackExternal(this, 'external', 'www.tanukisoftware.com'); return false;">Tanuki Software</a></li>
+        <li><a class="jsw" href="http://wrapper.tanukisoftware.com/" onclick="trackExternal(this, 'external', 'wrapper.tanukisoftware.com'); return false;">Java Service Wrapper</a></li>
+      </ul>
+    <!-- end .sitebar --></div>
+    <div class="menubar curved">
+      <!-- Start PureCSSMenu.com MENU -->
+    
+    <ul class="menu menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp" class="menui">Home<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html" class="menui">Product<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html" class="menui">Overview</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-features.html" class="menui">Features</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html" class="menui">License</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html" class="menui">FAQ</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp" class="menui">Download<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable" class="menui">Stable Release</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/release-notes.html" class="menui">Release Notes</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/versions.jsp" class="menui">Past Releases</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase" class="menui">Order<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase" class="menui">Buy now</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/distributors.php'); return false;" href="http://www.tanukisoftware.com/en/distributors.php" class="menui">Distributors</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html" class="menui">License Overview</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html#examples" class="menui">License FAQ</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html" class="menui">Documentation<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html" class="menui">Introduction</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html" class="menui">Integration Methods</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/launch.html" class="menui">Launching your Application</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/properties.html" class="menui">Configuration Properties</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/javadocs.html" class="menui">Java API</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/i18n.html" class="menui">Localization / i18n</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/customize.html" class="menui">Customizing Your Application (Windows)</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/security-model.html" class="menui">Security Model</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/jmx.html" class="menui">JMX Control</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/example.html" class="menui">TestWrapper Application</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp" class="menui">Support<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/debugging.html" class="menui">Debugging</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/troubleshooting.html" class="menui">Troubleshooting</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html" class="menui">FAQ</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/howto.html" class="menui">HOWTO</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/qna.html" class="menui">Questions &amp; Answers</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/technical-tips.html" class="menui">Monthly Technical Tips</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/tracker/'); return false;" href="http://sourceforge.net/tracker/?group_id=39428" class="menui">Issue Tracking</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/mail/'); return false;" href="http://sourceforge.net/mail/?group_id=39428" class="menui">Maling List</a>
+</li>
+<li class="menui">
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp" class="menui">Get Support</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://sourceforge.net/projects/wrapper/" class="menui">Community<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/projects/wrapper/'); return false;" href="http://sourceforge.net/projects/wrapper/" class="menui">SourceForge Project</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/svn/'); return false;" href="http://sourceforge.net/svn/?group_id=39428" class="menui">Source Repository</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="menui">
+<a href="http://www.tanukisoftware.com/en/" class="menui">About us<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul class="menum">
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/company.php'); return false;" href="http://www.tanukisoftware.com/en/company.php" class="menui">Company Profile</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/distributors.php'); return false;" href="http://www.tanukisoftware.com/en/distributors.php" class="menui">Distributors</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/customers.php'); return false;" href="http://www.tanukisoftware.com/en/customers.php" class="menui">Customers</a>
+</li>
+<li class="menui">
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/contact.php'); return false;" href="http://www.tanukisoftware.com/en/contact.php" class="menui">Contact us</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+</ul>
+  <!-- end .menubar --></div>
+
+    <div class="sidebar" id="sidebar">
+<ul class="itemizedlist-link">
+<li>
+<div class="infobox curved-top">
+<span>
+<h2>Top Related:</h2>
+</span>
+</div>
+<div class="sidebar-menu curved-bottom">
+<ul>
+            
+            
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html">Product Overview</a>
+</li>
+            
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-features.html">Product Features</a>
+</li>
+            
+<li>Quick Start</li>
+            
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html">Integration Method</a>
+</li>
+            
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/launch.html">Launch Application by Wrapper Scripts</a>
+</li>
+            
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html">Licensing Overview</a>
+</li>
+        
+</ul>
+</div>
+</li>
+</ul>
+<ul class="itemizedlist-link">
+<li>
+<div class="infobox curved-top">
+<span>
+<h2>Supported:</h2>
+</span>
+</div>
+<div class="sidebar-menu curved-bottom">
+<ul>
+        
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html#SupportedJVM">Supported JVMs</a>
+</li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html#SupportedPlatforms">Windows Versions supported by Wrapper</a>
+</li>
+    
+</ul>
+</div>
+</li>
+</ul>
+<ul class="itemizedlist-link">
+<li>
+<div class="infobox curved-top">
+<span>
+<h2>License Related:</h2>
+</span>
+</div>
+<div class="sidebar-menu curved-bottom">
+<ul>
+        
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html">Licensing Overview</a>
+</li>
+        
+<li class="sidebar-menu-divider"></li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp">Buy Now!</a>
+</li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase">License Price</a>
+</li>
+        
+<li class="sidebar-menu-divider"></li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/trial-time-limited.html">Free Trial (15 minutes)</a>
+</li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/requestTrial.jsp">Free Trial (One Month) Request</a>
+</li>
+    
+</ul>
+</div>
+</li>
+</ul>
+<ul class="itemizedlist-link">
+<li>
+<div class="infobox curved-top">
+<span>
+<h2>Help Pages:</h2>
+</span>
+</div>
+<div class="sidebar-menu curved-bottom">
+<ul>
+        
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/qna.html">Questions &amp; Answers Top</a>
+</li>
+        
+<li class="sidebar-menu-divider"></li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/troubleshooting.html">Troubleshooting</a>
+</li>
+        
+<li class="sidebar-menu-divider"></li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html">FAQ General</a>
+</li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq-server-license.html">FAQ (Server License)</a>
+</li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq-dev-license.html">FAQ (Dev License)</a>
+</li>
+        
+<li class="sidebar-menu-divider"></li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/howto.html">HowTo Top</a>
+</li>
+        
+<li class="sidebar-menu-divider"></li>
+        
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp">Get Support</a>
+</li>
+    
+</ul>
+</div>
+</li>
+</ul>
+<ul><li><div class="infobox curved-top"><span><h2>Currently logged on:</h2></span></div><div class="sidebar-menu curved-bottom current-users"><ul><li>0 users, 106 guests</li></ul></div></li></ul><ul><li><div class="infobox curved-top"><span><h2>Customers</h2></span></div><div class="sidebar-menu curved-bottom customers"><iframe src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/widgetCustomersSSL.htm" marginwidth="0" marginheight="0" scrolling="no" align="middle" height="300" width="186" frameborder="0"></iframe></div></li></ul>
+</div>
+  <div id="content" class="content main">
+
+    
+
+<ul class="breadCrumb">
+    
+    
+    
+<li>Documentation</li>
+    
+    
+
+</ul>
+<title>What is the Java Service Wrapper?</title>
+         
+        
+<a name="QuickStart"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Quick Start</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                As with any application, reading through the documentation is the best
+                way to get started.  But realizing the desire to get your feet wet
+                quickly, you should glance over this page to get a feel for what the
+                Wrapper can do.
+            </p>
+            
+<p>
+                Then to get up and running, at a minimum you will need to read over
+                the <a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html">Summary of Integration Methods</a> section.
+                There you will be presented with 4 Integration Methods.  From the
+                overviews, choose the one that best meets your needs and then proceed
+                to read over the section dedicated to that Integration Method.
+            </p>
+            
+<p>
+                
+<b>[For powerful features of Wrapper] : </b>
+                The Wrapper provides a very large feature set. 
+                At some point, it is suggested that you look over the
+                <a href="http://wrapper.tanukisoftware.com/doc/english/properties.html">full Configuration Properties</a> 
+                to get a feel for the full power of the Java Service Wrapper.
+            </p>
+            
+<p>
+                
+<b>[You Need Help?] : </b>
+                If you run into problems or have any questions, 
+                the preferred method for getting help is posting a message to the
+                <a href="http://sourceforge.net/mail/?group_id=39428">Wrapper-User Mailing List</a>.
+            </p>
+            
+<ul class="itemizedlist-disc">
+                
+<li>
+                    
+<a href="#QuickStart">Quick Start</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#features">Overview of Wrapper features</a>
+                
+</li>
+                
+<ul class="itemizedlist-disc">
+                    
+<li>
+                        
+<a href="#SupportedJVM">Supported JVMs</a>
+                    
+</li>
+                    
+<li>
+                        
+<a href="#SupportedPlatforms">Supported Platforms</a>
+                    
+</li>
+                
+</ul>
+            
+</ul>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+<a name="features"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Overview of Wrapper features</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                The Java Service Wrapper is an application which has evolved out of a
+                desire to solve a number of problems common to many Java applications.
+                The features of Wrapper are as follows:
+            </p>
+            
+<ul class="itemizedlist-disc">
+                
+<li>
+                    
+<a href="#service">Run a Java application as a Windows Service or UNIX Daemon</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#reliability">Java Application Reliability</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#scripting">Standard, Out of the Box Scripting</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#restarts">On Demand Restarts</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#flexible">Flexible Configuration</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#install">Ease Application Installations</a>
+                
+</li>
+                
+<li>
+                    
+<a href="#logging">Logging</a>
+                
+</li>
+            
+</ul>
+            
+<a name="service"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Run a Java application as a Windows Service or UNIX Daemon</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    The Java Service Wrapper makes it possible to install a Java Application 
+                    as a Windows Service.
+                    Likewise, the scripts shipped with the Wrapper also make it 
+                    very easy to install a Java Application as a Daemon process on UNIX systems.
+                </p>
+                
+<p>
+                    The Wrapper correctly handles "user's log outs" under Windows, 
+                    service dependencies, and the ability to run services which interact with the desktop.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="reliability"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Java Application Reliability</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    As the use of Java expands, your applications have
+                    been written to provide a variety of mission and critical services. 
+                    These services must be able to provide a high level of reliability. 
+                    In an ideal world, only software which is 100% bug free will ever be released and installed. 
+                    However, history has shown this not to be the case.
+                    Almost every application suffers from quality issues at one point or
+                    another during their life-cycle.  Applications hang, crash, run out of
+                    memory or suffer from any number of problems.  Where possible, problems
+                    are fixed quickly without significant service outages.  There are times,
+                    however, when fixing a problem can be prohibitively expensive or
+                    impossible to solve in a short time period.
+                </p>
+                
+<p>
+                    The Wrapper monitors a JVM (Java Virtual Machine) process and automatically restarts it if it
+                    that the JVM has crashed or hung.  This process takes just a few seconds
+                    once the Wrapper has decided there is a problem.  
+                    There is also a way to configure the Wrapper 
+                    to <a href="http://wrapper.tanukisoftware.com/doc/english/prop-filter-x-n.html">monitor the console output of a JVM and react to certain strings 
+                    by restarting or shutting down the JVM</a>.
+                </p>
+                
+<p>
+                    While these advanced features of Java Service Wrapper will not make every problem go away, 
+                    they will help you to sleep easier knowing that 
+                    if there is a problem, the Wrapper will be there 
+                    to keep things up and running until you can get into the office to check the logs. 
+                    Say goodbye to that emergency phone calls!! 
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="scripting"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Standard, Out of the Box Scripting</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    Write once run everywhere configuration.  Java has been marketed as a
+                    "Write Once, Run Everywhere" programming language.  While this is true
+                    for many aspects of an application, the developer is often plagued with
+                    having to write complicated, platform specific scripts which are tasked
+                    with building up class paths and collecting other system information
+                    necessary to launch an application.
+                </p>
+                
+<p>
+                    The Java Service Wrapper helps to relieve the developer of the troublesome task
+                    by providing a set of scripts for a wide range of platforms that can be
+                    used as is to launch and run almost any Java Application controlled by the Wrapper.
+                </p>
+                
+<p>
+                    The Wrapper moves all JVM (Java Virtual Machine) configuration 
+                    into a platform independent configuration file 
+                    <span class="monospace"><a href="http://wrapper.tanukisoftware.com/doc/english/props-example-config.html">wrapper.conf</a></span>. 
+                    See the examples on <a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html">Summary of Integration Methods</a> section for details.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="restarts"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>On Demand Restarts</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    The Java Service Wrapper provides a way for a Java Application to request that
+                    its own JVM (Java Virtual Machine) be restarted.  This can be useful in a number of cases.
+                    Applications may wish to restart after having had their configuration
+                    files modified. Or the application may simply need to be restarted
+                    to avoid problems with a memory or resource leak of some kind.
+                </p>
+                
+<p>
+                    JVM restarts can be triggered from within the JVM by making a call to
+                    <span class="monospace"><a href="http://wrapper.tanukisoftware.com/jdoc/org/tanukisoftware/wrapper/WrapperManager.html#restart%28%29">WrapperManager.restart()</a></span>.  
+                    See the <span class="monospace"><a href="http://wrapper.tanukisoftware.com/doc/english/javadocs.html?org/tanukisoftware/wrapper/WrapperManager.html#restart%28%29">WrapperManager.restart()</a></span> 
+                    in <a href="http://wrapper.tanukisoftware.com/doc/english/javadocs.html">JavaDocs</a> for more details.
+                </p>
+                
+<p>
+                    There are also more passive ways to trigger restarts.  The Wrapper has
+                    the ability to <a href="http://wrapper.tanukisoftware.com/doc/english/prop-filter-x-n.html">monitor console output</a>
+                    and trigger shutdowns or restarts whenever certain text is detected.
+                </p>
+                
+<p>
+                    The Wrapper can also be configured to either restart another JVM instance or 
+                    shutdown normally <a href="http://wrapper.tanukisoftware.com/doc/english/prop-on-exit-n.html">depending on the <span class="monospace">exit</span> code</a> returned by a JVM.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="flexible"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Flexible Configuration</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    The Java Service Wrapper provides a wide range of configuration properties which can
+                    be used to configure the JVM (Java Virtual Machine) in any way possible 
+                    <a href="http://wrapper.tanukisoftware.com/doc/english/props-command-line.html">from the command line</a>.
+                    The Wrapper configuration file 
+                    "<span class="monospace"><a href="http://wrapper.tanukisoftware.com/doc/english/props-example-config.html">wrapper.conf</a></span>" 
+                    also provides a number of properties to allow you configure things 
+                    like <a href="#logging">logging</a> and how the Wrapper is installed as a service.
+                </p>
+                
+<p>
+                    See the <a href="http://wrapper.tanukisoftware.com/doc/english/properties.html">Configuration Properties</a>
+                    section for details on what is possible.  Be sure you have read over
+                    the <a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html">Summary of Integration Methods</a> section 
+                    before jumping into the configuration file 
+                    <span class="monospace"><a href="http://wrapper.tanukisoftware.com/doc/english/props-example-config.html">wrapper.conf</a></span>.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="install"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Ease Application Installations</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    By using the Wrapper's standard scripts, 
+                    and <a href="http://wrapper.tanukisoftware.com/doc/english/props-paths.html">relative paths</a> in the configuration file 
+                    <span class="monospace"><a href="http://wrapper.tanukisoftware.com/doc/english/props-example-config.html">wrapper.conf</a></span>, 
+                    it is usually possible to create an application
+                    which requires no further complicated installation 
+                    than simply expanding an archive file into a directory of the user's choice.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+            
+<a name="logging"></a>
+<table class="sectionheader2">
+<tbody><tr>
+<td class="sectionheader2" width="*">
+<div class="infobox curved content-header">
+<span>
+<h2>Logging</h2>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody2">
+<div class="sectionbodydiv2">
+                
+                
+<p>
+                    While the Java Service Wrapper does not attempt to, nor should it, 
+                    replace any of the great Logging Tools available, 
+                    it does provide a number of properties to configure 
+                    <a href="http://wrapper.tanukisoftware.com/doc/english/prop-console-x-to-stderr.html">
+                    how "<span class="monospace">stdout</span>" and "<span class="monospace">stderr</span>" output to the JVM (Java Virtual Machine) console is handled. 
+                    </a>
+                    This output can be logged to any combination of 
+                    the console, a file, or the "Event Log" (Windows) or "syslog" (UNIX).
+                </p>
+                
+<p>
+                    
+<a href="http://wrapper.tanukisoftware.com/doc/english/props-logging.html">Logging the output to the JVM console</a> 
+                    can be critical to tracking down problems with an application.  
+                    Without the Wrapper, when a JVM is being run as a Service under Windows, 
+                    or as a Daemon under UNIX, the console output would normally be lost. 
+                    The Wrapper makes sure that all console output is logged.
+                </p>
+                
+<p>
+                    Java-based Logging Tools are only capable of logging output generated from within the JVM. 
+                    If the JVM crashes or prints out low level messages such as thread dumps, 
+                    there is normally no way to log it. 
+                    The Wrapper logs all console output from the JVM process 
+                    regardless of its source meaning that a record of any crash 
+                    will survive even after the Wrapper has restarted the JVM.
+                </p>
+                
+<p>
+                    See the <a href="http://wrapper.tanukisoftware.com/doc/english/props-logging.html">Logging Configuration</a> section for further details.
+                </p>
+            
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+<a name="SupportedJVM"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Supported JVMs (Java Virtual Machines)</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                The Wrapper is known to work with the Sun, IBM, Blackdown and BEA WebLogic
+                JRockit JVMs without any problems.  If you get a chance to test any other
+                JVMs, please be sure and let us know the results.
+            </p>
+            
+<p>
+                
+<span class="highlight-warn">Java Service Wrapper version 3.4.0 or later require JVM version 1.4.x and above.</span>
+                (Wrapper versions prior to 3.4.0 supported JVM versions back to 1.2.x.)
+            </p>
+            
+<div class="note">
+<h1 class="note-box curved-top shadow">NOTE</h1>
+<div class="content curved-bottom shadow">
+                
+<p>
+                    The Wrapper can be used with Java 1.2.x versions however some functions are disabled
+                    due to this version of Java's lack of support for 
+                    <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/lang/hook-design.html">Shutdown Hooks</a>.
+                    Shutdown Hooks were implemented with the 1.3.0 release of Java.
+                </p>
+            
+</div>
+</div>
+<div class="clearfloat"></div>
+            
+<div class="note">
+<h1 class="note-box curved-top shadow">NOTE</h1>
+<div class="content curved-bottom shadow">
+                
+<p>
+                    
+<a href="http://wrapper.tanukisoftware.com/doc/english/prop-check-deadlock.html#check-deadlock">Thread deadlock checks</a> require that <span class="highlight-warn">at least Java version 1.5</span> is used.  
+                    Older JVMs will ignore the checks.
+                </p>
+            
+</div>
+</div>
+<div class="clearfloat"></div>
+            
+<p>
+                The Java Service Wrapper has beend tested and is compatible with Java 8. 
+            </p>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+        
+<a name="SupportedPlatforms"></a>
+<table class="sectionheader1">
+<tbody><tr>
+<td class="sectionheader1" width="*">
+<div class="infobox curved-top content-header">
+<span>
+<h1>Supported Platforms</h1>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sectionbody1">
+<div class="sectionbodydiv1 content curved-bottom">
+            
+            
+<p>
+                Java Service Wrapper binary distributions are provided for the following list of platforms 
+                and are <a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp">available on the download page</a>.
+            </p>
+            
+<p>
+                Only OS versions which are known to work have been listed.  
+                If you have had successful or unsuccessful results running on other OS versions, 
+                please post a comment below and it will be added to the list.
+            </p>
+            
+<p>
+                It should be fairly easy to build the Wrapper from source on additional UNIX platforms.  
+                Please let us know and we will update the list.
+            </p>
+            
+<p>
+                
+<b>By Wrapper Version: </b>
+            
+</p>
+            
+<p>
+                This section will keep track of the platform dependencies for the Wrapper.
+                After each release of a new version, we will add a new site listing the supported platforms for the Wrapper.
+            </p>
+            
+<p>
+                For your reference, please refer to 
+                <a href="http://wrapper.tanukisoftware.com/doc/english/supported-platforms.html">a list of supported platform and possible restrictions</a>.
+            </p>
+            
+<ul class="itemizedlist-disc">
+                
+<li>
+                    
+<p>
+                        
+<a href="http://wrapper.tanukisoftware.com/doc/english/supported-platforms-340.html">Wrapper version 3.4.0 Support</a>
+                    
+</p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<a href="http://wrapper.tanukisoftware.com/doc/english/supported-platforms-350.html">Wrapper version 3.5.0 Support</a>
+                    
+</p>
+                
+</li>
+            
+</ul>
+            
+<p>
+                
+<b>OS List: </b>
+            
+</p>
+            
+<ul class="itemizedlist-disc">
+                
+<li>
+                    
+<p>
+                        
+<b>aix</b> - AIX
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>freebsd</b> - FreeBSD
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>hpux, hpux64</b> -
+                        HP-UX, 32-bit and 64-bit versions.
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>irix</b> - SGI Irix
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>linux</b> - Linux kernels; 2.2.x 2.4.x, 2.6.x.
+                        Known to work with Debian, Ubuntu, and Red Hat, but should work with any distribution.
+                        Currently supported on both 32-bit and 64-bit x86, Itanium, and PPC systems.
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>macosx</b> - Macintosh OS X.
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>osf1</b> - DEC OSF1.
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>solaris</b> - Sun OS, Solaris 9 and 10.
+                        Currently supported on both 32-bit and 64-bit sparc, and x86 systems.
+                    </p>
+                
+</li>
+                
+<li>
+                    
+<p>
+                        
+<b>Windows</b> - Windows 2000, XP, 2003, Vista, 2008, 2008 R2, 2012, Windows 7 and 8.
+                    </p>
+                    
+<p>
+                        Currently supported on both 32-bit and 64-bit x86 and Itanium systems.
+                    </p>
+                    
+<p>
+                        Also known to run on Windows 98 and ME, however due the lack of support for
+                        services in the OS, the Wrapper can only be run in console mode. 
+                    </p>
+                
+</li>
+            
+</ul>
+        
+</div>
+</td>
+</tr>
+</tbody></table>
+    
+    <!-- end .content --></div>
+    
+    <div class="footer">
+<div class="sitemap curved">
+<ul>
+<li class="sitemapp logo">
+<a href="http://wrapper.tanukisoftware.com/"><img src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/jsw-logo.jpg"></a>
+</li>
+<li class="sitemapp">
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html">Product<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-overview.html">Overview</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/product-features.html">Features</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp#stable">Download</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/accountLicenses.jsp#purchase">Buy Now</a>
+</li>
+<li>
+<a onclick="trackExternal(this, 'external', 'www.tanukisoftware.com/en/distributors.php'); return false;" href="http://www.tanukisoftware.com/en/distributors.php">Distributors</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="sitemapp">
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html">Documentation<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/introduction.html">Introduction</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/integrate.html">Integration Methods</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/properties.html">Configuration Properties</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/javadocs.html">Java API</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/i18n.html">Localization / i18n</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="sitemapp">
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp">Support<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/troubleshooting.html">Troubleshooting</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/faq.html">FAQ</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/qna.html">Questions &amp; Answers</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/support.jsp">Get Support</a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+<li class="sitemapp">
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/projects/wrapper/'); return false;" href="http://sourceforge.net/projects/wrapper/">Community<!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+<li>
+<a onclick="trackExternal(this, 'external', 'sourceforge.net/projects/wrapper/'); return false;" href="http://sourceforge.net/projects/wrapper/"><img alt="SourceForge Project" src="Java%20Service%20Wrapper%20-%20What%20is%20the%20Java%20Service%20Wrapper_files/sflogo.gif"></a>
+</li>
+</ul><!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+</ul>
+</div>
+<div class="clearfloat"></div>
+<div class="languages">
+<ul>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/english/">English</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/japanese/">日本語</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/german/">Deutsch</a>
+</li>
+<li>
+<a href="http://wrapper.tanukisoftware.com/doc/spanish/">Español</a>
+</li>
+</ul>
+</div>
+<div class="copyright">
+<p>Copyright (c) 2004-2014, Tanuki Software, Ltd. All Rights Reserved.</p>
+</div>
+</div>
+    <!-- end .container --></div>
+    
+    
+
+</body></html>

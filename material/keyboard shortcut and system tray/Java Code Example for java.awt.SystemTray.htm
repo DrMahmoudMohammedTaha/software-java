@@ -1,0 +1,959 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Java Code Example for java.awt.SystemTray</title>
+<script data-rocketoptimized="true" data-rocketsrc="http://www.google-analytics.com/ga.js" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="http://www.gstatic.com/pub-config/ca-pub-5732630628268628.js" type="text/javascript" async=""></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"237502489556306bd6e00f9e6332d4e8",petok:"93c4451a0e822557f7253458156d994fa183cc35-1417249456-1800",zone:"programcreek.com",rocket:"a",apps:{}}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/cloudflare.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_88b7232e81" onload="CloudFlare.__cfjs_block_88b7232e81_load()" onerror="CloudFlare.__cfjs_block_88b7232e81_error()" onreadystatechange="CloudFlare.__cfjs_block_88b7232e81_readystatechange()" type="text/javascript" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/rocket.js"></script>
+<link type="text/css" rel="stylesheet" media="screen" href="Java%20Code%20Example%20for%20java.awt.SystemTray_files/style.css">
+ 
+<script data-rocketoptimized="true" data-rocketsrc="./includes/js/dist/libs/jquery.js" type="text/rocketscript"></script>
+<script data-rocketoptimized="true" language="javaScript" data-rocketsrc="./includes/js/jquery.highlight-3.js" type="text/rocketscript"></script>
+<link type="text/css" rel="stylesheet" media="screen" href="Java%20Code%20Example%20for%20java.awt.SystemTray_files/prettify.css">
+<script data-rocketoptimized="true" language="javaScript" data-rocketsrc="./includes/js/google-code-prettify/prettify.js" type="text/rocketscript"></script>
+ 
+<meta name="description" content="This page provides Java code examples for java.awt.SystemTray. The examples are extracted from open source Java projects from GitHub. ">
+<meta name="keywords" content="Java code examples, java.awt.SystemTray">
+</head>
+<body onload='(function(a){window.CloudFlare &amp;&amp; window.CloudFlare.push(function(b){b(["cloudflare/rocket"],function(c){c.push(function(){(function(){prettyPrint()}).call(a)})})})})(this);'>
+<div id="header">
+<div id="header-center">
+<span id="login">
+<a href="http://www.programcreek.com/java-api-examples/">Search</a>
+&nbsp; &nbsp;
+<a href="http://www.programcreek.com/java-api-examples/?action=index">Index</a>
+&nbsp; &nbsp; <a href="http://www.programcreek.com/">Home</a>&nbsp; &nbsp;
+</span>
+<span style="float:right; margin-top: 4px;">
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-5732630628268628" data-ad-slot="9596194014"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="15" width="728"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+</span>
+ 
+ 
+</div>
+</div>
+<div style="clear:both"></div>
+ 
+<div id="content">
+<div id="sidebar">
+<script data-rocketoptimized="true" async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5732630628268628" data-ad-slot="1961849215"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+<div style="height: 10px;clear:both;"></div>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5732630628268628" data-ad-slot="3672680817"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+<div style="height: 10px;clear:both;"></div>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5732630628268628" data-ad-slot="6392048811"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="300"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>
+<div id="main">
+<script data-rocketoptimized="true" language="javaScript" type="text/rocketscript">
+$(document).ready(function(){
+	//$('#memo').focus();
+	//click to delete
+	$('.vote').click(function(){
+		var item_id = $(this).attr("id");
+		$(this).text("thanks");
+		$(this).fadeOut(2000);
+		//alert(item_id);
+		$.post('back.php',
+		{
+			todo: "vote",
+			method_id: item_id 
+			
+		},function(data){
+			$('#memo_list').text(data);
+		});	
+	});
+});
+</script>
+<h1 style="font-weight:100;
+	color:#333333;
+	font-size: 28px;
+    line-height: 34px;
+    white-space: nowrap;
+	letter-spacing:0px;">
+Java Code Examples for java.awt.SystemTray</h1>
+<p>
+The following code examples are extracted from open source projects. You can click <img src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" height="20" width="20">
+ to
+vote up the examples you like. Your votes will be used in an intelligent
+ system to get more and better code examples. Thanks for your votes!
+</p>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 1:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;8&nbsp;
+</div>
+<div class="vote" id="115843">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">baralga</span>, under directory <span style="font-style:italic;">/baralga-core/src/main/java/org/remast/baralga/gui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">TrayIcon.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="com">/** 
+ * Show the tray icon.
+ */</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> show</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">    </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      log</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="pln">getLocalizedMessage</span><span class="pun">(),</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 2:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;8&nbsp;
+</div>
+<div class="vote" id="302432">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">esmska</span>, under directory <span style="font-style:italic;">/src/esmska/gui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">NotificationIcon.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="com">/** 
+ * Remove an icon from notification area. If there is no icon installed, nothing happens. If notification area is not supported, nothing happens.
+ */</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> uninstall</span><span class="pun">(){</span><span class="pln">
+  logger</span><span class="pun">.</span><span class="pln">fine</span><span class="pun">(</span><span class="str">"Uninstalling notification icon..."</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    logger</span><span class="pun">.</span><span class="pln">fine</span><span class="pun">(</span><span class="str">"Notification icon not supported"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  getInstance</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="typ">Context</span><span class="pun">.</span><span class="pln">mainFrame</span><span class="pun">.</span><span class="pln">isVisible</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    toggleMainFrameVisibility</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  tray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">instance</span><span class="pun">.</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+  installed</span><span class="pun">=</span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+<script data-rocketoptimized="true" async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5732630628268628" data-ad-slot="8058070175"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script data-rocketoptimized="true" type="text/rocketscript">
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 3:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="122153">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">BeST</span>, under directory <span style="font-style:italic;">/src/main/java/org/nolat/best/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Tray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> initializeTray</span><span class="pun">(){</span><span class="pln">
+  tray</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JXTrayIcon</span><span class="pun">(</span><span class="typ">IconManager</span><span class="pun">.</span><span class="pln">getIcon</span><span class="pun">(</span><span class="str">"arrow_divide"</span><span class="pun">).</span><span class="pln">getImage</span><span class="pun">(),</span><span class="typ">Launcher</span><span class="pun">.</span><span class="pln">getName</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">" - "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="typ">Launcher</span><span class="pun">.</span><span class="pln">getVersion</span><span class="pun">());</span><span class="pln">
+  popup</span><span class="pun">=</span><span class="pln">buildPopupMenu</span><span class="pun">();</span><span class="pln">
+  tray</span><span class="pun">.</span><span class="pln">setJPopupMenu</span><span class="pun">(</span><span class="pln">popup</span><span class="pun">);</span><span class="pln">
+  tray</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+  tray</span><span class="pun">.</span><span class="pln">setActionCommand</span><span class="pun">(</span><span class="str">"tray"</span><span class="pun">);</span><span class="pln">
+  </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> systemTray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    log</span><span class="pun">.</span><span class="pln">debug</span><span class="pun">(</span><span class="str">"Adding to tray"</span><span class="pun">);</span><span class="pln">
+    systemTray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">tray</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    log</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Prefs</span><span class="pun">.</span><span class="pln">prefs</span><span class="pun">.</span><span class="pln">at</span><span class="pun">(</span><span class="str">"app.displaywelcome"</span><span class="pun">).</span><span class="pln">asBoolean</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Tray</span><span class="pun">.</span><span class="pln">publishMessage</span><span class="pun">(</span><span class="str">"Rightclick the icon for more information."</span><span class="pun">,</span><span class="str">"Thanks for trying BeST!"</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Prefs</span><span class="pun">.</span><span class="pln">prefs</span><span class="pun">.</span><span class="kwd">set</span><span class="pun">(</span><span class="str">"app.displaywelcome"</span><span class="pun">,</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Prefs</span><span class="pun">.</span><span class="pln">save</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 4:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="188869">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">CircleChat</span>, under directory <span style="font-style:italic;">/CircleChat/src/circlechat/ui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">ToTheTray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> toTheTray</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pln"> theFrame</span><span class="pun">){</span><span class="pln">
+  </span><span class="typ">Messages_to_Read</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">final</span><span class="pln"> </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> theTray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">PopupMenu</span><span class="pln"> pm</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PopupMenu</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">MenuItem</span><span class="pln"> mi_quit</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MenuItem</span><span class="pun">(</span><span class="str">"Quit"</span><span class="pun">);</span><span class="pln">
+    pm</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">mi_quit</span><span class="pun">);</span><span class="pln">
+    mi_quit</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">(){</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="pln">      </span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">){</span><span class="pln">
+        </span><span class="typ">ChatClient</span><span class="pun">.</span><span class="pln">close</span><span class="pun">();</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+    toAdd</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">getIcon</span><span class="pun">(</span><span class="lit">0</span><span class="pun">),</span><span class="str">"Circle Chat"</span><span class="pun">,</span><span class="pln">pm</span><span class="pun">);</span><span class="pln">
+    toAdd</span><span class="pun">.</span><span class="pln">setImageAutoSize</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    toAdd</span><span class="pun">.</span><span class="pln">setImage</span><span class="pun">(</span><span class="pln">getIcon</span><span class="pun">(</span><span class="lit">0</span><span class="pun">));</span><span class="pln">
+    theTray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">toAdd</span><span class="pun">);</span><span class="pln">
+    toAdd</span><span class="pun">.</span><span class="pln">addMouseListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MouseListener</span><span class="pun">(){</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseClicked</span><span class="pun">(</span><span class="pln">      </span><span class="typ">MouseEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">arg0</span><span class="pun">.</span><span class="pln">getButton</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="typ">MouseEvent</span><span class="pun">.</span><span class="pln">BUTTON1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          theFrame</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+          theTray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">toAdd</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseEntered</span><span class="pun">(</span><span class="pln">      </span><span class="typ">MouseEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseExited</span><span class="pun">(</span><span class="pln">      </span><span class="typ">MouseEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mousePressed</span><span class="pun">(</span><span class="pln">      </span><span class="typ">MouseEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseReleased</span><span class="pun">(</span><span class="pln">      </span><span class="typ">MouseEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  theFrame</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 5:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="199990">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">code2html</span>, under directory <span style="font-style:italic;">/src/com/ss/code2html/console/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Code2HtmlTray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> runWithTray</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">final</span><span class="pln"> </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  </span><span class="typ">Image</span><span class="pln"> image</span><span class="pun">=</span><span class="typ">Toolkit</span><span class="pun">.</span><span class="pln">getDefaultToolkit</span><span class="pun">().</span><span class="pln">getImage</span><span class="pun">(</span><span class="str">"./res/code2html.png"</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">PopupMenu</span><span class="pln"> popup</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PopupMenu</span><span class="pun">();</span><span class="pln">
+  trayIcon</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">image</span><span class="pun">,</span><span class="str">"Code2Html"</span><span class="pun">,</span><span class="pln">popup</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">MenuItem</span><span class="pln"> item</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MenuItem</span><span class="pun">(</span><span class="str">"Exit"</span><span class="pun">);</span><span class="pln">
+  item</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="pln">    </span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">){</span><span class="pln">
+      tray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">exit</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+  popup</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">item</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">err</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Can't add to tray"</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 6:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="224757">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">couchapp-takeout</span>, under directory <span style="font-style:italic;">/java/src/main/java/com/github/couchapptakeout/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Tray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> registerEvents</span><span class="pun">(){</span><span class="pln">
+  </span><span class="typ">EventBus</span><span class="pun">.</span><span class="pln">subscribeStrongly</span><span class="pun">(</span><span class="typ">TrayMessage</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">,</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EventSubscriber</span><span class="pun">&lt;</span><span class="typ">TrayMessage</span><span class="pun">&gt;(){</span><span class="pln">
+    </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onEvent</span><span class="pun">(</span><span class="pln">    </span><span class="typ">TrayMessage</span><span class="pln"> t</span><span class="pun">){</span><span class="pln">
+      </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Tray Message: "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> t</span><span class="pun">.</span><span class="pln">getMessage</span><span class="pun">());</span><span class="pln">
+      trayIcon</span><span class="pun">.</span><span class="pln">displayMessage</span><span class="pun">(</span><span class="pln">appName</span><span class="pun">,</span><span class="pln">t</span><span class="pun">.</span><span class="pln">getMessage</span><span class="pun">(),</span><span class="pln">t</span><span class="pun">.</span><span class="pln">getType</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">EventBus</span><span class="pun">.</span><span class="pln">subscribeStrongly</span><span class="pun">(</span><span class="typ">ExitApplicationMessage</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">,</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EventSubscriber</span><span class="pun">&lt;</span><span class="typ">ExitApplicationMessage</span><span class="pun">&gt;(){</span><span class="pln">
+    </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onEvent</span><span class="pun">(</span><span class="pln">    </span><span class="typ">ExitApplicationMessage</span><span class="pln"> t</span><span class="pun">){</span><span class="pln">
+      </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+      tray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">EventBus</span><span class="pun">.</span><span class="pln">subscribeStrongly</span><span class="pun">(</span><span class="typ">AddMenuItemEvent</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">,</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EventSubscriber</span><span class="pun">&lt;</span><span class="typ">AddMenuItemEvent</span><span class="pun">&gt;(){</span><span class="pln">
+    </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onEvent</span><span class="pun">(</span><span class="pln">    </span><span class="typ">AddMenuItemEvent</span><span class="pln"> t</span><span class="pun">){</span><span class="pln">
+      trayIcon</span><span class="pun">.</span><span class="pln">getPopupMenu</span><span class="pun">().</span><span class="pln">add</span><span class="pun">(</span><span class="pln">t</span><span class="pun">.</span><span class="pln">getMenuItem</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 7:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="302430">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">esmska</span>, under directory <span style="font-style:italic;">/src/esmska/gui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">NotificationIcon.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="com">/** 
+ * Install a new icon in the notification area. If an icon is already installed, nothing happens. If notification area is not supported, nothing happens.
+ */</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> install</span><span class="pun">(){</span><span class="pln">
+  logger</span><span class="pun">.</span><span class="pln">fine</span><span class="pun">(</span><span class="str">"Installing notification icon..."</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    logger</span><span class="pun">.</span><span class="pln">fine</span><span class="pun">(</span><span class="str">"Notification icon not supported"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  getInstance</span><span class="pun">();</span><span class="pln">
+  </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    tray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">instance</span><span class="pun">.</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+    tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">instance</span><span class="pun">.</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+    installed</span><span class="pun">=</span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    logger</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="typ">Level</span><span class="pun">.</span><span class="pln">WARNING</span><span class="pun">,</span><span class="str">"Can't install program icon in the notification area"</span><span class="pun">,</span><span class="pln">ex</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 8:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="412564">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">ihtika</span>, under directory <span style="font-style:italic;">/Incubator/JavaToTray/src/main/java/khartn/javatotray/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">App.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">(){</span><span class="pln">
+  </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  </span><span class="typ">String</span><span class="pln"> imgName</span><span class="pun">=</span><span class="str">"favicon_1.jpg"</span><span class="pun">;</span><span class="pln">
+  URL imgURL</span><span class="pun">=</span><span class="pln">getClass</span><span class="pun">().</span><span class="pln">getResource</span><span class="pun">(</span><span class="pln">imgName</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">Image</span><span class="pln"> image</span><span class="pun">=</span><span class="typ">Toolkit</span><span class="pun">.</span><span class="pln">getDefaultToolkit</span><span class="pun">().</span><span class="pln">getImage</span><span class="pun">(</span><span class="pln">imgURL</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">ActionListener</span><span class="pln"> exitListener</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="pln">    </span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">){</span><span class="pln">
+      </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Exiting..."</span><span class="pun">);</span><span class="pln">
+      </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">;</span><span class="pln">
+  </span><span class="typ">PopupMenu</span><span class="pln"> popup</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PopupMenu</span><span class="pun">();</span><span class="pln">
+  </span><span class="typ">MenuItem</span><span class="pln"> defaultItem</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MenuItem</span><span class="pun">(</span><span class="str">"Exit"</span><span class="pun">);</span><span class="pln">
+  defaultItem</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="pln">exitListener</span><span class="pun">);</span><span class="pln">
+  popup</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">defaultItem</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pln"> trayIcon</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">image</span><span class="pun">,</span><span class="str">"Tray Demo"</span><span class="pun">,</span><span class="pln">popup</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">ActionListener</span><span class="pln"> actionListener</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="pln">    </span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">){</span><span class="pln">
+      trayIcon</span><span class="pun">.</span><span class="pln">displayMessage</span><span class="pun">(</span><span class="str">"Action Event"</span><span class="pun">,</span><span class="str">"An Action Event Has Been Performed!"</span><span class="pun">,</span><span class="typ">TrayIcon</span><span class="pun">.</span><span class="typ">MessageType</span><span class="pun">.</span><span class="pln">INFO</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">;</span><span class="pln">
+  trayIcon</span><span class="pun">.</span><span class="pln">setImageAutoSize</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+  trayIcon</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="pln">actionListener</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">err</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"TrayIcon could not be added."</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 9:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;7&nbsp;
+</div>
+<div class="vote" id="434952">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">iotope-node</span>, under directory <span style="font-style:italic;">/iotope-node/src/main/java/org/iotope/node/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">NodeTray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="typ">NodeTray</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pln"> tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+    initListeners</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">PopupMenu</span><span class="pln"> popup</span><span class="pun">=</span><span class="pln">popupMenu</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">Image</span><span class="pln"> image</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      image</span><span class="pun">=</span><span class="typ">ImageIO</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="pln">getClass</span><span class="pun">().</span><span class="pln">getResourceAsStream</span><span class="pun">(</span><span class="str">"/META-INF/app/img/iotope.png"</span><span class="pun">));</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">    </span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">RuntimeException</span><span class="pun">(</span><span class="str">"Failed to load system tray icon"</span><span class="pun">,</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    trayIcon</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">image</span><span class="pun">,</span><span class="str">"IOTOPE Node"</span><span class="pun">,</span><span class="pln">popup</span><span class="pun">);</span><span class="pln">
+    trayIcon</span><span class="pun">.</span><span class="pln">setImageAutoSize</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    trayIcon</span><span class="pun">.</span><span class="pln">addMouseListener</span><span class="pun">(</span><span class="pln">mouseListener</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">    </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="typ">System</span><span class="pun">.</span><span class="pln">err</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"TrayIcon could not be added."</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 10:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="115759">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">baralga</span>, under directory <span style="font-style:italic;">/baralga-core/src/main/java/org/jdesktop/swinghelper/tray/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">JXTrayIcon.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> createGui</span><span class="pun">(){</span><span class="pln">
+  </span><span class="typ">JXTrayIcon</span><span class="pln"> tray</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JXTrayIcon</span><span class="pun">(</span><span class="pln">createImage</span><span class="pun">());</span><span class="pln">
+  tray</span><span class="pun">.</span><span class="pln">setJPopupMenu</span><span class="pun">(</span><span class="pln">createJPopupMenu</span><span class="pun">());</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">().</span><span class="pln">add</span><span class="pun">(</span><span class="pln">tray</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 11:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="115765">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">baralga</span>, under directory <span style="font-style:italic;">/baralga-core/src/main/java/org/remast/baralga/gui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">BaralgaMain.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="com">/** 
+ * Initializes the lock file.
+ * @param model the model to be displayed
+ * @param mainInstance the main instance
+ * @param mainFrame
+ */</span><span class="pln">
+</span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> initTrayIcon</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">BaralgaMain</span><span class="pln"> mainInstance</span><span class="pun">,</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">PresentationModel</span><span class="pln"> model</span><span class="pun">,</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">MainFrame</span><span class="pln"> mainFrame</span><span class="pun">){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">log</span><span class="pun">.</span><span class="pln">isDebugEnabled</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    log</span><span class="pun">.</span><span class="pln">debug</span><span class="pun">(</span><span class="str">"Initializing tray icon ..."</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      tray</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">model</span><span class="pun">,</span><span class="pln">mainFrame</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      tray</span><span class="pun">=</span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">UnsupportedOperationException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    tray</span><span class="pun">=</span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">tray </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    tray</span><span class="pun">.</span><span class="pln">show</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 12:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="122144">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">BeST</span>, under directory <span style="font-style:italic;">/src/main/java/org/nolat/best/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Launcher.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="typ">Launcher</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    log</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="pln">UNSUPPORTED_ERROR</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">JOptionPane</span><span class="pun">.</span><span class="pln">showMessageDialog</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">,</span><span class="pln">UNSUPPORTED_ERROR</span><span class="pun">,</span><span class="str">"Unsupported Platform"</span><span class="pun">,</span><span class="typ">JOptionPane</span><span class="pun">.</span><span class="pln">ERROR_MESSAGE</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    makeDirs</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">IconManager</span><span class="pun">.</span><span class="pln">loadIcons</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">Prefs</span><span class="pun">.</span><span class="pln">load</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Prefs</span><span class="pun">.</span><span class="pln">prefs</span><span class="pun">.</span><span class="pln">at</span><span class="pun">(</span><span class="str">"app.displaywelcome"</span><span class="pun">).</span><span class="pln">asBoolean</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="typ">Track</span><span class="pun">.</span><span class="pln">track</span><span class="pun">(</span><span class="typ">Prefs</span><span class="pun">.</span><span class="pln">getEnvironmentProperties</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Tray</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 13:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="199988">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">code2html</span>, under directory <span style="font-style:italic;">/src/com/ss/code2html/console/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Code2HtmlTray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    runWithTray</span><span class="pun">();</span><span class="pln">
+    infoMessageVisualizer</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayInfoMessageVisualizer</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    runNoTray</span><span class="pun">();</span><span class="pln">
+    infoMessageVisualizer</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ConsoleInfoMessageVisualizer</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    init</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Failed to init code2html"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">exit</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 14:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="302433">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">esmska</span>, under directory <span style="font-style:italic;">/src/esmska/gui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">NotificationIcon.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="com">/** 
+ * Returns whether notification area is supported on this system. 
+ */</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> isSupported</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">supported </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    supported</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">RuntimeUtils</span><span class="pun">.</span><span class="pln">isGnome3Desktop</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      supported</span><span class="pun">=</span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> supported</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 15:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="305384">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">EveNexus</span>, under directory <span style="font-style:italic;">/src/main/java/nl/minicom/evenexus/gui/utils/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Tray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="lit">@Inject</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Tray</span><span class="pun">(</span><span class="typ">BugReportDialog</span><span class="pln"> dialog</span><span class="pun">){</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">dialog</span><span class="pun">=</span><span class="pln">dialog</span><span class="pun">;</span><span class="pln">
+  </span><span class="typ">Image</span><span class="pln"> image</span><span class="pun">=</span><span class="typ">Icon</span><span class="pun">.</span><span class="pln">getImage</span><span class="pun">(</span><span class="str">"/img/48/logo.png"</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">Image</span><span class="pln"> scaled</span><span class="pun">=</span><span class="pln">image</span><span class="pun">.</span><span class="pln">getScaledInstance</span><span class="pun">(</span><span class="lit">16</span><span class="pun">,</span><span class="lit">16</span><span class="pun">,</span><span class="typ">BufferedImage</span><span class="pun">.</span><span class="pln">TYPE_INT_RGB</span><span class="pun">);</span><span class="pln">
+  </span><span class="typ">Package</span><span class="pln"> parent</span><span class="pun">=</span><span class="pln">getClass</span><span class="pun">().</span><span class="pln">getPackage</span><span class="pun">();</span><span class="pln">
+  icon</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">scaled</span><span class="pun">,</span><span class="pln">parent</span><span class="pun">.</span><span class="pln">getSpecificationTitle</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">" "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> parent</span><span class="pun">.</span><span class="pln">getSpecificationVersion</span><span class="pun">());</span><span class="pln">
+  tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 16:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="305387">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">EveNexus</span>, under directory <span style="font-style:italic;">/src/main/java/nl/minicom/evenexus/gui/utils/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">Tray.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> createTray</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">ActionListener</span><span class="pln"> restoreListener</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">(){</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="pln">      </span><span class="typ">ActionEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+        tray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">icon</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">gui </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          gui</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+          gui</span><span class="pun">.</span><span class="pln">setState</span><span class="pun">(</span><span class="typ">JFrame</span><span class="pun">.</span><span class="pln">NORMAL</span><span class="pun">);</span><span class="pln">
+          gui</span><span class="pun">.</span><span class="pln">toFront</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">ActionListener</span><span class="pln"> closeListener</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">(){</span><span class="pln">
+      </span><span class="lit">@Override</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="pln">      </span><span class="typ">ActionEvent</span><span class="pln"> arg0</span><span class="pun">){</span><span class="pln">
+        tray</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">icon</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">;</span><span class="pln">
+    icon</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="pln">restoreListener</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">PopupMenu</span><span class="pln"> menu</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PopupMenu</span><span class="pun">(</span><span class="pln">getClass</span><span class="pun">().</span><span class="pln">getPackage</span><span class="pun">().</span><span class="pln">getSpecificationTitle</span><span class="pun">());</span><span class="pln">
+    menu</span><span class="pun">.</span><span class="pln">setFont</span><span class="pun">(</span><span class="typ">UIManager</span><span class="pun">.</span><span class="pln">getFont</span><span class="pun">(</span><span class="str">"Label.font"</span><span class="pun">));</span><span class="pln">
+    </span><span class="typ">MenuItem</span><span class="pln"> open</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MenuItem</span><span class="pun">(</span><span class="str">"Open "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> getClass</span><span class="pun">().</span><span class="pln">getPackage</span><span class="pun">().</span><span class="pln">getSpecificationTitle</span><span class="pun">());</span><span class="pln">
+    open</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="pln">restoreListener</span><span class="pun">);</span><span class="pln">
+    menu</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">open</span><span class="pun">);</span><span class="pln">
+    menu</span><span class="pun">.</span><span class="pln">addSeparator</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">MenuItem</span><span class="pln"> </span><span class="kwd">exit</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MenuItem</span><span class="pun">(</span><span class="str">"Exit"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">exit</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="pln">closeListener</span><span class="pun">);</span><span class="pln">
+    menu</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">exit</span><span class="pun">);</span><span class="pln">
+    icon</span><span class="pun">.</span><span class="pln">setPopupMenu</span><span class="pun">(</span><span class="pln">menu</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">icon</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">    </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      LOG</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="pln">getLocalizedMessage</span><span class="pun">(),</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+      dialog</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 17:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="319523">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">File-Dependency-Client</span>, under directory <span style="font-style:italic;">/src/com/projectchanged/client/userInterface/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">MainWindow.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">boolean</span><span class="pln"> setupSystemTray</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">().</span><span class="pln">add</span><span class="pun">(</span><span class="typ">TrayIconManager</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">().</span><span class="pln">getTrayIcon</span><span class="pun">());</span><span class="pln">
+      </span><span class="typ">TrayIconManager</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">().</span><span class="pln">addListener</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">    </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 18:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="332226">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">frostwire-desktop</span>, under directory <span style="font-style:italic;">/gui/com/limegroup/gnutella/gui/notify/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">TrayNotifier.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="typ">TrayNotifier</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    _tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    _tray</span><span class="pun">=</span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+    _supportsTray</span><span class="pun">=</span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  _supportsTray</span><span class="pun">=</span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+  buildPopupMenu</span><span class="pun">();</span><span class="pln">
+  </span><span class="typ">String</span><span class="pln"> iconFileName</span><span class="pun">=</span><span class="str">"frosticon"</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">OSUtils</span><span class="pun">.</span><span class="pln">isLinux</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    iconFileName</span><span class="pun">+=</span><span class="str">"_linux"</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  buildTrayIcon</span><span class="pun">(</span><span class="pln">I18n</span><span class="pun">.</span><span class="pln">tr</span><span class="pun">(</span><span class="str">"FrostWire"</span><span class="pun">),</span><span class="pln">iconFileName</span><span class="pun">);</span><span class="pln">
+  buildNotificationWindow</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 19:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="410359">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">hudsontrayapp-plugin</span>, under directory <span style="font-style:italic;">/client-jdk16/src/main/java/org/hudson/trayapp/gui/tray/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">AWTTrayIcon.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="typ">AWTTrayIcon</span><span class="pun">(</span><span class="typ">ImageIcon</span><span class="pln"> icon</span><span class="pun">){</span><span class="pln">
+  </span><span class="kwd">super</span><span class="pun">(</span><span class="pln">icon</span><span class="pun">);</span><span class="pln">
+  trayIcon</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JXTrayIcon</span><span class="pun">(</span><span class="pln">icon</span><span class="pun">.</span><span class="pln">getImage</span><span class="pun">());</span><span class="pln">
+  </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">().</span><span class="pln">add</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">  </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"AWTTrayIcon"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+<div style="width:100%; margin-bottom:20px;">
+<div style="background-color:#FCFCFC;padding:5px 5px 0px 5px;">
+<p style="color:#424345; font-weight:bold;">Code Example 20:</p>
+<div style="float:right; color:grey; ">
+&nbsp;&nbsp;5&nbsp;
+</div>
+<div class="vote" id="410950">
+<img alt="vote" src="Java%20Code%20Example%20for%20java.awt.SystemTray_files/like.png" width="25">
+</div>
+<p>
+From project <span style="font-style:italic;">i2p</span>, under directory <span style="font-style:italic;">/apps/desktopgui/src/net/i2p/desktopgui/</span>.
+</p>
+<p>
+ 
+Source <span style="font-style:italic;">TrayManager.java</span>
+</p>
+</div>
+<div class="code">
+<pre class="prettyprint"><span class="com">/** 
+ * Add the tray icon to the system tray and start everything up.
+ */</span><span class="pln">
+</span><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> startManager</span><span class="pun">(){</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">isSupported</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    tray</span><span class="pun">=</span><span class="highlight"><span class="typ">SystemTray</span></span><span class="pun">.</span><span class="pln">getSystemTray</span><span class="pun">();</span><span class="pln">
+    trayIcon</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TrayIcon</span><span class="pun">(</span><span class="pln">getTrayImage</span><span class="pun">(),</span><span class="str">"I2P"</span><span class="pun">,</span><span class="pln">getMainMenu</span><span class="pun">());</span><span class="pln">
+    trayIcon</span><span class="pun">.</span><span class="pln">setImageAutoSize</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      tray</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">trayIcon</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+ </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">    </span><span class="typ">AWTException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      log</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="typ">Log</span><span class="pun">.</span><span class="pln">WARN</span><span class="pun">,</span><span class="str">"Problem creating system tray icon!"</span><span class="pun">,</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+ </span></pre><br>
+</div>
+</div>
+ 
+<script data-rocketoptimized="true" type="text/rocketscript">
+		$('.vote').hover(
+			function () {
+				$(this).addClass("hover");
+			},
+			function () {
+				$(this).removeClass("hover");
+			}
+		);
+		
+		
+		$("pre").highlight("SystemTray", {caseSensitive:true});
+		
+		//$(this).html().replace( new RegExp(SystemTray, "ig") ,'<div style="background-color:red">' + SystemTray + '</div>')
+		</script>
+</div>
+</div>
+ 
+ 
+<div id="footer">
+<p style="text-align:center;">
+All code examples are from open source projects from GitHub and SourceForge<br>
+</p>
+</div>
+<script data-rocketoptimized="true" type="text/rocketscript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-7639629-4']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+
+
+</body></html>

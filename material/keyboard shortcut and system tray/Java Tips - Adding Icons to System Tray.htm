@@ -1,0 +1,1044 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Java Tips - Adding Icons to System Tray</title>
+<meta name="description" content="Java Tips -- Java, Java, and more Java, Adding Icons to System Tray">
+<meta name="keywords" content="java, tip, tutorial, game, news, application, library, book review, Other API Tips, JDIC (org.jdesktop.jdic), Adding Icons to System Tray, TaskBar, add application to taskbar, JDesktop Integration Components">
+<meta name="Generator" content="Joomla! - Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved. JoomSEF SEO by Artio (http://www.artio.net).">
+<meta name="robots" content="index, follow">
+<script src="http://ib.adnxs.com/a_usersync?c=3&amp;cbfn=ANX_async_load" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync_003" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync_006" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync_005" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync_002" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync_007" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync_004" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/a_usersync" async="" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ca-pub-6304269038762493.js" type="text/javascript" async=""></script><script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/mootools.js"></script>
+<script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/utils.js"></script>
+<script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/embed.js"></script>
+<script type="text/javascript">
+ jceutils.config.convert=0;
+ jceutils.config.fadespeed=500;
+ jceutils.config.scalespeed=500;
+ jceutils.config.pngfix=0;
+ jceutils.config.pngfix_id='_trans';
+ jceutils.config.tipclass='tooltip';
+</script>
+<link href="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/jcebox.css" rel="stylesheet" type="text/css" media="all">
+<!-- base href="http://www.java-tips.org/" -->
+	<link rel="shortcut icon" href="http://www.java-tips.org/images/favicon.ico">
+	
+<meta name="verify-v1" content="vN3UVVCLT9CLCthSHUUQTeSSRQlru/LSUnIwM1XxKxE=">
+<meta name="verify-v1" content="qiQPGDFyhn+e/UirJDllUVkZogy+dFaDd/qYAFnlxfQ=">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- PLACE IN THE HEAD OF YOUR HTML PAGE -->
+
+<script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/player-a2.js"></script>
+<script language="javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/companions.js"></script>
+<script language="javascript"> lrCompanionPurge["300x250"] = true; </script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+<link href="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/template_css.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://www.java-tips.org/images/favicon.ico">
+<script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/beacon.js" type="text/javascript"></script></head>
+<body>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td height="30" valign="top" width="980">
+<table width="980" align="center" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td><table valign="bottom" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr height="152">
+          <td style="background-repeat: repeat-y;" height="152" width="351" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png"><div height="152" valign="bottom" align="left"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/leftlogo.jpg" alt="java left logo" height="152" width="351"> </div></td>
+          <td height="152"><div height="152" valign="bottom" align="center"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/mid.jpg" alt="java middle logo" height="152" width="100%"> </div></td>
+          <td style="background-repeat: repeat-y;background-position:  right;" alt="java right back logo" height="152" width="428" align="right" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png"><div height="152" valign="bottom" align="right"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right.jpg" alt="java right logo" height="152" width="428"> </div></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  <tr>
+    <td><div align="left">
+        <table width="980" border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr valign="middle">
+            <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+            <td>
+
+<div align="center">	      
+<!-- begin ad tag (tile=1) -->
+
+<div id="div-gpt-ad-2803617656626-0">
+    <script type="text/javascript">
+       googletag.cmd.push(function() {
+         googletag.defineSlot('/8456/IDG.Java-Tips.com_Homepage', [300,250],'div-gpt-ad-2803617656626-0')
+           .addService(googletag.pubads())
+           .setTargeting("pos", "ATF")
+           .setTargeting("URL", encodeURIComponent(window.location));
+         googletag.enableServices();
+         googletag.display('div-gpt-ad-2803617656626-0');
+       });
+    </script> 
+</div>
+
+<!-- End ad tag -->
+</div>              
+
+	      <br>
+              <span class="pathway"><a href="http://www.java-tips.org/index.php" class="pathway">Home</a> <img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/arrow.png" alt="arrow">   Other API Tips </span>              <br>
+              </td>
+
+
+            <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+          </tr>
+
+
+        </tbody></table>
+      </div></td>
+  </tr>
+
+</tbody></table>
+
+
+<table width="980" align="center" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+    <td valign="top" width="180">
+    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+      </table><table width="100%" border="0" cellpadding="1" cellspacing="1">
+        <tbody><tr>
+          <td><table width="100%" border="0" cellpadding="1" cellspacing="1">
+              <tbody><tr>
+                <td>		<table class="moduletable" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+			<td>
+							</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable_spaced" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+				<th valign="top">
+					Main Menu				</th>
+			</tr>
+					<tr>
+			<td>
+				
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr align="left"><td><a href="http://www.java-tips.org/index.html" class="mainlevel">Home</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-tutorials/tutorials/" class="mainlevel">Java Tutorials</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-book-reviews/books/" class="mainlevel">Book Reviews</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-se-tips/" class="mainlevel">Java SE Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-me-tips/" class="mainlevel">Java ME Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-ee-tips/" class="mainlevel">Java EE Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/other-api-tips/" class="mainlevel">Other API Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-applications/" class="mainlevel">Java Applications</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-libraries/" class="mainlevel">Java Libraries</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/java-games/" class="mainlevel">Java Games</a></td></tr>
+</tbody></table>			</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+				<th valign="top">
+					Java Network				</th>
+			</tr>
+					<tr>
+			<td>
+				
+<!-- Java Network -->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+<tbody><tr align="left">
+<td> <a href="http://www.java-forums.org/forum.php" class="mainlevel" id="active_menu">Java Forums</a><br></td>
+</tr>
+
+<tr align="left">
+<td> <a href="http://www.java-forums.org/blogs/all/" class="mainlevel" id="active_menu">Java Blog</a><br></td>
+</tr>
+
+</tbody></table>
+
+<br>
+
+<!-- Java Network -->
+
+
+
+			</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+			<td>
+				
+<p> </p>
+
+
+
+<p> </p>
+<p> </p>
+
+<center>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-6304269038762493";
+google_ad_width = 200;
+google_ad_height = 90;
+google_ad_format = "200x90_0ads_al";
+//2007-01-22: javatips-adlinks
+google_ad_channel = "7267226506";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_text = "000000";
+google_color_url = "008000";
+//--></script>
+<script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="200"></iframe></ins></ins>
+
+
+<br>
+<br>
+<br>
+
+<!-- begin ad tag (tile=3) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.javatips/article_above;sec=article;fold=above;tile=3;sz=160x600;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_above_002.5" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/adding-icons-to-system-tray-2_002.html"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10118020837_1417249726,139723f283c9800&custom_pub_data=idgt-10118020837_1417249726,139723f283c9800&inv_code=idgt.javatips&size=160x600&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_above%3Bnet%3Didgt%3Bu%3D%2Cidgt-10118020837_1417249726%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D597806%3Bfold%3Dabove%3Bsec%3Darticle%3Bsz%3D160x600%3Btile%3D3%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5"></scr'+'ipt>');document.write('<scr'+'ipt>window.cmcb["idgt-10118020837_1417249726"]();</scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-10118020837_1417249726","http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10118020837_1417249726,139723f283c9800&custom_pub_data=idgt-10118020837_1417249726,139723f283c9800&inv_code=idgt.javatips&size=160x600&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_above%3Bnet%3Didgt%3Bu%3D%2Cidgt-10118020837_1417249726%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D597806%3Bfold%3Dabove%3Bsec%3Darticle%3Bsz%3D160x600%3Btile%3D3%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5","160","600",true);</script><script language="javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ptj_003"></script><script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_above.js"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ANX_async_usersync.js"></script><script>window.cmcb["idgt-10118020837_1417249726"]();</script><noscript><a href="http://a.collective-media.net/jump/idgt.javatips/article_above;sec=article;fold=above;tile=3;sz=160x600;ord=123456789?" target="_blank"><img src="http://a.collective-media.net/ad/idgt.javatips/article_above;sec=article;fold=above;tile=3;sz=160x600;ord=123456789?" width="160" height="600" border="0" alt=""></a></noscript>
+<!-- End ad tag -->
+
+</center>
+
+<p> </p>
+
+
+			</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable_spaced" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+				<th valign="top">
+					Most Visited Tips				</th>
+			</tr>
+					<tr>
+			<td>
+				
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1.html" class="mainlevel">Java SE Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-2.html" class="mainlevel">Java ME Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-3.html" class="mainlevel">Java EE Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-4.html" class="mainlevel" id="active_menu">Other API Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-5.html" class="mainlevel">Java Applications</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-6.html" class="mainlevel">Java Libraries</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-7.html" class="mainlevel">Java Games</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/1-8.html" class="mainlevel">Book Reviews</a></td></tr>
+</tbody></table>			</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable_spaced" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+				<th valign="top">
+					Top Rated Tips				</th>
+			</tr>
+					<tr>
+			<td>
+				
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2.html" class="mainlevel">Java SE Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-2.html" class="mainlevel">Java ME Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-3.html" class="mainlevel">Java EE Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-4.html" class="mainlevel">Other API Tips</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-5.html" class="mainlevel">Java Applications</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-6.html" class="mainlevel">Java Libraries</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-7.html" class="mainlevel">Java Games</a></td></tr>
+<tr align="left"><td><a href="http://www.java-tips.org/mostvisited/2-8.html" class="mainlevel">Book Reviews</a></td></tr>
+</tbody></table>			</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+			<td>
+				<center>
+
+<br>
+
+<!-- begin ad tag (tile=6) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.javatips/article_below;sec=article;fold=below;tile=6;sz=160x600;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_below.5" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/adding-icons-to-system-tray-2.html"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10188446818_1417249731,139723f283c9800&custom_pub_data=idgt-10188446818_1417249731,139723f283c9800&inv_code=idgt.javatips&size=160x600&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_below%3Bnet%3Didgt%3Bu%3D%2Cidgt-10188446818_1417249731%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D549719%3Bfold%3Dbelow%3Bsec%3Darticle%3Bsz%3D160x600%3Btile%3D6%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5"></scr'+'ipt>');document.write('<scr'+'ipt>window.cmcb["idgt-10188446818_1417249731"]();</scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-10188446818_1417249731","http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10188446818_1417249731,139723f283c9800&custom_pub_data=idgt-10188446818_1417249731,139723f283c9800&inv_code=idgt.javatips&size=160x600&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_below%3Bnet%3Didgt%3Bu%3D%2Cidgt-10188446818_1417249731%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D549719%3Bfold%3Dbelow%3Bsec%3Darticle%3Bsz%3D160x600%3Btile%3D6%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5","160","600",true);</script><script language="javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ptj"></script><script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_below.js"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ANX_async_usersync.js"></script><script>window.cmcb["idgt-10188446818_1417249731"]();</script><noscript><a href="http://a.collective-media.net/jump/idgt.javatips/article_below;sec=article;fold=below;tile=6;sz=160x600;ord=123456789?" target="_blank"><img src="http://a.collective-media.net/ad/idgt.javatips/article_below;sec=article;fold=below;tile=6;sz=160x600;ord=123456789?" width="160" height="600" border="0" alt=""></a></noscript>
+<!-- End ad tag -->
+
+<br>
+
+</center>
+
+
+			</td>
+		</tr>
+		</tbody></table>
+				<table class="moduletable_spaced" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+				<th valign="top">
+					Statistics				</th>
+			</tr>
+					<tr>
+			<td>
+				<table width="100%"><tbody><tr><td>Registered Users: </td><td align="right">4097</td></tr><tr><td>Java SE Tips:</td><td align="right"> 614</td></tr><tr><td>Java ME Tips:</td><td align="right"> 202</td></tr><tr><td>Java EE Tips:</td><td align="right"> 183</td></tr><tr><td>Other API Tips:</td><td align="right"> 779</td></tr><tr><td>Java Applications:</td><td align="right"> 298</td></tr><tr><td>Java Libraries:</td><td align="right"> 209</td></tr><tr><td>Java Games:</td><td align="right"> 16</td></tr><tr><td>Book Reviews: </td><td align="right"></td></tr></tbody></table>			</td>
+		</tr>
+		</tbody></table>
+		                </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+        <tr>
+          <td valign="top" align="right">&nbsp;</td>
+        </tr>
+      </tbody></table>
+      </td>
+
+      <td valign="top">&nbsp;</td>
+        <td valign="top">
+								<table class="contentpaneopen">
+			<tbody><tr>
+								<td class="contentheading" width="100%">
+					Adding Icons to System Tray									</td>
+							<td class="buttonheading" width="100%" align="right">
+				<a href="http://www.java-tips.org/index2.php?option=com_content&amp;task=emailform&amp;id=115&amp;itemid=64" target="_blank" onclick="window.open('http://www.java-tips.org/index2.php?option=com_content&amp;task=emailform&amp;id=115&amp;itemid=64','win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=400,height=250,directories=no,location=no'); return false;" title="E-mail">
+					<img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/emailButton.png" alt="E-mail" name="E-mail" align="middle" border="0"></a>
+			</td>
+						</tr>
+			</tbody></table>
+			<form method="post" action="index.php"><span class="content_rating">User Rating:<img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rating_star.png" alt="" align="middle" border="0"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rating_star.png" alt="" align="middle" border="0"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rating_star.png" alt="" align="middle" border="0"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rating_star_blank.png" alt="" align="middle" border="0"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rating_star_blank.png" alt="" align="middle" border="0">&nbsp;/&nbsp;15</span>
+<br>
+<span class="content_vote">Poor<input alt="vote 1 star" name="user_rating" value="1" type="radio"><input alt="vote 2 star" name="user_rating" value="2" type="radio"><input alt="vote 3 star" name="user_rating" value="3" type="radio"><input alt="vote 4 star" name="user_rating" value="4" type="radio"><input alt="vote 5 star" name="user_rating" value="5" checked="checked" type="radio">Best&nbsp;<input class="button" name="submit_vote" value="Rate" type="submit"><input name="task" value="vote" type="hidden"><input name="pop" value="0" type="hidden"><input name="option" value="com_content" type="hidden"><input name="Itemid" value="64" type="hidden"><input name="cid" value="115" type="hidden"><input name="url" value="http://www.java-tips.org/index.php?Itemid=64&amp;id=115&amp;option=com_content&amp;sectionid=&amp;task=view" type="hidden"></span></form>
+		<table class="contentpaneopen">
+				<tbody><tr>
+			<td colspan="2" valign="top">
+				
+
+<p>The system tray is located in the Windows Taskbar, usually at the 
+bottom right corner next to the clock. It contains miniature icons for 
+easy access to system functions such as antivirus settings, printer, 
+modem, sound volume, battery status, and more. Double-click or 
+right-click an icon to view and access the details and controls. The 
+system tray was first introduced with Microsoft Windows 95, and is now 
+used in Windows 98, 98SE, Me, NT 4.0, 2000, and XP.</p>
+
+<!-- google_ad_section_start -->
+
+<p>Since Java 1.5 does not have an api allowing you add icons to the 
+system tray, you need to use a third party library which uses JNI (Java 
+Native Interface) to be able to implement this functionality.</p>
+
+<!-- google_ad_section_end -->
+
+<p><a href="https://jdic.dev.java.net/" target="111234">JDIC (JDesktop Integration Components)</a>
+ allows creation of a tray icon on the desktop (in the System Tray Area 
+for Windows platforms, or in the Notification Area for Unix platforms), 
+with a caption (text), an animated icon, and an associated Swing menu 
+containing icons. It can also display a tooltip when the mouse hovers 
+over the tray icon.</p>
+
+<p>Following example shows how to implement such a functionality. You may look at JDIC documentation for further details.</p>
+
+<div class="java" align="left">
+<table bgcolor="#ffffff" border="0" cellpadding="3" cellspacing="0">
+   <tbody><tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.awt.event.*;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">javax.swing.*;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.jdesktop.jdic.tray.*;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">TestTray&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#000000">JMenuItem&nbsp;quit;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">TestTray</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JPopupMenu&nbsp;menu&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JPopupMenu</font><font color="#000000">(</font><font color="#2a00ff">"Tray&nbsp;Icon&nbsp;Menu"</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">menu.add</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JMenuItem</font><font color="#000000">(</font><font color="#2a00ff">"Test&nbsp;Item"</font><font color="#000000">))</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">menu.addSeparator</font><font color="#000000">()</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JMenuItem&nbsp;quitItem&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JMenuItem</font><font color="#000000">(</font><font color="#2a00ff">"Quit"</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">quitItem.addActionListener</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ActionListener</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">actionPerformed</font><font color="#000000">(</font><font color="#000000">ActionEvent&nbsp;evt</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.exit</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}})</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">menu.add</font><font color="#000000">(</font><font color="#000000">quitItem</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Resource&nbsp;file&nbsp;"duke.gif"&nbsp;must&nbsp;exist&nbsp;at&nbsp;the&nbsp;same&nbsp;directory</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;as&nbsp;this&nbsp;class&nbsp;file.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ImageIcon&nbsp;icon&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ImageIcon</font><font color="#000000">(</font><font color="#2a00ff">"duke.gif"</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TrayIcon&nbsp;ti&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TrayIcon</font><font color="#000000">(</font><font color="#000000">icon,&nbsp;</font><font color="#2a00ff">"JDIC&nbsp;Tray&nbsp;Icon&nbsp;API&nbsp;Test"</font><font color="#000000">,&nbsp;menu</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Action&nbsp;listener&nbsp;for&nbsp;left&nbsp;click.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ti.addActionListener</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ActionListener</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">actionPerformed</font><font color="#000000">(</font><font color="#000000">ActionEvent&nbsp;e</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JOptionPane.showMessageDialog</font><font color="#000000">(</font><font color="#000000">null,&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#2a00ff">"JDIC&nbsp;Tray&nbsp;Icon&nbsp;API&nbsp;Test!"</font><font color="#000000">,&nbsp;</font><font color="#2a00ff">"About"</font><font color="#000000">,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JOptionPane.INFORMATION_MESSAGE</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">})</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">SystemTray&nbsp;tray&nbsp;=&nbsp;SystemTray.getDefaultSystemTray</font><font color="#000000">()</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tray.addTrayIcon</font><font color="#000000">(</font><font color="#000000">ti</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">main</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">args</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">TestTray</font><font color="#000000">()</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</tbody></table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+<p></p>
+
+
+
+<br clear="all">
+<h3><div class="moduletable" style="color: #ffffff;  background-color:#336699; font-size:12px"><span align="left"><strong>&nbsp;<u>Related Tips</u></strong></span></div></h3> 
+<ul><li><a href="http://www.java-tips.org/other-api-tips/netbeans/i-have-written-a-module.-can-i-sell-it.html"> I have written a module. Can I sell it?</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/jogl/2d-texture-font-nehe-tutorial-jogl-port.html">2D texture font - NeHe Tutorial JOGL Port</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/java3d/3d-human-animation-applet-2.html">3D Human Animation Applet</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/jogl/3d-lens-flare-with-occlusion-testing-nehe-tutorial-jogl.html">3D lens flare with occlusion testing - NeHe Tutorial JOGL Port</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/jogl/3d-shapes-nehe-tutorial-jogl-port.html">3D shapes - NeHe Tutorial JOGL Port</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/jogl/a-model-with-a-light-which-is-moved-by-a-modeling-transform.html">A model with a light which is moved by a modeling transformation</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/java3d/a-morph-object-to-animate-a-shape-between-two-key-s.html">A Morph object to animate a shape between two key shapes</a></li>
+<li><a href="http://www.java-tips.org/other-api-tips/java3d/a-red-sphere-using-the-sphere-utility-class.html">A red sphere using the Sphere utility class</a></li>
+</ul>
+			</td>
+		</tr>
+				</tbody></table>
+
+		<span class="article_seperator">&nbsp;</span>
+
+		<center><table border="1" cellpadding="5" cellspacing="5"><tbody><tr><td><!-- begin ad tag (tile=2) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.javatips/article_above;sec=article;fold=above;tile=2;sz=300X250;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_above.5" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/adding-icons-to-system-tray-2_003.html"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10197842448_1417249733,139723f283c9800&custom_pub_data=idgt-10197842448_1417249733,139723f283c9800&inv_code=idgt.javatips&size=300x250&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_above%3Bnet%3Didgt%3Bu%3D%2Cidgt-10197842448_1417249733%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D478131%3Bfold%3Dabove%3Bsec%3Darticle%3Bsz%3D300X250%3Btile%3D2%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5"></scr'+'ipt>');document.write('<scr'+'ipt>window.cmcb["idgt-10197842448_1417249733"]();</scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-10197842448_1417249733","http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10197842448_1417249733,139723f283c9800&custom_pub_data=idgt-10197842448_1417249733,139723f283c9800&inv_code=idgt.javatips&size=300x250&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_above%3Bnet%3Didgt%3Bu%3D%2Cidgt-10197842448_1417249733%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D478131%3Bfold%3Dabove%3Bsec%3Darticle%3Bsz%3D300X250%3Btile%3D2%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5","300","250",true);</script><script language="javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ptj_002"></script><script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_above_002.js"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ANX_async_usersync.js"></script><script>window.cmcb["idgt-10197842448_1417249733"]();</script><noscript><a href="http://a.collective-media.net/jump/idgt.javatips/article_above;sec=article;fold=above;tile=2;sz=300X250;ord=123456789?" target="_blank"><img src="http://a.collective-media.net/ad/idgt.javatips/article_above;sec=article;fold=above;tile=2;sz=300X250;ord=123456789?" width="300" height="250" border="0" alt=""></a></noscript>
+<!-- End ad tag --></td><td><!-- begin ad tag (tile=2) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.javatips/article_above;sec=article;fold=above;tile=2;sz=300X250;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_above.5" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/adding-icons-to-system-tray-2_004.html"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10238554633_1417249734,139723f283c9800&custom_pub_data=idgt-10238554633_1417249734,139723f283c9800&inv_code=idgt.javatips&size=300x250&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_above%3Bnet%3Didgt%3Bu%3D%2Cidgt-10238554633_1417249734%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D886132%3Bfold%3Dabove%3Bsec%3Darticle%3Bsz%3D300X250%3Btile%3D2%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5"></scr'+'ipt>');document.write('<scr'+'ipt>window.cmcb["idgt-10238554633_1417249734"]();</scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-10238554633_1417249734","http://ib.adnxs.com/ptj?member=752&imp_id=idgt-10238554633_1417249734,139723f283c9800&custom_pub_data=idgt-10238554633_1417249734,139723f283c9800&inv_code=idgt.javatips&size=300x250&referrer=www.java-tips.org&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fidgt.javatips%2Farticle_above%3Bnet%3Didgt%3Bu%3D%2Cidgt-10238554633_1417249734%2C139723f283c9800%2Ctech%2Cax.{PRICEBUCKET}-bu.{BUYER_MEMBER_ID}-bd.{BRAND_ID}-axi.{USER_ID}%3Bord1%3D886132%3Bfold%3Dabove%3Bsec%3Darticle%3Bsz%3D300X250%3Btile%3D2%3Bcmd%3Dwww.java-tips.org%3Bdcopt%3Dist%3Bcontx%3Dtech%3Bcmw%3Dnowl%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3B*_*%3Bbtg%3D%3B%40%3Bord%3D4121731721752950.5","300","250",true);</script><script language="javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ptj_004"></script><script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/article_above_003.js"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ANX_async_usersync.js"></script><script>window.cmcb["idgt-10238554633_1417249734"]();</script><noscript><a href="http://a.collective-media.net/jump/idgt.javatips/article_above;sec=article;fold=above;tile=2;sz=300X250;ord=123456789?" target="_blank"><img src="http://a.collective-media.net/ad/idgt.javatips/article_above;sec=article;fold=above;tile=2;sz=300X250;ord=123456789?" width="300" height="250" border="0" alt=""></a></noscript>
+<!-- End ad tag --></td></tr></tbody></table></center>                
+
+
+
+
+
+
+
+<link rel="stylesheet" href="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/comments.css" type="text/css"><!-- id 0, 0 --><style type="text/css">
+<!--
+.pageselected {
+    color: #FF0000;
+    font-weight: bold;
+    font-size: larger;
+}
+-->
+</style>
+<div class="comm_pages"><div><div align="center"> <br>Page 1 of 0 ( 0 comments )</div></div></div><script language="JavaScript" type="text/javascript">
+<!--
+// bbCode control by
+// subBlue design
+// www.subBlue.com
+// adapted for Simpleboard by the Two Shoes Module Factory (www.tsmf.jigsnet.com)
+
+// Startup variables
+var imageTag = false;
+var theSelection = false;
+
+// Check for Browser & Platform for PC & IE specific bits
+// More details from: http://www.mozilla.org/docs/web-developer/sniffer/browser_type.html
+var clientPC = navigator.userAgent.toLowerCase(); // Get client info
+var clientVer = parseInt(navigator.appVersion); // Get browser version
+
+var is_ie = ((clientPC.indexOf("msie") != -1) && (clientPC.indexOf("opera") == -1));
+var is_nav = ((clientPC.indexOf('mozilla')!=-1) && (clientPC.indexOf('spoofer')==-1)
+                && (clientPC.indexOf('compatible') == -1) && (clientPC.indexOf('opera')==-1)
+                && (clientPC.indexOf('webtv')==-1) && (clientPC.indexOf('hotjava')==-1));
+var is_moz = 0;
+
+var is_win = ((clientPC.indexOf("win")!=-1) || (clientPC.indexOf("16bit") != -1));
+var is_mac = (clientPC.indexOf("mac")!=-1);
+
+
+
+// Define the bbCode tags
+bbcode = new Array();
+bbtags = new Array('[b]','[/b]','[i]','[/i]','[u]','[/u]','[quote]','[/quote]','[code]','[/code]','[ul]','[/ul]','[ol]','[/ol]','[img size=150]','[/img]','[url]','[/url]','[li]','[/li]');
+imageTag = false;
+
+// Shows the help messages in the helpline window
+function helpline(help) {
+   return eval(help + "_help");
+}
+
+
+// Replacement for arrayname.length property
+function getarraysize(thearray) {
+   for (i = 0; i < thearray.length; i++) {
+      if ((thearray[i] == "undefined") || (thearray[i] == "") || (thearray[i] == null))
+         return i;
+      }
+   return thearray.length;
+}
+
+// Replacement for arrayname.push(value) not implemented in IE until version 5.5
+// Appends element to the array
+function arraypush(thearray,value) {
+   thearray[ getarraysize(thearray) ] = value;
+}
+
+// Replacement for arrayname.pop() not implemented in IE until version 5.5
+// Removes and returns the last element of an array
+function arraypop(thearray) {
+   thearraysize = getarraysize(thearray);
+   retval = thearray[thearraysize - 1];
+   delete thearray[thearraysize - 1];
+   return retval;
+}
+
+
+function bbstyle(bbnumber) {
+
+   var txtarea = document.commentForm.mc_comment;
+
+   txtarea.focus();
+   donotinsert = false;
+   theSelection = false;
+   bblast = 0;
+
+   if (bbnumber == -1) { // Close all open tags & default button names
+      while (bbcode[0]) {
+         butnumber = arraypop(bbcode) - 1;
+         txtarea.value += bbtags[butnumber + 1];
+         buttext = eval('document.postform.addbbcode' + butnumber + '.value');
+         eval('document.postform.addbbcode' + butnumber + '.value ="' + buttext.substr(0,(buttext.length - 1)) + '"');
+      }
+      imageTag = false; // All tags are closed including image tags :D
+      txtarea.focus();
+      return;
+   }
+
+   if ((clientVer >= 4) && is_ie && is_win)
+   {
+      theSelection = document.selection.createRange().text; // Get text selection
+      if (theSelection) {
+         // Add tags around selection
+         document.selection.createRange().text = bbtags[bbnumber] + theSelection + bbtags[bbnumber+1];
+         txtarea.focus();
+         theSelection = '';
+         return;
+      }
+   }
+   else if (txtarea.selectionEnd && (txtarea.selectionEnd - txtarea.selectionStart > 0))
+   {
+      mozWrap(txtarea, bbtags[bbnumber], bbtags[bbnumber+1]);
+      return;
+   }
+
+   // Find last occurance of an open tag the same as the one just clicked
+   for (i = 0; i < bbcode.length; i++) {
+      if (bbcode[i] == bbnumber+1) {
+         bblast = i;
+         donotinsert = true;
+      }
+   }
+
+   if (donotinsert) {      // Close all open tags up to the one just clicked & default button names
+      while (bbcode[bblast]) {
+            butnumber = arraypop(bbcode) - 1;
+            txtarea.value += bbtags[butnumber + 1];
+            buttext = eval('document.postform.addbbcode' + butnumber + '.value');
+            eval('document.postform.addbbcode' + butnumber + '.value ="' + buttext.substr(0,(buttext.length - 1)) + '"');
+            imageTag = false;
+         }
+         txtarea.focus();
+         return;
+   } else { // Open tags
+
+      if (imageTag && (bbnumber != 14)) {    // Close image tag before adding another
+         txtarea.value += bbtags[15];
+         lastValue = arraypop(bbcode) - 1;   // Remove the close image tag from the list
+         document.postform.addbbcode14.value = "Img";  // Return button back to normal state
+         imageTag = false;
+      }
+
+      // Open tag
+      txtarea.value += bbtags[bbnumber];
+      if ((bbnumber == 14) && (imageTag == false)) imageTag = 1; // Check to stop additional tags after an unclosed image tag
+      arraypush(bbcode,bbnumber+1);
+      eval('document.postform.addbbcode'+bbnumber+'.value += "*"');
+      txtarea.focus();
+      return;
+   }
+   storeCaret(txtarea);
+}
+
+// From http://www.massless.org/mozedit/
+function mozWrap(txtarea, open, close)
+{
+   var selLength = txtarea.textLength;
+   var selStart = txtarea.selectionStart;
+   var selEnd = txtarea.selectionEnd;
+   if (selEnd == 1 || selEnd == 2)
+      selEnd = selLength;
+
+   var s1 = (txtarea.value).substring(0,selStart);
+   var s2 = (txtarea.value).substring(selStart, selEnd)
+   var s3 = (txtarea.value).substring(selEnd, selLength);
+   txtarea.value = s1 + open + s2 + close + s3;
+   return;
+}
+
+// Insert at Claret position. Code from
+// http://www.faqts.com/knowledge_base/view.phtml/aid/1052/fid/130
+function storeCaret(textEl) {
+   if (textEl.createTextRange) textEl.caretPos = document.selection.createRange().duplicate();
+}
+
+
+function bbfontstyle(bbopen, bbclose) {
+   var txtarea = document.postform.message;
+
+   if ((clientVer >= 4) && is_ie && is_win) {
+      theSelection = document.selection.createRange().text;
+      if (!theSelection) {
+         txtarea.value += bbopen + bbclose;
+         txtarea.focus();
+         return;
+      }
+      document.selection.createRange().text = bbopen + theSelection + bbclose;
+      txtarea.focus();
+      return;
+   }
+   else if (txtarea.selectionEnd && (txtarea.selectionEnd - txtarea.selectionStart > 0))
+   {
+      mozWrap(txtarea, bbopen, bbclose);
+      return;
+   }
+   else
+   {
+      txtarea.value += bbopen + bbclose;
+      txtarea.focus();
+   }
+   storeCaret(txtarea);
+}
+
+//#######################################################
+//code used in My Profile (userprofile.php)
+function textCounter(field, countfield, maxlimit) {
+   if(field.value.length > maxlimit){
+      field.value = field.value.substring(0, maxlimit);
+   }
+   else{
+      countfield.value = maxlimit - field.value.length;
+   }
+}
+//*********************************************************
+// Insert emoticons
+
+function emo($e)
+{
+ document.postform.message.value=document.postform.message.value+$e;
+ document.postform.message.focus();
+}
+function submitForm() {
+
+ submitme=1;
+
+ formname=document.postform.sb_authorname.value;
+ if ((formname.length<1)) {
+    alert("You forgot to enter your name");
+    submitme=0;
+ }
+
+ formmail=document.postform.email.value;
+ if ((formmail.length<1)) {
+    alert("You forgot to enter your email");
+    submitme=0;
+  }
+  formsubject=document.postform.subject.value;
+  if ((formsubject.length<1)) {
+    alert("You forgot to enter a subject");
+    submitme=0;
+  }
+
+  if (submitme>0) {
+  //change the following line to true to submit form
+    return true;
+
+  }else{
+    return false;
+  }
+}
+
+function cancelForm() {
+   document.forms['postform'].action.value = "cancel";
+   return true;
+}
+
+//**********************************************
+// Helpline messages
+q_help = "Mark as quoted text";
+c_help = "Mark as Code/XML. The text will be displayed without formatting";
+a_help = "Close all open tags";
+submit_help = "Sumbit the comment";
+preview_help = "Preview the comment";
+name_help= "the Name that will appear in the comment";
+email_help= "the email will appear only to the administrator";
+html_help= "if set to Yes then HTML tags will be interpreted";
+comment_help= "Write here your comment";
+
+//**************************************************
+// Open the preview window (with some post parsing)
+function Preview(stylesheet, sbs) {
+message=document.getElementById('message');
+
+//these gotta be in both... I don't knwo why, but it works...
+messageString = message.innertext;
+messageString = message.value;
+
+messageString = messageString.replace(/<(.*?)>/g,"&lt;$1&gt;");
+messageString = messageString.replace(/</g,"&lt;");
+messageString = messageString.replace(/\n/g,"<br>");
+messageString = messageString.replace(/\[b\]/g,"<b>");
+messageString = messageString.replace(/\[\/b\]/g,"</b>");
+messageString = messageString.replace(/\[i\]/g,"<i>");
+messageString = messageString.replace(/\[\/i\]/g,"</i>");
+messageString = messageString.replace(/\[u\]/g,"<u>");
+messageString = messageString.replace(/\[\/u\]/g,"</u>");
+messageString = messageString.replace(/\[quote\]/g,'<div class="sb_review_quote">');
+messageString = messageString.replace(/\[\/quote\]/g,'</div>');
+messageString = messageString.replace(/\[code\]/g,'<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr><td><b>Code:</b></span></td></tr><tr><td class="sb_code"><pre>');
+messageString = messageString.replace(/\[\/code\]/g,'</pre></tr></table>');
+messageString = messageString.replace(/\[code:1\]/g,'<table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr><td><b>Code:</b></span></td></tr><tr><td class="sb_code"><pre>');
+messageString = messageString.replace(/\[\/code:1\]/g,'</pre></tr></table>');
+messageString = messageString.replace(/\[ul\]/g,"<ul>");
+messageString = messageString.replace(/\[\/ul\]/g,"</ul>");
+messageString = messageString.replace(/\[ol\]/g,"<ol>");
+messageString = messageString.replace(/\[\/ol\]/g,"</ol>");
+messageString = messageString.replace(/\[li\]/g,"<li>");
+messageString = messageString.replace(/\[\/li\]/g,"</li>");
+messageString = messageString.replace(/B\)/g,'<img src="'+sbs+'/emoticons/sun.gif">');
+messageString = messageString.replace(/;\)/g,'<img src="'+sbs+'/emoticons/wink.gif">');
+messageString = messageString.replace(/:\)/g,'<img src="'+sbs+'/emoticons/happy.gif">');
+messageString = messageString.replace(/:laugh:/g,'<img src="'+sbs+'/emoticons/laugh.gif">');
+messageString = messageString.replace(/:ohmy:/g,'<img src="'+sbs+'/emoticons/ohmy.gif">');
+messageString = messageString.replace(/:x/g,'<img src="'+sbs+'/emoticons/sick.gif">');
+messageString = messageString.replace(/:mad:/g,'<img src="'+sbs+'/emoticons/angry.gif">');
+messageString = messageString.replace(/:blink:/g,'<img src="'+sbs+'/emoticons/blink.gif">');
+messageString = messageString.replace(/:P/g,'<img src="'+sbs+'/emoticons/tongue.gif">');
+messageString = messageString.replace(/:\(/g,'<img src="'+sbs+'/emoticons/unhappy.gif">');
+messageString = messageString.replace(/:unsure:/g,'<img src="'+sbs+'/emoticons/unsure.gif">');
+messageString = messageString.replace(/:lol:/g,'<img src="'+sbs+'/emoticons/lol.gif">');
+messageString = messageString.replace(/:huh:/g,'<img src="'+sbs+'/emoticons/huh.gif">');
+messageString = messageString.replace(/:dry:/g,'<img src="'+sbs+'/emoticons/dry.gif">');
+messageString = messageString.replace(/:rolleyes:/g,'<img src="'+sbs+'/emoticons/rolleyes.gif">');
+messageString = messageString.replace(/:y32b4:/g,'<img src="'+sbs+'/emoticons/y32b4.gif">');
+
+messageString = messageString.replace(/\[img size=([1-4][0-9][0-9])\](.*?)\[\/img\]/g,"<img src=\"$2\" border\"0\" width=\"$1\">");
+messageString = messageString.replace(/\[img\](.*?)\[\/img\]/g,"<img src=\"$1\" border\"0\">");
+messageString = messageString.replace(/(\[url\])(.*?)(\[\/url\])/g,"<a href=$2 target=\"_blank\">$2</a>");
+messageString = messageString.replace(/\[url=(.*?)\](.*?)\[\/url\]/g,"<a href=\"$1\" target=\"_blank\">$2</a>");
+messageString = messageString.replace(/\[size=([1-7])\](.+?)\[\/size\]/g,"<font size=\"$1\">$2</font>");
+messageString = messageString.replace(/\[color=(.*?)\](.*?)\[\/color\]/g,"<span style=\"color: $1\">$2</span>");
+messageString = messageString.replace(/\[file name=(.*?) size=(.*?)\](.*?)\[\/file\]/g,"<div class=\"sb_file_attachment\"><span class=\"contentheading\">File Attachment:</span><br>File name: <a href=\"$3\">$1</a><br>File size:$2 bytes</div>");
+
+//and finally open the window for displaying the lot
+win = window.open('','Preview','width=640, height=480, toolbar = no, status = no, resizable, scrollbars');
+win.document.write("<link media=\"all\" type=\"text/css\" href=\""+ stylesheet + "\" rel=\"stylesheet\">");
+win.document.write("<link media=\"all\" type=\"text/css\" href=\""+ sbs + "/forum.css\" rel=\"stylesheet\">");
+win.document.write("<div style=\"margin-left:10px; margin-top:10px;margin-right:10px;margin-bottom:10px\">");
+win.document.write("<hr size=1 width=\"20%\" align=\"left\">");
+win.document.write('' + messageString + '');
+win.document.write("<hr size=1 width=\"20%\" align=\"left\">");
+win.document.write("<a href=\"javascript:window.close()\"> Close this window </a> ");
+win.document.write("</div>");
+}
+
+
+/**
+* Pops up a new window in the middle of the screen
+*/
+function popupWindow(mypage, myname, w, h, scroll) {
+   var winl = (screen.width - w) / 2;
+   var wint = (screen.height - h) / 2;
+   winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable'
+   win = window.open(mypage, myname, winprops);
+   if (win.opener == null) win.opener = self;
+   if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+}
+
+function popUp(URL) {
+
+    eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=no,location=0,statusbar=0,menubar=0,resizable=0,width=300,height=250,left = 262,top = 184');");
+}
+
+//-->
+</script>
+
+<script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/overlib_mini.js"></script>
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<script>
+function CheckNULL(val) {
+	if(val==null) {
+		return '';
+	}
+	else {
+		return val;
+	}
+}
+
+// this function gets the cookie, if it exists
+function Get_Cookie( name ) {
+	
+var start = document.cookie.indexOf( name + "=" );
+var len = start + name.length + 1;
+	if ( ( !start ) &&
+	( name != document.cookie.substring( 0, name.length ) ) )
+	{
+		return null;
+	}
+	if ( start == -1 ) return null;
+var end = document.cookie.indexOf( ";", len );
+	if ( end == -1 ) end = document.cookie.length;
+		return unescape( document.cookie.substring( len, end ) );
+}
+		
+
+</script>
+<a name="commentform"></a>
+<div class="commentheading"><div>
+      <div> <p>You can share your information about this topic using the form below! </p>
+
+<p>Please do not post your questions with this form! Thanks.</p>
+
+ </div></div></div>
+<div class="commentarea">
+  <div class="box">
+    <div>
+      <div>
+                <form method="post" action="index.php?option=com_comments&amp;task=mc_preview&amp;id=115" name="commentForm" id="commentForm">
+          <input name="return" value="index.php?option=content&amp;task=view&amp;id=115" type="hidden">
+          <br>
+          <!--          <div class=commenttext> -->
+          Name <small><i>(required)</i></small><br>
+          <input name="mc_comment_name" style="width:268px;" class="inputbox" onmouseout="return nd();" onmouseover="return overlib(helpline('name'))" type="text">
+          <br>
+                    <!--          <div class=commenttext> -->
+          <br>
+          E-Mail <small><i>(required)</i></small>          <!--          </div> -->
+                    <br>
+          <input name="mc_comment_email" style="width:268px;" class="inputbox" onmouseout="return nd();" onmouseover="return overlib(helpline('email'))" type="text">
+          <!--          <div class="commentsmalltext"> -->
+          <br>
+          Your email will not be displayed on the site - only to our administrator          <!-- </div> -->
+          <br>
+          Homepage<small><i>(optional)</i></small>
+<br>
+<input name="mc_comment_homepage" style="width:288px;" class="inputbox" value="http://" type="text">
+<br>
+<br>
+          <!--          <div class="text"> -->
+          <br>
+          Comment          <!--</div> -->
+                    Enable HTML code :
+          <input name="mc_htmlcode" value="1" checked="checked" onmouseout="return nd();" onmouseover="return overlib(helpline('html'))" type="radio">
+          Yes
+          <input name="mc_htmlcode" value="0" onmouseover="helpline('html')" type="radio">
+          No <br>
+          <input class="button" accesskey="q" name="addbbcode6" value="Quote" style="width: 50px" onclick="bbstyle(6)" onmouseout="return nd();" onmouseover="return overlib(helpline('q'))" type="button">
+          <input class="button" accesskey="c" name="addbbcode8" value="Code" style="width: 40px" onclick="bbstyle(8)" onmouseout="return nd();" onmouseover="return overlib(helpline('c'))" type="button">
+          <input class="button" accesskey="c" name="addbbcode-1" value="Close all" style="width: 60px" onclick="bbstyle(-1)" onmouseout="return nd();" onmouseover="return overlib(helpline('a'))" type="button">
+          <br>
+          <textarea name="mc_comment" cols="50" rows="7" class="commentinputbox" onmouseover="helpline('comment')"></textarea>
+          <br>
+          <input class="button" name="pressbutton" value="Submit" style="width: 100px;" onmouseout="return nd();" onmouseover="return overlib(helpline('submit'))" type="submit">
+          <input class="button" name="pressbutton" value="Reset" style="width: 100px;" type="reset">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- The wonderful world of open source make it easy to change the code any way you wish!  I kindly ask 
+please notify me and make a donation at http://ongetc.com before you decide to remove this line, thanks -->
+<!-- A request from the author of MosCom, Chanh Ong -->
+<script>
+	document.commentForm.mc_comment_email.value=CheckNULL(Get_Cookie("_mc_comment_email"));
+	document.commentForm.mc_comment_name.value=CheckNULL(Get_Cookie("_mc_comment_name"));
+	document.commentForm.mc_comment.value=CheckNULL(Get_Cookie("_mc_comment"));
+	document.commentForm.mc_htmlcode.value=CheckNULL(Get_Cookie("_mc_htmlcode"));
+
+</script>
+		</td>
+        <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+        <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+        <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+        <td valign="top"></td>
+        <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+        <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+        <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+        <td valign="top">&nbsp;</td>
+        <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+      </tr>
+
+
+    </tbody></table>
+
+
+    <table width="980" align="center" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+          <td>&nbsp;</td>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+          <td><div align="center">
+              &nbsp;            </div></td>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+          <td class="legal_static">&nbsp;</td>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/left_back.png">&nbsp;</td>
+          <td>
+	  <div align="center">
+
+<!-- begin ad tag (tile=5) -->
+<div id="div-gpt-ad-2803617656626-0">
+    <script type="text/javascript">
+       googletag.cmd.push(function() {
+         googletag.defineSlot('/8456/IDG.Java-Tips.com_Homepage', [300,250],'div-gpt-ad-2803617656626-0')
+           .addService(googletag.pubads())
+           .setTargeting("pos", "ATF")
+           .setTargeting("URL", encodeURIComponent(window.location));
+         googletag.enableServices();
+         googletag.display('div-gpt-ad-2803617656626-0');
+       });
+    </script> 
+</div>
+<!-- End ad tag -->
+
+	  </div>
+	  </td>
+          <td width="20" background="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/right_back.png">&nbsp;</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+    <table width="980" align="center" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td width="393"><div height="90" align="left"> <img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/bottom_left.png" alt="java bottom left" height="90" width="393"> </div></td>
+          <td><div height="90" align="center"> <img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/bottom_middle.png" alt="java bottom middle" height="90" width="100%"> </div></td>
+          <td width="387"><div height="90" align="right"> <img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/bottom_right.png" alt="java bottom right" height="90" width="387"> </div></td>
+        </tr>
+      </tbody>
+    </table>
+	</td>
+	</tr>
+
+</tbody></table>
+		<table class="moduletable" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+			<td>
+				<link href="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/ds-syndicate.css" rel="stylesheet" type="text/css">
+<div align="center"><a href="http://www.java-tips.org/index2.php?option=com_ds-syndicate&amp;type=RSS0.91&amp;no_html=1" target="_blank"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rss091.gif" class="feedImg_ds-syndicate" alt="RSS 0.91 Feed"></a><a href="http://www.java-tips.org/index2.php?option=com_ds-syndicate&amp;type=RSS1.0&amp;no_html=1" target="_blank"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rss10.gif" class="feedImg_ds-syndicate" alt="RSS 1.0 Feed"></a><a href="http://www.java-tips.org/index2.php?option=com_ds-syndicate&amp;type=RSS2.0&amp;no_html=1" target="_blank"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/rss20.gif" class="feedImg_ds-syndicate" alt="RSS 2.0 Feed"></a><a href="http://www.java-tips.org/index2.php?option=com_ds-syndicate&amp;type=ATOM0.3&amp;no_html=1" target="_blank"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/atom03.gif" class="feedImg_ds-syndicate" alt="ATOM Feed"></a><a href="http://www.java-tips.org/index2.php?option=com_ds-syndicate&amp;type=OPML&amp;no_html=1" target="_blank"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/opml.png" class="feedImg_ds-syndicate" alt="OPML Feed"></a></div>			</td>
+		</tr>
+		</tbody></table>
+		
+
+<br>
+
+
+<center>
+<table border="0">
+<tbody><tr>
+<td>
+<a href="http://www.java-tips.org/">Home</a>
+</td><td>
+</td><td>
+-
+</td><td>
+</td><td>
+<a href="http://www.java-tips.org/faqs/about-java-tips.org/what-is-java-tips.org.html">About Us</a>
+</td><td>
+</td><td>
+-
+</td><td>
+</td><td>
+<a href="http://www.java-tips.org/site-documentation/legal/privacy-policy.html">Privacy Policy</a>
+</td><td>
+</td></tr>
+</tbody></table>
+</center>
+
+
+<div align="center">Copyright 2005 - 2008 www.java-tips.org</div>
+<div align="center">Java is a trademark of Sun Microsystems, Inc.</div>
+
+	
+<!-- Kontera ContentLink(TM);-->
+<script type="text/javascript">
+var dc_AdLinkColor = 'blue' ;
+var dc_isBoldActive= 'no';
+var dc_PublisherID = 179488 ;
+</script>
+<script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaLibInline.js">
+</script><script language="JavaScript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaFlashBase.js"></script><a id="AdLinkLayerClick" target="_top" href="#"></a><span id="konasapn0"><script type="text/javascript" src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaGet.txt"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaSend.txt" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaSend_003.txt" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaSend_002.txt" type="text/javascript"></script><script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/KonaGet_002.txt" type="text/javascript"></script></span>
+
+<!-- Kontera ContentLink(TM) -->
+
+
+<!-- Start of Google Analytics Code -->
+<script src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-136266-1";
+urchinTracker();
+</script>
+<!-- End of Google Analytics Code -->
+
+<script type="text/javascript">
+doclix_pid = 16593;
+doclix_cid_anchor = 1444;
+</script>
+
+
+
+<div style="position: absolute; visibility: hidden; opacity: 0;" class="tooltip"><h4></h4><p></p></div><style></style><style></style><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/772699363667500582_002.gif" style="display: none;" height="1" width="1"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/pixel.gif" style="display: none;" height="1" width="1"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/cm.gif" style="display: none;" height="1" width="1"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/772699363667500582.gif" style="display: none;" height="1" width="1"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/dpixel.gif" style="display: none;" height="1" width="1"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/bd.gif" style="display: none;" height="1" width="1"><img src="Java%20Tips%20-%20Adding%20Icons%20to%20System%20Tray_files/xrefid.gif" style="display: none;" height="1" width="1"></body></html>
+<!-- 1417249715 -->

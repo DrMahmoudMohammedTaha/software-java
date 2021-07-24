@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>exec - How do I launch a completely independent process from a Java program? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do I launch a completely independent process from a Java program?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am working on a program written in Java which, for some actions, launches external programs using user-configured command lines.  Currently it uses Runtime.exec() and does not retain the Process ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program">
+    <link rel="canonical" href="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program">
+
+    
+    
+    <script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How do I launch a completely independent process from a Java program?'" href="http://stackoverflow.com/feeds/question/931536">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:931536});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '931536');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1416071098,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"27f503834a79af159ac39ff0a7f0208d","isAnonymous":true,"ab":{"tutorial_tooltips":{"v":"b","g":2},"homepage_recommended_algo":{"v":"c","g":1}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"3d113e81a655","js/moderator.en.js":"3bf88d4bfb80","js/full-anon.en.js":"1525ee331b9a","js/full.en.js":"226e8460f30b","js/wmd.en.js":"da24545d7e5d","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"909ba559e645","js/help.en.js":"56d0a3a560ae","js/tageditor.en.js":"fb6ca50266c2","js/tageditornew.en.js":"f4bf553cc164","js/inline-tag-editing.en.js":"9d7c6b9d01c1","js/revisions.en.js":"e707189c34fa","js/review.en.js":"d5d6d53cee99","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"65d38e2d8af0","js/explore-qlist.en.js":"ce6dbe2ac3f4","js/events.en.js":"3d7b826514c3","js/keyboard-shortcuts.en.js":"a2d964d1c80f","js/external-editor.en.js":"d63c2f10e7e1","js/external-editor.en.js":"d63c2f10e7e1","js/snippet-javascript.en.js":"f32a62fbdc0b","js/snippet-javascript-codemirror.en.js":"796dd5ae4375"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><link rel="stylesheet" type="text/css" href="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/sidebar.css"></head>
+<body class="question-page new-topbar" lang="">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f931536%2fhow-do-i-launch-a-completely-independent-process-from-a-java-program" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f931536%2fhow-do-i-launch-a-completely-independent-process-from-a-java-program" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f931536%2fhow-do-i-launch-a-completely-independent-process-from-a-java-program" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f931536%2fhow-do-i-launch-a-completely-independent-process-from-a-java-program" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=anon-topbar">stack overflow careers</a>
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for 
+professional and enthusiast programmers. It's 100% free, no registration
+ required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program" class="question-hyperlink">How do I launch a completely independent process from a Java program?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="931536" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk809479342",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk809479342">
+            </div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="931536" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">26</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>9</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I am working on a program written in Java which, <em>for some actions</em>, launches external programs using user-configured command lines.  Currently it uses <code>Runtime.exec()</code> and does not retain the <code>Process</code> reference (the launched programs are either a text editor or archive utility, so no need for the system in/out/err streams).</p>
+
+<p>There is a minor problem with this though, in that when the Java 
+program exits, it doesn't really quit until all the launched programs 
+are exited.  </p>
+
+<p>I would greatly prefer it if the launched programs were completely independent of the JVM which launched them.</p>
+
+<p>The target operating system is multiple, with Windows, Linux and Mac 
+being the minimum, but any GUI system with a JVM is really what is 
+desired (hence the user configurability of the actual command lines).</p>
+
+<p>Does anyone know how to make the launched program execute completely independently of the JVM?</p>
+
+<hr>
+
+<p><strong>Edit in response to a comment</strong></p>
+
+<p>The launch code is as follows.  The code may launch an editor 
+positioned at a specific line and column, or it may launch an archive 
+viewer.  Quoted values in the configured command line are treated as 
+ECMA-262 encoded, and are decoded and the quotes stripped to form the 
+desired exec parameter.</p>
+
+<p>The launch occurs on the EDT.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">static</span><span class="pln"> </span><span class="typ">Throwable</span><span class="pln"> launch</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> cmd</span><span class="pun">,</span><span class="pln"> </span><span class="typ">File</span><span class="pln"> fil</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> lin</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> col</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">Throwable</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">String</span><span class="pln"> frs</span><span class="pun">[][]={</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln"> </span><span class="str">"$FILE$"</span><span class="pln">  </span><span class="pun">,</span><span class="pln">fil</span><span class="pun">.</span><span class="pln">getAbsolutePath</span><span class="pun">().</span><span class="pln">replace</span><span class="pun">(</span><span class="str">'\\'</span><span class="pun">,</span><span class="str">'/'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln"> </span><span class="str">"$LINE$"</span><span class="pln">  </span><span class="pun">,(</span><span class="pln">lin</span><span class="pun">&gt;</span><span class="lit">0</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="typ">Integer</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">(</span><span class="pln">lin</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pun">)</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln"> </span><span class="str">"$COLUMN$"</span><span class="pun">,(</span><span class="pln">col</span><span class="pun">&gt;</span><span class="lit">0</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="typ">Integer</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">(</span><span class="pln">col</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pun">)</span><span class="pln"> </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">};</span><span class="pln">
+    </span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> arr</span><span class="pun">;</span><span class="pln"> </span><span class="com">// array of parsed tokens (exec(cmd) does not handle quoted values)</span><span class="pln">
+
+    cmd</span><span class="pun">=</span><span class="typ">TextUtil</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">cmd</span><span class="pun">,</span><span class="pln">frs</span><span class="pun">,</span><span class="kwd">true</span><span class="pun">,</span><span class="str">"$$"</span><span class="pun">,</span><span class="str">"$"</span><span class="pun">);</span><span class="pln">
+    arr</span><span class="pun">=(</span><span class="typ">String</span><span class="pun">[])</span><span class="typ">ArrayUtil</span><span class="pun">.</span><span class="pln">removeNulls</span><span class="pun">(</span><span class="typ">TextUtil</span><span class="pun">.</span><span class="pln">stringComponents</span><span class="pun">(</span><span class="pln">cmd</span><span class="pun">,</span><span class="str">' '</span><span class="pun">,-</span><span class="lit">1</span><span class="pun">,</span><span class="kwd">true</span><span class="pun">,</span><span class="kwd">true</span><span class="pun">,</span><span class="kwd">true</span><span class="pun">));</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> xa</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> xa</span><span class="pun">&lt;</span><span class="pln">arr</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> xa</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="typ">TextUtil</span><span class="pun">.</span><span class="pln">isQuoted</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">[</span><span class="pln">xa</span><span class="pun">],</span><span class="kwd">true</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            arr</span><span class="pun">[</span><span class="pln">xa</span><span class="pun">]=</span><span class="typ">TextDecode</span><span class="pun">.</span><span class="pln">ecma262</span><span class="pun">(</span><span class="typ">TextUtil</span><span class="pun">.</span><span class="pln">stripQuotes</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">[</span><span class="pln">xa</span><span class="pun">]));</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    log</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Launching: "</span><span class="pun">+</span><span class="pln">cmd</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Runtime</span><span class="pun">.</span><span class="pln">getRuntime</span><span class="pun">().</span><span class="pln">exec</span><span class="pun">(</span><span class="pln">arr</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<hr>
+
+<p>This appears to be happening only when the program is launched from 
+my IDE.  I am closing this question since the problem exists only in my 
+development environment; <strong>it is not a problem in production</strong>.
+  From the test program in one of the answers, and further testing I 
+have conducted I am satisfied that it is not a problem that will be seen
+ by any user of the program on any platform.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/exec" class="post-tag js-gps-track" title="show questions tagged 'exec'" rel="tag">exec</a> <a href="http://stackoverflow.com/questions/tagged/external-process" class="post-tag js-gps-track" title="show questions tagged 'external-process'" rel="tag">external-process</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/931536" title="short permalink to this question" class="short-link" id="link-post-931536">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/931536/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/931536/revisions" title="show all edits to this post">edited <span title="2010-01-23 23:04:36Z" class="relativetime">Jan 23 '10 at 23:04</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2009-05-31 07:15:01Z" class="relativetime">May 31 '09 at 7:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/8946/lawrence-dol"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/0ad5f7ab8744c90bde77377d9b151957.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/8946/lawrence-dol">Lawrence Dol</a><br>
+        <span class="reputation-score" title="reputation score 29541" dir="ltr">29.5k</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="91 silver badges"><span class="badge2"></span><span class="badgecount">91</span></span><span title="136 bronze badges"><span class="badge3"></span><span class="badgecount">136</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-931536" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-739415" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I think you mean you're currently using Runtime.exec()</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/80714/chadwick" title="6669 reputation" class="comment-user">Chadwick</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739415_931536"><span title="2009-05-31 07:21:34Z" class="relativetime-clean">May 31 '09 at 7:21</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-739427" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Chadwick: Oops - yes, thanks.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739427_931536"><span title="2009-05-31 07:33:18Z" class="relativetime-clean">May 31 '09 at 7:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-740707" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I suspect this is only a 
+Windows problem. Certainly on the Mac, I've had the opposite problem: 
+making sure the external process I launched <i>does</i> exit when the JVM exits.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2959/steve-mcleod" title="20052 reputation" class="comment-user">Steve McLeod</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment740707_931536"><span title="2009-05-31 20:01:17Z" class="relativetime-clean">May 31 '09 at 20:01</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-931536" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								6 Answers
+                                <span style="display:none;" itemprop="answerCount">6</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="931663"></a>
+<div id="answer-931663" class="answer accepted-answer" data-answerid="931663" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="931663" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It may help if you post a test section of minimal code needed to 
+reproduce the problem.  I tested the following code on Windows and a 
+Linux system.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Main</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+
+    </span><span class="com">/**
+     * @param args the command line arguments
+     */</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">Exception</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Runtime</span><span class="pun">.</span><span class="pln">getRuntime</span><span class="pun">().</span><span class="pln">exec</span><span class="pun">(</span><span class="pln">args</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>And tested with the following on Linux:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln">java </span><span class="pun">-</span><span class="pln">jar </span><span class="typ">JustForTesting</span><span class="pun">.</span><span class="pln">jar </span><span class="pun">/</span><span class="pln">home</span><span class="pun">/</span><span class="pln">monceaux</span><span class="pun">/</span><span class="typ">Desktop</span><span class="pun">/</span><span class="pln">__TMP</span><span class="pun">/</span><span class="pln">test</span><span class="pun">.</span><span class="pln">sh</span></code></pre>
+
+<p>where test.sh looks like:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pun">#!/</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">bash
+ping </span><span class="pun">-</span><span class="pln">i </span><span class="lit">20</span><span class="pln"> localhost</span></code></pre>
+
+<p>as well as this on Linux:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln">java </span><span class="pun">-</span><span class="pln">jar </span><span class="typ">JustForTesting</span><span class="pun">.</span><span class="pln">jar gedit</span></code></pre>
+
+<p>And tested this on Windows:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln">java </span><span class="pun">-</span><span class="pln">jar </span><span class="typ">JustForTesting</span><span class="pun">.</span><span class="pln">jar notepad</span><span class="pun">.</span><span class="pln">exe</span></code></pre>
+
+<p>All of these launched their intended programs, but the Java 
+application had no problems exiting.  I have the following versions of 
+Sun's JVM as reported by <code>java -version</code> :</p>
+
+<ul>
+<li>Windows:  1.6.0_13-b03</li>
+<li>Linux:    1.6.0_10-b33</li>
+</ul>
+
+<p>I have not had a chance to test on my Mac yet.  Perhaps there is some
+ interaction occuring with other code in your project that may not be 
+clear.  You may want to try this test app and see what the results are.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/931663" title="short permalink to this answer" class="short-link" id="link-post-931663">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/931663/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-05-31 08:47:09Z" class="relativetime">May 31 '09 at 8:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/111256/monceaux"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/a31eb721a18137eefe2f6ee1847d7d21.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/111256/monceaux">monceaux</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">396</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-931663" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-741383" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This problem might be limited
+ to Windows XP, or it might only be a result of the way the JVM is 
+launched from my IDE during testing.  On Windows Vista, it is not 
+happening for the distributed build.  After testing on XP, this answer 
+will be accepted if it shows a problem also only when the JVM is 
+launched from the IDE.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment741383_931663"><span title="2009-06-01 01:50:11Z" class="relativetime-clean">Jun 1 '09 at 1:50</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-743943" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This appears only to be 
+happening when launched from my IDE, so I am accepting this answer as 
+indicating that my problem exists only in my development environment; it
+ is not a problem in production.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment743943_931663"><span title="2009-06-01 17:35:59Z" class="relativetime-clean">Jun 1 '09 at 17:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-744001" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Monceaux: Thanks, BTW, this 
+simple test was what made me look closer at the precise conditions under
+ which the program didn't exit - from which I realized it was my <i>IDE</i> launcher and not Java which was not exiting.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment744001_931663"><span title="2009-06-01 17:57:39Z" class="relativetime-clean">Jun 1 '09 at 17:57</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-931663" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1803219304",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1803219304">
+            </div>
+  
+<a name="931579"></a>
+<div id="answer-931579" class="answer" data-answerid="931579" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="931579" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">19</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There is a parent child relation between your processes and you have to break that.
+For Windows you can try:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="typ">Runtime</span><span class="pun">.</span><span class="pln">getRuntime</span><span class="pun">().</span><span class="pln">exec</span><span class="pun">(</span><span class="str">"cmd /c start editor.exe"</span><span class="pun">);</span></code></pre>
+
+<p>For Linux the process seem to run detached anyway, no nohup necessary.
+I tried it with <code>gvim</code>, <code>midori</code> and <code>acroread</code>.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">io</span><span class="pun">.</span><span class="typ">IOException</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Exec</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Runtime</span><span class="pun">.</span><span class="pln">getRuntime</span><span class="pun">().</span><span class="pln">exec</span><span class="pun">(</span><span class="str">"/usr/bin/acroread"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Finished"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>I think it is not possible to to it with <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html">Runtime.exec</a> in a platform independent way.</p>
+
+<p>for POSIX-Compatible system:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="typ">Runtime</span><span class="pun">.</span><span class="pln">getRuntime</span><span class="pun">().</span><span class="pln">exec</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">String</span><span class="pun">[]{</span><span class="str">"/bin/sh"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"-c"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"your command"</span><span class="pun">}).</span><span class="pln">waitFor</span><span class="pun">();</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/931579" title="short permalink to this answer" class="short-link" id="link-post-931579">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/931579/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/931579/revisions" title="show all edits to this post">edited <span title="2013-12-13 19:17:38Z" class="relativetime">Dec 13 '13 at 19:17</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/706724/pickypg"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/e1b4a8f109242f2c3bcd76370a240c52.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/706724/pickypg">pickypg</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">9,083</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="24 silver badges"><span class="badge2"></span><span class="badgecount">24</span></span><span title="43 bronze badges"><span class="badge3"></span><span class="badgecount">43</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-05-31 07:44:25Z" class="relativetime">May 31 '09 at 7:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/84671/ludwig-weinzierl"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/0dbf5751230046c4a7844ef2bded1b7c.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/84671/ludwig-weinzierl">Ludwig Weinzierl</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">6,654</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="29 silver badges"><span class="badge2"></span><span class="badgecount">29</span></span><span title="41 bronze badges"><span class="badge3"></span><span class="badgecount">41</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-931579" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-739447" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I was hoping there would be 
+something I could do in the process creation... this requires the user 
+to configure the "correct" command line.  But good to know.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739447_931579"><span title="2009-05-31 08:00:21Z" class="relativetime-clean">May 31 '09 at 8:00</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-739461" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You can have the user 
+configure the correct command line and  and sneakily add the operating 
+system specific magic when necessary.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/84671/ludwig-weinzierl" title="6654 reputation" class="comment-user">Ludwig Weinzierl</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739461_931579"><span title="2009-05-31 08:11:38Z" class="relativetime-clean">May 31 '09 at 8:11</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-804953" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">the "cmd /c start" idea is awesome and helped a ton. thanks.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/6583/epaga" title="13304 reputation" class="comment-user">Epaga</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment804953_931579"><span title="2009-06-15 13:12:00Z" class="relativetime-clean">Jun 15 '09 at 13:12</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29250345" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>catch (IOException e)</code> does not replace neither <code>.waitFor()</code> nor <code>InterruptedException</code></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1083704/val" title="1 reputation" class="comment-user">Val</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment29250345_931579"><span title="2013-10-30 20:01:08Z" class="relativetime-clean">Oct 30 '13 at 20:01</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-931579" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="11014951"></a>
+<div id="answer-11014951" class="answer" data-answerid="11014951" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="11014951" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Though this question is closed, I have some observations that may help other people facing similar issue.</p>
+
+<p>When you use Runtime.getRuntime().exec() and then you ignore the 
+java.lang.Process handle you get back (like in the code from original 
+poster), there is a chance that the launched process may hang. </p>
+
+<p>I have faced this issue in Windows environment and traced the problem
+ to the stdout and stderr streams. If the launched application is 
+writing to these streams, and the buffer for these stream fills up then 
+the launched application may appear to hang when it tries to write to 
+the streams. The solutions are :</p>
+
+<ol>
+<li>Capture the Process handle and empty out the streams continually - 
+but if you want to terminate the java application right after launching 
+the process then this is not a feasible solution</li>
+<li>Execute the process call as 'cmd /c &lt;&gt;' (this is only for Windows environment).</li>
+<li>Suffix the process command and redirect the stdout and stderr streams to nul using '<em>command &gt; nul 2&gt;&amp;1</em>'</li>
+</ol>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/11014951" title="short permalink to this answer" class="short-link" id="link-post-11014951">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/11014951/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/11014951/revisions" title="show all edits to this post">edited <span title="2012-10-16 22:55:08Z" class="relativetime">Oct 16 '12 at 22:55</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/8946/lawrence-dol"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/0ad5f7ab8744c90bde77377d9b151957.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/8946/lawrence-dol">Lawrence Dol</a><br>
+        <span class="reputation-score" title="reputation score 29541" dir="ltr">29.5k</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="91 silver badges"><span class="badge2"></span><span class="badgecount">91</span></span><span title="136 bronze badges"><span class="badge3"></span><span class="badgecount">136</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-06-13 12:36:31Z" class="relativetime">Jun 13 '12 at 12:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1453642/manvendra-gupta"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/e8af6808083592d5e2eb5bd068c63777.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1453642/manvendra-gupta">Manvendra Gupta</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">113</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-11014951" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-22479796" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks. Totally worked for me
+ in case of launching kryonet clients. Option 1 can be implemented using
+ inheritIO method of ProcessBuilder. It sends all the stream content to 
+the parent Java process. So no need to make processes independent</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/459093/gaurav-saxena" title="2069 reputation" class="comment-user">Gaurav Saxena</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment22479796_11014951"><span title="2013-04-04 09:01:21Z" class="relativetime-clean">Apr 4 '13 at 9:01</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27006273" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I had a problem coding a 
+custom luncher where the child processes (mostly chromium and pidgin) 
+freeze after running for several hours, but as soon as the luncher 
+exits, they unfreeze immediately. Googled and debugged now for a week, 
+and this is the very best answer for my problem I've found. If this was 
+also my problem I would give you 100 k points for that answer.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1044403/tim-roes" title="691 reputation" class="comment-user">Tim Roes</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27006273_11014951"><span title="2013-08-22 19:19:42Z" class="relativetime-clean">Aug 22 '13 at 19:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-11014951" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="931585"></a>
+<div id="answer-931585" class="answer" data-answerid="931585" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="931585" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I suspect this would require a actual process fork.  Basically, the C equivalent of what you want is:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="typ">pid_t</span><span class="pln"> id </span><span class="pun">=</span><span class="pln"> fork</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">id </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+  system</span><span class="pun">(</span><span class="pln">command_line</span><span class="pun">);</span></code></pre>
+
+<p>The problem is you can't do a fork() in pure Java.  What I would do is:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="typ">Thread</span><span class="pln"> t </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+	  </span><span class="kwd">try</span><span class="pln">
+	  </span><span class="pun">{</span><span class="pln">
+	      </span><span class="typ">Runtime</span><span class="pun">.</span><span class="pln">getRuntime</span><span class="pun">().</span><span class="pln">exec</span><span class="pun">(</span><span class="pln">command</span><span class="pun">);</span><span class="pln">
+	  </span><span class="pun">}</span><span class="pln">
+	  </span><span class="kwd">catch</span><span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln">
+	  </span><span class="pun">{</span><span class="pln">		      
+	      </span><span class="com">// Handle error.</span><span class="pln">
+	      e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+	  </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+t</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span></code></pre>
+
+<p>That way the JVM still won't exit, but no GUI and only a limited memory footprint will remain.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/931585" title="short permalink to this answer" class="short-link" id="link-post-931585">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/931585/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-05-31 07:47:18Z" class="relativetime">May 31 '09 at 7:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/47773/matthew-flaschen"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/e72946d7c81ee170b322f6e6abae3442.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/47773/matthew-flaschen">Matthew Flaschen</a><br>
+        <span class="reputation-score" title="reputation score 136899" dir="ltr">137k</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="274 silver badges"><span class="badge2"></span><span class="badgecount">274</span></span><span title="385 bronze badges"><span class="badge3"></span><span class="badgecount">385</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-931585" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-931585" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="931543"></a>
+<div id="answer-931543" class="answer" data-answerid="931543" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="931543" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You want to launch the program in the background, and separate it from the parent.  I'd consider <a href="http://docs.sun.com/app/docs/doc/801-6680-01/6i11qc0i8?l=en&amp;a=view" rel="nofollow">nohup(1)</a>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/931543" title="short permalink to this answer" class="short-link" id="link-post-931543">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/931543/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-05-31 07:21:33Z" class="relativetime">May 31 '09 at 7:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/35092/charlie-martin"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/a09a65597d95998ce4a4a109df80a019.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/35092/charlie-martin">Charlie Martin</a><br>
+        <span class="reputation-score" title="reputation score 64003" dir="ltr">64k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="108 silver badges"><span class="badge2"></span><span class="badgecount">108</span></span><span title="189 bronze badges"><span class="badge3"></span><span class="badgecount">189</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-931543" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-739424" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Well, for Linux, sure... But 
+the problem isn't that the launched process is being terminated, it's 
+that the JVM won't end until the launched program(s) is(are) also ended.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739424_931543"><span title="2009-05-31 07:31:16Z" class="relativetime-clean">May 31 '09 at 7:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-739891" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">DId you actually <i>try</i> it?  A nohup'ed background process should appear to the system() call as if it immediately terminated.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/35092/charlie-martin" title="64003 reputation" class="comment-user">Charlie Martin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739891_931543"><span title="2009-05-31 13:22:46Z" class="relativetime-clean">May 31 '09 at 13:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-931543" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="931604"></a>
+<div id="answer-931604" class="answer" data-answerid="931604" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="931604" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>One way I can think of is to use Runtime.addShutdownHook to register a
+ thread that kills off all the processes (you'd need to retain the 
+process objects somewhere of course).</p>
+
+<p>The shutdown hook is only called when the JVM exits so it should work fine.</p>
+
+<p>A little bit of a hack but effective.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/931604" title="short permalink to this answer" class="short-link" id="link-post-931604">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/931604/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-05-31 07:59:45Z" class="relativetime">May 31 '09 at 7:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/151/darren-greaves"><div class="gravatar-wrapper-32"><img src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/2f38ca4af6139077092c687c3c7ab9a5.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/151/darren-greaves">Darren Greaves</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,532</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="28 bronze badges"><span class="badge3"></span><span class="badgecount">28</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-931604" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-739450" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Except I don't want to kill 
+the processes.  What I want is for them to not prevent the JVM from 
+exiting.  I think my users would be quite surprised at exiting my app 
+and seeing several other programs disappear along with it.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8946/lawrence-dol" title="29541 reputation" class="comment-user owner">Lawrence Dol</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739450_931604"><span title="2009-05-31 08:04:42Z" class="relativetime-clean">May 31 '09 at 8:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-739491" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Oh yeah, hmm, good point. :-)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/151/darren-greaves" title="1532 reputation" class="comment-user">Darren Greaves</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment739491_931604"><span title="2009-05-31 08:43:51Z" class="relativetime-clean">May 31 '09 at 8:43</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-931604" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/931536/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="931536" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="http://www.google.com.eg/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;cad=rja&amp;uact=8&amp;ved=0CCoQFjAB&amp;url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F931536%2Fhow-do-i-launch-a-completely-independent-process-from-a-java-program&amp;ei=sYdnVNGGEs29PY2NgOAB&amp;usg=AFQjCNHTHw-cuNKbxl7fzYIy2oawDi_r0g&amp;bvm=bv.79142246,d.ZWU" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="27f503834a79af159ac39ff0a7f0208d" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f931536%2fhow-do-i-launch-a-completely-independent-process-from-a-java-program%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f931536%2fhow-do-i-launch-a-completely-independent-process-from-a-java-program%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/exec" class="post-tag" title="show questions tagged 'exec'" rel="tag">exec</a> <a href="http://stackoverflow.com/questions/tagged/external-process" class="post-tag" title="show questions tagged 'external-process'" rel="tag">external-process</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-05-31 07:15:01Z"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>27846 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/931536/how-do-i-launch-a-completely-independent-process-from-a-java-program?lastactivity" class="lastactivity-link" title="2013-12-13 19:17:38Z">11 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1555840131",[17,2221]).setZone(45) ; });                    
+            </script>
+              
+        <div class=" blue looking tagged" id="hireme">  <a href="http://careers.stackoverflow.com/?a=2YMRG&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-large-sidebar-blue-looking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/73388/principal-ios-engineer-opentable?a=oBWPOyqr91n&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="Principal iOS Engineer at OpenTable. Click to learn more."> <span class="title">Principal iOS Engineer</span> <span class="company">OpenTable</span> <span class="location">San Francisco, CA / relocation</span> <span class="post-tag">objective-c</span> <span class="post-tag">ios</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/70449/sr-ios-engineer-american-express?a=nCPZX8p4uoa&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="Sr. iOS Engineer at American Express. Click to learn more."> <span class="title">Sr. iOS Engineer</span> <span class="company">American Express</span> <span class="location">New York, NY</span> <span class="post-tag">ios</span> <span class="post-tag">android</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/73803/front-end-web-developer-solid-commerce?a=oKzPRlOwYQX&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="Front-end Web Developer at Solid Commerce. Click to learn more."> <span class="title">Front-end Web Developer</span> <span class="company">Solid Commerce</span> <span class="location">Marina del Rey, CA / relocation</span> <span class="post-tag">html5</span> <span class="post-tag">css3</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/73542/senior-web-engineer-for-worldgamingcom-santa-worldgaming?a=oF9mHnjZqLi&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="Senior Web Engineer for WorldGaming.com (Santa Monica, CA) at WorldGaming. Click to learn more."> <span class="title">Senior Web Engineer for WorldGaming.com (Santa Monica, CA)</span> <span class="company">WorldGaming</span> <span class="location">Santa Monica, CA</span> <span class="post-tag">ios</span> <span class="post-tag">android</span> </a> </li> </ul> <img alt="" class="impression" src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/oBWPOyqr91n-nCPZX8p4uoa-oKzPRlOwYQX-oF9mHnjZqLi-2YMRG.gif" style="display:none"> </div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/1038223?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/1038223/launching-a-subprocess-which-survives-parent-process?lq=1" class="question-hyperlink">Launching a subprocess which survives parent process</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/21736883?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/21736883/closing-the-current-app-opening-another?lq=1" class="question-hyperlink">Closing the current app, opening another</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/21946393?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/21946393/physically-opening-a-notepad-with-java?lq=1" class="question-hyperlink">Physically opening a notepad with java</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/17488372?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17488372/how-to-create-a-process-which-can-execute-concurrently-with-respect-to-java-proc?lq=1" class="question-hyperlink">How to create a process which can execute concurrently with respect to java process</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/10891285?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/10891285/how-to-create-a-new-process-in-java?lq=1" class="question-hyperlink">How to create a new Process in Java?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/15477179?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">5</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15477179/insert-15-million-lines-in-db2-database?lq=1" class="question-hyperlink">Insert 15 million lines in DB2 database</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/17282081?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17282081/adb-start-server-java-gradle-and-apache-commons-exec-how-to-make-it-right?lq=1" class="question-hyperlink">“adb start-server”, Java, Gradle and apache-commons-exec: how to make it right?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/24130118?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24130118/how-can-i-run-a-new-process-and-close-the-current-program-in-java?lq=1" class="question-hyperlink">How can I run a new process, and close the current program in Java?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/25012662?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/25012662/how-to-prevent-ctrlc-killing-spawned-processes-in-java?lq=1" class="question-hyperlink">How to prevent ctrl+c killing spawned processes in Java</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/8868045?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/8868045/java-how-to-launch-and-forget-process?lq=1" class="question-hyperlink">Java - how to launch and forget process</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/931536?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/4989749?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/4989749/launching-external-programs-with-java?rq=1" class="question-hyperlink">Launching External Programs with Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7431076?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/7431076/external-program-from-java-doesnt-terminate?rq=1" class="question-hyperlink">external program from java doesn't terminate</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11153752?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/11153752/communicate-with-an-already-running-external-program-from-java?rq=1" class="question-hyperlink">Communicate with an already running external program from java</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12430018?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/12430018/how-to-use-java-exec?rq=1" class="question-hyperlink">How to use Java exec</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13160596?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/13160596/how-to-reliably-read-and-write-to-a-running-external-process-from-java?rq=1" class="question-hyperlink">How to reliably read and write to a running external process from Java?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13467307?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/13467307/how-to-get-java-getruntime-exec-to-run-a-command-line-program-with-arguments?rq=1" class="question-hyperlink">How to get java getRuntime().exec() to run a command-line program with arguments?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17188093?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/17188093/how-to-get-process-external-program-time-cpu-usage-for-process-run-from-java?rq=1" class="question-hyperlink">How to get process (external program) time, cpu usage for process run from java application?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17295350?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/17295350/java-execute-exe-from-war-in-java-code?rq=1" class="question-hyperlink">java, execute exe from WAR in java code</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18134991?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-2
+    </div>
+</a><a href="http://stackoverflow.com/questions/18134991/how-can-i-launch-an-external-process-like-ping-from-a-java-applet-and-capture-th?rq=1" class="question-hyperlink">how can I launch an external process like ping from a java applet and capture the output?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23870637?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/23870637/execute-external-program-like-skype-exe-using-php?rq=1" class="question-hyperlink">Execute external program ( like skype.exe) using php</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-matheducators" title="Mathematics Educators Stack Exchange"></div><a href="http://matheducators.stackexchange.com/questions/5847/is-there-any-other-procedure-to-find-the-square-root" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:548 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any other procedure to find the square root?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/50827/is-studying-rules-and-pointing-out-which-ones-weve-stretched-or-broken-ok" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is studying rules and pointing out which ones we've stretched or broken ok?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/840425/how-to-know-a-disk-is-ssd-or-not" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to know a disk is SSD or not
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/839719/why-is-r-recursive-necessary-when-copying-a-directory-in-linux" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is -r recursive necessary when copying a directory in Linux?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/212322/placing-the-table-caption-inside-the-top-row" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Placing the table caption inside the top row
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/65757/curve-fitting-by-running-through-hundreds-of-models-and-return-the-one-with-best" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Curve fitting by running through hundreds of models and return the one with best fit
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/208192/what-do-you-call-a-generic-person" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    what do you call a generic person?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/839380/does-a-chromecast-device-contain-any-private-information" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does a Chromecast device contain any private information?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/49788/how-do-i-prevent-salmon-sticking-to-the-bbq-grill" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I prevent salmon sticking to the BBQ grill?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/9680/why-not-mount-airliner-jet-engines-above-the-wings" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why not mount airliner jet engines above the wings?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/4732/riddle-about-mysterious-family" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Riddle about mysterious family
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/69883/check-if-two-strings-are-anagrams" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Check if two strings are anagrams
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/82718/question-about-logging-architecture" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Question about logging architecture
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/187233/thin-sets-that-are-well-distributed-over-arithmetic-progressions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Thin sets that are well-distributed over arithmetic progressions?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/26929556/can-always-replace-backticks-for-command-substitution" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can $() always replace backticks for command substitution?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/67679/html-ui-is-there-any-recommended-control-for-triple-options-like-yes-no-non" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    HTML UI: Is there any recommended control for triple options like YES / NO / NONE?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/39670/does-the-following-kind-of-retirement-product-exist" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the following kind of retirement product exist?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1021876/give-a-concrete-sequence-of-rationals-which-converges-to-an-irrational-number-an" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Give a concrete sequence of rationals which converges to an irrational number and vice versa.
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/4615/are-you-clever-enough-you-will-have-to-pray" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are you clever enough? You will have to pray
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1022924/kick-starting-uni-math-problem" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Kick starting uni math problem
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1022775/how-does-one-show-sinx-is-bounded-using-the-power-series" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does one show sin(x) is bounded using the power series?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/138542/4-mbit-512-kb" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    4 Mbit != 512 Kb?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/31687/is-it-cheating-to-use-solutions-to-identical-problems-from-other-universities-to" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it cheating to use solutions to identical problems from other universities to do my homework?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/72638/how-was-bruce-wayne-able-to-reclaim-control-of-wayne-enterprises-in-batman-begin" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How was Bruce Wayne able to reclaim control of Wayne Enterprises in Batman Begins?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/931536" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/931536/ivc/11f8');});
+</script>
+<noscript>
+    <div><img src="/posts/931536/ivc/11f8" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>                   with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.11.14.2017
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('java,exec,external-process');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|java|exec|external-process|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<script src="exec%20-%20How%20do%20I%20launch%20a%20completely%20independent%20process%20from%20a%20Java%20program%20%20-%20Stack%20Overflow_files/p.txt" type="text/javascript"></script></body></html>

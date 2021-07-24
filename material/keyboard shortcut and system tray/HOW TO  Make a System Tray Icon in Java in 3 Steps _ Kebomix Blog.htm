@@ -1,0 +1,1256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HOW TO: Make a System Tray Icon in Java in 3 Steps | Kebomix Blog</title>
+<link rel="pingback" href="http://kebomix.wordpress.com/xmlrpc.php">
+<meta name="google-site-verification" content="java">
+<meta name="msvalidate.01" content="google-site-verification">
+<link rel="alternate" type="application/rss+xml" title="Kebomix Blog » Feed" href="http://kebomix.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kebomix Blog » Comments Feed" href="http://kebomix.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kebomix Blog » HOW TO: Make a System Tray Icon in Java in 3&nbsp;Steps Comments Feed" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/feed/">
+<script async="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/cbgapi.loaded_1"></script><script async="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/plusone.js" async="" type="text/javascript"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/wl" async="" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a_002.css" type="text/css" media="all">
+<!--[if lt IE 7]>
+<link rel='stylesheet' id='monochrome-ie-css'  href='http://s0.wp.com/wp-content/themes/pub/monochrome/ie6.css?m=1323834012g&#038;ver=4.1-beta1-30359' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="all-css-2" href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-2" href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/global-print.css" type="text/css" media="print">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a_004.js"></script>
+<link rel="stylesheet" id="all-css-0" href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://kebomix.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="My Notes on OCPJP(SCJP) – Chapter&nbsp;1" href="http://kebomix.wordpress.com/2010/11/13/my-notes-on-ocpjpscjp-chapter-1/">
+<link rel="next" title="Reservoir Sampling –&nbsp;Java" href="http://kebomix.wordpress.com/2011/01/09/reservoir-sampling-java/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/">
+<link rel="shortlink" href="http://wp.me/pKAKM-T">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=http%3A%2F%2Fkebomix.wordpress.com%2F2010%2F11%2F14%2Fhow-to-make-a-system-tray-icon-in-java-in-3-steps%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=http%3A%2F%2Fkebomix.wordpress.com%2F2010%2F11%2F14%2Fhow-to-make-a-system-tray-icon-in-java-in-3-steps%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="HOW TO: Make a System Tray Icon in Java in 3 Steps">
+<meta property="og:url" content="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/">
+<meta property="og:description" content="to Create System Tray we need 3 things: 1)PopupMenu 2) Menu Items 3)&nbsp; TrayIcon Step # 1 :- so, i will start with PopupMenu Step # 2 :- now we go to step #2 creating menu items, every menu have menu...">
+<meta property="article:published_time" content="2010-11-14T11:16:51+00:00">
+<meta property="article:modified_time" content="2011-03-10T03:09:28+00:00">
+<meta property="article:author" content="http://kebomix.wordpress.com/author/kebomix/">
+<meta property="og:site_name" content="Kebomix Blog">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1391188133g">
+<link rel="openid.server" href="http://kebomix.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://kebomix.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://kebomix.wordpress.com/osd.xml" title="Kebomix Blog">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+<style type="text/css">
+.widget_twitter li {
+	word-wrap: break-word;
+}
+</style>
+<meta name="application-name" content="Kebomix Blog"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Good code is like a good joke: It needs no explanation."><meta name="msapplication-task" content="name=Subscribe;action-uri=http://kebomix.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="HOW TO: Make a System Tray Icon in Java in 3&nbsp;Steps | Kebomix Blog on WordPress.com">
+<meta name="description" content="to Create System Tray we need 3 things: 1)PopupMenu 2) Menu Items 3)&nbsp; TrayIcon Step # 1 :- so, i will start with PopupMenu Step # 2 :- now we go to step #2 creating menu items, every menu have menu items that you click on it i will make only one item to make…">
+
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/google_service.js">
+</script>
+<script type="text/javascript">
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/google_ads.js"></script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/amzn_ads.js"></script>
+<script type="text/javascript">
+try { amznads.getAds("3033","300x250"); } catch(e) { /* ignore */ }
+</script><script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/bid"></script>
+<script type="text/javascript">
+var amznKeys = amznads.getKeys();
+if (typeof amznKeys != "undefined" && amznKeys != "") { for (var i =0; i < amznKeys.length; i++) { var key = amznKeys[i]; GA_googleAddAttr("amzn", key);} }
+document.close();
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 11104372, pt: 'permalink', wa: 0, as: 0, domain: 'kebomix.wordpress.com', url: 'http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/', gid: '', };
+</script>
+<link href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/shCore.css" type="text/css" rel="stylesheet"><link href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/shThemeDefault.css" type="text/css" rel="stylesheet"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/iai6jtt.txt"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/ga.js" async="" type="text/javascript"></script>
+
+<script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/osd.js" type="text/javascript"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_007.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_005.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_006.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_004.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_008.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_002.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_003.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_009.php" charset="utf-8"></script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rate_010.php" charset="utf-8"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/services.css"><style id="pd_popup_holder_style_3876680_post_55" type="text/css">#pd_popup_holder_3876680_post_55 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_24" type="text/css">#pd_popup_holder_3876691_comm_24 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_25" type="text/css">#pd_popup_holder_3876691_comm_25 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_45" type="text/css">#pd_popup_holder_3876691_comm_45 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_66" type="text/css">#pd_popup_holder_3876691_comm_66 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_70" type="text/css">#pd_popup_holder_3876691_comm_70 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_117" type="text/css">#pd_popup_holder_3876691_comm_117 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_314" type="text/css">#pd_popup_holder_3876691_comm_314 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_106" type="text/css">#pd_popup_holder_3876691_comm_106 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><style id="pd_popup_holder_style_3876691_comm_134" type="text/css">#pd_popup_holder_3876691_comm_134 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/secureAnonymousFramework"></script><style type="text/css">* html #li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link{height:1% !important;}#li_ui_li_gen_1417249699392_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1417249699392_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link:link, #li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link:visited, #li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link:hover, #li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1417249699392_0 a#li_ui_li_gen_1417249699392_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -276px !important;background-repeat:no-repeat !important;background-size:initial !important;cursor:pointer !important;border:0 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:0 !important;-moz-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;}#li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-logo{background-position:-20px -276px !important;}#li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-logo, #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-logo{background-position:-40px -276px !important;}.IN-shadowed #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-logo{}#li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title{color:#333 !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;border-left:0 !important;text-shadow:#FFFFFF -1px 1px 0 !important;line-height:20px !important;border-radius:0 !important;-moz-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;background-color:#ECECEC !important;background-image:-moz-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}#li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title{border:1px solid #000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;border-left:0 !important;background-color:#EDEDED !important;background-image:-moz-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}#li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title, #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title{color:#666 !important;border:1px solid #000 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;border-left:0 !important;background-color:#DEDEDE !important;background-image:-moz-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.IN-shadowed #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title{}.IN-shadowed #li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title{}.IN-shadowed #li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title, .IN-shadowed #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title{}#li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title-text, #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title-text *{color:#333 !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title-text, #li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title-text *{color:#000 !important;}#li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title-text, #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title-text, #li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title-text *, #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title-text *{color:#666 !important;}#li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title #li_ui_li_gen_1417249699392_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title{color:#333 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;background-color:#ECECEC !important;background-image:-moz-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}.success #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title-text, .success #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title-text *{color:#333 !important;}.IN-shadowed .success #li_ui_li_gen_1417249699392_0 #li_ui_li_gen_1417249699392_0-title{}.success #li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title{color:#000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;background-color:#EDEDED !important;background-image:-moz-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}.success #li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title-text, .success #li_ui_li_gen_1417249699392_0.hovered #li_ui_li_gen_1417249699392_0-title-text *{color:#000 !important;}.success #li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title, .success #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title{color:#666 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;background-color:#DEDEDE !important;background-image:-moz-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.success #li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title-text, .success #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title-text, .success #li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title-text *, .success #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title-text *{color:#666 !important;}.IN-shadowed .success #li_ui_li_gen_1417249699392_0.clicked #li_ui_li_gen_1417249699392_0-title, .IN-shadowed .success #li_ui_li_gen_1417249699392_0.down #li_ui_li_gen_1417249699392_0-title{}#li_ui_li_gen_1417249699409_1-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:18px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1417249699409_1.IN-right {display:block !important;float:left !important;height:18px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -100px !important;}#li_ui_li_gen_1417249699409_1-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -60px !important;}#li_ui_li_gen_1417249699409_1-content.IN-right {display:inline !important;font-size:11px !important;color:#04558B !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:18px !important;padding:0 5px 0 5px !important;}#li_ui_li_gen_1417249699409_1-container.IN-empty {display:none !important;}#li_ui_li_gen_1417249699409_1-container.IN-hidden #li_ui_li_gen_1417249699409_1 {display:none !important;}</style></head>
+
+<body data-twttr-rendered="true" class="single single-post postid-55 single-format-standard mp6 typekit-enabled highlander-enabled highlander-light">
+<div id="wrapper">
+
+	<div id="header" class="clearfix">
+
+		<div id="header_top">
+			<div id="logo">
+				<a href="http://kebomix.wordpress.com/">Kebomix Blog</a>
+				<h1>Good code is like a good joke: It needs no explanation.</h1>
+			</div>
+			<div id="header_menu">
+				<ul class="menu" id="menu">
+	<li class="page_item first_menu"><a href="http://kebomix.wordpress.com/">HOME</a></li>
+	<li class="page_item page-item-2 last_menu"><a href="http://kebomix.wordpress.com/about-m/">About me</a></li>
+</ul>
+			</div>
+		</div>
+
+	</div><!-- #header end -->  <div id="contents" class="clearfix">
+
+   <div id="left_col">
+
+
+    <div class="post-55 post type-post status-publish format-standard hentry category-java-2 clearfix" id="single_post">
+     <div class="post_content_wrapper">
+      <h2><span>HOW TO: Make a System Tray Icon in Java in 3&nbsp;Steps</span></h2>
+      <div class="post_content">
+       <p>to Create System Tray we need 3 things:</p>
+<p>1)PopupMenu</p>
+<p>2) Menu Items</p>
+<p>3)&nbsp; TrayIcon</p>
+<h2>Step # 1 :-</h2>
+<p>so, i will start with PopupMenu<code><br>
+</code></p>
+<div><div id="highlighter_232180" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">PopupMenu popMenu= </code><code class="java keyword">new</code> <code class="java plain">PopupMenu();</code></div></div></td></tr></tbody></table></div></div>
+<p><code><br>
+</code></p>
+<h2>Step # 2 :-</h2>
+<p>now we go to step #2 creating menu items, every menu have menu items that you click on it</p>
+<div><div id="highlighter_214640" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">MenuItem item1 = </code><code class="java keyword">new</code> <code class="java plain">MenuItem(</code><code class="java string">"Exit"</code><code class="java plain">);&nbsp; </code><code class="java comments">//here i created menu item named item1 and the text will appear in this menu item is "Exit"</code></div></div></td></tr></tbody></table></div></div>
+<p><span id="more-55"></span><br>
+i will make only one item to make it simple, now we created MenuItem, it is time to add it to the Menu itself</p>
+<div><div id="highlighter_181181" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">popMenu.add(item1);&nbsp; </code><code class="java comments">//adding menu item to popMenu</code></div></div></td></tr></tbody></table></div></div>
+<p><strong>Note: </strong>you can add ActionListener to item1 to execture an action when clicked</p>
+<div><div id="highlighter_486183" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">item1.addActionListener(</code><code class="java keyword">this</code><code class="java plain">); </code><code class="java comments">//adding action listener to item1</code></div></div></td></tr></tbody></table></div></div>
+<h2>Step # 3 :-</h2>
+<p>creating TrayIcon object, for tray Icon Object we need 3 Parameters</p>
+<p>1)Image to be the Icon</p>
+<p>2) String to appear when you put mouse on it.</p>
+<p>3) Menu to Appear when you right click on it.</p>
+<p>we have the menu and we will pass the String during Object Creation, 
+so we need image to be our Application Icon, so we will create Image 
+Object and Pass the Image Location through Toolkit class</p>
+<div><div id="highlighter_374744" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">Image img =Toolkit.getDefaultToolkit().getImage(</code><code class="java string">"C:/java/cup.jpg"</code><code class="java plain">);</code></div></div></td></tr></tbody></table></div></div>
+<p>then we create our TrayIcon Object</p>
+<div><div id="highlighter_139364" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">TrayIcon trayicon = </code><code class="java keyword">new</code> <code class="java plain">TrayIcon(img, </code><code class="java string">"Application Name"</code><code class="java plain">, popMenu);</code></div></div></td></tr></tbody></table></div></div>
+<p>now every Applications have Only One System tray, so it is time to add System Tray we created to current System.</p>
+<div><div id="highlighter_600455" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java plain">SystemTray.getSystemTray().add(trayIcon); </code><code class="java comments">//you will need to throw AWTException if the Java Runtime cannot add&nbsp; the icon to SystemTray</code></div></div></td></tr></tbody></table></div></div>
+<p>Here is the Full Source Code for System Tray:</p>
+<div><div id="highlighter_829347" class="syntaxhighlighter  java"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java keyword">package</code> <code class="java plain">systemtray;</code></div><div class="line number2 index1 alt1"><code class="java keyword">import</code> <code class="java plain">java.awt.AWTException;</code></div><div class="line number3 index2 alt2"><code class="java keyword">import</code> <code class="java plain">java.awt.Image;</code></div><div class="line number4 index3 alt1"><code class="java keyword">import</code> <code class="java plain">java.awt.MenuItem;</code></div><div class="line number5 index4 alt2"><code class="java keyword">import</code> <code class="java plain">java.awt.PopupMenu;</code></div><div class="line number6 index5 alt1"><code class="java keyword">import</code> <code class="java plain">java.awt.SystemTray;</code></div><div class="line number7 index6 alt2"><code class="java keyword">import</code> <code class="java plain">java.awt.Toolkit;</code></div><div class="line number8 index7 alt1"><code class="java keyword">import</code> <code class="java plain">java.awt.TrayIcon;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="java keyword">public</code> <code class="java keyword">class</code> <code class="java plain">Main {</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] args) </code><code class="java keyword">throws</code> <code class="java plain">AWTException {</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;</code><code class="java plain">PopupMenu popMenu= </code><code class="java keyword">new</code> <code class="java plain">PopupMenu();</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;</code><code class="java plain">MenuItem item1 = </code><code class="java keyword">new</code> <code class="java plain">MenuItem(</code><code class="java string">"Exit"</code><code class="java plain">);</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;</code><code class="java plain">popMenu.add(item1);</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;</code><code class="java plain">Image img = Toolkit.getDefaultToolkit().getImage(</code><code class="java string">"C:/java/cup.jpg"</code><code class="java plain">);</code></div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;</code><code class="java plain">TrayIcon trayIcon = </code><code class="java keyword">new</code> <code class="java plain">TrayIcon(img, </code><code class="java string">"Application Name"</code><code class="java plain">, popMenu);</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;</code><code class="java plain">SystemTray.getSystemTray().add(trayIcon);</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;</code><code class="java plain">}</code></div><div class="line number20 index19 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<div class="wpcnt">
+<div class="wpa">
+<a class="wpa-about" href="http://wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "monochrome";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "kebomix.wordpress.com");
+GA_googleAddAttr("BlogId", "11104372");
+GA_googleAddAttr("PageURL", "http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/");
+GA_googleAddAttr("Autotag", "technology");
+GA_googleAddAttr("Autotag", "food");
+GA_googleAddAttr("Tag", "java-2");
+GA_googleAddAttr("theme_bg", "ffffff");
+GA_googleAddAttr("theme_text", "666666");
+GA_googleAddAttr("theme_link", "2089cc");
+GA_googleAddAttr("theme_border", "282828");
+GA_googleAddAttr("theme_url", "e2415b");
+GA_googleAddAdSensePageAttr("google_page_url", "http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/ads"></script><div id="google_ads_div_wpcom_below_post_ad_wrapper">
+<div id="google_ads_div_wpcom_below_post_ad_container" style="display:inline-block;"><div style="width: 300px; height: 250px; overflow: hidden; position: static; top: auto; left: auto;" id="grv-personalization-16"><iframe style="overflow: hidden; width: 300px; height: 250px; opacity: 1;" scrolling="no" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/w2.htm" frameborder="0"></iframe></div>
+<script type="text/javascript">
+  //<![CDATA[
+ function _grc(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
+    (function(){
+    window.gravityInsightsParams = {
+      'type': 'content',
+      'site_guid': '361837bc83c4c2cba7b350dff56a564f',
+      'user_guid': _grc('grvinsights'),
+      'sourceUrl': 'kebomix.wordpress.com',
+    };
+    var b,c,d,e,f,g,h,i;f=(b=!0===gravityInsightsParams.useGravityUserGuid?1:0,e=b?"":gravityInsightsParams.user_guid||(null!=(g=/grvinsights=([^;]+)/.exec(document.cookie))?g[1]:void 0)||"",c=(null!=(h=window.jQuery)?null!=(i=h.fn)?i.jquery:void 0:void 0)||"","http://rma-api.gravity.com/v1/api/intelligence/wl?jq="+c+"&sg="+gravityInsightsParams.site_guid+"&ug="+e+"&ugug="+b+"&pl=16&id=grv-personalization-16&type=iframe");
+    window.grvMakeScript=function(j){var a;a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=j;return a};d=document.getElementsByTagName("script")[0];f&&d.parentNode.insertBefore(window.grvMakeScript(f),d);})();
+  //]]>
+</script>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='virool.com']").length > 0 || jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//pixel.wp.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876680_post_55"><div class="rating-icons" id="pd_rate_3876680_post_55" style="float:left;"><div class="rating-star-icon" onmouseout="PDRTJS_3876680_post_55.rebuild();" onclick="PDRTJS_3876680_post_55.rate(1);" onmouseover="PDRTJS_3876680_post_55.hover(1);" id="PDRTJS_3876680_post_55_stars_1" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_3876680_post_55.rebuild();" onclick="PDRTJS_3876680_post_55.rate(2);" onmouseover="PDRTJS_3876680_post_55.hover(2);" id="PDRTJS_3876680_post_55_stars_2" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_3876680_post_55.rebuild();" onclick="PDRTJS_3876680_post_55.rate(3);" onmouseover="PDRTJS_3876680_post_55.hover(3);" id="PDRTJS_3876680_post_55_stars_3" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_3876680_post_55.rebuild();" onclick="PDRTJS_3876680_post_55.rate(4);" onmouseover="PDRTJS_3876680_post_55.hover(4);" id="PDRTJS_3876680_post_55_stars_4" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_3876680_post_55.rebuild();" onclick="PDRTJS_3876680_post_55.rate(5);" onmouseover="PDRTJS_3876680_post_55.hover(5);" id="PDRTJS_3876680_post_55_stars_5" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876680_post_55" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876680_post_55.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876680_post_55">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876680_post_55_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="like_button"><iframe src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/like.htm" scrolling="no" style="border:none; overflow:hidden; width:96px; height:21px;" allowtransparency="true" frameborder="0"></iframe></div></li><li class="share-twitter"><div class="twitter_button"><iframe allowtransparency="true" scrolling="no" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/tweet_button.htm" style="width:101px; height:20px;" frameborder="0"></iframe></div></li><li class="share-google-plus-1"><div class="googleplus1_button"><div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 82px; height: 20px;"><iframe title="+Share" data-gapiattached="true" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/sharebutton.htm" name="I0_1417249694006" id="I0_1417249694006" vspace="0" tabindex="0" style="position: static; top: 0px; width: 82px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div></div></li><li class="share-tumblr"><a target="" href="http://www.tumblr.com/share/link/?url=http%3A%2F%2Fkebomix.wordpress.com%2F2010%2F11%2F14%2Fhow-to-make-a-system-tray-icon-in-java-in-3-steps%2F&amp;name=HOW%20TO%3A%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:62px; height:20px; background:url('//platform.tumblr.com/v1/share_2.png') top left no-repeat transparent;">Share on Tumblr</a></li><li class="share-linkedin"><div class="linkedin_button"><span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1417249699392_0"><a id="li_ui_li_gen_1417249699392_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1417249699392_0-logo">in</span><span id="li_ui_li_gen_1417249699392_0-title"><span id="li_ui_li_gen_1417249699392_0-mark"></span><span id="li_ui_li_gen_1417249699392_0-title-text">Share</span></span></a></span></span><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1417249699409_1-container" class="IN-right IN-hidden"><span id="li_ui_li_gen_1417249699409_1" class="IN-right"><span id="li_ui_li_gen_1417249699409_1-inner" class="IN-right"><span id="li_ui_li_gen_1417249699409_1-content" class="IN-right">0</span></span></span></span></span></span><script type="in/share+init" data-url="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/" data-counter="right"></script></div></li><li class="share-reddit"><div class="reddit_button"><iframe src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/button1.htm" scrolling="no" frameborder="0" height="22" width="120"></iframe></div></li><li class="share-stumbleupon"><div class="stumbleupon_button"><iframe src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a.htm" scrolling="no" style="border:none; overflow:hidden; width:74px; height: 18px;" allowtransparency="true" frameborder="0"></iframe></div></li><li class="share-email share-service-visible"><a rel="nofollow" class="share-email sd-button" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?share=email&amp;nb=1" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div></div>              </div>
+     </div>
+     <dl class="post_meta">
+        <dt class="meta_date">2010</dt>
+         <dd class="post_date">11<span>/14</span></dd>
+                <dt>POSTED BY</dt>
+         <dd><a href="http://kebomix.wordpress.com/author/kebomix/" title="Posts by kebomix" rel="author">kebomix</a></dd>
+               <dt>CATEGORY</dt>
+        <dd><a href="http://kebomix.wordpress.com/category/java-2/" rel="category tag">Java</a></dd>
+                                <dt class="meta_comment"><a href="#respond">Write comment</a></dt>
+             </dl>
+    </div>
+
+
+<div id="comments_wrapper">
+<div id="comments">
+
+
+
+
+
+ <div id="comment_header" class="clearfix">
+
+  <ul id="comment_header_left">
+   <li id="add_comment"><a href="#respond">Write comment</a></li>
+   <li id="comment_feed"><a href="http://kebomix.wordpress.com/comments/feed/" title="Comments RSS">Comments RSS</a></li>
+  </ul>
+
+  <ul id="comment_header_right">
+    <li id="trackback_switch"><a href="javascript:void(0);">Trackback ( 3 )</a></li>
+    <li id="comment_switch" class="comment_switch_active"><a href="javascript:void(0);">Comments ( 9 )</a></li>
+  </ul>
+
+
+ </div><!-- comment_header END -->
+
+
+<div id="comment_area">
+<!-- start commnet -->
+<ol class="commentlist">
+	
+<li class="comment even thread-even depth-1 highlander-comment even_comment" id="comment-24">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-086564b4eecfd1716702dabb07fcd0cb-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/086564b4eecfd1716702dabb07fcd0cb.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<span id="commentauthor-24">
+
+Andrey
+</span>
+		</li>
+		<li class="comment-date">November 14th, 2010</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=24#respond" onclick='return addComment.moveForm( "comment-content-24", "24", "respond", "55" )' aria-label="Reply to Andrey"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-24', 'comment-24', 'comment-content-24', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-24">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_24"><div class="rating-icons" id="pd_rate_3876691_comm_24" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_24.rebuild();" onclick="PDRTJS_3876691_comm_24.rate(1);" onmouseover="PDRTJS_3876691_comm_24.hover(1);" id="PDRTJS_3876691_comm_24_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_24_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">5</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_24.rebuild();" onclick="PDRTJS_3876691_comm_24.rate(2);" onmouseover="PDRTJS_3876691_comm_24.hover(2);" id="PDRTJS_3876691_comm_24_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_24_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_24" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_24.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_24">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_24_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_24={"id":3876691,"unique_id":"wp-comment-24","title":"Thanks%21...","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-24","item_id":"_comm_24"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>Thanks!</p>
+</div>
+
+<ul class="children">
+
+<li class="comment byuser comment-author-kebomix bypostauthor odd alt depth-2 highlander-comment even_comment_children" id="comment-25">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-8031aee46f5374b0ad4f7272e13f2d52-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/8031aee46f5374b0ad4f7272e13f2d52.jpg" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<span id="commentauthor-25">
+
+kebomix
+</span>
+		</li>
+		<li class="comment-date">November 15th, 2010</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=25#respond" onclick='return addComment.moveForm( "comment-content-25", "25", "respond", "55" )' aria-label="Reply to kebomix"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-25', 'comment-25', 'comment-content-25', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-25">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_25"><div class="rating-icons" id="pd_rate_3876691_comm_25" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_25.rebuild();" onclick="PDRTJS_3876691_comm_25.rate(1);" onmouseover="PDRTJS_3876691_comm_25.hover(1);" id="PDRTJS_3876691_comm_25_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_25_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">2</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_25.rebuild();" onclick="PDRTJS_3876691_comm_25.rate(2);" onmouseover="PDRTJS_3876691_comm_25.hover(2);" id="PDRTJS_3876691_comm_25_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_25_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_25" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_25.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_25">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_25_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_25={"id":3876691,"unique_id":"wp-comment-25","title":"you%20are%20welcome%2C%20hope%20it%20helped%20%3A%29...","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-25","item_id":"_comm_25"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>you are welcome, hope it helped <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span></p>
+</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1 highlander-comment odd_comment" id="comment-45">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-5d9ff0ba1d61433d3da5143ba58449b0-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/5d9ff0ba1d61433d3da5143ba58449b0.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<span id="commentauthor-45">
+
+sanda
+</span>
+		</li>
+		<li class="comment-date">April 8th, 2012</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=45#respond" onclick='return addComment.moveForm( "comment-content-45", "45", "respond", "55" )' aria-label="Reply to sanda"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-45', 'comment-45', 'comment-content-45', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-45">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_45"><div class="rating-icons" id="pd_rate_3876691_comm_45" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_45.rebuild();" onclick="PDRTJS_3876691_comm_45.rate(1);" onmouseover="PDRTJS_3876691_comm_45.hover(1);" id="PDRTJS_3876691_comm_45_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_45_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">2</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_45.rebuild();" onclick="PDRTJS_3876691_comm_45.rate(2);" onmouseover="PDRTJS_3876691_comm_45.hover(2);" id="PDRTJS_3876691_comm_45_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_45_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_45" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_45.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_45">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_45_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_45={"id":3876691,"unique_id":"wp-comment-45","title":"Thanks%20bro........","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-45","item_id":"_comm_45"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>Thanks bro…..</p>
+</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1 highlander-comment even_comment" id="comment-66">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-8d1f2d235317dd3d6c87d2334c51b781-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/8d1f2d235317dd3d6c87d2334c51b781.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<a id="commentauthor-66" class="url guest-url" href="http://howtocreateawebsite.beeplog.de/347900_1916294.htm" rel="external nofollow">
+
+How To Make A Website
+</a>
+		</li>
+		<li class="comment-date">June 11th, 2013</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=66#respond" onclick='return addComment.moveForm( "comment-content-66", "66", "respond", "55" )' aria-label="Reply to How To Make A Website"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-66', 'comment-66', 'comment-content-66', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-66">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_66"><div class="rating-icons" id="pd_rate_3876691_comm_66" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_66.rebuild();" onclick="PDRTJS_3876691_comm_66.rate(1);" onmouseover="PDRTJS_3876691_comm_66.hover(1);" id="PDRTJS_3876691_comm_66_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_66_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_66.rebuild();" onclick="PDRTJS_3876691_comm_66.rate(2);" onmouseover="PDRTJS_3876691_comm_66.hover(2);" id="PDRTJS_3876691_comm_66_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_66_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_66" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_66.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_66">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_66_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_66={"id":3876691,"unique_id":"wp-comment-66","title":"Its%20such%20as%20you%20read%20my%20thoughts%21%20You%20seem%20to%20grasp%20a%20lot%20about%20this%2C%20such%20as%20you%20wrote%20the%20book%20in%20it%20or%20something.%20I%20believe%20that%20you%20just%20can%20do%20with%20some%20p.c.%20to%20power%20the%20message%20house%20a%20bit...","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-66","item_id":"_comm_66"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>Its such as you read my thoughts! You seem to grasp a lot about this, such as you wrote<br>
+the book in it or something. I believe that you just can do with some p.</p>
+<p>c. to power the message house a bit, however other than that, this is magnificent blog.<br>
+A great read. I’ll certainly be back.</p>
+</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1 highlander-comment odd_comment" id="comment-70">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-e32b4f03bbadd0644bb0103a69660f9f-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/e32b4f03bbadd0644bb0103a69660f9f.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<a id="commentauthor-70" class="url guest-url" href="http://www.themidcountypost.com/locally-outsourced-accounting-right/" rel="external nofollow">
+
+Faviola Dipasquale
+</a>
+		</li>
+		<li class="comment-date">January 4th, 2014</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=70#respond" onclick='return addComment.moveForm( "comment-content-70", "70", "respond", "55" )' aria-label="Reply to Faviola Dipasquale"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-70', 'comment-70', 'comment-content-70', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-70">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_70"><div class="rating-icons" id="pd_rate_3876691_comm_70" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_70.rebuild();" onclick="PDRTJS_3876691_comm_70.rate(1);" onmouseover="PDRTJS_3876691_comm_70.hover(1);" id="PDRTJS_3876691_comm_70_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_70_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_70.rebuild();" onclick="PDRTJS_3876691_comm_70.rate(2);" onmouseover="PDRTJS_3876691_comm_70.hover(2);" id="PDRTJS_3876691_comm_70_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_70_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_70" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_70.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_70">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_70_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_70={"id":3876691,"unique_id":"wp-comment-70","title":"For%20most%20recent%20information%20you%20have%20to%20pay%20a%20quick%20visit%20world-wide-web%20and%20on%20the%20web%20I%20found%20this%20site%20as%20a%20most%20excellent%20website%20for%20most%20up-to-date%20updates....","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-70","item_id":"_comm_70"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>For
+ most recent information you have to pay a quick visit world-wide-web 
+and on the web I found this site as a most excellent website for most 
+up-to-date updates.</p>
+</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1 highlander-comment even_comment" id="comment-106">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-3f9f4bcca3e27099c38d62f3f370a2e7-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/3f9f4bcca3e27099c38d62f3f370a2e7.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<a id="commentauthor-106" class="url guest-url" href="https://www.rebelmouse.com/emptylink187/why-would-i-want-to-start-a-bl-493382782.html" rel="external nofollow">
+
+best website to start a blog
+</a>
+		</li>
+		<li class="comment-date">April 14th, 2014</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=106#respond" onclick='return addComment.moveForm( "comment-content-106", "106", "respond", "55" )' aria-label="Reply to best website to start a blog"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-106', 'comment-106', 'comment-content-106', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-106">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_106"><div class="rating-icons" id="pd_rate_3876691_comm_106" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_106.rebuild();" onclick="PDRTJS_3876691_comm_106.rate(1);" onmouseover="PDRTJS_3876691_comm_106.hover(1);" id="PDRTJS_3876691_comm_106_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_106_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_106.rebuild();" onclick="PDRTJS_3876691_comm_106.rate(2);" onmouseover="PDRTJS_3876691_comm_106.hover(2);" id="PDRTJS_3876691_comm_106_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_106_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_106" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_106.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_106">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_106_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_106={"id":3876691,"unique_id":"wp-comment-106","title":"Keep%20an%20eye%20on%20your%20blog%20stats%20so%20that%20you%20can%20determine%20great%20and%20bad%20your%20overall%20approach.%20What%20third-party%20blogging%20software%20does%20is%20give%20you%20a%20bit%20more%20control%2C%20it%20may%20give%20you%20the%20opportuni...","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-106","item_id":"_comm_106"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>Keep an eye on your blog stats so that you can determine<br>
+great and bad your overall approach. What third-party blogging software 
+does is give you a bit more control, it may give you the opportunity to 
+hold posts, to organize<br>
+them the way you would like, or to embed information that would otherwise be<br>
+difficult to place into your posts. Simply speaking<br>
+blogging means writing and publishing your thoughts and views.</p>
+</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1 highlander-comment odd_comment" id="comment-117">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-3248cd017fa7a8a9518b887cc4408657-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/3248cd017fa7a8a9518b887cc4408657.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<a id="commentauthor-117" class="url guest-url" href="http://www.homebasedbusinessprogram.com/profiles/blogs/ice-vending-machines-can-generate-semi-passive-income" rel="external nofollow">
+
+machines
+</a>
+		</li>
+		<li class="comment-date">April 26th, 2014</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=117#respond" onclick='return addComment.moveForm( "comment-content-117", "117", "respond", "55" )' aria-label="Reply to machines"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-117', 'comment-117', 'comment-content-117', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-117">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_117"><div class="rating-icons" id="pd_rate_3876691_comm_117" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_117.rebuild();" onclick="PDRTJS_3876691_comm_117.rate(1);" onmouseover="PDRTJS_3876691_comm_117.hover(1);" id="PDRTJS_3876691_comm_117_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_117_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_117.rebuild();" onclick="PDRTJS_3876691_comm_117.rate(2);" onmouseover="PDRTJS_3876691_comm_117.hover(2);" id="PDRTJS_3876691_comm_117_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_117_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_117" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_117.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_117">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_117_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_117={"id":3876691,"unique_id":"wp-comment-117","title":"Wow%21%20At%20last%20I%20got%20a%20weblog%20from%20where%20I%20be%20capable%20of%20actually%20get%20helpful%20data%20regarding%20my%20study%20and%20knowledge....","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-117","item_id":"_comm_117"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>Wow! At last I got a weblog from where I be capable<br>
+of actually get helpful data regarding my study and knowledge.</p>
+</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-even depth-1 highlander-comment even_comment" id="comment-134">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-cd97dde9f99eef1a8a565c0026313e84-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/cd97dde9f99eef1a8a565c0026313e84.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<a id="commentauthor-134" class="url guest-url" href="http://help.uhurunet.com/entries/61991753-Doorstep-Loans-Explained-Suggestions-You-Must-Understand" rel="external nofollow">
+
+http://help.uhurunet.com/
+</a>
+		</li>
+		<li class="comment-date">May 15th, 2014</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=134#respond" onclick='return addComment.moveForm( "comment-content-134", "134", "respond", "55" )' aria-label="Reply to http://help.uhurunet.com/"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-134', 'comment-134', 'comment-content-134', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-134">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_134"><div class="rating-icons" id="pd_rate_3876691_comm_134" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_134.rebuild();" onclick="PDRTJS_3876691_comm_134.rate(1);" onmouseover="PDRTJS_3876691_comm_134.hover(1);" id="PDRTJS_3876691_comm_134_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_134_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_134.rebuild();" onclick="PDRTJS_3876691_comm_134.rate(2);" onmouseover="PDRTJS_3876691_comm_134.hover(2);" id="PDRTJS_3876691_comm_134_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_134_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_134" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_134.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_134">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_134_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_134={"id":3876691,"unique_id":"wp-comment-134","title":"I%20used%20to%20be%20suggested%20this%20blog%20by%20my%20cousin.I%20am%20no%20longer%20sure%20whether%20this%20submit%20is%20written%20by%20way%20of%20him%20as%20nobody%20else%20know%20such%20certain%20about%20my%20problem.%20You%20are%20wonderful%21%20Thanks%21...","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-134","item_id":"_comm_134"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>I used to be suggested this blog by my cousin.<br>
+I am no longer sure whether this submit is written by way of him as nobody else know<br>
+such certain about my problem. You are wonderful! Thanks!</p>
+</div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1 highlander-comment odd_comment" id="comment-314">
+	<div class="comment-meta">
+		<div class="comment-meta-left">
+<img id="grav-f85087295be0769769fe831d4ba70a8a-0" alt="" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/f85087295be0769769fe831d4ba70a8a.png" class="avatar avatar-35 grav-hashed grav-hijack" height="35" width="35">
+	<ul class="comment-name-date">
+		<li class="comment-name">
+<a id="commentauthor-314" class="url guest-url" href="http://chrihyonce.tumblr.com/" rel="external nofollow">
+
+Blog Online
+</a>
+		</li>
+		<li class="comment-date">November 28th, 2014</li>
+	</ul>
+</div>
+
+<ul class="comment-act">
+	<li class="comment-reply"><a class="comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/?replytocom=314#respond" onclick='return addComment.moveForm( "comment-content-314", "314", "respond", "55" )' aria-label="Reply to Blog Online"><span><span>REPLY</span></span></a></li>
+	<li class="comment-quote"><a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-314', 'comment-314', 'comment-content-314', 'comment');">QUOTE</a></li>
+	</ul>
+
+</div>
+<div class="comment-content" id="comment-content-314">
+		<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_3876691_comm_314"><div class="rating-icons" id="pd_rate_3876691_comm_314" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_314.rebuild();" onclick="PDRTJS_3876691_comm_314.rate(1);" onmouseover="PDRTJS_3876691_comm_314.hover(1);" id="PDRTJS_3876691_comm_314_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_314_msg_1" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div><div class="rating-nero-icon" onmouseout="PDRTJS_3876691_comm_314.rebuild();" onclick="PDRTJS_3876691_comm_314.rate(2);" onmouseover="PDRTJS_3876691_comm_314.hover(2);" id="PDRTJS_3876691_comm_314_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(http://i0.poll.fm/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_3876691_comm_314_msg_2" style="text-align: center; font:normal normal /16px ; color: #; float:left; padding: 0px 4px;">0</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_3876691_comm_314" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_3876691_comm_314.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_3876691_comm_314">&nbsp;</div><div class="rating-msg" id="PDRTJS_3876691_comm_314_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div>
+<script type="text/javascript" charset="UTF-8"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876691_comm_314={"id":3876691,"unique_id":"wp-comment-314","title":"I%26%23039%3Bve%20been%20exploring%20for%20a%20bit%20for%20any%20high%20quality%20articles%20or%20weblog%20posts%20on%20this%20kind%20of%20area%20.%20Exploring%20in%20Yahoo%20I%20finally%20stumbled%20upon%20this%20website.Studying%20this%20info%20So%20i%26%23039%3Bm%20satisfied%20to%20s...","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/#comment-314","item_id":"_comm_314"};
+//--><!]]></script>
+<script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script><p>I’ve been exploring for a bit for any high quality articles or weblog<br>
+posts on this kind of area . Exploring in Yahoo I finally stumbled upon this website.</p>
+<p>Studying this info So i’m satisfied to show that I’ve an incredibly good uncanny feeling I<br>
+found out just what I needed. I most no doubt will make certain to don?t fail to remember this site and<br>
+give it a glance on a constant basis.</p>
+</div>
+
+</li><!-- #comment-## -->
+</ol>
+<!-- comments END -->
+
+
+</div><!-- #comment-list END -->
+
+
+<div id="trackback_area">
+<!-- start trackback -->
+
+<div id="trackback_url_wrapper">
+<label for="trackback_url">TrackBack URL</label>
+<input name="trackback_url" id="trackback_url" size="60" value="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/trackback/" readonly="readonly" onfocus="this.select()" type="text">
+</div>
+
+<ol class="trackbacklist">
+
+
+<li class="comment">
+ <div class="trackback_time">
+  November 19th, 2010   </div>
+ <div class="trackback_title">
+  Trackback from : <a href="http://aniri.ro/news/links-of-the-week-16/">aniri.ro » Links of the week</a>
+ </div>
+</li>
+<li class="comment">
+ <div class="trackback_time">
+  September 24th, 2011   </div>
+ <div class="trackback_title">
+  Trackback from : <a href="http://www.keyboardmousetray.org/lock-computer-after-inactivity">Lock Computer after Inactivity</a>
+ </div>
+</li>
+<li class="comment">
+ <div class="trackback_time">
+  January 27th, 2014   </div>
+ <div class="trackback_title">
+  Trackback from : <a href="http://www.charlesayoub.com/traffic/multiframes/blogs.php?pg=137605292">Charles Ayoub News Portal</a>
+ </div>
+</li>
+
+</ol>
+<!-- trackback end -->
+</div><!-- #trackbacklist END -->
+
+
+
+
+
+
+								<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://kebomix.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input id="highlander_comment_nonce" name="highlander_comment_nonce" value="4da016313c" type="hidden"><input name="_wp_http_referer" value="/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/" type="hidden">
+<input name="hc_post_as" id="hc_post_as" value="guest" type="hidden">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea class="autosizejs " tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; word-wrap: break-word; height: 0px ! important; min-height: 0px ! important; overflow: hidden; transition: none 0s ease 0s ; font-family: Arial,Helvetica,Tahoma,Verdana,sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 16px; width: 456px;">Enter your comment here...</textarea><textarea style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;" placeholder="Enter your comment here..." id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div style="display: none;" id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a_002.htm" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0" height="24" width="24"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Gravatar" class="no-grav" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text"></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/wplogo.png" alt="WordPress.com Logo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" type="hidden">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'wordpress'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Twitter picture" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" type="hidden">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'twitter'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" type="hidden">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'facebook'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Google+ photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" type="hidden">
+				<input name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" type="hidden">
+				<input name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" type="hidden">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'googleplus'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div style="display: none;" id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+												<p style="display: none;" class="form-submit">
+							<input name="submit" id="comment-submit" class="submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="55" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="90a3e5b32a" type="hidden"></p>
+<input name="genseq" value="1417249703" type="hidden">
+<p style="display: none;"></p>					<input id="ak_js" name="ak_js" value="1417249693574" type="hidden"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+</div><!-- #comment end --></div>
+
+   </div><!-- #left_col end -->
+
+   <div id="right_col">
+  
+  
+    <div class="side_box first_side_box" id="search_area_top">
+   <div id="search_area" class="clearfix">
+    <form method="get" id="searchform" action="http://kebomix.wordpress.com/">
+     <div><input value="Search" name="s" id="search_input" onfocus="this.value=''; changefc('white');" type="text"></div>
+     <div><input src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/search_button_n.gif" alt="Search from this blog." title="Search from this blog." id="search_button" type="image"></div>
+    </form>
+   </div>
+     </div>
+  
+  <div class="side_box" id="twitter-2">
+<h3><a href="http://twitter.com/kebomix">My Twitter</a></h3>
+<ul class="tweets">
+			<li>
+				BrowserStack: We did get hacked. <a href="http://wp.me/p2plUD-1El"> wp.me/p2plUD-1El</a> <a href="http://twitter.com/search?q=%23fb">#fb</a> 				<a href="http://twitter.com/kebomix/statuses/531881479425359872" class="timesince">2&nbsp;weeks&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				In honor of the Internet turning 45, here is its first router | ScienceDump <a href="http://www.sciencedump.com/content/honor-internet-turning-45-here-its-first-router"> sciencedump.com/content/honor-…</a> via @<a href="http://twitter.com/sciencedump">sciencedump</a> <a href="http://twitter.com/search?q=%23fb">#fb</a> 				<a href="http://twitter.com/kebomix/statuses/529556831287259136" class="timesince">3&nbsp;weeks&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				RT @<a href="http://twitter.com/w3c">w3c</a>: Unique t-shirts for @<a href="http://twitter.com/vgcerf">vgcerf</a> and @<a href="http://twitter.com/timberners_lee">timberners_lee</a> (on the back "I didn't invent the Web" &amp; "I invented the Web") <a href="http://twitter.com/search?q=%23w3c20">#w3c20</a> <a href="http://t.co/%E2%80%A6" rel="nofollow">http://t.co/…</a> 				<a href="http://twitter.com/kebomix/statuses/527839774321938432" class="timesince">4&nbsp;weeks&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				1,000 Years of Scientific Texts From The Islamic World Are Now Online <a href="http://io9.com/1-000-years-of-scientific-texts-from-the-islamic-world-1651688013"> io9.com/1-000-years-of…</a> <a href="http://twitter.com/search?q=%23fb">#fb</a> 				<a href="http://twitter.com/kebomix/statuses/527126044591935488" class="timesince">1&nbsp;month&nbsp;ago</a>
+			</li>
+
+			
+			<li style="margin-bottom: 0px;">
+				Aghhh, @<a href="http://twitter.com/HipChat">HipChat</a> is down again :-| . 				<a href="http://twitter.com/kebomix/statuses/522214730447200256" class="timesince">1&nbsp;month&nbsp;ago</a>
+			</li>
+
+			</ul><iframe style="width: 122px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/follow_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe></div>
+<div class="side_box" id="wpcom-goodreads-2">
+<h3>Goodreads</h3>
+<div class="gr_custom_widget" id="gr_custom_widget_2983525_currently-reading"></div>
+<script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/2983525.Goodreads:%2520currently-reading"></script>  <div class="gr_custom_container_2983525_currently_reading">
+    <h2 class="gr_custom_header_2983525_currently_reading">
+    <a href="https://www.goodreads.com/review/list/2983525-ahmed?shelf=currently-reading&amp;utm_medium=api&amp;utm_source=custom_widget" style="text-decoration: none;">Goodreads: currently-reading</a>
+    </h2>
+      <div class="gr_custom_each_container_2983525_currently_reading">
+          <div class="gr_custom_book_container_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/1065240915?utm_medium=api&amp;utm_source=custom_widget" title="Hedge Funds For Dummies (For Dummies (Business &amp; Personal Finance))"><img alt="Hedge Funds For Dummies (For Dummies" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/563223.jpg" border="0"></a>
+          </div>
+          <div class="gr_custom_rating_2983525_currently_reading">
+            <img alt="0 of 5 stars" class=" staticStars" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/red_star_0_of_5.png" title="0 of 5 stars, ">
+          </div>
+          <div class="gr_custom_title_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/1065240915?utm_medium=api&amp;utm_source=custom_widget">Hedge Funds For Dummies (For Dummies</a>
+          </div>
+          <div class="gr_custom_author_2983525_currently_reading">
+            by <a href="https://www.goodreads.com/author/show/308735.Ann_C_Logue">Ann C. Logue</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_2983525_currently_reading">
+          <div class="gr_custom_book_container_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/970960640?utm_medium=api&amp;utm_source=custom_widget" title="Practical Vim: Edit Text at the Speed of Thought"><img alt="Practical Vim: Edit Text at the Speed of Thought" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/13607232.jpg" border="0"></a>
+          </div>
+          <div class="gr_custom_rating_2983525_currently_reading">
+            <img alt="0 of 5 stars" class=" staticStars" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/red_star_0_of_5.png" title="0 of 5 stars, ">
+          </div>
+          <div class="gr_custom_title_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/970960640?utm_medium=api&amp;utm_source=custom_widget">Practical Vim: Edit Text at the Speed of Thought</a>
+          </div>
+          <div class="gr_custom_author_2983525_currently_reading">
+            by <a href="https://www.goodreads.com/author/show/5819490.Drew_Neil">Drew Neil</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_2983525_currently_reading">
+          <div class="gr_custom_book_container_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/966621671?utm_medium=api&amp;utm_source=custom_widget" title="A Feast for Crows (A Song of Ice and Fire, #4)"><img alt="A Feast for Crows" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/13497.jpg" border="0"></a>
+          </div>
+          <div class="gr_custom_rating_2983525_currently_reading">
+            <img alt="0 of 5 stars" class=" staticStars" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/red_star_0_of_5.png" title="0 of 5 stars, ">
+          </div>
+          <div class="gr_custom_title_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/966621671?utm_medium=api&amp;utm_source=custom_widget">A Feast for Crows</a>
+          </div>
+          <div class="gr_custom_author_2983525_currently_reading">
+            by <a href="https://www.goodreads.com/author/show/346732.George_R_R_Martin">George R.R. Martin</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_2983525_currently_reading">
+          <div class="gr_custom_book_container_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/880136850?utm_medium=api&amp;utm_source=custom_widget" title="The Rails 4 Way"><img alt="The Rails 4 Way" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/18157961.jpg" border="0"></a>
+          </div>
+          <div class="gr_custom_rating_2983525_currently_reading">
+            <img alt="0 of 5 stars" class=" staticStars" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/red_star_0_of_5.png" title="0 of 5 stars, ">
+          </div>
+          <div class="gr_custom_title_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/880136850?utm_medium=api&amp;utm_source=custom_widget">The Rails 4 Way</a>
+          </div>
+          <div class="gr_custom_author_2983525_currently_reading">
+            by <a href="https://www.goodreads.com/author/show/192580.Obie_Fernandez">Obie Fernandez</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_2983525_currently_reading">
+          <div class="gr_custom_book_container_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/842994703?utm_medium=api&amp;utm_source=custom_widget" title="داروين مترددا"><img alt="داروين مترددا" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/20451388.jpg" border="0"></a>
+          </div>
+          <div class="gr_custom_rating_2983525_currently_reading">
+            <img alt="0 of 5 stars" class=" staticStars" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/red_star_0_of_5.png" title="0 of 5 stars, ">
+          </div>
+          <div class="gr_custom_title_2983525_currently_reading">
+            <a href="https://www.goodreads.com/review/show/842994703?utm_medium=api&amp;utm_source=custom_widget">داروين مترددا</a>
+          </div>
+          <div class="gr_custom_author_2983525_currently_reading">
+            by <a href="https://www.goodreads.com/author/show/32307.David_Quammen">David Quammen</a>
+          </div>
+      </div>
+  <br style="clear: both">
+  <center>
+    <a href="https://www.goodreads.com/"><img alt="goodreads.com" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/widget_logo.gif" style="border:0"></a>
+  </center>
+  <noscript>
+    Share <a href="https://www.goodreads.com/">book reviews</a> and ratings with Ahmed, and even join a <a href="https://www.goodreads.com/group">book club</a> on Goodreads.
+  </noscript>
+  </div>
+
+</div>
+<div class="side_box" id="text-3">
+<h3>Wizpert</h3>
+			<div class="textwidget"><a href="http://wizpert.com/ruby-programming?beta_key=3ba42&amp;ep=15320"><img alt="Call Me" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/call_button_widget1.png"></a></div>
+		</div>
+		<div class="side_box" id="recent-posts-2">
+		<h3>Recent Posts</h3>
+		<ul>
+					<li>
+				<a href="http://kebomix.wordpress.com/2013/03/27/f-error_messages-in-rails-3-0/">f.error_messages in Rails&nbsp;3.0</a>
+						</li>
+					<li>
+				<a href="http://kebomix.wordpress.com/2012/05/16/tutorial-the-power-of-plurals-in-android/">Tutorial: The Power of Plurals in&nbsp;Android</a>
+						</li>
+					<li>
+				<a href="http://kebomix.wordpress.com/2011/09/29/top-5-things-i-learned-from-graduation-project/">Top 5 Things i learned from my Graduation&nbsp;Project</a>
+						</li>
+					<li>
+				<a href="http://kebomix.wordpress.com/2011/01/09/reservoir-sampling-java/">Reservoir Sampling –&nbsp;Java</a>
+						</li>
+					<li style="margin-bottom: 0px;">
+				<a href="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/">HOW TO: Make a System Tray Icon in Java in 3&nbsp;Steps</a>
+						</li>
+				</ul>
+		</div>
+
+  
+</div><!-- #right_col end -->
+  </div><!-- #contents end -->
+
+  <div id="footer">
+	<div id="site-info"><a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com</a>. | <a href="https://wordpress.com/themes/monochrome/" title="Learn more about this theme">The monochrome Theme</a>.</div>
+	</div>
+
+</div><!-- #wrapper end -->
+
+<div id="return_top">
+ <a href="#wrapper"></a>
+</div>
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var menu=new menu.dd("menu");
+	menu.init("menu","menuhover");
+	/* ]]> */
+</script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-086564b4eecfd1716702dabb07fcd0cb">
+	</div>
+	<div class="grofile-hash-map-8031aee46f5374b0ad4f7272e13f2d52">
+	</div>
+	<div class="grofile-hash-map-5d9ff0ba1d61433d3da5143ba58449b0">
+	</div>
+	<div class="grofile-hash-map-8d1f2d235317dd3d6c87d2334c51b781">
+	</div>
+	<div class="grofile-hash-map-e32b4f03bbadd0644bb0103a69660f9f">
+	</div>
+	<div class="grofile-hash-map-3f9f4bcca3e27099c38d62f3f370a2e7">
+	</div>
+	<div class="grofile-hash-map-3248cd017fa7a8a9518b887cc4408657">
+	</div>
+	<div class="grofile-hash-map-cd97dde9f99eef1a8a565c0026313e84">
+	</div>
+	<div class="grofile-hash-map-f85087295be0769769fe831d4ba70a8a">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/kebomix.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/kebomix.wordpress.com\/wp-login.php?action=logout&_wpnonce=03f6e66701","homeURL":"http:\/\/kebomix.wordpress.com\/","postID":"55","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a.js"></script>
+
+	<div style="bottom: -208px;" id="bit" class="loggedout-follow-typekit">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “Kebomix Blog”</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input name="email" value="Enter your email address" onfocus='this.value=(this.value=="Enter your email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter your email address" : this.value;' id="loggedout-follow-field" type="email"></p>
+
+			<input name="action" value="subscribe" type="hidden">
+			<input name="blog_id" value="11104372" type="hidden">
+			<input name="source" value="http://kebomix.wordpress.com/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/" type="hidden">
+			<input name="sub-type" value="loggedout-follow" type="hidden">
+
+			<input id="_wpnonce" name="_wpnonce" value="6090326455" type="hidden"><input name="_wp_http_referer" value="/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/" type="hidden">
+			<p id="bsub-subscribe-button"><input value="Sign me up" type="submit"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://wordpress.com/?ref=lof">Build a website with WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+<script type="text/javascript" charset="UTF-8" id="polldaddyRatings"><!--//--><![CDATA[//><!--
+PDRTJS_settings_3876680_post_55={"id":3876680,"unique_id":"wp-post-55","title":"HOW%20TO%3A%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%26nbsp%3BSteps","permalink":"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/","item_id":"_post_55"}; if ( typeof PDRTJS_RATING !== 'undefined' ){if ( typeof PDRTJS_3876680_post_55 == 'undefined' ){PDRTJS_3876680_post_55 = new PDRTJS_RATING( PDRTJS_settings_3876680_post_55 );}}
+//--><!]]></script><script type="text/javascript" charset="UTF-8" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/rating.js"></script>
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/kebomix.wordpress.com\/2010\/11\/14\/how-to-make-a-system-tray-icon-in-java-in-3-steps\/":55}	</script>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+					<script type="text/javascript">
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+			<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/share.js"></script><script type="text/javascript">
+			jQuery( document ).ready( function() {
+			    jQuery.getScript( '//platform.linkedin.com/in.js?async=true', function success() {
+			        IN.init();
+			    });
+			});
+			jQuery( document.body ).on( 'post-load', function() {
+				if ( typeof IN != 'undefined' )
+					IN.parse();
+			});
+			</script>	
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/form.js"></script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/widgets.js"></script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a_003.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?m=1395343499g&amp;ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"http:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/a_002.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_tkq.push(['storeContext', {'blog_id':'11104372','blog_tz':'2','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+st_go({'blog':'11104372','v':'wpcom','tz':'2','user_id':'0','post':'55','subd':'kebomix'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRRX40R3dFUGJnelFGL1Vpfj00Q1Y4OVg5YW8zcW10MHZkflFbSThpeHx+NGEuWT8wWGFbODAuLExBXz9SMGhTOXdsSVksbG4vW3lsVzQ9eC5uUUllfkdzbVJtZ09OdFZuUH5uL0czfHF4WlhIfm1bb0omVjk1cWlIanlVMmk0LkVOMWxkU3B0ZjFRdlhpYmNwZV1JUSY/TDFSdHgwb1hmP29IMi5FRHAwb3hNfml3Zz1dd0dyMzNBckM/ZktjcC9sfnB5SHBSN3EwWGl2LjNBQTlGUHJ1T1BZOUdxLD8vN2lZRVBIV2xUOXVTcz9Rbi9jSmhJcDUyaHBpOT8uRnxKVUo/WV1IR19rT05SeU1jbFhyaGhFZnZnLkRwL1FBWg=='});
+addLoadEvent(function(){linktracker_init('11104372',55);});
+	</script><img id="wpstats" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/g.gif" alt=""><img id="wpstats2" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/g_002.gif" alt="" style="display:none">
+<noscript><img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+<div id="sharing_email" style="display: none;">
+		<form action="/2010/11/14/how-to-make-a-system-tray-icon-in-java-in-3-steps/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input name="target_email" id="target_email" type="email">
+
+			
+				<label for="source_name">Your Name</label>
+				<input name="source_name" id="source_name" type="text">
+
+				<label for="source_email">Your Email Address</label>
+				<input name="source_email" id="source_email" type="email">
+
+			
+			<div class="recaptcha" id="sharing_recaptcha"></div><input name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo" type="hidden">
+			<img style="float: right; display: none" class="loading" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/loading.gif" alt="loading" height="16" width="16">
+			<input value="Send Email" class="sharing_send" type="submit">
+			<a href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="HOW%20TO%20%20Make%20a%20System%20Tray%20Icon%20in%20Java%20in%203%20Steps%20_%20Kebomix%20Blog_files/postmessageRelay.htm" id="oauth2relay272497786" name="oauth2relay272497786"></iframe><iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_8013602152842"></iframe></body></html>

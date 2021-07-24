@@ -1,0 +1,99 @@
+STATUS | wrapper  | 2012/03/29 23:06:40 | --> Wrapper Started as Console
+STATUS | wrapper  | 2012/03/29 23:06:40 | Java Service Wrapper Community Edition 64-bit 3.5.14
+STATUS | wrapper  | 2012/03/29 23:06:40 |   Copyright (C) 1999-2011 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2012/03/29 23:06:40 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2012/03/29 23:06:40 | 
+STATUS | wrapper  | 2012/03/29 23:06:40 | Launching a JVM...
+INFO   | jvm 1    | 2012/03/29 23:06:46 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper: Initializing...
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper: start()
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper: An action was not specified.  Default to "dialog".  Use "help" for list of actions.
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper: ActionServer Enabled. 
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:   Telnet localhost 9999
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:   Commands: 
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     S: Shutdown
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     H: Expected Halt
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     R: Restart
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     D: Thread Dump
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     U: Unexpected Halt (Simulate crash)
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     V: Access Violation (Actual crash)
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:     G: Make the JVM appear to be hung.
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper:
+INFO   | jvm 1    | 2012/03/29 23:06:48 | TestWrapper: Showing dialog...
+INFO   | jvm 1    | 2012/03/29 23:07:04 | Exception in thread "AWT-EventQueue-0" java.lang.SecurityException: A SecurityManager has not yet been set.
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at org.tanukisoftware.wrapper.WrapperManager.listServices(WrapperManager.java:3477)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at org.tanukisoftware.wrapper.test.AbstractActionApp.doAction(AbstractActionApp.java:473)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at org.tanukisoftware.wrapper.test.Main$MainFrame.actionPerformed(Main.java:345)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.Button.processActionEvent(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.Button.processEvent(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.Component.dispatchEventImpl(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.Component.dispatchEvent(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue.access$000(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue$1.run(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue$1.run(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.security.AccessController.doPrivileged(Native Method)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.security.AccessControlContext$1.doIntersectionPrivilege(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.security.AccessControlContext$1.doIntersectionPrivilege(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue$2.run(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue$2.run(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.security.AccessController.doPrivileged(Native Method)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.security.AccessControlContext$1.doIntersectionPrivilege(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:04 | 	at java.awt.EventDispatchThread.run(Unknown Source)
+INFO   | jvm 1    | 2012/03/29 23:07:08 | Begin GC...
+INFO   | jvm 1    | 2012/03/29 23:07:08 | GC complete.
+INFO   | jvm 1    | 2012/03/29 23:07:09 | Begin GC...
+INFO   | jvm 1    | 2012/03/29 23:07:09 | GC complete.
+INFO   | jvm 1    | 2012/03/29 23:07:10 | Professional Edition: false
+INFO   | jvm 1    | 2012/03/29 23:07:12 | Standard Edition: false
+INFO   | jvm 1    | 2012/03/29 23:07:15 | Begin polling the current and interactive users.
+INFO   | jvm 1    | 2012/03/29 23:07:15 | The current user is: WrapperWin32User[58CA91AF1B2445E/Administrator, Thu Mar 29 22:38:12 CEST 2012, groups {}]
+INFO   | jvm 1    | 2012/03/29 23:07:15 | The current interactive user is: WrapperWin32User[58CA91AF1B2445E/Administrator, Thu Mar 29 22:38:12 CEST 2012, groups {}]
+INFO   | jvm 1    | 2012/03/29 23:07:20 | The current user is: WrapperWin32User[58CA91AF1B2445E/Administrator, Thu Mar 29 22:38:12 CEST 2012, groups {}]
+INFO   | jvm 1    | 2012/03/29 23:07:20 | The current interactive user is: WrapperWin32User[58CA91AF1B2445E/Administrator, Thu Mar 29 22:38:12 CEST 2012, groups {}]
+INFO   | jvm 1    | 2012/03/29 23:07:22 | WrapperManager: WARNING: Attempting to cause an access violation...
+INFO   | jvm 1    | 2012/03/29 23:07:22 | #
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # A fatal error has been detected by the Java Runtime Environment:
+INFO   | jvm 1    | 2012/03/29 23:07:22 | #
+INFO   | jvm 1    | 2012/03/29 23:07:22 | #  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000010002b0a, pid=1856, tid=1832
+INFO   | jvm 1    | 2012/03/29 23:07:22 | #
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # JRE version: 6.0_25-b06
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # Java VM: Java HotSpot(TM) 64-Bit Server VM (20.0-b11 mixed mode windows-amd64 compressed oops)
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # Problematic frame:
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # C  [wrapper.dll+0x2b0a]
+INFO   | jvm 1    | 2012/03/29 23:07:22 | #
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # An error report file with more information is saved as:
+INFO   | jvm 1    | 2012/03/29 23:07:22 | # E:\wrapper_3.5.14_src\bin\hs_err_pid1856.log
+INFO   | jvm 1    | 2012/03/29 23:07:23 | #
+INFO   | jvm 1    | 2012/03/29 23:07:23 | # If you would like to submit a bug report, please visit:
+INFO   | jvm 1    | 2012/03/29 23:07:23 | #   http://java.sun.com/webapps/bugreport/crash.jsp
+INFO   | jvm 1    | 2012/03/29 23:07:23 | # The crash happened outside the Java Virtual Machine in native code.
+INFO   | jvm 1    | 2012/03/29 23:07:23 | # See problematic frame for where to report the bug.
+INFO   | jvm 1    | 2012/03/29 23:07:23 | #
+ERROR  | wrapper  | 2012/03/29 23:07:23 | JVM exited unexpectedly.
+STATUS | wrapper  | 2012/03/29 23:07:28 | Launching a JVM...
+INFO   | jvm 2    | 2012/03/29 23:07:28 | WrapperManager: Initializing...
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper: Initializing...
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper: start()
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper: An action was not specified.  Default to "dialog".  Use "help" for list of actions.
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper: ActionServer Enabled. 
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:   Telnet localhost 9999
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:   Commands: 
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     S: Shutdown
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     H: Expected Halt
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     R: Restart
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     D: Thread Dump
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     U: Unexpected Halt (Simulate crash)
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     V: Access Violation (Actual crash)
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:     G: Make the JVM appear to be hung.
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper:
+INFO   | jvm 2    | 2012/03/29 23:07:28 | TestWrapper: Showing dialog...
+INFO   | jvm 2    | 2012/03/29 23:07:32 | TestWrapper: stop(0)
+STATUS | wrapper  | 2012/03/29 23:07:33 | Close trapped.  Shutting down.
+STATUS | wrapper  | 2012/03/29 23:07:33 | <-- Wrapper Stopped

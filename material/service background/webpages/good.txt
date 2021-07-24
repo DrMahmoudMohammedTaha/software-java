@@ -1,0 +1,258 @@
+’ve presented here a simple example to illustrate how to convert stand-alone java programs (mostly, JARs) to WARs which can then be deployed in full-blown application servers (JBoss, WebSphere, etc.) or light weight web containers (Tomcat, Jetty, etc.). This’s generally done to avoid the hassle of managing background daemon processes separately. Also, deploying all of these apps together in an application server gives a layer of additional stability, and makes it easily controllable.
+
+Here’s the code, and I’ll add comments when I get some time:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+	
+package sample.archetype.webapp.daemon;
+ 
+public class DaemonMain {
+ 
+    static PrintTask printTask = null;
+ 
+    public static void main(String[] args) {
+ 
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable()
+        {
+            public void run()
+            {
+                // Do cleanup operations here
+                printTask = null;
+                System.out.println("Cleanup activity: PrintTask instance set to null");
+            }
+        }));
+ 
+        // Invoke the daemon/background process code
+        printTask = new PrintTask("Hello World!");
+        printTask.invokeIndefinitePrintTask();
+    }
+ 
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+	
+package sample.archetype.webapp.daemon;
+ 
+public class PrintTask {
+ 
+    String message;
+ 
+    public PrintTask(String message){
+        this.message = message;
+    }
+ 
+    private void printMessage(){
+        System.out.println("Message: " + message);
+    }
+ 
+    public void invokeIndefinitePrintTask(){
+        while(true){
+            printMessage();
+ 
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                System.out.println("Caught an exception while sleeping.
+                     Description: " + e.getMessage());
+            }
+        }
+    }
+ 
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+	
+package sample.archetype.webapp.daemon;
+ 
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+ 
+public class AppStartUp implements ServletContextListener{
+ 
+    PrintTask printTask = null;
+ 
+    public void contextDestroyed(ServletContextEvent arg0) {
+        // Do cleanup operations here
+        printTask = null;
+        System.out.println("Cleanup activity: PrintTask instance set to null");
+    }
+ 
+    public void contextInitialized(ServletContextEvent arg0) {
+        // Invoke the daemon/background process code
+        printTask = new PrintTask("Hello World!");
+        printTask.invokeIndefinitePrintTask();
+    }
+ 
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+	
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<web-app version="2.5"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+ 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ 
+    <display-name>Archetype Created Web Application</display-name>
+ 
+    <listener>
+        <listener-class>sample.archetype.webapp.daemon.AppStartUp</listener-class>
+    </listener>
+ 
+</web-app>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+	
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>sample.archetype.webapp.daemon</groupId>
+    <artifactId>webapp_daemon</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    webapp_daemon Maven Webapp
+    <url>http://maven.apache.org</url>
+    <dependencies>
+ 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            servlet-api
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+ 
+    </dependencies>
+    <build>
+        <finalName>webapp_daemon</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <port>9999</port>
+                    <path>/webapp</path>
+                    <warFile>${project.basedir}/target/${project.build.finalName}.war</warFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

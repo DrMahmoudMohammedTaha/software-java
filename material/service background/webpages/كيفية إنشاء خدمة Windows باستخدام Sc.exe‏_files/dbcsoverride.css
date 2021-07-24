@@ -1,0 +1,92 @@
+﻿#thinColumn .wp.HCon,
+#thinColumn .wp.TCon,
+#thinColumn .wp.searchThin a,
+#thinColumn .wp .list .text,
+#thinColumn .wp .list .text,
+#thinColumn .wp .list .more,
+#thinColumn .wp .list .back,
+.wp.lastReview td
+{
+	font-size: 70%;
+}
+
+#thinColumn .wp.searchThin select,
+#thinColumn .wp.articleTrans select,
+#thinColumn .wp.searchThin input.text,
+#mainColumn .wp .dllHelpSearch .select select,
+#mainColumn div.text input.text
+{
+	font-size: 75%;
+}
+
+#mainColumn .wp.HCon,
+#mainColumn .wp.TCon
+{
+    font-size: 75%;
+}
+
+#mainColumn .wp .search div.select select,
+#mainColumn .wp .search div.text input.text
+{
+	font-size: 105%;
+}
+
+#mainColumn .wp .search div.text #query
+{	
+	FONT-SIZE: 0.8em;
+}
+
+a.custip:hover span 
+{
+	font-size: 75%;
+	
+}
+.lc input.text
+{
+	font-size: 75%!important;
+}
+.wp .lc div.text input.text
+{
+	font-size: 100%!important;
+}
+#mainColumn .wp .lc input.text
+{
+	font-size: 75%!important;
+}
+
+
+.lcr table th, .lcr table td
+{
+	font-size: 70%;
+}
+
+.pz div table.radios tr td,
+.pz .wp .savedNewsgroup table tr td a
+{
+	font-size: 75%;
+}
+
+.kb div.title-block,
+ .kb div.title-block a
+	{
+        font-family: Meiryo, メイリオ, Verdana, Arial, Helvetica, sans-serif, MS UI Gothic !important;
+    }
+
+
+a.mstNavNavItemTabText span.mstNavNavItemText,
+.mstNavNavItemFlyout a:visited, 
+.mstNavNavItemFlyout a:active,
+.mstNavNavItemFlyout a:hover,
+.mstNavNavItemFlyout a,
+.smcNavTabDownload .description,
+.smcNavTabStore .captionColumn a,
+a.mstNavNavItemTabText span.mstNavNavItemText.selected,
+.oneMscomNavV3 .mstNavNavItemTabTextLink,
+.oneMscomNavV3 .mstNavNavItemTabText,
+.mstNavNavItemFlyout div.columnText,
+a.mstNavNavItemTabTextLink span.mstNavNavItemText,
+a.mstNavNavItemTabText span.mstNavNavItemText.selected
+{
+		font: normal 13px 'Meiryo' !important;
+	    font-weight:100 !important;
+}

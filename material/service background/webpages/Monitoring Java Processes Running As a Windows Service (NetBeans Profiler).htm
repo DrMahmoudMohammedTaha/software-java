@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<!-- Page Info -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="Blogs.Oracle.Com - NetBeans Profiler">
+  <meta name="keywords" content="blogs, oracle, blogs.oracle, blogging, bloggers">
+		            <title>Monitoring Java Processes Running As a Windows Service (NetBeans Profiler)</title>
+                           <meta http-equiv="Content-Language" content="en_US">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="imagetoolbar" content="no">
+
+           <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.oracle.com/nbprofiler/rsd">
+        
+            <link rel="alternate" type="application/atom+xml" title="Recent Entries (Atom)" href="https://blogs.oracle.com/nbprofiler/feed/entries/atom">
+    <link rel="alternate" type="application/rss+xml" title="Recent Entries (RSS)" href="https://blogs.oracle.com/nbprofiler/feed/entries/rss">
+    <link rel="alternate" type="application/atom+xml" title="Recent Comments (Atom)" href="https://blogs.oracle.com/nbprofiler/feed/comments/atom">
+    <link rel="alternate" type="application/rss+xml" title="Recent Comments (RSS)" href="https://blogs.oracle.com/nbprofiler/feed/comments/rss">
+
+    
+    
+<!-- Stylesheets -->
+<link rel="stylesheet" href="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/theme.css" type="text/css" media="screen">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="https://blogs.oracle.com/nbprofiler/resource/oracle2col/favicon.gif">    	</head>
+	<body>
+		<div id="container" class="two-columns"> <!-- Note: Change the class from "two-columns" to "three-columns" if needed -->
+			
+			<!-- Header -->
+			<div id="header">
+				<ul id="nav">
+					<li id="logo"><h6><a href="http://www.oracle.com/">Oracle</a></h6></li>
+					<li class="current"><a href="https://blogs.oracle.com/">Blogs Home</a></li>
+					<li><a href="http://www.oracle.com/us/products/index.html">Products &amp; Services</a></li>
+					<li><a href="http://www.oracle.com/technetwork/indexes/downloads/index.html">Downloads</a></li>
+					<li><a href="http://www.oracle.com/us/support/index.html">Support</a></li>
+					<li><a href="http://www.oracle.com/us/partnerships/index.html">Partners</a></li>
+					<li><a href="http://www.oracle.com/us/community/index.html">Communities</a></li>
+					<li><a href="http://www.oracle.com/us/corporate/index.html">About</a></li>
+                                            <li id="signIn"><a href="https://blogs.oracle.com/roller-ui/login-redirect.rol">Login</a></li>
+                    				</ul>
+				<div id="jumbotron">
+					<h4>Oracle Blog</h4>
+          <h5><a href="https://blogs.oracle.com/nbprofiler/">NetBeans Profiler</a></h5>
+          <h5 class="subhead">The NetBeans Profiler and VisualVM Blog</h5>
+				</div>
+                																										</div>
+			
+			<!-- Content -->
+			<div id="content">
+                <div id="mainColumn">
+                    
+                    <!-- Previous and Next Entries -->
+                    <div id="pager">
+                                                    « <a href="https://blogs.oracle.com/nbprofiler/entry/netbeans_profiler_is_the_development">NetBeans Profiler is...</a> |  
+                <a href="https://blogs.oracle.com/nbprofiler/">Main</a>
+                | <a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_fixed_to_correctly_recognize">VisualVM Updated To...</a> »
+                        </div>
+
+                    <!-- Entries -->
+				    
+                <div class="day">
+
+
+	<div class="entry" id="monitoring_java_processes_running_as">
+
+	<h3 class="entry-title">
+			Monitoring Java Processes Running As a Windows Service
+	    </h3>
+
+    <h4 class="entry-meta">By Jiri Sedlacek on <a href="#">Jan 22, 2009</a></h4>
+
+    <div class="entry-body">
+                                        	<p>
+This post describes how Java processes running as a Windows service can 
+be monitored and/or profiled using VisualVM. By default, when you start 
+VisualVM only Java applications started by the same user are listed in 
+the Applications tree. But sometimes you may need to monitor or profile 
+for example Tomcat running as a Windows service. There are several ways 
+to do it using VisualVM:
+</p>
+
+<h3>Using JMX connection</h3>
+
+<p>
+<b>pros</b>: easy to setup<br>
+<b>cons</b>: profiling not available
+</p>
+
+<p>
+JMX connection can be used to monitor any local/remote Java application 
+in VisualVM incl. the locally or remotely running Java services. All you
+ need to do is to start the service to be monitored with some extra 
+arguments defining JMX connection parameters. Details on how to setup a 
+JMX-enabled application are available <a href="https://visualvm.dev.java.net/jmx_connections.html">here</a>.
+ Once started, you can connect to the application using the Add JMX 
+Connection action. Drawback of this solution is that you cannot profile 
+applications defined by JMX connection, only the monitoring features are
+ available.
+</p>
+
+
+<h3>Running VisualVM as a service</h3>
+
+<p>
+<b>pros</b>: allows profiling services<br>
+<b>cons</b>: not available on Windows Vista
+</p>
+
+<p>
+Since only Java processes running under the same user as VisualVM can be
+ profiled, the only way to profile Windows service (which is by default 
+running under the System account) is to start the VisualVM itself as a 
+Windows service. Note that this approach doesn't work on Windows Vista 
+due to security restrictions which by default prevent the services to 
+display any UI. If you have appropriate permissions (ideally perform as 
+Administrator) follow these steps:
+
+</p><ol>
+  <li>Get the <code>instsrv.exe</code> and <code>srvany.exe</code> tools if you don't have them already, they are for example part of the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=9d467a69-57ff-4ae7-96ee-b18c4790cffd&amp;displaylang=en">Windows Server 2003 Resource Kit Tools</a>.</li>
+
+  <li>Create a Windows service to launch the VisualVM using this command:<br>
+  <pre>   c:\\wrk\\instsrv.exe VisualVM c:\\wrk\\srvany.exe</pre>
+  This will create a new <code>srvany</code> service (a wrapper service 
+to start any executable) called VisualVM. General instructions on 
+creating new Windows services are available <a href="http://support.microsoft.com/kb/q137890">here</a>.
+<br><br><img src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/service_2_1.png" border="0"><br><br></li>
+
+  <li>Using a registry editor (<code>regedit.exe</code>, <code>regedt32.exe</code>) create a new Key called <code>Parameters</code> in <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\VisualVM</code>. Then inside the <code>Parameters</code> key create a new <code>String</code> value (<code>REG_SZ</code>) called <code>Application</code> containing a full path to <code>visualvm.exe</code>. This will instruct the <code>srvany</code> service to start VisualVM.
+<br><br><img src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/service_2_2.png" border="0"><br><br></li>
+
+  <li>Make sure the service is configured to run under Local System 
+account with 'Allow service to interact with desktop' option enabled. 
+Also, it's a good idea to set the service Start up type to Manual.
+<br><br><img src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/service_2_3.png" border="0"><br><br></li>
+</ol>
+<p></p>
+
+<p>
+Once you have performed the steps, you can simply start the VisualVM 
+service which will launch the tool in context of System account. After 
+confirming the VisualVM license dialog you should see all the running 
+Java services in Applications tree and all the features incl. profiling 
+should be available.
+</p>
+
+
+<h3>Running jstatd as a service</h3>
+
+<p>
+<b>pros:</b> automatic discovery of remote services<br>
+<b>cons:</b> profiling not available, works only remotely
+</p>
+
+<p>
+Instead of running the VisualVM itself as a service, you can run the <code>jstatd</code>
+ daemon as a service. This will make all running Java services visible 
+to the jvmstat technology used by VisualVM to automatically discover 
+Java applications. Note that you cannot use this approach for monitoring
+ locally running Java services, it only works remotely. In general, the 
+steps are exactly the same as for running VisualVM itself as a service:
+
+</p><ol>
+  <li>Get the <code>instsrv.exe</code> and <code>srvany.exe</code> tools if you don't have them already, they are for example part of the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=9d467a69-57ff-4ae7-96ee-b18c4790cffd&amp;displaylang=en">Windows Server 2003 Resource Kit Tools</a>.</li>
+
+  <li>Create a Windows service to launch the <code>jstatd.exe</code> using this command:<br>
+  <pre>   c:\\wrk\\instsrv.exe jstatd c:\\wrk\\srvany.exe</pre>
+  This will create a new <code>srvany</code> service (a wrapper service 
+to start any executable) called jstatd. General instructions on creating
+ new Windows services are available <a href="http://support.microsoft.com/kb/q137890">here</a>.
+<br><br><img src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/service_3_1.png" border="0"><br><br></li>
+
+  <li>Using a registry editor (<code>regedit.exe</code>, <code>regedt32.exe</code>) create a new Key called <code>Parameters</code> in <code>HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\jstatd</code>. Then inside the <code>Parameters</code> key create a new <code>String</code> value (<code>REG_SZ</code>) called <code>Application</code> containing a full path to <code>jstatd.exe</code> and security parameters. This will instruct the <code>srvany</code> service to start the <code>jstatd</code> daemon. See the <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jstatd.html"><code>jstatd</code> man page</a> for details on setting up the daemon.
+<br><br><img src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/service_3_2.png" border="0"><br><br></li>
+
+  <li>Make sure the service is configured to run under Local System 
+account. Note that the 'Allow service to interact with desktop' option 
+doesn't need to be enabled as <code>jstatd.exe</code> is a command-line tool without any UI. Also, it's a good idea to set the service Start up type to Manual.
+<br><br><img src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/service_3_3.png" border="0"><br><br></li>
+</ol>
+<p></p>
+
+<p>
+Once you have performed the steps, you can simply start the jstatd 
+service and the host as a new host in the remote VisualVM. All the Java 
+services should then be displayed under the host node in Applications 
+tree. Details on monitoring remote applications are available <a href="https://visualvm.dev.java.net/applications_remote.html">here</a>. Note that profiling won't be available for these applications.
+</p>
+        
+    </div>
+
+    <div class="entry-footer">
+        <p class="entry-category">Category: Tips &amp; Tricks</p>
+        <p class="entry-tags">Tags:  none </p>
+        <p class="entry-links">
+        <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as">Permanent link to this entry</a>
+                        </p>
+    </div>
+
+	    
+	</div>
+
+</div>    
+    
+          
+                    <!-- Previous and Next Entries -->
+                    <div id="pagerBottom">
+                                                    « <a href="https://blogs.oracle.com/nbprofiler/entry/netbeans_profiler_is_the_development">NetBeans Profiler is...</a> |  
+                <a href="https://blogs.oracle.com/nbprofiler/">Main</a>
+                | <a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_fixed_to_correctly_recognize">VisualVM Updated To...</a> »
+                        </div> 
+                    
+                    <!-- Comments -->
+                                                <a name="comments"></a>
+    <div class="comments" id="comments">
+
+            <div class="comments-head">Comments:</div>
+            
+    <br>
+                        <a name="comment-1232621369000" id="comment-1232621369000"></a>
+            <div class="comment odd" id="comment1">
+
+                
+<p>You can also launch a cmd.exe as Local System (see <a href="http://blogs.msdn.com/adioltean/articles/271063.aspx%29" rel="nofollow">http://blogs.msdn.com/adioltean/articles/271063.aspx)</a> and launch visualvm from that</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>rzara</b>
+                
+                on January 22, 2009 at 11:49 AM CET
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1232621369000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1232632969000" id="comment-1232632969000"></a>
+            <div class="comment even" id="comment2">
+
+                
+<p>Why not repost this on <a href="http://java.dzone.com/?" rel="nofollow">http://java.dzone.com?</a> Many more people would read it.</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>Geertjan</b>
+                
+                on January 22, 2009 at 03:02 PM CET
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1232632969000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1232832771000" id="comment-1232832771000"></a>
+            <div class="comment odd" id="comment3">
+
+                
+<p>You can also remote desktop to the console session and run it there.</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>brian harris</b>
+                
+                on January 24, 2009 at 10:32 PM CET
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1232832771000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1250483708000" id="comment-1250483708000"></a>
+            <div class="comment even" id="comment4">
+
+                
+<p>I made all steps of "Running VisualVM as a service", but then i start
+ the service i can not see the  VisualVM window. I see the VisualVM 
+throw in windows task manager.<br>
+OS is Windows 2003 Server</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>Loki</b>
+                
+                on August 17, 2009 at 06:35 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1250483708000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1252386173000" id="comment-1252386173000"></a>
+            <div class="comment odd" id="comment5">
+
+                
+<p>I did as you said about jstatd service but when I'm trying to start 
+the service it stops right away. When I use the commandline in cmd.exe 
+it works fine. Any ideas why it stops?</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>Johannes Hjorteen</b>
+                
+                on September 08, 2009 at 07:02 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1252386173000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1254006686000" id="comment-1254006686000"></a>
+            <div class="comment even" id="comment6">
+
+                
+<p>@Loki,,</p>
+
+
+<p>Is this Win2003 machine, a local one or have you logged in remotely.</p>
+
+
+<p>The desktop interaction works only with Console sessions, so if it is
+ remote, you may need to try with "mstsc /console -v hostname" and then 
+try the same.</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <a rel="nofollow" href="http://vicevoice.blogspot.com/"><b>Krishna R</b></a>
+                
+                on September 27, 2009 at 01:11 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1254006686000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1254291588000" id="comment-1254291588000"></a>
+            <div class="comment odd" id="comment7">
+
+                
+<p>The whole JMX stuff is fundamentally broken when it comes to Windows services. Sad, but Sun just doesn't care.</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>Karl Peterbauer</b>
+                
+                on September 30, 2009 at 08:19 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1254291588000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1254292315000" id="comment-1254292315000"></a>
+            <div class="comment even" id="comment8">
+
+                
+<p>To Karl: Do you have any concrete problem with JMX connections on Windows services? Everything seems to work just fine for me.</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <a rel="nofollow" href="http://visualvm.dev.java.net/"><b>Jiri Sedlacek</b></a>
+                
+                on September 30, 2009 at 08:31 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1254292315000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1264473187000" id="comment-1264473187000"></a>
+            <div class="comment odd" id="comment9">
+
+                
+<p>i can run jconsole as service in windows 7<br>
+but it doesn't show the running java<br>
+processes. and windows 7 sais:</p>
+
+
+<p>WARNING:  The service jconsolesvc is configured as interactive whose support is<br>
+being deprecated. The service may not function properly.</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>hmhm</b>
+                
+                on January 26, 2010 at 03:33 AM CET
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1264473187000" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1305100948839" id="comment-1305100948839"></a>
+            <div class="comment even" id="comment10">
+
+                To run jstatd as a service on windows 2008 R2 64bit 
+install XYNTService 
+(http://www.codeproject.com/KB/system/xyntservice.aspx) as windows 
+resource kit is not supported for 2008. It is a service wrapping other 
+application that do not support service protocol like start and stop.
+
+                <p class="comment-details">
+                Posted by
+                                    <b>guest</b>
+                
+                on May 11, 2011 at 10:02 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1305100948839" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1311577441660" id="comment-1311577441660"></a>
+            <div class="comment odd" id="comment11">
+
+                
+<p>If you are running remotely using Remote Desktop, the UI will not pop
+ up.  Add " /admin" to the server name when you sign in to get around 
+that problem. </p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>dberkley</b>
+                
+                on July 25, 2011 at 09:04 AM CEST
+
+                <a href="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as#comment-1311577441660" class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                </div>
+                        
+    <div class="comments-form">
+    <div class="comments-head">Post a Comment:</div>
+    <a name="comment-form"></a>
+
+
+    
+    <form method="post" action="https://blogs.oracle.com/nbprofiler/entry/monitoring_java_processes_running_as" focus="name" name="commentForm" onsubmit="fixURL(this); return validateComments(this)">    
+        <input name="method" value="post" type="hidden">
+
+        <ul>
+            <li>
+                <label class="desc">Name:</label>
+                <input name="name" class="text large" value="guest" size="50" maxlength="255" type="text">
+            </li>
+
+            <li><label class="desc">E-Mail:</label>
+                <input name="email" class="text large" size="50" maxlength="255" type="text">
+            </li>
+
+            <li><label class="desc">URL:</label>
+                <input name="url" class="text large" size="50" maxlength="255" type="text">
+            </li>
+
+                    <li><input class="checkbox" id="notify" name="notify" type="checkbox">
+                <label for="notify" class="choice">Notify me by email of new comments</label>
+            </li>
+                    <li>
+                <input class="checkbox" id="rememberInfo" name="rememberInfo" type="checkbox">
+                <label for="rememberInfo" class="choice">Remember Information?</label>
+            </li>
+            <li>
+                <label class="desc">Your Comment:</label>
+             
+            <textarea name="content" class="textarea large" cols="40" rows="10"></textarea>
+
+            </li>
+            <li class="info">
+                <span class="comments-syntax-indicator">
+                HTML Syntax:
+                                    <span class="disabled">NOT allowed</span>
+                                </span>
+            </li>
+            <li class="info">
+               <script type="text/javascript" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/clientSideInclude.htm"></script>
+               <div id="commentAuthenticator"><p>Please answer this simple math question</p><p>6 + 62 = <input name="answer"></p>
+</div>
+            </li>
+            <li>
+               <input class="button" name="post" value="&nbsp;Preview&nbsp;" onclick="this.form.method.value='preview';this.form.submit()" type="button">
+               <input class="button" name="post" value="&nbsp;Post&nbsp;" type="submit">
+            </li>
+        </ul>
+
+    </form>
+
+    <script type="text/javascript" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/roller.htm"></script>
+    <script type="text/javascript">
+    clientSideInclude('commentAuthenticator', '/CommentAuthenticatorServlet');
+
+    var author = getCookie("commentAuthor");
+    var email = getCookie("commentEmail");
+    var url = getCookie("commentUrl");
+    // check each field - IE will render "null"
+   
+    if (author) {
+        document.forms['commentForm'].name.value = author;
+    }else{
+        document.forms['commentForm'].name.value = "guest";
+    }
+
+    if (email) {
+        document.forms['commentForm'].email.value = email;
+    }
+    if (url) {
+        document.forms['commentForm'].url.value = url;
+    }
+
+    if (author || email || url) {
+        document.forms['commentForm'].rememberInfo.checked = true;
+    }
+
+    function fixURL(theForm) {
+        if (theForm.url.value != "" &&
+            theForm.url.value.indexOf("http://") == -1) { //prepend http://
+            theForm.url.value = "http://"+theForm.url.value;
+        }
+        saveUserInformation(theForm);
+    }
+
+    function saveUserInformation(theForm) {
+        if (theForm.rememberInfo.checked) {
+            rememberUser(theForm);
+        } else {
+            forgetUser(theForm);
+        }
+    }
+
+    function validateComments(theForm) {
+        if (theForm.content.value == "") {
+            alert("Please enter a comment.");
+            theForm.content.focus();
+            return false;
+        }
+ 
+        if (document.forms['commentForm'].name.value=="" ) {
+        document.forms['commentForm'].name.value = "guest";
+        }
+
+    }
+    </script>
+
+
+    </div>
+                    				</div>
+
+                <!-- Sidebar -->
+                           <!-- Right Sidebar -->
+<div id="rightColumn">
+
+<!-- About -->
+  <div id="aboutSection">    
+    <h5 class="section-title">About</h5>
+    <div class="section-body">
+                  <p>A blog by NetBeans Profiler &amp; VisualVM developers.</p>
+            </div>
+  </div>  
+<!-- End About -->
+
+<!-- Search -->
+  <div id="searchSection">  
+    <h5 class="section-title">Search</h5>
+    <div class="section-body">
+        <script type="text/javascript">
+    function prepareSearchForm() {
+        document.getElementById("searchForm").searchQuery.name = "oq";
+        document.getElementById("searchFilter").innerHTML = "<input type='hidden' id='searchFilteredQuery' name='q' value=''>" +
+                "<br /><input type='checkbox' id='searchScope' checked='true' /><label for='searchScope'>Search only this blog</label>";
+    }
+    function submitSearchForm() {
+        var form = document.getElementById("searchForm");
+        var query = form.searchQuery.value;
+        var urlSearchOp = form.searchOp.value; //searchOp
+        var urlGroup = form.searchGroup.value; //group
+         
+        if (query == null || query == "") {
+            return false;
+        }
+        var filter = " weblog:nbprofiler";
+        var curUrl = window.location.href;
+        if (form.searchScope.checked && form.searchQuery.value.indexOf(filter) == -1) {
+            form.searchFilteredQuery.value = form.searchQuery.value + filter;
+        }
+        else {
+            form.searchFilteredQuery.value = form.searchQuery.value;
+        }
+
+        						 form.action="https://search.oracle.com/search/search";
+				
+        window.location = form.action + "?search_p_main_operator=" + urlSearchOp + "&group=" + urlGroup +"&q=" + form.searchFilteredQuery.value;
+        return false;
+    }
+</script>
+<form id="searchForm" action="http://search.oracle.com/search/search" onsubmit="return submitSearchForm();" method="get">
+    <input id="searchOp" name="search_p_main_operator" value="all" type="hidden">
+    <input id="searchGroup" name="group" value="Blogs" type="hidden">
+    <label for="searchQuery" title="Enter search term">Enter search term:</label>
+    <br>
+    <input id="searchQuery" name="oq" class="text" alt="Enter Search Term" type="text">
+    <input class="input-image" id="searchSubmit" alt="Submit Search" title="Submit Search" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/search-button.gif" type="image">
+    <span id="searchFilter"><input id="searchFilteredQuery" name="q" value="" type="hidden"><br><input id="searchScope" checked="checked" type="checkbox"><label for="searchScope">Search only this blog</label></span>
+</form>
+<script type="text/javascript">prepareSearchForm();</script>
+    </div>
+  </div>    
+<!-- End Search -->
+
+<!-- Recent Posts -->
+  <div id="recentSection">  
+                <h5 class="section-title">Recent Posts</h5>
+        <div class="section-body">
+            <ul>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_1_3_2_released">VisualVM 1.3.2 Released</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_1_3_1_released">VisualVM 1.3.1 Released</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_1_3_released">VisualVM 1.3 Released</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/jdk_6_update_21_includes">JDK 6 Update 21 Includes VisualVM 1.2.2</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/netbeans_ide_6_9_released">NetBeans IDE 6.9 Released</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/problems_adding_remote_hosts_in">Problems Adding Remote Hosts in VisualVM on Linux/Solaris</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/oracle_plans_for_netbeans_ide">Oracle Plans for NetBeans IDE</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/jdk_6_update_18_includes">JDK 6 Update 18 Includes VisualVM 1.2.1</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_1_2_2_released">VisualVM 1.2.2 Released</a></li>
+                                    <li><a href="https://blogs.oracle.com/nbprofiler/entry/visualvm_1_2_1_released">VisualVM 1.2.1 Released</a></li>
+                            </ul>
+        </div>
+      </div>    
+<!-- End Recent Posts -->
+
+
+<!-- Top Tags -->
+  <div id="tagsSection">  
+            <h5 class="section-title">Top Tags</h5>
+    <div class="tags section-body">
+        <ul class="tag-cloud">
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/backport" title="1" class="weight-1">backport</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/export" title="1" class="weight-1">export</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/heap" title="1" class="weight-1">heap</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/java" title="2" class="weight-2">java</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/javaone" title="1" class="weight-1">javaone</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/jmeter" title="2" class="weight-2">jmeter</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/jvmstat" title="1" class="weight-1">jvmstat</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/mac" title="1" class="weight-1">mac</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/memory" title="1" class="weight-1">memory</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/netbeans" title="2" class="weight-2">netbeans</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/openjdk" title="1" class="weight-1">openjdk</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/oql" title="1" class="weight-1">oql</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/os" title="1" class="weight-1">os</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/performance" title="2" class="weight-2">performance</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/profiler" title="4" class="weight-4">profiler</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/profiling" title="2" class="weight-2">profiling</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/ubuntu" title="1" class="weight-1">ubuntu</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/visualvm" title="6" class="weight-5">visualvm</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/tags/x" title="1" class="weight-1">x</a></li>
+                </ul>
+    </div>
+    </div>    
+<!-- End Top Tags -->
+    
+
+<!-- Categories -->
+  <div id="categoriesSection">
+    <h5 class="section-title">Categories</h5>
+    <div class="section-body">
+                        <ul class="rCategory">
+                                                                            <li><a href="https://blogs.oracle.com/nbprofiler/category/Features">Features</a></li>
+                                                                                                            <li><a href="https://blogs.oracle.com/nbprofiler/category/News">News</a></li>
+                                                                                                            <li><a href="https://blogs.oracle.com/nbprofiler/category/Tips+%26+Tricks">Tips &amp; Tricks</a></li>
+                                                                            </ul>
+        </div>
+  </div>
+<!-- End Categories -->
+
+
+<!-- Archives -->
+   <div id="archiveSection">
+    <h5 class="section-title">Archives</h5>
+    <div class="section-body">
+        <table summary="Blog Archive Calendar" class="hCalendarTable" border="0" cellspacing="0"><tbody><tr><td colspan="7" class="hCalendarMonthYearRow" align="center"><a href="https://blogs.oracle.com/nbprofiler/date/201103" title="Prev" class="hCalendarNavBar">«</a> November 2014</td></tr><tr><th class="hCalendarDayNameRow" align="center">Sun</th><th class="hCalendarDayNameRow" align="center">Mon</th><th class="hCalendarDayNameRow" align="center">Tue</th><th class="hCalendarDayNameRow" align="center">Wed</th><th class="hCalendarDayNameRow" align="center">Thu</th><th class="hCalendarDayNameRow" align="center">Fri</th><th class="hCalendarDayNameRow" align="center">Sat</th></tr><tr><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDay"><div class="hCalendarDayTitle">1</div></td></tr><tr><td class="hCalendarDay"><div class="hCalendarDayTitle">2</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">3</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">4</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">5</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">6</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">7</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">8</div></td></tr><tr><td class="hCalendarDay"><div class="hCalendarDayTitle">9</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">10</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">11</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">12</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">13</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">14</div></td><td class="hCalendarDayCurrent"><div class="hCalendarDayTitle">15</div></td></tr><tr><td class="hCalendarDay"><div class="hCalendarDayTitle">16</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">17</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">18</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">19</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">20</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">21</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">22</div></td></tr><tr><td class="hCalendarDay"><div class="hCalendarDayTitle">23</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">24</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">25</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">26</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">27</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">28</div></td><td class="hCalendarDay"><div class="hCalendarDayTitle">29</div></td></tr><tr><td class="hCalendarDay"><div class="hCalendarDayTitle">30</div></td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td><td class="hCalendarDayNotInMonth">&nbsp;</td></tr><tr class="hCalendarNextPrev"><td colspan="7" align="center"><a href="https://blogs.oracle.com/nbprofiler/" class="hCalendarNavBar">Today</a></td></tr></tbody></table>
+    </div>
+  </div>
+<!-- End Archives -->
+
+<!-- Bookmarks -->
+   <div id="bookmarkSection">
+                <h5 class="section-title">Bookmarks</h5>
+        <div class="section-body">
+            <ul class="rFolder">
+                    <li class="rFolderItem">
+                                <a href="http://www.netbeans.org/" title="NetBeans IDE Home Page" class="rBookmark0">NetBeans IDE</a>
+                </li>
+            <li class="rFolderItem">
+                                <a href="http://profiler.netbeans.org/" title="NetBeans Profiler Home Page" class="rBookmark0">NetBeans Profiler</a>
+                </li>
+            <li class="rFolderItem">
+                                <a href="https://visualvm.dev.java.net/" title="Project VisualVM Home Page" class="rBookmark0">Project VisualVM</a>
+                </li>
+                    </ul>
+        </div>
+          </div>    
+<!-- End Bookmarks -->
+
+<!-- Blog and Author Menu -->
+   <div id="menuSection">
+    <h5 class="section-title">Menu</h5>
+    <div class="section-body">
+            <ul class="rNavigationBar">
+        <li class="rNavItem">
+            <a href="https://blogs.oracle.com/"><span>Blogs Home</span></a>
+        </li>
+        <li class="rNavItem">
+            <a href="https://blogs.oracle.com/nbprofiler/"><span>Weblog</span></a>
+        </li>
+                                                                        
+                                                                        
+                                                                        
+                                                <li class="rNavItem">
+                    <a href="https://blogs.oracle.com/roller-ui/login-redirect.rol"><span>Login</span></a>
+                </li>
+                        </ul>
+            </div>
+  </div>    
+<!-- End Blog and Author Menu -->
+
+    
+<!-- Feeds -->
+   <div id="feedsSection">   
+    <h5 class="section-title">Feeds</h5>
+    <div class="section-body">
+        <b>RSS</b>
+            <ul class="rFeeds">
+    <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/rss">All</a></li>
+                        <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/rss?cat=%2FFeatures">/Features</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/rss?cat=%2FNews">/News</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/rss?cat=%2FTips+%26+Tricks">/Tips &amp; Tricks</a></li>
+        <li><a href="https://blogs.oracle.com/nbprofiler/feed/comments/rss">Comments</a></li>
+    </ul>
+        <b>Atom</b>    
+            <ul class="rFeeds">
+    <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/atom">All</a></li>
+                        <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/atom?cat=%2FFeatures">/Features</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/atom?cat=%2FNews">/News</a></li>
+                    <li><a href="https://blogs.oracle.com/nbprofiler/feed/entries/atom?cat=%2FTips+%26+Tricks">/Tips &amp; Tricks</a></li>
+        <li><a href="https://blogs.oracle.com/nbprofiler/feed/comments/atom">Comments</a></li>
+    </ul>
+    </div>
+  </div>          
+<!-- End Feeds -->    
+    
+</div>    			</div>
+
+			<!-- Footer -->
+			<div id="footer">
+				<p>The views expressed on this blog are those of the author and do not necessarily reflect the views of Oracle. <a href="http://www.oracle.com/html/terms.html">Terms of Use</a> | <a href="http://www.oracle.com/html/privacy.html">Your Privacy Rights</a> | <span id="teconsent"><script src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/notice" async="async" defer="defer"></script><script type="text/javascript" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/notice_002"></script>   <a style="cursor: pointer;" id="icon-id04929558001776774">Cookie Preferences</a></span>  </p>
+			</div>
+			<!-- Omniture Script --> 
+<!-- Start SiteCatalyst code -->
+
+<script language="JavaScript" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/ora_blogs.htm"></script><script type="text/javascript" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/ora_code_blogs.htm"></script><script type="text/javascript" src="Monitoring%20Java%20Processes%20Running%20As%20a%20Windows%20Service%20%28NetBeans%20Profiler%29_files/ora_code.htm"></script>
+
+<!-- End SiteCatalyst code -->
+		</div>
+	
+</body></html>

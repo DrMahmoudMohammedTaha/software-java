@@ -1,0 +1,14 @@
+konaSafe(function(){
+teUrl='http://te101.kontera.com/ContentLink/ContentLink?publisherId=179488&layout=adlinks&sId=183,187,94&cb=1417249742&creative=L&cn=eg';
+directAdsPrefetch=true;
+setMaxLinksOnPage(5);
+reJsonResponse({"AutoReport":{"rep":"ip-10-10-0-14","stopic":4},"jsABParameters":{"js_audience_targeting":false,"js_bluekai_enabled":1,"js_comscore_enabled":1,"js_feed_click_delay":true,"js_interstitial_probability":"0","js_legolas_enabled":1,"js_mobile_exclusivity":true,"js_one_layer":1,"js_peel_away_corner_enabled":false,"js_peel_away_corner_style":"dynamic_text","js_related_enabled":0,"js_related_unit_settings":"disabled"},"konaLat":"27","konaLon":"30","konaPostalCode":"","konaUserGuid":"C3D69332-77A1-11E4-97F0-0E4C36861533","pageHash":"jp_ApsmtnbmkaasnruiceetcosiioedTvassrsefiiendotnNioxiidcdlomtmennyJestclOncnaftooeoenm","publisherParams":{"inimage_payment_type_id":"1","inimage_rev_share":"0.0","luminate_account_id":""},"redirectUrl":"http://kona102.kontera.com/KonaRedirect.js?p=179488&rId=286865381463517130&cn=eg&topics=183,187,94","reporterUrl":"http://kona102.kontera.com/KonaReport.js?p=179488&rId=286865381463517130&cn=eg&topics=183,187,94","scripts":[{"scriptURL":"http://rt.legolas-media.com/lgrt?ci=2&ti=253&kch=[SUPER_TOPIC]&kst=[SITE_DOMAIN]&ksp=[SEARCH_PHRASE]"},{"postCode":"COMSCORE.beacon({c1:8,c2:\"6035179\",c3:\"12345678\"});","scriptURL":"http://b.scorecardresearch.com/beacon.js"}],"topics":[[183,29,4]],"utf8":false});
+pageTopicVector="";
+}, "reaction response");
+konaSafe(function(){
+konaTweakMode=109397531;
+konaRequestId="286865381463517130";
+konaPageLoadSendReport=0;
+setKonaResults(1,1,"L|0|0|0|white|none&pRfr=http://www.java-tips.org/other-api-tips/jdic/adding-icons-to-system-tray-2.html&dc_aff_id=");
+onKonaReturn(1);
+}, "reaction response");

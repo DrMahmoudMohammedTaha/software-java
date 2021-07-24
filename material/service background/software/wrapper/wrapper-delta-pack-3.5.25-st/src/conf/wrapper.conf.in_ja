@@ -1,0 +1,218 @@
+#encoding=Shift_JIS
+# Configuration files must begin with a line specifying the encoding
+#  of the the file.
+
+#********************************************************************
+# Wrapper ライセンス・プロパティ（コミュニティー版では不要です）
+#********************************************************************
+# JavaServiceWrapperプロフェッショナル版やスタンダード版をご利用に
+#  なるには有効なライセンスキーが必要です。次のページで
+#  ライセンスの購入、またはトライアル・ライセンスのリクエストをどうぞ:
+# http://wrapper.tanukisoftware.com/purchase
+# http://wrapper.tanukisoftware.com/trial
+
+# インクルード・ファイル（カスケード形式）に関連する問題解決には、
+#  次の行頭記号「＃」を取り外してインクルード・ファイルのデバックを
+#  有効にしてください：
+##include.debug
+
+# Wrapperでは、次のどちらかの任意ファイルを探して、有効なライセンスキー
+#  のチェックをします。ライセンスキー・プロパティは任意的に
+#  このコンフィギュレーション・ファイルに直接含めることができます。
+#include ../conf/wrapper-license.conf
+#include ../conf/wrapper-license-%WRAPPER_HOST_NAME%.conf
+
+# 次のプロパティでは、見つかったかライセンスキーの情報を出力します。
+#  これで、ライセンスに関する問題解決に役立つでしょう。
+#wrapper.license.debug=TRUE
+
+#********************************************************************
+# Wrapper のローカライズ
+#********************************************************************
+# Wrapperを利用する場所（ロケール）を指定してしてください。
+#  デフォルトで、システム・ロケールを利用します。
+#wrapper.lang=ja_JP # en_US or ja_JP
+
+# Wrapperの言語リソースの保存場所を指定してください。
+#  もし見つからない場合には、デフォルトで「en_US」を利用します。
+wrapper.lang.folder=../lang
+
+#********************************************************************
+# Wrapper Java プロパティ
+#********************************************************************
+# Java アプリケーション
+#  Javaバイナリをシステム・パスに配置します：
+wrapper.java.command=java
+#  特定のJavaバイナリを指定してください：
+#set.JAVA_HOME=/java/path
+#wrapper.java.command=%JAVA_HOME%/bin/java
+
+# 生成されたJavaコマンドラインを完全ログ化するようにWrapperを設定します。
+#wrapper.java.command.loglevel=INFO
+
+# Java メインクラスを指定してください。
+#  このクラスはWrapperListenerインターフェイスを実装しているか、
+#  あるいは、WrapperManagerクラスが確実に初期化されている状態でなければなりません。
+#  その手間を省くためにヘルパークラスを利用すると便利です。
+#  その詳細はインテグレーション・セクションをご覧ください。
+wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperSimpleApp
+
+# Java クラスパス (wrapper.jarを含む)  
+#  １から始まるプロパティ名でクラスパス要素を必要に応じて追加してください。
+wrapper.java.classpath.1=../lib/wrapper.jar
+
+# Java ライブラリーパス (「Wrapper.DLL」あるいは「libwrapper.so」の場所)
+wrapper.java.library.path.1=../lib
+
+# Java ビット。アプリケーションのプラットフォーム上で、
+#  動作するビット・モード（３２ビット／６４ビット）をJVMに設定します。
+wrapper.java.additional.auto_bits=TRUE
+
+# Java追加パラメーター。
+#  １から始まるプロパティ名でパラメーターを必要に応じて追加してください。
+#wrapper.java.additional.1=
+
+# Java初期メモリ・サイズ (単位：MB)
+#wrapper.java.initmemory=3
+
+# Java最大メモリ・サイズ (単位：MB)
+#wrapper.java.maxmemory=64
+
+# アプリケーション・パラメーター。
+#  １から始まるプロパティ名でパラメーターを必要に応じて追加してください。
+wrapper.app.parameter.1=<YourMainClass>
+
+#********************************************************************
+# Wrapper ログ関係のプロパティ
+#********************************************************************
+# Wrapperからのデバック出力を有効にします。
+# wrapper.debug=TRUE
+
+# コンソールの出力形式を設定します。(可能な設定値はサイト解説を参照)
+wrapper.console.format=PM
+
+# コンソール出力のログレベルを設定します。 (可能な設定値はサイト解説を参照)
+wrapper.console.loglevel=INFO
+
+# Wrapper出力ログに利用するログファイル名を設定します。
+wrapper.logfile=../logs/wrapper.log
+
+# ログファイルの出力形式を設定します。 (可能な設定値はサイト解説を参照)
+wrapper.logfile.format=LPTM
+
+# ログファイル出力のログレベルを設定します。(可能な設定値はサイト解説を参照)
+wrapper.logfile.loglevel=INFO
+
+# ログファイルの最大サイズを設定します。ファイルサイズが設定した値に
+#  達するとロール番号を付加してログファイルを分割して保存します。
+#  デフォルト値「0」では、ログファイル分割保存を無効にします。
+#  サイズはバイト数で指定します。
+#  サイズの略語も利用可能：「k」（キロバイト）、「m」（メガバイト）
+#  例：「10m」= 「10メガバイト」
+wrapper.logfile.maxsize=0
+
+# ログファイルの最大ファイル数を設定します。ログファイルのファイル数
+#  が設定した値に達すると古いファイルから削除していきます。
+#  デフォルト値「0」では、ログファイル数に制限はありません。
+wrapper.logfile.maxfiles=0
+
+# SYSやイベントのログ出力のログレベルを設定します。(可能な設定値はサイト解説を参照)
+wrapper.syslog.loglevel=NONE
+
+#********************************************************************
+# Wrapper 全般プロパティ
+#********************************************************************
+# プロパティに記述されたナンバリングで、連続していないギャップ
+#  （途切れ）の利用を有効にします。
+wrapper.ignore_sequence_gaps=TRUE
+
+# PIDファイルが既に存在している場合は起動しない。
+wrapper.pidfile.strict=TRUE
+
+# コンソールとして動作しているときのタイトルを設定します。
+wrapper.console.title=@app.long.name@
+
+#********************************************************************
+# Wrapper JVM チェック機能
+#********************************************************************
+# JVMでデッドロックしたスレッドを検知します。(スタンダード版の機能)
+wrapper.check.deadlock=TRUE
+wrapper.check.deadlock.interval=60
+wrapper.check.deadlock.action=RESTART
+wrapper.check.deadlock.output=FULL
+
+# メモリ不足の検知。(スタックトレースのテキストのみ)
+#  Ignore -verbose:class output to avoid false positives.
+wrapper.filter.trigger.1000=[Loaded java.lang.OutOfMemoryError
+wrapper.filter.action.1000=NONE
+# (Simple match)
+wrapper.filter.trigger.1001=java.lang.OutOfMemoryError
+# (Only match text in stack traces if -XX:+PrintClassHistogram is being used.)
+#wrapper.filter.trigger.1001=Exception in thread "*" java.lang.OutOfMemoryError
+#wrapper.filter.allow_wildcards.1001=TRUE
+wrapper.filter.action.1001=RESTART
+wrapper.filter.message.1001=JVMのメモリーが無くなりました。
+
+#********************************************************************
+# Wrapper メール通知機能　 (プロフェッショナル版の機能)
+#********************************************************************
+# 一般的なイベント・メール（イベントに応じたメール）設定。
+#wrapper.event.default.email.debug=TRUE
+#wrapper.event.default.email.smtp.host=<SMTP_Host>
+#wrapper.event.default.email.smtp.port=25
+#wrapper.event.default.email.subject=[%WRAPPER_HOSTNAME%:%WRAPPER_NAME%:%WRAPPER_EVENT_NAME%] Event Notification
+#wrapper.event.default.email.sender=<Sender email>
+#wrapper.event.default.email.recipient=<Recipient email>
+
+# イベント・メールにログファイルを添付する際の設定。
+#wrapper.event.default.email.attach_log=TRUE
+#wrapper.event.default.email.maillog.lines=50
+#wrapper.event.default.email.maillog.format=LPTM
+#wrapper.event.default.email.maillog.loglevel=INFO
+
+# 特定のイベント時に反応するメール機能を有効にします。
+#wrapper.event.wrapper_start.email=TRUE
+#wrapper.event.jvm_prelaunch.email=TRUE
+#wrapper.event.jvm_start.email=TRUE
+#wrapper.event.jvm_started.email=TRUE
+#wrapper.event.jvm_deadlock.email=TRUE
+#wrapper.event.jvm_stop.email=TRUE
+#wrapper.event.jvm_stopped.email=TRUE
+#wrapper.event.jvm_restart.email=TRUE
+#wrapper.event.jvm_failed_invocation.email=TRUE
+#wrapper.event.jvm_max_failed_invocations.email=TRUE
+#wrapper.event.jvm_kill.email=TRUE
+#wrapper.event.jvm_killed.email=TRUE
+#wrapper.event.jvm_unexpected_exit.email=TRUE
+#wrapper.event.wrapper_stop.email=TRUE
+
+# メール本文のカスタマイズ設定。
+wrapper.event.jvm_restart.email.body=The JVM was restarted.\n\nPlease check on its status.\n
+
+#********************************************************************
+# Wrapper Windows NT/2000/XP サービス関連のプロパティ
+#********************************************************************
+# 警告 - このコンフィギュレーション・ファイルを利用して
+#  アプリケーションをサービスとしてインストールして動作している場合、
+#  以下のプロパティを変更しないでください。
+#  これらのプロパティを変更する前に、サービスからアンインストールして
+#  変更後に再インストールしてください。
+
+# サービス名
+wrapper.name=@app.name@
+
+# サービスの表示名
+wrapper.displayname=@app.long.name@
+
+# サービスの説明
+wrapper.description=@app.description@
+
+# サービスの依存関係。 必要に応じて１から始まるプロパティ名で依存関係を追加してください。
+wrapper.ntservice.dependency.1=
+
+# サービスがインストールされているモードを設定します。
+#  設定可能な値：「AUTO_START」「DELAY_START」「DEMAND_START」
+wrapper.ntservice.starttype=AUTO_START
+
+# サービスがデスクトップと通信できる互換モードにします。
+wrapper.ntservice.interactive=false
