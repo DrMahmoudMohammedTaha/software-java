@@ -1,0 +1,5 @@
+3
+ACM
+solve on spoj topcoder uva and a2
+read book about algorithms
+continue java book and GUI

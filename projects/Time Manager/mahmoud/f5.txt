@@ -1,0 +1,6 @@
+4
+ESC
+take edx micro coarse
+program microcontroller by c++
+try to do projects in microc liberaries
+make a radio by yourself and some electronics

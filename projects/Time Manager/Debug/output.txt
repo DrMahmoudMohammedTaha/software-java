@@ -1,0 +1,7 @@
+courses electronics engineer need
+1- Pcb
+2- microcontroller and microprocessor
+3- vhdl
+4- analogue electronics
+5- digital electronics
+6- c and c++
