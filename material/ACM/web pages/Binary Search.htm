@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Binary Search</title>
+    <link href="Binary%20Search_files/main.css" rel="stylesheet">
+    <script src="Binary%20Search_files/jquery.js"></script>
+    <script src="Binary%20Search_files/jquery_003.js"></script>
+    <script src="Binary%20Search_files/jquery_002.js"></script>
+    <script src="Binary%20Search_files/main.js"></script>
+    <script src="Binary%20Search_files/teacher.js"></script>
+  <script src="Binary%20Search_files/embed.js" async="" type="text/javascript"></script><script charset="UTF-8" async="" src="Binary%20Search_files/alfie.js"></script></head>
+  <body>
+    <div id="site">
+      <div id="head"></div>
+      <div id="left">
+        <p><a class="r" href="http://algorithms.openmymind.net/">home</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/search/linear.html">linear search</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/structures/arrays.html">arrays</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/structures/linkedlists.html">linked lists</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/structures/hashtables.html">hash tables</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/search/binarysearch.html">binary search</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/sort/bubblesort.html">bubble sort</a></p>
+        <p><a class="r" href="http://algorithms.openmymind.net/sort/insertionsort.html">insertion sort</a></p>
+      </div>
+      <div id="content">
+        <h1>Binary Search</h1>
+<p>Binary search relies on a divide and conquer strategy to find a value
+ within an already-sorted collection. The algorithm is deceptively 
+simple. Pretend I was thinking of a number between 1 and 100. Every 
+guess you take, I'll say higher or lower. The most efficient way to 
+discover my number is to first guess 50. Higher. 75. Lower. 62. Higher 
+68. Yes!</p>
+
+<h2>Implementation</h2>
+<pre id="code1"><span class="keyword">function</span> findIndex(values, target) {
+  <span class="line r"><span class="control">return</span> binarySearch(values, target, 0, values.length - 1);</span>
+};
+
+<span class="keyword">function</span> binarySearch(values, target, start, end) {
+  <span class="line r"><span class="control">if</span> (start &gt; end) { <span class="control">return</span> -1; }</span> <span class="comment">//<span class="control">do</span>es not exist</span>
+
+  <span class="line r"><span class="keyword">var</span> middle = Math.floor((start + end) / 2);</span>
+  <span class="line r"><span class="keyword">var</span> value = values[middle];</span>
+
+  <span class="line r"><span class="control">if</span> (value &gt; target)</span> { <span class="control">return</span> <span class="line r">binarySearch(values, target, start, middle-1);</span> }
+  <span class="line r"><span class="control">if</span> (value &lt; target)</span> { <span class="control">return</span> <span class="line r">binarySearch(values, target, middle+1, end);</span> }
+  <span class="line r"><span class="control">return</span> middle; <span class="comment">//found!</span></span>
+}
+<span class="line r">findIndex([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 20);</span>
+<span class="line r"><span class="comment">//finished</span></span>
+</pre>
+
+<h2>Example</h2>
+<p>Click <em>step</em> to find <code class="r">20</code> within our sorted array</p>
+<div class="example" id="example1"><div class="top"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="nodeList">
+    <div class="r">1</div>
+    <div class="r">4</div>
+    <div class="r">6</div>
+    <div class="r">7</div>
+    <div class="r">12</div>
+    <div class="r">13</div>
+    <div class="r">15</div>
+    <div class="r">18</div>
+    <div class="r">19</div>
+    <div class="r">20</div>
+    <div class="r">22</div>
+    <div class="r">24</div>
+  </div>
+  <div class="step r">step</div>
+<div class="bottom"><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div></div></div>
+
+<h2>Characteristics</h2>
+<p>Every iteration eliminates half of the remaining possibilities. This 
+makes binary searches very efficient - even for large collections. Our 
+implementation relies on recursion, though it is equally as common to 
+see an iterative approach.</p>
+
+<p>Binary search requires a sorted collection. This means the collection
+ must either be sorted before searching, or inserts/updates must be 
+smart. Also, binary searching can only be applied to a collection that 
+allows random access (indexing).</p>
+
+<h2>In The Real World</h2>
+<p>Binary searching is frequently used thanks to its performance 
+characteristics over large collections. The only time binary searching 
+doesn't make sense is when the collection is being frequently updated 
+(relative to searches), since re-sorting will be required.</p>
+
+<p>Hash tables can often provide better (though somewhat unreliable) 
+performance. Typically, it's relatively clear when data belongs in a 
+hash table (for frequent lookups) versus when a search is needed.</p>
+
+<div id="nav">
+  <a href="http://algorithms.openmymind.net/structures/hashtables.html" id="prev">« hash tables</a>
+  <a href="http://algorithms.openmymind.net/sort/bubblesort.html" id="next">bubble sort »</a>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+  var $code1 = $('#code1').code({});
+  $('#example1').example({code: $code1, instructions: instructions.binarySearch});
+});
+</script>
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Binary%20Search_files/a.htm" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 1639px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe></div>
+
+
+<script type="text/javascript">
+var disqus_identifier = '/algo/binarysearch';
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://karlseguin.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=karlseguin">comments powered by Disqus.</a></noscript>
+      </div>
+  
+</div></body></html>

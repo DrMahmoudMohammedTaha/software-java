@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="cufon-active cufon-ready" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><link rel="stylesheet" href="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/a.css" type="text/css" media="screen"> <script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/a_002.js"></script><style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;text-align:left!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}cufonshy.cufon-shy-disabled,.cufon-viewport-resizing cufonshy{display:none!important;}cufonglue{white-space:nowrap!important;display:inline-block!important;}.cufon-viewport-resizing cufonglue{white-space:normal!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Some Tips For Writing a Clean Code | acmASCIS Blog</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="pingback" href="http://www.acmascis.org/blog/xmlrpc.php"><link rel="stylesheet" type="text/css" href="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/css.htm"><link rel="stylesheet" type="text/css" href="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/css.htm"><link rel="stylesheet" type="text/css" href="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/css_002.htm"><link rel="stylesheet" type="text/css" href="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/css.htm"><link rel="stylesheet" type="text/css" href="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/css.css"><style type="text/css">body {
+			font-size: 12px;
+			font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+			color: #444;
+		}
+		.body-2{
+			background: #f8f8f8;
+		}
+		/*
+		#header-whole .header-sh{
+			//background: # url('http://www.acmascis.org/blog/wp-content/themes/granda/img/pattern-.png');
+					}*/
+		a{
+			color: #7BBBDD;
+		}
+		a:hover{
+			color: #80acc2;
+		}
+		.portfolio-link a{
+			color: #7BBBDD;
+		}
+		.last-port-item-link a, .last-blog-item-link a{
+			color: #555;		}
+		.last-port-item-link a:hover, .last-blog-item-link a:hover{
+			color: #80acc2;
+		}
+		.tagcloud a{
+			color: #80acc2 !important;
+		}
+		.tagcloud a:hover{
+			color: #6dc5e3 !important;
+		}
+		#footer .tagcloud a{
+			color: #666666 !important;
+		}
+		#footer .tagcloud a:hover{
+			color: #616161 !important;
+		}
+		#wp-calendar td a{
+			font-weight: bold;
+			color: #7BBBDD;
+		}
+		#wp-calendar td a:hover{
+			color: #80acc2;
+		}
+		#header .logo{
+			margin-top: 15px;
+			margin-left: 0px;
+		}
+				li.current-menu-item a,li.current-menu-parent a{
+			color: #7BBBDD !important;
+		}
+		li.current-menu-item ul li a,li.current-menu-parent ul li a{
+			color: #666 !important;
+			border-top: 0px !important;
+		}
+		.menu-wrapper ul li a:hover, .menu-wrapper ul li:hover > a{
+			color: #7BBBDD !important;
+		}
+		.menu-wrapper ul li ul li a{
+			border-top: 0px !important;
+		}
+		.menu-wrapper ul li ul li:hover > a{
+			color: #7BBBDD !important;
+			border-top: 0px !important;
+		}
+		.menu-wrapper ul li ul li a:hover{
+			color: #7BBBDD !important;
+		}
+		h1, h2, h3, h4, h5, h6{
+			font-family: 'SansationRegular' !important;
+		}
+		.last-port-title  h3, .last-blog-title  h3, .heading-up .header, .heading .header, .heading .caption{
+			font-family: 'SansationRegular' !important;
+		}
+		.bar-title h2{
+			font-family: 'SansationRegular' !important;
+		}
+		.bar-title h5{
+			font-family: 'SansationRegular' !important;
+		}
+		#sidebar .sidebar-inner h3{
+			color: #7BBBDD;
+		}
+		#sidebar .sidebar-inner a{
+			color: #80acc2;
+		}
+		#sidebar .sidebar-inner a:hover{
+			color: #6dc5e3;
+		}
+				#footer a{
+				color: #666666 !important;
+				text-decoration: none;
+			}
+		#footer a:hover{
+				color: #616161 !important;
+			}
+		#footer .footer-inner h1,#footer .footer-inner h2{
+			margin: 10px 0px;
+			color: #2e2e2e ;
+			font-size: 17px;
+		}
+				#slider-wrapper .slider-content{
+			width: 960px;
+			height: 370px;
+		}
+		 h1, h2, h3, h4, h5, h6{
+			color: #7BBBDD;
+			font-weight: normal;
+		}
+		.bar-title h2{
+		color: #707070;
+		font-size: 22px;
+		margin-top: 25px;
+		margin-bottom: 5px;
+		margin-left: 0px;
+		font-weight: normal;
+		float: none;
+	}
+	.bar-title h5{
+		color: #808080;
+		margin-top: 21px;
+		margin-bottom: 14px;
+		margin-left: 0px;
+		font-size: 16px;
+		font-weight: normal;
+		float: none;
+	}
+					.bar-title-inner{
+						height: 110px;
+					}
+									.bar-title h2{
+							font-size: 28px;
+							margin-top: 40px;
+					}
+		#stunning-text-inner h2{
+		font-family: 'Aller' !important;
+		color: #242424;
+	}
+	#stunning-text-inner h3{
+		font-family: 'Aller' !important;
+		color: #808080;
+	}
+	#stunning-text-below-wrapper #stunning-text-below h3{
+		font-family: 'SansationRegular' !important;
+		color: #545454;
+	}
+	#stunning-text-below-wrapper #stunning-text-below .stunning-caption{
+		color: #242424;
+	}
+	#front-manager  h1,#front-manager  h2,#front-manager  h3,#front-manager  h4,#front-manager  h5,#front-manager  h6{
+			color: #7BBBDD;
+		}
+	#front-manager .dropcap h1{
+		color: #333;
+	}
+	.dropcap, .dropcap_circle{
+			color: #7BBBDD;
+	}
+							.nivo-caption span{
+					font-size: 17px;
+					color: #ffffff;
+					float: left;
+					margin-top: 0px;
+					margin-bottom: 10px;
+					margin-right: 10px;
+			}
+			.nivo-caption {
+					width:100%;
+					bottom: 0px;
+			}
+			.nivo-caption p{
+			;
+					color: #ffffff;
+								text-align: left;
+			}
+			.nivo-caption {
+									background: #000000							}
+						.kwicks li {
+								width: 960px;
+				height: 300px;
+			}
+			#sliderkwick .headline h4{
+					font-family: 'SansationRegular' !important;
+					color: #ffffff;
+			}
+			#sliderkwick .headline p{
+					color: #ffffff;
+			}
+				/*
+			#header-whole #slider-wrapper .slider-bullet{
+				height: 99px;
+			}
+			#header-whole #slider .nivo-controlNav {
+				position:absolute;
+				width: 100%;
+				left:0%;
+				bottom: -70px;
+				text-align:center;
+			}
+			#header-whole #slider .nivo-controlNav img {
+				display: inline;
+				position:relative;
+				margin-left:11px;
+				margin-right:11px;
+				border: 2px #292929 solid;
+				-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;
+				-moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;
+				box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;
+			}
+			#header-whole #slider .nivo-controlNav a.active img {
+				-webkit-box-shadow: rgba(0, 0, 0, 1) 0px 0px 1px 1px;
+				-moz-box-shadow: rgba(0, 0, 0, 1) 0px 0px 1px 1px;
+				box-shadow: rgba(0, 0, 0, 1) 0px 0px 1px 1px;
+			}
+			#header-whole #slider-wrapper .slider-shadow-bottom{
+				bottom: 56px;
+			}*/
+				#header-whole #stunning-text{
+				margin: 0px auto 0px;
+			}
+			#slider-wrapper .slider-content{
+				margin: 0px auto 0px;
+			}
+		.button,.button:hover, .button_big,.button_big:hover, .button-cancel-comment a, .button-cancel-comment a:hover, .button-reply a, .button-reply a:hover{
+			color: #738a97;
+							background: -webkit-gradient(linear, left top, left bottom, from(#f2fafe ), to(#C0E6FB));
+			background: -moz-linear-gradient(top, #f2fafe, #C0E6FB);
+			border: 1px solid #afd1e4;
+			-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+			text-shadow: 0 1px white;
+		}
+				.stunning_button_below ,.stunning_button_below:hover{
+			color: #738a97;
+							background: -webkit-gradient(linear, left top, left bottom, from(#f2fafe ), to(#C0E6FB));
+				background: -moz-linear-gradient(top, #f2fafe, #C0E6FB);
+			border: 1px solid #afd1e4;
+			-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+			text-shadow: 0 1px white;
+		}</style><!--[if IE]><link
+rel="stylesheet" href="http://www.acmascis.org/blog/wp-content/themes/granda/css/ie-table.css" type="text/css" media="screen" /> <![endif]--> <!--[if lte IE 7]><link
+rel="stylesheet" href="http://www.acmascis.org/blog/wp-content/themes/granda/css/ie-style.css" type="text/css" media="screen" /> <![endif]--> <script type="text/javascript">//
+            // Google Analytics for WordPress by Yoast v4.3.2 | http://yoast.com/wordpress/google-analytics/
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-26409461-1']);
+				            _gaq.push(['_setCustomVar',2,'post_type','post',3],['_setCustomVar',3,'author','amr-abumuslim',3],['_setCustomVar',4,'category','technical-post',3],['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+            //</script> <link rel="alternate" type="application/rss+xml" title="acmASCIS Blog » Some Tips For Writing a Clean Code Comments Feed" href="http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/feed/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.acmascis.org/blog/xmlrpc.php?rsd"><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.acmascis.org/blog/wp-includes/wlwmanifest.xml"><link rel="prev" title="ابن النفـيـس" href="http://www.acmascis.org/blog/2013/07/03/%d8%a7%d8%a8%d9%86-%d8%a7%d9%84%d9%86%d9%81%d9%80%d9%8a%d9%80%d8%b3/"><link rel="next" title="How to Nail an Internship ?" href="http://www.acmascis.org/blog/2013/11/25/how-to-nail-an-internship/"><meta name="generator" content="WordPress 3.5.2"><link rel="shortlink" href="http://www.acmascis.org/blog/?p=3555"><link rel="canonical" href="http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/"><script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/codecolorer-expander.js"></script><script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/intext.js" type="text/javascript"></script><script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/1022.js" id="sjsjszmzmaw28aj6" type="text/javascript"></script><script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/1005.js" id="shk85shssma" type="text/javascript"></script><script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/a.js" async="" type="text/javascript"></script><script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/a.js" async="" type="text/javascript"></script><script src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/a.js" async="" type="text/javascript"></script><style type="text/css">.vbb31o {  display:inline !important; list-style:none; text-align:left; float:none; padding:0; margin:0; border:1px solid transparent; border-bottom:1px solid;  text-decoration:underline; color:#009900; font-weight:normal; cursor:pointer; }</style><style type="text/css">.adbox  { padding:0 !important; margin:0 !important; display:block; xwidth:400px; xheight:200px;  z-index:2000000000; text-decoration:none !important;}</style></head>  <body class="single single-post postid-3555 single-format-standard"><div class="body-2"><div class="header-bar"></div><div id="header-whole"><div class="header-wrapper"><div id="header"><div class="logo"><a href="http://www.acmascis.org/"><img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/logoacmASCIS.png" alt=""></a></div><div class="nav-wrapper"><div id="superfish-wrapper" class="menu-wrapper"><ul id="menu-main-menu" class="sf-menu sf-js-enabled sf-shadow"><li id="menu-item-1389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1389"><a href="http://www.acmascis.org/">Home</a></li><li id="menu-item-1392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1392"><a class="sf-with-ul" href="http://www.acmascis.org/events/">Events<span class="sf-sub-indicator"> »</span></a><ul style="float: none; width: 14.5em; display: none; visibility: hidden;" class="sub-menu"><li style="white-space: normal; float: none; width: 100%;" id="menu-item-1576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1576"><a style="float: none; width: auto;" href="http://www.acmascis.org/events/training/">Training</a></li><li style="white-space: normal; float: none; width: 100%;" id="menu-item-1393" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1393"><a style="float: none; width: auto;" href="http://www.acmascis.org/events/contests/">Contests</a></li><li style="white-space: normal; float: none; width: 100%;" id="menu-item-1394" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1394"><a style="float: none; width: auto;" href="http://www.acmascis.org/events/experience-sharing-events/">Experience Sharing Events</a></li></ul></li><li id="menu-item-1388" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1388"><a class="sf-with-ul" href="http://www.acmascis.org/blog/">Weekly Activities<span class="sf-sub-indicator"> »</span></a><ul style="float: none; width: 14.5em; display: none; visibility: hidden;" class="sub-menu"><li style="white-space: normal; float: none; width: 100%;" id="menu-item-1438" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1438"><a style="float: none; width: auto;" href="http://www.acmascis.org/blog/category/weekly-posts/">Weekly Posts</a></li><li style="white-space: normal; float: none; width: 100%;" id="menu-item-1437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1437"><a style="float: none; width: auto;" href="http://www.acmascis.org/blog/category/weekly-challenge/">Weekly Challenge</a></li><li style="white-space: normal; float: none; width: 100%;" id="menu-item-1610" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1610"><a style="float: none; width: auto;" href="http://www.acmascis.org/forum/index.php?board=15.0">Weekly Problem</a></li></ul></li><li id="menu-item-1395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1395"><a href="http://forum.acmascis.org/">Forum</a></li><li id="menu-item-1390" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1390"><a href="http://www.acmascis.org/about-us/">About Us</a></li><li id="menu-item-1391" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1391"><a href="http://www.acmascis.org/contact-us/">Contact Us</a></li></ul></div></div></div></div><div id="caption" class="bar-title-whole"><div class="bar-title"><div class="bar-title-sh-top"><div class="bar-title-sh-bottom"><div class="bar-title-inner"><h2>Some Tips For Writing a Clean Code</h2><div class="social-links-wrapper"><ul id="social-list"><li class="social-link"><a href="https://www.facebook.com/acmASCIS" target="_blank"><img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/fb.png"></a></li><li class="social-link"><a href="https://twitter.com/#%21/acmascis" target="_blank"><img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/twt.png"></a></li><li class="social-link"><a href="http://eg.linkedin.com/pub/acmascis-fcis/28/5bb/6aa" target="_blank"><img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/li.png"></a></li></ul></div></div></div></div></div></div><div class="breadcrumbs-wrapper"><div class="breadcrumbs-inner"> <span class="breadcrumbs alignright"><a href="http://www.acmascis.org/blog">Home</a><span class="arrow-breadcrumbs"></span><a href="http://www.acmascis.org/blog/category/weekly-posts/technical-post/" title="View all posts in Technical Post" rel="category tag">Technical Post</a><span class="and"> / </span><a href="http://www.acmascis.org/blog/category/weekly-posts/" title="View all posts in Weekly Posts" rel="category tag">Weekly Posts</a><span class="arrow-breadcrumbs"></span><span class="current">Some <span id="vbb31o_1" class="vbb31o">Tips For Writing</span> a Clean Code</span></span></div></div></div><div id="container-wrapper"><div id="page" class="container-shadow"><div id="container"><div id="post-3555" class="post-3555 post type-post status-publish format-standard hentry category-technical-post category-weekly-posts"><div class="page-wrapper"><div class="sidebar-right"><div class="page-w600"><div class="blog-sidebar-wrapper  mb0"><div class="blog-sidebar-content "><div class="title-wrapper"><div class="title"><h2> <a href="http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/"> Some Tips For Writing a Clean Code </a></h2></div></div><div class="sub-title-shadow-top"></div><div class="sub-title-wrapper-single"><div class="post-date-single"> <span class="month-single"> Sep </span> <span class="day-single"> 13 </span> <span class="year-single"> 2013 </span></div><div class="post-by-single"> by Amr AbuMuslim</div><div class="post-comment-single"> <a href="http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/#respond" title="Comment on Some Tips For Writing a Clean Code">No Responses.</a></div></div><div class="sub-title-shadow"></div><div class="meta-left-full mb0"><p dir="ltr">When
+ I was at college, I heard a lot about the term “clean code” and about 
+its importance. After graduation and getting hired as a <span id="vbb31o_3" class="vbb31o">software engineer</span>,
+ I knew what it means to write a bad piece of code. I didn’t imagine 
+that a bad code costs the company and developers many many extra hours 
+-hours in business context are translated to money-, and also that it 
+may causes a project to be closed and cancelled after 7 months of 
+development.</p><p dir="ltr">What I want to say is, we should seriously 
+consider the issue of writing a clean code. During this post, I’m going 
+to give some simple tips for writing a clean code.</p><p dir="ltr">First, I’d like to mention some points that show “Why” we should write a clean code:</p><p dir="ltr"><strong>*</strong> It saves a lot of time and effort to remember a piece of code that you wrote long time ago.</p><p dir="ltr"><strong>*</strong> Saves the effort for understanding a piece of code that has been written by someone else.</p><p dir="ltr"><strong>*</strong> It’s much easier to maintain and add features if it’s well written (not just well written for sure,&nbsp;the role of the <span id="vbb31o_6" class="vbb31o">good design</span> appears here)</p><p dir="ltr"><strong>*</strong>
+ Saves a lot of time to debug the code and look for different types of 
+problems either logical or&nbsp;syntax errors, for example.</p><p dir="ltr"><strong>Here’re some tips to follow as to write a clean piece of code: “How?”</strong></p><p dir="ltr"><strong>-</strong> Use meaningful names <strong><br> *</strong> For variables and objects, use the name that simply describes what exactly this variable&nbsp;holds <strong><br> *</strong> Don’t ever use shortcuts to name your variables</p><div class="code"> int h; // hours</div><div class="code"> int ms;</div><p> // If I found something like this&nbsp;variable, I’ll ask myself if it means “<strong>m</strong>illiseconds” or “<strong>m</strong>inutes” or something else<br> <strong>-</strong>
+ For big projects, it’s very good practically to put a prefix for the 
+data type of the&nbsp;variable in its name. We do that for two reasons, 
+firstly, as to efficiently use the&nbsp;<strong>auto-complete</strong> feature. In big projects, It’s most likely to forget <strong>variables names</strong> while coding, but, It’s too hard to forget its <strong>data type</strong>. So if we as example define all&nbsp;“<strong>TextBox</strong>” variables as “<strong>TB_name</strong>”, we can easily find them.</p><p dir="ltr">The second reason is the readability, sometimes we need the same variable in&nbsp;different <span id="vbb31o_7" class="vbb31o">data types</span>. as in the next example</p><div class="code">int INT_customersCount = string.Parse( TB_customersCount.Text );<br> if( INT_customersCount &amp;gt; 50)<br> do something<br> else<br> do something else</div><p></p><p dir="ltr"><strong>-</strong> Here’s an example for truly readable variable</p><div class="code"> int workedHoursByPartTimeEmployees;</div><p></p><p dir="ltr"><strong>*</strong>
+ For methods, let its name describes what exactly it does. Use an order 
+style. like if you&nbsp;order the object containing the method to do 
+something. &nbsp;Also, give meaningful names&nbsp;for its parameters.</p><p dir="ltr"><strong>-</strong> Here’s a good example</p><p dir="ltr"></p><div class="code">List&amp;lt;BlogPost&amp;gt; Blog::GetAllPostsInTimeInterval(Date fromDate, Date toDate)&nbsp;</div><p>How many developers you think won’t understand what this method exactly does&nbsp;takes, and returns?</p><p dir="ltr">- Follow the <span id="vbb31o_8" class="vbb31o">naming convention</span> of the language you use.<br> * In <span id="vbb31o_5" class="vbb31o">computer programming</span>, a <strong>naming convention</strong> is a set of <strong>rules</strong>
+ for choosing the&nbsp;character sequence to be used for identifiers 
+which denote variables, types and functions.&nbsp;Every language has its
+ own naming convention.<br> * Check <a href="http://en.wikipedia.org/wiki/Naming_convention_%28programming%29" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://en.wikipedia.org']);">HERE</a> the naming convention benefits, challenges, <span id="vbb31o_4" class="vbb31o">business value</span> and language&nbsp;specific naming convention.</p><p dir="ltr"><strong>- <span style="color: #99cc00;">/* Comments */</span></strong></p><p dir="ltr"><strong></strong>* I remember that I’ve been told many times and heard a lot that <strong>“comments are used&nbsp;</strong><strong>when we want to prevent one or&nbsp;more <span id="vbb31o_2" class="vbb31o">lines of code</span> from being compiled.”</strong> … we all&nbsp; know that</p><p dir="ltr">Most of us use comments this way. But just few good developers use comments to make&nbsp;their codes documented professionally.</p><p dir="ltr">“<strong>Here’re some points that we can consider during writing our comments”:</strong></p><p dir="ltr"><strong>- File scope: </strong></p><p dir="ltr">We
+ can start our source file by adding some details about this file, 
+algorithm, project,&nbsp;company, author, last modified date, … Check <strong><a href="http://code.jquery.com/jquery-1.9.1.js" onclick="javascript:_gaq.push(['_trackEvent','download','http://code.jquery.com/jquery-1.9.1.js']);">HERE</a></strong>
+ how J-Query started their library by adding some comments related 
+to&nbsp;the version, copyrights, date and some &nbsp; &nbsp; &nbsp; 
+important links.</p><p dir="ltr"><strong>- Variables and objects: </strong></p><p dir="ltr">It’s
+ very good to write a comment beside variables that need some 
+clarifications;&nbsp;variable meaningful name won’t be enough for 
+clarifying&nbsp;something like the <strong>reason</strong> that variable has been defined.</p><p dir="ltr"><strong>- Methods: </strong></p><p dir="ltr">Let’s say our function is :</p><div class="code">List&amp;lt;Post&amp;gt; getPostsInTimeInterval(Date from, Date to) { … }</div><p> It’s very good to attach some comments to your methods giving:</p><p dir="ltr">- Simple description about the function</p><p dir="ltr"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</strong> Ex. <span style="color: #99cc00;">/* This function gets all posts in a time interval */</span></p><p dir="ltr">- Description about its parameters</p><p dir="ltr">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>*</strong> EX. <span style="color: #99cc00;">&nbsp;/*<strong> int time</strong>: is time in milliseconds required to … */</span></p><p dir="ltr">- Its return value <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong></p><p dir="ltr"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</strong> Ex.</p><div class="code">Point?
+ GetIntersection(Line l1, Line l2) { … }/* returns the point of the two 
+lines intersection if they intersect in exactly one point and returns 
+null else. */</div><p></p><p dir="ltr"><strong>-</strong> Constraints and prerequisites <strong><br> </strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>*</strong>
+ Ex. Prerequisites: this algorithm assumes that the two lines either 
+intersected&nbsp;in one point of zero points. case of overlapping 
+is&nbsp;not handled.</p><p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong> <strong>*</strong> Ex.&nbsp;</p><div class="code"> int calculateFactorial(int n) { … }</div><p> Constraints: <strong>n</strong> must be positive and smaller than x, it overflows else.</p><p dir="ltr"><strong>*</strong>
+ It’s a very good practice to use Visual Studio triple slash -///- 
+feature to document your&nbsp;methods, try it! put the cursor exactly 
+before your function then type three slashes.</p><p dir="ltr">Finally, I’d like you to always remember this quote:</p><blockquote><p><strong>“Programs must be written for people to read, and only incidentally for machines to execute.”</strong> – Abelson / Sussman</p></blockquote></div></div></div><div class="social-share-wrapper"><div class="social-share-wrapper-title"><h3>Share This</h3></div><ul><li> <a href="http://www.facebook.com/share.php?u=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/facebook.png"> </a></li><li> <a href="http://twitter.com/home?status=Some%20Tips%20For%20Writing%20a%20Clean%20Code%20-%20http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/twitter.png"> </a></li><li> <a href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/&amp;title=Some%20Tips%20For%20Writing%20a%20Clean%20Code" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/google.png"> </a></li><li> <a href="http://www.stumbleupon.com/submit?url=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/&amp;title=Some%20Tips%20For%20Writing%20a%20Clean%20Code" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/stumbleupon.png"> </a></li><li> <a href="http://delicious.com/post?url=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/&amp;title=Some%20Tips%20For%20Writing%20a%20Clean%20Code" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/delicious.png"> </a></li><li> <a href="http://digg.com/submit?url=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/&amp;title=Some%20Tips%20For%20Writing%20a%20Clean%20Code" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/digg.png"> </a></li><li> <a href="http://reddit.com/submit?url=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/&amp;title=Some%20Tips%20For%20Writing%20a%20Clean%20Code" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/reddit.png"> </a></li><li> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/&amp;title=Some%20Tips%20For%20Writing%20a%20Clean%20Code" target="_blank"> <img src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/linkedin.png"> </a></li></ul></div><div id="comment-area"><div id="comments"><div id="comments"><div id="respond"><div class="cancel-comment-reply button-cancel-comment"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.acmascis.org/blog/2013/09/13/some-tips-for-writing-a-clean-code/#respond" style="display:none;">Cancel Reply</a></small></div><div class="reply-title"><h3>Leave a Reply</h3></div><form action="http://www.acmascis.org/blog/wp-comments-post.php" method="post" id="commentform"><p class="comment-form-author"> <label for="author">Name <small>(required)</small></label> <input name="author" id="author" size="22" tabindex="1" aria-required="true" type="text"> <br></p><p class="comment-form-email"> <label for="email">Mail <small>(required)</small></label> <input name="email" id="email" size="22" tabindex="2" aria-required="true" type="text"> <br></p><p class="comment-form-url"> <label for="url">Website</label> <input name="url" id="url" size="22" tabindex="3" type="text"> <br></p><p class="comment-form-comment"> <label for="comment">Comment <small>(required)</small></label><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea><br></p><p class="form-submit"> <input name="submit" id="commentSubmit" tabindex="5" value="Submit »" class="hover button" type="submit"></p> <input name="comment_post_ID" value="3555" id="comment_post_ID" type="hidden"> <input name="comment_parent" id="comment_parent" value="0" type="hidden"><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="e3fae2e625" type="hidden"></p></form></div></div></div></div></div><div id="sidebar"><div class="sidebar-style right"><div class="sidebar-wrapper"><div class="sidebar-inner"><h3>Categories</h3><ul><li class="cat-item cat-item-15"><a href="http://www.acmascis.org/blog/category/geeks-4-geeks/" title="It’s a series of  different technical sessions done periodically every 1-2 week(s) under a one named event which will take place throughout the whole year. ">Geeks for Geeks Sessions</a> (2)</li><li class="cat-item cat-item-3"><a href="http://www.acmascis.org/blog/category/weekly-challenge/" title="The Weekly Challenge is a problem posted on Saturday each week and its solution is posted on friday
+Mainly its an IQ Questions
+so stay tuned !!">Weekly Challenge</a> (212)<ul class="children"><li class="cat-item cat-item-8"><a href="http://www.acmascis.org/blog/category/weekly-challenge/problem/" title="View all posts filed under Problem">Problem</a> (106)</li><li class="cat-item cat-item-9"><a href="http://www.acmascis.org/blog/category/weekly-challenge/solution/" title="View all posts filed under Solution">Solution</a> (101)</li></ul></li><li class="cat-item cat-item-12"><a href="http://www.acmascis.org/blog/category/weekly-posts/" title="View all posts filed under Weekly Posts">Weekly Posts</a> (64)<ul class="children"><li class="cat-item cat-item-4"><a href="http://www.acmascis.org/blog/category/weekly-posts/scientist-post/" title="View all posts filed under Scientist Post">Scientist Post</a> (23)</li><li class="cat-item cat-item-5"><a href="http://www.acmascis.org/blog/category/weekly-posts/soft-skills-post/" title="View all posts filed under Soft-Skills Post">Soft-Skills Post</a> (4)</li><li class="cat-item cat-item-6"><a href="http://www.acmascis.org/blog/category/weekly-posts/technical-post/" title="View all posts filed under Technical Post">Technical Post</a> (20)</li><li class="cat-item cat-item-14"><a href="http://www.acmascis.org/blog/category/weekly-posts/x-post/" title="View all posts filed under X – Post">X – Post</a> (17)</li></ul></li><li class="cat-item cat-item-7"><a href="http://www.acmascis.org/blog/category/weekly-problem/" title="View all posts filed under Weekly Problem">Weekly Problem</a> (2)</li></ul></div><div class="sidebar-inner"><h3>Archives</h3> <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;"><option selected="selected" value="">Select Month</option><option value="http://www.acmascis.org/blog/2014/03/"> March 2014</option><option value="http://www.acmascis.org/blog/2013/11/"> November 2013</option><option value="http://www.acmascis.org/blog/2013/09/"> September 2013</option><option value="http://www.acmascis.org/blog/2013/07/"> July 2013</option><option value="http://www.acmascis.org/blog/2013/05/"> May 2013</option><option value="http://www.acmascis.org/blog/2013/04/"> April 2013</option><option value="http://www.acmascis.org/blog/2013/03/"> March 2013</option><option value="http://www.acmascis.org/blog/2013/02/"> February 2013</option><option value="http://www.acmascis.org/blog/2012/07/"> July 2012</option><option value="http://www.acmascis.org/blog/2012/05/"> May 2012</option><option value="http://www.acmascis.org/blog/2012/04/"> April 2012</option><option value="http://www.acmascis.org/blog/2012/03/"> March 2012</option><option value="http://www.acmascis.org/blog/2012/02/"> February 2012</option><option value="http://www.acmascis.org/blog/2012/01/"> January 2012</option><option value="http://www.acmascis.org/blog/2011/12/"> December 2011</option><option value="http://www.acmascis.org/blog/2011/11/"> November 2011</option><option value="http://www.acmascis.org/blog/2011/10/"> October 2011</option><option value="http://www.acmascis.org/blog/2010/12/"> December 2010</option><option value="http://www.acmascis.org/blog/2010/11/"> November 2010</option><option value="http://www.acmascis.org/blog/2010/10/"> October 2010</option><option value="http://www.acmascis.org/blog/2010/09/"> September 2010</option><option value="http://www.acmascis.org/blog/2010/08/"> August 2010</option><option value="http://www.acmascis.org/blog/2010/07/"> July 2010</option><option value="http://www.acmascis.org/blog/2010/06/"> June 2010</option><option value="http://www.acmascis.org/blog/2010/05/"> May 2010</option><option value="http://www.acmascis.org/blog/2010/04/"> April 2010</option><option value="http://www.acmascis.org/blog/2010/03/"> March 2010</option><option value="http://www.acmascis.org/blog/2010/02/"> February 2010</option><option value="http://www.acmascis.org/blog/2010/01/"> January 2010</option><option value="http://www.acmascis.org/blog/2009/12/"> December 2009</option><option value="http://www.acmascis.org/blog/2009/11/"> November 2009</option><option value="http://www.acmascis.org/blog/2009/10/"> October 2009</option><option value="http://www.acmascis.org/blog/2009/09/"> September 2009</option><option value="http://www.acmascis.org/blog/2009/08/"> August 2009</option><option value="http://www.acmascis.org/blog/2009/07/"> July 2009</option><option value="http://www.acmascis.org/blog/2009/06/"> June 2009</option><option value="http://www.acmascis.org/blog/2009/05/"> May 2009</option><option value="http://www.acmascis.org/blog/2009/04/"> April 2009</option><option value="http://www.acmascis.org/blog/2009/03/"> March 2009</option><option value="http://www.acmascis.org/blog/2009/02/"> February 2009</option><option value="http://www.acmascis.org/blog/2009/01/"> January 2009</option><option value="http://www.acmascis.org/blog/2008/12/"> December 2008</option><option value="http://www.acmascis.org/blog/2008/11/"> November 2008</option><option value="http://www.acmascis.org/blog/2008/10/"> October 2008</option> </select></div></div></div></div></div></div></div></div></div></div><div class="footer-wrapper"><div id="footer"><div class="footer-content"><div class="footer-space"></div><div class="footer-style"><div class="footer-inner"><h2>Categories</h2><ul><li class="cat-item cat-item-15"><a href="http://www.acmascis.org/blog/category/geeks-4-geeks/" title="It’s a series of  different technical sessions done periodically every 1-2 week(s) under a one named event which will take place throughout the whole year. ">Geeks for Geeks Sessions</a></li><li class="cat-item cat-item-3"><a href="http://www.acmascis.org/blog/category/weekly-challenge/" title="The Weekly Challenge is a problem posted on Saturday each week and its solution is posted on friday
+Mainly its an IQ Questions
+so stay tuned !!">Weekly Challenge</a><ul class="children"><li class="cat-item cat-item-8"><a href="http://www.acmascis.org/blog/category/weekly-challenge/problem/" title="View all posts filed under Problem">Problem</a></li><li class="cat-item cat-item-9"><a href="http://www.acmascis.org/blog/category/weekly-challenge/solution/" title="View all posts filed under Solution">Solution</a></li></ul></li><li class="cat-item cat-item-12"><a href="http://www.acmascis.org/blog/category/weekly-posts/" title="View all posts filed under Weekly Posts">Weekly Posts</a><ul class="children"><li class="cat-item cat-item-4"><a href="http://www.acmascis.org/blog/category/weekly-posts/scientist-post/" title="View all posts filed under Scientist Post">Scientist Post</a></li><li class="cat-item cat-item-5"><a href="http://www.acmascis.org/blog/category/weekly-posts/soft-skills-post/" title="View all posts filed under Soft-Skills Post">Soft-Skills Post</a></li><li class="cat-item cat-item-6"><a href="http://www.acmascis.org/blog/category/weekly-posts/technical-post/" title="View all posts filed under Technical Post">Technical Post</a></li><li class="cat-item cat-item-14"><a href="http://www.acmascis.org/blog/category/weekly-posts/x-post/" title="View all posts filed under X – Post">X – Post</a></li></ul></li><li class="cat-item cat-item-7"><a href="http://www.acmascis.org/blog/category/weekly-problem/" title="View all posts filed under Weekly Problem">Weekly Problem</a></li></ul></div></div><div class="footer-style"></div><div class="footer-style"></div><div class="footer-style last"><div class="footer-inner"><div id="search-wrapper"><form method="get" id="searchform" action="http://www.acmascis.org/blog/"> <label class="hidden" for="s"></label> <input name="s" id="searchinput" size="18" type="text"> <input id="searchsubmit" value="" type="submit"></form></div></div><div class="footer-inner"><h2 class="widgettitle">Control Panel</h2><ul><li><a href="http://www.acmascis.org/blog/wp-login.php?action=register">Register</a></li><li><a href="http://www.acmascis.org/blog/wp-login.php">Log in</a></li><li><a href="http://www.acmascis.org/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li><li><a href="http://www.acmascis.org/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li><li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li></ul></div></div></div></div><div id="copyright" class="copyright-wrapper"><div class="copyright"><div class="copyright-left"> acmASCIS - ACM Student Chapter</div><div class="copyright-right"> Copyright © 2012 acmASCIS. All Rights Reserved.</div></div></div></div></div><script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/Aller_400.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/comment-reply.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/jquery_002.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/jquery-ui-1.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/jquery_004.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/hoverIntent.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/superfish.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/supersubs.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/jquery_003.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/jquery.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/filterable.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/contact-form.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/starter-js.js"></script>
+<script type="text/javascript" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/browser-detect.js"></script>
+<script type="text/javascript"> 
+								 jQuery(document).ready(function(){ 
+				jQuery("ul.sf-menu").supersubs({ 
+					minWidth:    14.5,   // minimum width of sub-menus in em units 
+					maxWidth:    27,   // maximum width of sub-menus in em units 
+					extraWidth:  1     // extra width can ensure lines don't sometimes turn over 
+									   // due to slight rounding differences and font-family 
+				}).superfish({				
+					delay: 100,
+					speed: 'fast', 
+					animation:   {opacity:'show',height:'show'}		
+				});  // call supersubs first, then superfish, so that subs are 
+							 // not display:none when measuring. Call before initialising 
+							 // containing tabs for same reason. 
+			}); 					
+						jQuery(window).load(function() {
+			setTimeout(function(){
+				jQuery('#slider').nivoSlider({ 
+						effect: 'random',
+						pauseTime: 4000,
+						animSpeed: 600,
+						captionOpacity: 0.8,
+						pauseOnHover:false,
+						directionNav:true,
+						directionNavHide:false,
+						controlNavThumbs:true,
+						controlNavThumbsSearch: '&amp;h=370&amp;w=960',
+						controlNavThumbsReplace: '&amp;h=43&amp;w=68',				
+					});
+				}, 2000),
+				
+				setTimeout(function(){
+				/* For slider shortcode */
+				jQuery('#slider2').nivoSlider({ 
+						pauseTime:4000,
+						animSpeed: 600,
+						captionOpacity: 0.8,
+						pauseOnHover:true,
+						directionNavHide:true,
+						afterLoad: function(){
+							$('.cNext-slider').css('display','none');
+							$('.cPrev-slider').css('display','none');
+						}
+					});
+				}, 1000);
+				
+				
+			});
+			
+						// Slider Headlines
+				// Slider Headlines
+				jQuery(document).ready(function(){
+					if(jQuery.browser.msie) {
+														jQuery(".kwicks li#kwick0").hover(function(){
+								jQuery("li#kwick0 div.title_active").fadeTo(350, 0.8);
+								jQuery("li#kwick0 div.title").fadeTo(350, 0.0);
+								},function(){
+								jQuery("li#kwick0 div.title_active").fadeTo(350, 0.0);
+								jQuery("li#kwick0 div.title").fadeTo(350, 0.8);
+								});
+												}
+						else {
+												
+								jQuery(".kwicks li#kwick0").hover(function(){
+								jQuery("li#kwick0 div.title_active").fadeTo(350, 1.0);
+								jQuery("li#kwick0 div.title").fadeTo(350, 0.0);
+								},function(){
+								jQuery("li#kwick0 div.title_active").fadeTo(350, 0.0);
+								jQuery("li#kwick0 div.title").fadeTo(350, 1.0);
+								});
+						
+					}
+				});	
+			// initialize slider
+				jQuery(document).ready(function(){
+
+					jQuery('.kwicks').kwicks({
+
+					max : 700,					
+					sticky : true,
+					defaultKwick: 0,
+					event: 'mouseover',
+					duration: 200,
+					spacing: 0					
+					});
+
+				});
+
+			//Pretty photo setting
+			
+			jQuery(window).ready(function() {
+				jQuery("a[rel^='prettyPhoto']").prettyPhoto({	
+					animation_speed: 'fast', /* fast/slow/normal */
+					slideshow: 5000, /* false OR interval time in ms */
+					autoplay_slideshow: false, /* true/false */
+					opacity: 0.8, /* Value between 0 and 1 */
+					show_title: true, /* true/false */
+					allow_resize: true, /* Resize the photos bigger than viewport. true/false */
+					default_width: 500,
+					default_height: 344,
+					counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
+					theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+					horizontal_padding: 20, /* The padding on each side of the picture */
+					overlay_gallery: true, /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+					keyboard_shortcuts: true, /* Set to false if you open forms inside prettyPhoto */	
+												
+				});
+			});
+
+						jQuery(window).ready(function() {
+
+				// Accordion
+				jQuery("#accordion").accordion({ header: "h2" });
+	
+				//hover states on the static widgets
+				jQuery('#dialog_link, ul#icons li').hover(
+					function() { $(this).addClass('ui-state-hover'); }, 
+					function() { $(this).removeClass('ui-state-hover'); }
+				);
+				
+				
+			});
+			
+						jQuery(window).ready(function() {
+			
+				jQuery('.carousel').jCarouselLite({
+					btnNext: ".cNext",
+					btnPrev: ".cPrev",
+					visible: 1,
+					scroll: 1				});
+			});
+				
+						jQuery(window).ready(function() {
+							});
+			
+						//Cufon Replacement
+			Cufon.replace('#header h1,#header h2,#header h3,#header h4,#header h5,#header h6',{hover: true,fontFamily: 'SansationRegular'});
+			Cufon.replace('#container h1,#container h2,#container h3,#container h4,#container h5,#container h6',{hover: true,fontFamily: 'SansationRegular'});			
+			Cufon.replace('#page h1,#page h2,#page h3,#page h4,#page h5,#page h6',{hover: true,fontFamily: 'SansationRegular'});
+			Cufon.replace('#footer h1,#footer h2,#footer h3,#footer h4,#footer h5,#footer h6',{hover: true,fontFamily: 'SansationRegular'});
+			
+			
+			//Title with caption Replacement
+			Cufon.replace('.cufon',{hover: true,fontFamily: 'SansationRegular'});
+			
+			//Stunning font Replacement
+			Cufon.replace('#stunning-text-wrapper h1,#stunning-text-wrapper h2,#stunning-text-wrapper h3,#stunning-text-wrapper h4,#stunning-text-wrapper h5,#stunning-text-wrapper h6',{hover: true,fontFamily: 'Aller'});
+			Cufon.replace('#stunning-text-below-wrapper .stunning-title',{hover: true,fontFamily: 'SansationRegular'});
+			//Caption (Bartitle) font Replacement
+			Cufon.replace('#caption .bar-title h1,#caption .bar-title h2,#caption .bar-title h3,#caption .bar-title h4,#caption .bar-title h5,#caption .bar-title h6',{hover: true,fontFamily: 'SansationRegular'});
+			
+			//Cufon.replace('#smoothmenu1 .menu-item a',{ hover: true, fontFamily: 'Cantarell'});
+			
+			
+			if(  BrowserDetect.browser != 'Explorer' || (BrowserDetect.browser == 'Explorer' && BrowserDetect.version > 7)){
+				Cufon.replace('.last-portfolio-link h4');
+			}
+						
+			
+			
+</script> 
+
+
+
+
+
+<div id="__yael_once"></div><div style="display: none; position: absolute; left: 0px; width: 20px; height: 20px;" id="vbb31ospinner"><img id="intext_spinner_default" src="Some%20Tips%20For%20Writing%20a%20Clean%20Code%20_%20acmASCIS%20Blog_files/spinner-ani48.gif" border="0" height="20" width="20"></div><div style="display: none; position: absolute; z-index: 10485760; left: 400px; top: 400px;" id="vbb31opop"></div></body></html>
+<!-- Dynamic page generated in 2.142 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2014-03-31 20:04:19 -->
+<!-- Compression = gzip -->

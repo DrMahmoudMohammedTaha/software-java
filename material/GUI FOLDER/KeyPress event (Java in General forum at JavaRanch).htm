@@ -1,0 +1,528 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+        <link rel="alternate" type="application/rss+xml" title="JavaRanch: KeyPress event" href="http://www.coderanch.com/forums/rss/topicPosts/366951">
+    <meta name="description" content="Hi all, I 've made a applet which listens to key press event. This is working sucessfully, but now i want my applet to respond to the combinations of ">
+        <meta name="keywords" content="applet,awt,button,class,combination,extends,following,html,implements,import">
+
+<style type="text/css">@import url( /templates/default/styles/style.css?1408463054036 );</style>
+
+
+<title>KeyPress event (Java in General forum at JavaRanch)</title>
+
+    <link rel="canonical" href="http://www.coderanch.com/t/366951/java/java/KeyPress-event">
+    <link rel="alternate" media="handheld" href="http://www.coderanch.com/mobile/t/366951/java/java/KeyPress-event?foo=a">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-saloon-os.xml" title="JavaRanch Saloon">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-faq-os.xml" title="JavaRanch FAQ">
+</head>
+
+<body class="en_US"><div style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;" id="WzTtDiV"></div>
+<script src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/jquery_002.js"></script>
+
+
+    <div class="shngl" id="topShngl" align="center">
+        <a href="http://www.coderanch.com/forums/banner/redirect/625" target="_blank"><img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/as-pose-c16.gif" alt="aspose file tools" border="0"></a><a style="text-decoration:none" href="http://www.javaranch.com/advertising.jsp" title="Click on this asterisk to learn more about advertising like this on CodeRanch!">*</a>
+    </div>
+    <div id="ool" align="center"></div>
+
+
+
+<table border="0" width="100%">
+    <tbody><tr>
+        <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td align="center">
+
+                            <img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/moosefly.gif" alt="The moose likes Java in General and the fly likes KeyPress event" title="" border="0" vspace="1">
+                    </td>
+                    <td class="logo" valign="middle">
+                        A friendly place for programming greenhorns!
+                    </td>
+
+                    <td align="center" valign="middle" width="100%">
+                        <span class="boardtitle">Big Moose Saloon</span>
+                        <table border="0" cellpadding="2" cellspacing="0">
+                            <tbody><tr>
+                                <td align="center" nowrap="nowrap" valign="top">&nbsp;
+                                    <a id="search" class="mainmenu" href="http://www.coderanch.com/forums/search/filters/1"><b>Search</b></a>
+                                    | <a id="faq" class="mainmenu nonForumLink" href="http://www.coderanch.com/how-to/java/Java-FAQ"><b>Java FAQ</b></a>
+                                    | <a id="latest" class="mainmenu" href="http://www.coderanch.com/forums/recentTopics/list">Recent Topics</a>
+                                    | <a id="flagged" class="mainmenu" href="http://www.coderanch.com/forums/posts/flagged">Flagged Topics</a>
+                                    | <a id="hottest" class="mainmenu" href="http://www.coderanch.com/forums/hottestTopics/list">Hot Topics</a>
+                                    | <a id="moderationlog" class="mainmenu" href="http://www.coderanch.com/forums/posts/zeroReplies">Zero Replies</a>
+
+
+                                    <br>
+
+
+                                        <a id="login" class="mainmenu" href="http://www.coderanch.com/forums/user/login">Register / Login</a>
+                                        <br>
+
+                                    </td>
+                                </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+<script type="text/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/userLocalTime.js"></script>
+<script type="text/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/jquery.js"></script>
+<script type="text/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/post_show.js"></script>
+<script type="textcomme/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/post.js"></script>
+<script type="text/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/pagination.js"></script>
+<script type="text/javascript" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/wz_tooltip.js"></script>
+
+
+<script type="text/javascript">
+var CONTEXT_PATH = "";
+function showEmail(beforeAt, afterAt)
+{
+	return beforeAt + "@" + afterAt;
+}
+
+function addBookmark(relationType, relationId)
+{
+	var w = window.open('/forums/bookmarks/insert/' + relationType + '/' + relationId + '', 'bookmark_add', 'width=700, height=200, scrollbars=auto, resizable=true');
+	w.focus();
+}
+var forumUrlPrefix = "/forums";
+var imagesServedFrom = "http://cache-www.coderanch.com";
+
+
+    function reportToModerationPrompt(postId, topicId) {
+        var reason = prompt("Please explain why you feel this post is either abusive or in violation of forum policies or needs to be copied or moved to a different forum:");
+
+        if (reason == null || reason == "") {
+            alert("You have cancelled reporting this thread or missed providing a reason.  If you still want to report this thread, please click report again.");
+            return false;
+        } else {
+        	var link = '/jforum?module=posts&action=reportToModerator&post_id=' + postId + '&topic_id=' + topicId;
+            link += "&reason=" + encodeURIComponent(reason);
+        }
+        submitForm(link);
+
+        return true;
+    }
+
+    var watchImage = "http://cache-www.coderanch.com/templates/default/images/watch_topic_start.gif";
+    var unwatchImage = "http://cache-www.coderanch.com/templates/default/images/stop_watching.gif";
+    var watchURL = "/forums/posts/watch/0/366951";
+    var unwatchURL = "/forums/posts/unwatch/0/366951";
+    var unwatchHandler = function() { turnOn=false; toggleWatch(); return false; };
+    var watchHandler = function() { turnOn=true; toggleWatch(); return false; };
+    var turnOn, remove;
+
+    function toggleWatch () {
+        $.ajax({
+            url: turnOn ? watchURL : unwatchURL,
+            type: 'POST',
+            dataType: 'json',
+            headers: {'OWASP_CSRFTOKEN': '3415-B19S-AEDS-G9L5-G0LZ-WD1V-3UMH-E2QX'},
+            success: function (data) {
+                //$("#messages").html(data.message);
+                if (turnOn) {
+                    $(".toggleWatchImage")[0].src = unwatchImage;
+                    $(".toggleWatchImage")[1].src = unwatchImage;
+                    $(".toggleWatchLink")[0].href = unwatchURL;
+                    $(".toggleWatchLink")[1].href = unwatchURL;
+                    $(".toggleWatchLink")[0].onclick = unwatchHandler;
+                    $(".toggleWatchLink")[1].onclick = unwatchHandler;
+                } else {
+                    if (remove) {
+                        // for unwatching locked topics
+                        $(".toggleWatchImage")[0].style.visibility = "hidden";
+                        $(".toggleWatchImage")[1].style.visibility = "hidden";
+                        $(".toggleWatchLink")[0].href = "#";
+                        $(".toggleWatchLink")[1].href = "#";
+                        $(".toggleWatchLink")[0].onclick = "return false;";
+                        $(".toggleWatchLink")[1].onclick = "return false;";
+                    } else {
+                        $(".toggleWatchImage")[0].src = watchImage;
+                        $(".toggleWatchImage")[1].src = watchImage;
+                        $(".toggleWatchLink")[0].href = watchURL;
+                        $(".toggleWatchLink")[1].href = watchURL;
+                        $(".toggleWatchLink")[0].onclick = watchHandler;
+                        $(".toggleWatchLink")[1].onclick = watchHandler;
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+
+
+<form id="helperForm" name="helperForm" action="#" method="post"><input name="OWASP_CSRFTOKEN" value="3415-B19S-AEDS-G9L5-G0LZ-WD1V-3UMH-E2QX" type="hidden"></form>
+<script>
+function submitForm(newAction) {
+	var form = document.helperForm;
+	form.action = newAction;
+	helperForm.submit();
+}</script>
+
+
+<table border="0" cellpadding="10" cellspacing="0" align="center" width="97%">
+    <tbody><tr>
+        <td class="bodyline">
+        <span class="nav">
+            <a class="maintitle" href="http://www.javaranch.com/">JavaRanch</a> » <a class="maintitle" href="http://www.coderanch.com/forums">Java Forums</a> »
+            <a class="maintitle" href="http://www.coderanch.com/forums/c/1/java">Java</a> »
+            <a class="maintitle" href="http://www.coderanch.com/forums/f-1/java">Java in General</a>
+        </span>
+
+
+
+            
+<table class="threadbar" border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody><tr>
+    <td align="left" valign="middle">
+    			<img class="opaque" title="You must login or register" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/bookmark_it.gif" alt="Bookmark &quot;KeyPress event&quot;" height="25" width="82">
+		<img class="opaque" title="You must login or register" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/watch_topic_start.gif" alt="Watch &quot;KeyPress event&quot;" height="25" width="82">
+    </td>
+    <td align="right">
+      	<img class="opaque" title="You must login or register" alt="New topic" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/post.gif" height="25px" width="82px">
+    </td>    
+  </tr>
+</tbody></table>
+
+            <a name="1604565">
+
+
+                </a><table id="postTable" class="forumline" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                    <th class="author" nowrap="nowrap" width="18%">Author</th>
+                    <th class="subject">
+                        <h1>                           <span id="topicFlags" class="flag"></span>
+                            <span id="topicSubject">KeyPress event</span>
+                        </h1>
+                    </th>
+                </tr>
+
+
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row1 userPostInfo" rowspan="2" align="left" valign="top">
+                            <a name="1604565"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/3589/shikhar-singh">shikhar singh</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Ranch Hand
+    <br>
+
+<br>
+
+
+    Joined: Oct 02, 2000<br>
+    Posts: 31
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row1" valign="top">
+<div class="postinfo row1">
+	<div class="date">
+		<span class="postdetails">posted <script>"Oct 19, 2000 01:00:00".toLocaleDateTime();</script>19/10/2000 04:00<noscript><span class="lastPostTime">Oct 18, 2000 19:00:00</span></noscript></span>
+	    
+
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1604565" class="likesHiddenDiv">
+				<img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row1 postbody" id="post_text_1604565" valign="top">
+
+                            <span class="postbody">
+                                    Hi all,<br> I 've made a <a href="http://www.coderanch.com/forums/f-23/Applets" class="api" title="the JavaRanch applet forum" target="_new">applet</a> which listens to key press event. This is working sucessfully, but now i want my applet to respond to the combinations of keys.<br> For example, so far the applet responds on the click of 'key down' arrow key. now i want the applet to respond when usr clicks<br> 'alt+n'.<br> My problem is , as we can get the keycode for 'key down' arrow key, how can we get the keycode for combinations of keys.<br> following is the simplified form of my code:<br> import java.applet.*;<br> import java.awt.*;<br> import java.awt.event.*;<br> //&lt;html&gt;<br> //&lt;applet code=KeyStroke width= 200 height=200&gt;<br> //&lt;/applet&gt; <br> //&lt;/html&gt;<br> public class <a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/KeyStroke.html" class="api" title="Java API" target="_new">KeyStroke</a> extends Applet implements KeyListener{<br> Button b1 = new Button("Press Me");<br> Button b2 = new Button("Press Me too");<br> List l1 = new List();<br> public void start(){<br> requestFocus();<br> add(b1);<br> add(b2);<br> l1.add("melbourne");<br> l1.add("Brisbane");<br> l1.add("Sydney");<br> add(l1);<br> add(new Button("shikhar"));<br> addKeyListener(this);<br> setSize(100,100);<br> }<br> public void keyPressed(<a href="http://docs.oracle.com/javase/8/docs/api/java/awt/event/KeyEvent.html" class="api" title="Java API" target="_new">KeyEvent</a> e){<br> int t = e.getKeyCode();<br> if(t==e.VK_DOWN)<br> System.out.println("DOWN MOUSE CLICKED");<br> }<br> public void keyReleased(<a href="http://docs.oracle.com/javase/8/docs/api/java/awt/event/KeyEvent.html" class="api" title="Java API" target="_new">KeyEvent</a> e){<br> }<br> public void keyTyped(<a href="http://docs.oracle.com/javase/8/docs/api/java/awt/event/KeyEvent.html" class="api" title="Java API" target="_new">KeyEvent</a> e){<br> }<br> }<br> <br> thanks a lot for the patience..<br> Hope to get response..<br> Shikhar<br> <br> 
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row1" colspan="2" height="1"><img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row2 userPostInfo" rowspan="3" align="left" valign="top">
+                            <a name="1604566"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/1920/Marilyn-de%20Queiroz">Marilyn de Queiroz</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Sheriff
+    <br>
+
+<br>
+
+
+    Joined: Jul 22, 2000<br>
+    Posts: 9044
+<br>
+
+
+</span>
+
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;<div class="gen numCowsImage"><div class="numCowsImageText">&nbsp;&nbsp;10</div></div>
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row2" valign="top">
+<div class="postinfo row2">
+	<div class="date">
+		<span class="postdetails">posted <script>"Oct 19, 2000 05:54:00".toLocaleDateTime();</script>19/10/2000 08:54<noscript><span class="lastPostTime">Oct 18, 2000 23:54:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1604566" class="likesHiddenDiv">
+				<img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row2 postbody" id="post_text_1604566" valign="top">
+
+                            <span class="postbody">
+                                    Shikhar,<br> <a href="http://www.javasoft.com/products/jdk/1.2/docs/api/java/awt/event/InputEvent.html" target="_blank" rel="nofollow">This class</a> may help.<br> Marilyn
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td colspan="2" class="row2" height="28" width="100%">
+                            <br>
+                                <hr>
+                                <span class="userSignature"><a class="snap_shots" href="http://www.coderanch.com/how-to/java/JavaBeginnersFaq" target="_new">JavaBeginnersFaq</a>
+<br>"Yesterday is history, tomorrow is a mystery, and today is a gift; that's why they call it the present." Eleanor Roosevelt</span>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="spacerow row2" colspan="2" height="1"><img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+            <tr>
+            <td bgcolor="#DEC7A4" width="18%"><img src="KeyPress%20event%20%28Java%20in%20General%20forum%20at%20JavaRanch%29_files/bunkhouse_smoke.gif"></td>
+            <td align="left" bgcolor="#DEC7A4" valign="top" width="82%">
+                &nbsp;<br>
+                    <div class="shngl" align="left">
+                        <span style="font-size: 12px; line-height: 1.5em;">
+I agree.  Here's the link:  <a href="http://www.coderanch.com/forums/banner/redirect/578">http://aspose.com/file-tools</a></span>
+                    </div>
+                &nbsp;<br>
+                </td>
+                </tr>
+                <tr class="postbody" align="left">
+                    <td colspan="2">
+                    subject: KeyPress event
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td class="catbottom" colspan="2" height="28">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td align="center"><span class="gensmall">&nbsp;</span></td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+
+
+            <table align="center" width="100%">
+
+				
+				<tbody><tr>
+    				<td>
+                
+                	
+                	<div class="similarThreadsSec">
+                		<div class="hdr">Similar Threads</div>
+
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/338747/GUI/java/Closing-frame">
+	           	Closing a frame
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row1">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/337344/GUI/java/Beginner-game">
+	           	Beginner game
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/257425/Applets/java/Applet-Applet-communication-prb">
+	           	Applet -Applet communication prb
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row1">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/235138/Applets/java/CALLING-RAUKAUTAM-SANDEEP-ANGELA">
+	           	CALLING   RAUKAUTAM SANDEEP,ANGELA
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/518188/Applets/java/KeyListener-failing-Macs">
+	           	KeyListener failing for Macs
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+                        
+                        
+                            
+                	</div>
+                
+                
+    				</td>
+    			</tr>
+
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+<a name="quick"></a>
+
+
+		</td>
+	</tr>
+</tbody></table>
+<div class="gensmall center">
+<script>
+document.write("All times above are in your local time zone & format.");
+document.write("The current ranch time (not your local time) is ");
+document.write("Aug 23, 2014 14:49:45".bold() + ".");
+</script>All times above are in your local time zone &amp; format.The current ranch time (not your local time) is <b>Aug 23, 2014 14:49:45</b>.<noscript>All times are in JavaRanch time: GMT-6 in summer, GMT-7 in winter</noscript>
+</div>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2371260-2']);
+	_gaq.push(['_gat._anonymizeIp']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<br>
+<div class="float-divider"></div>
+<div id="footer">
+ <div class="footerLinksDiv center">
+	<a class="nonForumLink" href="http://www.coderanch.com/how-to/code/ContactUs">Contact Us</a>
+	| Powered by <a href="http://www.jforum.net/" target="_blank">JForum</a>
+	| <span class="copyrightOwner">Copyright © 1998-2014 <a href="http://www.javaranch.com/paul-wheaton.jsp">Paul Wheaton</a></span>
+ </div>
+</div>
+<div class="float-divider"></div>
+
+
+
+
+<script type="text/javascript">
+	function blkd(eId, fId){
+		if (/bot|googlebot|bingbot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) return;
+
+		var s=document.getElementById(eId);
+		if (s==null || s.clientHeight > 20) return; 
+
+		var imgs = document.getElementById(eId).getElementsByTagName("img");
+		for (i = 0; i < imgs.length; i++) {
+			if (imgs[i].src.indexOf(window.location.origin) != 0 && imgs[i].src.indexOf("/") != 0) continue;
+			var img = imgs[i].src.split("/");
+			if (img.length < 5) continue; 
+			imgs[i].className = "";
+			var name = img.length > 4 ? img[4] : img[img.length - 1];
+			for (j = 5; j < img.length; j++) name = name + "/" + img[j];
+			imgs[i].src = "/t/45/b/49/" + name.replace(/\//g, "~");
+		}
+
+		$('#' + fId).append($('#' + eId).html());
+	}
+
+	$(window).load(function() {
+		blkd('topShngl', 'ool');
+		blkd('lowShngl', 'hib');
+    });
+</script>
+
+
+
+</body></html>

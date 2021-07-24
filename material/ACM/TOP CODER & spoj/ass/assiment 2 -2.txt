@@ -1,0 +1,31 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package boolen;
+
+/**
+ *
+ * @author HP
+ */
+public class Boolen {
+public static boolean twoTwo (int[] nums)
+{boolean s=true;
+    for(int i=0;i<nums.length;i++)
+    if(nums[i]==2)
+    {if (i==nums.length-1)
+    {if(!(nums[i-1]==2))   
+            s=false;}
+    else if(i==0)
+    {if(!(nums[i+1]==2))   
+            s=false;}
+    else if (!(nums[i+1]==2||nums[i-1]==2))
+s=false;}
+    return s;
+            }
+    public static void main(String[] args) {
+      int arr[]={2,1,2,2,1,1};
+      boolean s=twoTwo(arr);
+        System.out.println(s);
+    }
+}

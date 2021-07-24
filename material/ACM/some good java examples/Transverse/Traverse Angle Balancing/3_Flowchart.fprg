@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="1.0">
+    <attributes>
+        <attribute name="name" value="Traverse Angle Balancing"/>
+        <attribute name="authors" value="Islam ElShaarawy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="12/13/2014 12:03:36 AM"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Declarations"/>
+            <declare variables="a[100]" type="Real"/>
+            <declare variables="n" type="Integer"/>
+            <declare variables="i" type="Integer"/>
+            <declare variables="tsum" type="Real"/>
+            <declare variables="sum" type="Real"/>
+            <declare variables="error" type="Real"/>
+            <declare variables="correction" type="Real"/>
+            <comment text="Reading traverse size"/>
+            <do expression="n&lt;3 OR n&gt;100">
+                <output expression="&quot;How many angles [3,100]?&quot;"/>
+                <input variable="n"/>
+                <if expression="n&lt;3">
+                    <then>
+                        <output expression="&quot;Too few angles!&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="n&gt;100">
+                    <then>
+                        <output expression="&quot;Too many angles!&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+            <comment text="Reading angles values"/>
+            <output expression="&quot;Enter &quot; &amp; n &amp; &quot; angles:&quot;"/>
+            <for variable="i" start="0" end="n-1" step="1">
+                <do expression="a[i]&lt;=0 OR a[i]&gt;=360">
+                    <output expression="&quot;Angle &quot; &amp; (i+1) &amp; &quot; (0,360):&quot;"/>
+                    <input variable="a[i]"/>
+                    <if expression="a[i]&lt;=0 OR a[i]&gt;=360">
+                        <then>
+                            <output expression="&quot;Out of range!&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                </do>
+            </for>
+            <comment text="Calculating angles sum"/>
+            <assign variable="sum" expression="0"/>
+            <for variable="i" start="0" end="n-1" step="1">
+                <assign variable="sum" expression="sum+a[i]"/>
+            </for>
+            <comment text="Calculating correction"/>
+            <assign variable="tsum" expression="180*(n-2)"/>
+            <assign variable="error" expression="sum-tsum"/>
+            <assign variable="correction" expression="error/n"/>
+            <comment text="Correcting angles"/>
+            <for variable="i" start="0" end="n-1" step="1">
+                <assign variable="a[i]" expression="a[i]-correction"/>
+            </for>
+            <comment text="Printing corrected angles"/>
+            <output expression="&quot;Error = &quot; &amp; error"/>
+            <output expression="&quot;Correction = &quot; &amp; correction"/>
+            <output expression="&quot;Corrected angles:&quot;"/>
+            <for variable="i" start="0" end="n-1" step="1">
+                <output expression="a[i]"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

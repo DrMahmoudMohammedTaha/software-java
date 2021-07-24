@@ -1,0 +1,2417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="generator" content="vBulletin 3.8.6">
+
+<meta name="keywords" content=" Why is my Java application using only one processor?, java,jmx,tomcat,jboss,oc4j,orion,weblogic,websphere,garbage collector,memory,threads,monitoring,tuning">
+<meta name="description" content=" Why is my Java application using only one processor? Solving Programmatic Problems">
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.6 CSS
+* Style: 'Java'; Style ID: 3
+*/
+body
+{
+	background: #e8e8e8 url(images/styles/java/images/body.png) repeat-x left top;
+	color: #747474;
+	font: 14px arial, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	line-height:20px;
+}
+a:link, body_alink
+{
+	color: #999;
+	text-decoration: none;
+}
+a:visited, body_avisited
+{
+	color: #999;
+	text-decoration: none;
+}
+a:hover, a:active, body_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.page
+{
+	color: #747474;
+}
+.page a:link, .page_alink
+{
+	color: #404040;
+	text-decoration: none;
+}
+.page a:visited, .page_avisited
+{
+	color: #404040;
+	text-decoration: none;
+}
+.page a:hover, .page a:active, .page_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.tborder
+{
+	background: none;
+	color: #747474;
+	-moz-box-shadow: -4px 4px 3px #ddd;
+	-webkit-box-shadow: -4px 4px 3px #ddd;
+	box-shadow: -4px 4px 3px #ddd;
+}
+.tcat
+{
+	color: #4c77b1;
+	font: bold 18px arial, helvetica, sans-serif, verdana;
+	border-bottom:1px dashed #bcbcbc;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #4c77b1;
+	text-decoration: underline;
+}
+.thead
+{
+	background: none;
+	color: #999;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link, .thead_alink
+{
+	color: #999;
+	text-decoration: none;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #999;
+	text-decoration: none;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.tfoot
+{
+	background: none;
+	color: #999;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #999;
+	text-decoration: none;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #999;
+	text-decoration: none;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.alt1, .alt1Active
+{
+	background: #fff url(images/styles/java/images/alt.png) repeat-x left bottom;
+	color: #747474;
+}
+.alt1 a:link, .alt1_alink, .alt1Active a:link, .alt1Active_alink
+{
+	color: #404040;
+	text-decoration: none;
+}
+.alt1 a:visited, .alt1_avisited, .alt1Active a:visited, .alt1Active_avisited
+{
+	color: #404040;
+	text-decoration: none;
+}
+.alt1 a:hover, .alt1 a:active, .alt1_ahover, .alt1Active a:hover, .alt1Active a:active, .alt1Active_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.alt2, .alt2Active
+{
+	background: #fff url(images/styles/java/images/alt.png) repeat-x left bottom;
+	color: #747474;
+}
+.alt2 a:link, .alt2_alink, .alt2Active a:link, .alt2Active_alink
+{
+	color: #404040;
+	text-decoration: none;
+}
+.alt2 a:visited, .alt2_avisited, .alt2Active a:visited, .alt2Active_avisited
+{
+	color: #404040;
+	text-decoration: none;
+}
+.alt2 a:hover, .alt2 a:active, .alt2_ahover, .alt2Active a:hover, .alt2Active a:active, .alt2Active_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #747474;
+}
+.wysiwyg
+{
+	background: #fff;
+	color: #747474;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+.wysiwyg a:link, .wysiwyg_alink
+{
+	color: #404040;
+	text-decoration: none;
+}
+.wysiwyg a:visited, .wysiwyg_avisited
+{
+	color: #404040;
+	text-decoration: none;
+}
+.wysiwyg a:hover, .wysiwyg a:active, .wysiwyg_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 12px arial, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #4c77b1;
+	color: #fff;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #fff;
+	color: #747474;
+	padding: 10px;
+}
+.panelsurround
+{
+	background: #fff;
+	color: #747474;
+}
+legend
+{
+	color: #999;
+	font: bold 12px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	color: #999;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #999;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #999;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #4c77b1;
+	text-decoration: none;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #404040;
+	border: 1px solid #aaa;
+}
+.vbmenu_option
+{
+	background: #f5f5f5;
+	color: #404040;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #000;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #000;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #5287bb;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, th.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** de-emphasized text */
+.shade, a.shade:link, a.shade:visited { color: #777777; text-decoration: none; }
+a.shade:active, a.shade:hover { color: #FF4400; text-decoration: underline; }
+.tcat .shade, .thead .shade, .tfoot .shade { color: #DDDDDD; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+	.liveDemoImg
+	{
+		padding-left: 202px;
+		padding-top: 7px;
+		background-image: url('/images/live_demo.png');
+		background-position: 0 0px;
+		background-repeat: no-repeat;
+	}
+
+	.liveDemoImg:hover
+	{
+		padding-left: 202px;
+		padding-top: 7px;
+		background-image: url('/images/live_demo.png');
+		background-position: 0 -24px;
+		background-repeat: no-repeat;
+	}
+
+	.downloadImg
+	{
+		padding-left: 202px;
+		padding-top: 7px;
+		background-image: url('/images/free-download.png');
+		background-position: 0 0px;
+		background-repeat: no-repeat;
+	}
+
+	.downloadImg:hover
+	{
+		padding-left: 202px;
+		padding-top: 7px;
+		background-image: url('/images/free-download.png');
+		background-position: 0 -24px;
+		background-repeat: no-repeat;
+	}
+</style>
+<link rel="stylesheet" type="text/css" href="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/connection-min.js"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=320ee175b7c8ff20905440b3065be5c1&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "images/styles/java/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/vbulletin_global.js"></script>
+<script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/vbulletin_menu.js"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="Java-Monitor Forum RSS Feed" href="http://java-monitor.com/forum/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="Java-Monitor Forum - Solving Programmatic Problems - RSS Feed" href="http://java-monitor.com/forum/external.php?type=RSS2&amp;forumids=13">
+	
+
+<link href="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/style.css" rel="stylesheet" type="text/css">
+	<title> Why is my Java application using only one processor? - Java-Monitor Forum</title>
+	<script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/vbulletin_post_loader.js"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+</head>
+<body onload="">
+<a name="top"></a>
+<div id="wrapper">
+<div class="header">
+<div class="logo-box"><a href="http://java-monitor.com/forum/index.php?s=320ee175b7c8ff20905440b3065be5c1"><img title="java" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/logo.png" alt="java" border="0"></a></div>
+
+<ul class="nav-bar">
+<li><a href="http://java-monitor.com/forum/index.php?s=320ee175b7c8ff20905440b3065be5c1">home</a></li>
+
+<li><a href="http://java-monitor.com/forum/register.php?s=320ee175b7c8ff20905440b3065be5c1" rel="nofollow">register</a></li>
+<li><a href="http://java-monitor.com/forum/livedemo.php?s=320ee175b7c8ff20905440b3065be5c1">live demo</a></li>
+
+<li><a id="navbar_search" href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1" rel="nofollow">search</a></li>
+</ul>
+
+<div class="mem-area">
+
+<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)"><script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/vbulletin_md5.js"></script>
+<div class="mem-line1"><label>user <input class="tbox" name="vb_login_username" id="label" accesskey="u" tabindex="101" type="text"></label></div>
+<div class="mem-line2"><label>password <input class="tbox" name="vb_login_password" id="navbar_password" tabindex="102" type="password"></label></div>
+<div class="mem-line3"><input name="submit" class="tbu" accesskey="s" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." value="" type="submit"></div>
+<input name="cookieuser" value="1" type="hidden">
+<input name="s" value="320ee175b7c8ff20905440b3065be5c1" type="hidden">
+<input name="do" value="login" type="hidden">
+<input name="vb_login_md5password" type="hidden">
+<input name="vb_login_md5password_utf" type="hidden">
+</form>
+
+</div>
+</div><!-- header close -->
+<div class="content-in">
+<div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td valign="top">
+
+
+<div class="bcumbs">
+<a href="http://java-monitor.com/forum/index.php?s=320ee175b7c8ff20905440b3065be5c1" accesskey="1">Java-Monitor Forum</a> 
+
+	<span class="navbar">&gt; <a href="http://java-monitor.com/forum/forumdisplay.php?s=320ee175b7c8ff20905440b3065be5c1&amp;f=7">Java Application Server Administration</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://java-monitor.com/forum/forumdisplay.php?s=320ee175b7c8ff20905440b3065be5c1&amp;f=13">Solving Programmatic Problems</a></span>
+
+»
+
+	 Why is my Java application using only one processor?
+
+
+</div>
+
+
+
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	<!-- community link menu -->
+	<div class="vbmenu_popup" id="community_menu" style="display:none;margin-top:3px" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr><td class="thead">Community Links</td></tr>
+		
+		
+		
+		
+		
+			<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/memberlist.php?s=320ee175b7c8ff20905440b3065be5c1">Members List</a></td></tr>
+		
+		
+		</tbody></table>
+	</div>
+	<!-- / community link menu -->
+	
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display:none;margin-top:3px" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead">Search Forums</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="search.php?do=process" method="post">
+
+					<input name="do" value="process" type="hidden">
+					<input name="quicksearch" value="1" type="hidden">
+					<input name="childforums" value="1" type="hidden">
+					<input name="exactname" value="1" type="hidden">
+					<input name="s" value="320ee175b7c8ff20905440b3065be5c1" type="hidden">
+					<input name="securitytoken" value="guest" type="hidden">
+					<div><input class="bginput" name="query" size="25" tabindex="1001" type="text"><input class="button" value="Go" tabindex="1004" type="submit"></div>
+					<div style="margin-top:6px">
+						<label for="rb_nb_sp0"><input name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked" type="radio">Show Threads</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input name="showposts" value="1" id="rb_nb_sp1" tabindex="1003" type="radio">Show Posts</label>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1" accesskey="4" rel="nofollow">Advanced Search</a></td>
+		</tr>
+		
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+	
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display:none">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input class="bginput" id="pagenav_itxt" style="font-size:11px" size="4" type="text">
+				<input class="button" id="pagenav_ibtn" value="Go" type="button">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+  var banners = new Array(3);
+  banners[0] = '<a href="http://java-monitor.com/forum/kick-start.php"><img src="/images/banners/kick-start-1.png" alt="Talk one-on-one to a Java expert." border="0" width="303" height="57" /></a>';
+  banners[1] = '<a href="http://java-monitor.com/forum/kick-start.php"><img src="/images/banners/kick-start-2.png" alt="Expert, personal tuning advice." border="0" width="303" height="57" /></a>';
+  banners[2] = '<a href="http://java-monitor.com/forum/kick-start.php"><img src="/images/banners/kick-start-3.png" alt="Instructor-led tuning kick-start training, only $150." border="0" width="303" height="57" /></a>';
+
+  increment = Math.floor(Math.random() * banners.length);
+  document.write('<center>' + banners[increment] + '</center><div class="cat_spacer"></div>');
+//-->
+</script><center><a href="http://java-monitor.com/forum/kick-start.php"><img title="Expert, personal tuning advice." src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/kick-start-2.png" alt="Expert, personal tuning advice." border="0" height="57" width="303"></a></center><div class="cat_spacer"></div>
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom:3px" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+	
+		<td class="smallfont"><a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;noquote=1&amp;p=1042" rel="nofollow"><img title="Reply" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" style="border-bottom:none;" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td style="cursor: pointer;" class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="http://java-monitor.com/forum/showthread.php?t=317&amp;nojs=1#goto_threadtools">Thread Tools</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img alt="" title="" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/menu_open.gif" border="0">
+	</td>
+	
+		<td style="cursor: pointer;" class="vbmenu_control" id="threadsearch" nowrap="nowrap">
+			<a href="http://java-monitor.com/forum/showthread.php?t=317&amp;nojs=1#goto_threadsearch">Search this Thread</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script> <img alt="" title="" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/menu_open.gif" border="0">
+		</td>
+	
+	
+	
+	<td style="cursor: pointer;" class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a href="http://java-monitor.com/forum/showthread.php?t=317&amp;nojs=1#goto_displaymodes">Display Modes</a>
+		<script type="text/javascript"> vbmenu_register("displaymodes"); </script> <img alt="" title="" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/menu_open.gif" border="0">
+	</td>
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		
+	
+
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #1042 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1042" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1042" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1042&amp;postcount=1" target="new" rel="nofollow" id="postcount1042" name="1"><strong>1</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1042"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				04-05-2009, 21:49
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1042">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">kjkoster</a>
+					<img title="kjkoster is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="kjkoster is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1042", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Forum Operator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Jul 2008</div>
+					
+					
+					<div>
+						Posts: 1,123
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1042">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				<strong>Why is my Java application using only one processor? A quick starter guide.</strong>
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1042">
+			
+			Dear All,<br>
+<br>
+Single processor machines are fairly hard to come by these days. Even 
+laptops come with dual core processors. For us running Java application 
+servers, this is a good thing, right? Java comes with out of the box 
+threading support and great libraries that help you make programs that 
+scale out to use whatever processor resource you may have.<br>
+<br>
+As a side note, check out <a href="http://video.google.com/videoplay?docid=2139967204534450862" target="_blank">Cliff Click's Google talk on lock-free maps for Java</a>.
+ Cliff devised a lock-free map that scales practically linearly to 750 
+or so processors. Cliff speaks of 30 processor cores as a 'moderate' 
+number of processors. Well, a moderate number of processors for me is 2,
+ not 30. Cliff and I not in the same league, I guess. But I digress.<br>
+<br>
+So we have this great Java application running on the brand new server 
+with a moderate number of processors. We named the server something 
+fitting for its perceived prowess; 'beast', 'monster' or somesuch. But 
+when we run the application, whoops, it is not all that fast. Grr. Now 
+what?<br>
+<br>
+The first step is to see what the machine is up to. Basic performance 
+tuning says that a given machine can be limited by one of two things: 
+CPU or I/O. The latter further breaks down into being limited by three 
+things: disk I/O (which is further composed of file I/O and swapping 
+memory pages), network I/O or inter-process communication.<br>
+<br>
+To see if the machine is CPU-bound or I/O-bound, we can use (on FreeBSD)
+ top -P or (on Linux) press the 1 (one) key in top. This will show the 
+CPU consumption on each processor.<br>
+<br>
+Let's assume that the machine is cpu-bound. Not only that, let's further
+ assume that it is using only one processor and not load all of them. 
+Typically, <a href="http://www.freebsd.org/cgi/man.cgi?query=top" target="_blank">top(1)</a>
+ will show that one processor is loaded at 90% to 100%, while the other 
+processors only run at a few percent. The processor being loaded may be a
+ different one each time. This is normal behaviour as your OS moves 
+processes around on the machine.<br>
+<br>
+If you see that no processors are being loaded, you are most likely 
+I/O-bound. Optimising I/O-bound processes is an art in itself, so we'll 
+not discuss this in this post.<br>
+<br>
+With the process diagnosed to be CPU-bound, we now have to determine 
+what the process is doing: executing user code or scheduling threads to 
+fight over locks.<br>
+<br>
+On the processor that is eating 100%, look at the distribution of that 
+time. It is (roughly) split up into idle time, user time and system 
+time. Keep an eye out for high percentages of system time on your Java 
+process.<br>
+<br>
+Java processes that consume a lot of system time spend a lot of time 
+doing operating system related tasks. That can be all kinds of things, 
+like opening and closing files and sockets. It can also quite well be 
+that the threads are fighting over locks in the JVM. Such locks are also
+ managed by the operating system and the time spent putting threads to 
+sleep and waking them back up shows as system time in <a href="http://www.freebsd.org/cgi/man.cgi?query=top" target="_blank">top(1)</a>.<br>
+<br>
+If the processor is shown to consume 80%-90% user time, it is most 
+likely spending its time on regular Java code. That means that you have 
+probably programmed something different than you intended to.<br>
+<br>
+Notice that we are still in machine-dependent-land here, even though we 
+are diagnosing a Java problem. I can hear some of you Java developers 
+whailing: "but should the JVM not abstract from such gross details? I 
+have not become a Java programmer to find myself back at the command 
+line!". Well, think of this as walking the track. Motorcycle racers walk
+ an unfamiliar race track on foot. While walking they spot details in 
+the tarmac that are simply not visible when you are riding at speed. So 
+you may be Java's equivalent of Valentino Rossi: you're still walking. 
+:-)<br>
+<br>
+One final task remains on the command line, before the Java developers among you may safely retreat into the Java code again. <img src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/smile.gif" alt="" title="Smile" class="inlineimg" border="0"> We have to take a thread dumps. Depending on this problem we are diagnosing, we may have to take a few thread dumps.<br>
+<br>
+Java has long supported dumping its thread states to standard output. You can do this by sending it the QUIT signal using <a href="http://www.freebsd.org/cgi/man.cgi?query=kill" target="_blank">kill(1)</a>. The command line to do this is "kill -3 &lt;pid&gt;", where &lt;pid&gt; is the UNIX process ID of the Java application.<br>
+<br>
+Current versions of Java come with jstack, which makes it possible to 
+dump thread states to a separate file. If you have jstack available, 
+you're better off using it than using <a href="http://www.freebsd.org/cgi/man.cgi?query=kill" target="_blank">kill(1)</a>.
+ The command line for jstack is "jstack &lt;pid&gt;", where (again) 
+&lt;pid&gt; is the UNIX process ID of your running Java application.<br>
+<br>
+That was the easy part. For the next part, fill up your coffee jug and  
+close the office door. You have some reading and scripting to do.<br>
+<br>
+If you are unfamiliar with Java stack traces and thread dumps, have a 
+look at the file and browse around. Get a feel for the information that 
+is in that file.<br>
+<br>
+The actual format of the file differs from platform to platform and from
+ Java version to Java version. The rough layout is the same, though. For
+ each thread, you see the thread name, its state and some extra 
+information. If the thread is blocked, the dump describes what it is 
+blocked on or waiting for. The fact that almost all threads are either 
+blocked, waiting or in-native is quite normal. I daresay that in a 
+typical thread dump of a healthy application server you will not find 
+more than one or two threads actually running. Everything else should be
+ sleeping and not get in the way. In a way threads are like kids: you 
+get more work done when they're all off sleeping.<br>
+<br>
+Ok, let's review what we have; our imaginary application is eating up 
+100% time on one processor, but not does not spread the load to the 
+other processors. It may be leaning heavily on the operating system to 
+schedule the threads, or it may be churning on the application logic. We
+ have a thread dump, or a few thread dumps to look at.<br>
+<br>
+Now you have to ask yourself: "What am I looking for in the thread 
+dump". In the case of an application eating loads of CPU, that question 
+is likely to be: "what is keeping my threads from reaching the CPU?" In 
+other words: "what are the threads doing, if not processing the logic I 
+crafted?"<br>
+<br>
+If your application is scheduling itself to death, and using up a lot of
+ system time, the question is more specific: "what lock or locks are my 
+threads fighting over?"<br>
+<br>
+In either case, we need to find 'our' threads first. This cuts back on 
+the size of the stack dumps dramatically. As a rule of the thumb, I 
+remove all threads from the dump that 1) do not have any of my 
+application code in the stack trace and 2) have a name that suggests it 
+is library or JVM related (e.g. "derby.antiGC", "CompilerThread1", or 
+"java-monitor collector").<br>
+<br>
+With the reduced stack dump, it is a matter of sitting down with the 
+code and your wits. From this point on you are firmly on your own, as 
+each application is different.<br>
+<br>
+While hunting, take a few thread dumps at regular intervals.  Reduce 
+them using the same steps each time and compare the resulting stack 
+traces.<br>
+<br>
+Don't go overboard and take dozens of dumps. You lose sight of the 
+forest for the trees if you do that. Start with three or four dumps and 
+see what you learn from them.<br>
+<br>
+Go back to that question you formulated earlier: "what is keeping my 
+threads from reaching the processor cores?" Examine the locks that your 
+threads are blocked on. Are they in places you expected? What can you do
+ to remove those locks?<br>
+<br>
+In the code, look for signs of shotgun synchronisation. Developers who 
+are not used to working in multithreaded programming environments 
+sometimes lose control and start littering the code with Java's 
+'synchronized' keyword. A good indication of shotgun synchronisation is 
+one or more classes that have all or most of their methods marked as 
+'synchronized'. Comments in the code such as: "weird things happen if we
+ don't synchronise this class" should also be regarded as fishy. <br>
+<br>
+Another tell-tale sign of bad multithreading practice is that 
+programmers are using Java's wait/notify mechanism. With the 
+introduction of Java 5's concurrency classes, that mechanism should no 
+longer be used in Enterprise software. There is no need for it any 
+longer. All common patterns have more efficient and less buggy 
+implementations in Java's standard libraries.<br>
+<br>
+Just keep returning to that all-important question: "what is keeping my 
+threads from getting to the processor cores they so desperately desire?"<br>
+<br>
+If you get really stuck and find your hair between your fingers instead 
+of on your head, post your (reduced) stack traces on Java-monitor for us
+ to look at and discuss. Maybe we can help?<br>
+<br>
+Kees Jan<br>
+<br>
+PS. Oh, and <a href="http://www.freebsd.org/cgi/man.cgi?query=awk" target="_blank">awk(1)</a> is your friend when it comes to automatically stripping uninteresting threads from the dump. :-)
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr style="color:none; background-color:none" size="1">
+				<em>
+					
+						Last edited by kjkoster; 04-05-2009 at <span class="time">22:16</span>.
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1042" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1042 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1042_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">kjkoster</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.kjkoster.org/">Visit kjkoster's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=2" rel="nofollow">Find all posts by kjkoster</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1042 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1042 --><!-- post #1947 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1947" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1947" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1947&amp;postcount=2" target="new" rel="nofollow" id="postcount1947" name="2"><strong>2</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1947"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				24-02-2010, 19:42
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1947">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2922">mmr11408</a>
+					<img title="mmr11408 is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="mmr11408 is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1947", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Junior Member</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Feb 2010</div>
+					
+					
+					<div>
+						Posts: 2
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1947">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1947">
+			
+			Very interesting append. How can I tell which CPU my JVM is bound to?<br>
+<br>
+top -p pid and pressing 1 shows all the CPUs.<br>
+<br>
+I want to add the -native to my JVM and see what the impact is.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1947" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1947 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1947_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">mmr11408</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2922">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=2922" rel="nofollow">Find all posts by mmr11408</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1947 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1947 --><!-- post #1948 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1948" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1948" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1948&amp;postcount=3" target="new" rel="nofollow" id="postcount1948" name="3"><strong>3</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1948"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				24-02-2010, 20:04
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1948">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">kjkoster</a>
+					<img title="kjkoster is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="kjkoster is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1948", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Forum Operator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Jul 2008</div>
+					
+					
+					<div>
+						Posts: 1,123
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1948">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1948">
+			
+			Dear mmr11408,<br>
+<br>
+Where can I find -native documented? I don't think this is a valid JVM option.<br>
+<br>
+Kees Jan
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1948" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1948 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1948_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">kjkoster</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.kjkoster.org/">Visit kjkoster's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=2" rel="nofollow">Find all posts by kjkoster</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1948 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1948 --><!-- post #1964 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1964" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1964" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1964&amp;postcount=4" target="new" rel="nofollow" id="postcount1964" name="4"><strong>4</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1964"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				03-03-2010, 13:39
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1964">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2922">mmr11408</a>
+					<img title="mmr11408 is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="mmr11408 is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1964", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Junior Member</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Feb 2010</div>
+					
+					
+					<div>
+						Posts: 2
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1964">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1964">
+			
+			It is mentioned in this append:<br>
+<br>
+<a href="http://www.theserverside.com/discussions/thread.tss?thread_id=15506" target="_blank">http://www.theserverside.com/discuss...hread_id=15506</a><br>
+<br>
+But it is not mentioned in Sun Java documentation. I wanted to play 
+around with that and other flags. But I need to know how to determine 
+which CPU my JVM is bound to.<br>
+<br>
+Thanks.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1964" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1964 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1964_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">mmr11408</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2922">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=2922" rel="nofollow">Find all posts by mmr11408</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1964 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1964 --><!-- post #1965 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1965" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1965" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1965&amp;postcount=5" target="new" rel="nofollow" id="postcount1965" name="5"><strong>5</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1965"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				03-03-2010, 14:46
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1965">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">kjkoster</a>
+					<img title="kjkoster is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="kjkoster is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1965", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Forum Operator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Jul 2008</div>
+					
+					
+					<div>
+						Posts: 1,123
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1965">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1965">
+			
+			Dear mmr11408,<br>
+<br>
+Uhm.... that post is from 2002. These switches are from way back when 
+threading libraries where still messy and difficult. I think they went 
+away with Java 1.2 or something. All newer JVM's use what you think of 
+as the -native flag by default. -green is dead for years.<br>
+<br>
+CPU binding is done at the OS level, so check the manual pages for you OS to see how that is done.<br>
+<br>
+Kees Jan
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1965" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1965 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1965_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">kjkoster</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.kjkoster.org/">Visit kjkoster's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=2" rel="nofollow">Find all posts by kjkoster</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1965 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1965 --><!-- post #1971 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1971" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1971" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1971&amp;postcount=6" target="new" rel="nofollow" id="postcount1971" name="6"><strong>6</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1971"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				09-03-2010, 15:31
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1971">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=7">Barry</a>
+					<img title="Barry is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="Barry is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1971", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Moderator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Jul 2008</div>
+					
+					
+					<div>
+						Posts: 106
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1971">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1971">
+			
+			You should really take a look at using visualvm when taking heapdumps.<br>
+Not only are they visual, but you can also sample based on the current 
+stack traces to get a good idea where most of your time is spent.<br>
+<br>
+(Note: sampling does not always give the best results, it merely notes what code it sees in the stacktraces the most often)<br>
+<br>
+Visualvm should already be included in your standard JVM install unless you run something really ancient
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1971" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1971 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1971_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Barry</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=7">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=7" rel="nofollow">Find all posts by Barry</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1971 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1971 --><!-- post #1972 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit1972" style="padding:0px 0px 6px 0px">
+	
+
+
+
+<table class="tborder" id="post1972" border="0" cellpadding="6" cellspacing="0" align="center" width="100%">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			#<a href="http://java-monitor.com/forum/showpost.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1972&amp;postcount=7" target="new" rel="nofollow" id="postcount1972" name="7"><strong>7</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1972"><img title="Old" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/post_old.gif" alt="Old" border="0"></a>
+			
+				09-03-2010, 15:57
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1972">
+					
+					<a class="bigusername" href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">kjkoster</a>
+					<img title="kjkoster is offline" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/user_offline.gif" alt="kjkoster is offline" border="0">
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1972", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Forum Operator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Jul 2008</div>
+					
+					
+					<div>
+						Posts: 1,123
+					</div>
+					
+					
+					
+					
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1972">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img title="Default" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/icon1.gif" alt="Default" border="0">
+				
+			</div>
+			<hr style="color:none; background-color:none" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1972">
+			
+			Dear Barry,<br>
+<br>
+I hadn't thought of that. How well does visualvm work on remote 
+machines? RMI/JMX can be tricky, what's your experience with visualvm?<br>
+<br>
+Kees Jan
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;p=1972" rel="nofollow"><img title="Reply With Quote" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 1972 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1972_menu" style="display:none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">kjkoster</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/member.php?s=320ee175b7c8ff20905440b3065be5c1&amp;u=2">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.kjkoster.org/">Visit kjkoster's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=finduser&amp;u=2" rel="nofollow">Find all posts by kjkoster</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1972 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1972 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-top:-3px" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="http://java-monitor.com/forum/newreply.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=newreply&amp;noquote=1&amp;p=1972" rel="nofollow"><img title="Reply" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/vbulletin_lightbox.js"></script>
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br>
+	<div class="smallfont" align="center">
+		<strong>«</strong>
+			<a href="http://java-monitor.com/forum/showthread.php?s=320ee175b7c8ff20905440b3065be5c1&amp;t=317&amp;goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="http://java-monitor.com/forum/showthread.php?s=320ee175b7c8ff20905440b3065be5c1&amp;t=317&amp;goto=nextnewest" rel="nofollow">Next Thread</a>
+		<strong>»</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display:none">
+<form action="postings.php?t=317&amp;pollid=" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Show Printable Version" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/printer.gif" alt="Show Printable Version"> <a href="http://java-monitor.com/forum/printthread.php?s=320ee175b7c8ff20905440b3065be5c1&amp;t=317" accesskey="3" rel="nofollow">Show Printable Version</a></td>
+	</tr>
+	
+	
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+<!-- thread display mode menu -->
+<div class="vbmenu_popup" id="displaymodes_menu" style="display:none">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Display Modes<a name="goto_displaymodes"></a></td>
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option" title="nohilite"><img title="Linear Mode" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/mode_linear.gif" alt="Linear Mode"> <strong>Linear Mode</strong></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Hybrid Mode" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/mode_hybrid.gif" alt="Hybrid Mode"> <a href="http://java-monitor.com/forum/showthread.php?s=320ee175b7c8ff20905440b3065be5c1&amp;mode=hybrid&amp;t=317">Switch to Hybrid Mode</a></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Threaded Mode" class="inlineimg" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/mode_threaded.gif" alt="Threaded Mode"> <a href="http://java-monitor.com/forum/showthread.php?s=320ee175b7c8ff20905440b3065be5c1&amp;p=1042&amp;mode=threaded#post1042">Switch to Threaded Mode</a></td>
+	
+	</tr>
+	</tbody></table>
+</div>
+<!-- / thread display mode menu -->
+
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display:none">
+<form action="search.php?do=process&amp;searchthreadid=317" method="post">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Search this Thread<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option" title="nohilite">
+			<input name="s" value="320ee175b7c8ff20905440b3065be5c1" type="hidden">
+			<input name="securitytoken" value="guest" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<input name="searchthreadid" value="317" type="hidden">
+			<input class="bginput" name="query" size="25" type="text"><input class="button" value="Go" type="submit"><br>
+		</td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a href="http://java-monitor.com/forum/search.php?s=320ee175b7c8ff20905440b3065be5c1&amp;searchthreadid=317">Advanced Search</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+<tbody><tr valign="bottom">
+	<td valign="top" width="100%">
+		<table class="tborder" border="0" cellpadding="6" cellspacing="0" width="210">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/collapse_thead.gif" alt="" border="0"></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr>
+		
+		<div><a href="http://java-monitor.com/forum/misc.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a href="http://java-monitor.com/forum/misc.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a href="http://java-monitor.com/forum/misc.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+		<hr>
+		<div><a href="http://java-monitor.com/forum/misc.php?s=320ee175b7c8ff20905440b3065be5c1&amp;do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input name="s" value="320ee175b7c8ff20905440b3065be5c1" type="hidden">
+	<input name="daysprune" value="" type="hidden">
+	<strong>Forum Jump</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="cp">User Control Panel</option>
+			<option value="pm">Private Messages</option>
+			<option value="subs">Subscriptions</option>
+			<option value="wol">Who's Online</option>
+			<option value="search">Search Forums</option>
+			<option value="home">Forums Home</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="7" class="fjdpth0"> Java Application Server Administration</option>
+<option value="3" class="fjdpth1">&nbsp; &nbsp;  Java Administration</option>
+<option value="5" class="fjdpth1">&nbsp; &nbsp;  Tomcat Administration</option>
+<option value="10" class="fjdpth1">&nbsp; &nbsp;  Glassfish Administration</option>
+<option value="16" class="fjdpth1">&nbsp; &nbsp;  JBoss Administration</option>
+<option value="11" class="fjdpth1">&nbsp; &nbsp;  Jetty Administration</option>
+<option value="17" class="fjdpth1">&nbsp; &nbsp;  Openfire Administration</option>
+<option value="6" class="fjdpth1">&nbsp; &nbsp;  Java Security Advisories</option>
+<option value="13" class="fjsel" selected="selected">&nbsp; &nbsp;  Solving Programmatic Problems</option>
+<option value="15" class="fjdpth1">&nbsp; &nbsp;  Monitoring Tool Questions</option>
+
+		</optgroup>
+		
+	</select><input class="button" value="Go" type="submit">
+	</form>
+</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+
+
+
+</div></div></div></td>
+</tr>
+</tbody></table>
+</div>
+</div><!-- content close -->
+<div class="footer">
+<div class="footer1">
+<div class="ftime">All times are GMT +1. The time now is <span class="time">13:16</span>.</div>
+<div class="flinks">
+				<a href="http://java-monitor.com/forum/sendmessage.php?s=320ee175b7c8ff20905440b3065be5c1" rel="nofollow" accesskey="9">contact us</a>
+				
+				
+				
+				
+				 - <a href="http://java-monitor.com/tool/terms.html">terms of service</a>
+</div>
+</div>
+<div class="footer2">
+Powered by vBulletin® Version 3.8.6<br>Copyright ©2000 - 2014, Jelsoft Enterprises Ltd. 
+
+<!--ONESTAT SCRIPTCODE START-->
+<!--
+// Modification of this code is not allowed and will permanently disable your account!
+// Account ID : 483947
+// Website URL: http://java-monitor.com
+// Copyright (C) 2002-2007 OneStat.com All Rights Reserved
+-->
+<div id="OneStatTag"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td align="center">
+<script type="text/javascript">
+<!--
+function OneStat_Pageview()
+{
+    var d=document;
+    var sid="483947";
+    var CONTENTSECTION="";
+    var osp_URL=d.URL;
+    var osp_Title=d.title;
+    var t=new Date();
+    var p="http"+(d.URL.indexOf('https:')==0?'s':'')+"://stat.onestat.com/stat.aspx?tagver=2&sid="+sid;
+    p+="&url="+escape(osp_URL);
+    p+="&ti="+escape(osp_Title);
+    p+="&section="+escape(CONTENTSECTION);
+    p+="&rf="+escape(parent==self?document.referrer:top.document.referrer);
+    p+="&tz="+escape(t.getTimezoneOffset());
+    p+="&ch="+escape(t.getHours());
+    p+="&js=1";
+    p+="&ul="+escape(navigator.appName=="Netscape"?navigator.language:navigator.userLanguage);
+    if(typeof(screen)=="object"){
+      p+="&sr="+screen.width+"x"+screen.height;p+="&cd="+screen.colorDepth;
+      p+="&jo="+(navigator.javaEnabled()?"Yes":"No");
+    }
+    d.write('<a href="http://www.onestat.com/aspx/login.aspx?sid='+sid+'" target=_blank><img id="ONESTAT_TAG" border="0" src="'+p+'" alt="This site tracked by OneStat.com. Get your own free site tracker."></'+'a>');
+}
+ 
+OneStat_Pageview();
+//-->
+</script><a href="http://www.onestat.com/aspx/login.aspx?sid=483947" target="_blank"><img title="This site tracked by OneStat.com. Get your own free site tracker." id="ONESTAT_TAG" src="Why%20is%20my%20Java%20application%20using%20only%20one%20processor%20%20-%20Java-Monitor%20Forum_files/stat.gif" alt="This site tracked by OneStat.com. Get your own free site tracker." border="0"></a>
+<noscript>
+<a href="http://www.onestat.com"><img border="0" src="http://stat.onestat.com/stat.aspx?tagver=2&amp;sid=483947&amp;js=No&amp;" ALT="web hit counter"></a>
+</noscript>
+</td></tr><tr><td align="center"><div style="COLOR:black;display:none;FONT-FAMILY:'Verdana';"><a href="http://www.onestat.com/" style="text-decoration:none;">web hit counter</a><br></div></td></tr></tbody></table></div>
+<!--ONESTAT SCRIPTCODE END-->
+
+
+
+</div>
+</div><!-- footer close -->
+</div><!-- wrapper close -->
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+
+</body></html>

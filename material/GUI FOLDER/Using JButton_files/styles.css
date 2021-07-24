@@ -1,0 +1,43 @@
+body,td {
+  font-family: Verdana, Helvetica, Gill Sans, Verdana, arial, sans-serif;
+  font-size: 11pt;
+}
+
+DIV.codefragment {
+  width: 90%;
+  background-color: #dddddd;
+  border: 1px dashed olive;
+  font-family: monospace;
+}
+
+DIV.explanationbox {
+  background-color: orange;
+  border: 1px solid black;
+}
+
+DIV.navbar {
+  background-color: #ccddff;
+  border: 1px  solid #8888cc;
+}
+
+DIV.summarybox {
+  background-color: #ffffcc;
+  border: 1px solid black;
+  width: 90%;
+  align: center;
+}
+
+
+DIV.searchbox {
+  background-color: #ccffff;
+  border: 1px solid black;
+}
+
+DT {
+  font-weight: bold;
+}
+
+* div.topfloater {
+  float: right;
+  border: 1px solid black;
+}

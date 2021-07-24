@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html class="js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"><head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortlink" href="http://www.programmingsimplified.com/node/411">
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="http://www.programmingsimplified.com/java/source-code/java-program-to-bubble-sort">
+  <title>Java program to bubble sort | Programming Simplified</title>
+  <link type="text/css" rel="stylesheet" href="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all">
+<link type="text/css" rel="stylesheet" href="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/css_sdyyIuqV_D0sgcuYxlQjQRjXrhAHul_ByaHN6dBpqGw.css" media="all">
+<link type="text/css" rel="stylesheet" href="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/css_NpB6CDH3VBL4_EN1jDv8q5p-yINdDfK6IqDtylY7Rac.css" media="all">
+<link type="text/css" rel="stylesheet" href="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/css_cFN8E9ZOUaSKs_S3nl2Zp29KNkMForZ5hO6u53dUg2U.css" media="all">
+<link type="text/css" rel="stylesheet" href="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print">
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/themes/bartik/css/ie.css?nhfkj2" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/themes/bartik/css/ie6.css?nhfkj2" media="all" />
+<![endif]-->
+  <script src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/ca-pub-0388429284943625.js" type="text/javascript" async=""></script><script type="text/javascript" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bartik","theme_token":"FqAt9JV_dhVPQKWpktJkASEGZTBP5lmOCt3VTHD7SnI","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"themes\/bartik\/css\/layout.css":1,"themes\/bartik\/css\/style.css":1,"themes\/bartik\/css\/colors.css":1,"themes\/bartik\/css\/print.css":1,"themes\/bartik\/css\/ie.css":1,"themes\/bartik\/css\/ie6.css":1}}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-411 node-type-java">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper"><div id="page">
+
+  <div id="header" class="without-secondary-menu"><div class="section clearfix">
+
+          <a href="http://www.programmingsimplified.com/" title="Home" rel="home" id="logo">
+        <img src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/logo_0.png" alt="Home">
+      </a>
+    
+          <div id="name-and-slogan" class="element-invisible">
+
+                              <div id="site-name" class="element-invisible">
+              <strong>
+                <a href="http://www.programmingsimplified.com/" title="Home" rel="home"><span>Programming Simplified</span></a>
+              </strong>
+            </div>
+                  
+                  <div id="site-slogan" class="element-invisible">
+            c c++ and java programming tutorials and programs          </div>
+        
+      </div> <!-- /#name-and-slogan -->
+    
+      <div class="region region-header">
+    <div id="block-search-form" class="block block-search">
+
+    
+  <div class="content">
+    <form action="/java/source-code/java-program-to-bubble-sort" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." id="edit-search-block-form--2" name="search_block_form" size="15" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input id="edit-submit" name="op" value="Search" class="form-submit" type="submit"></div><input name="form_build_id" value="form-Nj1LJyy4RiwTVPCtRkNG71sBypB8Sg9Irqm-e-MMA2E" type="hidden">
+<input name="form_id" value="search_block_form" type="hidden">
+</div>
+</div></form>  </div>
+</div>
+  </div>
+
+          <div id="main-menu" class="navigation">
+        <h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-119 first"><a href="http://www.programmingsimplified.com/" title="Home">Home</a></li>
+<li class="menu-6487"><a href="http://www.programmingsimplified.com/programming-books" title="Buy Programming Books">Programming Books</a></li>
+<li class="menu-1686"><a href="http://www.programmingsimplified.com/c" title="C Programming">C Programming</a></li>
+<li class="menu-120"><a href="http://www.programmingsimplified.com/Tutorials" title="C Programming Tutorials">Tutorials</a></li>
+<li class="menu-121"><a href="http://www.programmingsimplified.com/c/graphics.h" title="C Graphics">C Graphics</a></li>
+<li class="menu-1115"><a href="http://www.programmingsimplified.com/source-codes" title="Source codes">Source codes</a></li>
+<li class="menu-1629"><a href="http://www.programmingsimplified.com/submit-program" title="Submit your source code or program">Submit Program</a></li>
+<li class="menu-1924 last"><a href="http://www.facebook.com/programmingsimplified" title="">Facebook</a></li>
+</ul>      </div> <!-- /#main-menu -->
+    
+    
+  </div></div> <!-- /.section, /#header -->
+
+  
+  
+  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
+
+          <div id="breadcrumb"><h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="http://www.programmingsimplified.com/">Home</a></div></div>
+    
+          <div id="sidebar-first" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-first">
+    <div id="block-menu-secondary-menu" class="block block-menu">
+
+    
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="http://www.programmingsimplified.com/c/c-mouse-programs" title="C Mouse Programs">C Mouse Programs</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c-program-examples" title="C programming examples">C programming examples</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c-games-and-projects" title="C Source codes">C Source codes</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/java-source-codes" title="Java programs">Java programs</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c/graphics.h" title="graphics.h">graphics.h</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c/program/graphics" title="C graphics programs">C graphics programs</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c/conio.h" title="conio.h">conio.h</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c/math.h" title="math.h in c">math.h</a></li>
+<li class="last leaf"><a href="http://www.programmingsimplified.com/c/dos.h" title="dos.h">dos.h</a></li>
+</ul>  </div>
+</div>
+<div id="block-block-15" class="block block-block">
+
+    <h2>Java programming source codes</h2>
+  
+  <div class="content">
+    <p><a href="http://www.programmingsimplified.com/java/source-code/java-hello-world-program" title="Java hello world program">Hello World</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-if-else-program" title="Java if else program">If else</a><br>
+<a href="http://www.programmingsimplified.com/java/tutorial/java-for-loop" title="Java for loop syntax, example programs, nested for loop and more.">For loop</a><br>
+<a href="http://www.programmingsimplified.com/java/tutorial/java-while-loop" title="Java while loop example programs and more.">While loop</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-print-alphabets" title="Java program to print alphabets">Print Alphabets</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-print-multiplication-table" title="java program to print multiplication table">Print Multiplication Table</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-take-input-from-user" title="Java program to get input from user">Get Input From User</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-add-two-numbers" title="Java program to add two numbers">Addition</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-odd-even" title="Java program to find odd or even number">Find Odd or Even</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-to-convert-fahrenheit-to-celsius" title=" Java program to convert Fahrenheit to Celsius ">Fahrenheit to celsius</a><br>
+<a href="http://www.programmingsimplified.com/java/tutorial/java-methods" title="Java methods"> Java Methods</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-static-block-program" title="Java static block program">Static Block</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-static-method-program" title="Java static method program">Static Method</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-multiple-classes" title="Java program of multiple classes">Multiple classes</a><br>
+<a href="http://www.programmingsimplified.com/java/tutorial/java-constructor-tutorial" title="Java constructor tutorial">Java constructor tutorial</a><br>
+<a href="http://www.programmingsimplified.com/java/tutorial/java-exception-handling-tutorial" title="Java exception handling tutorial">Java exception handling tutorial</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-swap-numbers" title="Java program to swap two numbers">Swapping</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-largest-of-three-numbers" title="Java program to find largest of three numbers">Largest of three integers</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/enhanced-for-loop-java" title="Java enhanced for loop">Enhanced for loop</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-find-factorial" title="Java program to find factorial">Factorial</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-print-prime-numbers" title="Java program to print prime numbers">Primes</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-armstrong-number" title="Java program to check armstrong number">Armstrong number</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-print-Floyds-triangle" title="Java program to print Floyd's triangle">Floyd's triangle</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-reverse-string" title="Java program to reverse a string">Reverse String</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-check-palindrome" title="Java program to check whether a string is a palindrome or not">Palindrome</a><br>
+<a href="http://www.programmingsimplified.com/java/tutorial/interface-in-java" title="Java interface tutorial with examples">Interface</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-compare-strings" title="Java program to compare two strings">Compare Strings</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-for-linear-search" title="Java program for linear search">Linear Search</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-for-binary-search" title="Java program for binary search">Binary Search</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-find-substrings-of-string" title="Java program to find all substrings of a string">Substrings of string</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-display-date-time" title="Java program to display current date and time">Display date and time</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-to-generate-random-numbers" title=" Java program to generate random numbers">Random numbers</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-garbage-collection" title="Java program to perform garbage collection">Garbage Collection</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-ip-address" title="Java program to get ip address">IP Address</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-reverse-number" title="Java program to reverse a number">Reverse number</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-add-matrices" title="Java program to add two matrices">Add Matrices</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-transpose-matrix" title="Java program to transpose a matrix">Transpose Matrix</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-multiply-two-matrices" title="Java program to multiply two matrices">Multiply Matrices</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-to-bubble-sort" title="Java program to implement Bubble sort">Bubble sort</a><br>
+<a href="http://www.programmingsimplified.com/java/source-code/java-program-open-notepad" title="Java program to open notepad">Open notepad</a></p>
+  </div>
+</div>
+<div id="block-block-88" class="block block-block">
+
+    
+  <div class="content">
+    <script async="" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/adsbygoogle.js"></script>
+<!-- 9BVM -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:160px;height:90px" data-ad-client="ca-pub-0388429284943625" data-ad-slot="1770210248"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="160"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+<div id="block-block-75" class="block block-block">
+
+    
+  <div class="content">
+    <script type="text/javascript"><!--
+google_ad_client = "ca-pub-0388429284943625";
+/* 9VU */
+google_ad_slot = "6090751446";
+google_ad_width = 120;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="120"></iframe></ins></ins>  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-first -->
+    
+    <div id="content" class="column"><div class="section">
+            <a id="main-content"></a>
+                    <h1 class="title" id="page-title">
+          Java program to bubble sort        </h1>
+                          <div class="tabs">
+                  </div>
+              <div class="region region-help">
+    <div id="block-block-76" class="block block-block">
+
+    
+  <div class="content">
+    <script async="" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/adsbygoogle.js"></script>
+<!-- 9MRT -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-0388429284943625" data-ad-slot="6268340648"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+              <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-411" class="node node-java node-promoted node-full clearfix">
+
+      
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Java program to bubble sort: This code sorts numbers inputted by user using Bubble sort algorithm. </p>
+<h2>Java programming code</h2>
+<div class="geshifilter">
+<pre class="java geshifilter-java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.util.Scanner</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">class</span> BubbleSort <span style="color: #009900;">{</span>
+  <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span> <span style="color: #009900;">[</span><span style="color: #009900;">]</span>args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    <span style="color: #000066; font-weight: bold;">int</span> n, c, d, swap<span style="color: #339933;">;</span>
+    Scanner in <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Scanner<span style="color: #009900;">(</span><span style="color: #003399;">System</span>.<span style="color: #006633;">in</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Input number of integers to sort"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    n <span style="color: #339933;">=</span> in.<span style="color: #006633;">nextInt</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000066; font-weight: bold;">int</span> array<span style="color: #009900;">[</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #000066; font-weight: bold;">int</span><span style="color: #009900;">[</span>n<span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Enter "</span> <span style="color: #339933;">+</span> n <span style="color: #339933;">+</span> <span style="color: #0000ff;">" integers"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> n<span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span> 
+      array<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> in.<span style="color: #006633;">nextInt</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> <span style="color: #009900;">(</span> n <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span> <span style="color: #009900;">)</span><span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+      <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #009900;">(</span>d <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> d <span style="color: #339933;">&lt;</span> n <span style="color: #339933;">-</span> c <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> d<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+        <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>array<span style="color: #009900;">[</span>d<span style="color: #009900;">]</span> <span style="color: #339933;">&gt;</span> array<span style="color: #009900;">[</span>d<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span><span style="color: #009900;">)</span> <span style="color: #666666; font-style: italic;">/* For descending order use &lt; */</span>
+        <span style="color: #009900;">{</span>
+          swap       <span style="color: #339933;">=</span> array<span style="color: #009900;">[</span>d<span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+          array<span style="color: #009900;">[</span>d<span style="color: #009900;">]</span>   <span style="color: #339933;">=</span> array<span style="color: #009900;">[</span>d<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+          array<span style="color: #009900;">[</span>d<span style="color: #339933;">+</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> swap<span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+      <span style="color: #009900;">}</span>
+    <span style="color: #009900;">}</span>
+&nbsp;
+    <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Sorted list of numbers"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> n<span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span> 
+      <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span>array<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></div>
+<p>Complexity of bubble sort is O(n<sup>2</sup>) which makes it a less frequent option for arranging in sorted order when quantity of numbers is high.</p>
+<p>Download <a href="http://www.programmingsimplified.com/executable/java/BubbleSort.class">Bubble sort</a> Java program.</p>
+<p>Output of program:<br>
+<img src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/bubble-sort-java.png" alt="Bubble sort Java program output"></p>
+<p>You can also use sort method of Arrays class to sort integers in 
+ascending order but remember that sort method uses a variation of Quick 
+sort algorithm.</p>
+<div class="geshifilter">
+<pre class="java geshifilter-java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.util.Arrays</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">class</span> Sort
+<span style="color: #009900;">{</span>
+  <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span> args<span style="color: #009900;">[</span><span style="color: #009900;">]</span><span style="color: #009900;">)</span>
+  <span style="color: #009900;">{</span>
+    <span style="color: #000066; font-weight: bold;">int</span> data<span style="color: #009900;">[</span><span style="color: #009900;">]</span> <span style="color: #339933;">=</span> <span style="color: #009900;">{</span> <span style="color: #cc66cc;">4</span>, <span style="color: #339933;">-</span><span style="color: #cc66cc;">5</span>, <span style="color: #cc66cc;">2</span>, <span style="color: #cc66cc;">6</span>, <span style="color: #cc66cc;">1</span> <span style="color: #009900;">}</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #003399;">Arrays</span>.<span style="color: #006633;">sort</span><span style="color: #009900;">(</span>data<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #009900;">(</span><span style="color: #000066; font-weight: bold;">int</span> c<span style="color: #339933;">:</span> data<span style="color: #009900;">)</span> 
+    <span style="color: #009900;">{</span>
+      <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span>c<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">}</span>
+  <span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></div>
+</div></div></div>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+<div id="block-block-69" class="block block-block">
+
+    
+  <div class="content">
+    <script async="" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/adsbygoogle.js"></script>
+<!-- 9CB -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-0388429284943625" data-ad-slot="8847681847"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+      
+    </div></div> <!-- /.section, /#content -->
+
+          <div id="sidebar-second" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-second">
+    <div id="block-block-67" class="block block-block">
+
+    
+  <div class="content">
+    <script async="" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/adsbygoogle.js"></script>
+<!-- 9RS -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-0388429284943625" data-ad-slot="0409931571"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="160"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+<div id="block-block-90" class="block block-block">
+
+    
+  <div class="content">
+    <script async="" src="Java%20program%20to%20bubble%20sort%20_%20Programming%20Simplified_files/adsbygoogle.js"></script>
+<!-- 9VMR -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:160px;height:90px" data-ad-client="ca-pub-0388429284943625" data-ad-slot="4935057841"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_5_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="160"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-second -->
+    
+  </div></div> <!-- /#main, /#main-wrapper -->
+
+  
+  <div id="footer-wrapper"><div class="section">
+
+    
+          <div id="footer" class="clearfix">
+          <div class="region region-footer">
+    <div id="block-block-49" class="block block-block">
+
+    
+  <div class="content">
+    <p><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Programming Simplified</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
+  </div>
+</div>
+<div id="block-block-9" class="block block-block">
+
+    
+  <div class="content">
+    <p><a href="http://www.programmingsimplified.com/">Home</a> | <a href="http://www.programmingsimplified.com/about">About Us</a> | <a href="http://www.programmingsimplified.com/contact">Contact Us</a> | <a href="http://www.programmingsimplified.com/programmer-resources">Programmer Resources</a> | <a href="http://www.programmingsimplified.com/sitemap">Site Map</a> | <a href="http://www.programmingsimplified.com/privacy">Privacy</a> | <a href="http://www.programmingsimplified.com/article/open-source-software" title="Download Software">Download Software</a></p>
+  </div>
+</div>
+  </div>
+      </div> <!-- /#footer -->
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+    <div class="region region-page-bottom">
+    <div style="position: absolute; top: -250px; left: -250px;"><a rel="nofollow" href="http://www.zappanova.com/socialitedead.php?issue=7">randomness</a></div>  </div>
+
+
+</body></html>

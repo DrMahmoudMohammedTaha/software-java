@@ -1,0 +1,31 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cumulative.sum;
+
+import java.util.LinkedList;
+
+/**
+ *
+ * @author HP
+ */
+public class CumulativeSum {
+
+   public static LinkedList<Double> sum(LinkedList<Double> d)
+    { LinkedList<Double> l = new LinkedList ();
+    double sum=0;
+    for (int i=0;i<d.size();i++)
+    {sum+=d.get(i);
+        l.add(i, sum);
+    }
+    return l;
+    }
+    public static void main(String[] args) {
+              LinkedList<Double> list = new LinkedList ();
+list.add(12.1);
+list.add(2.0);
+list.add(1.0);
+        System.out.println(sum(list).toString());
+    }
+}

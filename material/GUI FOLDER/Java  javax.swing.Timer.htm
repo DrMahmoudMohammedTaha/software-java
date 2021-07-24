@@ -1,0 +1,130 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="Fred Swartz (www.fredswartz.com)">
+  <meta name="level" content="1">
+  <link rel="stylesheet" type="text/css" href="Java%20%20javax.swing.Timer_files/notes.css">
+  <title>Java: javax.swing.Timer</title>
+</head>
+<body><div id="content">
+
+<h1 class="title"><a href="http://www.leepoint.net/notes-java/index.html">Java Notes</a></h1><h1>javax.swing.Timer</h1>
+
+
+<p>A <code>javax.swing.Timer</code> object calls an action listener
+<strong>at regular intervals</strong> or only <strong>once</strong>.
+For example, it can be used to show frames of an animation many times per second, 
+repaint a clock every second, or check a server every hour.
+</p>
+
+<p>Java 2 added another class by the same name, but in the <code>java.util</code> package, 
+<code>java.util.Timer</code>, which is better for large timing tasks.
+It also has more features (eg, it can start at a given time, use either a fixed delay or fixed rate),
+but <code>javax.swing.Timer</code> is easier to use for simple animations.
+It is also advisable to use <code>java.util.Timer</code> for <i>headless</i>
+programs, those without a GUI.
+To prevent ambiguous references, always write the fully qualified name.
+</p>
+
+
+
+<h2>To Use a Timer</h2>
+<ol>
+<li><pre>import java.awt.event.*; // for ActionListener and ActionEvent</pre>
+    </li>
+    
+<li>Create a Timer object, giving a time interval in milliseconds,
+    and an action listener.  This would usually be done once in a constructor.
+    The prototype usage is:
+    <pre>    javax.swing.Timer <i>yourTimer</i> = new javax.swing.Timer(<i>int milliseconds</i>, <i>ActionListener doIt</i>);</pre>
+    
+    The following example creates a Timer that calls an anonymous action listener 
+    to repaint a panel every second (1000 milliseconds).  
+    <pre class="example">javax.swing.Timer t = new javax.swing.Timer(1000, new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+              p.repaint();
+          }
+       });</pre>
+</li>
+               
+<li>Start the timer by calling the timer's <code>start</code> method.
+    For example,
+    <pre class="example">t.start();</pre>
+</li>
+</ol>
+
+
+
+<h2>To Stop a Timer</h2>
+<p>Call the timer's <code>stop</code> method.  
+Example,
+</p>
+<pre class="example">t.stop();</pre>
+<p>See the discussion below to see <i>when</i> it's important to 
+stop a timer in an applet.
+</p>
+
+
+<h2>Fixed interval versus fixed rate</h2>
+<p>javax.swing.Timer uses a <i>fixed delay</i>,
+    which means that the time from the return from an action listener 
+    to the time of the next call is a fixed time.  Therefore the interval
+    between calls will be longer because of
+    the time used by the action listener and overhead operations such as 
+    garbage collection.  This is ok for many animations, but not 
+    where exact timing is required.
+    The clock animation examples show this deficiency, as you may
+    notice when the clock "skips" a second every so often to catch
+    up to the real time.  The java.util.Timer class provides a 
+    <i>fixed rate</i> option which would be a better way to run
+    a clock, but I haven't made the time to update the examples.
+</p>
+
+
+<h2>Starting and Stopping Animation in an Applet</h2>
+
+<p>Because animation uses computer resources (CPU time and memory),
+the browse rmay ask the applet to stop what it is doing
+(by calling the applet's <code>stop</code> method) when the applet is no longer visible,
+eg, the browser moves to a different page or minimizes the page.
+It calls the applet's
+<code>start</code> method when it wants the applet to become active again.
+Applets usually don't need 
+<code>stop</code> and <code>start</code> methods, but
+if your applet is using a Timer to display animation
+or is playing sound, provide these methods. 
+</p>
+
+
+<h2>Writing <code>start</code> and <code>stop</code> methods for Applets</h2>
+<p>Starting and stopping a timer is very simple.
+For example,
+just add the following lines to your applet (assuming <code>t</code> is 
+a Timer):
+</p>
+<pre class="example">public void start() {t.start();}
+public void stop()  {t.stop();}</pre>
+   
+   
+<h2>Additional Timer methods</h2>
+<pre>t.setRepeats(boolean flag);
+t.setInitialDelay(int initialDelay);
+if (t.isRunning()) ...</pre>
+<p>And others.</p>
+
+
+<h2>Examples of Timer</h2>
+<ul>
+<li><a href="http://www.leepoint.net/notes-java/examples/animation/40BouncingBall/bouncingball.html">Example - BouncingBall</a></li>
+<li><a href="http://www.leepoint.net/notes-java/examples/animation/41TextClock/25textclock.html">Example - Text Clock</a></li>
+</ul>
+
+<div class="footer">
+Copyleft 2004 <a href="http://www.fredosaurus.com/">Fred Swartz</a>
+<a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>
+</div>
+</div>
+
+
+</body></html>

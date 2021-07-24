@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>Adding elements to JList in Swing Java - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="Adding elements to JList in Swing Java">
+    <meta name="og:description" content="I have a function that executes when a button is clicked. Suppose there is a loop to add 1 to 10 to a JList. I add that data to DefaultListModel. It works perfectly and the numbers get added. Then I ">
+    <meta name="og:url" content="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java">
+    <link rel="canonical" href="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java">
+
+    
+    
+    <script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Adding elements to JList in Swing Java'" href="http://stackoverflow.com/feeds/question/7442310">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:7442310});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '7442310');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1408786238,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"e4a1af78f79a02015cf6efa751ed53fb","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"ae6b32c7b514","js/moderator.en.js":"2460e956e5a7","js/full-anon.en.js":"7c4bb7834ae5","js/full.en.js":"c68d09ee1e0b","js/wmd.en.js":"c4959d8fe193","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a1e717ab0e4","js/help.en.js":"c8c7bae0ab4d","js/tageditor.en.js":"666966a32eca","js/tageditornew.en.js":"6dab6674147e","js/inline-tag-editing.en.js":"1a5cabd8e30a","js/revisions.en.js":"255b536e5531","js/review.en.js":"82138abd9602","js/tagsuggestions.en.js":"418b6018565f","js/post-validation.en.js":"b462effbb9ec","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"145cf84e47d9","js/keyboard-shortcuts.en.js":"e39578a5aec1"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="http://static.adzerk.net/Extensions/adFeedback.js" type="text/javascript"></script><link href="http://static.adzerk.net/Extensions/adFeedback.css" rel="stylesheet"></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f7442310%2fadding-elements-to-jlist-in-swing-java" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f7442310%2fadding-elements-to-jlist-in-swing-java" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f7442310%2fadding-elements-to-jlist-in-swing-java" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f7442310%2fadding-elements-to-jlist-in-swing-java" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for 
+professional and enthusiast programmers. It's 100% free, no registration
+ required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java" class="question-hyperlink">Adding elements to JList in Swing Java</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="7442310" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1465778762",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1465778762"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTE2LCJkaSI6IjU2ZTFiYTgyYTk0YTRjMGE5YzQzMWIxNTdkM2NiMTY2IiwiZG0iOjEsImZjIjo4ODAyLCJmbCI6MjQ0NCwiaXAiOiI0MS42OS45My4yMTgiLCJrdyI6ImphdmEsc3dpbmcsamxpc3QiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tLmVnL3VybD9zYT10JnJjdD1qJnE9JmVzcmM9cyZzb3VyY2U9d2ViJmNkPTMmY2FkPXJqYSZ1YWN0PTgmdmVkPTBDRGdRRmpBQyZ1cmw9aHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy83NDQyMzEwL2FkZGluZy1lbGVtZW50cy10by1qbGlzdC1pbi1zd2luZy1qYXZhJmVpPUpWXzRVLXJfRE5MSDdBYjNqNENZRHcmdXNnPUFGUWpDTkZDVllmM3NBYmJTQ1FfMzl3azRQOWZBZVMtZ2cmc2lnMj1lbm9KcTZIZEwzb2l1WkxNZmtpbDdBJmJ2bT1idi43MzYxMjMwNSxkLlpHVSIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1mY2NkOTk5ZGM5MDE0MTIyYjI2MTlmOGM3ZjRhODJiOSIsInpuIjo0MywidHMiOjE0MDg3ODYyNTczNjgsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vIn0&amp;s=14_iSPfi3tABMwylpdV9wVII5_U" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/d31c8d7d3cf640a6b29d9ad71788dd4a.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTE2LCJkaSI6IjU2ZTFiYTgyYTk0YTRjMGE5YzQzMWIxNTdkM2NiMTY2IiwiZG0iOjEsImZjIjo4ODAyLCJmbCI6MjQ0NCwiaXAiOiI0MS42OS45My4yMTgiLCJrdyI6ImphdmEsc3dpbmcsamxpc3QiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tLmVnL3VybD9zYT10JnJjdD1qJnE9JmVzcmM9cyZzb3VyY2U9d2ViJmNkPTMmY2FkPXJqYSZ1YWN0PTgmdmVkPTBDRGdRRmpBQyZ1cmw9aHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy83NDQyMzEwL2FkZGluZy1lbGVtZW50cy10by1qbGlzdC1pbi1zd2luZy1qYXZhJmVpPUpWXzRVLXJfRE5MSDdBYjNqNENZRHcmdXNnPUFGUWpDTkZDVllmM3NBYmJTQ1FfMzl3azRQOWZBZVMtZ2cmc2lnMj1lbm9KcTZIZEwzb2l1WkxNZmtpbDdBJmJ2bT1idi43MzYxMjMwNSxkLlpHVSIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1mY2NkOTk5ZGM5MDE0MTIyYjI2MTlmOGM3ZjRhODJiOSIsInpuIjo0MywidHMiOjE0MDg3ODYyNTczNjl9&amp;s=vfCbZYHJ-IiNFq8xo1L_VQdOzfo" style="position:absolute;" border="0" height="0px" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="7442310" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I have a function that executes when a button is clicked. Suppose there is a loop to add 1 to 10 to a <code>JList</code>. I add that data to <code>DefaultListModel</code>. It works perfectly and the numbers get added. Then I added a <code>Thread.sleep(1000)</code>
+ within the loop. But the output is different. I wanted to add 1 element
+ every second. But now it waits for 10secs and the add all 1 to 10 
+together at the end of 10th second. Am I wrong anywhere?</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="typ">List</span><span class="pln"> processList </span><span class="pun">=</span><span class="pln"> listNumbers</span><span class="pun">.</span><span class="pln">getSelectedValuesList</span><span class="pun">();</span><span class="pln">
+</span><span class="typ">DefaultListModel</span><span class="pln"> resultList </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DefaultListModel</span><span class="pun">();</span><span class="pln">
+listResult</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="pln">resultList</span><span class="pun">);</span><span class="pln">
+
+</span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> processList</span><span class="pun">.</span><span class="pln">size</span><span class="pun">();</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    resultList</span><span class="pun">.</span><span class="pln">addElement</span><span class="pun">(</span><span class="typ">String</span><span class="pun">.</span><span class="pln">valueOf</span><span class="pun">(</span><span class="pln">i</span><span class="pun">));</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/swing" class="post-tag js-gps-track" title="show questions tagged 'swing'" rel="tag">swing</a> <a href="http://stackoverflow.com/questions/tagged/jlist" class="post-tag js-gps-track" title="show questions tagged 'jlist'" rel="tag">jlist</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/7442310" title="short permalink to this question" class="short-link" id="link-post-7442310">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/7442310/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/7442310/revisions" title="show all edits to this post">edited <span title="2011-09-16 09:06:51Z" class="relativetime">Sep 16 '11 at 9:06</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-09-16 08:56:50Z" class="relativetime">Sep 16 '11 at 8:56</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/440621/akhil-k-nambiar"><div class="gravatar-wrapper-32"><img src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/0ace3707d59b250045159a8493d8a6ea.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/440621/akhil-k-nambiar">Akhil K Nambiar</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">996</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="52 bronze badges"><span class="badge3"></span><span class="badgecount">52</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7442310" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8999550" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">can you show us the code?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/282345/asgs" title="2093 reputation" class="comment-user">asgs</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8999550_7442310"><span title="2011-09-16 08:59:41Z" class="relativetime-clean">Sep 16 '11 at 8:59</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-7442310" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display:none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="7442516"></a>
+<div id="answer-7442516" class="answer accepted-answer" data-answerid="7442516" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="7442516" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You should update your list in a separate thread otherwise you end up blocking the event dispatch thread.</p>
+
+<p>Try the following:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">final</span><span class="pln"> </span><span class="typ">DefaultListModel</span><span class="pln"> model </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DefaultListModel</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">JList</span><span class="pln"> list </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JList</span><span class="pun">(</span><span class="pln">model</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">//another thread to update the model</span><span class="pln">
+</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Thread</span><span class="pln"> updater </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">/* (non-Javadoc)
+     * @see java.lang.Thread#run()
+     */</span><span class="pln">
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            model</span><span class="pun">.</span><span class="pln">addElement</span><span class="pun">(</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">RuntimeException</span><span class="pun">(</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+updater</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/7442516" title="short permalink to this answer" class="short-link" id="link-post-7442516">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/7442516/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-09-16 09:18:28Z" class="relativetime">Sep 16 '11 at 9:18</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/7412/dogbane"><div class="gravatar-wrapper-32"><img src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/doLQL.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/7412/dogbane">dogbane</a><br>
+        <span class="reputation-score" title="reputation score 86777" dir="ltr">86.8k</span><span title="19 gold badges"><span class="badge1"></span><span class="badgecount">19</span></span><span title="148 silver badges"><span class="badge2"></span><span class="badgecount">148</span></span><span title="230 bronze badges"><span class="badge3"></span><span class="badgecount">230</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7442516" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="4" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8999859" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I still think that <code>model.addElement(i)</code> must be wrapped into <code>invokeLater</code>, please update your post</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/714968/mkorbel" title="90132 reputation" class="comment-user">mKorbel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8999859_7442516"><span title="2011-09-16 09:20:44Z" class="relativetime-clean">Sep 16 '11 at 9:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-9000039" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@mKorbel really? I am updating the model, which will in turn fire an event to a handler which will call <code>repaint</code> on the list. I believe this <code>repaint</code> call will queue a request for the event-dispatching thread to call <code>paint</code>, so it should be safe.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/7412/dogbane" title="86777 reputation" class="comment-user">dogbane</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment9000039_7442516"><span title="2011-09-16 09:34:59Z" class="relativetime-clean">Sep 16 '11 at 9:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-9000116" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">true is that there are no updates on EDT, all are done past Thread.sleep(1000);, because all fireXxxXxx are out of EDT</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/714968/mkorbel" title="90132 reputation" class="comment-user">mKorbel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment9000116_7442516"><span title="2011-09-16 09:41:09Z" class="relativetime-clean">Sep 16 '11 at 9:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-9000212" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I'll edit my post with examples for programaticaly block EDT with Thread.sleep(int) for correct and expected output to the GUI</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/714968/mkorbel" title="90132 reputation" class="comment-user">mKorbel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment9000212_7442516"><span title="2011-09-16 09:48:00Z" class="relativetime-clean">Sep 16 '11 at 9:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10724720" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">-1 model updates <i>must</i> happen on the EDT (as @mKorbel already noted)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/203657/kleopatra" title="31574 reputation" class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10724720_7442516"><span title="2011-12-26 12:12:41Z" class="relativetime-clean">Dec 26 '11 at 12:12</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-7442516" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link " title="expand to show all comments on this post, or add one of your own" href="#" onclick="">show <b>4</b> more comments</a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk996921106",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk996921106"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkxNiwiZGkiOiIzYjEwZTBkMWRkYzk0OWFhOWJhNTY0NjE1Y2Q3Nzc1ZCIsImRtIjoxLCJmYyI6MTAxODEsImZsIjo3NDcyLCJpcCI6IjQxLjY5LjkzLjIxOCIsImt3IjoiamF2YSxzd2luZyxqbGlzdCIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20uZWcvdXJsP3NhPXQmcmN0PWomcT0mZXNyYz1zJnNvdXJjZT13ZWImY2Q9MyZjYWQ9cmphJnVhY3Q9OCZ2ZWQ9MENEZ1FGakFDJnVybD1odHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzc0NDIzMTAvYWRkaW5nLWVsZW1lbnRzLXRvLWpsaXN0LWluLXN3aW5nLWphdmEmZWk9SlZfNFUtcl9ETkxIN0FiM2o0Q1lEdyZ1c2c9QUZRakNORkNWWWYzc0FiYlNDUV8zOXdrNFA5ZkFlUy1nZyZzaWcyPWVub0pxNkhkTDNvaXVaTE1ma2lsN0EmYnZtPWJ2LjczNjEyMzA1LGQuWkdVIiwic3QiOjgyNzcsInVrIjoidWUxLWZjY2Q5OTlkYzkwMTQxMjJiMjYxOWY4YzdmNGE4MmI5Iiwiem4iOjQ0LCJ0cyI6MTQwODc4NjI1NzM2OSwidXIiOiJodHRwOi8vY2FyZWVycy5zdGFja292ZXJmbG93LmNvbS8ifQ&amp;s=7c4i1HQw9G-qROIHiHf_dnDv34o" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/d31c8d7d3cf640a6b29d9ad71788dd4a.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkxNiwiZGkiOiIzYjEwZTBkMWRkYzk0OWFhOWJhNTY0NjE1Y2Q3Nzc1ZCIsImRtIjoxLCJmYyI6MTAxODEsImZsIjo3NDcyLCJpcCI6IjQxLjY5LjkzLjIxOCIsImt3IjoiamF2YSxzd2luZyxqbGlzdCIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20uZWcvdXJsP3NhPXQmcmN0PWomcT0mZXNyYz1zJnNvdXJjZT13ZWImY2Q9MyZjYWQ9cmphJnVhY3Q9OCZ2ZWQ9MENEZ1FGakFDJnVybD1odHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzc0NDIzMTAvYWRkaW5nLWVsZW1lbnRzLXRvLWpsaXN0LWluLXN3aW5nLWphdmEmZWk9SlZfNFUtcl9ETkxIN0FiM2o0Q1lEdyZ1c2c9QUZRakNORkNWWWYzc0FiYlNDUV8zOXdrNFA5ZkFlUy1nZyZzaWcyPWVub0pxNkhkTDNvaXVaTE1ma2lsN0EmYnZtPWJ2LjczNjEyMzA1LGQuWkdVIiwic3QiOjgyNzcsInVrIjoidWUxLWZjY2Q5OTlkYzkwMTQxMjJiMjYxOWY4YzdmNGE4MmI5Iiwiem4iOjQ0LCJ0cyI6MTQwODc4NjI1NzM3MH0&amp;s=ZYifXgfSju80QVVk1VS1bskdhok" style="position:absolute;" border="0" height="0px" width="0px"></div>
+  
+<a name="7442529"></a>
+<div id="answer-7442529" class="answer" data-answerid="7442529" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="7442529" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>don't use, really don't use <code>Thread.sleep(int)</code> during <code>EventDispashThread</code>, because sleep locked current <code>Thread</code> and in this case <code>EventDispashThread</code>, with un-expection output to the GUI, more in <a href="http://download.oracle.com/javase/tutorial/uiswing/concurrency/index.html">Concurency in Swing</a>, </p>
+
+<p>if you needed something to dealay, then add Items wrappend into <code>Runneble#Thread</code>, with output to the GUI wrapped into <code>invokeLater</code>, or the best way is using <a href="http://download.oracle.com/javase/tutorial/uiswing/misc/timer.html">javax.swing.Timer</a></p>
+
+<p>EDIT 1st. example how to programatically block EDT with 
+Thread.sleep(int), because othewise doesn't works with expecting output 
+to the GUI (code is very loonnnger as I want to code)</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.*;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ShakingButtonDemo</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JButton</span><span class="pln"> button</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JRadioButton</span><span class="pln"> radioWholeButton</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JRadioButton</span><span class="pln"> radioTextOnly</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">Exception</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ShakingButtonDemo</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        radioWholeButton </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JRadioButton</span><span class="pun">(</span><span class="str">"The whole button"</span><span class="pun">);</span><span class="pln">
+        radioTextOnly </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JRadioButton</span><span class="pun">(</span><span class="str">"Button text only"</span><span class="pun">);</span><span class="pln">
+        radioWholeButton</span><span class="pun">.</span><span class="pln">setSelected</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">ButtonGroup</span><span class="pln"> bg </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ButtonGroup</span><span class="pun">();</span><span class="pln">
+        bg</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">radioWholeButton</span><span class="pun">);</span><span class="pln">
+        bg</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">radioTextOnly</span><span class="pun">);</span><span class="pln">
+        button </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JButton</span><span class="pun">(</span><span class="str">"  Shake with this Button  "</span><span class="pun">);</span><span class="pln">
+        button</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                shakeButton</span><span class="pun">(</span><span class="pln">radioWholeButton</span><span class="pun">.</span><span class="pln">isSelected</span><span class="pun">());</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+        </span><span class="typ">JPanel</span><span class="pln"> p1 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+        p1</span><span class="pun">.</span><span class="pln">setBorder</span><span class="pun">(</span><span class="typ">BorderFactory</span><span class="pun">.</span><span class="pln">createTitledBorder</span><span class="pun">(</span><span class="str">"Shake Options"</span><span class="pun">));</span><span class="pln">
+        p1</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GridLayout</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+        p1</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">radioWholeButton</span><span class="pun">);</span><span class="pln">
+        p1</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">radioTextOnly</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">JPanel</span><span class="pln"> p2 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+        p2</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GridLayout</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">));</span><span class="pln">
+        p2</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">button</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">JFrame</span><span class="pln"> frame </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pun">();</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setTitle</span><span class="pun">(</span><span class="str">"Shaking Button Demo"</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setDefaultCloseOperation</span><span class="pun">(</span><span class="typ">JFrame</span><span class="pun">.</span><span class="pln">EXIT_ON_CLOSE</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">p1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">BorderLayout</span><span class="pun">.</span><span class="pln">NORTH</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">p2</span><span class="pun">,</span><span class="pln"> </span><span class="typ">BorderLayout</span><span class="pun">.</span><span class="pln">SOUTH</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setSize</span><span class="pun">(</span><span class="lit">240</span><span class="pun">,</span><span class="pln"> </span><span class="lit">160</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setLocationRelativeTo</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> shakeButton</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> shakeWholeButton</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Point</span><span class="pln"> point </span><span class="pun">=</span><span class="pln"> button</span><span class="pun">.</span><span class="pln">getLocation</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Insets</span><span class="pln"> margin </span><span class="pun">=</span><span class="pln"> button</span><span class="pun">.</span><span class="pln">getMargin</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> delay </span><span class="pun">=</span><span class="pln"> </span><span class="lit">75</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">Runnable</span><span class="pln"> r </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">30</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">shakeWholeButton</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                            moveButton</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Point</span><span class="pun">(</span><span class="pln">point</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> point</span><span class="pun">.</span><span class="pln">y</span><span class="pun">));</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                            moveButton</span><span class="pun">(</span><span class="pln">point</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                            moveButton</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Point</span><span class="pun">(</span><span class="pln">point</span><span class="pun">.</span><span class="pln">x </span><span class="pun">-</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> point</span><span class="pun">.</span><span class="pln">y</span><span class="pun">));</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                            moveButton</span><span class="pun">(</span><span class="pln">point</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="com">// text only</span><span class="pln">
+                            setButtonMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">margin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> margin</span><span class="pun">.</span><span class="pln">left </span><span class="pun">+</span><span class="pln"> </span><span class="lit">3</span><span class="pun">,</span><span class="pln"> margin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> margin</span><span class="pun">.</span><span class="pln">right </span><span class="pun">-</span><span class="pln"> </span><span class="lit">2</span><span class="pun">));</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                            setButtonMargin</span><span class="pun">(</span><span class="pln">margin</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                            setButtonMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">margin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> margin</span><span class="pun">.</span><span class="pln">left </span><span class="pun">-</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> margin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> margin</span><span class="pun">.</span><span class="pln">right </span><span class="pun">+</span><span class="pln"> </span><span class="lit">3</span><span class="pun">));</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                            setButtonMargin</span><span class="pun">(</span><span class="pln">margin</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">delay</span><span class="pun">);</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        ex</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">};</span><span class="pln">
+        </span><span class="typ">Thread</span><span class="pln"> t </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">(</span><span class="pln">r</span><span class="pun">);</span><span class="pln">
+        t</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> moveButton</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Point</span><span class="pln"> p</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                button</span><span class="pun">.</span><span class="pln">setLocation</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setButtonMargin</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Insets</span><span class="pln"> margin</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                button</span><span class="pun">.</span><span class="pln">setMargin</span><span class="pun">(</span><span class="pln">margin</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>EDIT 2nd. with kind hepl by @camickr (look like similair)</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="pln">border</span><span class="pun">.*;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ShakeComponents1</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pln"> frame </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> items</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">"One"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Two"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Three"</span><span class="pun">};</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Timer</span><span class="pln"> timer</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pln"> panel </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pln"> buttonPanel </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JButton</span><span class="pln"> button </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JButton</span><span class="pun">(</span><span class="str">"  Exit  "</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> repeats </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> runs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Color</span><span class="pln"> clr</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">red</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Color</span><span class="pun">.</span><span class="pln">blue</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Color</span><span class="pun">.</span><span class="pln">magenta</span><span class="pun">};</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Insets</span><span class="pln"> initMargin</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ShakeComponents1</span><span class="pun">().</span><span class="pln">makeUI</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> makeUI</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        buttonPanel </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+        buttonPanel</span><span class="pun">.</span><span class="pln">setBorder</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">));</span><span class="pln">
+        buttonPanel</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">BorderLayout</span><span class="pun">());</span><span class="pln">
+        button</span><span class="pun">.</span><span class="pln">setPreferredSize</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Dimension</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="pln"> </span><span class="lit">45</span><span class="pun">));</span><span class="pln">
+        button</span><span class="pun">.</span><span class="pln">setForeground</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">darkGray</span><span class="pun">);</span><span class="pln">
+        button</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ActionListener</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="typ">ActionEvent</span><span class="pln"> event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="typ">Runnable</span><span class="pln"> doRun </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+                    </span><span class="lit">@Override</span><span class="pln">
+                    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        </span><span class="typ">System</span><span class="pun">.</span><span class="pln">exit</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                </span><span class="pun">};</span><span class="pln">
+                </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="pln">doRun</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+        button</span><span class="pun">.</span><span class="pln">addMouseListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="typ">MouseListener</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseClicked</span><span class="pun">(</span><span class="typ">MouseEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mousePressed</span><span class="pun">(</span><span class="typ">MouseEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseReleased</span><span class="pun">(</span><span class="typ">MouseEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseEntered</span><span class="pun">(</span><span class="typ">MouseEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">runs</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+                        </span><span class="lit">@Override</span><span class="pln">
+                        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                            runs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+                            timer</span><span class="pun">.</span><span class="pln">stop</span><span class="pun">();</span><span class="pln">
+                            changePnlBorder</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">));</span><span class="pln">
+                            changeBtnForegroung</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">darkGray</span><span class="pun">);</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                    </span><span class="pun">});</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> mouseExited</span><span class="pun">(</span><span class="typ">MouseEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">runs</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    timer</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span><span class="pln">
+                    runs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+        buttonPanel</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">button</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Insets</span><span class="pln"> margin </span><span class="pun">=</span><span class="pln"> button</span><span class="pun">.</span><span class="pln">getMargin</span><span class="pun">();</span><span class="pln">
+        panel</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">buttonPanel</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">JComboBox</span><span class="pln"> combo </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JComboBox</span><span class="pun">(</span><span class="pln">items</span><span class="pun">);</span><span class="pln">
+            combo</span><span class="pun">.</span><span class="pln">setMinimumSize</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Dimension</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">));</span><span class="pln">
+            combo</span><span class="pun">.</span><span class="pln">setMaximumSize</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Dimension</span><span class="pun">(</span><span class="lit">150</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">));</span><span class="pln">
+            combo</span><span class="pun">.</span><span class="pln">setPreferredSize</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Dimension</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">));</span><span class="pln">
+            combo</span><span class="pun">.</span><span class="pln">addActionListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ShakeAction</span><span class="pun">());</span><span class="pln">
+            panel</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">combo</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setDefaultCloseOperation</span><span class="pun">(</span><span class="typ">JFrame</span><span class="pun">.</span><span class="pln">EXIT_ON_CLOSE</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">panel</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">pack</span><span class="pun">();</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setLocation</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> </span><span class="lit">50</span><span class="pun">);</span><span class="pln">
+        frame</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+        timer </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Timer</span><span class="pun">(</span><span class="lit">500</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ShakeAction</span><span class="pun">());</span><span class="pln">
+        timer</span><span class="pun">.</span><span class="pln">setRepeats</span><span class="pun">(</span><span class="pln">repeats</span><span class="pun">);</span><span class="pln">
+        initMargin </span><span class="pun">=</span><span class="pln"> button</span><span class="pun">.</span><span class="pln">getMargin</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ShakeAction</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">AbstractAction</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> serialVersionUID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1L</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> noColor </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Border</span><span class="pln"> border</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+        </span><span class="lit">@Override</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> actionPerformed</span><span class="pun">(</span><span class="typ">ActionEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            timer</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">5</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+                    </span><span class="lit">@Override</span><span class="pln">
+                    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">750</span><span class="pun">);</span><span class="pln">
+                            changeBtnForegroung</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">darkGray</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">750</span><span class="pun">);</span><span class="pln">
+                            count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">750</span><span class="pun">);</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                            </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                </span><span class="pun">}).</span><span class="pln">start</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+                    </span><span class="lit">@Override</span><span class="pln">
+                    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                        </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                            runs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+                            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">noColor </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                                noColor</span><span class="pun">++;</span><span class="pln">
+                                changeBtnForegroung</span><span class="pun">(</span><span class="pln">clr</span><span class="pun">[</span><span class="pln">noColor</span><span class="pun">]);</span><span class="pln">
+                            </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                                noColor </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                                changeBtnForegroung</span><span class="pun">(</span><span class="pln">clr</span><span class="pun">[</span><span class="pln">noColor</span><span class="pun">]);</span><span class="pln">
+                            </span><span class="pun">}</span><span class="pln">
+                            changeBtnMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">initMargin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">left </span><span class="pun">+</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">right </span><span class="pun">-</span><span class="pln"> </span><span class="lit">10</span><span class="pun">));</span><span class="pln">
+                            border </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">);</span><span class="pln">
+                            changePnlBorder</span><span class="pun">(</span><span class="pln">border</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+                            changeBtnMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">initMargin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">left </span><span class="pun">-</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">right </span><span class="pun">+</span><span class="pln"> </span><span class="lit">10</span><span class="pun">));</span><span class="pln">
+                            border </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">);</span><span class="pln">
+                            changePnlBorder</span><span class="pun">(</span><span class="pln">border</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+                            changeBtnMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">initMargin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">left </span><span class="pun">+</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">right </span><span class="pun">-</span><span class="pln"> </span><span class="lit">10</span><span class="pun">));</span><span class="pln">
+                            border </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+                            changePnlBorder</span><span class="pun">(</span><span class="pln">border</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+                            changeBtnMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">initMargin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">left </span><span class="pun">-</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">right </span><span class="pun">+</span><span class="pln"> </span><span class="lit">10</span><span class="pun">));</span><span class="pln">
+                            border </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+                            changePnlBorder</span><span class="pun">(</span><span class="pln">border</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+                            changeBtnMargin</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Insets</span><span class="pun">(</span><span class="pln">initMargin</span><span class="pun">.</span><span class="pln">top</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">left</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">bottom</span><span class="pun">,</span><span class="pln"> initMargin</span><span class="pun">.</span><span class="pln">right</span><span class="pun">));</span><span class="pln">
+                            border </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EmptyBorder</span><span class="pun">(</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">);</span><span class="pln">
+                            changePnlBorder</span><span class="pun">(</span><span class="pln">border</span><span class="pun">);</span><span class="pln">
+                            </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+                            count</span><span class="pun">++;</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                            </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+                        </span><span class="pun">}</span><span class="pln">
+                    </span><span class="pun">}</span><span class="pln">
+                </span><span class="pun">}).</span><span class="pln">start</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> changePnlBorder</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Border</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                buttonPanel</span><span class="pun">.</span><span class="pln">setBorder</span><span class="pun">(</span><span class="pln">b</span><span class="pun">);</span><span class="pln">
+                buttonPanel</span><span class="pun">.</span><span class="pln">revalidate</span><span class="pun">();</span><span class="pln">
+                buttonPanel</span><span class="pun">.</span><span class="pln">repaint</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> changeBtnForegroung</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Color</span><span class="pln"> c</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                button</span><span class="pun">.</span><span class="pln">setForeground</span><span class="pun">(</span><span class="pln">c</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> changeBtnMargin</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Insets</span><span class="pln"> margin</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SwingUtilities</span><span class="pun">.</span><span class="pln">invokeLater</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Runnable</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                button</span><span class="pun">.</span><span class="pln">setMargin</span><span class="pun">(</span><span class="pln">margin</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>EDIT 3rd.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.*;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.*;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">DelayedComboBoxTest</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> serialVersionUID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1L</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JCheckBox</span><span class="pln"> chkA </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JCheckBox</span><span class="pun">(</span><span class="str">"A"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JCheckBox</span><span class="pln"> chkB </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JCheckBox</span><span class="pun">(</span><span class="str">"B"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JCheckBox</span><span class="pln"> chkC </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JCheckBox</span><span class="pun">(</span><span class="str">"C"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">JComboBox</span><span class="pln"> cboItems </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JComboBox</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">DelayedComboBoxTest</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">super</span><span class="pun">(</span><span class="str">"Delayed ComboBox Test"</span><span class="pun">);</span><span class="pln">
+        setDefaultCloseOperation</span><span class="pun">(</span><span class="pln">EXIT_ON_CLOSE</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">JPanel</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+        p</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">chkA</span><span class="pun">);</span><span class="pln">
+        p</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">chkB</span><span class="pun">);</span><span class="pln">
+        p</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">chkC</span><span class="pun">);</span><span class="pln">
+        p</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">cboItems</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">Container</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> getContentPane</span><span class="pun">();</span><span class="pln">
+        c</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">BorderLayout</span><span class="pun">());</span><span class="pln">
+        c</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span><span class="pln">
+        pack</span><span class="pun">();</span><span class="pln">
+        cboItems</span><span class="pun">.</span><span class="pln">addPopupMenuListener</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyPopupMenuListener</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> rebuildList</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        setCursor</span><span class="pun">(</span><span class="typ">Cursor</span><span class="pun">.</span><span class="pln">getPredefinedCursor</span><span class="pun">(</span><span class="typ">Cursor</span><span class="pun">.</span><span class="pln">WAIT_CURSOR</span><span class="pun">));</span><span class="pln">
+        </span><span class="typ">Vector</span><span class="pun">&lt;</span><span class="typ">String</span><span class="pun">&gt;</span><span class="pln"> items </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Vector</span><span class="pun">&lt;</span><span class="typ">String</span><span class="pun">&gt;();</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">chkA</span><span class="pun">.</span><span class="pln">isSelected</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            items</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="str">"A"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">chkB</span><span class="pun">.</span><span class="pln">isSelected</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            items</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="str">"B"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">chkC</span><span class="pun">.</span><span class="pln">isSelected</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            items</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="str">"C"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        cboItems</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DefaultComboBoxModel</span><span class="pun">(</span><span class="pln">items</span><span class="pun">));</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">().</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">2500</span><span class="pun">);</span><span class="pln"> </span><span class="com">// simulate a long transaction</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        setCursor</span><span class="pun">(</span><span class="typ">Cursor</span><span class="pun">.</span><span class="pln">getPredefinedCursor</span><span class="pun">(</span><span class="typ">Cursor</span><span class="pun">.</span><span class="pln">DEFAULT_CURSOR</span><span class="pun">));</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">JFrame</span><span class="pln"> f </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DelayedComboBoxTest</span><span class="pun">();</span><span class="pln">
+        f</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyPopupMenuListener</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">PopupMenuListener</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="lit">@Override</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> popupMenuCanceled</span><span class="pun">(</span><span class="typ">PopupMenuEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="lit">@Override</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> popupMenuWillBecomeInvisible</span><span class="pun">(</span><span class="typ">PopupMenuEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="lit">@Override</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> popupMenuWillBecomeVisible</span><span class="pun">(</span><span class="typ">PopupMenuEvent</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">int</span><span class="pln"> items </span><span class="pun">=</span><span class="pln"> cboItems</span><span class="pun">.</span><span class="pln">getItemCount</span><span class="pun">();</span><span class="pln">
+            rebuildList</span><span class="pun">();</span><span class="pln">
+
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">items </span><span class="pun">!=</span><span class="pln"> cboItems</span><span class="pun">.</span><span class="pln">getItemCount</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                cboItems</span><span class="pun">.</span><span class="pln">hidePopup</span><span class="pun">();</span><span class="pln">
+                cboItems</span><span class="pun">.</span><span class="pln">showPopup</span><span class="pun">();</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>but for all examples there must EDT exist and with <code>Events</code> in the <code>EventQueue</code> otherwise simple doesn't works</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/7442529" title="short permalink to this answer" class="short-link" id="link-post-7442529">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/7442529/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/7442529/revisions" title="show all edits to this post">edited <span title="2011-09-16 10:03:51Z" class="relativetime">Sep 16 '11 at 10:03</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-09-16 09:19:24Z" class="relativetime">Sep 16 '11 at 9:19</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/714968/mkorbel"><div><img src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/435fb976cbaa21a2cfe54324140c643c.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/714968/mkorbel">mKorbel</a><br>
+        <span class="reputation-score" title="reputation score 90132" dir="ltr">90.1k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="143 bronze badges"><span class="badge3"></span><span class="badgecount">143</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7442529" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-9000193" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+2 for Great tips and -1 for some typos (just kidding).</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/282345/asgs" title="2093 reputation" class="comment-user">asgs</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment9000193_7442529"><span title="2011-09-16 09:46:33Z" class="relativetime-clean">Sep 16 '11 at 9:46</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-9000345" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">hmmm yes I have problem with speaking languages English and Deutch too :-) ,</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/714968/mkorbel" title="90132 reputation" class="comment-user">mKorbel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment9000345_7442529"><span title="2011-09-16 09:58:17Z" class="relativetime-clean">Sep 16 '11 at 9:58</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-7442529" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="14415961"></a>
+<div id="answer-14415961" class="answer" data-answerid="14415961" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="14415961" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>This code explains how to insert values in Swing JList from a 
+resultset in java. Make changes as per your requirements. hope this will
+ help you.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">try</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">CreateConnection</span><span class="pun">();</span><span class="pln">
+        st</span><span class="pun">=</span><span class="pln">con</span><span class="pun">.</span><span class="pln">prepareStatement</span><span class="pun">(</span><span class="typ">QueryString</span><span class="pun">);</span><span class="pln">
+        rs</span><span class="pun">=</span><span class="pln">st</span><span class="pun">.</span><span class="pln">executeQuery</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">  
+        rs</span><span class="pun">.</span><span class="pln">last</span><span class="pun">();</span><span class="pln"> 
+        </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> strings </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">String</span><span class="pun">[</span><span class="pln">rs</span><span class="pun">.</span><span class="pln">getRow</span><span class="pun">()];</span><span class="pln"> 
+        rs</span><span class="pun">.</span><span class="pln">first</span><span class="pun">();</span><span class="pln">
+        strings</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]=</span><span class="str">"Send to All"</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++;</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">rs</span><span class="pun">.</span><span class="pln">next</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">  
+          strings</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> rs</span><span class="pun">.</span><span class="pln">getString</span><span class="pun">(</span><span class="lit">1</span><span class="pun">);</span><span class="pln"> i</span><span class="pun">++;</span><span class="pln"> 
+        </span><span class="pun">}</span><span class="pln"> 
+        </span><span class="typ">ToBeFilled</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="typ">AbstractListModel</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> getSize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> strings</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Object</span><span class="pln"> getElementAt</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> strings</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+        con</span><span class="pun">.</span><span class="pln">close</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">catch</span><span class="pun">(</span><span class="typ">Exception</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">    
+        </span><span class="typ">JOptionPane</span><span class="pun">.</span><span class="pln">showMessageDialog</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">,</span><span class="pln"> ex</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<p>Or Just Simple Code to Insert values</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln">jList1</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="typ">AbstractListModel</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> strings </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"Send to All"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"ABC"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"DEF"</span><span class="pln"> </span><span class="pun">};</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> getSize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> strings</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Object</span><span class="pln"> getElementAt</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> strings</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"> </span><span class="pun">}</span></code></pre>
+
+<p>});</p>
+
+<p>Remember to add this code in after initComponents() at the top of the page.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/14415961" title="short permalink to this answer" class="short-link" id="link-post-14415961">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14415961/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-01-19 15:43:30Z" class="relativetime">Jan 19 '13 at 15:43</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1993126/abdul-jabbar-webbestow"><div class="gravatar-wrapper-32"><img src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/67743e2025d32c1459c37d0457e02d26.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1993126/abdul-jabbar-webbestow">Abdul Jabbar WebBestow</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14415961" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-14415961" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="19709984"></a>
+<div id="answer-19709984" class="answer" data-answerid="19709984" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="19709984" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">final</span><span class="pln"> </span><span class="typ">DefaultListModel</span><span class="pln"> model </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DefaultListModel</span><span class="pun">();</span><span class="pln">
+
+
+    </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Thread</span><span class="pln"> updater </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Thread</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="lit">@Override</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                model</span><span class="pun">.</span><span class="pln">addElement</span><span class="pun">(</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+                listData</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="pln">model</span><span class="pun">);</span><span class="pln">
+                </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">RuntimeException</span><span class="pun">(</span><span class="pln">e</span><span class="pun">);</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+    updater</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/19709984" title="short permalink to this answer" class="short-link" id="link-post-19709984">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19709984/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-10-31 15:02:49Z" class="relativetime">Oct 31 '13 at 15:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2941967/dung-nguyen"><div><img src="Adding%20elements%20to%20JList%20in%20Swing%20Java%20-%20Stack%20Overflow_files/acaa69f2952d3adb4b191b3e66df50a6.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2941967/dung-nguyen">Dung Nguyen</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19709984" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-29281794" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">no, that's wrong: you <b>must not</b>
+ access swing components off the EDT. And why are you basically copying 
+the accepted (though incorrect) answer? re-setting the model after each 
+insert improves exactly .. nothing of the basic error.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/203657/kleopatra" title="31574 reputation" class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment29281794_19709984"><span title="2013-10-31 16:07:16Z" class="relativetime-clean">Oct 31 '13 at 16:07</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-19709984" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/7442310/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="7442310" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="e4a1af78f79a02015cf6efa751ed53fb" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f7442310%2fadding-elements-to-jlist-in-swing-java%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f7442310%2fadding-elements-to-jlist-in-swing-java%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/swing" class="post-tag" title="show questions tagged 'swing'" rel="tag">swing</a> <a href="http://stackoverflow.com/questions/tagged/jlist" class="post-tag" title="show questions tagged 'jlist'" rel="tag">jlist</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-09-16 08:56:50Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>23017 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/7442310/adding-elements-to-jlist-in-swing-java?lastactivity" class="lastactivity-link" title="2013-10-31 15:02:49Z">9 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1549752097",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1549752097"><div id="careersadsdoublehigh" style="display:none;"></div><img src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjo5MjEsImNoIjoxMTc4LCJjciI6MjY4OCwiZGkiOiJiY2ZiOTY3ZDExMjk0YWU5YjZiOTUwMDVmNWM3ZGEwNyIsImRtIjoxLCJmYyI6MjQ4NSwiZmwiOjI2NjMsImlwIjoiNDEuNjkuOTMuMjE4Iiwia3ciOiJqYXZhLHN3aW5nLGpsaXN0IiwibnciOjIyLCJwYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJyZiI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS5lZy91cmw_c2E9dCZyY3Q9aiZxPSZlc3JjPXMmc291cmNlPXdlYiZjZD0zJmNhZD1yamEmdWFjdD04JnZlZD0wQ0RnUUZqQUMmdXJsPWh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvNzQ0MjMxMC9hZGRpbmctZWxlbWVudHMtdG8tamxpc3QtaW4tc3dpbmctamF2YSZlaT1KVl80VS1yX0ROTEg3QWIzajRDWUR3JnVzZz1BRlFqQ05GQ1ZZZjNzQWJiU0NRXzM5d2s0UDlmQWVTLWdnJnNpZzI9ZW5vSnE2SGRMM29pdVpMTWZraWw3QSZidm09YnYuNzM2MTIzMDUsZC5aR1UiLCJzdCI6ODI3NywidWsiOiJ1ZTEtZmNjZDk5OWRjOTAxNDEyMmIyNjE5ZjhjN2Y0YTgyYjkiLCJ6biI6NDUsInRzIjoxNDA4Nzg2MjU3MzcwfQ&amp;s=2by4E_BbpmcOxg6lI-f_Wp_R0g4" style="position:absolute;" border="0" height="0px" width="0px"></div>  
+        <div id="hireme">
+            <script>
+window.careers_adurl="//careers.stackoverflow.com/gethired/js",window.careers_cssurl="//cdn-careers.sstatic.net/careers/gethired/sidebar.min.css?v=871145189bac",window.careers_leaderboardcssurl="{leaderboardcssurl}",window.careers_companycssurl="//cdn-careers.sstatic.net/careers/gethired/company",window.careers_adselector="div#hireme",StackExchange.ready(function(){$.ajax({url:"//cdn-careers.sstatic.net/careers/gethired/loader.min.js?v=43efa843dae8",dataType:"script",cache:!0})});            </script>
+            
+        </div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/15167404?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15167404/open-a-new-jframe?lq=1" class="question-hyperlink">Open a new JFrame</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/15600203?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15600203/thread-sleep-inside-of-actionperformed-method?lq=1" class="question-hyperlink">Thread sleep inside of actionPerformed method</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/2133514?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/2133514/java-swing-jlist?rq=1" class="question-hyperlink">Java Swing JList</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5911204?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/5911204/why-do-i-sometimes-get-blank-jlists-after-updating-contents-through-the-list-mod?rq=1" class="question-hyperlink">Why do I sometimes get blank JLists after updating contents through the list model?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5934686?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/5934686/java-jlist-size?rq=1" class="question-hyperlink">java JList size</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9866500?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/9866500/update-a-java-swing-jlist?rq=1" class="question-hyperlink">Update a Java Swing JList</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10080307?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/10080307/regarding-how-to-add-an-something-from-a-text-field-into-a-jlist?rq=1" class="question-hyperlink">Regarding how to add an something from a text field into a JList</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11046787?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/11046787/i-have-a-jframe-gui-using-the-gui-builder-with-a-list-jlist-from-the-swing-c?rq=1" class="question-hyperlink">I
+ have a JFrame GUI (using the GUI builder) with a List [JList] from the 
+swing controls but can't call setListData(Object[]) without an error</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13237464?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/13237464/jlist-very-slow-adding-first-element?rq=1" class="question-hyperlink">JList very slow adding first element</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16527455?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/16527455/jlist-not-updated-when-listmodel-is-updated?rq=1" class="question-hyperlink">JList not updated when ListModel is updated</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18062334?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/18062334/java-jlist-and-list-problems?rq=1" class="question-hyperlink">Java JList and list problems</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23354302?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/23354302/periodically-refresh-items-in-jlist-java-swing?rq=1" class="question-hyperlink">Periodically Refresh Items in JList (Java SWING)</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/15016/was-the-location-of-the-180%c2%b0-line-of-longitude-coincidence-or-deliberately-chose" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Was the location of the 180° line of longitude coincidence or deliberately chosen?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/35581/is-there-room-for-a-rollaboard-in-a-crj-200-overhead-bin" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there room for a rollaboard in a CRJ-200 overhead bin?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/24292/how-to-move-a-bicycle-by-bicycle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to move a bicycle by bicycle
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/132111/uncertainty-principle-intuition" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Uncertainty Principle Intuition
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/151613/how-can-i-merge-patterns-in-a-single-line" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I "merge" patterns in a single line?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23062/is-it-possible-to-learn-theory-without-sight-reading" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to learn theory without sight reading?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/181815/why-this-flush-didnt-win-the-game" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why this flush didn't win the game?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/36384/find-the-smoothest-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find the Smoothest Number
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/60837/more-efficient-and-readable-nested-loop-to-compare-keywords" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    More efficient and readable nested loop to compare keywords
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/66289/is-peter-parker-spider-man-a-stalker-in-the-comics" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Peter Parker/Spider-Man a stalker in the comics?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/82247/how-to-avoid-movement-speed-stacking-when-multiple-keys-are-pressed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to avoid movement speed stacking when multiple keys are pressed?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/514889/what-is-the-default-vnc-server-included-with-ubuntu-14-04" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the default VNC server included with Ubuntu 14.04?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/254106/interface-design-where-functions-need-to-be-called-in-a-specific-sequence" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Interface design where functions need to be called in a specific sequence
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23039/when-to-use-a-dot-or-a-tie-in-music-notation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When to use a dot or a tie in music notation?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/24093/what-are-the-qualities-of-watchmen-unique-to-comics-and-in-which-way-did-the-mov" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the qualities of Watchmen unique to comics 
+and in which way did the movie achieve to adapt those to the medium of 
+film?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/623402/can-rhel6-servers-be-copied" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can RHEL6 servers be "copied"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/151574/obtain-values-of-a-section-of-a-file" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Obtain values of a section of a file
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-biology" title="Biology Stack Exchange"></div><a href="http://biology.stackexchange.com/questions/20657/can-humans-survive-without-consuming-life" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can humans survive without consuming life?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/31971/term-for-someone-who-cannot-keep-something-to-themselves" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Term for someone who cannot keep something to themselves
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/47713/is-there-a-way-to-unscrew-a-light-bulb-that-has-broken" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a way to unscrew a light bulb that has broken?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27480/prof-disagrees-with-assigned-textbook-regarding-an-exam-question" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Prof disagrees with assigned textbook regarding an exam question
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/60851/javascript-function-that-toggles-element-visibility-according-checked-radio-inpu" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    JavaScript function that toggles element visibility according checked radio input
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/254181/why-does-void-in-c-mean-not-void" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does void in C mean not void?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/151689/how-can-i-instruct-yum-to-install-a-specifc-version-of-package-x" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I instruct yum to install a specifc version of package X?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/7442310" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/7442310/ivc/bfd0');});
+</script>
+<noscript>
+    <div><img src="/posts/7442310/ivc/bfd0" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.22.1792
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('java,swing,jlist');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|java|swing|jlist|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

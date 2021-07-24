@@ -1,0 +1,595 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+<title>SPOJ.com - Problem TRGRID</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" id="metatag">
+<META NAME="Keywords" CONTENT="programming, language, algorithm, spoj, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+
+<link href="//www.spoj.com/gfx/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="/rss/" rel="alternate" type="application/rss+xml" title="RSS Feed">
+<link href="//www.spoj.com/themes/common.css" rel="stylesheet" type="text/css" id="theme">
+<link href="/style.css" rel="stylesheet" type="text/css" id="theme">
+<link href="//www.spoj.com/themes/tooltips.css" rel="stylesheet" type="text/css" id="theme">
+<script type='text/javascript' src='//www.spoj.com/gfx/jquery.js'></script>
+<script type="text/javascript" src="//www.spoj.com/gfx/jquery.timers.js"></script>
+<script type="text/javascript" src="//www.spoj.com/gfx/jquery.cookie.js"></script> 
+<!--
+<meta property="og:description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+<meta name="description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+-->
+<style type="text/css">
+<!--
+.maintable {width: 1055;} 
+-->
+</style>
+<script type="text/javascript" language="javascript">
+<!--
+function UnCryptMailto(s) {
+	var n=0;
+	var r="";
+	for(var i=0;i<s.length;i++) {		
+		n=s.charCodeAt(i); 
+		if (n>=8364) {n = 128;}
+		r += String.fromCharCode(n+(2));	
+	}
+	return r;
+}
+function linkTo_UnCryptMailto(s)	{
+	location.href=UnCryptMailto(s);
+}
+// -->
+</script>
+
+<script type="text/javascript">
+function recordOutboundLink(link, category, action) {
+  try {
+    var pageTracker=_gat._getTracker("UA-XXXXX-X");
+    pageTracker._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100)
+  }catch(err){}
+}
+</script>
+
+    <script type="text/javascript" src="/gfx/SyntaxHighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="/gfx/SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="/gfx/SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="/gfx/SyntaxHighlighter/scripts/shBrushJava.js"></script>
+    <script type="text/javascript" src="/gfx/SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="/gfx/SyntaxHighlighter/scripts/shBrushPython.js"></script>
+	<link type="text/css" rel="stylesheet" href="/gfx/SyntaxHighlighter/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="/gfx/SyntaxHighlighter/styles/shThemeDefault.css"/>
+	
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	
+
+		<meta property="og:title" content="SPOJ.com - Problem TRGRID"/>
+    	<meta property="fb:app_id"      content="321676846207" />
+	<meta property="og:type" content="spoj-pl:problem"/>
+	<meta property="og:url" content="http://www.spoj.com/problems/TRGRID/"/>
+	<meta property="og:image" content="http://www.spoj.com/gfx/logo-cr.png"/>
+	<meta property="og:description" content="Starting at the top left corner of an N*M grid and facing towards the right, you keep walking one square at a time in the direction you are facing. If you reach the boundary of the grid or if the next square you are about to visit has already been visited, you turn right. You stop when all the squar..."/>
+<meta name="description" content="Starting at the top left corner of an N*M grid and facing towards the right, you keep walking one square at a time in the direction you are facing. If you reach the boundary of the grid or if the next square you are about to visit has already been visited, you turn right. You stop when all the squar..."/>
+		<meta property="og:site_name" content="spoj.com"/>
+
+</head>
+<body>
+<center>
+
+
+
+<table cellpadding="10" cellspacing="0" class="maintable" id="maintable">
+<tr>
+    <td colspan="2" class="header">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+		<td class="headerleft"/>
+		<td class="headercenter">
+<h1><img alt="Sphere Online Judge" title="Sphere Online Judge" src="/gfx/sphere-spoj-small.png" border=0 style="margin-top:-4px;margin-bottom:-4px"></h1>
+		</td>
+		<td class="headerright"/>
+	</tr>
+	</table>
+    </td>
+</tr>
+<tr><td class="menu" width="92" valign="top">
+
+	
+<div class="section">
+	
+<form name="login"  action="https://www.spoj.com/problems/TRGRID/" method="post" 
+onsubmit="if(0&&document.login.ssl.checked) document.login.action='https://www.spoj.com/problems/TRGRID/'" style="margin-bottom: 18px"> 
+User: <input name="login_user" type="text" style="width: 85px;" class="form"><BR>
+Password: <input name="password" type="password" style="width: 85px;" class="form"><BR>
+<div style="font-size: 10px; ">
+<script language="javascript" type="text/javascript">
+<!--
+    //document.write('<input type="checkbox" name="ssl" id="ssl" /><label for="ssl">secure</label><br/>');
+//-->
+</script>
+<div title="Keep me signed in for today">
+<input type="checkbox" name="autologin" value="1" id="autologin" /><label for="autologin">for today</label>
+</div>
+<!--Keep me signed in for today-->
+</div>
+<input name="submit" type="submit" value="Log In" class="button" style="width: 85px; margin-bottom: 10px;">
+
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	if( $.cookie('ssl') == '1' ){
+		$("#ssl").attr('checked', true);
+	}
+	$("#ssl").change(function(){
+		if($(this).is(':checked')){
+			$.cookie('ssl', '1');
+		} else {
+			$.cookie('ssl', '0');
+		}
+	});
+});
+</script>
+
+</div>
+<div class="menucmd"><a href="/register">register</a><br><a href="/tutorials">tutorials</a><br><br><a href="/status">status</a><br><a href="/submit">submit</a><br><a href="/problems/classical/">problems</a><br><a href="/search">search</a><br><br><a href="/">news</a><br><a href="/contests">contests</a><br><a href="/ranks/">ranks</a><br><br><a href="/forum">forum</a><br><a href="/tools">tools</a><br><a href="/clusters">clusters</a><br><a href="/credits">credits</a><br><hr></div><a href="/problems/classical/"></a><br>
+
+
+	<div class="time">
+Server time:</div>
+<div class="time">
+2014-02-24
+<br>
+<b>21 : 29 : 49</b>
+</div>
+
+</td><td style="width: 748px; padding:0px;" valign="top" class="content0">
+        <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+                <td style="padding:0px;" colspan="2"><center>
+                                
+                </center></td>
+        </tr>
+        <tr>
+                <td class="content" width="99%" style="padding: 10px"><script type='text/javascript' src='/gfx/jquery.bgiframe.js'></script>
+<script type='text/javascript' src='/gfx/jquery.tooltip.js'></script>
+<script type='text/javascript' src='/gfx/jquery.cxhelp.js'></script>
+
+
+
+ <!-- wykorzystywane w pcontent.html (by wiele) -->
+
+<table class="problems" width="100%">
+<tr class="navigation">
+<td><a href="/submit/TRGRID/">Submit</a></td>
+<td><a href="/status/TRGRID/">All submissions</a></td>
+<td><a href="/ranks/TRGRID/">Best solutions</a></td>
+<td><a href="/problems/TRGRID.ps">PS</a></td>
+<td><a href="/problems/TRGRID.pdf">PDF</a></td>
+<td><a href="/problems/classical/">Back to list</a></td>
+</tr>
+</table>
+
+<div class="prob" style="position: relative">
+
+<!-- google_ad_section_start -->
+<!-- plik z pomoca kontekstowa (cxhelp_*) dziedziczony po pindex.html -->
+
+<div style="position: absolute;">
+<div class="fb-like" data-href="http://www.spoj.com/problems/TRGRID/" data-send="true" data-layout="box_count" data-width="70" data-show-faces="false"></div>
+</div>
+<div style="position: absolute; right: 0px">
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone size="tall"></g:plusone>
+<!-- Place this render call where appropriate -->
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</div>
+
+<script type="text/javascript" src="/gfx/jscripts/tiny_mce/plugins/asciimath/js/ASCIIMathMLwFallback.js"></script>
+<!--script type="text/javascript" src="/gfx/jscripts/tiny_mce/plugins/asciisvg/js/ASCIIsvgPI.js"></script-->
+<script type="text/javascript">
+<!--
+var AScgiloc = 'http://www.imathas.com/imathas/filter/graph/svgimg.php';
+var AMTcgiloc = "/files/gif/";
+-->
+</script>
+
+<table width="100%" style="margin-top:10px">
+<tr>
+	<td>
+		<h2>SPOJ Problem Set (classical)</h2>
+				<h1>5976. Traversing Grid</h1>
+		<h2>Problem code: TRGRID</h2>
+	</td>
+	</tr>
+</table>
+
+<br/>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - baner górny */
+google_ad_slot = "5796055248";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><a rel="nofollow" href="https://www.digitalocean.com/?refcode=c59674ea4847" class="freelancer_728" style="display: none;"><img src="/gfx/digitalocean-horizontal-eps.png" width=410 height=109 border=0></a>
+
+<p align="justify">
+<p>Starting at the top left corner of an N*M grid and facing towards the right, you keep walking one square at a time in the direction you are facing. If you reach the boundary of the grid or if the next square you are about to visit has already been visited, you turn right. You stop when all the squares in the grid have been visited. What direction will you be facing when you stop ?<br /><br />For example : Consider the case with N = 3,M = 3. The path followed will be (0,0) -&gt; (0,1) -&gt; (0,2) -&gt; (1,2) -&gt; (2,2) -&gt; (2,1) -&gt; (2,0) -&gt; (1,0) -&gt; (1,1). At this point, all squares have been visited, and you are facing right.<br /><br /></p>
+<p style="text-align: center;"><strong>Input</strong></p>
+<p><br />The first line contains T the number of test cases. Each of the next T lines contain two integers N and M, denoting the number of rows and columns respectively.</p>
+<p style="text-align: center;"><br /><br /><strong>Output</strong></p>
+<p>Output T lines, one for each test case, containing the required direction you will be facing at the end. Output L for left, R for right, U for up, and D for down.</p>
+<p style="text-align: center;"><strong>Eample</strong></p>
+<p><br />Sample Input :<br />4<br />1 1<br />2 2<br />3 1<br />3 3<br /><br />Sample Output :<br />R<br />L<br />D<br />R</p>
+<p style="text-align: center;"><br /><strong>Constraints</strong></p>
+<p>1 &lt;= T &lt;= 10000<br />1 &lt;= N,M &lt;= 1000000000</p>
+
+
+
+<hr>
+<table border=0 cellspacing=0 cellpadding=0 align=left style="margin-bottom:10px" class="probleminfo">
+<tr><td>Added by:</td><td><a href="/users/syco">Varun Jalan</a></td></tr>
+<tr><td>Date:</td><td>2010-01-25</td></tr>
+<tr><td>Time limit:</td><td>1s
+</td></tr>
+<tr><td>Source limit:</td><td>50000B</td></tr>
+<tr><td>Memory limit:</td><td>256MB</td></tr>
+	<tr>
+		<td>Cluster:</td>
+		<td>
+							<a href="/clusters/" target="_blank">Pyramid (Intel Pentium III 733 MHz)</a>
+					
+		</td>
+	</tr>
+<tr><td>Languages:</td><td>All except: NODEJS PERL 6 </td></tr>
+<tr><td>Resource:</td><td>own problem used for Codechef Snackdown Onsite</td></tr>	
+</table><!-- google_ad_section_end -->
+
+<div id="ccontent">
+<!-- google_ad_section_start -->
+
+<hr style="clear:both;"/>
+<a href="#" onclick="toggleComments(); return false;"><span id="comments_sh">hide</span> comments</a><br/>
+
+<a id="comments"></a>
+<table id="comments_table" width="100%">
+		<tr>
+		<td colspan="2">
+		<table class="navigation" width="99%">
+<tr><td align="left" width="27%">
+<i>Previous</i></td><td class="navigationcenter" width="16%">&nbsp;1</td> 
+<td class="navigationcenter" width="16%"><a href="/problems/TRGRID/cstart=10" class="pager_link">&nbsp;2</a></td> 
+<td class="navigationcenter" width="16%"><a href="/problems/TRGRID/cstart=20" class="pager_link">&nbsp;3</a></td> 
+<td align="right" width="25%">
+<a href="/problems/TRGRID/cstart=10" class="pager_link">Next</a> <a href="/problems/TRGRID/cstart=20" class="pager_link">&gt;</a></td></table>		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+				</td>
+	</tr>
+	
+	<script language="JavaScript">
+	<!--
+	$(document).ready(function(){
+        $('.pager_link').bind('click', function(me){
+                var href=$(me.currentTarget).attr('href');
+		$('#ccontent').animate({opacity: 0.5},1);
+                $.ajax({
+                        type: "GET",
+                        url: href+",ajax=1",
+                        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-2",
+                        success: function(data){
+                                $('#ccontent').html(data);
+				$('#ccontent').animate({opacity: 1.0},1);
+                        },
+                        error: function(err){
+                                alert('error');
+                        }
+                });
+                return false;
+        });
+	});
+	-->
+	</script>
+	
+
+			
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font >
+		2014-01-31 17:47:39 <b><a href="/users/xsami">Samil Vargas</a></b> 
+		</font>
+								<br/>
+				Nice one 4 conditions more that enough :p
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font >
+		2013-08-08 07:27:53 <b><a href="/users/vaibhavagarwal">Vaibhav Agarwal</a></b> 
+		</font>
+								<br/>
+				easy question.... but printing 'T' instead of 'U' costed me 2 wa's :P
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font >
+		2013-07-18 17:27:52 <b><a href="/users/tithonus49">Sourav Chakraborty</a></b> 
+		</font>
+								<br/>
+				half century :D
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font >
+		2013-07-16 11:47:44 <b><a href="/users/aayush2k11">Aayush Gupta</a></b> 
+		</font>
+								<br/>
+				very easy problem!!
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font >
+		2013-06-19 20:40:02 <b><a href="/users/geek6244">No_words</a></b> 
+		</font>
+								<br/>
+				O(1) but TLE in java ! -_-<br/><br/>Java Coders:<br/><br/>Use Highly optimized IO. <br/>Scanner and even Bufferedreader wont work! 
+				<br/><br/>
+		<b>Last edit: 2013-06-20 09:51:51</b>
+						</td>
+	</tr>
+						
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font >
+		2013-06-03 04:32:53 <b><a href="/users/bhagwat_bit">Bhagwat</a></b> 
+		</font>
+								<br/>
+				100th Submission........:)
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font >
+		2012-12-25 19:28:10 <b><a href="/users/ritz_iiita">ritz</a></b> 
+		</font>
+								<br/>
+				Just work out few cases and it will be easy...
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font >
+		2012-12-25 11:18:28 <b><a href="/users/ph25">Philipp Heeg</a></b> 
+		</font>
+								<br/>
+				Requires optimized I/O in Java.
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font >
+		2012-10-23 06:01:45 <b><a href="/users/mccoy_007">akhil_sharma</a></b> 
+		</font>
+								<br/>
+				simple if-else implementation
+						</td>
+	</tr>
+			
+</table>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function getCookieVal (offset) {
+        var endstr = document.cookie.indexOf (";", offset);
+        if (endstr == -1) { 
+                endstr = document.cookie.length; 
+        }
+        return unescape(document.cookie.substring(offset, endstr));
+}
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg) {
+      return getCookieVal (j);
+      }
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break; 
+    }
+  return null;
+}
+
+function toggleComments() {
+        var a = document.getElementById('comments_table');
+        var d = a.style.display;
+        if( d == "" || d == "block" ){
+                d = "none";
+                document.getElementById('comments_sh').innerHTML = 'show';
+        } else {
+                d = "block";
+                document.getElementById('comments_sh').innerHTML = 'hide';
+        }
+        a.style.display = d;
+        document.cookie="comments_table="+d+"; path=/;";
+}
+
+if( GetCookie('comments_table') == 'none' ){
+        document.getElementById('comments_sh').innerHTML = 'show';
+        document.getElementById('comments_table').style.display = 'hide';
+}
+
+-->
+</script>
+
+
+<!-- google_ad_section_end -->
+</div>
+<table width="100%">
+        </table>
+
+</div>
+        </td>
+<tr>
+        <td style="padding:0px" colspan="2"><center>
+                
+</center></td>
+</tr>
+</table>
+</td>
+
+
+<td width="200" class="ad-r__"><div><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - wiezowiec */
+google_ad_slot = "2703472077";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><div>
+<style>
+.ad-r__{
+        vertical-align: top;
+}
+.ad-r__ > div.fixed{
+        top: 10px;
+        position: fixed;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+        $(window).scroll(function() {
+                if($(this).scrollTop() > 100) {
+                        $(".ad-r__>div").addClass('fixed');
+                } else {
+                        $(".ad-r__>div").removeClass('fixed');
+                }
+        });
+	if ($('.ad-r__>div').height() == 0){
+		//console.log('adblocker');
+		_gaq.push(['_trackEvent', 'ads', 'adblock']);
+		$(".freelancer_728").show();
+		//$(".ad-r__").append('<script type="text/javascript"><!--amazon_ad_tag = "httpsphereres-20"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_border = "hide"; amazon_ad_discount = "remove"; amazon_color_background = "EEEEEE";//--><'+'/script><script type="text/javascript" src="http://ir-na.amazon-adsystem.com/s/ads.js"><'+'/script>');
+	}
+});
+</script>
+</td>
+
+
+</tr>
+
+<tr>
+<td colspan="2" class="footer">
+<div class="a-footer"></div>
+<script language="javascript" type="text/javascript">
+<!--
+function swapSheet(sheet, caller) {
+    document.getElementById('theme').href=sheet;
+    document.cookie="css_0="+sheet+"; path=/;";
+    caller.href="#bottom";
+}
+
+function setWidth(w, caller) {
+    document.getElementById('maintable').style.width=w;
+    document.cookie="res="+w+"; path=/;";
+    caller.href="#bottom";
+}
+
+
+
+//-->
+
+</script>
+        <table width="100%">
+    <tr>
+	<td align="left" width=10% class="cfooter">
+	<a href="/info/">About SPOJ</a>
+	</td>
+	<td align="center" class="cfooter">
+	    width:
+	    <a href="/?rsl=855px"  onClick="setWidth('855px', this)">900</a>
+	    <a href="/?rsl=980px"  onClick="setWidth('980px', this)">1024</a>
+	    <a href="/?rsl=100%" onClick="setWidth('100%', this)">Full</a>
+	    &nbsp;&nbsp;
+	    theme:
+	    <a href="/?css=/themes/skin1.css" onClick="swapSheet('/themes/skin1.css', this)">olive</a>
+	    <a href="/?css=/themes/skin2.css" onClick="swapSheet('/themes/skin2.css', this)">banana</a>
+	    <a href="/?css=/themes/skin3.css" onClick="swapSheet('/themes/skin3.css', this)">plum</a>
+	    <a href="/?css=/themes/hspl.css" onClick="swapSheet('/themes/hspl.css', this)">hspl</a>
+	</td>
+		<td align="center" class="cfooter">
+		 <span title="The discussion channel of the Sphere Online Judge community.">
+		 <a href="irc://irc.freenode.net/spoj"><b>#spoj</b> at freenode</a>
+		 </span>
+	</td>
+		<td width=10% class="cfooter" style="text-align:right">
+		<a href="/rss/" ><img src="/gfx/rss10x10.gif" border=0>&nbsp;RSS</a>&nbsp;
+	</div>
+	</td>
+    </tr>
+    </table>
+    </tr></table>
+</center>
+<div class="a-header"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1&appId=321676846207";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>-->
+
+
+<div style="font-size:10px; margin-top:4px; color: rgb(85,80,95); text-align: center">
+	&copy; Spoj.com. All Rights Reserved. Spoj uses <a href="http://sphere-engine.com" style="color:black">Sphere Engine</a>&trade; &copy; by <a href="http://sphere-research.com" style="color:black">Sphere Research Labs</a>.
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10507872-1']);
+    _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                      })();
+                      </script>
+                      
+</body>
+</html>

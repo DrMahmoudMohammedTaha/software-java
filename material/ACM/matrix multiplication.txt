@@ -1,0 +1,7 @@
+int m1[m][n]={{2,3},{3,2},{1,1}},m2[n][m]={{2,3,4},{1,2,3}},sum[m][m]={0};
+	for (int i=0;i<m;i++)
+	{	for (int j=0;j<m;j++)
+	        {int su=0;
+				for (int k=0;k<n;k++)
+				{sum[i][j]+=m1[i][k]*m2[k][j];
+				}

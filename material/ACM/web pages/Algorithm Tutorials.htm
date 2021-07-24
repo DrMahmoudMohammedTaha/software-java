@@ -1,0 +1,1159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Algorithm Tutorials</title>
+
+
+
+
+
+
+<script src="Algorithm%20Tutorials_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Algorithm%20Tutorials_files/jquery-1.js"></script>
+<script type="text/javascript" src="Algorithm%20Tutorials_files/jquery-migrate-1.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/reskin/html5shiv.js"></script>
+<![endif]-->
+<script type="text/javascript" src="Algorithm%20Tutorials_files/jquery.js"></script>
+<script type="text/javascript" src="Algorithm%20Tutorials_files/newTCScript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="Algorithm%20Tutorials_files/css.css" rel="stylesheet" type="text/css">
+    
+    <link type="text/css" rel="stylesheet" href="Algorithm%20Tutorials_files/coders.css">
+    <link type="text/css" rel="stylesheet" href="Algorithm%20Tutorials_files/jobsRemix.css">
+    <link type="text/css" rel="stylesheet" href="Algorithm%20Tutorials_files/myHome.css">
+    
+<link type="text/css" rel="stylesheet" href="Algorithm%20Tutorials_files/newStyles.css">
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="/css/reskin/newStyles_ie8.css"/>
+<![endif]-->
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=u(e),f=c.length,s=i(a,o,r),p=0;f>p;p++)c[p].apply(s,n);return s}function a(t,e){f[t]=u(t).concat(e)}function u(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:u,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=l.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),u=window,c=u.document,f="addEventListener",s="attachEvent",p=(""+location).split("?")[0],l=e.exports={offset:i(),origin:p,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),u[f]("load",n,!1)):(c[s]("onreadystatechange",r),u[s]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}]},{},["G9z0Bl"]);</script><script language="JavaScript" src="Algorithm%20Tutorials_files/print.js"></script>
+<style type="text/css">
+.code
+{
+   width: 550;
+   padding: 10px;
+   margin: 20px;
+   color: #333;
+   font-size: 11px;
+   font-weight: normal;
+   line-height: 14px;
+   background-color: #EEEEEE;
+   border: 1px solid #999;
+}
+.math
+{
+   font-family: times, times new roman, serif;
+   font-weight: normal;
+   font-style: italic;
+   font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div id="onTop">
+    
+
+
+
+
+
+
+
+
+
+    
+        <header id="navigation" class="newUser">
+            <div class="container">
+                <div class="headerTopRightMenu">
+                    
+                        <div class="headerTopRightMenuLink logIn">
+                            <div class="text"><a href="http://www.topcoder.com/?action=showlogin" class="actionLogin">Log In</a></div>
+                            <div class="clear"></div>
+                        </div>
+                    
+
+                    <div class="separator"></div>
+                    <div class="headerTopRightMenuLink contact">
+                        <div class="text"><a href="http://www.topcoder.com/contact-us/">Contact</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="headerTopRightMenuLink help">
+                        <div class="text"><a href="http://help.topcoder.com/">Help Center</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="separator beforeSearch"></div>
+                    <div class="headerTopRightMenuLink search last">
+                        <div class="icon"></div>
+                        <div class="text"><a href="http://www.topcoder.com/search">Search</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                <h1 class="logo">
+                    <a href="http://www.topcoder.com/" title="topcoder"></a>
+                </h1>
+                <nav id="mainNav" class="mainNav">
+                    <ul class="root">
+                        <li id="nav-menu-item-13018"><a href="http://www.topcoder.com/challenges/" class="13018"><i></i>Challenges</a>
+                            <ul class="child">
+                                <li id="nav-menu-item-13510"><a href="http://www.topcoder.com/challenges/" class="all"><i></i>All</a></li>
+                                <li id="nav-menu-item-13511"><a href="http://www.topcoder.com/active-challenges/design/" class="design"><i></i>Design</a></li>
+                                <li id="nav-menu-item-13512"><a href="http://www.topcoder.com/active-challenges/develop/" class="develop"><i></i>Development</a></li>
+                                <li id="nav-menu-item-13513"><a href="http://www.topcoder.com/active-challenges/data/" class="data"><i></i>Data Science</a></li>
+                                <li id="nav-menu-item-13529"><a href="http://community.topcoder.com/contest/arena/ContestAppletProd.jnlp" class="topcoder-arena"><i></i>topcoder Arena</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-menu-item-13129"><a href="http://www.topcoder.com/community/" class="13129"><i></i>Community</a>
+                            <ul style="display: none; height: 297px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;" class="child">
+                                <li id="nav-menu-item-13509"><a href="http://www.topcoder.com/community/" class="welcome"><i></i>Home</a></li>
+                                <li id="nav-menu-item-13034"><a href="http://www.topcoder.com/community/getting-started/" class="13034"><i></i>Getting
+                                    Started</a></li>
+                                <li id="nav-menu-item-12983"><a href="http://www.topcoder.com/community/how-it-works/" class="customer-solutions"><i></i>How It Works</a></li>
+                                <li id="nav-menu-item-13105"><a href="http://apps.topcoder.com/forums/" class="forums"><i></i>Forums</a></li>
+                                <li id="nav-menu-item-13036"><a href="http://www.topcoder.com/community/events/" class="13036"><i></i>Events</a></li>
+                                <li id="nav-menu-item-15095"><a href="http://community.topcoder.com/tco14" class="topcoder-open-2"><i></i>Topcoder Open 2014</a></li>
+                                <li id="nav-menu-item-15218"><a href="http://tco15.topcoder.com/" class="topcoder-open-2015"><i></i>Topcoder Open 2015</a></li>
+                                <li><a href="http://www.topcoder.com/community/member-programs/">
+                                                                <i></i>Member Programs</a></li>
+                                <li id="nav-menu-item-13038"><a href="http://www.topcoder.com/community/stories/" class="13038"><i></i>Stories</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-menu-item-13469"><a href="http://community.topcoder.com/mission" class="about-us"><i></i>About topcoder</a>
+                            <ul class="child">
+                                <li id="nav-menu-item-13516"><a href="http://www.topcoder.com/mission/" class="13516"><i></i>Mission</a></li>
+                                <li id="nav-menu-item-13032"><a href="http://www.topcoder.com/research/" class="13032"><i></i>Research</a></li>
+                                <li id="nav-menu-item-13450"><a href="http://www.topcoder.com/case-studies/" class="case-studies"><i></i>Case Studies</a></li>
+                                <li id="nav-menu-item-13045"><a href="http://www.topcoder.com/press/" class="13045"><i></i>Press</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-menu-item-13379"><a href="http://www.topcoder.com/blog/" class="13379"><i></i>Blog</a></li>
+                        <!--
+                        <li class="noReg logoutLink 	hide"><a href="http://www.topcoder.com?auth=logout" class="actionLogout">Log Out</a></li>
+                        <li class="noReg loginLink"><a href="javascript:;" class="actionLogin">Log In</a></li>
+                        -->
+                    </ul>
+                </nav>
+                <!--
+                <a href="http://www.topcoder.com?auth=logout" class="onMobi noReg linkLogout actionLogout hide">Log Out</a>
+                  <a href="javascript:;" class="onMobi noReg linkLogin actionLogin">Log In</a>
+                -->
+                
+                    <span class="btnRegWrap noReg"><a href="http://www.topcoder.com/?action=callback" class="btn btnRegister">Register</a></span>
+                
+
+                <!-- /.userWidget -->
+            </div>
+        </header>
+    
+    
+
+
+
+
+</div>
+<table style="visibility: visible;" class="mainContent" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr class="alignTop" valign="top">
+        <!-- Left Column Begins-->
+        <td id="onLeft" width="180">
+
+
+
+
+
+
+
+    
+        
+            
+            
+        
+
+
+
+
+
+
+<div style="width: 185px; display: block;" class="leftNavWrapper">
+    
+<input id="nodeName" value="algo_tutorials" type="hidden">
+<script language="JavaScript" type="text/javascript" src="Algorithm%20Tutorials_files/arena.js"></script>
+
+    <section class="get-time" style="margin-bottom:15px">
+        
+        <span class="date"></span>
+        <a href="javascript:tcTime();">Get Time</a>
+    </section>
+    <!-- End .get-time -->
+
+    <section class="navigation">
+    <ul>
+        <li><a id="copilot_posting_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Copilot%20Posting">Copilot Posting</a></li>
+        <li><a href="http://www.topcoder.com/active-challenges/design/">Design</a></li>
+        <li>
+            <a href="javascript:;">Develop<i></i></a>
+            <ul class="hide">
+                <li><a id="conceptualization_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Conceptualization">Conceptualization</a></li>
+                <li><a id="specification_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Specification">Specification</a></li>
+                <li><a id="architecture_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Architecture">Architecture</a></li>
+                <li><a id="ui_prototype_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=UI%20Prototype%20Competition">UI Prototype</a></li>
+                <li><a id="assembly_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Assembly%20Competition">Assembly</a></li>
+                <li><a id="first2finish_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=First2Finish">First2Finish</a></li>
+                <li><a id="code_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Code">Code</a></li>
+                <li><a id="des_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Design">Component Design</a></li>
+                <li><a id="dev_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Development">Component Development</a></li>
+                <li><a id="test_suites_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Test%20Suites">Test Suites</a></li>
+                <li><a id="content_creation_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Content%20Creation">Content Creation</a></li>
+                <li><a id="test_scenarios_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Test%20Scenarios">Test Scenarios</a></li>
+                <li><a id="bug_hunt_compete" href="http://www.topcoder.com/challenges/develop/active/?challengeTypes=Bug%20Hunt">Bug Hunt</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">Review Opportunities<i></i></a>
+            <ul class="hide">
+                <li>
+                    <dl>
+                        <dt>Conceptualization</dt>
+                        <dd><a id="conceptualization_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=23">Review Opportunities</a></dd>
+                        <dd><a id="conceptualization_review_border" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=23">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Specification</dt>
+                        <dd><a id="specification_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=6">Review Opportunities</a></dd>
+                        <dd><a id="specification_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=6">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Architecture</dt>
+                        <dd><a id="architecture_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=7">Review Opportunities</a></dd>
+                        <dd><a id="architecture_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=7">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Component Design</dt>
+                        <dd><a id="des_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=1">Review Opportunities</a></dd>
+                        <dd><a id="des_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=1">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Component Development</dt>
+                        <dd><a id="dev_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=2">Review Opportunities</a></dd>
+                        <dd><a id="dev_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=2">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Assembly</dt>
+                        <dd><a id="assembly_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=14">Review Opportunities</a></dd>
+                        <dd><a id="assembly_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=14">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>First2Finish</dt>
+                        <dd><a id="first2finish_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=38">Review Opportunities</a></dd>
+                        <dd><a id="first2finish_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=38">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Code</dt>
+                        <dd><a id="code_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=39">Review Opportunities</a></dd>
+                        <dd><a id="code_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=39">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Test Suites</dt>
+                        <dd><a id="test_suites_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=13">Review Opportunities</a></dd>
+                        <dd><a id="test_suites_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=13">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Report</dt>
+                        <dd><a id="reporting_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=36">Review Opportunities</a></dd>
+                        <dd><a id="reporting_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=36">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>UI prototype</dt>
+                        <dd><a id="ui_prototype_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=19">Review Opportunities</a></dd>
+                        <dd><a id="ui_prototype_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=19">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>RIA Build</dt>
+                        <dd><a id="ria_build_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=24">Review Opportunities</a></dd>
+                        <dd><a id="ria_build_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=24">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Content Creation</dt>
+                        <dd><a id="content_creation_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=35">Review Opportunities</a></dd>
+                        <dd><a id="content_creation_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=35">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Test Scenarios</dt>
+                        <dd><a id="test_scenarios_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=26">Review Opportunities</a></dd>
+                        <dd><a id="test_scenarios_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=26">Meet the review board</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl class="last-item">
+                        <dt>Bug Hunt</dt>
+                        <dd><a id="bug_hunt_review" href="http://www.topcoder.com/tc?module=ViewReviewAuctions&amp;pt=9">Review Opportunities</a></dd>
+                        <dd><a id="bug_hunt_review_board" href="http://www.topcoder.com/tc?module=ReviewBoard&amp;pt=9">Meet the review board</a></dd>
+                    </dl>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">Algorithm (SRM)<i></i></a>
+            <ul class="hide">
+                <li><a href="http://www.topcoder.com/active-challenges/data/">Single Round Matches (SRM)</a></li>
+                <li><a id="algo_match_archive" href="http://www.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+                <li><a id="algo_match_overviews" href="http://www.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+                <li><a id="algo_match_winners" href="http://www.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+                <li><a id="algo_match_results" href="http://www.topcoder.com/stat?c=last_match">Match Results</a></li>
+                <li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+                <li><a id="algo_problem_archive" href="http://www.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+                <li><a id="algo_color_changes" href="http://www.topcoder.com/tc?module=ColorChange&amp;ratid=1">Recent Color Changes</a></li>
+                <li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+                <li><a href="javascript:arena();">Launch Arena</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">Marathon Match<i></i></a>
+            <ul class="hide">
+                <li><a id="long_compete" href="http://www.topcoder.com/challenges/data/active/">Challenges</a></li>
+                <li><a id="long_match_archive" href="http://www.topcoder.com/challenges/data/past/">Match Archive</a></li>
+                <li><a id="long_match_overview" href="http://www.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+                <li><a id="long_match_winners" href="http://www.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+                <li><a id="long_editorials" href="http://www.topcoder.com/longcontest/?module=Static&amp;d1=match_editorials&amp;d2=archive">Match Editorials</a></li>
+                <li><a id="long_data_feeds" href="http://www.topcoder.com/longcontest/?module=Static&amp;d1=support&amp;d2=dataFeed">Data Feeds</a></li>
+                <li><a id="long_practice" href="http://www.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+                <li><a id="long_queue" href="http://www.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.topcoder.com/dr">The Digital Run</a></li>
+        <li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+        <li>
+            <a href="javascript:;">topcoder Networks<i></i></a>
+            <ul class="hide">
+                <li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.topcoder.com/community/events/">Events</a></li>
+        <li>
+            <a href="javascript:;">Statistics<i></i></a>
+            <ul class="hide">
+                <li>
+                    <dl>
+                        <dt>Top Ranked</dt>
+                        <dd><a id="top_rated_algo" href="http://www.topcoder.com/tc?module=AlgoRank">Algorithm</a></dd>
+                        <dd><a id="top_rated_hs" href="http://www.topcoder.com/tc?module=HSRank">High School</a></dd>
+                        <dd><a id="top_rated_long" href="http://www.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></dd>
+                        <dd><a id="top_rated_conceptors" href="http://www.topcoder.com/stat?c=top_conceptors">Conceptualization</a></dd>
+                        <dd><a id="top_rated_specificators" href="http://www.topcoder.com/stat?c=top_specificators">Specification</a></dd>
+                        <dd><a id="top_rated_architects" href="http://www.topcoder.com/stat?c=top_architects">Architecture</a></dd>
+                        <dd><a id="top_rated_des" href="http://www.topcoder.com/stat?c=top_designers">Design</a></dd>
+                        <dd><a id="top_rated_dev" href="http://www.topcoder.com/stat?c=top_developers">Development</a></dd>
+                        <dd><a id="top_rated_assemblers" href="http://www.topcoder.com/stat?c=top_assemblers">Assembly</a></dd>
+                        <dd><a id="top_rated_testers" href="http://www.topcoder.com/stat?c=top_testers">Test Suites</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Record Book</dt>
+                        <dd><a id="algo_recordbook" href="http://www.topcoder.com/tc?module=Static&amp;d1=statistics&amp;d2=recordbook_home">Algorithm</a></dd>
+                        <dd><a id="comp_recordbook" href="http://www.topcoder.com/tc?module=Static&amp;d1=compstats&amp;d2=comp_recordbook_home">Component</a></dd>
+                        <dd><a id="long_recordbook" href="http://www.topcoder.com/longcontest/?module=Static&amp;d1=stats&amp;d2=recordbook_home">Marathon Match</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl class="last-item">
+                        <dt>Coder of the Month</dt>
+                        <dd><a id="algo_com" href="http://www.topcoder.com/tc?module=COMHistory&amp;achtid=5">Algorithm</a></dd>
+                        <dd><a id="des_com" href="http://www.topcoder.com/tc?module=COMHistory&amp;achtid=6">Design</a></dd>
+                        <dd><a id="dev_com" href="http://www.topcoder.com/tc?module=COMHistory&amp;achtid=7">Development</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </li>
+        <li class="expanded">
+            <a href="javascript:;">Tutorials<i></i></a>
+            <ul style="display: block;" class="hide">
+                <li><a style="color: rgb(255, 138, 0); font-weight: bold;" id="algo_tutorials" href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/">Algorithm Tutorials</a></li>
+                <li><a id="comp_tutorials" href="http://help.topcoder.com/development/competing-in-development-challenges/development-tutorials/">Software Tutorials</a></li>
+                <li><a id="mm_tutorials" href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/marathon-match-tutorials/">Marathon Tutorials</a></li>
+            </ul>
+        </li>
+        <li><a href="https://apps.topcoder.com/forums/" id="forums">Forums</a></li>
+        <li><a href="https://www.topcoder.com/tc?module=MyHome" id="my_topcoder">My topcoder</a></li>
+    </ul>
+</section>
+<!-- End .navigation -->
+<section class="member-search">
+    <h3>Member Search</h3>
+    <div class="form">
+        <form action="http://community.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+            <input class="noSpace" name="module" value="SimpleSearch" type="hidden">
+            <input class="noSpace" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value=='Handle:') document.simpleSearchForm.ha.value = '';" onblur="javascript:if (document.simpleSearchForm.ha.value == '')document.simpleSearchForm.ha.value = 'Handle:';" type="text">
+            <a href="javascript:javascript:void%20document.simpleSearchForm.submit();" class="btn btn-search-member"><i>SEARCH</i></a>
+        </form>
+    </div>
+</section>
+
+<!-- End .member-search -->
+
+</div>
+
+    
+    
+
+
+
+        </td>
+        <!-- Left Column Ends -->
+        <!-- Center Column Begins -->
+        <td class="bodyColumn" width="100%" align="left">
+            
+
+
+
+
+
+<table style="visibility: visible;" class="pageTitleTable" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td class="pageTitle" width="100%">
+
+
+            
+                
+                    
+                    <img src="Algorithm%20Tutorials_files/header_alg_tut.gif" alt="alg_tut" border="0">
+                
+                
+            
+
+
+        </td>
+        <td class="pageSubtitle" align="right">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+            <div class="linkBox">
+                <a href="http://community.topcoder.com/tc?module=Static&amp;d1=tutorials&amp;d2=alg_index">Archive</a><br>
+                <span id="printableLink"><a href="javascript:makeInvisible();">Printable view</a><br></span>
+                <span id="navigableLink" class="invisible"><a href="javascript:makeNavigable();">Normal view</a><br></span>
+                <a href="http://forums.topcoder.com/?module=ThreadList&amp;forumID=505895">Discuss this article</a><br>
+                <a href="http://community.topcoder.com/tc?module=Static&amp;d1=help&amp;d2=writeForTC">Write for TopCoder</a>
+            </div>
+
+<span class="bodyTitle">Binary Search</span>
+
+<p>
+<img src="Algorithm%20Tutorials_files/lovro_mug.gif" alt="" class="myStatsPhoto" height="61" hspace="6" vspace="1" width="55" align="left" border="0"><br>
+By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&amp;cr=7390467&amp;tab=alg" class="coderTextRed">lovro</a><br>
+<span class="smallText"><em>TopCoder Member</em></span><br clear="all">
+</p>
+<br>
+
+<p>
+Binary search is one of the fundamental algorithms in computer science. 
+In order to explore it, we'll first build up a theoretical backbone, 
+then use that to implement the algorithm properly and avoid those nasty 
+off-by-one errors everyone's been talking about.
+<br><br>
+
+<span class="bodySubtitle">Finding a value in a sorted sequence</span><br>
+In its simplest form, binary search is used to quickly find a value in a
+ sorted sequence (consider a sequence an ordinary array for now). We'll 
+call the sought value the <i>target</i> value for clarity. Binary search
+ maintains a contiguous subsequence of the starting sequence where the 
+target value is surely located. This is called the <i>search space</i>. 
+The search space is initially the entire sequence. At each step, the 
+algorithm compares the median value in the search space to the target 
+value. Based on the comparison and because the sequence is sorted, it 
+can then eliminate half of the search space. By doing this repeatedly, 
+it will eventually be left with a search space consisting of a single 
+element, the target value.
+<br><br>
+For example, consider the following sequence of integers sorted in ascending order and say we are looking for the number 55:
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="500" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">0</td>
+      <td align="center">5</td>
+      <td align="center">13</td>
+      <td align="center">19</td>
+      <td align="center">22</td>
+      <td align="center">41</td>
+      <td align="center">55</td>
+      <td align="center">68</td>
+      <td align="center">72</td>
+      <td align="center">81</td>
+      <td align="center">98</td>
+   </tr>
+</tbody></table>
+<br><br>
+We are interested in the location of the target value in the sequence so
+ we will represent the search space as indices into the sequence. 
+Initially, the search space contains indices 1 through 11. Since the 
+search space is really an interval, it suffices to store just two 
+numbers, the low and high indices. As described above, we now choose the
+ median value, which is the value at index 6 (the midpoint between 1 and
+ 11): this value is 41 and it is smaller than the target value. From 
+this we conclude not only that the element at index 6 is not the target 
+value, but also that no element at indices between 1 and 5 can be the 
+target value, because all elements at these indices are smaller than 41,
+ which is smaller than the target value. This brings the search space 
+down to indices 7 through 11:
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="200" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">55</td>
+      <td align="center">68</td>
+      <td align="center">72</td>
+      <td align="center">81</td>
+      <td align="center">98</td>
+   </tr>
+</tbody></table>
+<br><br>
+
+Proceeding in a similar fashion, we chop off the second half of the search space and are left with:
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="80" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">55</td>
+      <td align="center">68</td>
+   </tr>
+</tbody></table>
+<br><br>
+Depending on how we choose the median of an even number of elements we 
+will either find 55 in the next step or chop off 68 to get a search 
+space of only one element. Either way, we conclude that the index where 
+the target value is located is 7.
+<br><br>
+If the target value was not present in the sequence, binary search would
+ empty the search space entirely. This condition is easy to check and 
+handle. Here is some code to go with the description:
+
+</p><pre class="code">binary_search(A, target):
+   lo = 1, hi = size(A)
+   while lo &lt;= hi:
+      mid = lo + (hi-lo)/2
+      if A[mid] == target:
+         return mid            
+      else if A[mid] &lt; target: 
+         lo = mid+1
+      else:
+         hi = mid-1
+            
+   // target was not found
+</pre>
+
+<span class="bodySubtitle">Complexity</span><br>
+Since each comparison binary search uses halves the search space, we can
+ assert and easily prove that binary search will never use more than (in
+ big-oh notation) <i>O</i>(log <i>N</i>) comparisons to find the target value.
+<br><br>
+The logarithm is an awfully slowly growing function. In case you're not 
+aware of just how efficient binary search is, consider looking up a name
+ in a phone book containing a million names. Binary search lets you 
+systematically find any given name using at most 21 comparisons. If you 
+could manage a list containing all the people in the world sorted by 
+name, you could find any person in less than 35 steps. This may not seem
+ feasible or useful at the moment, but we'll soon fix that.
+<br><br>
+Note that this assumes that we have random access to the sequence. 
+Trying to use binary search on a container such as a linked list makes 
+little sense and it is better use a plain linear search instead.
+<br><br>
+<span class="bodySubtitle">Binary search in standard libraries</span><br>
+C++'s Standard Template Library implements binary search in algorithms 
+lower_bound, upper_bound, binary_search and equal_range, depending 
+exactly on what you need to do. Java has a built-in Arrays.binary_search
+ method for arrays and the .NET Framework has Array.BinarySearch.
+<br><br>
+You're best off using library functions whenever possible, since, as 
+you'll see, implementing binary search on your own can be tricky.
+<br><br>
+<span class="bodySubtitle">Beyond arrays: the discrete binary search</span><br>
+This is where we start to abstract binary search. A sequence (array) is 
+really just a function which associates integers (indices) with the 
+corresponding values. However, there is no reason to restrict our usage 
+of binary search to tangible sequences. In fact, we can use the same 
+algorithm described above on any monotonic function <i>f</i> whose 
+domain is the set of integers. The only difference is that we replace an
+ array lookup with a function evaluation: we are now looking for some x 
+such that f(x) is equal to the target value. The search space is now 
+more formally a subinterval of the domain of the function, while the 
+target value is an element of the codomain. The power of binary search 
+begins to show now: not only do we need at most <i>O</i>(log <i>N</i>) 
+comparisons to find the target value, but we also do not need to 
+evaluate the function more than that many times. Additionally, in this 
+case we aren't restricted by practical quantities such as available 
+memory, as was the case with arrays.
+<br><br>
+<span class="bodySubtitle">Taking it further: the main theorem</span><br>
+When you encounter a problem which you think could be solved by applying
+ binary search, you need some way of proving it will work. I will now 
+present another level of abstraction which will allow us to solve more 
+problems, make proving binary search solutions very easy and also help 
+implement them. This part is a tad formal, but don't get discouraged, 
+it's not that bad.
+<br><br>
+Consider a predicate <i>p</i> defined over some ordered set <i>S</i> 
+(the search space). The search space consists of candidate solutions to 
+the problem. In this article, a predicate is a function which returns a 
+boolean value, true or false (we'll also use <i>yes</i> and <i>no</i> as
+ boolean values). We use the predicate to verify if a candidate solution
+ is legal (does not violate some constraint) according to the definition
+ of the problem.
+<br><br>
+What we can call the <i>main theorem</i> states that <b>binary search can be used if and only if for all x in <i>S</i>, <i>p</i>(x) implies <i>p</i>(y) for all y &gt; x</b>. This property is what we use when we discard the second half of the search space. It is equivalent to saying that ¬<i>p</i>(x) implies ¬<i>p</i>(y)
+ for all y &lt; x (the symbol ¬ denotes the logical not operator), which
+ is what we use when we discard the first half of the search space. The 
+theorem can easily be proven, although I'll omit the proof here to 
+reduce clutter.
+<br><br>
+Behind the cryptic mathematics I am really stating that if you had a yes or no question (the predicate), getting a <i>yes</i> answer for some potential solution x means that you'd also get a <i>yes</i> answer for any element after x. Similarly, if you got a <i>no</i> answer, you'd get a <i>no</i>
+ answer for any element before x. As a consequence, if you were to ask 
+the question for each element in the search space (in order), you would 
+get a series of <i>no</i> answers followed by a series of <i>yes</i> answers.
+<br><br>
+Careful readers may note that binary search can also be used when a predicate yields a series of <i>yes</i> answers followed by a series of <i>no</i>
+ answers. This is true and complementing that predicate will satisfy the
+ original condition. For simplicity we'll deal only with predicates 
+described in the theorem.
+<br><br>
+If the condition in the main theorem is satisfied, we can use binary 
+search to find the smallest legal solution, i.e. the smallest x for 
+which <i>p</i>(x) is true. The first part of devising a solution based 
+on binary search is designing a predicate which can be evaluated and for
+ which it makes sense to use binary search: we need to choose what the 
+algorithm should find. We can have it find either the <i>first x for which p(x) is true</i> or the <i>last x for which p(x) is false</i>.
+ The difference between the two is only slight, as you will see, but it 
+is necessary to settle on one. For starters, let us seek the first <i>yes</i> answer (first option).
+<br><br>
+The second part is proving that binary search can be applied to the 
+predicate. This is where we use the main theorem, verifying that the 
+conditions laid out in the theorem are satisfied. The proof doesn't need
+ to be overly mathematical, you just need to convince yourself that <i>p</i>(x) implies <i>p</i>(y) for all y &gt; x or that ¬<i>p</i>(x) implies ¬<i>p</i>(y) for all y &lt; x. This can often be done by applying common sense in a sentence or two.
+<br><br>
+When the domain of the predicate are the integers, it suffices to prove that <i>p</i>(x) implies <i>p</i>(x+1) or that ¬<i>p</i>(x) implies ¬<i>p</i>(x-1), the rest then follows by induction.
+<br><br>
+These two parts are most often interleaved: when we think a problem can 
+be solved by binary search, we aim to design the predicate so that it 
+satisfies the condition in the main theorem.
+<br><br>
+One might wonder why we choose to use this abstraction rather than the 
+simpler-looking algorithm we've used so far. This is because many 
+problems can't be modeled as searching for a particular value, but it's 
+possible to define and evaluate a predicate such as <i>"Is there an assignment which costs x or less?"</i>,
+ when we're looking for some sort of assignment with the lowest cost. 
+For example, the usual traveling salesman problem (TSP) looks for the <i>cheapest round-trip which visits every city exactly once</i>. Here, the <i>target value</i> is not defined as such, but we can define a predicate <i>"Is there a round-trip which costs x or less?"</i> and then apply binary search to find the smallest x which satisfies the predicate. This is called <i>reducing</i>
+ the original problem to a decision (yes/no) problem. Unfortunately, we 
+know of no way of efficiently evaluating this particular predicate and 
+so the TSP problem isn't easily solved by binary search, but many 
+optimization problems are.
+<br><br>
+Let us now convert the simple binary search on sorted arrays described 
+in the introduction to this abstract definition. First, let's rephrase 
+the problem as: <i>"Given an array A and a target value, return the index of the first element in A equal to or greater than the target value."</i> Incidentally, this is more or less how lower_bound behaves in C++.
+<br><br>
+We want to find the index of the target value, thus any index into the array is a candidate solution. The search space <i>S</i> is the set of all candidate solutions, thus an interval containing all indices. Consider the predicate <i>"Is A[x] greater than or equal to the target value?"</i>. If we were to find the first x for which the predicate says <i>yes</i>, we'd get exactly what decided we were looking for in the previous paragraph.
+<br><br>
+The condition in the main theorem is satisfied because the array is 
+sorted in ascending order: if A[x] is greater than or equal to the 
+target value, all elements after it are surely also greater than or 
+equal to the target value.
+<br><br>
+If we take the sample sequence from before:
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="500" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">0</td>
+      <td align="center">5</td>
+      <td align="center">13</td>
+      <td align="center">19</td>
+      <td align="center">22</td>
+      <td align="center">41</td>
+      <td align="center">55</td>
+      <td align="center">68</td>
+      <td align="center">72</td>
+      <td align="center">81</td>
+      <td align="center">98</td>
+   </tr>
+</tbody></table>
+<br><br>
+With the search space (indices):
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="500" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">1</td>
+      <td align="center">2</td>
+      <td align="center">3</td>
+      <td align="center">4</td>
+      <td align="center">5</td>
+      <td align="center">6</td>
+      <td align="center">7</td>
+      <td align="center">8</td>
+      <td align="center">9</td>
+      <td align="center">10</td>
+      <td align="center">11</td>
+   </tr>
+</tbody></table>
+<br><br>
+And apply our predicate (with a target value of 55) to it we get:
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="500" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">no</td>
+      <td align="center">no</td>
+      <td align="center">no</td>
+      <td align="center">no</td>
+      <td align="center">no</td>
+      <td align="center">no</td>
+      <td align="center">yes</td>
+      <td align="center">yes</td>
+      <td align="center">yes</td>
+      <td align="center">yes</td>
+      <td align="center">yes</td>
+   </tr>
+</tbody></table>
+<br><br>
+This is a series of <i>no</i> answers followed by a series of <i>yes</i>
+ answers, as we were expecting. Notice how index 7 (where the target 
+value is located) is the first for which the predicate yields <i>yes</i>, so this is what our binary search will find.
+<br><br>
+<span class="bodySubtitle">Implementing the discrete algorithm</span><br>
+One important thing to remember before beginning to code is to settle on
+ what the two numbers you maintain (lower and upper bound) mean. A 
+likely answer is <i>a closed interval which surely contains the first x for which p(x) is true</i>.
+ All of your code should then be directed at maintaining this invariant:
+ it tells you how to properly move the bounds, which is where a bug can 
+easily find its way in your code, if you're not careful.
+<br><br>
+Another thing you need to be careful with is how high to set the bounds.
+ By "high" I really mean "wide" since there are two bounds to worry 
+about. Every so often it happens that a coder concludes during coding 
+that the bounds he or she set are wide enough, only to find a 
+counterexample during intermission (when it's too late). Unfortunately, 
+little helpful advice can be given here other than to always double- and
+ triple-check your bounds! Also, since execution time increases 
+logarithmically with the bounds, you can always set them higher, as long
+ as it doesn't break the evaluation of the predicate. Keep your eye out 
+for overflow errors all around, especially in calculating the median.
+<br><br>
+Now we finally get to the code which implements binary search as described in this and the previous section:
+
+<pre class="code">binary_search(lo, hi, p):
+   while lo &lt; hi:
+      mid = lo + (hi-lo)/2
+      if p(mid) == true:
+         hi = mid
+      else:
+         lo = mid+1
+          
+   if p(lo) == false:
+      complain                // p(x) is false for all x in S!
+      
+   return lo         // lo is the least x for which p(x) is true
+</pre>
+
+The two crucial lines are hi = mid and lo = mid+1. When <i>p</i>(mid) is
+ true, we can discard the second half of the search space, since the 
+predicate is true for all elements in it (by the main theorem). However,
+ we can not discard mid itself, since it may well be the first element 
+for which <i>p</i> is true. This is why moving the upper bound to mid is as aggressive as we can do without introducing bugs.
+<br><br>
+In a similar vein, if <i>p</i>(mid) is false, we can discard the first half of the search space, but this time including mid. <i>p</i>(mid) is false so we don't need it in our search space. This effectively means we can move the lower bound to mid+1.
+<br><br>
+If we wanted to find the last x for which <i>p</i>(x) is false, we would devise (using a similar rationale as above) something like:
+
+<pre class="code">// warning: there is a nasty bug in this snippet!
+binary_search(lo, hi, p):
+   while lo &lt; hi:
+      mid = lo + (hi-lo)/2    // note: division truncates
+      if p(mid) == true:
+         hi = mid-1
+      else:
+         lo = mid
+          
+   if p(lo) == true:
+      complain                // p(x) is true for all x in S!
+      
+   return lo         // lo is the greatest x for which p(x) is false
+</pre>
+
+You can verify that this satisfies our condition that the element we're 
+looking for always be present in the interval (lo, hi). However, there 
+is another problem. Consider what happens when you run this code on some
+ search space for which the predicate gives:
+<br><br>
+<table style="visibility: visible;" class="formFrame" width="80" align="center" cellpadding="6" cellspacing="2">
+   <tbody><tr class="GAtableText">
+      <td align="center">no</td>
+      <td align="center">yes</td>
+   </tr>
+</tbody></table>
+<br><br>
+The code will get stuck in a loop. It will always select the first 
+element as mid, but then will not move the lower bound because it wants 
+to keep the <i>no</i> in its search space. The solution is to change mid
+ = lo + (hi-lo)/2 to mid = lo + (hi-lo+1)/2, i.e. so that it rounds up 
+instead of down. There are other ways of getting around the problem, but
+ this one is possibly the cleanest. Just remember to <b>always</b> test your code on a two-element set where the predicate is false for the first element and true for the second.
+<br><br>
+You may also wonder as to why mid is calculated using mid = lo + 
+(hi-lo)/2 instead of the usual mid = (lo+hi)/2. This is to avoid another
+ potential rounding bug: in the first case, we want the division to 
+always round down, towards the lower bound. But division truncates, so 
+when lo+hi would be negative, it would start rounding towards the higher
+ bound. Coding the calculation this way ensures that the number divided 
+is always positive and hence always rounds as we want it to. Although 
+the bug doesn't surface when the search space consists only of positive 
+integers or real numbers, I've decided to code it this way throughout 
+the article for consistency.
+<br><br>
+<span class="bodySubtitle">Real numbers</span><br>
+Binary search can also be used on monotonic functions whose domain is 
+the set of real numbers. Implementing binary search on reals is usually 
+easier than on integers, because you don't need to watch out for how to 
+move bounds:
+
+<pre class="code">binary_search(lo, hi, p):
+   while we choose not to terminate:
+      mid = lo + (hi-lo)/2
+      if p(mid) == true:
+         hi = mid
+      else:
+         lo = mid
+          
+   return lo // lo is close to the border between <i>no</i> and <i>yes</i>
+</pre>
+
+Since the set of real numbers is dense, it should be clear that we 
+usually won't be able to find the exact target value. However, we can 
+quickly find some x such that f(x) is within some tolerance of the 
+border between <i>no</i> and <i>yes</i>. We have two ways of deciding 
+when to terminate: terminate when the search space gets smaller than 
+some predetermined bound (say 10<sup>-12</sup>) or do a fixed number of 
+iterations. On TopCoder, your best bet is to just use a few hundred 
+iterations, this will give you the best possible precision without too 
+much thinking. 100 iterations will reduce the search space to 
+approximately 10<sup>-30</sup> of its initial size, which should be enough for most (if not all) problems.
+<br><br>
+If you need to do as few iterations as possible, you can terminate when 
+the interval gets small, but try to do a relative comparison of the 
+bounds, not just an absolute one. The reason for this is that doubles 
+can never give you more than 15 decimal digits of precision so if the 
+search space contains large numbers (say on the order of billions), you 
+can never get an absolute difference of less than 10<sup>-7</sup>.
+<br><br>
+<span class="bodySubtitle">Example</span><br>
+At this point I will show how all this talk can be used to solve a 
+TopCoder problem. For this I have chosen a moderately difficult problem,
+ <a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=1901&amp;rd=4650">FairWorkload</a>, which was the division 1 level 2 problem in SRM 169.
+<br><br>
+In the problem, a number of workers need to examine a number of filing 
+cabinets. The cabinets are not all of the same size and we are told for 
+each cabinet how many folders it contains. We are asked to find an 
+assignment such that each worker gets a sequential series of cabinets to
+ go through and that it minimizes the maximum amount of folders that a 
+worker would have to look through.
+<br><br>
+After getting familiar with the problem, a touch of creativity is 
+required. Imagine that we have an unlimited number of workers at our 
+disposal. The crucial observation is that, for some number <i>MAX</i>, we can calculate the minimum number of workers needed so that each worker has to examine no more than <i>MAX</i>
+ folders (if this is possible). Let's see how we'd do that. Some worker 
+needs to examine the first cabinet so we assign any worker to it. But, 
+since the cabinets must be assigned in sequential order (a worker cannot
+ examine cabinets 1 and 3 without examining 2 as well), it's always 
+optimal to assign him to the second cabinet as well, if this does not 
+take him over the limit we introduced (<i>MAX</i>). If it would take him
+ over the limit, we conclude that his work is done and assign a new 
+worker to the second cabinet. We proceed in a similar manner until all 
+the cabinets have been assigned and assert that we've used the minimum 
+number of workers possible, with the artificial limit we introduced. 
+Note here that the number of workers is inversely proportional to <i>MAX</i>: the higher we set our limit, the fewer workers we will need.
+<br><br>
+Now, if you go back and carefully examine what we're asked for in the 
+problem statement, you can see that we are really asked for the smallest
+ <i>MAX</i> such that the number of workers required is less than or 
+equal to the number of workers available. With that in mind, we're 
+almost done, we just need to connect the dots and see how all of this 
+fits in the frame we've laid out for solving problems using binary 
+search.
+<br><br>
+With the problem rephrased to fit our needs better, we can now examine the predicate <i>Can
+ the workload be spread so that each worker has to examine no more than x
+ folders, with the limited number of workers available?</i> We can use 
+the described greedy algorithm to efficiently evaluate this predicate 
+for any x. This concludes the first part of building a binary search 
+solution, we now just have to prove that the condition in the main 
+theorem is satisfied. But observe that increasing x actually relaxes the
+ limit on the maximum workload, so we can only need the same number of 
+workers or fewer, not more. Thus, if the predicate says <i>yes</i> for some x, it will also say <i>yes</i> for all larger x.
+<br><br>
+To wrap it up, here's an STL-driven snippet which solves the problem:
+
+<pre class="code">int getMostWork( vector  folders, int workers ) {
+   int n = folders.size();
+   int lo = *max_element( folders.begin(), folders.end() );
+   int hi = accumulate( folders.begin(), folders.end(), 0 );
+
+   while ( lo &lt; hi ) {
+      int x = lo + (hi-lo)/2;
+
+      int required = 1, current_load = 0;
+      for ( int i=0; i&lt;n; ++i ) {
+         if ( current_load + folders[i] &lt;= x ) {
+            // the current worker can handle it
+            current_load += folders[i];
+         }
+         else {
+            // assign next worker
+            ++required;
+            current_load = folders[i];               
+         }
+      }
+
+      if ( required &lt;= workers )
+         hi = x;
+      else
+         lo = x+1;
+   }
+
+   return lo;
+}
+</pre>
+Note the carefully chosen lower and upper bounds: you could replace the 
+upper bound with any sufficiently large integer, but the lower bound 
+must not to be less than the largest cabinet to avoid the situation 
+where a single cabinet would be too large for any worker, a case which 
+would not be correctly handled by the predicate. An alternative would be
+ to set the lower bound to zero, then handle too small x's as a special 
+case in the predicate.
+<br><br>
+To verify that the solution doesn't lock up, I used a small no/yes example with folders={1,1} and workers=1.
+<br><br>
+The overall complexity of the solution is <i>O</i>(<i>n</i> log <i>SIZE</i>), where <i>SIZE</i> is the size of the search space. This is very fast.
+<br><br>
+As you see, we used a greedy algorithm to evaluate the predicate. In 
+other problems, evaluating the predicate can come down to anything from a
+ simple math expression to finding a maximum cardinality matching in a 
+bipartite graph.
+<br><br>
+<span class="bodySubtitle">Conclusion</span><br>
+If you've gotten this far without giving up, you should be ready to 
+solve anything that can be solved with binary search. Try to keep a few 
+things in mind:
+<ul>
+<li>Design a predicate which can be efficiently evaluated and so that binary search can be applied</li>
+<li>Decide on what you're looking for and code so that the search space always contains that (if it exists)</li>
+<li>If the search space consists only of integers, test your algorithm on a two-element set to be sure it doesn't lock up</li>
+<li>Verify that the lower and upper bounds are not overly constrained: 
+it's usually better to relax them as long as it doesn't break the 
+predicate</li>
+</ul>
+
+Here are a few problems that can be solved using binary search:
+<br><br>
+Simple<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=3970&amp;rd=7993">AutoLoan</a> - SRM 258<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=3561&amp;rd=6519">SortEstimate</a> - SRM 230<br>
+<br>
+Moderate<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=4823&amp;rd=8074">UnionOfIntervals</a> - SRM 277<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2427&amp;rd=4765">Mortgage</a> - SRM 189<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=1901&amp;rd=4650">FairWorkload</a> - SRM 169<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=4721&amp;rd=8000">HairCuts</a> - SRM 261<br>
+<br>
+Harder<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=4751&amp;rd=8067">PackingShapes</a> - SRM 270<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=4022&amp;rd=6534">RemoteRover</a> - SRM 235<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2946&amp;rd=5856">NegativePhotoresist</a> - SRM 210<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2420&amp;rd=5850">WorldPeace</a> - SRM 204<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=5921&amp;rd=8075">UnitsMoving</a> - SRM 278<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=3530&amp;rd=6535">Parking</a> - SRM 236<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2342&amp;rd=4770">SquareFree</a> - SRM 190<br>
+<a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=1206&amp;rd=4540">Flags</a> - SRM 147<br>
+
+<p>&nbsp;</p>
+        </td>
+<!-- Center Column Ends -->
+
+<!-- Right Column Begins -->
+         
+<!-- Right Column Ends -->
+
+<!-- Gutter -->
+         
+<!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+
+<div id="onBottom">
+
+
+
+
+
+
+    
+        <footer id="footer">
+            <div class="container">
+                <div class="footerContentSection twitter">
+                    <div class="title">Twitter</div>
+                    <div class="footerContent">
+
+
+                        
+
+                        <a class="btn btnFooter" href="http://www.twitter.com/topcoder"><span class="twFollowIcon"></span><span class="twFollowBtnText">Follow</span></a>
+                    </div>
+                </div>
+                <div class="footerContentSection recentBlogPosts">
+                    <div class="title">Recent Blog Posts Updated</div>
+                         <div class="footerContent">
+                              <div class="footerBlogEntry">
+                                     <a href="http://www.topcoder.com/blog/new-look-and-feel-for-tc/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=new-look-and-feel-for-tc">Apr 23</a>
+
+                                 @timmhicks – Tim Hicks Happy Hump Day 
+topcoders! We are excited to announce that we will be releasing a new 
+look for the very popular /tc by...<a href="http://www.topcoder.com/blog/new-look-and-feel-for-tc/" class="more">Read More</a></div><div class="footerBlogEntry">
+                                     <a href="http://www.topcoder.com/blog/space-the-final-email-frontier/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=space-the-final-email-frontier">Apr 23</a>
+
+                                 Do you ever find yourself hitting 
+“send” on an email and wondering if it’ll arrive in the recipient’s 
+inbox? Sending email has become so ubiquitous, simple and...<a href="http://www.topcoder.com/blog/space-the-final-email-frontier/" class="more">Read More</a></div><div class="footerBlogEntry">
+                                     <a href="http://www.topcoder.com/blog/when-beginning-in-crowdsourcing-and-open-innovation-can-be-as-easy-as-playing-board-games/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=when-beginning-in-crowdsourcing-and-open-innovation-can-be-as-easy-as-playing-board-games">Apr 22</a>
+
+                                 @ClintonBon – Clinton Bonner We know 
+what you’re thinking. Great, another ‘puff piece’ on the ‘wisdom of 
+crowds’ and how all we need to do is post...<a href="http://www.topcoder.com/blog/when-beginning-in-crowdsourcing-and-open-innovation-can-be-as-easy-as-playing-board-games/" class="more">Read More</a></div><span id="blogTemplate" style="display: none">
+                                 <div class="footerBlogEntry">
+                                     <a href="javascript:;"></a>
+
+                                 </div>
+                              </span>
+                             <a class="btn btnFooter" href="http://www.topcoder.com/blog">View More</a>
+                         </div>
+
+
+                </div>
+                <div class="footerContentSection aboutTopCoder">
+                    <div class="title">About topcoder</div>
+                    <div class="footerContent">
+                        The topcoder community gathers the world's 
+experts in design, development and data science to work on interesting 
+and challenging problems for fun and reward. We want to help topcoder 
+members improve their skills, demonstrate and gain reward for their 
+expertise, and provide the industry with objective insight on new and 
+emerging technologies.
+                    </div>
+                    <a class="btn btnFooter" href="http://www.topcoder.com/mission">About Us</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="container">
+                <div class="connected">
+                    <section class="social">
+                        <h4>Get Connected</h4>
+                        <ul>
+                            <li><a class="fb" href="http://www.facebook.com/topcoder">FB</a></li>
+                            <li><a class="tw" href="http://www.twitter.com/topcoder">TW</a></li>
+                            <li><a class="gp" href="https://plus.google.com/u/0/b/104268008777050019973/104268008777050019973/posts">GP</a></li>
+                            <li><a class="in" href="https://www.linkedin.com/company/topcoder">IN</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </section>
+                    <section class="updates">
+                        <div class="row">
+                            <form id="emailForm" onsubmit="return newsletter_check(this)" name="FeedBlitz_9feab01d431311e39e69002590771423" style="display:block" method="POST" action="http://www.feedblitz.com/f/f.fbz?AddNewUserDirect">
+                                <input value="Your email address" style="display: block;" class="email isBlured" name="EMAIL" placeholder="Your email address" maxlength="64" type="email">
+                                <input name="FEEDID" value="926643" type="hidden">
+                                <input name="PUBLISHER" value="34610190" type="hidden">
+                                <!-- <a onclick="FeedBlitz_9feab01d431311e39e69002590771423s(this.form);" class="btn">Submit</a> -->
+                                <input onclick="FeedBlitz_9feab01d431311e39e69002590771423s(this.form);" class="btn btnSubmitFooter" value="Submit" type="button">
+                                <input name="na" value="s" type="hidden">
+                                <input name="nr" value="widget" type="hidden">
+                            </form>
+                            <script type="text/javascript">function FeedBlitz_9feab01d431311e39e69002590771423i(){var x=document.getElementsByName('FeedBlitz_9feab01d431311e39e69002590771423');for(i=0;i<x.length;i++){x[i].EMAIL.style.display='block'; x[i].action='http://www.feedblitz.com/f/f.fbz?AddNewUserDirect';}} function FeedBlitz_9feab01d431311e39e69002590771423s(v){v.submit();}FeedBlitz_9feab01d431311e39e69002590771423i();</script>
+
+                        </div>
+                    </section>
+                </div>
+                <div class="copyright">
+                    <section>
+                        <br>
+                        © 2014 topcoder. All Rights reserved.
+                        <br>
+                        <a href="http://www.topcoder.com/community/how-it-works/privacy-policy/" class="privacyStmtLink">Privacy Policy</a> | <a href="http://www.topcoder.com/community/how-it-works/terms/" class="legalDisclaimerLink">Terms</a>
+                    </section>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </footer>
+    
+    
+
+
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6340959-1']);
+  _gaq.push(['_setDomainName', '.topcoder.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</div>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"5697653","applicationTime":7,"beacon":"beacon-3.newrelic.com","queueTime":0,"licenseKey":"496af5ee90","transactionName":"ZlcBbBQAChBSARIKXV8dKWs2ThAWRw0UClNdQUxaDw8FEUoxAwJAUlpNUhUR","agent":"js-agent.newrelic.com\/nr-476.min.js","errorBeacon":"bam.nr-data.net"}</script>
+
+<script src="Algorithm%20Tutorials_files/nr-476.js"></script><script src="Algorithm%20Tutorials_files/496af5ee90" type="text/javascript"></script></body></html>

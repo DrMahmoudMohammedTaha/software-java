@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>sleep - How can I delay a Java program for a few seconds? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="How can I delay a Java program for a few seconds?">
+    <meta name="og:description" content="I have tried to delay - or put to sleep - my Java program, but an error occurs.
+
+I'm unable to use Thread.sleep(x) or wait(). The same error message appears: 
+
+
+  unreported exception ">
+    <meta name="og:url" content="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds">
+    <link rel="canonical" href="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds">
+
+    
+    
+    <script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How can I delay a Java program for a few seconds?'" href="http://stackoverflow.com/feeds/question/3342651">
+    <script>
+        
+        StackExchange.ready(function () {
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:3342651});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '3342651');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1409400700,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"aa79dca774c6b80b37ea274c4b48f5ac","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"1bc674033ff9","js/moderator.en.js":"3bf88d4bfb80","js/full-anon.en.js":"92f969f30e07","js/full.en.js":"394e1b1891b5","js/wmd.en.js":"32f4be00f171","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"1b05e243a7ff","js/help.en.js":"4a00463b8aeb","js/tageditor.en.js":"ed2efb9cc7d2","js/tageditornew.en.js":"66f4166c6f9d","js/inline-tag-editing.en.js":"1498d8619942","js/revisions.en.js":"9a2b9be85a69","js/review.en.js":"456e7806a627","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"adee7ffd57c6","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"a12784549dc1","js/keyboard-shortcuts.en.js":"5164bc529c4e","js/external-editor.en.js":"4feffae4b337"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3342651%2fhow-can-i-delay-a-java-program-for-a-few-seconds" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3342651%2fhow-can-i-delay-a-java-program-for-a-few-seconds" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3342651%2fhow-can-i-delay-a-java-program-for-a-few-seconds" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3342651%2fhow-can-i-delay-a-java-program-for-a-few-seconds" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for 
+professional and enthusiast programmers. It's 100% free, no registration
+ required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds" class="question-hyperlink">How can I delay a Java program for a few seconds?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="3342651" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk242772253",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk242772253">
+            </div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3342651" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">92</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>23</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I have tried to delay - or put to sleep - my Java program, but an error occurs.</p>
+
+<p>I'm unable to use <code>Thread.sleep(x)</code> or <code>wait()</code>. The same error message appears: </p>
+
+<blockquote>
+  <p>unreported exception java.lang.InterruptedException; must be caught or declared to be thrown.</p>
+</blockquote>
+
+<p>Is there any step required before using the <code>Thread.sleep()</code> or <code>wait()</code> methods?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/sleep" class="post-tag js-gps-track" title="show questions tagged 'sleep'" rel="tag">sleep</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/3342651" title="short permalink to this question" class="short-link" id="link-post-3342651">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3342651/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3342651/revisions" title="show all edits to this post">edited <span title="2014-08-06 17:36:11Z" class="relativetime">Aug 6 at 17:36</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/445131/eric-leschinski"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/ydqLz.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/445131/eric-leschinski">Eric Leschinski</a><br>
+        <span class="reputation-score" title="reputation score 14980" dir="ltr">15k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="78 silver badges"><span class="badge2"></span><span class="badgecount">78</span></span><span title="89 bronze badges"><span class="badge3"></span><span class="badgecount">89</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2010-07-27 10:28:27Z" class="relativetime">Jul 27 '10 at 10:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/200876/vincent-low"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/4a36a1a3f2a200d0e67edfe87730bfcf.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/200876/vincent-low">vincent low</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">540</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3342651" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3342651" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								8 Answers
+                                <span style="display:none;" itemprop="answerCount">8</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="3342668"></a>
+<div id="answer-3342668" class="answer accepted-answer" data-answerid="3342668" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3342668" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">202</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You have a lot of reading ahead of you. From compiler errors through 
+exception handling, threading and thread interruptions. But this will do
+ what you want:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">                 </span><span class="com">//1000 milliseconds is one second.</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> ex</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">currentThread</span><span class="pun">().</span><span class="pln">interrupt</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3342668" title="short permalink to this answer" class="short-link" id="link-post-3342668">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3342668/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3342668/revisions" title="show all edits to this post">edited <span title="2014-08-06 17:35:22Z" class="relativetime">Aug 6 at 17:35</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/445131/eric-leschinski"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/ydqLz.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/445131/eric-leschinski">Eric Leschinski</a><br>
+        <span class="reputation-score" title="reputation score 14980" dir="ltr">15k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="78 silver badges"><span class="badge2"></span><span class="badgecount">78</span></span><span title="89 bronze badges"><span class="badge3"></span><span class="badgecount">89</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-07-27 10:31:18Z" class="relativetime">Jul 27 '10 at 10:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/277683/konrad-garus"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/c15311acd88ded73e20238c71adf253f.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/277683/konrad-garus">Konrad Garus</a><br>
+        <span class="reputation-score" title="reputation score 19502" dir="ltr">19.5k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="72 silver badges"><span class="badge2"></span><span class="badgecount">72</span></span><span title="129 bronze badges"><span class="badge3"></span><span class="badgecount">129</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3342668" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-3468421" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thanks for your help, i able to run it.. beside, what is the use for catch(interruptedException ex)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/200876/vincent-low" title="540 reputation" class="comment-user owner">vincent low</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment3468421_3342668"><span title="2010-07-27 10:35:53Z" class="relativetime-clean">Jul 27 '10 at 10:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3468504" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">See reply from Abel. Google 
+for InterruptedException. Making a long story short: The thread can be 
+interrupted while sleeping, and this is a kind of exception which needs 
+to be explicitly handled.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/277683/konrad-garus" title="19502 reputation" class="comment-user">Konrad Garus</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment3468504_3342668"><span title="2010-07-27 10:46:22Z" class="relativetime-clean">Jul 27 '10 at 10:46</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23979318" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Some answers tell to do 
+nothing on the exception, some say to throw, this tells to interrupt(). 
+Would someone care to discuss which is appropriate and why?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/16673/suma" title="12188 reputation" class="comment-user">Suma</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment23979318_3342668"><span title="2013-05-21 09:53:49Z" class="relativetime-clean">May 21 '13 at 9:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23982728" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Suma There plenty discussion
+ on it, including Stack Overflow itself. Just search for it. Too long 
+for a comment. After a few years, the only answer I have is: it depends.
+ Usually the ideal solution is to terminate whatever the thread is doing
+ gracefully (e.g. roll back this transaction, break a loop etc.), but 
+that's very context dependent.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/277683/konrad-garus" title="19502 reputation" class="comment-user">Konrad Garus</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment23982728_3342668"><span title="2013-05-21 11:40:34Z" class="relativetime-clean">May 21 '13 at 11:40</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-33095766" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">See <a href="http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html" rel="nofollow">docs.oracle.com/javase/tutorial/essential/concurrency/…</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1172685/darren-weber" title="151 reputation" class="comment-user">Darren Weber</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment33095766_3342668"><span title="2014-02-18 17:48:21Z" class="relativetime-clean">Feb 18 at 17:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3342668" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk2008190348",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk2008190348">
+            </div>
+  
+<a name="17593916"></a>
+<div id="answer-17593916" class="answer" data-answerid="17593916" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="17593916" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">55</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>As other users have said you should surround your call with a <code>try{...} catch{...}</code> block. But since Java 1.5 was released, there is TimeUnit class which do the same as <strong>Thread.sleep(millis)</strong> but is more convenient.
+You can pick time unit for sleep operation.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">NANOSECONDS</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">MICROSECONDS</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">MILLISECONDS</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">SECONDS</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">MINUTES</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">HOURS</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">TimeUnit</span><span class="pun">.</span><span class="pln">DAYS</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//Handle exception</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Also it has additional methods: 
+<a href="http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html">TimeUnit Oracle Documentation</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/17593916" title="short permalink to this answer" class="short-link" id="link-post-17593916">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17593916/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/17593916/revisions" title="show all edits to this post">edited <span title="2014-08-01 18:15:50Z" class="relativetime">Aug 1 at 18:15</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jul 11 '13 at 13:41. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-17593916" href="http://stackoverflow.com/posts/17593916/revisions" title="show revision history for this post">
+        3 revs, 3 users 72%<br></a><a href="http://stackoverflow.com/users/1363338">Karamba</a>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17593916" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-27207020" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="hot">28</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">sleeping for 100 Days ;-)</span>
+                –&nbsp;
+		            <span class="comment-user">user1448729</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27207020_17593916"><span title="2013-08-29 07:15:33Z" class="relativetime-clean">Aug 29 '13 at 7:15</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29138175" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">See other answers for example of how to surround these calls with the required <code>try-catch</code> exception handling.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/642706/basil-bourque" title="9489 reputation" class="comment-user">Basil Bourque</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment29138175_17593916"><span title="2013-10-28 03:33:11Z" class="relativetime-clean">Oct 28 '13 at 3:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-35708154" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This thread would sleep for 105 days approximately ;)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/873981/puneet" title="114 reputation" class="comment-user">puneet</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment35708154_17593916"><span title="2014-04-27 10:10:12Z" class="relativetime-clean">Apr 27 at 10:10</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-39028506" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">it's InterruptedException not InteruptedException !</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/3151258/user230137" title="553 reputation" class="comment-user">user230137</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment39028506_17593916"><span title="2014-08-01 15:48:58Z" class="relativetime-clean">Aug 1 at 15:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-17593916" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="3342672"></a>
+<div id="answer-3342672" class="answer" data-answerid="3342672" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3342672" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">16</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Have a look <a href="http://mindprod.com/jgloss/sleep.html">at this excellent brief post</a> on how to do this properly. Which means: catch the <code>InteruptedException</code>. Remember that you must add this catch-block. The post explains this a bit further.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3342672" title="short permalink to this answer" class="short-link" id="link-post-3342672">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3342672/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-07-27 10:32:12Z" class="relativetime">Jul 27 '10 at 10:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/111575/abel"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/80e497ec2173c1a6a4f28f0aec5a77a8.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/111575/abel">Abel</a><br>
+        <span class="reputation-score" title="reputation score 24834" dir="ltr">24.8k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="67 silver badges"><span class="badge2"></span><span class="badgecount">67</span></span><span title="111 bronze badges"><span class="badge3"></span><span class="badgecount">111</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3342672" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3342672" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="3342675"></a>
+<div id="answer-3342675" class="answer" data-answerid="3342675" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3342675" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Use the following coding construct to handle exceptions</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">InterruptedException</span><span class="pln"> ie</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//Handle exception</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3342675" title="short permalink to this answer" class="short-link" id="link-post-3342675">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3342675/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-07-27 10:32:34Z" class="relativetime">Jul 27 '10 at 10:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/370580/jatin"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/c986eea0b6e2f9247dee84e54dbca65d.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/370580/jatin">Jatin</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">501</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3342675" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3342675" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="3342682"></a>
+<div id="answer-3342682" class="answer" data-answerid="3342682" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3342682" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Put your <code>Thread.sleep</code> in a try catch block </p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//thread to sleep for the specified number of milliseconds</span><span class="pln">
+    </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">InterruptedException</span><span class="pln"> ie</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">ie</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3342682" title="short permalink to this answer" class="short-link" id="link-post-3342682">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3342682/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3342682/revisions" title="show all edits to this post">edited <span title="2013-06-06 08:41:21Z" class="relativetime">Jun 6 '13 at 8:41</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/505893/bluish"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/71828e3594c57e13f477c0db81b36e25.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/505893/bluish">bluish</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5,631</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="40 silver badges"><span class="badge2"></span><span class="badgecount">40</span></span><span title="85 bronze badges"><span class="badge3"></span><span class="badgecount">85</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-07-27 10:33:14Z" class="relativetime">Jul 27 '10 at 10:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/289396/josek"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/f28a980d963ec79e763791a7b2cc7a84.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/289396/josek">JoseK</a><br>
+        <span class="reputation-score" title="reputation score 19850" dir="ltr">19.9k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="49 silver badges"><span class="badge2"></span><span class="badgecount">49</span></span><span title="78 bronze badges"><span class="badge3"></span><span class="badgecount">78</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3342682" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-3342682" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16632948"></a>
+<div id="answer-16632948" class="answer" data-answerid="16632948" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="16632948" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Try this:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">try</span><span class="pun">{</span><span class="pln">
+
+    </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="kwd">catch</span><span class="pun">(</span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Exception caught"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16632948" title="short permalink to this answer" class="short-link" id="link-post-16632948">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16632948/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-05-19 08:55:35Z" class="relativetime">May 19 '13 at 8:55</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2305805/slick-java"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/rTLl1.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2305805/slick-java">Slick Java</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">33</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16632948" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-39726770" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Isn't it bad practice to catch <code>Exception</code> in Java?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1291990/anthropomorphic" title="1264 reputation" class="comment-user">anthropomorphic</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment39726770_16632948"><span title="2014-08-23 05:31:47Z" class="relativetime-clean">Aug 23 at 5:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-16632948" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="24537444"></a>
+<div id="answer-24537444" class="answer" data-answerid="24537444" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="24537444" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">InterruptedException</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="com">//type code</span><span class="pln">
+
+
+  </span><span class="kwd">short</span><span class="pln"> z</span><span class="pun">=</span><span class="lit">1000</span><span class="pun">;</span><span class="pln">
+  </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">z</span><span class="pun">);</span><span class="com">/*will provide 2 second delay alter data type of z or value of z for longer                              delays required*/</span><span class="pln">
+
+  </span><span class="com">//type code</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>eg:-</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">TypeCasting</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+  </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">InterruptedException</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">short</span><span class="pln"> f </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> </span><span class="lit">123687889</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">short</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">long</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> </span><span class="lit">4567</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">long</span><span class="pln"> d</span><span class="pun">=</span><span class="lit">45</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">short</span><span class="pln"> z</span><span class="pun">=</span><span class="lit">1000</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Value of a,b and c are\n"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> a </span><span class="pun">+</span><span class="pln"> </span><span class="str">"\n"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> b </span><span class="pun">+</span><span class="pln"> </span><span class="str">"\n"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> c </span><span class="pun">+</span><span class="pln"> </span><span class="str">"respectively"</span><span class="pun">);</span><span class="pln">
+    c </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">;</span><span class="pln">
+    b </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">short</span><span class="pun">)</span><span class="pln"> c</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Typecasting..........."</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Thread</span><span class="pun">.</span><span class="pln">sleep</span><span class="pun">(</span><span class="pln">z</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Value of B after Typecasting"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> b</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Value of A is"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> a</span><span class="pun">);</span><span class="pln">
+
+
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/24537444" title="short permalink to this answer" class="short-link" id="link-post-24537444">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/24537444/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/24537444/revisions" title="show all edits to this post">edited <span title="2014-07-02 17:55:34Z" class="relativetime">Jul 2 at 17:55</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1873085/daniel"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/228fba3f1984505cfd9441ece5a9a468.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1873085/daniel">Daniel</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">793</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-07-02 17:30:32Z" class="relativetime">Jul 2 at 17:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <span class="anonymous-gravatar"></span>
+    </div>
+    <div class="user-details">
+        user3798741<br>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-24537444" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-24537444" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="17117620"></a>
+<div id="answer-17117620" class="answer downvoted-answer" data-answerid="17117620" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="17117620" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">-7</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Alternatively, if you don't want to deal with threads, try this method:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> pause</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> seconds</span><span class="pun">){</span><span class="pln">
+    </span><span class="typ">Date</span><span class="pln"> start </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Date</span><span class="pun">();</span><span class="pln">
+    </span><span class="typ">Date</span><span class="pln"> end </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Date</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">end</span><span class="pun">.</span><span class="pln">getTime</span><span class="pun">()</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> start</span><span class="pun">.</span><span class="pln">getTime</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> seconds </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1000</span><span class="pun">){</span><span class="pln">
+        end </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Date</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>It starts when you call it, and ends when the number of seconds have passed.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/17117620" title="short permalink to this answer" class="short-link" id="link-post-17117620">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17117620/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-06-14 21:34:21Z" class="relativetime">Jun 14 '13 at 21:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2276378/user2276378"><div class="gravatar-wrapper-32"><img src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/de809b76d770d681d2754c3ba4bbee64.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2276378/user2276378">user2276378</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">47</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17117620" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-25194860" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This would consume CPU during the sleep time. On Thread.sleep() the thread can be descheduled.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/373948/vivek-pandey" title="296 reputation" class="comment-user">Vivek Pandey</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment25194860_17117620"><span title="2013-06-28 09:28:57Z" class="relativetime-clean">Jun 28 '13 at 9:28</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27207038" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">guess how many iteration it will do on an average pc</span>
+                –&nbsp;
+		            <span class="comment-user">user1448729</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27207038_17117620"><span title="2013-08-29 07:16:21Z" class="relativetime-clean">Aug 29 '13 at 7:16</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-37039425" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">How can you <b>NOT</b> deal with threads in Java?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1532684/impeto" title="73 reputation" class="comment-user">impeto</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment37039425_17117620"><span title="2014-06-04 02:26:36Z" class="relativetime-clean">Jun 4 at 2:26</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-38116744" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">you are ridi and there is no water :D</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1818028/m410" title="133 reputation" class="comment-user">M410</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment38116744_17117620"><span title="2014-07-06 23:08:54Z" class="relativetime-clean">Jul 6 at 23:08</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-17117620" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/3342651/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="3342651" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="aa79dca774c6b80b37ea274c4b48f5ac" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f3342651%2fhow-can-i-delay-a-java-program-for-a-few-seconds%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f3342651%2fhow-can-i-delay-a-java-program-for-a-few-seconds%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/sleep" class="post-tag" title="show questions tagged 'sleep'" rel="tag">sleep</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2010-07-27 10:28:27Z"><b>4 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>287098 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/3342651/how-can-i-delay-a-java-program-for-a-few-seconds?lastactivity" class="lastactivity-link" title="2014-08-06 17:36:11Z">23 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk2062541362",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk2062541362">
+            </div>  
+        <div id="hireme">
+            <script>
+window.careers_adurl="//careers.stackoverflow.com/gethired/js",window.careers_cssurl="//cdn-careers.sstatic.net/careers/gethired/sidebar.min.css?v=871145189bac",window.careers_leaderboardcssurl="{leaderboardcssurl}",window.careers_companycssurl="//cdn-careers.sstatic.net/careers/gethired/company",window.careers_adselector="div#hireme",StackExchange.ready(function(){$.ajax({url:"//cdn-careers.sstatic.net/careers/gethired/loader.min.js?v=bf1f51aa7288",dataType:"script",cache:!0})});            </script>
+            
+        </div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/17179869?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17179869/getting-app-to-wait-a-few-seconds-java?lq=1" class="question-hyperlink">Getting App To Wait A Few Seconds Java</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/24104313?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24104313/how-to-delay-in-java?lq=1" class="question-hyperlink">How to delay in Java?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/20381153?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/20381153/how-can-i-delay-the-time-between-two-method-calls?lq=1" class="question-hyperlink">How can I delay the time between two method calls?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22441895?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-7</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22441895/is-there-any-delay-function-in-java?lq=1" class="question-hyperlink">Is there any delay function in java?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/18495859?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/18495859/delay-a-code-by-given-seconds?lq=1" class="question-hyperlink">Delay a code by given seconds</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/17319794?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/17319794/java-how-to-sleep?lq=1" class="question-hyperlink">Java: how to sleep?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/14466174?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/14466174/short-sleep-till-click-function?lq=1" class="question-hyperlink">Short sleep till Click function</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/510348?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes large">268
+    </div>
+</a><a href="http://stackoverflow.com/questions/510348/how-can-i-make-a-time-delay-in-python?rq=1" class="question-hyperlink">How can I make a time delay in Python?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9072431?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">23
+    </div>
+</a><a href="http://stackoverflow.com/questions/9072431/thread-sleep-implementation?rq=1" class="question-hyperlink">Thread.sleep() implementation</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13131978?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/13131978/java-pause-program-execution?rq=1" class="question-hyperlink">Java pause program execution</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14425564?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/14425564/delay-between-two-commands-java-game?rq=1" class="question-hyperlink">Delay between two commands Java? - Game</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17265055?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-3
+    </div>
+</a><a href="http://stackoverflow.com/questions/17265055/java-thread-sleep-freezes-my-ui-how-do-i-get-around-this?rq=1" class="question-hyperlink">Java - Thread.sleep freezes my UI. How do I get around this?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19082989?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/19082989/how-to-properly-wait-for-next-second-tick?rq=1" class="question-hyperlink">How to properly wait for next second tick</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19115617?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/19115617/how-to-delay-processing-reasonably-in-java-ee-context?rq=1" class="question-hyperlink">How to delay processing reasonably in Java EE context?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19309061?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/19309061/thread-sleep-not-working?rq=1" class="question-hyperlink">Thread.sleep not working</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21843970?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/21843970/how-do-i-delay-the-program-within-a-for-loop-without-execptions?rq=1" class="question-hyperlink">How do I delay the program within a for loop without execptions?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23915838?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/23915838/is-it-even-possible-to-make-this-loop-wait-a-few-seconds-each-time?rq=1" class="question-hyperlink">Is it even possible to make this loop wait a few seconds each time?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46976/can-a-party-function-without-a-cleric-or-paladin" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a party function without a Cleric or Paladin?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/36921/mastermind-horse-battery-staple" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    mastermind horse battery staple
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="http://cs.stackexchange.com/questions/29487/what-does-the-processor-do-while-waiting-for-a-main-memory-fetch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does the processor do while waiting for a main memory fetch
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/113775/is-the-spearman-rank-correlation-matrix-positive-definite-or-not" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Spearman rank correlation matrix positive definite or not?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/132892/does-car-tire-pressure-change-with-weight-of-car-load" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does car tire pressure change with weight of car load?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/66355/can-a-https-site-be-malicious-or-not-safe-to-visit" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a HTTPS site be malicious or not safe to visit
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/32482/launch-a-new-building" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Launch A New Building
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/33068/mentioning-personal-qualities-on-cv" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Mentioning personal qualities on CV
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/193185/idiom-for-just-because-you-give-something-a-different-name-it-doesnt-change-w" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Idiom for "just because you give something a different name, it doesn't change what it is"
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/36525/limitations-of-the-401k-to-roth-ira-conversion-escape-hatch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Limitations of the 401(k) to Roth IRA conversion escape hatch
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/198629/is-it-possible-to-compile-hidden-files" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to compile hidden files?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46906/how-do-i-deal-with-players-that-pick-very-situational-skills-for-a-campaign" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I deal with players that pick very situational skills for a Campaign?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/25574244/using-negative-number-as-array-index" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using Negative Number As Array Index
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/66661/exactly-how-secret-was-the-reveal-in-the-empire-strikes-back" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Exactly how secret was the reveal in The Empire Strikes Back?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/193878/opposite-of-nightmare" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Opposite of Nightmare?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/913216/is-the-complex-conjugate-the-only-way-to-get-a-real-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Complex Conjugate the Only Way to Get a Real Number?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/516815/are-there-cases-where-vi-is-the-only-option" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there cases where vi is the only option?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-chess" title="Chess Stack Exchange"></div><a href="http://chess.stackexchange.com/questions/6204/why-do-players-think-after-they-have-made-a-plan" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:435 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do players think after they have made a plan?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27743/how-to-review-a-major-revision-of-a-paper" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to review a major revision of a paper?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/113773/good-textbook-for-a-one-semester-probability-and-statistics-course-for-compute" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Good textbook for a one semester "probability and statistics" course for computer enginering 1st year
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/35911/how-do-i-address-a-vertical-postcard" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I address a vertical postcard?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-german" title="German Language Stack Exchange"></div><a href="http://german.stackexchange.com/questions/15509/is-there-a-way-to-form-a-one-who-verbs-noun" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:253 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a way to form a "one who [verb]s" noun?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/37018/these-primes-of-mine-are-always-solid-lines" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    These Primes of Mine Are Always Solid Lines
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/23039/sophocles-success-is-dependent-on-effort" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Sophocles — "Success is dependent on effort"?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/3342651" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/3342651/ivc/eef0');});
+</script>
+<noscript>
+    <div><img src="/posts/3342651/ivc/eef0" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.29.1807
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="sleep%20-%20How%20can%20I%20delay%20a%20Java%20program%20for%20a%20few%20seconds%20%20-%20Stack%20Overflow_files/read.htm"></iframe></div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('java,sleep');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|java|sleep|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

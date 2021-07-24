@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="1.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="12/23/2014 10:12:21 AM"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare variables="L" type="Integer"/>
+            <input variable="L"/>
+            <declare variables="problems[L]" type="Real"/>
+            <declare variables="state[L]" type="Real"/>
+            <for variable="i" start="0" end="L" step="1">
+                <declare variables="content" type="String"/>
+                <declare variables="type" type="String"/>
+                <input variable="type"/>
+                <if expression="type = &quot;joint&quot;">
+                    <then>
+                        <input variable="content"/>
+                        <assign variable="problem[i]" expression="toArray(contentsplit + &quot;@&quot;)"/>
+                        <assign variable="problem[i]" expression="toArray(contentsplit + &quot;@&quot;)"/>
+                        <assign variable="problem[i]" expression="tomultiArray(contentsplit + &quot;@&quot;)"/>
+                    </then>
+                    <else>
+                        <input variable="content"/>
+                        <assign variable="problem[i]" expression="toArray(contentsplit+&quot;@&quot;)"/>
+                        <assign variable="problem[i]" expression="toArray(contentsplit + &quot;@&quot;)"/>
+                    </else>
+                </if>
+            </for>
+            <for variable="i" start="0" end="L" step="1">
+                <if expression="problemtype = &quot;joint&quot;">
+                    <then>
+                        <call expression="solvejoint(problem[i])"/>
+                    </then>
+                    <else>
+                        <call expression="solvenonjoint(problem[i])"/>
+                    </else>
+                </if>
+            </for>
+            <call expression="sort(problem)"/>
+            <for variable="i" start="0" end="L" step="1">
+                <if expression="problemtype = &quot;joint&quot;">
+                    <then>
+                        <call expression="printjoint(problem[i])"/>
+                    </then>
+                    <else>
+                        <call expression="print(problem[i])"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="solvejoint" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real"/>
+        </parameters>
+        <body>
+            <declare variables="EX" type="Integer"/>
+            <for variable="i" start="0" end="XLength" step="1">
+                <assign variable="EX" expression="EX + X * FX"/>
+            </for>
+            <declare variables="EX2" type="Integer"/>
+            <for variable="i" start="0" end="XLength" step="1">
+                <assign variable="EX2" expression="EX2 + X2 * FX"/>
+            </for>
+            <declare variables="var" type="Integer"/>
+            <assign variable="var" expression="EX2 - EX * EX"/>
+            <declare variables="Ey" type="Integer"/>
+            <for variable="i" start="0" end="XLength" step="1">
+                <assign variable="Ey" expression="Ey + y * Fy"/>
+            </for>
+        </body>
+    </function>
+    <function name="solvenonjoint" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real"/>
+        </parameters>
+        <body>
+            <declare variables="EX" type="Integer"/>
+            <for variable="i" start="0" end="XLength" step="1">
+                <assign variable="EX" expression="EX + X * FX"/>
+            </for>
+            <declare variables="EX2" type="Integer"/>
+            <for variable="i" start="0" end="XLength" step="1">
+                <assign variable="EX2" expression="EX2 + X2 * FX"/>
+            </for>
+            <declare variables="var" type="Integer"/>
+            <assign variable="var" expression="EX2 - EX * EX"/>
+        </body>
+    </function>
+    <function name="sort" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real"/>
+        </parameters>
+        <body>
+            <declare variables="arr[xLength]" type="Integer"/>
+            <for variable="i" start="0" end="xLength" step="1">
+                <if expression="x[i] == &quot;Not valid&quot;">
+                    <then>
+                        <assign variable="arr[i]" expression="x[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="i" start="0" end="xLength" step="1">
+                <if expression="x[i] == &quot;discrete and valid&quot;">
+                    <then>
+                        <assign variable="arr[i]" expression="x[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="i" start="0" end="xLength" step="1">
+                <if expression="x[i] == &quot;joint and valid&quot;">
+                    <then>
+                        <assign variable="arr[i]" expression="x[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="toArray" type="Integer" variable="x">
+        <parameters>
+            <parameter name="s" type="String"/>
+        </parameters>
+        <body>
+            <declare variables="x[sSplit]" type="Integer"/>
+            <declare variables="content[sSplit]" type="String"/>
+            <assign variable="content" expression="sSplitcomma"/>
+            <for variable="i" start="0" end="contentLenght" step="1">
+                <assign variable="x[i]" expression="contenttoint[i]"/>
+            </for>
+        </body>
+    </function>
+    <function name="tomultiArray" type="Real" variable="int[][]">
+        <parameters>
+            <parameter name="s" type="String"/>
+        </parameters>
+        <body>
+            <declare variables="intnums[sLength][sLenght]" type="Integer"/>
+            <declare variables="sholder[sLength]" type="String"/>
+            <for variable="i" start="0" end="sLength" step="1">
+                <call expression="toArray(sholder[i])"/>
+                <assign variable="intnums[i]" expression="toArray(sholder[i])"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

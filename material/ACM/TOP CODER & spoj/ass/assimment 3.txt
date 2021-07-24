@@ -1,0 +1,33 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rectangle;
+
+/**
+ *
+ * @author HP
+ */
+public class Rectangle {
+
+   double width=1,height=1;
+   Rectangle()
+   {}
+   Rectangle(double x,double y)
+   {width=x;
+   height=y;
+   }
+   public double getArea()
+   {double area= width * height;
+   return area;
+   }
+   public double getPerimeter()
+   {double p=2*(width+height);
+   return p;
+   }
+    public static void main(String[] args) {
+        Rectangle ss=new Rectangle(2,4);
+        System.out.println(ss.getArea());
+        System.out.println(ss.getPerimeter());
+    }
+}

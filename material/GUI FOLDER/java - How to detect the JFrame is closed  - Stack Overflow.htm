@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>java - How to detect the JFrame is closed? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="How to detect the JFrame is closed?">
+    <meta name="og:description" content="I tried a addWindowListener and implement the windowClosing, it works, when I press the close button, but when I use Cmd+Q to close, the windowClosing is not being called, how can I solve it? Do I ...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed">
+    <link rel="canonical" href="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed">
+
+    
+    
+    <script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to detect the JFrame is closed?'" href="http://stackoverflow.com/feeds/question/8211053">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:8211053});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '8211053');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1408694236,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"e4a1af78f79a02015cf6efa751ed53fb","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"055a220273ad","js/moderator.en.js":"eacc3f340c48","js/full-anon.en.js":"70e7f54660a8","js/full.en.js":"9d65da3b8789","js/wmd.en.js":"0eeb1eff16fa","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"6a619d3310d0","js/help.en.js":"e7027b95c535","js/tageditor.en.js":"51d012a65199","js/tageditornew.en.js":"01817d520b4d","js/inline-tag-editing.en.js":"ea666f1bc7d0","js/revisions.en.js":"989c474e85a9","js/review.en.js":"b45f441b02fe","js/tagsuggestions.en.js":"97867e3c2def","js/post-validation.en.js":"6e22bc663fb6","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"a528312f1072","js/keyboard-shortcuts.en.js":"fea1dd4595da"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><link rel="stylesheet" type="text/css" href="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/company.css"><link rel="stylesheet" type="text/css" href="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/sidebar.css"></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8211053%2fhow-to-detect-the-jframe-is-closed" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8211053%2fhow-to-detect-the-jframe-is-closed" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 132 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8211053%2fhow-to-detect-the-jframe-is-closed" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8211053%2fhow-to-detect-the-jframe-is-closed" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for 
+professional and enthusiast programmers. It's 100% free, no registration
+ required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed" class="question-hyperlink">How to detect the JFrame is closed?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="8211053" id="question">
+
+    <div class="everyonelovesstackoverflow" id="careers1"><a href="http://careers.stackoverflow.com/" rel="nofollow" target="_blank"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/220808e078904dc5a35b2884805c427a.png"></a></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8211053" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I tried a <code>addWindowListener</code> and implement the <code>windowClosing</code>, it works, when I press the close button, but when I use <code>Cmd+Q</code> to close, the <code>windowClosing</code> is not being called, how can I solve it? Do I need to detect <code>Cmd+Q</code> on mac, <code>Alt + F4</code>
+ on windows via key listener? Is that a general listener for closing 
+window, whatever via the close button or keyboard, or event <code>Ctrl+Alt+Delete</code> or <code>Cmd+Option+Esc</code> to focus kill? Thanks.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/swing" class="post-tag js-gps-track" title="show questions tagged 'swing'" rel="tag">swing</a> <a href="http://stackoverflow.com/questions/tagged/operating-system" class="post-tag js-gps-track" title="show questions tagged 'operating-system'" rel="tag">operating-system</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/8211053" title="short permalink to this question" class="short-link" id="link-post-8211053">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8211053/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8211053/revisions" title="show all edits to this post">edited <span title="2014-02-08 22:12:00Z" class="relativetime">Feb 8 at 22:12</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/15168/jonathan-leffler"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/7d0d66b076e3bc70819e50f8a25af8df.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/15168/jonathan-leffler">Jonathan Leffler</a><br>
+        <span class="reputation-score" title="reputation score 305644" dir="ltr">306k</span><span title="37 gold badges"><span class="badge1"></span><span class="badgecount">37</span></span><span title="306 silver badges"><span class="badge2"></span><span class="badgecount">306</span></span><span title="554 bronze badges"><span class="badge3"></span><span class="badgecount">554</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-11-21 11:28:51Z" class="relativetime">Nov 21 '11 at 11:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/148978/ted-wong"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/54465abdf9fc5e96488558decd6adba5.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/148978/ted-wong">Ted Wong</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">4,539</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="98 bronze badges"><span class="badge3"></span><span class="badgecount">98</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8211053" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10094021" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><a href="http://stackoverflow.com/questions/2061194/swing-on-osx-how-to-trap-command-q" title="swing on osx how to trap command q">stackoverflow.com/questions/2061194/…</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/271357/dacwe" title="25784 reputation" class="comment-user">dacwe</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10094021_8211053"><span title="2011-11-21 11:51:49Z" class="relativetime-clean">Nov 21 '11 at 11:51</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-20163313" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><a href="http://www.leepoint.net/notes-java/GUI/containers/10windows/12frameclose.html" rel="nofollow">leepoint.net/notes-java/GUI/containers/10windows/…</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/967548/omid-nazifi" title="1397 reputation" class="comment-user">omid nazifi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment20163313_8211053"><span title="2013-01-23 05:52:06Z" class="relativetime-clean">Jan 23 '13 at 5:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-22027116" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@TedWong Did you find a solution to your problem? Please post your own answer if you did.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1188712/igor" title="368 reputation" class="comment-user">Igor</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment22027116_8211053"><span title="2013-03-21 11:19:40Z" class="relativetime-clean">Mar 21 '13 at 11:19</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8211053" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display:none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="8211308"></a>
+<div id="answer-8211308" class="answer" data-answerid="8211308" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8211308" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I'm not sure what the situation is on Macs, but on Windows you get the windowClosing() callback from the close button; <code>Alt-F4</code>;
+ and if you close the app via task manager. You don't get the callback 
+if you use task manager to kill the process, but I wouldn't expect that 
+anyway.</p>
+
+<p>You have remembered to call <code>setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);</code> on your JFrame instance, haven't you?</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8211308" title="short permalink to this answer" class="short-link" id="link-post-8211308">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8211308/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-11-21 11:46:30Z" class="relativetime">Nov 21 '11 at 11:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/213727/baqueta"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/d40903b230c3806fbf0992b5dbe74854.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/213727/baqueta">Baqueta</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,636</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="18 bronze badges"><span class="badge3"></span><span class="badgecount">18</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8211308" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8211308" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<div class="everyonelovesstackoverflow" id="careers3"><a href="http://careers.stackoverflow.com/" rel="nofollow" target="_blank"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/3478c54721cd466fb6f7d3afe16e97d4.gif"></a></div>
+  
+<a name="8211461"></a>
+<div id="answer-8211461" class="answer" data-answerid="8211461" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8211461" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>there is one more method <a href="http://download.oracle.com/javase/tutorial/uiswing/events/windowlistener.html" rel="nofollow">windowClosed()</a>
+try overriding thing method. hope it will work for you.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8211461" title="short permalink to this answer" class="short-link" id="link-post-8211461">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8211461/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8211461/revisions" title="show all edits to this post">edited <span title="2011-11-21 12:21:49Z" class="relativetime">Nov 21 '11 at 12:21</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/714968/mkorbel"><div><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/435fb976cbaa21a2cfe54324140c643c.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/714968/mkorbel">mKorbel</a><br>
+        <span class="reputation-score" title="reputation score 90087" dir="ltr">90.1k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="143 bronze badges"><span class="badge3"></span><span class="badgecount">143</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-11-21 11:59:43Z" class="relativetime">Nov 21 '11 at 11:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1055241/gprathour"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/eAzZs.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1055241/gprathour">GPRathour</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,122</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="40 bronze badges"><span class="badge3"></span><span class="badgecount">40</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8211461" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10094682" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 example <a href="http://stackoverflow.com/questions/7613577/java-how-do-i-prevent-windowclosing-from-actually-closing-the-window/7613768#7613768" title="java how do i prevent windowclosing from actually closing the window">stackoverflow.com/questions/7613577/…</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/714968/mkorbel" title="90087 reputation" class="comment-user">mKorbel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10094682_8211461"><span title="2011-11-21 12:28:33Z" class="relativetime-clean">Nov 21 '11 at 12:28</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10095091" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">random guessing?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/203657/kleopatra" title="31576 reputation" class="comment-user">kleopatra</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10095091_8211461"><span title="2011-11-21 12:49:14Z" class="relativetime-clean">Nov 21 '11 at 12:49</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-10096586" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@kleopatra I have three very simlair posts, yes you are right then random ...</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/714968/mkorbel" title="90087 reputation" class="comment-user">mKorbel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10096586_8211461"><span title="2011-11-21 14:11:13Z" class="relativetime-clean">Nov 21 '11 at 14:11</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-13798840" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">looks like (for me) 
+windowClosing gets called if they hit the X (and windowClosed doesn't), 
+and windowClosed gets called if I programmatically call dispose. Weird.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/32453/rogerdpack" title="13116 reputation" class="comment-user">rogerdpack</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment13798840_8211461"><span title="2012-05-17 20:35:13Z" class="relativetime-clean">May 17 '12 at 20:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8211461" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8211326"></a>
+<div id="answer-8211326" class="answer" data-answerid="8211326" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8211326" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can use this osx library: 
+<a href="http://developer.apple.com/library/mac/#documentation/Java/Reference/1.5.0/appledoc/api/com/apple/eawt/ApplicationListener.html" rel="nofollow" title="com.apple.whatever">com.apple.eawt.ApplicationListener</a></p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln">handleQuit</span><span class="pun">(</span><span class="typ">ApplicationEvent</span><span class="pln"> event</span><span class="pun">)</span></code></pre>
+
+<p>Will probably do the trick.</p>
+
+<p>Information from the docs: </p>
+
+<blockquote>
+  <p>Called when the application is sent the Quit event. This event is 
+generated when the user selects Quit from the application menu, when the
+ user types Command-Q, or when the user control clicks on your 
+application icon in the Dock and chooses Quit. You can either accept or 
+reject the request to quit. </p>
+</blockquote>
+
+<p>Of course this solution will not work on Windows. As far as I know 
+there is however no universal solution, so this is probably the best way
+ to go.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8211326" title="short permalink to this answer" class="short-link" id="link-post-8211326">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8211326/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-11-21 11:48:37Z" class="relativetime">Nov 21 '11 at 11:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/727061/aloys"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/f7f6580d0e9ba4725510def3562c8d20.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/727061/aloys">Aloys</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">390</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8211326" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8211326" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8211157"></a>
+<div id="answer-8211157" class="answer" data-answerid="8211157" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8211157" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Sounds like you need to add some <code>KeyListeners</code> and a factory to detect the one you want for a particular operating system.</p>
+
+<p><a href="http://docs.oracle.com/javase/tutorial/uiswing/events/keylistener.html" rel="nofollow">Check Out</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8211157" title="short permalink to this answer" class="short-link" id="link-post-8211157">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8211157/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8211157/revisions" title="show all edits to this post">edited <span title="2014-07-08 12:37:55Z" class="relativetime">Jul 8 at 12:37</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1055241/gprathour"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/eAzZs.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1055241/gprathour">GPRathour</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,122</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="40 bronze badges"><span class="badge3"></span><span class="badgecount">40</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-11-21 11:35:57Z" class="relativetime">Nov 21 '11 at 11:35</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/37213/duffymo"><div class="gravatar-wrapper-32"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/eeec80237213c91e5bab56b77ac5b8ca.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/37213/duffymo">duffymo</a><br>
+        <span class="reputation-score" title="reputation score 189713" dir="ltr">190k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="185 silver badges"><span class="badge2"></span><span class="badgecount">185</span></span><span title="351 bronze badges"><span class="badge3"></span><span class="badgecount">351</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8211157" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8211157" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/8211053/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="8211053" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="e4a1af78f79a02015cf6efa751ed53fb" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f8211053%2fhow-to-detect-the-jframe-is-closed%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f8211053%2fhow-to-detect-the-jframe-is-closed%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/swing" class="post-tag" title="show questions tagged 'swing'" rel="tag">swing</a> <a href="http://stackoverflow.com/questions/tagged/operating-system" class="post-tag" title="show questions tagged 'operating-system'" rel="tag">operating-system</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-11-21 11:28:51Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>5168 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/8211053/how-to-detect-the-jframe-is-closed?lastactivity" class="lastactivity-link" title="2014-07-08 12:37:55Z">1 month ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<div class="everyonelovesstackoverflow" id="careers2">
+        </div>
+        <div class=" blue solid tagged" id="hireme">  <a href="http://careers.stackoverflow.com/?a=4Ks234GSgV&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-single-solid-blue" class="top" target="_blank"> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/58472/trading-technologist-optiver?a=4Ks234GSgV&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-single-solid-blue" target="_blank" title="Trading Technologist at Optiver. Click to learn more."> <span class="title">Trading Technologist</span> <span class="company">Optiver</span> <span class="location">Amsterdam, Netherlands /…</span> <span class="post-tag">c++</span> <span class="post-tag">c#</span> </a> </li> </ul> <img alt="" class="impression" src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/4Ks234GSgV.gif" style="display:none"></div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a title="88 users active in 50 rooms the last 60 minutes" href="http://chat.stackoverflow.com/" id="h-chat-link">88 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2014-08-22 06:44:57Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/586051">indie blue</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/586051"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/IIHWf.jpg" title="indie blue: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/727208"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/40de750233b3ce8268f235ba0b6a489b.jpg" title="tereško: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/2131382"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/7a4abdbdd468c8e51ba7e90fd2ef1265.png" title="Customized Name: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1514572"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/8e44332313cc7335e98748739977ea5d.jpg" title="monners: 2 hours ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1386166"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/7ea079654bb159fdaa4043834688f57d.jpg" title="phenomnomnominal: 4 hours ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/322395"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/Htjz7.jpg" title="Loktar: 4 hours ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1216976"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/OcMYC.png" title="SomeKittens Ux2666: 5 hours ago" height="23" width="23"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="PHP"><a href="http://chat.stackoverflow.com/rooms/11">PHP</a></span></h3><span title="2014-08-22 06:39:06Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/727208">tereško</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/727208"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/40de750233b3ce8268f235ba0b6a489b.jpg" title="tereško: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1658631"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/5bc924c90b254d2dba75ba29b3b9fd11.png" title="Joe Watkins: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/2265374"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/3f2fb8bbcd44609346e1cc0c06d0a39b.png" title="ThW: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1762305"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/c23291db2e216c20ac9642eeaa904b53.png" title="Brandon: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1679187"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/9zC63.jpg" title="Yogesh Suthar: 3 hours ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/409279"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/bXrip.jpg" title="Dan Lugg: 5 hours ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/2153758"><img src="java%20-%20How%20to%20detect%20the%20JFrame%20is%20closed%20%20-%20Stack%20Overflow_files/3659fff22e890aaa5d7b03e799f9047f.png" title="bwoebi: 7 hours ago" height="23" width="23"></a></div></div></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":88,"activeRooms":50,"rooms":[{"name":"JavaScript","id":17,"lastPost":1408689897,"posts":2088994,"users":[{"name":"indie blue","id":586051,"emailhash":"!http://i.stack.imgur.com/IIHWf.jpg?s=128\u0026g=1","lastPost":1408689897},{"name":"tereško","id":727208,"emailhash":"40de750233b3ce8268f235ba0b6a489b","lastPost":1408689860},{"name":"Customized Name","id":2131382,"emailhash":"7a4abdbdd468c8e51ba7e90fd2ef1265","lastPost":1408689498},{"name":"monners","id":1514572,"emailhash":"8e44332313cc7335e98748739977ea5d","lastPost":1408685576},{"name":"phenomnomnominal","id":1386166,"emailhash":"7ea079654bb159fdaa4043834688f57d","lastPost":1408677734},{"name":"Loktar","id":322395,"emailhash":"!http://i.stack.imgur.com/Htjz7.jpg?s=128\u0026g=1","lastPost":1408676271},{"name":"SomeKittens Ux2666","id":1216976,"emailhash":"!http://i.stack.imgur.com/OcMYC.png?s=128\u0026g=1","lastPost":1408673332}],"messages":[{"date":1408689897,"user":"indie blue","userid":586051}],"singleImage":false,"tags":["ecmascript","javascript","phrasing"]},{"name":"PHP","id":11,"lastPost":1408689546,"posts":1596310,"users":[{"name":"tereško","id":727208,"emailhash":"40de750233b3ce8268f235ba0b6a489b","lastPost":1408689546},{"name":"Joe Watkins","id":1658631,"emailhash":"5bc924c90b254d2dba75ba29b3b9fd11","lastPost":1408689544},{"name":"ThW","id":2265374,"emailhash":"3f2fb8bbcd44609346e1cc0c06d0a39b","lastPost":1408689421},{"name":"Brandon","id":1762305,"emailhash":"c23291db2e216c20ac9642eeaa904b53","lastPost":1408688104},{"name":"Yogesh Suthar","id":1679187,"emailhash":"!http://i.stack.imgur.com/9zC63.jpg?s=128\u0026g=1","lastPost":1408683098},{"name":"Dan Lugg","id":409279,"emailhash":"!http://i.stack.imgur.com/bXrip.jpg?s=128\u0026g=1","lastPost":1408672677},{"name":"bwoebi","id":2153758,"emailhash":"3659fff22e890aaa5d7b03e799f9047f","lastPost":1408667954}],"messages":[{"date":1408689546,"user":"tereško","userid":727208}],"singleImage":false,"tags":["php"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/7613577?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">25</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/7613577/java-how-do-i-prevent-windowclosing-from-actually-closing-the-window?lq=1" class="question-hyperlink">Java - how do I prevent WindowClosing from actually closing the window</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/2061194?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">15</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/2061194/swing-on-osx-how-to-trap-command-q?lq=1" class="question-hyperlink">Swing on OSX: How to Trap command-Q?</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/71842?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/71842/how-can-i-detect-from-a-swing-app-that-the-pc-is-being-shut-down?rq=1" class="question-hyperlink">How can I detect from a Swing app that the PC is being shut-down?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1234912?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">94
+    </div>
+</a><a href="http://stackoverflow.com/questions/1234912/how-to-programmatically-close-a-jframe?rq=1" class="question-hyperlink">How to programmatically close a JFrame</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7764574?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/7764574/close-jframe-from-a-jbutton-process-remain-alive?rq=1" class="question-hyperlink">Close JFrame from a JButton process remain alive</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8473531?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/8473531/how-to-close-jframe?rq=1" class="question-hyperlink">How to close JFrame?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9725311?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/9725311/how-to-override-windowsclosing-event-in-jframe?rq=1" class="question-hyperlink">How to override windowsClosing event in JFrame</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9958645?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/9958645/closing-a-jframe-using-the-keyboard?rq=1" class="question-hyperlink">Closing a JFrame using the keyboard</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13419947?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/13419947/java-message-when-closing-jframe-window?rq=1" class="question-hyperlink">Java - Message when closing JFrame Window</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13720411?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/13720411/how-to-create-a-handler-for-window-closing-in-java-swing?rq=1" class="question-hyperlink">How to create a handler for window closing in Java Swing</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19908476?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/19908476/windowlistener-for-closing-jframes-and-use-global-variable?rq=1" class="question-hyperlink">WindowListener for closing JFrames and use global variable</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23093087?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/23093087/how-to-have-next-line-of-gui-read-after-jframe-is-closed-java?rq=1" class="question-hyperlink">How to have next line of GUI read after JFrame is closed (Java)</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/25439277/lambdas-multiple-foreach-with-casting" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Lambdas, multiple forEach with casting
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/46494/which-acid-is-the-most-effective-against-oxidation-of-avocados" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which acid is the most effective against oxidation of avocados?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/800329/why-are-they-putting-processors-on-hard-drives" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are they putting "processors" on hard drives?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/35513/if-a-baby-is-born-on-an-international-flight-over-international-waters-what-nat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If a baby is born on an international flight over international waters, what nationality are they?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/126099/wavelengths-blocked-by-a-certain-metal-mesh" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Wavelengths blocked by a certain metal mesh
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/151479/how-to-synchronize-directories-in-two-different-external-hard-disks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How To Synchronize Directories in two different external hard disks?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/111391/how-to-get-last-objectid-of-feature-class-using-arcpy" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to get Last ObjectID of feature class using ArcPy?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/36566/shortest-longest-increasing-subsequence-code" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Shortest Longest Increasing Subsequence Code
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46470/can-a-bard-directly-take-the-improved-familiar-feat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a bard directly take the Improved Familiar feat?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/60769/scrape-an-html-table-with-python" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Scrape an HTML table with python
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/905438/should-i-throw-dice-again-if-i-have-rolled-4" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I throw dice again if I have rolled 4?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/111346/setting-zero-values-back-to-null" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Setting Zero values back to NULL
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/253868/passing-functions-into-other-functions-as-parameters-bad-practice" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Passing functions into other functions as parameters, bad practice?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/47713/is-there-a-way-to-unscrew-a-light-bulb-that-has-broken" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a way to unscrew a light bulb that has broken?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/66078/how-does-elsa-resolve-the-practical-problems-of-living-in-an-ice-palace" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does Elsa resolve the practical problems of living in an ice palace?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/623026/distinction-between-an-extranet-and-a-dmz" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Distinction between an extranet and a DMZ
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/131487/how-literally-should-you-take-the-higgs-boson-gives-other-particles-mass" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How literally should you take "The Higgs boson gives other particles mass"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/82260/why-do-i-seem-to-lose-control-of-my-computer-when-full-screen-unity-game-loses-f" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do I seem to lose control of my computer when full screen Unity game loses focus?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/66178/how-did-eddard-know-the-true-parentage-of-joffrey-tommen-and-myrcella" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How did Eddard Know the True Parentage of Joffrey, Tommen and Myrcella
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/60596/better-way-to-code-these-deeply-nested-multiple-if-else-statements" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Better way to code these deeply nested / multiple if/else statements
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-biology" title="Biology Stack Exchange"></div><a href="http://biology.stackexchange.com/questions/20657/can-humans-survive-without-consuming-life" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can humans survive without consuming life?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-apple" title="Ask Different"></div><a href="http://apple.stackexchange.com/questions/142356/why-does-numbers-hide-a-huge-png-file-in-exported-excel-sheets" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Numbers hide a huge PNG file in exported Excel sheets?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/31852/why-is-he-knows-to-swim-incorrect" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is "He knows to swim" incorrect?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-webmasters" title="Webmasters Stack Exchange"></div><a href="http://webmasters.stackexchange.com/questions/68345/another-website-is-mirroring-my-site" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:45 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Another website is mirroring my site
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/8211053" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/8211053/ivc/2e01');});
+</script>
+<noscript>
+    <div><img src="/posts/8211053/ivc/2e01" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.21.1791
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|java|swing|operating-system|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

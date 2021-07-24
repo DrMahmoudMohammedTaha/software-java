@@ -1,0 +1,28 @@
+public class RaceApproximator {
+
+ public static String timeToBeat(int d1, int t1, int d2, int t2, int raceDistance)
+  {String mm,hh,ss;
+      int h=0,m=0;
+   
+int t= (int)(t1*Math.exp((Math.log(t2/(double)t1)*Math.log(d1/(double)raceDistance)/Math.log(d1/(double)d2))));
+      
+ while (t>=3600)
+ {t-=3600;
+ h++;}
+  while(t>=60)
+  {t-=60;
+  m++;}
+  if (t<10)
+      ss="0"+t;
+  else
+      ss=""+t;
+   if (m<10)
+      mm="0"+m;
+  else
+      mm=""+m;
+   hh=""+h;
+  String g=hh+":"+mm+":"+ss;
+  return g;
+      }
+   
+}

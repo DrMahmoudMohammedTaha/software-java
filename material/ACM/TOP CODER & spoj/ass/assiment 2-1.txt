@@ -1,0 +1,28 @@
+first qustion
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package array;
+
+/**
+ *
+ * @author HP
+ */
+public class Array {
+public static int[] fizzArray(int start, int end)
+{int size =end-start;
+int[] arr=new int[size];
+for(int i=0;i<size;i++)
+arr[i]=start+i;
+
+return arr;
+}
+    public static void main(String[] args) {
+        int a=5,b=10;
+        int ar[]=fizzArray(a,b);
+        for(int i=0;i<ar.length;i++)
+            System.out.print(ar[i]+" ");
+        
+            }
+}

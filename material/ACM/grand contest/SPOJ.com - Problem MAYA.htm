@@ -1,0 +1,670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><head>
+
+<title>SPOJ.com - Problem MAYA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2" id="metatag">
+<meta name="Keywords" content="programming, language, algorithm, spoj, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+
+<link href="http://www.spoj.com/gfx/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="http://www.spoj.com/rss/" rel="alternate" type="application/rss+xml" title="RSS Feed">
+<link href="SPOJ.com%20-%20Problem%20MAYA_files/common.css" rel="stylesheet" type="text/css" id="theme">
+<link href="SPOJ.com%20-%20Problem%20MAYA_files/style.css" rel="stylesheet" type="text/css" id="theme">
+<link href="SPOJ.com%20-%20Problem%20MAYA_files/tooltips.css" rel="stylesheet" type="text/css" id="theme">
+<script src="SPOJ.com%20-%20Problem%20MAYA_files/ga.js" async="" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20MAYA_files/all.js" id="facebook-jssdk"></script><script async="" src="SPOJ.com%20-%20Problem%20MAYA_files/cbgapi.loaded_1"></script><script async="" src="SPOJ.com%20-%20Problem%20MAYA_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="SPOJ.com%20-%20Problem%20MAYA_files/plusone.js" async="" type="text/javascript"></script><script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/jquery_005.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/jquery_004.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/jquery_006.js"></script> 
+<!--
+<meta property="og:description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+<meta name="description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+-->
+<style type="text/css">
+<!--
+.maintable {width: 1055;} 
+-->
+</style>
+<script type="text/javascript" language="javascript">
+<!--
+function UnCryptMailto(s) {
+	var n=0;
+	var r="";
+	for(var i=0;i<s.length;i++) {		
+		n=s.charCodeAt(i); 
+		if (n>=8364) {n = 128;}
+		r += String.fromCharCode(n+(2));	
+	}
+	return r;
+}
+function linkTo_UnCryptMailto(s)	{
+	location.href=UnCryptMailto(s);
+}
+// -->
+</script>
+
+<script type="text/javascript">
+function recordOutboundLink(link, category, action) {
+  try {
+    var pageTracker=_gat._getTracker("UA-XXXXX-X");
+    pageTracker._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100)
+  }catch(err){}
+}
+</script>
+
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/shCore.js"></script>
+	<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/shBrushCpp.js"></script>
+	<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/shBrushJava.js"></script>
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/shBrushPhp.js"></script>
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/shBrushPython.js"></script>
+	<link type="text/css" rel="stylesheet" href="SPOJ.com%20-%20Problem%20MAYA_files/shCore.css">
+	<link type="text/css" rel="stylesheet" href="SPOJ.com%20-%20Problem%20MAYA_files/shThemeDefault.css">
+	
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	
+
+		<meta property="og:title" content="SPOJ.com - Problem MAYA">
+    	<meta property="fb:app_id" content="321676846207">
+	<meta property="og:type" content="spoj-pl:problem">
+	<meta property="og:url" content="http://www.spoj.com/problems/MAYA/">
+	<meta property="og:image" content="http://www.spoj.com/gfx/logo-cr.png">
+	<meta property="og:description" content="The Maya lived in Central America during the first millennium. In many regards, they consituted one of the most developed and most fascinating cultures of this epoch. Even though draught animals and the wheel were unknown to the Mayas, they excelled in the fields of weaving, architecture and pottery...">
+<meta name="description" content="The Maya lived in Central America during the first millennium. In many regards, they consituted one of the most developed and most fascinating cultures of this epoch. Even though draught animals and the wheel were unknown to the Mayas, they excelled in the fields of weaving, architecture and pottery...">
+		<meta property="og:site_name" content="spoj.com">
+
+<script src="SPOJ.com%20-%20Problem%20MAYA_files/ppapp.htm" charset="UTF-8" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20MAYA_files/intext.js" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20MAYA_files/1022.js" id="sjsjszmzmaw28aj6" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20MAYA_files/1005.js" id="shk85shssma" type="text/javascript"></script><style type="text/css">.c5uyu6zo {  display:inline !important; list-style:none; text-align:left; float:none; padding:0; margin:0; border:1px solid transparent; border-bottom:1px solid; text-decoration:underline; color:#009900; font-weight:normal; cursor:pointer; }</style><style type="text/css">.adbox  { padding:0 !important; margin:0 !important; display:block; xwidth:400px; xheight:200px;  z-index:2000000000; text-decoration:none !important;}</style></head>
+<body>
+<center>
+
+
+
+<table class="maintable" id="maintable" cellpadding="10" cellspacing="0">
+<tbody><tr>
+    <td colspan="2" class="header">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+		<td class="headerleft">
+		</td><td class="headercenter">
+<h1><img alt="Sphere Online Judge" title="Sphere Online Judge" src="SPOJ.com%20-%20Problem%20MAYA_files/sphere-spoj-small.png" style="margin-top:-4px;margin-bottom:-4px" border="0"></h1>
+		</td>
+		<td class="headerright">
+	</td></tr>
+	</tbody></table>
+    </td>
+</tr>
+<tr><td class="menu" valign="top" width="92">
+
+	
+<div class="section">
+	
+<form name="login" action="https://www.spoj.com/problems/MAYA/" method="post" onsubmit="if(0&amp;&amp;document.login.ssl.checked) document.login.action='https://www.spoj.com/problems/MAYA/'" style="margin-bottom: 18px"> 
+User: <input value="aboahmed" name="login_user" style="width: 85px;" class="form" type="text"><br>
+Password: <input name="password" style="width: 85px;" class="form" type="password"><br>
+<div style="font-size: 10px; ">
+<script language="javascript" type="text/javascript">
+<!--
+    //document.write('<input type="checkbox" name="ssl" id="ssl" /><label for="ssl">secure</label><br/>');
+//-->
+</script>
+<div title="Keep me signed in for today">
+<input name="autologin" value="1" id="autologin" type="checkbox"><label for="autologin">for today</label>
+</div>
+<!--Keep me signed in for today-->
+</div>
+<input name="submit" value="Log In" class="button" style="width: 85px; margin-bottom: 10px;" type="submit">
+
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	if( $.cookie('ssl') == '1' ){
+		$("#ssl").attr('checked', true);
+	}
+	$("#ssl").change(function(){
+		if($(this).is(':checked')){
+			$.cookie('ssl', '1');
+		} else {
+			$.cookie('ssl', '0');
+		}
+	});
+});
+</script>
+
+</div>
+<div class="menucmd"><a href="http://www.spoj.com/register">register</a><br><a href="http://www.spoj.com/tutorials">tutorials</a><br><br><a href="http://www.spoj.com/status">status</a><br><a href="http://www.spoj.com/submit">submit</a><br><a href="http://www.spoj.com/problems/classical/">problems</a><br><a href="http://www.spoj.com/search">search</a><br><br><a href="http://www.spoj.com/">news</a><br><a href="http://www.spoj.com/contests">contests</a><br><a href="http://www.spoj.com/ranks/">ranks</a><br><br><a href="http://www.spoj.com/forum">forum</a><br><a href="http://www.spoj.com/tools">tools</a><br><a href="http://www.spoj.com/clusters">clusters</a><br><a href="http://www.spoj.com/credits">credits</a><br><hr></div><a href="http://www.spoj.com/problems/classical/"></a><br>
+
+
+	<div class="time">
+Server time:</div>
+<div class="time">
+2014-02-24
+<br>
+<b>21 : 12 : 19</b>
+</div>
+
+</td><td style="width: 748px; padding:0px;" class="content0" valign="top">
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+                <td style="padding:0px;" colspan="2"><center>
+                                
+                </center></td>
+        </tr>
+        <tr>
+                <td class="content" style="padding: 10px" width="99%"><script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/jquery.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/jquery_003.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/jquery_002.js"></script>
+
+
+
+ <!-- wykorzystywane w pcontent.html (by wiele) -->
+
+<table class="problems" width="100%">
+<tbody><tr class="navigation">
+<td><a href="http://www.spoj.com/submit/MAYA/">Submit</a></td>
+<td><a href="http://www.spoj.com/status/MAYA/">All submissions</a></td>
+<td><a href="http://www.spoj.com/ranks/MAYA/">Best solutions</a></td>
+<td><a href="http://www.spoj.com/problems/MAYA.ps">PS</a></td>
+<td><a href="http://www.spoj.com/problems/MAYA.pdf">PDF</a></td>
+<td><a href="http://www.spoj.com/problems/classical/">Back to list</a></td>
+</tr>
+</tbody></table>
+
+<div class="prob" style="position: relative">
+
+<!-- google_ad_section_start -->
+<!-- plik z pomoca kontekstowa (cxhelp_*) dziedziczony po pindex.html -->
+
+<div style="position: absolute;">
+<div class="fb-like" data-href="http://www.spoj.com/problems/MAYA/" data-send="true" data-layout="box_count" data-width="70" data-show-faces="false"></div>
+</div>
+<div style="position: absolute; right: 0px">
+<!-- Place this tag where you want the +1 button to render -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe title="1+" data-gapiattached="true" src="SPOJ.com%20-%20Problem%20MAYA_files/fastbutton.htm" name="I0_1393272648651" id="I0_1393272648651" vspace="0" tabindex="0" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<!-- Place this render call where appropriate -->
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</div>
+
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/ASCIIMathMLwFallback.js"></script>
+<!--script type="text/javascript" src="/gfx/jscripts/tiny_mce/plugins/asciisvg/js/ASCIIsvgPI.js"></script-->
+<script type="text/javascript">
+<!--
+var AScgiloc = 'http://www.imathas.com/imathas/filter/graph/svgimg.php';
+var AMTcgiloc = "/files/gif/";
+-->
+</script>
+
+<table style="margin-top:10px" width="100%">
+<tbody><tr>
+	<td>
+		<h2>SPOJ Problem Set (classical)</h2>
+				<h1>94. Numeral System of the Maya</h1>
+		<h2>Problem code: MAYA</h2>
+	</td>
+	</tr>
+</tbody></table>
+
+<br>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - baner gĂłrny */
+google_ad_slot = "5796055248";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe s248444547121821742="true" replaced="true" s8682671599269094306="true" src="SPOJ.com%20-%20Problem%20MAYA_files/tt.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins><a rel="nofollow" href="https://www.digitalocean.com/?refcode=c59674ea4847" class="freelancer_728" style="display: none;"><img src="SPOJ.com%20-%20Problem%20MAYA_files/digitalocean-horizontal-eps.png" border="0" height="109" width="410"></a>
+
+<p align="justify">
+</p><p align="justify">The Maya lived in Central <span id="c5uyu6zo_8" class="c5uyu6zo">America</span>
+ during the first millennium. In many regards, they consituted one of 
+the most developed and most fascinating cultures of this epoch. Even 
+though draught animals and the wheel were unknown to the Mayas, they 
+excelled in the fields of weaving, architecture and pottery. But truely 
+breath-taking were their achievements in the fields of astronomy and 
+mathematics. Whilst Europe was trudging through the dark <span id="c5uyu6zo_4" class="c5uyu6zo">Middle Ages</span>,
+ the Maya determined the solar year to 365.242 days (modern-day 
+measurement: 365.242198) and the lunar cycle to 29.5302 days (modern-day
+ measurement: 29.53059). Such astonishingly precise findings were hardly
+ possible without a powerful numeral system. In this task we will 
+explore the Maya's numeral system.</p>
+<p align="justify">Maya priests and astronomers used a numerical system 
+to the base of 20. Unusual to their time, their system also included the
+ concepts of digits and of the zero. Both concepts were completely 
+unknown to the Europeans at this time. The first nineteen numbers of the
+ vigesimal system were represented by dots and dashes according to the 
+following table:</p>
+<p align="justify"><img src="SPOJ.com%20-%20Problem%20MAYA_files/ahventable.gif"></p>
+<p align="justify">The zero was written down as a symbol resembling a 
+shell. Multi-digit numbers (i.e. the numbers bigger than 19) were 
+written in vertical arrangement, with the highest-value digit on top. 
+For example, the number 79 was written as</p>
+<p align="justify"><img src="SPOJ.com%20-%20Problem%20MAYA_files/ahvennum1.gif"></p>
+<p align="justify">As can be seen, the second digit possesses a value of 20.</p>
+<p align="justify">Due to an interference of the two calendar systems of
+ the Maya, the third digit did not hold the value 400 (20x20), as would 
+be expected, but 360. All the following digits were again treated 
+regularly, i.e. the fourth digit counted 7200 (360x20), the fifth 144000
+ (7200x20), and so on.</p>
+<p align="justify">Hence, the number 13495 (=1x7200+17x360+8x20+15) was written as follows:</p>
+<p align="justify"><img src="SPOJ.com%20-%20Problem%20MAYA_files/ahvennum2.gif"></p>
+<p align="justify">Write a program to convert <span id="c5uyu6zo_1" class="c5uyu6zo">Maya numbers</span> to decimal numbers!</p>
+
+<h3>Input</h3>
+<p align="justify">The <span id="c5uyu6zo_3" class="c5uyu6zo">input file</span>
+ contains a list of numbers written down in Maya fashion. Of course, 
+dots are represented as points (.), and dashes are represented as 
+hyphens (-). The zero digit, the shell symbol, is written as a capital 
+letter S (S). Description of a Maya number starts with <i>n</i> - the number of the Maya digits. The following <i>n</i> lines contain one digit each. One digit is written from top to bottom using spaces as vertical separators.</p>
+<p align="justify">One number will not have more than seven digits. Each two numbers are separated by a blank line. Input terminates with <i>n</i> = 0</p>
+
+<h3>Output</h3>
+<p align="justify">Your program has to output the value of the number in the input file in the nowadays more common <span id="c5uyu6zo_5" class="c5uyu6zo">decimal system</span>. One number per line.</p>
+
+<h3>Example</h3>
+<pre><b><tt>Sample input:</tt></b>
+1
+..
+
+5
+... -
+. - -
+S
+S
+S
+
+0
+<b><tt>Sample output:</tt></b>
+2
+1231200
+</pre>
+
+
+
+
+<hr>
+<table style="margin-bottom:10px" class="probleminfo" align="left" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>Added by:</td><td><a href="http://www.spoj.com/users/ahven">Michał Czuczman</a></td></tr>
+<tr><td>Date:</td><td>2004-07-11</td></tr>
+<tr><td>Time limit:</td><td>3s
+</td></tr>
+<tr><td>Source limit:</td><td>50000B</td></tr>
+<tr><td><span id="c5uyu6zo_2" class="c5uyu6zo">Memory limit</span>:</td><td>256MB</td></tr>
+	<tr>
+		<td>Cluster:</td>
+		<td>
+							<a href="http://www.spoj.com/clusters/" target="_blank">Pyramid (Intel Pentium III 733 MHz)</a>
+					
+		</td>
+	</tr>
+<tr><td>Languages:</td><td>All except: NODEJS PERL 6 </td></tr>
+<tr><td>Resource:</td><td>Swiss Olympiad in Informatics 2004</td></tr>	
+</tbody></table><!-- google_ad_section_end -->
+
+<div id="ccontent">
+<!-- google_ad_section_start -->
+
+<hr style="clear:both;">
+<a href="#" onclick="toggleComments(); return false;"><span id="comments_sh">hide</span> comments</a><br>
+
+<a id="comments"></a>
+<table id="comments_table" width="100%">
+		<tbody><tr>
+		<td colspan="2">
+		<table class="navigation" width="99%">
+<tbody><tr><td align="left" width="27%">
+<i>Previous</i></td><td class="navigationcenter" width="16%">&nbsp;1</td> 
+<td class="navigationcenter" width="16%"><a href="http://www.spoj.com/problems/MAYA/cstart=10" class="pager_link">&nbsp;2</a></td> 
+<td class="navigationcenter" width="16%"><a href="http://www.spoj.com/problems/MAYA/cstart=20" class="pager_link">&nbsp;3</a></td> 
+<td align="right" width="25%">
+<a href="http://www.spoj.com/problems/MAYA/cstart=10" class="pager_link">Next</a> <a href="http://www.spoj.com/problems/MAYA/cstart=20" class="pager_link">&gt;</a></td></tr></tbody></table>		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+				</td>
+	</tr>
+	
+	<script language="JavaScript">
+	<!--
+	$(document).ready(function(){
+        $('.pager_link').bind('click', function(me){
+                var href=$(me.currentTarget).attr('href');
+		$('#ccontent').animate({opacity: 0.5},1);
+                $.ajax({
+                        type: "GET",
+                        url: href+",ajax=1",
+                        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-2",
+                        success: function(data){
+                                $('#ccontent').html(data);
+				$('#ccontent').animate({opacity: 1.0},1);
+                        },
+                        error: function(err){
+                                alert('error');
+                        }
+                });
+                return false;
+        });
+	});
+	-->
+	</script>
+	
+
+			
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-09-07 09:22:05 <b><a href="http://www.spoj.com/users/aswin010594">Aswin Murugesh</a></b> 
+		</font>
+								<br>
+				For Languages like <span id="c5uyu6zo_7" class="c5uyu6zo">Python</span>, Don't forget the "Blank line" after each <span id="c5uyu6zo_6" class="c5uyu6zo">test</span> case
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-07-09 10:33:38 <b><a href="http://www.spoj.com/users/rishabh_dugar">Rishabh Dugar</a></b> 
+		</font>
+								<br>
+				although gets() is not recommended,,,it wrks fine if u eat up the newline with getchar... 
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-06-12 15:26:16 <b><a href="http://www.spoj.com/users/wasi0013">&#2451;&#2479;&#2492;&#2494;&#2488;&#2496; (Wasi)</a></b> 
+		</font>
+								<br>
+				@Prikshit Kumar Yap! there is a space between every digit(after dots and between dashes)
+				<br><br>
+		<b>Last edit: 2013-08-21 14:54:20</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-06-12 14:48:27 <b><a href="http://www.spoj.com/users/prix_22">Prikshit Kumar</a></b> 
+		</font>
+								<br>
+				Is there a space after the dots or between the dashes?
+<br>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-05-28 16:56:55 <b><a href="http://www.spoj.com/users/wasi0013">&#2451;&#2479;&#2492;&#2494;&#2488;&#2496; (Wasi)</a></b> 
+		</font>
+								<br>
+				easy!
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-04-13 12:50:58 <b><a href="http://www.spoj.com/users/divig">divya gupta</a></b> 
+		</font>
+								<br>
+				sigsegv..
+				<br><br>
+		<b>Last edit: 2013-04-13 18:09:11</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-02-25 12:48:32 <b><a href="http://www.spoj.com/users/joudzouzou">joud zouzou</a></b> 
+		</font>
+								<br>
+				
+				<br><br>
+		<b>Last edit: 2013-02-25 12:55:04</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2012-12-28 10:12:17 <b><a href="http://www.spoj.com/users/himanshusahu06">Himanshu  Sahu</a></b> 
+		</font>
+								<br>
+				got it in frist attempt!!!!!!!
+<br>AC!!!!!!!
+<br>this ques makes you better understand of gets,while,if-else and for loop??
+<br>try is its too simple...
+				<br><br>
+		<b>Last edit: 2012-12-28 10:14:43</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2012-12-20 05:39:55 <b><a href="http://www.spoj.com/users/eldiablo">Abhimanyu</a></b> 
+		</font>
+								<br>
+				got it !!!!! :)
+				<br><br>
+		<b>Last edit: 2012-12-20 12:58:38</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2012-06-02 11:42:58 <b><a href="http://www.spoj.com/users/adityapande">Aditya Pande</a></b> 
+		</font>
+								<br>
+				got it
+				<br><br>
+		<b>Last edit: 2012-12-20 11:14:29</b>
+						</td>
+	</tr>
+			
+</tbody></table>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function getCookieVal (offset) {
+        var endstr = document.cookie.indexOf (";", offset);
+        if (endstr == -1) { 
+                endstr = document.cookie.length; 
+        }
+        return unescape(document.cookie.substring(offset, endstr));
+}
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg) {
+      return getCookieVal (j);
+      }
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break; 
+    }
+  return null;
+}
+
+function toggleComments() {
+        var a = document.getElementById('comments_table');
+        var d = a.style.display;
+        if( d == "" || d == "block" ){
+                d = "none";
+                document.getElementById('comments_sh').innerHTML = 'show';
+        } else {
+                d = "block";
+                document.getElementById('comments_sh').innerHTML = 'hide';
+        }
+        a.style.display = d;
+        document.cookie="comments_table="+d+"; path=/;";
+}
+
+if( GetCookie('comments_table') == 'none' ){
+        document.getElementById('comments_sh').innerHTML = 'show';
+        document.getElementById('comments_table').style.display = 'hide';
+}
+
+-->
+</script>
+
+
+<!-- google_ad_section_end -->
+</div>
+<table width="100%">
+        </table>
+
+</div>
+        </td>
+</tr><tr>
+        <td style="padding:0px" colspan="2"><center>
+                
+</center></td>
+</tr>
+</tbody></table>
+</td>
+
+
+<td class="ad-r__" width="200"><div><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - wiezowiec */
+google_ad_slot = "2703472077";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20MAYA_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe s248444547121821742="true" replaced="true" s8682671599269094306="true" src="SPOJ.com%20-%20Problem%20MAYA_files/tt_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins><div>
+<style>
+.ad-r__{
+        vertical-align: top;
+}
+.ad-r__ > div.fixed{
+        top: 10px;
+        position: fixed;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+        $(window).scroll(function() {
+                if($(this).scrollTop() > 100) {
+                        $(".ad-r__>div").addClass('fixed');
+                } else {
+                        $(".ad-r__>div").removeClass('fixed');
+                }
+        });
+	if ($('.ad-r__>div').height() == 0){
+		//console.log('adblocker');
+		_gaq.push(['_trackEvent', 'ads', 'adblock']);
+		$(".freelancer_728").show();
+		//$(".ad-r__").append('<script type="text/javascript"><!--amazon_ad_tag = "httpsphereres-20"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_border = "hide"; amazon_ad_discount = "remove"; amazon_color_background = "EEEEEE";//--><'+'/script><script type="text/javascript" src="http://ir-na.amazon-adsystem.com/s/ads.js"><'+'/script>');
+	}
+});
+</script>
+</div></div></td>
+
+
+</tr>
+
+<tr>
+<td colspan="2" class="footer">
+<div class="a-footer"></div>
+<script language="javascript" type="text/javascript">
+<!--
+function swapSheet(sheet, caller) {
+    document.getElementById('theme').href=sheet;
+    document.cookie="css_0="+sheet+"; path=/;";
+    caller.href="#bottom";
+}
+
+function setWidth(w, caller) {
+    document.getElementById('maintable').style.width=w;
+    document.cookie="res="+w+"; path=/;";
+    caller.href="#bottom";
+}
+
+
+
+//-->
+
+</script>
+        <table width="100%">
+    <tbody><tr>
+	<td class="cfooter" align="left" width="10%">
+	<a href="http://www.spoj.com/info/">About SPOJ</a>
+	</td>
+	<td class="cfooter" align="center">
+	    width:
+	    <a href="http://www.spoj.com/?rsl=855px" onclick="setWidth('855px', this)">900</a>
+	    <a href="http://www.spoj.com/?rsl=980px" onclick="setWidth('980px', this)">1024</a>
+	    <a href="http://www.spoj.com/?rsl=100%" onclick="setWidth('100%', this)">Full</a>
+	    &nbsp;&nbsp;
+	    theme:
+	    <a href="http://www.spoj.com/?css=/themes/skin1.css" onclick="swapSheet('/themes/skin1.css', this)">olive</a>
+	    <a href="http://www.spoj.com/?css=/themes/skin2.css" onclick="swapSheet('/themes/skin2.css', this)">banana</a>
+	    <a href="http://www.spoj.com/?css=/themes/skin3.css" onclick="swapSheet('/themes/skin3.css', this)">plum</a>
+	    <a href="http://www.spoj.com/?css=/themes/hspl.css" onclick="swapSheet('/themes/hspl.css', this)">hspl</a>
+	</td>
+		<td class="cfooter" align="center">
+		 <span title="The discussion channel of the Sphere Online Judge community.">
+		 <a href="irc://irc.freenode.net/spoj"><b>#spoj</b> at freenode</a>
+		 </span>
+	</td>
+		<td class="cfooter" style="text-align:right" width="10%">
+		<a href="http://www.spoj.com/rss/"><img src="SPOJ.com%20-%20Problem%20MAYA_files/rss10x10.gif" border="0">&nbsp;RSS</a>&nbsp;
+	
+	</td>
+    </tr>
+    </tbody></table>
+    </td></tr></tbody></table>
+</center><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="SPOJ.com%20-%20Problem%20MAYA_files/postmessageRelay.htm" id="oauth2relay1004029869" name="oauth2relay1004029869"></iframe>
+<div class="a-header"></div>
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="SPOJ.com%20-%20Problem%20MAYA_files/xd_arbiter.htm" style="border: medium none;" tab-index="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0" scrolling="no"></iframe><iframe src="SPOJ.com%20-%20Problem%20MAYA_files/xd_arbiter_002.htm" style="border: medium none;" tab-index="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0" scrolling="no"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1&appId=321676846207";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>-->
+
+
+<div style="font-size:10px; margin-top:4px; color: rgb(85,80,95); text-align: center">
+	&#169; Spoj.com. All Rights Reserved. Spoj uses <a href="http://sphere-engine.com/" style="color:black">Sphere Engine</a>&#8482; &#169; by <a href="http://sphere-research.com/" style="color:black">Sphere Research Labs</a>.
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10507872-1']);
+    _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                      })();
+                      </script>
+                      
+
+<div id="__yael_once"></div><div style="display: none; position: absolute; left: 0px; width: 20px; height: 20px;" id="c5uyu6zospinner"><img id="intext_spinner_default" src="SPOJ.com%20-%20Problem%20MAYA_files/spinner-ani48.gif" border="0" height="20" width="20"></div><div style="display: none; position: absolute; z-index: 10485760; left: 400px; top: 400px;" id="c5uyu6zopop"></div></body><iframe src="" style="display: none;"></iframe></html>

@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>java - i want to get day name , day , month ,year from the date stored in String like "Wed, 27 feb 2013" - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="i want to get day name , day , month ,year from the date stored in String like &quot;Wed, 27 feb 2013&quot;">
+    <meta name="og:description" content="&quot;JAVA&quot; i  stores Date in String like &quot;wed, 27 Dec 2013&quot; i want to extract day name , day , month, year from String date i am using spring MVC ,please guide me if anyone know  solution . or if there...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like">
+    <link rel="canonical" href="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like">
+
+    
+    
+    <script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'i want to get day name , day , month ,year from the date stored in String like &quot;Wed, 27 feb 2013&quot;'" href="http://stackoverflow.com/feeds/question/15142860">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:15142860});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '15142860');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1408825215,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"99ddfc39d11cf2a1ac0e70d97836dd1d","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"ae6b32c7b514","js/moderator.en.js":"2460e956e5a7","js/full-anon.en.js":"7c4bb7834ae5","js/full.en.js":"c68d09ee1e0b","js/wmd.en.js":"c4959d8fe193","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a1e717ab0e4","js/help.en.js":"c8c7bae0ab4d","js/tageditor.en.js":"666966a32eca","js/tageditornew.en.js":"6dab6674147e","js/inline-tag-editing.en.js":"1a5cabd8e30a","js/revisions.en.js":"255b536e5531","js/review.en.js":"82138abd9602","js/tagsuggestions.en.js":"418b6018565f","js/post-validation.en.js":"b462effbb9ec","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"145cf84e47d9","js/keyboard-shortcuts.en.js":"e39578a5aec1"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15142860%2fi-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15142860%2fi-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15142860%2fi-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f15142860%2fi-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for 
+professional and enthusiast programmers. It's 100% free, no registration
+ required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like" class="question-hyperlink">i want to get day name , day , month ,year from the date stored in String like “Wed, 27 feb 2013”</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="15142860" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk271500276",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk271500276"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkyMywiZGkiOiIwZmMyYTIxNzllMzM0NTczYjU5NzY4MjgwNjE2MzA0NCIsImRtIjoxLCJmYyI6MTAxODgsImZsIjo3NDcyLCJpcCI6IjQxLjY5LjExMC4xNTIiLCJrdyI6ImphdmEsc3ByaW5nLW12YyIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20uZWcvdXJsP3NhPXQmcmN0PWomcT0mZXNyYz1zJnNvdXJjZT13ZWImY2Q9MiZjYWQ9cmphJnVhY3Q9OCZ2ZWQ9MENDVVFGakFCJnVybD1odHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzE1MTQyODYwL2ktd2FudC10by1nZXQtZGF5LW5hbWUtZGF5LW1vbnRoLXllYXItZnJvbS10aGUtZGF0ZS1zdG9yZWQtaW4tc3RyaW5nLWxpa2UmZWk9Wl9mNFVfM3ZDY2lOT05ySWdlQUMmdXNnPUFGUWpDTkdfaHRlbEdwU2lPMTBRTW50elZhMmsyWEF2dUEmc2lnMj0wczZPaHNBbjRtTzd1cFhLdVdMMHBnJmJ2bT1idi43MzYxMjMwNSxkLlpXVSIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1mY2NkOTk5ZGM5MDE0MTIyYjI2MTlmOGM3ZjRhODJiOSIsInpuIjo0MywidHMiOjE0MDg4MjUyMzQwNDcsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vIn0&amp;s=htbcmdD6hMRvLs_IP308OiumY48" rel="nofollow" target="_blank" title=""><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/46a9844d6e504212a85bc72ddd7dd829.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/i_003.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="15142860" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>"JAVA" i  stores Date in String like "wed, 27 Dec 2013" i 
+want to extract day name , day , month, year from String date i am using
+ spring MVC ,please guide me if anyone know  solution . or if there are 
+other way then also please suggest me ..thanks in advance.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/spring-mvc" class="post-tag js-gps-track" title="show questions tagged 'spring-mvc'" rel="tag">spring-mvc</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/15142860" title="short permalink to this question" class="short-link" id="link-post-15142860">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15142860/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-02-28 18:25:17Z" class="relativetime">Feb 28 '13 at 18:25</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2120794/user2120794"><div class="gravatar-wrapper-32"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/76c79600120cbc4f2a38289c8e1564cb.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2120794/user2120794">user2120794</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15142860" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-15142860" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display:none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="15142959"></a>
+<div id="answer-15142959" class="answer accepted-answer" data-answerid="15142959" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="15142959" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>This will do it.  No JODA dependency:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="typ">DateFormat</span><span class="pln"> formatter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleDateFormat</span><span class="pun">(</span><span class="str">"EEE, dd MMM yyyy"</span><span class="pun">);</span><span class="pln">
+formatter</span><span class="pun">.</span><span class="pln">setLenient</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">String</span><span class="pln"> dateStr </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Fri, 27 Dec 2013"</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">Date</span><span class="pln"> date </span><span class="pun">=</span><span class="pln"> formatter</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">dateStr</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">Calendar</span><span class="pln"> calendar </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Calendar</span><span class="pun">.</span><span class="pln">instance</span><span class="pun">();</span><span class="pln">
+calendar</span><span class="pun">.</span><span class="pln">setTime</span><span class="pun">(</span><span class="pln">date</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get values from calendar.</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15142959" title="short permalink to this answer" class="short-link" id="link-post-15142959">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15142959/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/15142959/revisions" title="show all edits to this post">edited <span title="2013-02-28 19:52:47Z" class="relativetime">Feb 28 '13 at 19:52</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-02-28 18:29:59Z" class="relativetime">Feb 28 '13 at 18:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/37213/duffymo"><div class="gravatar-wrapper-32"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/eeec80237213c91e5bab56b77ac5b8ca.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/37213/duffymo">duffymo</a><br>
+        <span class="reputation-score" title="reputation score 189753" dir="ltr">190k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="185 silver badges"><span class="badge2"></span><span class="badgecount">185</span></span><span title="351 bronze badges"><span class="badge3"></span><span class="badgecount">351</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15142959" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-21318183" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This fails because Dec 27 2013 is a Friday, not a Wednesday</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/828193/user000001" title="11670 reputation" class="comment-user">user000001</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21318183_15142959"><span title="2013-02-28 18:36:24Z" class="relativetime-clean">Feb 28 '13 at 18:36</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-21318773" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thank you so much ..it worked .i set to to Fri and it ran properly. thank you again .</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2120794/user2120794" title="5 reputation" class="comment-user owner">user2120794</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21318773_15142959"><span title="2013-02-28 18:55:04Z" class="relativetime-clean">Feb 28 '13 at 18:55</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-21319297" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Good thing you set lenient to false.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/37213/duffymo" title="189753 reputation" class="comment-user">duffymo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21319297_15142959"><span title="2013-02-28 19:13:56Z" class="relativetime-clean">Feb 28 '13 at 19:13</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-15142959" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk423584765",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk423584765"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTI0LCJkaSI6IjRjMDE1NDE5Mjk0ZDQ4ZGI4ZTZhOTkwZmUwOTU4ZmRhIiwiZG0iOjEsImZjIjo4ODEwLCJmbCI6MjQ0NCwiaXAiOiI0MS42OS4xMTAuMTUyIiwia3ciOiJqYXZhLHNwcmluZy1tdmMiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tLmVnL3VybD9zYT10JnJjdD1qJnE9JmVzcmM9cyZzb3VyY2U9d2ViJmNkPTImY2FkPXJqYSZ1YWN0PTgmdmVkPTBDQ1VRRmpBQiZ1cmw9aHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy8xNTE0Mjg2MC9pLXdhbnQtdG8tZ2V0LWRheS1uYW1lLWRheS1tb250aC15ZWFyLWZyb20tdGhlLWRhdGUtc3RvcmVkLWluLXN0cmluZy1saWtlJmVpPVpfZjRVXzN2Q2NpTk9OcklnZUFDJnVzZz1BRlFqQ05HX2h0ZWxHcFNpTzEwUU1udHpWYTJrMlhBdnVBJnNpZzI9MHM2T2hzQW40bU83dXBYS3VXTDBwZyZidm09YnYuNzM2MTIzMDUsZC5aV1UiLCJzdCI6ODI3NywidWsiOiJ1ZTEtZmNjZDk5OWRjOTAxNDEyMmIyNjE5ZjhjN2Y0YTgyYjkiLCJ6biI6NDQsInRzIjoxNDA4ODI1MjM0MDUwLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&amp;s=-hB-8gtAbhx7w-YrwL85RkQzcyM" rel="nofollow" target="_blank" title=""><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/0a96cc99c1784d6abe3cae6b8c8bf013.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>
+  
+<a name="15143474"></a>
+<div id="answer-15143474" class="answer" data-answerid="15143474" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="15143474" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln">    </span><span class="typ">DateFormat</span><span class="pln"> formatter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleDateFormat</span><span class="pun">(</span><span class="str">"EEE, dd MMM yyyy"</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">String</span><span class="pln"> dateStr </span><span class="pun">=</span><span class="pln"> </span><span class="str">"WED, 27 Dec 2013"</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">Date</span><span class="pln"> date </span><span class="pun">=</span><span class="pln"> formatter</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">dateStr</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Calendar</span><span class="pln"> calendar </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Calendar</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">();</span><span class="pln">
+    calendar</span><span class="pun">.</span><span class="pln">setTime</span><span class="pun">(</span><span class="pln">date</span><span class="pun">);</span><span class="pln">
+    </span><span class="com">// Get values from calendar.</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">calendar</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="typ">Calendar</span><span class="pun">.</span><span class="pln">DAY_OF_WEEK</span><span class="pun">));</span><span class="com">//1 indexed starting from Sunday</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">calendar</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="typ">Calendar</span><span class="pun">.</span><span class="pln">DAY_OF_MONTH</span><span class="pun">));</span><span class="com">//0 indexed</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">calendar</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="typ">Calendar</span><span class="pun">.</span><span class="pln">MONTH</span><span class="pun">));</span><span class="com">//0 indexed</span><span class="pln">
+    </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">calendar</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="typ">Calendar</span><span class="pun">.</span><span class="pln">YEAR</span><span class="pun">));</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15143474" title="short permalink to this answer" class="short-link" id="link-post-15143474">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15143474/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-02-28 18:57:45Z" class="relativetime">Feb 28 '13 at 18:57</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2083883/deb"><div class="gravatar-wrapper-32"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/3d064b73907f13c8a32c3fd9745adfa8.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2083883/deb">Deb</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">51</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15143474" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-15143474" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="15142887"></a>
+<div id="answer-15142887" class="answer" data-answerid="15142887" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="15142887" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Take a look at Joda time.  It provides lots of methods for parsing 
+dates, and obtaining data from them once they have been parsed.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15142887" title="short permalink to this answer" class="short-link" id="link-post-15142887">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15142887/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-02-28 18:26:28Z" class="relativetime">Feb 28 '13 at 18:26</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1596371/jgm"><div class="gravatar-wrapper-32"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/pNDFK.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1596371/jgm">jgm</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,477</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15142887" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-21318042" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is trivial even with the
+ standard SDK. Why the need for an external library which won't add any 
+special benefit at this time? (Unless the poster will really be 
+operating with dates)...</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/774183/carlspring" title="7800 reputation" class="comment-user">carlspring</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21318042_15142887"><span title="2013-02-28 18:31:49Z" class="relativetime-clean">Feb 28 '13 at 18:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-21320051" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Because using anything with <code>java.util.Date</code>
+ is a road to eventual pain so rather than starting with it and swapping
+ over whenever you need to do real work you should just start with Joda 
+and be done with it.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1596371/jgm" title="3477 reputation" class="comment-user">jgm</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21320051_15142887"><span title="2013-02-28 19:37:04Z" class="relativetime-clean">Feb 28 '13 at 19:37</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-15142887" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="15143415"></a>
+<div id="answer-15143415" class="answer" data-answerid="15143415" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="15143415" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Since the day of the week is inconsistent with the date represented, 
+we will cut the string, and remove the day of the week, using <code>substring()</code>.</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> argsp</span><span class="pun">[])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">DateFormat</span><span class="pln"> formatter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleDateFormat</span><span class="pun">(</span><span class="str">"dd MMM yyyy"</span><span class="pun">);</span><span class="pln">
+    formatter</span><span class="pun">.</span><span class="pln">setLenient</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">String</span><span class="pln"> dateStr </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Wed, 27 Dec 2013"</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">String</span><span class="pln"> sub </span><span class="pun">=</span><span class="pln"> dateStr</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">4</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Date</span><span class="pln"> date </span><span class="pun">=</span><span class="pln"> formatter</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">sub</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">date</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        e</span><span class="pun">.</span><span class="pln">printStackTrace</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15143415" title="short permalink to this answer" class="short-link" id="link-post-15143415">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15143415/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-02-28 18:53:51Z" class="relativetime">Feb 28 '13 at 18:53</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/828193/user000001"><div class="gravatar-wrapper-32"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/9f35136089cdd5e89da87dfab07c978e.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/828193/user000001">user000001</a><br>
+        <span class="reputation-score" title="reputation score 11670" dir="ltr">11.7k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="48 bronze badges"><span class="badge3"></span><span class="badgecount">48</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15143415" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-21319320" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Or just fix the date String.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/37213/duffymo" title="189753 reputation" class="comment-user">duffymo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21319320_15143415"><span title="2013-02-28 19:14:37Z" class="relativetime-clean">Feb 28 '13 at 19:14</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-21319537" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Well OP had the string wrong. I thought maybe it was intentional...</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/828193/user000001" title="11670 reputation" class="comment-user">user000001</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21319537_15143415"><span title="2013-02-28 19:20:50Z" class="relativetime-clean">Feb 28 '13 at 19:20</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-21320740" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">String dayNames[] = new 
+DateFormatSymbols().getWeekdays();  System.out.println("month is a" + 
+monthNames[calendar.get(Calendar.MONTH)]); above code gives me day name 
+without using subString.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2120794/user2120794" title="5 reputation" class="comment-user owner">user2120794</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21320740_15143415"><span title="2013-02-28 19:58:58Z" class="relativetime-clean">Feb 28 '13 at 19:58</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-15143415" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/15142860/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="15142860" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="99ddfc39d11cf2a1ac0e70d97836dd1d" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f15142860%2fi-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f15142860%2fi-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/spring-mvc" class="post-tag" title="show questions tagged 'spring-mvc'" rel="tag">spring-mvc</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-02-28 18:25:17Z"><b>1 year ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>2200 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/15142860/i-want-to-get-day-name-day-month-year-from-the-date-stored-in-string-like?lastactivity" class="lastactivity-link" title="2013-02-28 19:52:47Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk2038524399",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk2038524399"><div id="careersadsdoublehigh" style="display:none;"></div><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>  
+        <div id="hireme">
+            <script>
+window.careers_adurl="//careers.stackoverflow.com/gethired/js",window.careers_cssurl="//cdn-careers.sstatic.net/careers/gethired/sidebar.min.css?v=871145189bac",window.careers_leaderboardcssurl="{leaderboardcssurl}",window.careers_companycssurl="//cdn-careers.sstatic.net/careers/gethired/company",window.careers_adselector="div#hireme",StackExchange.ready(function(){$.ajax({url:"//cdn-careers.sstatic.net/careers/gethired/loader.min.js?v=43efa843dae8",dataType:"script",cache:!0})});            </script>
+            
+        </div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a title="72 users active in 24 rooms the last 60 minutes" href="http://chat.stackoverflow.com/" id="h-chat-link">72 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="Lounge&lt;C++&gt;"><a href="http://chat.stackoverflow.com/rooms/10">Lounge&lt;C++&gt;</a></span></h3><span title="2014-08-23 18:44:26Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/560648">Lightness Races in Orbit</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/560648"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/gC6TG.jpg" title="Lightness Races in Orbit: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/179910"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/d8962238339d771f0348967be6f97b1b.jpg" title="Jerry Coffin: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/298661"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/3445f56229632874a44596385ed6d40c.jpg" title="Puppy: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/457812"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/BmsBl.png" title="nil: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/500104"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/eb538603c2b80ea703e92abf5b45c791.png" title="Xeo: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/962089"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/b6SVs.jpg" title="chris: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/303662"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/e4fe5511c802ce89b7e95c8173a7a17a.png" title="Ell: 1 hour ago" height="23" width="23"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript :: Sandbox for translate"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript :: Sandbox for translate</a></span></h3><span title="2014-08-23 18:44:48Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/3717756">Ömer Bucak</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/3717756"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/5QhhJ.png" title="Ömer Bucak: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1070446"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/87c52b2ab1190520280fc8684b6326a1.png" title="dead beef: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/710446"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/a1325bf0a5baed69f6f65248c3b2254a.png" title="apsillers: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/855760"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/32c4f5b414a7959867a37baa81e207de.jpg" title="Abhishek Hingnikar: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/401137"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/92c72c5f2ce226143274c1d32e560fd4.jpg" title="Some Guy: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/2620028"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/744049b5c69096d93ba4971ffd06ffcd.png" title="Aaron Siciliano: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/617762"><img src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/348d335cd13298e475eeaefa1841dee6.png" title="Zirak: 2 hours ago" height="23" width="23"></a></div></div></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":72,"activeRooms":24,"rooms":[{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1408819466,"posts":3005378,"users":[{"name":"Lightness Races in Orbit","id":560648,"emailhash":"!http://i.stack.imgur.com/gC6TG.jpg?s=128\u0026g=1","lastPost":1408819466},{"name":"Jerry Coffin","id":179910,"emailhash":"d8962238339d771f0348967be6f97b1b","lastPost":1408819365},{"name":"Puppy","id":298661,"emailhash":"3445f56229632874a44596385ed6d40c","lastPost":1408819235},{"name":"nil","id":457812,"emailhash":"!http://i.stack.imgur.com/BmsBl.png?s=128\u0026g=1","lastPost":1408819232},{"name":"Xeo","id":500104,"emailhash":"eb538603c2b80ea703e92abf5b45c791","lastPost":1408819183},{"name":"chris","id":962089,"emailhash":"!http://i.stack.imgur.com/b6SVs.jpg?s=128\u0026g=1","lastPost":1408819148},{"name":"Ell","id":303662,"emailhash":"e4fe5511c802ce89b7e95c8173a7a17a","lastPost":1408819115}],"messages":[{"date":1408819466,"user":"Lightness Races in Orbit","userid":560648}],"singleImage":false,"tags":["c++","c++11","c++14","c++-faq"]},{"name":"JavaScript :: Sandbox for translate","id":17,"lastPost":1408819488,"posts":2091810,"users":[{"name":"Ömer Bucak","id":3717756,"emailhash":"!http://i.stack.imgur.com/5QhhJ.png?s=128\u0026g=1","lastPost":1408819488},{"name":"dead beef","id":1070446,"emailhash":"87c52b2ab1190520280fc8684b6326a1","lastPost":1408819194},{"name":"apsillers","id":710446,"emailhash":"a1325bf0a5baed69f6f65248c3b2254a","lastPost":1408818271},{"name":"Abhishek Hingnikar","id":855760,"emailhash":"32c4f5b414a7959867a37baa81e207de","lastPost":1408818202},{"name":"Some Guy","id":401137,"emailhash":"92c72c5f2ce226143274c1d32e560fd4","lastPost":1408818182},{"name":"Aaron Siciliano","id":2620028,"emailhash":"744049b5c69096d93ba4971ffd06ffcd","lastPost":1408818167},{"name":"Zirak","id":617762,"emailhash":"348d335cd13298e475eeaefa1841dee6","lastPost":1408817658}],"messages":[{"date":1408819488,"user":"Ömer Bucak","userid":3717756}],"singleImage":false,"tags":["ecmascript","javascript","phrasing"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9474121?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">39
+    </div>
+</a><a href="http://stackoverflow.com/questions/9474121/i-want-to-get-year-month-day-etc-from-java-date-to-compare-with-gregorian-calen?rq=1" class="question-hyperlink">I want to get Year,Month, Day etc from Java Date to compare with Gregorian Calendar date in Java. Is this possible?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12042352?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/12042352/retrieve-month-day-and-year-values-from-a-string-using-java?rq=1" class="question-hyperlink">Retrieve Month, Day and Year values from a String using Java</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13992401?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/13992401/get-day-year-and-month-for-itself?rq=1" class="question-hyperlink">Get day, year and month for itself</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16067968?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/16067968/fast-way-to-parse-a-long-date-into-month-day-year-string?rq=1" class="question-hyperlink">Fast way to parse a Long date into Month-Day-Year String</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16822465?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/16822465/unparseable-string-unparseable-date-wed-may-29-163458-art-2013-only-on-r?rq=1" class="question-hyperlink">Unparseable string: [Unparseable date: “Wed May 29 16:34:58 ART 2013”] only on remote server</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18142192?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-4
+    </div>
+</a><a href="http://stackoverflow.com/questions/18142192/get-the-date-month-from-total-days-in-a-year-java?rq=1" class="question-hyperlink">Get the date/month from total days in a year- java</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18402698?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/18402698/comparing-dates-in-java-only-years-months-and-days?rq=1" class="question-hyperlink">Comparing dates in Java - only years, months and days</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/20014692?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-3
+    </div>
+</a><a href="http://stackoverflow.com/questions/20014692/read-date-from-a-file-and-return-a-string-of-month-date-year?rq=1" class="question-hyperlink">read date from a file and return a string of month, date, year</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21473086?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/21473086/getting-date-from-user-mm-dd-yyyy-checking-to-see-if-it-is-valid-printing-da?rq=1" class="question-hyperlink">Getting date from user (mm/dd/yyyy), checking to see if it is valid, printing date (month, day year)</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22773412?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-1
+    </div>
+</a><a href="http://stackoverflow.com/questions/22773412/compare-dates-to-get-elapsed-day-month-year?rq=1" class="question-hyperlink">Compare Dates to get Elapsed Day,Month,Year</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/24292/how-to-move-a-bicycle-by-bicycle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to move a bicycle by bicycle
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/35513/if-a-baby-is-born-on-an-international-flight-over-international-waters-what-nat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If a baby is born on an international flight over international waters, what nationality are they?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/197614/how-attach-circ-to-each-horizontal-labels-representing-angles" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How attach \circ to each horizontal labels representing angles?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/514748/what-does-dev-null-mean-in-a-shell-script" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does /dev/null mean in a shell script?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/197485/practical-use-of-lua" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Practical use of lua
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/57994/isolating-string-characters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Isolating string characters
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/32785/is-it-professional-for-interviewers-to-end-a-job-interview-midway-if-not-happy-w" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it professional for interviewers to end a job interview midway if not happy with candidate?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/32062/how-to-understand-it-is-in-what-it-is-he-is-trying-to-express" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to understand "it is" in "what it is he is trying to express"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/192764/is-versionize-a-real-word" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is versionize a real word?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/192371/how-do-i-politely-say-i-have-used-my-mouth-while-drinking-water-from-a-bottle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I politely say I have used my mouth while drinking water from a bottle?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/192429/whats-an-idiom-for-something-that-youve-heard-many-times" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's an idiom for something that you've heard many times?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46603/does-burning-hands-really-require-touching-thumbs" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does Burning Hands really require touching thumbs?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/253925/how-to-avoid-being-forked-into-oblivion-by-a-more-powerful-contributor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to avoid being forked into oblivion by a more powerful contributor?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/46494/which-acid-is-the-most-effective-against-oxidation-of-avocados" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which acid is the most effective against oxidation of avocados?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/36645/brainfuckedbotsforbattling-a-brainfuck-tournament" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    BrainFuckedBotsForBattling - A Brainfuck Tournament
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27440/how-do-academics-get-away-with-writing-detailed-recommendation-letters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do academics get away with writing detailed recommendation letters?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23099/whats-a-guide-in-the-studio-recording-process" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's a "guide" in the studio recording process?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-earthscience" title="Earth Science Stack Exchange"></div><a href="http://earthscience.stackexchange.com/questions/2401/what-exactly-is-wind-velocity" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:553 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What exactly is wind velocity
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/800329/why-are-they-putting-processors-on-hard-drives" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are they putting "processors" on hard drives?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/15541/turn-lead-into-gold-via-radioactive-decay" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Turn lead into gold via radioactive decay
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/57983/how-can-i-only-draw-outer-common-tangent-to-two-circles" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I only draw outer common tangent to two circles?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/47964/should-i-reinforce-my-lap-joint" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I reinforce my lap-joint?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46547/solo-player-best-way-to-mitigate-tiny-party-size" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Solo player: best way to mitigate tiny party size?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/181815/why-didnt-this-flush-win-the-game" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't this flush win the game?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/15142860" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/15142860/ivc/1ea6');});
+</script>
+<noscript>
+    <div><img src="/posts/15142860/ivc/1ea6" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.22.1792
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="java%20-%20i%20want%20to%20get%20day%20name%20,%20day%20,%20month%20,year%20from%20the%20date%20stored%20in%20String%20like%20%27Wed,%2027%20feb%202013%27%20-%20Stack%20Overflow_files/read.htm"></iframe></div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('java,spring-mvc');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|java|spring-mvc|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

@@ -1,0 +1,233 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Beginning Java - Unit 6 Arrays - Bubble Sort</title>
+<meta name="description" content="Beginning Java - Unit 6 Arrays - Bubble Sort">
+<meta name="author" content="Donna Roberts">
+<meta mame="keywords" content="programming in Java beginners JBuilder arrays">
+<meta name="copyright" content="Frederick and Donna Roberts, MathBits.com"> 
+<meta http-equiv="pragma" content="NO-CACHE">
+<style fprolloverstyle="">A:hover {color: #996633}
+</style>
+<script language="JavaScript">
+<!-- Begin
+if (window != top) top.location.href = location.href;
+// End -->
+</script>
+</head>
+
+
+<body link="#000000" vlink="#000000" alink="#000000" bgcolor="#336699">
+
+<div align="center">
+  <center>
+  <table style="border-collapse: collapse" id="AutoNumber1" height="640" width="700" bgcolor="#FFFFFF" border="5" bordercolor="#C0C0C0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td height="495" valign="top" width="700">
+      <table style="border-collapse: collapse" id="AutoNumber2" width="100%" border="0" bordercolor="#111111" cellpadding="0">
+        <tbody><tr>
+          <td width="6%" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/backnote.gif">&nbsp;</td>
+          <td width="94%">
+      <p align="center">
+      <br>
+		<map name="FPMap0">
+		<area href="http://mathbits.com/" shape="rect" coords="459, 104, 561, 125" alt="MathBits.com">
+		</map>
+		<img src="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/arraybutton.jpg" usemap="#FPMap0" height="144" width="577" border="0"><br>
+		<font face="Times New Roman" size="2"><a href="http://mathbits.com/MathBits/Java/arrays/arrays.htm">Return to Unit 
+		Menu</a> | <a href="http://mathbits.com/MathBits/Java/JavaOpenPage.htm">Java Main Page</a> |
+		<a href="http://mathbits.com/">MathBits.com</a> |
+		<a href="http://mathbits.com/MathBits/TermsOfUse/termsofuse.htm">Terms 
+		of Use </a>&nbsp;| <a href="http://mathbits.com/MathBits/Java/ResourceCD/ResourceCD.htm">Java Resource CD</a></font>
+		<br>
+		<br>
+		<b><font size="7">Bubble Sort</font></b></p><div align="center">
+  <center>
+
+
+
+<table width="603" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td valign="top" width="786">
+
+
+
+<div align="center">
+  <center>
+  <table width="599" border="0">
+    <tbody><tr>
+      <td width="141">
+      <p align="center">
+      <img src="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/bubleglass.gif" height="253" width="128" border="0"></p></td>
+      <td valign="top" width="448">
+        <p align="center"><br>
+		In the <font color="#000080"><b> bubble sort, </b> </font>as elements 
+		are sorted they gradually
+        "bubble" (or rise) to their proper location in the array, like bubbles rising in a glass of soda.  
+		The bubble sort
+        repeatedly compares <font color="#000080"><b> adjacent elements</b></font> of an
+        array. The first and second elements are compared and swapped if out of 
+		order.&nbsp; Then the second and third elements are compared and swapped 
+		if out of order.&nbsp;  This 
+		sorting process continues until the last two elements of the array are 
+		compared and swapped if out of order.<br>
+		<br>
+		<img src="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/BubbleChart.gif" height="69" width="336" border="0"></p></td>
+    </tr>
+  	<tr>
+      <td colspan="2" width="589">
+      <p align="center">When this first pass through the array is complete, the bubble sort returns to 
+		elements one and two and starts the process all over again.&nbsp; So, when 
+		does it stop?&nbsp; <b><font color="#000080">The bubble sort knows that it is 
+		finished when it examines the entire array and no "swaps" are needed 
+		(thus the list is in proper order).</font><font color="#cc3300">&nbsp; </font>
+		</b>The bubble sort keeps track of the occurring swaps by the use of 
+		a flag.&nbsp;<br>
+		<br>
+		The table below follows an array of numbers before, during, and after a 
+		bubble sort for <i>descending</i> order.&nbsp; A "pass" is defined as one 
+		full trip through the array comparing and if necessary, swapping, <b>
+		adjacent </b>elements.&nbsp; Several passes have to be made through the array 
+		before it is finally sorted.&nbsp; <br>
+&nbsp;</p></td>
+      </tr>
+  </tbody></table>
+  </center>
+</div>
+<div align="center">
+  <center>
+  <table style="border-collapse: collapse" width="503" border="1" bordercolor="#808080">
+    <tbody><tr>
+      <td width="165" align="center" bgcolor="#99CCFF"><b>Array at beginning:&nbsp;</b></td>
+      <td width="51" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">84</td>
+      <td width="48" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">69</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">76</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">86</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">94</td>
+      <td width="55" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">91</td>
+    </tr>
+    <tr>
+      <td width="165" align="center" bgcolor="#99CCFF"><b>After Pass #1:</b></td>
+      <td width="51" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">84</td>
+      <td width="48" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">76</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">86</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">94</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">91</td>
+      <td width="55" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">69</td>
+    </tr>
+    <tr>
+      <td width="165" align="center" bgcolor="#99CCFF"><b>After Pass #2:&nbsp;</b></td>
+      <td width="51" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">84</td>
+      <td width="48" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">86</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">94</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">91</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">76</td>
+      <td width="55" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">69</td>
+    </tr>
+    <tr>
+      <td width="165" align="center" bgcolor="#99CCFF"><b>After Pass #3:&nbsp;</b></td>
+      <td width="51" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">86</td>
+      <td width="48" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">94</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">91</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">84</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">76</td>
+      <td width="55" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">69</td>
+    </tr>
+    <tr>
+      <td width="165" align="center" bgcolor="#99CCFF"><b>After Pass #4:&nbsp;</b></td>
+      <td width="51" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">94</td>
+      <td width="48" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">91</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">86</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">84</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">76</td>
+      <td width="55" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">69</td>
+    </tr>
+    <tr>
+      <td width="165" align="center" bgcolor="#99CCFF"><b>After Pass #5 (done):&nbsp;</b></td>
+      <td width="51" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">94</td>
+      <td width="48" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">91</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">86</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">84</td>
+      <td width="46" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">76</td>
+      <td width="55" align="center" background="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/blueblock.gif">69</td>
+    </tr>
+  </tbody></table>
+  <p>The bubble sort is an easy algorithm to program, but it is slower than many 
+	other sorts.&nbsp; With a bubble sort, it is always necessary to make one final 
+	"pass" through the array to check to see that no swaps are made to ensure 
+	that the process is finished.&nbsp; In actuality, the process is finished before 
+	this last pass is made.</p>
+	<p>&nbsp;</p>
+  </center>
+</div>
+<p align="left"><b><font size="5" color="#000080">// Bubble Sort <i>Method</i> for Descending Order&nbsp;</font></b><br>
+<font face="Arial">public static void BubbleSort( int [ ] num )<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp; int j;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; boolean flag = true;&nbsp;&nbsp; <b>
+<font color="#008000">// set flag to true to begin first pass<br>
+</font></b>&nbsp;&nbsp;&nbsp;&nbsp; int temp;&nbsp;&nbsp; <b><font color="#008000">
+//holding variable<br>
+<br>
+</font></b>&nbsp;&nbsp;&nbsp;&nbsp; 
+while ( flag )<br>
+&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+flag= false;&nbsp;&nbsp;&nbsp; <b><font color="#008000">//set flag to false 
+awaiting a possible swap</font></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( j=0;&nbsp; 
+j &lt; num.length -1;&nbsp; j++ )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if ( num[ j ] &lt; num[j+1] )<font color="#008000"><b>&nbsp;&nbsp; // change to 
+&gt; for ascending sort<br>
+</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+temp = num[ j 
+];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><font color="#008000">&nbsp;//swap elements</font></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+num[ j ] = num[ j+1 ];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+num[ j+1 ] = temp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+flag = 
+true;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#008000">&nbsp;//shows a swap occurred&nbsp; </font></b>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+} <br>
+&nbsp;</font></p><p align="center"><font face="Times New Roman">Remember that a 
+bubble sort will continue until no swaps have occurred,<br>
+meaning that the array is in the proper sorted order.</font></p></td>
+</tr>
+</tbody></table>
+</center></div>
+    		
+			<p align="center">
+          <img src="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/mouse1.gif" height="32" width="500" border="0"><br>
+		<font face="Times New Roman" size="2"><a href="http://mathbits.com/MathBits/Java/arrays/arrays.htm">Return to Unit 
+		Menu</a> | <a href="http://mathbits.com/MathBits/Java/JavaOpenPage.htm">Java Main Page</a> |
+		<a href="http://mathbits.com/">MathBits.com</a> |
+		<a href="http://mathbits.com/MathBits/TermsOfUse/termsofuse.htm">Terms 
+		of Use </a>&nbsp;| <a href="http://mathbits.com/MathBits/Java/ResourceCD/ResourceCD.htm">Java Resource CD</a></font><font size="2"><br><br>
+          <script language="JavaScript" src="Beginning%20Java%20-%20Unit%206%20Arrays%20-%20Bubble%20Sort_files/CopyrightJava.js">
+          </script><font face="Times New Roman" size="2" color="#000000">Copyright 2000-2015 <a href="http://mathbits.com/"> MathBits.com</a></font><br><font face="Times New Roman" size="2" color="#000000">All Rights Reserved</font> 
+          
+         	</font></p><font size="2">
+          </font></td>
+        </tr>
+      </tbody></table>
+       
+    </td></tr></tbody></table>
+  </center>
+</div>
+
+
+
+</body></html>

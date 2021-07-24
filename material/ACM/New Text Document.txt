@@ -1,0 +1,34 @@
+nside your for loop
+How many lines you are reading ?
+Only one line .... (line 26)
+and How many tokens you are reading ?
+Three times at least (lines 27,28,30)
+This means every line should contain 3 tokens which is NOT true
+
+-You are missing reading a new line for every iteration inside of x loop
+
+-You are missing clearing arraylists for every test case
+- Your output format is NOT the same as the required format
+
+and I am not considering your algorithm correctness
+
+2 1
+1 0
+3 2
+1 3
+3 2
+-1 -1
+
+
+3
+23 + 47 = machula
+3247 + 5machula2 = 3749
+machula13 + 75425 = 77038
+
+2
+30
+101
+3
+2
+3
+5

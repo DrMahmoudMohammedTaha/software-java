@@ -1,0 +1,648 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+        <link rel="alternate" type="application/rss+xml" title="JavaRanch: JList : how to add one simple element to a existing list??" href="http://www.coderanch.com/forums/rss/topicPosts/345063">
+    <meta name="description" content="Hello guys   after to hate google   [code]   private void miButtonAgregarItemActionPerformed(java.awt.event.ActionEvent evt) {                        ">
+
+<style type="text/css">@import url( /templates/default/styles/style.css?1408463054036 );</style>
+
+    <style type="text/css">@import url( /templates/default/styles/SyntaxHighlighter.css?1408463054036 );</style>
+
+<title>JList : how to add one simple element to a existing list?? (Swing / AWT / SWT forum at JavaRanch)</title>
+
+    <link rel="canonical" href="http://www.coderanch.com/t/345063/GUI/java/JList-add-simple-element-existing">
+    <link rel="alternate" media="handheld" href="http://www.coderanch.com/mobile/t/345063/GUI/java/JList-add-simple-element-existing?foo=a">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-saloon-os.xml" title="JavaRanch Saloon">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.coderanch.com/how-to/javaranch-faq-os.xml" title="JavaRanch FAQ">
+<style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style></head>
+
+<body class="en_US"><div style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;" id="WzTtDiV"></div>
+<script src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/jquery_002.js"></script>
+
+
+    <div class="shngl" id="topShngl" align="center">
+        <center><table border="1" cellpadding="15" vspace="30" width="55%"><tbody><tr bgcolor="#f0e6d5"><td><center><font size="2"> 
+
+<b>File APIs for Java Developers</b><br>
+Manipulate DOC, XLS, PPT, PDF and many others from your application.<br>
+<b><a href="http://www.coderanch.com/forums/banner/redirect/551" target="_blank">http://aspose.com/file-tools</a></b>
+</font>
+</center></td></tr></tbody></table></center>
+    </div>
+    <div id="cbwona" align="center"></div>
+
+
+
+<table border="0" width="100%">
+    <tbody><tr>
+        <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td align="center">
+
+                            <img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/moosefly.gif" alt="The moose likes Swing / AWT / SWT and the fly likes JList : how to add one simple element to a existing list??" title="" border="0" vspace="1">
+                    </td>
+                    <td class="logo" valign="middle">
+                        A friendly place for programming greenhorns!
+                    </td>
+
+                    <td align="center" valign="middle" width="100%">
+                        <span class="boardtitle">Big Moose Saloon</span>
+                        <table border="0" cellpadding="2" cellspacing="0">
+                            <tbody><tr>
+                                <td align="center" nowrap="nowrap" valign="top">&nbsp;
+                                    <a id="search" class="mainmenu" href="http://www.coderanch.com/forums/search/filters/2"><b>Search</b></a>
+                                    | <a id="faq" class="mainmenu nonForumLink" href="http://www.coderanch.com/how-to/java/Java-FAQ"><b>Java FAQ</b></a>
+                                    | <a id="latest" class="mainmenu" href="http://www.coderanch.com/forums/recentTopics/list">Recent Topics</a>
+                                    | <a id="flagged" class="mainmenu" href="http://www.coderanch.com/forums/posts/flagged">Flagged Topics</a>
+                                    | <a id="hottest" class="mainmenu" href="http://www.coderanch.com/forums/hottestTopics/list">Hot Topics</a>
+                                    | <a id="moderationlog" class="mainmenu" href="http://www.coderanch.com/forums/posts/zeroReplies">Zero Replies</a>
+
+
+                                    <br>
+
+
+                                        <a id="login" class="mainmenu" href="http://www.coderanch.com/forums/user/login">Register / Login</a>
+                                        <br>
+
+                                    </td>
+                                </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/userLocalTime.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/jquery.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/post_show.js"></script>
+<script type="textcomme/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/post.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/pagination.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/wz_tooltip.js"></script>
+
+
+<script type="text/javascript">
+var CONTEXT_PATH = "";
+function showEmail(beforeAt, afterAt)
+{
+	return beforeAt + "@" + afterAt;
+}
+
+function addBookmark(relationType, relationId)
+{
+	var w = window.open('/forums/bookmarks/insert/' + relationType + '/' + relationId + '', 'bookmark_add', 'width=700, height=200, scrollbars=auto, resizable=true');
+	w.focus();
+}
+var forumUrlPrefix = "/forums";
+var imagesServedFrom = "http://cache-www.coderanch.com";
+
+
+    function reportToModerationPrompt(postId, topicId) {
+        var reason = prompt("Please explain why you feel this post is either abusive or in violation of forum policies or needs to be copied or moved to a different forum:");
+
+        if (reason == null || reason == "") {
+            alert("You have cancelled reporting this thread or missed providing a reason.  If you still want to report this thread, please click report again.");
+            return false;
+        } else {
+        	var link = '/jforum?module=posts&action=reportToModerator&post_id=' + postId + '&topic_id=' + topicId;
+            link += "&reason=" + encodeURIComponent(reason);
+        }
+        submitForm(link);
+
+        return true;
+    }
+
+    var watchImage = "http://cache-www.coderanch.com/templates/default/images/watch_topic_start.gif";
+    var unwatchImage = "http://cache-www.coderanch.com/templates/default/images/stop_watching.gif";
+    var watchURL = "/forums/posts/watch/0/345063";
+    var unwatchURL = "/forums/posts/unwatch/0/345063";
+    var unwatchHandler = function() { turnOn=false; toggleWatch(); return false; };
+    var watchHandler = function() { turnOn=true; toggleWatch(); return false; };
+    var turnOn, remove;
+
+    function toggleWatch () {
+        $.ajax({
+            url: turnOn ? watchURL : unwatchURL,
+            type: 'POST',
+            dataType: 'json',
+            headers: {'OWASP_CSRFTOKEN': 'G8XV-NIBI-C0QB-ERIJ-VGHL-GR7Y-MU80-38FD'},
+            success: function (data) {
+                //$("#messages").html(data.message);
+                if (turnOn) {
+                    $(".toggleWatchImage")[0].src = unwatchImage;
+                    $(".toggleWatchImage")[1].src = unwatchImage;
+                    $(".toggleWatchLink")[0].href = unwatchURL;
+                    $(".toggleWatchLink")[1].href = unwatchURL;
+                    $(".toggleWatchLink")[0].onclick = unwatchHandler;
+                    $(".toggleWatchLink")[1].onclick = unwatchHandler;
+                } else {
+                    if (remove) {
+                        // for unwatching locked topics
+                        $(".toggleWatchImage")[0].style.visibility = "hidden";
+                        $(".toggleWatchImage")[1].style.visibility = "hidden";
+                        $(".toggleWatchLink")[0].href = "#";
+                        $(".toggleWatchLink")[1].href = "#";
+                        $(".toggleWatchLink")[0].onclick = "return false;";
+                        $(".toggleWatchLink")[1].onclick = "return false;";
+                    } else {
+                        $(".toggleWatchImage")[0].src = watchImage;
+                        $(".toggleWatchImage")[1].src = watchImage;
+                        $(".toggleWatchLink")[0].href = watchURL;
+                        $(".toggleWatchLink")[1].href = watchURL;
+                        $(".toggleWatchLink")[0].onclick = watchHandler;
+                        $(".toggleWatchLink")[1].onclick = watchHandler;
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+
+
+<form id="helperForm" name="helperForm" action="#" method="post"><input name="OWASP_CSRFTOKEN" value="G8XV-NIBI-C0QB-ERIJ-VGHL-GR7Y-MU80-38FD" type="hidden"></form>
+<script>
+function submitForm(newAction) {
+	var form = document.helperForm;
+	form.action = newAction;
+	helperForm.submit();
+}</script>
+
+
+<table border="0" cellpadding="10" cellspacing="0" align="center" width="97%">
+    <tbody><tr>
+        <td class="bodyline">
+        <span class="nav">
+            <a class="maintitle" href="http://www.javaranch.com/">JavaRanch</a> » <a class="maintitle" href="http://www.coderanch.com/forums">Java Forums</a> »
+            <a class="maintitle" href="http://www.coderanch.com/forums/c/1/java">Java</a> »
+            <a class="maintitle" href="http://www.coderanch.com/forums/f-2/GUI">Swing / AWT / SWT</a>
+        </span>
+
+
+
+            
+<table class="threadbar" border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody><tr>
+    <td align="left" valign="middle">
+    			<img class="opaque" title="You must login or register" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/bookmark_it.gif" alt="Bookmark &quot;JList : how to add one simple element to a existing list??&quot;" height="25" width="82">
+		<img class="opaque" title="You must login or register" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/watch_topic_start.gif" alt="Watch &quot;JList : how to add one simple element to a existing list??&quot;" height="25" width="82">
+    </td>
+    <td align="right">
+      	<img class="opaque" title="You must login or register" alt="New topic" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/post.gif" height="25px" width="82px">
+    </td>    
+  </tr>
+</tbody></table>
+
+            <a name="1515230">
+
+
+                </a><table id="postTable" class="forumline" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                    <th class="author" nowrap="nowrap" width="18%">Author</th>
+                    <th class="subject">
+                        <h1>                           <span id="topicFlags" class="flag"></span>
+                            <span id="topicSubject">JList : how to add one simple element to a existing list??</span>
+                        </h1>
+                    </th>
+                </tr>
+
+
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row1 userPostInfo" rowspan="3" align="left" valign="top">
+                            <a name="1515230"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/135142/Manuel-Jordan">Manuel Jordan</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Ranch Hand
+    <br>
+
+<br>
+
+
+    Joined: Sep 29, 2006<br>
+    Posts: 131
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row1" valign="top">
+<div class="postinfo row1">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 06, 2007 18:05:00".toLocaleDateTime();</script>06/08/2007 22:05<noscript><span class="lastPostTime">Aug 06, 2007 12:05:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1515230" class="likesHiddenDiv">
+				<img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row1 postbody" id="post_text_1515230" valign="top">
+
+                            <span class="postbody">
+                                    Hello guys<br>  <br> after to hate google<br>  <br> <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><div style="margin-top:5px;"><label>Note: Text content in the code blocks is automatically word-wrapped</label></div></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;miButtonAgregarItemActionPerformed(java.awt.event.ActionEvent&nbsp;evt)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;TODO&nbsp;add&nbsp;your&nbsp;handling&nbsp;code&nbsp;here:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;javax.swing.DefaultListModel&nbsp;listModel&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;javax.swing.DefaultListModel();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(</span><span class="keyword">int</span><span>&nbsp;i=</span><span class="number">0</span><span>&nbsp;;&nbsp;i&lt;</span><span class="keyword">this</span><span>.miList1.getModel().getSize()&nbsp;;&nbsp;i++&nbsp;){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listModel.addElement(<span class="keyword">this</span><span>.miList1.getModel().getElementAt(i));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listModel.addElement(<span class="string">"new"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span>.miList1.setModel(listModel);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java" cols="60" rows="10">
+ 
+ private void 
+miButtonAgregarItemActionPerformed(java.awt.event.ActionEvent evt) {    
+                                                
+        // TODO add your handling code here:        
+        javax.swing.DefaultListModel listModel = new 
+        javax.swing.DefaultListModel();
+        for(int i=0 ; i&lt;this.miList1.getModel().getSize() ; i++ ){
+            
+listModel.addElement(this.miList1.getModel().getElementAt(i));
+        }        
+        listModel.addElement("new");
+        this.miList1.setModel(listModel);
+        
+    }        
+ 
+   </textarea><br> exists a way to avoid the "for" iteration? , i cant find a way to do that<br>  <br> <br> if i init my swing with a Jlist with already 5 elements and then i press a <a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html" class="api" title="Java API" target="_new">JButton</a> and the event is executed, the code before shown must be executed and work<br>  <br> but if i have a list with 50 elements, so "for" iteration is not a good approach to acomplish this<br>  <br> pls<br>  help<br>  <br> thanks for advanced<br> (i use jdk 1.5_09)
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td colspan="2" class="row1" height="28" width="100%">
+                            <br>
+                                <hr>
+                                <span class="userSignature">kill your pride, share your knowledge with all</span>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="spacerow row1" colspan="2" height="1"><img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row2 userPostInfo" rowspan="2" align="left" valign="top">
+                            <a name="1515231"></a>
+<span class="authorName"><a href="http://www.coderanch.com/u/29065/Justin-Chu">Justin Chu</a></span>
+
+
+<br>
+
+<span class="gensmall">
+    Ranch Hand
+    <br>
+
+<br>
+
+
+    Joined: Apr 19, 2002<br>
+    Posts: 209
+<br>
+
+
+</span>
+
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;<div class="gen numCowsImage"><div class="numCowsImageText">&nbsp;&nbsp;&nbsp;&nbsp;1</div></div>
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row2" valign="top">
+<div class="postinfo row2">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 06, 2007 18:26:00".toLocaleDateTime();</script>06/08/2007 22:26<noscript><span class="lastPostTime">Aug 06, 2007 12:26:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1515231" class="likesHiddenDiv">
+				<img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row2 postbody" id="post_text_1515231" valign="top">
+
+                            <span class="postbody">
+                                    Initialize the default model and keep a reference to it.<br>  <br> <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><div style="margin-top:5px;"><label>Note: Text content in the code blocks is automatically word-wrapped</label></div></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">class</span><span>&nbsp;MyFrame&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;DefaultListModel&nbsp;listModel&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;DefaultListModel();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;JList&nbsp;list&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;JList(listModel);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;actionPerformed(ActionEvent&nbsp;evt)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;listModel.addElement(<span class="string">"new"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java" cols="60" rows="10">class MyFrame {
+  DefaultListModel listModel = new DefaultListModel();
+  JList list = new JList(listModel);
+ 
+  public void actionPerformed(ActionEvent evt) {
+    listModel.addElement("new");
+  }
+}
+</textarea>
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row2" colspan="2" height="1"><img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+
+
+                    <tr class="firstRowOfPost">
+
+
+
+                        <td class="row1 userPostInfo" rowspan="2" align="left" valign="top">
+                            <a name="1515232"></a>
+<span class="authorNameNoLink" title="You must login or register">Manuel Jordan</span>
+
+
+<br>
+
+<span class="gensmall">
+    Ranch Hand
+    <br>
+
+<br>
+
+
+    Joined: Sep 29, 2006<br>
+    Posts: 131
+<br>
+
+
+</span>
+
+
+
+
+                        </td>
+
+                        <td colspan="1" class="row1" valign="top">
+<div class="postinfo row1">
+	<div class="date">
+		<span class="postdetails">posted <script>"Aug 06, 2007 20:22:00".toLocaleDateTime();</script>07/08/2007 00:22<noscript><span class="lastPostTime">Aug 06, 2007 14:22:00</span></noscript></span>
+	    
+
+		<img class="opaque" alt="purple mooseage" title="You must login or register" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/icon_pm.gif" height="18px" width="59px">
+
+
+    </div>
+	<div class="action">
+			<div id="like_message_1515232" class="likesHiddenDiv">
+				<img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/thumbs-up.gif">
+				0        
+			</div>
+	</div>
+</div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="messageRow">
+
+                        <td class="row1 postbody" id="post_text_1515232" valign="top">
+
+                            <span class="postbody">
+                                    thanks so much<br>  <br> jus wondered by use an extra element <b>listModel</b><br>  <br> thanks again
+                            </span>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="spacerow row1" colspan="2" height="1"><img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/spacer.gif" alt="" height="1" width="1"></td>
+                    </tr>
+
+            <tr>
+            <td bgcolor="#DEC7A4" width="18%"><img src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/bunkhouse_smoke.gif"></td>
+            <td align="left" bgcolor="#DEC7A4" valign="top" width="82%">
+                &nbsp;<br>
+                    <div class="shngl" align="left">
+                        <span style="font-size: 12px; line-height: 1.5em;">
+I agree.  Here's the link:  <a href="http://www.coderanch.com/forums/banner/redirect/578">http://aspose.com/file-tools</a></span>
+                    </div>
+                &nbsp;<br>
+                </td>
+                </tr>
+                <tr class="postbody" align="left">
+                    <td colspan="2">
+                    subject: JList : how to add one simple element to a existing list??
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td class="catbottom" colspan="2" height="28">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td align="center"><span class="gensmall">&nbsp;</span></td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+
+
+            <table align="center" width="100%">
+
+				
+				<tbody><tr>
+    				<td>
+                
+                	
+                	<div class="similarThreadsSec">
+                		<div class="hdr">Similar Threads</div>
+
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/338352/GUI/java/listModel">
+	           	listModel problem
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row1">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/403545/java/java/JList">
+	           	need help on JList
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/571281/java/java/JList-null-pointer-exception">
+	           	JList null pointer exception
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row1">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/332114/GUI/java/scrollable-JList">
+	           	A scrollable JList?
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+    <div class="item row0">
+    	<div class="left middle">
+	       	<a href="http://www.coderanch.com/t/346725/GUI/java/update-JList">
+	           	How to update JList 
+	        </a>
+        </div>
+        <div class="right middle">
+   		</div>
+    </div>
+                        
+                        
+                            
+                	</div>
+                
+                
+    				</td>
+    			</tr>
+
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+<a name="quick"></a>
+
+
+		</td>
+	</tr>
+</tbody></table>
+<div class="gensmall center">
+<script>
+document.write("All times above are in your local time zone & format.");
+document.write("The current ranch time (not your local time) is ");
+document.write("Aug 23, 2014 03:30:35".bold() + ".");
+</script>All times above are in your local time zone &amp; format.The current ranch time (not your local time) is <b>Aug 23, 2014 03:30:35</b>.<noscript>All times are in JavaRanch time: GMT-6 in summer, GMT-7 in winter</noscript>
+</div>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2371260-2']);
+	_gaq.push(['_gat._anonymizeIp']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<br>
+<div class="float-divider"></div>
+<div id="footer">
+ <div class="footerLinksDiv center">
+	<a class="nonForumLink" href="http://www.coderanch.com/how-to/code/ContactUs">Contact Us</a>
+	| Powered by <a href="http://www.jforum.net/" target="_blank">JForum</a>
+	| <span class="copyrightOwner">Copyright © 1998-2014 <a href="http://www.javaranch.com/paul-wheaton.jsp">Paul Wheaton</a></span>
+ </div>
+</div>
+<div class="float-divider"></div>
+<!-- SyntaxHighlighter 1.5.1 -->
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shCore.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushCss.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushJava.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushCpp.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushPython.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushRuby.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushSql.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushXml.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushPlain.js"></script>
+<script type="text/javascript" src="JList%20%20%20how%20to%20add%20one%20simple%20element%20to%20a%20existing%20list%20%20%28Swing%20_%20AWT%20_%20SWT%20forum%20at%20JavaRanch%29_files/shBrushPhp.js"></script>
+                                                
+
+<script type="text/javascript">
+<!--
+dp.sh.ClipboardSwf = '/templates/default/js/clipboard.swf';
+dp.sh.HighlightAll('code');
+-->
+</script>
+
+
+
+
+<script type="text/javascript">
+	function blkd(eId, fId){
+		if (/bot|googlebot|bingbot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) return;
+
+		var s=document.getElementById(eId);
+		if (s==null || s.clientHeight > 20) return; 
+
+		var imgs = document.getElementById(eId).getElementsByTagName("img");
+		for (i = 0; i < imgs.length; i++) {
+			if (imgs[i].src.indexOf(window.location.origin) != 0 && imgs[i].src.indexOf("/") != 0) continue;
+			var img = imgs[i].src.split("/");
+			if (img.length < 5) continue; 
+			imgs[i].className = "";
+			var name = img.length > 4 ? img[4] : img[img.length - 1];
+			for (j = 5; j < img.length; j++) name = name + "/" + img[j];
+			imgs[i].src = "/t/35/b/30/" + name.replace(/\//g, "~");
+		}
+
+		$('#' + fId).append($('#' + eId).html());
+	}
+
+	$(window).load(function() {
+		blkd('topShngl', 'cbwona');
+		blkd('lowShngl', 'osypr');
+    });
+</script>
+
+
+
+</body></html>

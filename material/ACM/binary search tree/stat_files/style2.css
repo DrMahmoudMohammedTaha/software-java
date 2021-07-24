@@ -1,0 +1,174 @@
+#appnext_ad_holder {
+    position: absolute;
+    left: 50%;
+    top: 400px;
+    width: 552px;
+    height: 362px;
+    margin-left: -276px;
+    margin-top: -181px;
+
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 50px #222222, 0px 0px 50px #222222;
+
+    font-family: arial;
+}
+
+#appnext_ad_holder {
+    background: #555555;
+}
+
+#appnext_ad_inner {
+    margin: 12px;
+    width: 528px;
+    height: 320px;
+
+    border-radius: 10px;
+}
+
+.appnext_ad_inner_default {
+    background: rgb(38,38,38); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(38,38,38,1) 0%, rgba(128,128,128,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(38,38,38,1)), color-stop(100%,rgba(128,128,128,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(38,38,38,1) 0%,rgba(128,128,128,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(38,38,38,1) 0%,rgba(128,128,128,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(38,38,38,1) 0%,rgba(128,128,128,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(38,38,38,1) 0%,rgba(128,128,128,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#808080',GradientType=0 ); /* IE6-9 */
+}
+
+#appnext_ad_title {
+    position: absolute;
+    top: 43px;
+    left: 50%;
+    width: 490px;
+    margin-left: -245px;
+
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#appnext_ad_blurb {
+    position: absolute;
+    left: 305px;
+    top: 90px;
+    width: 210px;
+    height: 135px;
+
+    font-size: 12px;
+    text-align: left;
+}
+
+#appnext_ad_blurb_title {
+    font-weight: bold;
+}
+
+#appnext_ad_image {
+    position: absolute;
+    left: 30px;
+    top: 100px;
+    width: 260px;
+    height: 120px;
+
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+#an_rounded_corners {
+    border-radius: 15px;
+}
+
+#appnext_play_button, #appnext_next_button {
+    position: absolute;
+    top: 260px;
+    height: 50px;
+
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5),inset 2px 2px 3px rgba(255, 255, 255, 0.5),inset -2px -2px 3px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    opacity: 0.9;
+}
+
+#appnext_play_button:hover, #appnext_next_button:hover {
+    opacity: 1;
+}
+
+#appnext_play_button {
+    left: 270px;
+    width: 150px;
+
+    background: rgb(255,178,41); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,178,41,1) 0%, rgba(255,250,228,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,178,41,1)), color-stop(100%,rgba(255,250,228,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,178,41,1) 0%,rgba(255,250,228,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,178,41,1) 0%,rgba(255,250,228,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,178,41,1) 0%,rgba(255,250,228,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,178,41,1) 0%,rgba(255,250,228,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb229', endColorstr='#fffae4',GradientType=0 ); /* IE6-9 */
+
+}
+
+#appnext_next_button {
+    left: 430px;
+    width: 80px;
+
+    background: #818181;
+}
+
+#appnext_close_button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 28px;
+    height: 28px;
+    background: url(https://appnext-a.akamaihd.net/appnext_html_popup/images/close_button_new.png) no-repeat;
+    border: none;
+
+    opacity: 0.9;
+}
+
+#appnext_close_button:hover {
+    opacity: 1;
+}
+
+#appnext_report_button {
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    width: 20px;
+    height: 19px;
+
+    background: url(https://appnext-a.akamaihd.net/appnext_html_popup/images/report_button.png);
+    border: none;
+
+    opacity: 0.9;
+
+    cursor: pointer;
+}
+
+#appnext_report_button:hover {
+    opacity: 1;
+}
+
+#appnext_ad_logo {
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+    width: 118px;
+    height: 33px;
+
+    background: url(https://appnext-a.akamaihd.net/appnext_html_popup/images/logo.png);
+
+    cursor: pointer;
+}

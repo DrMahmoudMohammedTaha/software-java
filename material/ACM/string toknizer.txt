@@ -1,0 +1,40 @@
+example 1
+StringTokenizer st = new StringTokenizer("this is a test");
+     while (st.hasMoreTokens()) {
+         System.out.println(st.nextToken());
+     }
+ 
+prints the following output:
+
+     this
+     is
+     a
+     test
+
+example 2
+StringTokenizer st = new StringTokenizer("Come/to/learn");
+      
+      // checking next token
+      System.out.println("Next token is : " + st.nextToken("/"));
+
+prints the following output:
+Next token is : Come
+
+example 3:
+the input is 
+3
+24 1
+4358 754
+305 794
+
+
+to read the input :
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    int l=Integer.parseInt(br.readLine());
+            for (int j = 0; j <l ; j++) 
+            {
+              StringTokenizer st=new StringTokenizer(br.readLine().toString());
+              int x =Integer.parseInt(st.nextToken());
+               // System.out.println(x);
+              int y=Integer.parseInt(st.nextToken());
+	    }

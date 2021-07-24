@@ -1,0 +1,239 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="Fred Swartz (www.fredswartz.com)">
+  <meta name="level" content="1">
+  <link rel="stylesheet" type="text/css" href="Java%20Notes%20%20Keyboard_files/notes.css">
+
+  <title>Java Notes: Keyboard</title>
+</head>
+<body><div id="content">
+
+<h1><a href="http://www.leepoint.net/notes-java/index.html">Java Notes</a>: Keyboard</h1>
+
+<p><span class="leadin">Not normally used</span>. You don't normally need to capture the low-level keyboard events because
+components (eg, <code>JTextField</code>) handle them for you.
+One of the few cases where you might want to handle them is in a subclass
+of JPanel that is being used for graphics where key strokes need to be
+interpreted, eg, to move an image, fill in a crossword cell, etc.</p>
+
+<p>There are three types of characters, each of which is handled differently, altho
+they all generated pressed and released events.</p>
+<ol>
+<li><b>Characters</b> (a, A, #, ...) - handled in the <code>keyTyped()</code> listener.</li>
+<li><b>Virtual</b> keys (arrow keys, function keys, etc) - handled with <code>keyPressed()</code> listener.</li>
+<li><b>Modifier</b> keys (shift, alt, control, ...) - Usually their status (up/down) 
+    is tested by calls in one of the other listeners, rather than in <code>keyPressed()</code>.</li>
+</ol>
+
+<p><span class="leadin">Warning</span>: This was written for Java 1.2.  In more recent versions (1.3+) 
+javax.swing.InputMap should be used in preference to KeyListener for getting characters.  
+Eventually I'll rewrite these notes.
+</p>
+
+<h2>Listener Classes and Interfaces</h2>
+
+<p>The <code>java.awt.event.KeyListener</code> interface and <code>java.awt.event.KeyEvent</code>
+class are all imported by:</p>
+<pre class="fragment">import java.awt.event.*;</pre>
+
+<h3><code>KeyTyped()</code> versus <code>KeyPressed()</code> and <code>KeyReleased()</code></h3>
+
+<p>Three methods must be defined in a class that implements KeyListener:</p>
+<dl>
+<dt><strong><code>keyTyped(<i>KeyEvent e</i>)</code></strong></dt>
+    <dd>The <code>KeyTyped()</code> listener method is called when a <i>character</i>
+        is typed, but is not useful for <i>virtual</i> keys (arrow keys, function keys, etc).
+        <i>Modifier</i> key (shift, control, etc) status (up/down) can be tested with method calls
+        in the listener. 
+        </dd>
+
+<dt><strong><code>keyPressed(<i>KeyEvent e</i>)</code></strong> and <strong><code>keyReleased(<i>KeyEvent e</i>)</code></strong></dt>
+    <dd>These methods are called whenever any key is pressed or released.
+    Regular character keys also produce calls to these listeners, but are usually
+    handled by the <code>keyTyped()</code> listener and may be ignored in this listener.
+    Modifier keys (shift, control) also generate calls to these listeners, but
+    are typically tested with method calls in the listener.
+    For example, if you type an uppercase 'J', there are
+    five events, which call these methods:
+    <ol>
+    <li>KeyPressed for pressing the shift key.</li>
+    <li>KeyPressed for pressing the j key.</li>
+    <li>KeyTyped for the character J.</li>
+    <li>KeyReleased for releasing the j key.</li>
+    <li>KeyReleased for releasing the shift key.</li>
+    </ol>
+    </dd>
+</dl>
+
+
+<h2>Focus - Which component gets KeyEvents? -- The one with Focus</h2>
+<p>The key listener for your JPanel is called
+<i>only if</i> the JPanel has <i>focus</i>.
+Only one component has focus at a time, not all components can get focus, and
+key events are directed to the component with focus.
+</p>
+
+<h3>Make your panel focusable, then request focus.</h3>
+<p>Not all components can get focus, eg labels do not get focus.  To ensure
+that your JPanel subclass can get focus, 
+call <code>setFocusable()</code> in the constructor (note: it can only help, altho I've
+written programs where it didn't appear to be necessary.).</p>
+<pre class="example">this.setFocusable(true);   //  In panel constructor.
+</pre>
+<p><strong><i>After</i></strong> you have build the graphical user interface, 
+give the panel p focus with:</p>
+<pre class="fragment">p.requestFocus();</pre>
+
+<p>When your window is active, all key events will be given to the listeners for
+your panel p.</p>
+
+
+<h3>Example - Key listeners in a JPanel subclass</h3>
+
+<p>You can place a key listener in your JPanel subclass.  For example</p>
+<pre class="example">class MyPanel extends JPanel <span class="hilite">implements KeyListener</span> {
+    . . .
+    //=================================== constructor
+    public MyPanel() {
+       this.<span class="hilite">setFocusable</span>(true);   // Allow this panel to get focus.
+       this.<span class="hilite">addKeyListener</span>(this); // listen to our own key events.
+       . . .
+    }
+    
+    //-- Define one or more of these to handle keyboard events
+    public void keyPressed(KeyEvent e) {. . .}
+    public void keyReleased(KeyEvent e){. . .}
+    public void keyTyped(KeyEvent e)   {. . .}
+}</pre>
+
+
+<h3>Example - To get a character that is typed</h3>
+
+<p>You need to add a key listener to your panel.  A key listener has
+three methods for handling events, but you only need to do something in the
+<code>keyTyped</code> method if you want to get the character that was
+typed.  Here is a listener that adds all characters that are typed to the string s.</p>
+<pre class="example">public void keyTyped(KeyEvent e) {
+    s = s + e.getKeyChar();
+}</pre>
+
+
+
+<h1>Virtual Keys</h1>
+<p>Many keys do not generate characters, for example, the shift, arrow, or
+function keys.  These keys generate a
+<strong>virtual key code</strong> that you can check
+in the <code>keyPressed()</code> (but not <code>keyTyped()</code>) listener.
+</p>
+
+<h3>Use <code>keyPressed(...)</code> or <code>keyReleased(...)</code>, not <code>keyTyped(...)</code></h3>
+
+<p>There is no character for many keys, so you
+<strong>can not use the <code>KeyTyped()</code> listener method</strong>.
+You must write the <code>KeyPressed(...)</code> or <code>KeyReleased(...)</code>
+listener methods to find out when these keys are used.</p>
+
+<h2>To get the virtual key code</h2>
+
+<p>se the KeyEvent.getKeyCode() method to get the virtual
+key code.  For example,</p>
+<pre class="example">public void keyPressed(KeyEvent ke) {
+    switch (ke.getKeyCode()) {
+    case KeyEvent.VK_LEFT:  // move x coordinate left
+        x -= dx;
+        x = Math.max(x, 0);
+        break;
+    case KeyEvent.VK_RIGHT: // move x coordinate right
+        x += dx;
+        x = Math.min(x, 100);
+    }
+    drawing.repaint();
+}</pre>
+
+
+<h3>Virtual Key Codes</h3>
+
+<p>The <code>KeyEvent</code> class defines a large number of virtual key
+codes that correspond keys on the keyboard.  This list may expand as
+new keyboards are supported.  See the <code>java.awt.event.KeyEvent</code> documentation
+for a list of these.  Below are some of the most common codes.
+You can probably figure out the key from the name.
+</p>
+<dl>
+<dt><strong>Alphanumeric keys</strong></dt>
+    <dd>
+    VK_0, VK_1, ..., VK_9, VK_A, VK_B, ..., VK_Z
+    </dd>
+    
+<dt><strong>Control keys</strong></dt>
+    <dd>
+    VK_ENTER, VK_BACKSPACE, VK_TAB, VK_ESCAPE
+    </dd>
+    
+<dt><strong>Function keys</strong></dt>
+    <dd>
+    VK_F1, VK_F2, VK_F3, VK_F4 VK_F5, VK_F6, VK_F7, VK_F8, VK_F9,
+    VK_F10, VK_F11, VK_F12, <br>
+    VK_SCROLL_LOCK, VK_PRINTSCREEN, VK_PAUSE,<br>
+    VK_DELETE, VK_INSERT,<br>
+    VK_PAGE_UP, VK_PAGE_DOWN, VK_HOME, VK_END
+    </dd>
+    
+<dt><strong>Arrow keys</strong></dt>
+    <dd>
+    VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN
+    </dd>
+</dl>
+
+
+<h1>Testing Modifier Keys</h1>
+<p>Certain keys are used as <i>modifier</i> keys to change another action.
+For example, holding the ALT key down while clicking on the mouse may
+alter the action you want to perform.  The event object has methods which
+may be called to find the status (up/down) for these modifier keys.
+MouseEvent and KeyEvent are both
+subsets of <code>java.awt.event.InputEvent</code>, so either can use these methods for determining which modifier keys are
+pressed.</p>
+
+<h3>Testing Modifier Keys from an Event Object</h3>
+<p>The following methods are available for KeyEvent and MouseEvent objects (e),
+and would normally be used inside of a mouse or key listener.</p>
+<table border="0">
+<tbody><tr><td valign="top"><code><i>e</i>.isAltDown()</code></td><td><code>true</code> if the ALT key was down when this event happened.</td></tr>
+<tr><td valign="top"><code><i>e</i>.isControlDown()</code></td><td><code>true</code> if the CTRL key was down when this event happened.</td></tr>
+<tr><td valign="top"><code><i>e</i>.isShiftDown()</code></td><td><code>true</code> if the SHIFT key was down when this event happened.</td></tr>
+<tr><td valign="top"><code><i>e</i>.isMetaDown()</code></td><td><code>true</code> if the META key was down when this event happened.</td></tr>
+<tr><td nowrap="nowrap" valign="top"><code><i>e</i>.isAltGraphDown()</code></td><td><code>true</code> if the ALT-GRAPH key was down when this event happened.</td></tr>
+<tr><td valign="top"><code><i>e</i>.getModifiers()</code></td><td>
+    This method returns an int bit mask which identifies the keys and mouse buttons which are
+    down at the time of the event.  Many constants are defined to test these.  Some of the more common are:
+    <table border="0">
+        <tbody><tr><td><code>InputEvent.ALT_MASK      </code></td><td>ALT key is down.</td></tr>
+        <tr><td><code>InputEvent.CTRL_MASK     </code></td><td>CTRL key is down.</td></tr>
+        <tr><td><code>InputEvent.SHIFT_MASK    </code></td><td>SHIFT key is down.</td></tr>
+        <tr><td><code>InputEvent.ALT_GRAPH_MASK</code></td><td>ALT-GRAPH key is down.</td></tr>
+        <tr><td><code>InputEvent.META_MASK     </code></td><td>META key is down.</td></tr>
+        <tr><td><code>InputEvent.BUTTON1_MASK  </code></td><td>Mouse button 1 is down.</td></tr>
+        <tr><td><code>InputEvent.BUTTON2_MASK  </code></td><td>Mouse button 2 is down.</td></tr>
+        <tr><td><code>InputEvent.BUTTON3_MASK  </code></td><td>Mouse button 3 is down.</td></tr>
+    </tbody></table>
+     </td></tr>
+</tbody></table>
+
+<h2>Examples</h2>
+<ul>
+<li><a href="http://www.leepoint.net/notes-java/GUI-lowlevel/keyboard/keydemo.html">Example - KeyDemo</a> - Shows use of KeyListener.</li>
+</ul>
+
+
+
+<div class="footer">
+Copyleft 2004 <a href="http://www.fredosaurus.com/">Fred Swartz</a>
+<a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>
+</div>
+</div>
+
+
+</body></html>

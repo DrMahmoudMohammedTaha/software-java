@@ -1,0 +1,743 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><head>
+
+<title>SPOJ.com - Problem PERMUT2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2" id="metatag">
+<meta name="Keywords" content="programming, language, algorithm, spoj, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+
+<link href="http://www.spoj.com/gfx/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="http://www.spoj.com/rss/" rel="alternate" type="application/rss+xml" title="RSS Feed">
+<link href="SPOJ.com%20-%20Problem%20PERMUT2_files/common.css" rel="stylesheet" type="text/css" id="theme">
+<link href="SPOJ.com%20-%20Problem%20PERMUT2_files/style.css" rel="stylesheet" type="text/css" id="theme">
+<link href="SPOJ.com%20-%20Problem%20PERMUT2_files/tooltips.css" rel="stylesheet" type="text/css" id="theme">
+<script src="SPOJ.com%20-%20Problem%20PERMUT2_files/ga.js" async="" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20PERMUT2_files/all.js" id="facebook-jssdk"></script><script async="" src="SPOJ.com%20-%20Problem%20PERMUT2_files/cbgapi.loaded_1"></script><script async="" src="SPOJ.com%20-%20Problem%20PERMUT2_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="SPOJ.com%20-%20Problem%20PERMUT2_files/plusone.js" async="" type="text/javascript"></script><script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/jquery_005.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/jquery_004.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/jquery_006.js"></script> 
+<!--
+<meta property="og:description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+<meta name="description" content="SPOJ (Sphere Online Judge) is an online judge system with over 100,000 registered users and over 10000 problems. The solution to problems can be submitted in over 40 languages including C, C++, Java, Python, C#, Go, Haskell, Ocaml, and F#. SPOJ has a rapidly growing problem set/tasks available for practice 24 hours/day, including many original tasks prepared by the community of expert problem setters associated with the project."/>
+-->
+<style type="text/css">
+<!--
+.maintable {width: 1055;} 
+-->
+</style>
+<script type="text/javascript" language="javascript">
+<!--
+function UnCryptMailto(s) {
+	var n=0;
+	var r="";
+	for(var i=0;i<s.length;i++) {		
+		n=s.charCodeAt(i); 
+		if (n>=8364) {n = 128;}
+		r += String.fromCharCode(n+(2));	
+	}
+	return r;
+}
+function linkTo_UnCryptMailto(s)	{
+	location.href=UnCryptMailto(s);
+}
+// -->
+</script>
+
+<script type="text/javascript">
+function recordOutboundLink(link, category, action) {
+  try {
+    var pageTracker=_gat._getTracker("UA-XXXXX-X");
+    pageTracker._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100)
+  }catch(err){}
+}
+</script>
+
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/shCore.js"></script>
+	<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/shBrushCpp.js"></script>
+	<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/shBrushJava.js"></script>
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/shBrushPhp.js"></script>
+    <script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/shBrushPython.js"></script>
+	<link type="text/css" rel="stylesheet" href="SPOJ.com%20-%20Problem%20PERMUT2_files/shCore.css">
+	<link type="text/css" rel="stylesheet" href="SPOJ.com%20-%20Problem%20PERMUT2_files/shThemeDefault.css">
+	
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	
+
+		<meta property="og:title" content="SPOJ.com - Problem PERMUT2">
+    	<meta property="fb:app_id" content="321676846207">
+	<meta property="og:type" content="spoj-pl:problem">
+	<meta property="og:url" content="http://www.spoj.com/problems/PERMUT2/">
+	<meta property="og:image" content="http://www.spoj.com/gfx/logo-cr.png">
+	<meta property="og:description" content="
+Some programming contest problems are really tricky: not only do they
+require a different output format from what you might have expected, but
+also the sample output does not show the difference. For an example,
+let us look at permutations.
+A permutation of the integers 1 to n is an
+ordering ...">
+<meta name="description" content="
+Some programming contest problems are really tricky: not only do they
+require a different output format from what you might have expected, but
+also the sample output does not show the difference. For an example,
+let us look at permutations.
+A permutation of the integers 1 to n is an
+ordering ...">
+		<meta property="og:site_name" content="spoj.com">
+
+<script src="SPOJ.com%20-%20Problem%20PERMUT2_files/ppapp.htm" charset="UTF-8" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20PERMUT2_files/intext.js" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20PERMUT2_files/1022.js" id="sjsjszmzmaw28aj6" type="text/javascript"></script><script src="SPOJ.com%20-%20Problem%20PERMUT2_files/1005.js" id="shk85shssma" type="text/javascript"></script><style type="text/css">.c5uyu6zo {  display:inline !important; list-style:none; text-align:left; float:none; padding:0; margin:0; border:1px solid transparent; border-bottom:1px solid; text-decoration:underline; color:#009900; font-weight:normal; cursor:pointer; }</style><style type="text/css">.adbox  { padding:0 !important; margin:0 !important; display:block; xwidth:400px; xheight:200px;  z-index:2000000000; text-decoration:none !important;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style></head>
+<body>
+<center>
+
+
+
+<table class="maintable" id="maintable" cellpadding="10" cellspacing="0">
+<tbody><tr>
+    <td colspan="2" class="header">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+		<td class="headerleft">
+		</td><td class="headercenter">
+<h1><img alt="Sphere Online Judge" title="Sphere Online Judge" src="SPOJ.com%20-%20Problem%20PERMUT2_files/sphere-spoj-small.png" style="margin-top:-4px;margin-bottom:-4px" border="0"></h1>
+		</td>
+		<td class="headerright">
+	</td></tr>
+	</tbody></table>
+    </td>
+</tr>
+<tr><td class="menu" valign="top" width="92">
+
+	
+<div class="section">
+	
+<form name="login" action="https://www.spoj.com/problems/PERMUT2/" method="post" onsubmit="if(0&amp;&amp;document.login.ssl.checked) document.login.action='https://www.spoj.com/problems/PERMUT2/'" style="margin-bottom: 18px"> 
+User: <input value="aboahmed" name="login_user" style="width: 85px;" class="form" type="text"><br>
+Password: <input name="password" style="width: 85px;" class="form" type="password"><br>
+<div style="font-size: 10px; ">
+<script language="javascript" type="text/javascript">
+<!--
+    //document.write('<input type="checkbox" name="ssl" id="ssl" /><label for="ssl">secure</label><br/>');
+//-->
+</script>
+<div title="Keep me signed in for today">
+<input name="autologin" value="1" id="autologin" type="checkbox"><label for="autologin">for today</label>
+</div>
+<!--Keep me signed in for today-->
+</div>
+<input name="submit" value="Log In" class="button" style="width: 85px; margin-bottom: 10px;" type="submit">
+
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	if( $.cookie('ssl') == '1' ){
+		$("#ssl").attr('checked', true);
+	}
+	$("#ssl").change(function(){
+		if($(this).is(':checked')){
+			$.cookie('ssl', '1');
+		} else {
+			$.cookie('ssl', '0');
+		}
+	});
+});
+</script>
+
+</div>
+<div class="menucmd"><a href="http://www.spoj.com/register">register</a><br><a href="http://www.spoj.com/tutorials">tutorials</a><br><br><a href="http://www.spoj.com/status">status</a><br><a href="http://www.spoj.com/submit">submit</a><br><a href="http://www.spoj.com/problems/classical/">problems</a><br><a href="http://www.spoj.com/search">search</a><br><br><a href="http://www.spoj.com/">news</a><br><a href="http://www.spoj.com/contests">contests</a><br><a href="http://www.spoj.com/ranks/">ranks</a><br><br><a href="http://www.spoj.com/forum">forum</a><br><a href="http://www.spoj.com/tools">tools</a><br><a href="http://www.spoj.com/clusters">clusters</a><br><a href="http://www.spoj.com/credits">credits</a><br><hr></div><a href="http://www.spoj.com/problems/classical/"></a><br>
+
+
+	<div class="time">
+Server time:</div>
+<div class="time">
+2014-02-24
+<br>
+<b>21 : 08 : 22</b>
+</div>
+
+</td><td style="width: 748px; padding:0px;" class="content0" valign="top">
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+                <td style="padding:0px;" colspan="2"><center>
+                                
+                </center></td>
+        </tr>
+        <tr>
+                <td class="content" style="padding: 10px" width="99%"><script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/jquery.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/jquery_002.js"></script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/jquery_003.js"></script>
+
+
+
+ <!-- wykorzystywane w pcontent.html (by wiele) -->
+
+<table class="problems" width="100%">
+<tbody><tr class="navigation">
+<td><a href="http://www.spoj.com/submit/PERMUT2/">Submit</a></td>
+<td><a href="http://www.spoj.com/status/PERMUT2/">All submissions</a></td>
+<td><a href="http://www.spoj.com/ranks/PERMUT2/">Best solutions</a></td>
+<td><a href="http://www.spoj.com/problems/PERMUT2.ps">PS</a></td>
+<td><a href="http://www.spoj.com/problems/PERMUT2.pdf">PDF</a></td>
+<td><a href="http://www.spoj.com/problems/classical/">Back to list</a></td>
+</tr>
+</tbody></table>
+
+<div class="prob" style="position: relative">
+
+<!-- google_ad_section_start -->
+<!-- plik z pomoca kontekstowa (cxhelp_*) dziedziczony po pindex.html -->
+
+<div style="position: absolute;">
+<div fb-iframe-plugin-query="app_id=321676846207&amp;href=http%3A%2F%2Fwww.spoj.com%2Fproblems%2FPERMUT2%2F&amp;layout=box_count&amp;locale=pl_PL&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=70" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-href="http://www.spoj.com/problems/PERMUT2/" data-send="true" data-layout="box_count" data-width="70" data-show-faces="false"><span style="vertical-align: bottom; width: 73px; height: 86px;"><iframe class="" src="SPOJ.com%20-%20Problem%20PERMUT2_files/like.htm" style="border: medium none; visibility: visible; width: 73px; height: 86px;" title="fb:like Facebook Social Plugin" allowtransparency="true" name="f17acaaf471f5a6" frameborder="0" height="1000px" scrolling="no" width="70px"></iframe></span></div>
+</div>
+<div style="position: absolute; right: 0px">
+<!-- Place this tag where you want the +1 button to render -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe title="1+" data-gapiattached="true" src="SPOJ.com%20-%20Problem%20PERMUT2_files/fastbutton.htm" name="I0_1393272412931" id="I0_1393272412931" vspace="0" tabindex="0" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<!-- Place this render call where appropriate -->
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</div>
+
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/ASCIIMathMLwFallback.js"></script>
+<!--script type="text/javascript" src="/gfx/jscripts/tiny_mce/plugins/asciisvg/js/ASCIIsvgPI.js"></script-->
+<script type="text/javascript">
+<!--
+var AScgiloc = 'http://www.imathas.com/imathas/filter/graph/svgimg.php';
+var AMTcgiloc = "/files/gif/";
+-->
+</script>
+
+<table style="margin-top:10px" width="100%">
+<tbody><tr>
+	<td>
+		<h2>SPOJ Problem Set (classical)</h2>
+				<h1>379. Ambiguous Permutations</h1>
+		<h2>Problem code: PERMUT2</h2>
+	</td>
+	</tr>
+</tbody></table>
+
+<br>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - baner gĂłrny */
+google_ad_slot = "5796055248";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe s248444547121821742="true" replaced="true" s8682671599269094306="true" src="SPOJ.com%20-%20Problem%20PERMUT2_files/tt.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins><a rel="nofollow" href="https://www.digitalocean.com/?refcode=c59674ea4847" class="freelancer_728" style="display: none;"><img src="SPOJ.com%20-%20Problem%20PERMUT2_files/digitalocean-horizontal-eps.png" border="0" height="109" width="410"></a>
+
+<p align="justify">
+</p><p>
+Some <span id="c5uyu6zo_1" class="c5uyu6zo">programming contest</span> problems are really tricky: not only do they
+require a different output format from what you might have expected, but
+also the sample output does not show the difference. For an example,
+let us look at permutations.<br>
+A <b>permutation</b> of the integers <i>1</i> to <i>n</i> is an
+ordering of
+these integers. So the <span id="c5uyu6zo_5" class="c5uyu6zo">natural way</span> to represent a permutation is
+to list the integers in this order. With <i>n = 5</i>, a
+permutation might look like 2, 3, 4, 5, 1. <br>
+However, there is another possibility of representing a permutation:
+You create a list of numbers where the <i>i</i>-th number is the
+position of the integer <i>i</i> in the permutation. 
+Let us call this second
+possibility an <b>inverse permutation</b>. The inverse permutation
+for the sequence above is 5, 1, 2, 3, 4.
+<br>
+An <b>ambiguous permutation</b> is a permutation which cannot be
+distinguished from its inverse permutation. The permutation 1, 4, 3, 2
+for example is ambiguous, because its inverse permutation is the same.
+To get rid of such annoying sample <span id="c5uyu6zo_4" class="c5uyu6zo">test cases</span>, you have to write a
+program which detects if a given permutation is ambiguous or not.
+</p>
+<h3>Input Specification</h3>
+<p>The input contains several test cases.<br>
+The <span id="c5uyu6zo_3" class="c5uyu6zo">first line</span> of each test case contains an integer <i>n</i>
+(<i>1 &#8804; n &#8804; 100000</i>).
+Then a permutation of the integers <i>1</i> to <i>n</i> follows
+in the next line. There is exactly one <span id="c5uyu6zo_7" class="c5uyu6zo">space character</span>
+between consecutive integers.
+You can assume that every integer between <i>1</i> and <i>n</i>
+appears exactly once in the permutation.
+<br>
+The last test case is followed by a zero.
+</p>
+<h3>Output Specification</h3>
+<p>For each test case <span id="c5uyu6zo_8" class="c5uyu6zo">output</span> whether the permutation is ambiguous or not.
+Adhere to the format shown in the sample output.
+</p>
+<h3>Sample Input</h3>
+<pre>4
+1 4 3 2
+5
+2 3 4 5 1
+1
+1
+0
+</pre>
+<h3>Sample Output</h3>
+<pre>ambiguous
+not ambiguous
+ambiguous
+</pre>
+
+
+
+<hr>
+<table style="margin-bottom:10px" class="probleminfo" align="left" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>Added by:</td><td><a href="http://www.spoj.com/users/ak15">Adrian Kuegel</a></td></tr>
+<tr><td>Date:</td><td>2005-06-24</td></tr>
+<tr><td>Time limit:</td><td>10s
+</td></tr>
+<tr><td>Source limit:</td><td>50000B</td></tr>
+<tr><td><span id="c5uyu6zo_2" class="c5uyu6zo">Memory limit</span>:</td><td>256MB</td></tr>
+	<tr>
+		<td>Cluster:</td>
+		<td>
+							<a href="http://www.spoj.com/clusters/" target="_blank">Pyramid (Intel Pentium III 733 MHz)</a>
+					
+		</td>
+	</tr>
+<tr><td>Languages:</td><td>All except: NODEJS PERL 6 </td></tr>
+<tr><td>Resource:</td><td>own problem, used in University of Ulm Local Contest 2005</td></tr>	
+</tbody></table><!-- google_ad_section_end -->
+
+<div id="ccontent">
+<!-- google_ad_section_start -->
+
+<hr style="clear:both;">
+<a href="#" onclick="toggleComments(); return false;"><span id="comments_sh">hide</span> comments</a><br>
+
+<a id="comments"></a>
+<table id="comments_table" width="100%">
+		<tbody><tr>
+		<td colspan="2">
+		<table class="navigation" width="99%">
+<tbody><tr><td align="left" width="27%">
+<i>Previous</i></td><td class="navigationcenter" width="25%">&nbsp;1</td> 
+<td class="navigationcenter" width="25%"><a href="http://www.spoj.com/problems/PERMUT2/cstart=10" class="pager_link">&nbsp;2</a></td> 
+<td align="right" width="25%">
+<a href="http://www.spoj.com/problems/PERMUT2/cstart=10" class="pager_link">Next</a> <a href="http://www.spoj.com/problems/PERMUT2/cstart=10" class="pager_link">&gt;</a></td></tr></tbody></table>		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+				</td>
+	</tr>
+	
+	<script language="JavaScript">
+	<!--
+	$(document).ready(function(){
+        $('.pager_link').bind('click', function(me){
+                var href=$(me.currentTarget).attr('href');
+		$('#ccontent').animate({opacity: 0.5},1);
+                $.ajax({
+                        type: "GET",
+                        url: href+",ajax=1",
+                        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-2",
+                        success: function(data){
+                                $('#ccontent').html(data);
+				$('#ccontent').animate({opacity: 1.0},1);
+                        },
+                        error: function(err){
+                                alert('error');
+                        }
+                });
+                return false;
+        });
+	});
+	-->
+	</script>
+	
+
+			
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2014-02-11 03:00:56 <b><a href="http://www.spoj.com/users/am525">Alexandra Mirtcheva</a></b> 
+		</font>
+								<br>
+				Is it just me, or is the definition of an inverse permutation wrong as described in the problem.
+<br>
+<br>Isn't the inverse permutation of 2,3,4,5,1 = 1,5,4,3,2?
+				<br><br>
+		<b>Last edit: 2014-02-11 03:03:21</b>
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2014-02-10 13:15:19 <b><a href="http://www.spoj.com/users/an888ha">do_do</a></b> 
+		</font>
+								<br>
+				10s,O(n),its good... :)
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2014-01-25 22:08:07 <b><a href="http://www.spoj.com/users/rajat7417">RAJAT SINGH</a></b> 
+		</font>
+								<br>
+				very easy...... got AC in first attempt
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2014-01-18 21:16:06 <b><a href="http://www.spoj.com/users/petar_v">Petar Veličković</a></b> 
+		</font>
+								<br>
+				You need O(n) time to read the data anyway... so no.
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2014-01-16 16:56:15 <b><a href="http://www.spoj.com/users/abcdexter5">^_^</a></b> 
+		</font>
+								<br>
+				got Ac in the first attempt... is there any better solution than O(n) ?!
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-07-16 14:57:46 <b><a href="http://www.spoj.com/users/tjandra">(Tjandra Satria Gunawan)(&#26366;&#27589;&#26118;)</a></b> 
+		</font>
+								<br>
+				@<a href="http://www.spoj.com/users/ouditchya_713" target="_blank">Ouditchya Sinha</a>: Actually 10 languages.. You can resubmit your PYTH 3.2.3 with PYTH 3.2.3n :-)
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-07-16 14:46:03 <b><a href="http://www.spoj.com/users/ouditchya_713">Ouditchya Sinha</a></b> 
+		</font>
+								<br>
+				This was fun. AC in 9 languages! :)
+<br>
+<br>@Tjandra : 10 now! Thank you I didn't notice that. I bet you can do it in atleast 15. :) :D
+				<br><br>
+		<b>Last edit: 2013-07-16 19:21:57</b>
+						</td>
+	</tr>
+						
+	<tr>
+		<td colspan="2" class="comm comm_even ">
+		<font>
+		2013-03-10 06:35:08 <b><a href="http://www.spoj.com/users/sakada1">killerz</a></b> 
+		</font>
+								<br>
+				Easy one :) 
+						</td>
+	</tr>
+				
+	<tr>
+		<td colspan="2" class="comm comm_odd ">
+		<font>
+		2013-01-26 19:09:41 <b><a href="http://www.spoj.com/users/vishnuceg">vishnu</a></b> 
+		</font>
+								<br>
+				my 50th AC code :)
+<br><span id="c5uyu6zo_6" class="c5uyu6zo">half century</span>!!
+						</td>
+	</tr>
+			
+</tbody></table>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function getCookieVal (offset) {
+        var endstr = document.cookie.indexOf (";", offset);
+        if (endstr == -1) { 
+                endstr = document.cookie.length; 
+        }
+        return unescape(document.cookie.substring(offset, endstr));
+}
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg) {
+      return getCookieVal (j);
+      }
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break; 
+    }
+  return null;
+}
+
+function toggleComments() {
+        var a = document.getElementById('comments_table');
+        var d = a.style.display;
+        if( d == "" || d == "block" ){
+                d = "none";
+                document.getElementById('comments_sh').innerHTML = 'show';
+        } else {
+                d = "block";
+                document.getElementById('comments_sh').innerHTML = 'hide';
+        }
+        a.style.display = d;
+        document.cookie="comments_table="+d+"; path=/;";
+}
+
+if( GetCookie('comments_table') == 'none' ){
+        document.getElementById('comments_sh').innerHTML = 'show';
+        document.getElementById('comments_table').style.display = 'hide';
+}
+
+-->
+</script>
+
+
+<!-- google_ad_section_end -->
+</div>
+<table width="100%">
+        </table>
+
+</div>
+        </td>
+</tr><tr>
+        <td style="padding:0px" colspan="2"><center>
+                
+</center></td>
+</tr>
+</tbody></table>
+</td>
+
+
+<td class="ad-r__" width="200"><div class=""><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4453360425583535";
+/* Spoj - wiezowiec */
+google_ad_slot = "2703472077";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="SPOJ.com%20-%20Problem%20PERMUT2_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe s248444547121821742="true" replaced="true" s8682671599269094306="true" src="SPOJ.com%20-%20Problem%20PERMUT2_files/tt_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins><div>
+<style>
+.ad-r__{
+        vertical-align: top;
+}
+.ad-r__ > div.fixed{
+        top: 10px;
+        position: fixed;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+        $(window).scroll(function() {
+                if($(this).scrollTop() > 100) {
+                        $(".ad-r__>div").addClass('fixed');
+                } else {
+                        $(".ad-r__>div").removeClass('fixed');
+                }
+        });
+	if ($('.ad-r__>div').height() == 0){
+		//console.log('adblocker');
+		_gaq.push(['_trackEvent', 'ads', 'adblock']);
+		$(".freelancer_728").show();
+		//$(".ad-r__").append('<script type="text/javascript"><!--amazon_ad_tag = "httpsphereres-20"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_border = "hide"; amazon_ad_discount = "remove"; amazon_color_background = "EEEEEE";//--><'+'/script><script type="text/javascript" src="http://ir-na.amazon-adsystem.com/s/ads.js"><'+'/script>');
+	}
+});
+</script>
+</div></div></td>
+
+
+</tr>
+
+<tr>
+<td colspan="2" class="footer">
+<div class="a-footer"></div>
+<script language="javascript" type="text/javascript">
+<!--
+function swapSheet(sheet, caller) {
+    document.getElementById('theme').href=sheet;
+    document.cookie="css_0="+sheet+"; path=/;";
+    caller.href="#bottom";
+}
+
+function setWidth(w, caller) {
+    document.getElementById('maintable').style.width=w;
+    document.cookie="res="+w+"; path=/;";
+    caller.href="#bottom";
+}
+
+
+
+//-->
+
+</script>
+        <table width="100%">
+    <tbody><tr>
+	<td class="cfooter" align="left" width="10%">
+	<a href="http://www.spoj.com/info/">About SPOJ</a>
+	</td>
+	<td class="cfooter" align="center">
+	    width:
+	    <a href="http://www.spoj.com/?rsl=855px" onclick="setWidth('855px', this)">900</a>
+	    <a href="http://www.spoj.com/?rsl=980px" onclick="setWidth('980px', this)">1024</a>
+	    <a href="http://www.spoj.com/?rsl=100%" onclick="setWidth('100%', this)">Full</a>
+	    &nbsp;&nbsp;
+	    theme:
+	    <a href="http://www.spoj.com/?css=/themes/skin1.css" onclick="swapSheet('/themes/skin1.css', this)">olive</a>
+	    <a href="http://www.spoj.com/?css=/themes/skin2.css" onclick="swapSheet('/themes/skin2.css', this)">banana</a>
+	    <a href="http://www.spoj.com/?css=/themes/skin3.css" onclick="swapSheet('/themes/skin3.css', this)">plum</a>
+	    <a href="http://www.spoj.com/?css=/themes/hspl.css" onclick="swapSheet('/themes/hspl.css', this)">hspl</a>
+	</td>
+		<td class="cfooter" align="center">
+		 <span title="The discussion channel of the Sphere Online Judge community.">
+		 <a href="irc://irc.freenode.net/spoj"><b>#spoj</b> at freenode</a>
+		 </span>
+	</td>
+		<td class="cfooter" style="text-align:right" width="10%">
+		<a href="http://www.spoj.com/rss/"><img src="SPOJ.com%20-%20Problem%20PERMUT2_files/rss10x10.gif" border="0">&nbsp;RSS</a>&nbsp;
+	
+	</td>
+    </tr>
+    </tbody></table>
+    </td></tr></tbody></table>
+</center>
+<div class="a-header"></div>
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="SPOJ.com%20-%20Problem%20PERMUT2_files/xd_arbiter.htm" style="border: medium none;" tab-index="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0" scrolling="no"></iframe><iframe src="SPOJ.com%20-%20Problem%20PERMUT2_files/xd_arbiter_002.htm" style="border: medium none;" tab-index="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0" scrolling="no"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1&appId=321676846207";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>-->
+
+
+<div style="font-size:10px; margin-top:4px; color: rgb(85,80,95); text-align: center">
+	&#169; Spoj.com. All Rights Reserved. Spoj uses <a href="http://sphere-engine.com/" style="color:black">Sphere Engine</a>&#8482; &#169; by <a href="http://sphere-research.com/" style="color:black">Sphere Research Labs</a>.
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10507872-1']);
+    _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                      })();
+                      </script>
+                      
+
+<div id="__yael_once"></div><div style="display: none; position: absolute; left: 258px; width: 16px; height: 16px; top: 319px; z-index: 10485802;" id="c5uyu6zospinner"><img id="intext_spinner_default" src="SPOJ.com%20-%20Problem%20PERMUT2_files/spinner-ani48.gif" border="0" height="20" width="20"></div><div style="display: none; position: absolute; z-index: 10485760; left: 266px; top: 345px;" id="c5uyu6zopop"><div class="adbox" style="text-decoration:none !important; z-index:10485802; overflow:visible;"><div style="xposition: absolute; z-index: 10485804; display: block; xoverflow: auto; background-color:#ffffff;  xwidth:351px; xheight:201px; background-color:transparent;  xborder: 1px solid; padding:0; margin:0; text-decoration:none; border:none;" id="c5uyu6zo_popin"><div style="border:0 !important; padding:0 !important; margin:0 !important; width:314px; height:185px; text-align:top !important;"><div style="position:relative !important; background:transparent; padding:0 !important; margin:0 !important; margin-top: 0 !important; margin-bottom:0 !important; padding-top:0 !important; padding-bottom:0 !important; height:11px !important; vertical-align:top !important; text-align:left !important;"><img src="SPOJ.com%20-%20Problem%20PERMUT2_files/box-arrow-lt2.png" style=" padding:0 !important; margin:0 !important; border:0 !important; height:11px; width:16px; vertical-align:top !important;" border="0" height="11" width="16"></div><div id="intxt_bdy" class="intxt_bg" style="position: relative; xtop: 100px; xleft: 100px; width:314px; height:185px; z-index: 10000113;"> <div id="intxt_bdy_cntnt" class="intxt_bg" style="position: absolute; top: 0px; left: 0px; width:314px; height:185px; "> <div class="intxt_bg" style="position:absolute; width:314px; height:33px; left:0; bottom:0; z-index:1; background-color:#cbcbce; border-bottom:3px solid #006699; border-left:1px solid #a7a9ab; border-right:1px solid #a7a9ab; -webkit-border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px; " onclick="$adtext.footerClick();"> <!-- bottom frame --> <div id="intxt_bdy_logo" class="intxt_bg" style="position:absolute; top:10px; left:5px; bottom:10px; cursor:default; font-size:1px; "> <img src="SPOJ.com%20-%20Problem%20PERMUT2_files/dotclear.gif" border="0" height="11" width="85">&nbsp;<i><span style="font-family:arial; font-size:12px; color:#ffffff;">&nbsp;</span></i></div> <div class="intxt_bg" id="intxt_hlp" style="position:absolute; padding:0; margin:0; width:26px; height:25px; right:35px; bottom:2px; display:block; background-position:0 0; cursor:pointer; color:#006699; font-family: Arial,sans-serif; font-size:10px; line-height:12px; font-weight:bolder; border-radius: 2px; xbackground: #ffffff;"><center><a href="http://intext.nav-links.com/help.html" onclick="javascript:$adtext.closeAd(this); location='http://intext.nav-links.com/help.html';" style="color:#006699; font-family:arial,sans-serif; font-weight:bolder; font-size:10px; line-height:12px; text-decoration:none;"><img src="SPOJ.com%20-%20Problem%20PERMUT2_files/intext-help5.png" border="0" height="25" width="26"></a></center> </div> <div class="intxt_bg" id="intxt_cls" style="position:absolute; width:26px; height:25px; right:5px; bottom:2px; background-position:-15px 0; cursor:pointer; color:#006699; font-family: Arial,sans-serif; font-size:10px; line-height:12px; font-weight:bolder; border-radius: 2px; xbackground: #ffffff;"> <center><span onclick="javascript:$adtext.closeAd(this);"><img src="SPOJ.com%20-%20Problem%20PERMUT2_files/intext-close5.png" border="0" height="25" width="26"></span></center></div></div><div id="intxt_bdy" class="intxt_bg intxt_bdy_mn" style="position:absolute; top:0px; left:0; width:314px; height:152px; z-index:2; background-color:#ffffff !important; cursor: pointer; margin:0; padding:0; border-top:1px solid #9a9a9a; border-left:1px solid #9a9a9a; border-right:1px solid #9a9a9a; -webkit-border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px;  text-decoration:none !important; text-align:left !important;"><div xclass="intxt_bg" style="border-bottom:none; border:1px solid #ffffff; color:#006699; font-family: Arial,sans-serif; font-size:20px; font-weight:bold; line-height:22px; margin-left:15px; margin-top:10px; margin-bottom:10px; margin-right:5px; max-height:24pt; text-decoration:none !important;  white-space:no-wrap; height:24px; width:275px; overflow:hidden;"> You could win an ipad! </div><div class="intxt_bg" style="position:absolute; height:80px; width:312px; margin-top:5px"> <img class="intxt_bg" style="position:absolute; top:0; left:35px; width:48px; height:48px; xbackground-color:#e8e8e8; margin-top:3px" src="SPOJ.com%20-%20Problem%20PERMUT2_files/intext-thdefault3c.png" height="48" width="48"><div class="intxt_bg" style="position:absolute; top:0; left:115px; width:168px; height:51px; overflow:hidden; color:#666666; font-family: Arial,sans-serif; font-size:10pt; font-weight:normal; line-height:17px;"> Complete this survey Start now </div><div id="intxt_btn" class="intxt_bg" style="position:absolute; display:block; bottom:-13px; right:13px; width:102px; height:24px; font-family:Arial,sans-serif; font-size:10pt; font-weight:normal; cursor:pointer; text-align:center; line-height:24px; color:#ffffff; border-radius: 2px; background: #ac0b11; background: -webkit-gradient(linear, left top, left bottom, from(#da1f26), to(#ac0b11)); background: -moz-linear-gradient(top, #da1f26, #ac0b11); background: -webkit-linear-gradient(top, #da1f26, #ac0b11); background: -o-linear-gradient(top, #da1f26, #ac0b11); background: -ms-linear-gradient(top, #da1f26, #ac0b11); background: linear-gradient(top, #da1f26, #ac0b11); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da1f26', endColorstr='#ac0b11'); "> click here </div></div><div class="intxt_bg" style="position:absolute; bottom:12px; left:15px; width:280px; height:15px; color:#cc001c; font-family: Arial,sans-serif; line-height:10px; font-size:9pt; font-weight:normal; text-decoration:none; overflow:hidden;"> awardhotspot.com </div></div></div></div></div></div></div></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="SPOJ.com%20-%20Problem%20PERMUT2_files/postmessageRelay.htm" id="oauth2relay1806585950" name="oauth2relay1806585950"></iframe><div id="hidden" style="visibility: hidden;"></div></body><iframe src="" style="display: none;"></iframe></html>

@@ -1,0 +1,1 @@
+window.adjuggler.rtb.verify();

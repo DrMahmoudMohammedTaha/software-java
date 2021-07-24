@@ -1,0 +1,27 @@
+import java.util.Arrays;
+public class MedianOfNumbers {
+
+  public static   int findMedian(int[] numbers) 
+  {boolean d=true;
+  if(numbers.length==3)
+      if (numbers[0]<numbers[1]&&numbers[2]>numbers[1])
+          return numbers[1];
+      else return -1;
+  if (numbers.length==1)
+      return numbers[0];
+      if (numbers.length%2==0)
+      return -1;
+  else {Arrays.sort(numbers);
+      for(int i=0;i<=numbers.length/2;i++)
+      if (numbers[i]>=numbers[numbers.length/2+1])
+          d=false ;
+       for(int i=numbers[numbers.length/2+2];i<numbers.length;i++)
+      if (numbers[i]<=numbers[numbers.length/2+1])
+          d=false ;
+  if (d==false)
+      return -1;
+      return numbers[numbers.length/2];
+      }
+  }
+   
+}

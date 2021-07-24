@@ -1,0 +1,79 @@
+
+package javaapplication85;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class JavaApplication85 {
+    public static void main(String[] args) throws IOException {
+
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int y = Integer.parseInt(br.readLine());
+       for (int i = 0; i < y; i++) {
+        StringTokenizer rr =new StringTokenizer(br.readLine());
+         boolean asly=false;
+       int load=0;
+         int counter=0;   
+        int len =Integer.parseInt(rr.nextToken())*100;
+            int cars=Integer.parseInt(rr.nextToken());
+            Queue <Integer> left=new LinkedList();
+            Queue <Integer> right=new LinkedList();
+            for (int j = 0; j < cars; j++) {
+               rr =new StringTokenizer(br.readLine());
+                int l=Integer.parseInt(rr.nextToken());
+    if ( "left".equals(rr.nextToken()))left.add(l);
+    else right.add(l);}
+            while(true)
+       {
+         
+       if (left.isEmpty()&&right.isEmpty())       
+       {counter++;
+           break;}
+       else if (left.isEmpty()&&asly==false)
+       {load=0;
+       counter++;
+       asly=true;
+       }
+       else if (right.isEmpty()&&asly==true)
+       {load=0;
+       counter++;
+       asly=false;}
+       else if (asly==false)
+       {if (left.peek()+load<len)
+       {load+=left.poll();}
+       else if (left.peek()+load==len)
+       {left.poll();
+           counter++;
+       asly=true;
+       load=0;}  
+       else if (left.peek()+load>len)
+       {counter++;
+       asly=true;
+       load=0;}  
+       }
+       else if (asly==true)
+       {
+       if (right.peek()+load<len)
+       {load+=right.poll();}
+       else if (right.peek()+load==len)
+       {right.poll();
+           counter++;
+       asly=false;
+       load=0;}  
+       else if (right.peek()+load>len)
+       {counter++;
+       asly=false;
+       load=0;}       
+       }
+      } 
+           System.out.println(counter);
+             
+       }
+            }
+       }
+    
+

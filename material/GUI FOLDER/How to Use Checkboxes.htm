@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--NewPage-->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>How to Use Checkboxes</title>
+</head>
+<body>
+<table width="100%">
+<tbody><tr>
+<td align="left">
+<a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/button.html"><img src="How%20to%20Use%20Checkboxes_files/PreviousArrow.gif" alt="Previous | " border="0" align="bottom" height="26" width="26"></a><a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/label.html"><img src="How%20to%20Use%20Checkboxes_files/NextArrow.gif" alt="Next | " border="0" align="bottom" height="26" width="26"></a><a href="http://journals.ecs.soton.ac.uk/java/tutorial/index.html"><img src="How%20to%20Use%20Checkboxes_files/WayUpArrow.gif" alt="Trail Map | " border="0" align="bottom" height="26" width="26"></a><a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/index.html"><img src="How%20to%20Use%20Checkboxes_files/jdk1_1.gif" alt="To 1.1 -- And Beyond! | " border="0" align="bottom" height="26" width="26"></a>
+</td>
+<td align="right">
+<a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/index.html"><strong><em>GUI Changes: The AWT Grows Up</em></strong></a>
+</td>
+</tr>
+</tbody></table>
+<p>
+</p><hr size="4">
+
+<h2>
+    How to Use Checkboxes
+</h2>
+<p>
+</p><blockquote>
+
+The Swing release supports checkboxes with the
+<a href="http://java.sun.com/products/jfc/swingdoc-0.2/doc/api/com.sun.java.swing.JCheckbox.html"><code>JCheckbox</code></a><a href="http://java.sun.com/products/jfc/swingdoc-0.2/doc/api/com.sun.java.swing.JCheckbox.html"><img src="How%20to%20Use%20Checkboxes_files/apiIcon.gif" alt="(in the API reference documentation)" border="0" height="20" width="20"></a> and
+<a href="http://java.sun.com/products/jfc/swingdoc-0.2/doc/api/com.sun.java.swing.ButtonGroup.html"><code>ButtonGroup</code></a><a href="http://java.sun.com/products/jfc/swingdoc-0.2/doc/api/com.sun.java.swing.ButtonGroup.html"><img src="How%20to%20Use%20Checkboxes_files/apiIcon.gif" alt="(in the API reference documentation)" border="0" height="20" width="20"></a> classes.
+Because <code>JCheckbox</code> inherits from <code>AbstractButton</code>,
+Swing checkboxes have all the usual button characteristics,
+as discussed in
+<a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/button.html">How to Use Buttons</a>.
+For example, you can specify images
+to be used in checkboxes.
+
+<p>
+
+Here is a picture of an application that has two checkboxes:
+
+</p><p>
+
+<img src="How%20to%20Use%20Checkboxes_files/CheckboxDemo.gif" height="54" width="163">
+<br>
+[We'll try to make the example more interesting...]
+
+</p><p>
+
+</p><blockquote>
+<hr>
+<strong>Try this:</strong>
+<ol>
+<li> Compile and run the application.
+     The source file is
+     <a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/example-swing/CheckboxDemo.java"><code>CheckboxDemo.java</code></a>.
+     <br>
+     See <a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/swingStart.html">Getting Started with Swing</a>
+     if you need help.
+</li><li> Click Button 2.
+     <br>
+     Button 2 becomes selected.
+     Button 1 remains selected.
+</li><li> Look at the messages displayed at the standard output.
+     <br>
+     This application registers a listener
+     for each kind of event a button can send --
+     action, change, and item.
+     Each time it receives an event,
+     the application displays a message describing the event.
+</li><li> Click Button 2 again,
+     and look at the messages displayed at the standard output.
+</li></ol>
+<hr>
+</blockquote>
+
+
+<p>
+
+A checkbox generates one item event and one action event
+per click.
+Usually, the only event handler a checkbox needs
+is an item listener.
+If you'd rather use the API associated with action events.
+you can use an action listener instead.
+You don't need to implement a change listener
+unless your program needs to know 
+every time the button's appearance changes.
+[check all this]
+
+</p><p>
+
+Below is the code from 
+<a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/example-swing/CheckboxDemo.java"><code>CheckboxDemo.java</code></a>
+that creates the checkboxes in the previous example
+and reacts to clicks.
+
+</p><blockquote>
+<pre><em>//In initialization code:</em>
+    // Create the buttons.
+    JCheckbox firstButton = new JCheckbox(first);
+    firstButton.setKeyAccelerator('1'); 
+    firstButton.setActionCommand(first);
+    firstButton.setSelected(true);
+
+    JCheckbox secondButton = new JCheckbox(second);
+    secondButton.setKeyAccelerator('2'); 
+    secondButton.setActionCommand(second);
+
+    // Register a listener for the checkboxes.
+    CheckboxListener myListener = new CheckboxListener();
+    firstButton.addActionListener(myListener);
+    firstButton.addChangeListener(myListener);
+    firstButton.addItemListener(myListener);
+    secondButton.addActionListener(myListener);
+    secondButton.addChangeListener(myListener);
+    secondButton.addItemListener(myListener);
+. . .
+class CheckboxListener implements ItemListener, //only event type needed
+			       ActionListener, //for curiosity only
+			       ChangeListener {  //for curiosity only
+    public void itemStateChanged(ItemEvent e) {
+        System.out.println("ItemEvent received: " 
+    		           + e.getItem()
+    		           + " is now "
+    		           + ((e.getStateChange() == ItemEvent.SELECTED)?
+    			      "selected.":"unselected"));
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String factoryName = null;
+
+        System.out.print("ActionEvent received: ");
+        if (e.getActionCommand() == first) {
+    	    System.out.println(first + " pressed.");
+        } else {
+    	    System.out.println(second + " pressed.");
+        }
+    }
+
+    public void stateChanged(ChangeEvent e) {
+        System.out.println("ChangeEvent received from: "
+    		           + e.getSource());
+    }
+}
+</pre>
+</blockquote>
+
+See <a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/button.html">How to Use Buttons</a>
+for information on the <code>AbstractButton</code> API
+that <code>JCheckbox</code> inherits.
+The only API defined by <code>JCheckbox</code> 
+that you're likely to use are the constructors.
+<code>JCheckbox</code> defines seven constructors:
+
+
+<ul>
+<li> <code>JCheckbox(String)</code>
+</li><li> <code>JCheckbox(String, boolean)</code>
+</li><li> <code>JCheckbox(Icon)</code>
+</li><li> <code>JCheckbox(Icon, boolean)</code>
+</li><li> <code>JCheckbox(String, Icon)</code>
+</li><li> <code>JCheckbox(String, Icon, boolean)</code>
+</li><li> <code>JCheckbox()</code>
+</li></ul>
+
+The arguments are straightforward:
+
+<dl>
+<dt> <code>String</code>
+</dt><dd> Specifies the text that the checkbox should display.
+</dd><dt> <code>Icon</code>
+</dt><dd> Specifies the image that the checkbox should display.
+     Unless you specify an image,
+     the images defined by the look-and-feel are used.
+</dd><dt> <code>boolean</code>
+</dt><dd> Specifies whether the checkbox is selected.
+     By default, it's <code>false</code> (not selected).
+
+</dd></dl></blockquote>
+<p>
+</p><hr size="4">
+<p>
+<table width="100%">
+<tbody><tr>
+<td align="left">
+<a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/button.html"><img src="How%20to%20Use%20Checkboxes_files/PreviousArrow.gif" alt="Previous | " border="0" align="top" height="26" width="26"></a><a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/label.html"><img src="How%20to%20Use%20Checkboxes_files/NextArrow.gif" alt="Next | " border="0" align="top" height="26" width="26"></a><a href="http://journals.ecs.soton.ac.uk/java/tutorial/index.html"><img src="How%20to%20Use%20Checkboxes_files/WayUpArrow.gif" alt="Trail Map | " border="0" align="top" height="26" width="26"></a><a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/index.html"><img src="How%20to%20Use%20Checkboxes_files/jdk1_1.gif" alt="To 1.1 -- And Beyond! | " border="0" align="top" height="26" width="26"></a>
+</td>
+<td align="right">
+<a href="http://journals.ecs.soton.ac.uk/java/tutorial/post1.0/ui/index.html"><strong><em>GUI Changes: The AWT Grows Up</em></strong></a>
+</td>
+</tr>
+</tbody></table>
+
+
+</p></body></html>

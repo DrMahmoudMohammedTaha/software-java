@@ -1,0 +1,1684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>How to Create Text Area In Java</title>
+<meta content="Create Textarea in Java - Java programming tutorials provides code to create jtext area, creating text area using java swing, jtext area example code java. Also useful java resources and articles for the programmers and beginners." name="description">
+<meta content="create textarea in java, jtext area example, how to create text area in java, swing tutorials, java swing tutorials, free java code, java tutorials, online java tutorials, free java tutorials" name="keywords">
+
+<style type="text/css">
+<!--
+@import url("/d2/css/default.css?v=6");
+-->
+</style>
+
+
+<style type="text/css">
+label.error { width: 250px; color: red; display: block; float: left; padding-left: 10px; }
+</style>
+
+
+
+<script src="How%20to%20Create%20Text%20Area%20In%20Java_files/all.js" id="facebook-jssdk"></script><script src="How%20to%20Create%20Text%20Area%20In%20Java_files/ca-pub-0714075272818912.js" type="text/javascript" async=""></script><script async="" src="How%20to%20Create%20Text%20Area%20In%20Java_files/cbgapi"></script><script gapi_processed="true" src="How%20to%20Create%20Text%20Area%20In%20Java_files/plusone.js" async="" type="text/javascript"></script><script async="" src="How%20to%20Create%20Text%20Area%20In%20Java_files/cbgapi_004"></script><script async="" src="How%20to%20Create%20Text%20Area%20In%20Java_files/cbgapi_003"></script><script gapi_processed="true" src="How%20to%20Create%20Text%20Area%20In%20Java_files/plusone.js" async="" type="text/javascript"></script><script async="" src="How%20to%20Create%20Text%20Area%20In%20Java_files/cbgapi_002"></script><script src="How%20to%20Create%20Text%20Area%20In%20Java_files/ga.js" async="" type="text/javascript"></script><script src="How%20to%20Create%20Text%20Area%20In%20Java_files/ddmenu.js" type="text/javascript"></script>
+<link href="How%20to%20Create%20Text%20Area%20In%20Java_files/prettify.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/prettify.js"></script>
+
+<script src="How%20to%20Create%20Text%20Area%20In%20Java_files/jquery-1.js"></script>
+<script src="How%20to%20Create%20Text%20Area%20In%20Java_files/jquery.js"></script>
+<script src="How%20to%20Create%20Text%20Area%20In%20Java_files/jquery_002.js"></script>
+
+
+<link href="How%20to%20Create%20Text%20Area%20In%20Java_files/jquery-ui-1.css" rel="stylesheet">
+<script src="How%20to%20Create%20Text%20Area%20In%20Java_files/jquery-ui-1.js"></script>
+
+
+
+<script type="text/javascript"> 
+       $(document).ready(function() { 
+		  $("#commentForm").validate({ 
+	       rules: { 
+          name: "required",subject: "required",captchavalue: "required", 
+          email: { 
+          required: false, 
+          email: true 
+		   
+        }, 
+        url: { 
+	          url: false 
+        },comment: { 
+          required: true 
+	        } 
+	        }, 
+	        messages: { 
+	          comment: "Please enter a comment." 
+	        }
+		 }); 
+			var options = { 
+				success: showResponse,  // post-submit callback
+				beforeSubmit: beforeSubmit // pre-submit callback
+			}; 
+			$('#commentForm').ajaxForm(options);
+        }); 
+
+
+	function showResponse(responseText, statusText){ // post-submit callback
+			if(responseText=="Yes"){
+				$('#commentForm').clearForm();
+				//document.getElementById("divStatus").innerHTML = responseText;//Remove loading image
+				alert("Thanks for your posting your comment! We are reviewing your comment.");
+			}else{
+				//$("#captchavalue").value="";
+				alert("Captcha validation error! Please enter the correct value.");
+				$("#captchavalue").focus();
+
+			}	
+			
+			document.getElementById("divStatus").innerHTML = "";
+
+	}
+
+	function beforeSubmit(){ // post-submit callback
+		document.getElementById("divStatus").innerHTML = "<img src=\"/d2/images/loading.gif\">";
+
+	}
+
+
+
+    </script> 
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6980313-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+	<style type="text/css">
+		/*
+		body{
+			font-family:Arial, Helvetica, sans-serif;
+			margin:10px;
+		}
+		.wrapper{
+			position:relative;
+			font-family:Arial, Helvetica, sans-serif;
+			padding-top:90px;
+			padding-left:50px;
+			width:80%;
+			margin:auto
+		}
+		.wrapper .text{
+			font-family:Arial, Helvetica, sans-serif;
+			padding-top:50px;
+		}
+		.wrapper h1{
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:26px;
+		}
+		
+		
+		.longText{
+			margin-top:20px;
+			width:600px;
+			font:18px/24px Arial, Helvetica, sans-serif;
+			color:gray;
+		}
+		*/
+
+		/*
+		span.btn{
+			padding:10px;
+			display:inline-block;
+			cursor:pointer;
+			font:12px/14px Arial, Helvetica, sans-serif;
+			color:#aaa;
+			background-color:#eee;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			-moz-box-shadow:#999 2px 0px 3px;
+			-webkit-box-shadow:#999 2px 0px 3px;
+		}
+		span.btn:hover{
+			background-color:#000;
+		}
+		*/
+
+		/*
+
+		input{
+			padding:10px;
+			border:none;
+			-moz-box-shadow:#999 2px 0px 3px;
+			-webkit-box-shadow:#999 2px 0px 3px;
+		}
+		*/
+			/*
+									custom style for extruder
+									*/
+
+		.extruder.left.a .flap{
+			font-size:18px;
+			color:white;
+			top:0;
+			padding:10px 0 10px 10px;
+			background:#772B14;
+			width:30px;
+			position:absolute;
+			right:0;
+			-moz-border-radius:0 10px 10px 0;
+			-webkit-border-top-right-radius:10px;
+			-webkit-border-bottom-right-radius:10px;
+			-moz-box-shadow:#666 2px 0px 3px;
+			-webkit-box-shadow:#666 2px 0px 3px;
+		}
+
+		.extruder.left.a .content{
+			border-right:3px solid #772B14;
+			background:rgba(255,255,255,.95);
+		}
+
+		.extruder.top .optionsPanel .panelVoice a:hover{
+			color:#fff;
+			background: url("/d2/leftmenu/elements/black_op_30.png");
+			border-bottom:1px solid #000;
+		}
+		.extruder.top .optionsPanel .panelVoice a{
+			border-bottom:1px solid #000;
+		}
+
+		.extruder.left.a .flap .flapLabel{
+			background:#772B14;
+		}
+
+		/*
+		.extruder.top{
+			margin-left:-200px;
+		}
+		*/
+
+	</style>
+
+
+
+
+
+<script src="How%20to%20Create%20Text%20Area%20In%20Java_files/secureAnonymousFramework"></script></head>
+<body data-twttr-rendered="true" onload="prettyPrint()">
+<div class="wrapper">
+
+
+
+<!-- Place this tag in your head or just before your close body tag -->
+<script gapi_processed="true" type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/plusone.js"></script>
+
+
+
+	<div class="header">
+		<div class="logo"><a href="http://www.roseindia.net/"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/logo.gif" alt=""></a></div>
+		<div class="rightHeader">
+			<div class="topLink">
+			<a href="http://www.roseindia.net/latest.shtml">Latest Tutorials</a>|
+			<a href="http://www.roseindia.net/answers/questions/">Questions and Answers</a>|<a href="http://www.roseindia.net/answers/askquestions/askquestion.html">Ask Questions?</a>|<a href="http://www.roseindia.net/sitemap/sitemap.shtml">Site Map</a>
+			
+			<br clear="all">
+			<div class="headerAd">
+			<script type="text/javascript"><!--
+   e9 = new Object();
+   e9.size = "728x90,468x60";
+   e9.noAd = 1;
+//--></script>
+
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/tags.js"></script><div align="center"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/a_002.htm" id="tfasyncframe_0" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" allowtransparency="true" align="middle" frameborder="0" height="90" width="728"> </iframe></div>
+
+			</div>
+		</div>
+	</div><br clear="all">
+
+
+
+	<div id="navigationtop" class="navigationBar" style="position: static; top: 0px;">
+		<div class="navigationBarLeft">&nbsp;</div>
+
+		<div class="navigation">
+			<ul id="ddmenu">
+				<li class="top"><a href="http://www.roseindia.net/index.shtml" class="top_link"><span>Home</span></a></li>
+				<li class="top"><a href="http://www.roseindia.net/java/" class="top_link"><span class="down">Java</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/java/">Core Java</a></li>
+						<li><a href="http://www.roseindia.net/java/jdk6/index.shtml">Java SE 6</a></li>
+						<li><a href="http://www.roseindia.net/java/Advanced-Java-Tutorials.shtml">Advanced Java</a></li>
+						<li><a href="http://www.roseindia.net/jsp/">JSP</a></li>
+						<li><a href="http://www.roseindia.net/servlets/">Servlets</a></li>
+						<li><a href="http://www.roseindia.net/jdbc/">JDBC</a></li>
+						<li><a href="http://www.roseindia.net/ejb/">EJB</a></li>
+						<li><a href="http://www.roseindia.net/webservices/">Web Services</a></li>
+						<li><a href="http://www.roseindia.net/j2me/">J2ME</a></li>
+						<li><a href="http://www.roseindia.net/jstl/introduction.shtml">JSTL</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/frameworks/" class="top_link"><span class="down">Frameworks</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/hibernate/">Hibernate</a></li>
+						<li><a href="http://www.roseindia.net/struts/">Struts 1.x</a></li>
+						<li><a href="http://www.roseindia.net/struts/struts2/">Struts 2</a></li>
+						<li><a href="http://www.roseindia.net/jsf/">JSF</a></li>
+						<li><a href="http://www.roseindia.net/javafx/">JavaFX</a></li>
+						<li><a href="http://www.roseindia.net/ajax/">Ajax</a></li>
+						<li><a href="http://www.roseindia.net/spring/">Spring 2.5</a></li>
+						<li><a href="http://www.roseindia.net/tutorial/spring/spring3/index.html">Spring 3</a></li>
+						<li><a href="http://www.roseindia.net/dojo/">DOJO</a></li>
+						<li><a href="http://www.roseindia.net/tutorials/ibatis/">iBatis</a></li>
+						<li><a href="http://www.roseindia.net/flex/">Flex 3</a></li>
+						<li><a href="http://www.roseindia.net/tutorial/flex/flex4/index.html">Flex 4</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/databases/" class="top_link"><span class="down">Database</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/sql/">SQL</a></li>
+						<li><a href="http://www.roseindia.net/mysql/">MySQL</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/technology/" class="top_link"><span class="down">Technology</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/technology/gps/">GPS</a></li>
+						<li><a href="http://www.roseindia.net/technology/wimax/">WiMaX</a></li>
+						<li><a href="http://www.roseindia.net/voip/">VoIP</a></li>
+						<li><a href="http://www.roseindia.net/technology/wifi/">WiFi</a></li>
+						<li><a href="http://www.roseindia.net/technology/hsdpa/">HSDPA</a></li>
+						<li><a href="http://www.roseindia.net/wap/index.shtml">WAP</a></li>
+						<li><a href="http://www.roseindia.net/eai/">EAI</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/webdevelopment/" class="top_link"><span class="down">Web Development</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/html/">HTML</a></li>
+						<li><a href="http://www.roseindia.net/javascript/">Java Script</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/testtools/" class="top_link"><span class="down">Build/Test Tools</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/testingtools/DbUnit/">DBUNIT</a></li>
+						<li><a href="http://www.roseindia.net/tutorials/ant/">ANT</a></li>
+						<li><a href="http://www.roseindia.net/maven2/">Maven</a></li>
+						<li><a href="http://www.roseindia.net/junit/">JUNIT</a></li>
+						<li><a href="http://www.roseindia.net/jmeter/">Jmeter</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/servers/" class="top_link"><span class="down">Servers</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/servers/application-servers-for-java.shtml">Servers for Java</a></li>
+						<li><a href="http://www.roseindia.net/web-application-server/tomcat/index.shtml">Tomcat</a></li>
+						<li><a href="http://www.roseindia.net/servers/apachegeronimo/">Apache Geronimo</a></li>
+						<li><a href="http://www.roseindia.net/jboss/index.shtml">Jboss</a></li>
+					</ul>
+				</li>
+				<li class="top"><a href="http://www.roseindia.net/php/" class="top_link"><span class="down">PHP</span></a>
+					<ul class="sub">
+						<li><a href="http://www.roseindia.net/php/">PHP Tutorial</a></li>
+						<li><a href="http://www.roseindia.net/php/starting-php.shtml">Starting PHP</a></li>
+						<li><a href="http://www.roseindia.net/tutorial/php/phpdatabase/">PHP MySQL</a></li>
+						<li><a href="http://www.roseindia.net/tutorial/php/zendframework/index.html">Zend FrameWork</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		
+
+		<div class="navigationBarRight">&nbsp;</div>
+	</div><br><br clear="all">
+
+
+
+  <script type="text/javascript">
+/*
+		$(function() {
+            var offset1 = $("#navigationtop").offset();
+
+            var topPadding1 = 0;
+			
+            $(window).scroll(function() {
+
+				if ($(window).scrollTop() > offset1.top + 600) {
+                    $("#navigationtop").stop().animate({
+                        marginTop: $(window).scrollTop() - offset1.top + topPadding1
+                    });
+                }else{
+
+
+					$("#navigationtop").stop().animate({
+                        marginTop: 0
+                    }, 0);
+				}
+
+            });
+			
+        });
+	*/
+var fixed = false;
+
+$(document).scroll(function() {
+    if( $(this).scrollTop() >= 160 ) {
+        if( !fixed ) {
+            fixed = true;
+            $('#navigationtop').css({position:'fixed',top:0}); // Or set top:20px; in CSS
+        }                                           // It won't matter when static
+    } else {
+        if( fixed ) {
+            fixed = false;
+            $('#navigationtop').css({position:'static'});
+        }
+    }
+});
+
+    </script>
+
+
+
+
+
+	<div class="page">
+		<div class="bredcrum">
+			<a href="http://www.roseindia.net/">Home</a>
+			
+				
+							<a href="http://www.roseindia.net/java/index.shtml">Java</a>
+				
+							<a href="http://www.roseindia.net/java/example/index.shtml">Example</a>
+				
+							<a href="http://www.roseindia.net/java/example/java/index.shtml">Java</a>
+				
+							<a href="http://www.roseindia.net/java/example/java/swing/index.shtml">Swing</a>
+				
+				How to Create Text Area In Java
+		</div>
+		
+		<div class="bredcrumquestions"><b>Questions:</b><a href="http://www.roseindia.net/answers/askquestions/askquestion.html">Ask</a>|<a href="http://www.roseindia.net/answers/questions/">Latest</a></div>
+		<br clear="all">
+
+		
+		<div class="leftSecPage">
+
+
+
+		
+
+
+	
+
+
+		<div id="sidebar" class="leftFloatMenu">
+
+			<div class="list-wrap">
+
+			<h2><span style="color:#D10026">Top Tutorials</span></h2>
+			<div>
+				<script gapi_processed="true" src="How%20to%20Create%20Text%20Area%20In%20Java_files/platform.js"></script>
+
+				<div id="___ytsubscribe_0" style="position: absolute; width: 450px; left: -10000px;"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/subscribe_embed.htm" name="I0_1408642291612" id="I0_1408642291612" vspace="0" tabindex="0" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><div data-gapistub="true" data-onload="true" data-gapiscan="true" class="g-ytsubscribe" data-channel="roseindianet" data-layout="full" data-count="hidden"></div>
+
+			
+			<a rel="nofollow" href="http://www.youtube.com/roseindianet" target="_blank"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/video-tutorials6.jpg"></a>
+			
+			</div>
+			<ul>		
+				<li class="heading"><b>Java</b></li>
+				<li>
+					<a href="http://www.roseindia.net/java/index.shtml">Java Home</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/java/How-to-Get-Started-with-Java.shtml">Getting Started</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/java/beginners/index.shtml">Beginners Tutorial</a>
+				</li>
+
+				<li>
+					<a href="http://www.roseindia.net/java/learn-java-in-a-day/index.shtml">Learn Java in a day</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/java/master-java/index.shtml">Master Java In A Week</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/java/training/index.shtml">Java Training Video</a>
+				</li>
+
+				<li class="heading"><b>Hibernate</b></li>
+				<li>
+					<a href="http://www.roseindia.net/hibernate/index.shtml">Hibernate Home</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/hibernate/hibernate4/Hibernate-4-Tutorial.shtml">Hibernate 4</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/hibernate/hibernate4/index.shtml">Hibernate Examples</a>
+				</li>
+				
+				<li class="heading"><b>Spring Framework</b></li>
+				<li>
+					<a href="http://www.roseindia.net/spring/index.shtml">Spring Home</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/spring/spring3/spring-3-hello-world.shtml">Spring Hello World</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/tutorial/spring/spring3/Spring-MVC-Tutorials.html">Spring MVC Tutorials</a>
+				</li>
+
+				
+				<li class="heading"><b>Struts 2</b></li>
+				<li>
+					<a href="http://www.roseindia.net/struts/index.shtml">Struts 2 Home</a>
+				</li>
+
+				<li>
+					<a href="http://www.roseindia.net/struts/struts2.3.15.1/architecture-of-Struts-2-framework.shtml">Architecture of Struts 2</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/struts/struts2.3.15.1/how-Struts-2-framework-works.shtml">How Struts 2 Framework works?</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/struts/struts2.3.15.1/Struts-2-Hello-World-example-in-eclipse.shtml">Struts 2 Hello World Example</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/struts/struts2/struts-2-features.shtml">Struts 2 Features</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/struts/struts/struts2.2.1/">Struts 2 Tutorial</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/struts/struts2.3.15.1/index.shtml">Struts version 2.3.15.1</a>
+				</li>
+
+
+				<li class="heading"><b>JPA</b></li>
+				<li>
+					<a href="http://www.roseindia.net/jpa/index.shtml">JPA Home</a>
+				</li>
+
+				<li>
+					<a href="http://www.roseindia.net/jpa/eclipsejpaexamples/index.shtml">JPA Examples</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/jpa/jpacrud/index.shtml">JPA Crud</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/jpa/eclipsejpaexamples/jparelationship/index.shtml">JPA Relationship</a>
+				</li>
+
+
+
+				<li class="heading"><b>jQuery</b></li>
+				<li>
+					<a href="http://www.roseindia.net/ajax/jquery/index.shtml">jQuery Home</a>
+				</li>
+
+				<li>
+					<a href="http://www.roseindia.net/ajax/jquery/whatisjquery.shtml">Introduction to jQuery</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/ajax/jquery/jQueryFeatures.shtml">jQuery Features</a>
+				</li>
+				<li>
+					<a href="http://www.roseindia.net/ajax/jquery/jquery-hello-world.shtml">jQuery Hello World</a>
+				</li>
+
+
+			</ul>
+			</div>
+			</div>
+			
+	
+
+<div id="___plus_0" style="position: absolute; width: 450px; left: -10000px;"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/followers.htm" name="I1_1408642291617" id="I1_1408642291617" vspace="0" tabindex="0" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><div data-gapistub="true" data-onload="true" data-gapiscan="true" class="g-plus" data-action="followers" data-height="400" data-href="https://plus.google.com/+roseindia" data-source="blogger:blog:followers" data-width="182">
+				</div>
+				<script type="text/javascript">
+					  (function() {
+						window.___gcfg = {'lang': 'en'};
+						var po = document.createElement('script');
+						po.type = 'text/javascript';
+						po.async = true;
+						po.src = 'https://apis.google.com/js/plusone.js';
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(po, s);
+					  })();
+					</script>
+
+
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script gapi_processed="true" src="How%20to%20Create%20Text%20Area%20In%20Java_files/platform.js" async="" defer="defer"></script>
+
+<!-- Place this tag where you want the widget to render. -->
+<div id="___follow_0" style="position: absolute; width: 450px; left: -10000px;"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/follow.htm" name="I0_1408642291678" id="I0_1408642291678" vspace="0" tabindex="0" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><div data-gapistub="true" data-onload="true" data-gapiscan="true" class="g-follow" data-annotation="bubble" data-height="24" data-href="//plus.google.com/u/0/118190572550584097169" data-rel="publisher"></div>
+
+
+
+
+
+
+
+<p class="relatedtagsshow">Related Tutorials</p>
+<div style="width:120px;background-color: #white; text-align:center">
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/message-box-java.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/49562.gif" border="0" height="90" width="90">Message Box Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/Java-ComboBox.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/48987.gif" border="0" height="90" width="90">Combo box In Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/MessageBox.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/48953.gif" border="0" height="90" width="90">Java Message Box</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/swing-in-java.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/48947.gif" border="0" height="90" width="90">Swing In Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/insert-jcombobox-edited-selecteditem-value.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/48676.gif" border="0" height="90" width="90">JComboBox Insert Edited Value Into Table</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/how-to-create-internal-frame.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/48669.gif" border="0" height="90" width="90">How To Create Internal Frames In Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/jtable-display-database-data.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/48598.gif" border="0" height="90" width="90">JTable Display Data From MySQL Database</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/java-password-field.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/47963.gif" border="0" height="90" width="90">Java Password Field</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/frame-close-on-button-click.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/47682.gif" border="0" height="90" width="90">JFrame Close On Button Click</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/setter-getter-method.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/47468.gif" border="0" height="90" width="90">Java Swing Set And Get Values</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/jlayered-overlap-panel.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/47050.gif" border="0" height="90" width="90">Java JLayeredPane example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/jbutton-key-binding.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/47040.gif" border="0" height="90" width="90">Java JButton Key Binding Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/java-jtabbed-pane.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/47025.gif" border="0" height="90" width="90">Java JTabbedPane Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/java-jtextarea.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/46935.gif" border="0" height="90" width="90">Java JTextArea</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/fetch-data-from-database-into-jtextarea.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/46934.gif" border="0" height="90" width="90">How To Fetch Data From Database Into JTextArea</a></div>
+
+ 
+			
+</div>
+
+
+			<br>
+		</div>
+		
+		<div class="middleSecPage">
+
+
+			<div class="innerpageSearch">
+				<div class="innerpageSearchLeft">&nbsp;</div>
+				<div class="innerpageSearchMiddle">
+
+					<form action="http://www.roseindia.net/customsearch/search.shtml" id="cse-search-box">
+						<input name="cx" value="partner-pub-0714075272818912:351fen-pwln" type="hidden">
+						<input name="cof" value="FORID:10" type="hidden">
+						<input style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" class="innerpageSearchinputtxt" name="q" type="text">
+						<input name="sa" value="Search" class="innerpageSearchinputbtn" type="submit">
+					<input value="www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml" name="siteurl" type="hidden"><input value="www.google.com.eg/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;cad=rja&amp;uact=8&amp;ved=0CDEQFjAC&amp;url=http%3A%2F%2Fwww.roseindia.net%2Fjava%2Fexample%2Fjava%2Fswing%2Fhow-to-create-textarea-in-java.shtml&amp;ei=kyz2U-epOqrm7AaWnoDwDw&amp;usg=AFQjCNHOiI0BxkYNtAOvEOfr7pXQh717rw&amp;sig2=DBY0GVbRwou0_lWyNCJtHA&amp;bvm=bv.73231344,d.ZGU" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+					<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/brand"></script>
+
+				</div>
+				<div class="innerpageSearchRight">&nbsp;</div>
+			</div><br clear="all">
+
+
+		
+
+		
+			
+
+				<div class="pageTopicSec">
+				
+			
+							
+							<div style="float:left;">
+							<img src="How%20to%20Create%20Text%20Area%20In%20Java_files/creat-text-area.gif">
+							</div>
+							
+					
+
+					<div style="float:left;width:478px;">
+						
+						<div style="float:right;width:120px; height:64px;background-color:#FFFFFF; margin:0px;padding:0px; border-radius:3px;">						
+							<a href="https://plus.google.com/share?url=http://www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" style="font-size:9px;color:blue"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/gplus-64.png" alt="Share on Google+" height="12" width="12">Share on Google+</a>
+							
+
+							<!-- Place this tag where you want the +1 button to render. -->
+							<div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/fastbutton.htm" name="I1_1408642291682" id="I1_1408642291682" vspace="0" tabindex="0" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><div data-gapistub="true" data-onload="true" data-gapiscan="true" class="g-plusone" data-size="medium"></div>
+
+							<!-- Place this tag after the last +1 button tag. -->
+							<script type="text/javascript">
+							  (function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							  })();
+							</script>
+
+
+						</div>
+						
+
+						<h1>How to Create Text Area In Java</h1>
+
+
+
+
+
+
+					</div>
+
+				</div>
+
+			
+
+			<div class="topoicdetails">
+			
+				<div class="topoicTitle">
+				<script type="text/javascript"><!--
+google_ad_client = "pub-0714075272818912";
+/* 468x15, created 10/26/10 */
+google_ad_slot = "0714811900";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="15" width="468"></iframe></ins></ins>			
+				</div>
+			
+				<div class="topicDetailsShow">
+					<div class="topicDetailsAdRight">
+					
+					<div style="width:355px;height:310px;text-align:center;">
+<fieldset style="border:1px solid white;">
+<legend style="color:#D1D0CE;font-size:11px;">Advertisement</legend>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-0714075272818912";
+/* 336x280, created 10/26/10 */
+google_ad_slot = "9725061927";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins>
+
+</fieldset>
+</div>
+					
+					</div>
+<!-- google_ad_section_start -->
+					<b>In this section, you will learn how to create Text Area in Java.
+ This section provides you a complete code of the program for 
+illustrating the topic.</b><br>
+
+
+					
+      <h1 align="left"><font>How to Create Text Area In Java</font></h1>
+
+
+
+      <p align="center">
+      <a href="http://www.roseindia.net/java/example/java/swing/dynamicicon-in-java.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/previous.gif" border="0"></a>&nbsp;&nbsp;
+      &nbsp;<a href="http://www.roseindia.net/java/example/java/swing/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/bt_home.gif" border="0"></a>&nbsp;
+      <a href="http://www.roseindia.net/java/example/java/swing/packvssetsize.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/next.gif" border="0"></a></p>
+
+
+<p><font>In this section, you will learn how to create Text Area
+in Java. This section provides you a complete code of the program for
+illustrating the topic.</font></p>
+<p><b><font>Program Description:</font></b></p>
+<p><font>Here, a class "<b>TextAreaExample</b>" has
+been defined. This class has main method in which frame and a panel are created
+and a text area is also created on the panel by using <b>JTextArea </b>class and
+it's constructor of java.swing package. In the code of the example, constructor
+of the JTextArea has been used with three arguments. These arguments are as
+follows:</font></p>
+<ul>
+  <li><font>First parameter is string that is for the value of
+    the Text Area component.</font></li>
+  <li><font>Second one is a integer value i.e. for the number of
+    rows of the text area component.</font></li>
+  <li><font>And last one is also a integer type value that is
+    for number of columns of the Text Area component.</font></li>
+</ul>
+<p><font><b>Here is the code of this program:</b></font></p>
+<div class="java" style="width: 473; height: 248" align="left">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffcc">
+   <tbody><tr>
+  <!-- start source code -->
+   <td align="left" nowrap="nowrap" valign="top">
+    <code>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">javax.swing.*;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">TextAreaExample&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">main</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">args</font><font color="#000000">){</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">JFrame&nbsp;frame=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JFrame</font><font color="#000000">(</font><font color="#2a00ff">"TextArea&nbsp;frame"</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">JPanel&nbsp;panel=</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JPanel</font><font color="#000000">()</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">JTextArea&nbsp;jt=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JTextArea</font><font color="#000000">(</font><font color="#2a00ff">"Welcome&nbsp;Roseindia"</font><font color="#000000">,</font><font color="#990000">5</font><font color="#000000">,</font><font color="#990000">20</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">frame.add</font><font color="#000000">(</font><font color="#000000">panel</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">jt</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">frame.setSize</font><font color="#000000">(</font><font color="#990000">250</font><font color="#000000">,</font><font color="#990000">200</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">frame.setVisible</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">frame.setDefaultCloseOperation</font><font color="#000000">(</font><font color="#000000">JFrame.EXIT_ON_CLOSE</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+
+</tbody></table>
+</div>
+
+<p><code><b><font>Output this program:</font></b></code></p>
+<p><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/jtextarea.gif" border="0" height="200" width="249"></p>
+<p><b><font><a href="http://www.roseindia.net/java/example/java/swing/TextAreaExample.java">Download this
+program.</a></font></b></p>
+
+
+
+
+     
+
+
+
+
+				
+					
+
+
+
+
+
+
+
+
+<div class="AdsBottom336X280">
+					<div style="width:350px;height:310px;">
+<fieldset style="border:0px solid #E5E4E2;">
+<legend style="color:#D1D0CE;font-size:11px;">Advertisements</legend>
+
+<script async="" src="How%20to%20Create%20Text%20Area%20In%20Java_files/adsbygoogle.js"></script>
+<!-- bottom-336x280 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-0714075272818912" data-ad-slot="9914671725"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</fieldset>
+</div>
+					</div>
+
+			
+
+
+
+
+
+
+
+					
+
+<!-- google_ad_section_end -->
+
+
+
+<div style="width:500px; height:40px;padding:10px;">
+<p>If you enjoyed this post then why not add us on Google+? <a href="https://plus.google.com/+roseindia/posts" rel="nofollow" target="_blank">Add us to your Circles</a></p>  
+</div>
+<br clear="all">
+
+
+					<div class="topicNavigationsBlack">
+						<a href="http://www.roseindia.net/java/example/java/swing/dynamicicon-in-java.shtml">«Previous</a>
+						<a href="http://www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml">Index</a>
+						<a href="http://www.roseindia.net/java/example/java/swing/packvssetsize.shtml">Next»</a>
+					</div><br clear="all">
+
+
+
+
+<div style="width:500px; height:50px;padding:5px;background:#FEF9CA;">
+
+<div style="float:left;width:300px; height:40px;  margin:2px;">
+	<p style="font-size:18px;"><b>Liked it! &nbsp;<a href="https://plus.google.com/share?url=http://www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" style="font-size:18px;">Share this Tutorial</a></b></p>
+</div>
+
+
+
+</div>
+<br clear="all">
+
+
+
+<div style="width:520px;">
+Follow us on  <a href="https://twitter.com/RoseIndiaNet">Twitter</a>, or add us on <a href="https://www.facebook.com/roseindiaofficial">Facebook</a> or <a href="https://plus.google.com/+roseindia/posts">Google Plus</a> to keep you updated with the recent trends of Java and other open source platforms.
+						<a rel="author" href="https://plus.google.com/114616202653097923965?rel=author" target="_blank">Connect Me on Google+</a>
+						
+						</div><br clear="all">
+
+						<span class="pageTopicpostsinfo">Posted on: February 22, 2008  </span>
+					
+
+						<script gapi_processed="true" type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/plusone.js"></script>
+							<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/ZIZ-G4f9LgK.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/ZIZ-G4f9LgK_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+
+							<table widht="700" border="0">
+							<tbody><tr>
+							<td>
+							<div class="fb-like" data-href="http://www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml" data-send="true" data-layout="button_count" data-width="90" data-show-faces="false" font=""></div>
+							</td>
+							<td>													
+							<div class="twitter"><iframe style="width: 109px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="How%20to%20Create%20Text%20Area%20In%20Java_files/tweet_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe><script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/widgets.js"></script></div>
+							</td>
+
+
+							<td>
+						    <div class="linkedIn"><script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/in.js"></script><script type="in/share" data-url="http://www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml" data-counter="right"></script></div>
+							</td>
+							<td>
+							<div id="___plusone_1" style="position: absolute; width: 450px; left: -10000px;"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/fastbutton_002.htm" name="I0_1408642311467" id="I0_1408642311467" vspace="0" tabindex="0" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div><g:plusone data-gapistub="true" data-onload="true" data-gapiscan="true" size="medium" href="http://www.roseindia.net/java/example/java/swing/how-to-create-textarea-in-java.shtml"></g:plusone>
+							</td>
+							
+
+							</tr>
+							</tbody></table>
+						
+					
+ 
+
+
+ <style>
+	.relatdtutorialsdiv{
+		background: white; /* Background color for the related posts container */
+		padding: 1px;
+		margin: 2px;
+		float:left; 
+		width:95px; 
+		height:152px; 
+		overflow:hidden;
+	
+    }
+	.relatdtutorialsdiv:hover { background-color: #F5F5F5 !important; }
+
+ </style>
+
+<p class="relatedtagsshow">Related Tutorials</p>
+<div style="width:620px;background-color: #white;">
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/store-jcombobox-selecteditem-value-msaccess.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/46857.gif" border="0" height="90" width="90">Java JComboBox Get Selected Item Value</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/use-assertion-in-java.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">assertion in java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/Swing_index.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Creating a Frame</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/CreateSlider.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Java Slider Example,Java JSlider,Slider Component in Java Swing,JSlider Source Code Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/add_edit_and_delete_employee_inf.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Add Edit And Delete Employee Information</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/set_color_in_joptionpane.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Set Color in JOptionPane</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/create_multiple_buttons_using_ja.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Create Multiple Buttons</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/get_jtextfield_value_from_anothe.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Get JTextField value from another class</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/create_sine_wave.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Create Sine Wave</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/set__delay_time_in_joptionpane.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/software-tutorials.jpg" border="0" height="90" width="90">Set delay time in JOptionPane</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/Localization.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Localization.jpg" border="0" height="90" width="90">Localization</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/swing.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Java-Swing.jpg" border="0" height="90" width="90">Java Swing</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/data-transfer.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/data-transfer1.gif" border="0" height="90" width="90"> Data Transfer</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/java-2d.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/java-2d-api.gif" border="0" height="90" width="90">Java 2D API</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/chess-application-swing.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/chess-application.gif" border="0" height="90" width="90">Chess Application In Java Swing</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/color-effect-image.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/color-effect-image.gif" border="0" height="90" width="90">Color Effect On Image</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/draw-pie-chart.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/draw-pie-chart.gif" border="0" height="90" width="90">Draw Pie Chart</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/draw-simple-bar-chart.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/bar-chart-java.gif" border="0" height="90" width="90">Bar Chart in Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/move-image-smoothly.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/move-image-smoothly.gif" border="0" height="90" width="90">How To Move Image Smoothly</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/show-addition.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/show-addition-subtraction.gif" border="0" height="90" width="90">Show Addition, Subtraction, Intersection, Exclusive OR on one Frame</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/use-canvas-with-scrollpane.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/scrollpane-java-swing.gif" border="0" height="90" width="90">Scrollpane in Java Swing</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/bouncing-thread.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/bouncing-thread.gif" border="0" height="90" width="90">Bouncing Thread Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/event-dispatcher-thread.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/event-dispatcher-thread.gif" border="0" height="90" width="90">Event Dispatcher Thread</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/noise-image-graphics.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/noise-image.gif" border="0" height="90" width="90">Noise Image in Graphics</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/create-animation.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/create-animation.gif" border="0" height="90" width="90">How to create Animation</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/copy-data-from-ms.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/copy-data-JTextField.gif" border="0" height="90" width="90">Copy data from one JTextField to another JTextField</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/packvssetsize.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/pack-setSize.gif" border="0" height="90" width="90">pack() vs. setSize() Method in Java</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/index.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/graphics-2d.gif" border="0" height="90" width="90">Graphics 2D</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/internationalization.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/internationalization.gif" border="0" height="90" width="90">Internationalization</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/calculate.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/sum-number-using-swing.gif" border="0" height="90" width="90">Sum of a Number using Swing</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/shearing-property-class.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/shearing-property.gif" border="0" height="90" width="90">Show Shearing property of class AffineTransform</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/scaling-property-class.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/scaling-property.gif" border="0" height="90" width="90">Show Scaling property of class AffineTransform</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/rotation-property-class.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/rotation-property.gif" border="0" height="90" width="90">Show Rotation property of class AffineTransform</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/translation-property.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/translation-property.gif" border="0" height="90" width="90">Show Translation property of class AffineTransform</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/layout-text-along-line.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/layout-text-along.gif" border="0" height="90" width="90">Layout text along a line using LineMetrics</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/change-color-font-text.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/change-color-font-text.gif" border="0" height="90" width="90">Change Color and Font of text</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/different-line-styles.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/different-line-styles.gif" border="0" height="90" width="90">Different Line Styles</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/draw-grids.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/grids.gif" border="0" height="90" width="90">Draw Grids</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/color-components.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/color-components.gif" border="0" height="90" width="90">Show Color Components</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/triangle-line2d.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/triangle-line2D.gif" border="0" height="90" width="90">Draw a Triangle using a Line2D</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/ellipse-rectangle.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/ellipse-rectangle.gif" border="0" height="90" width="90">Draw Ellipse in Rectangle</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/arc-graphics.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/arc-graphics.gif" border="0" height="90" width="90">Draw An Arc in Graphics</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/polygon-graphics.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/polygon-graphics.gif" border="0" height="90" width="90">Draw Polygon in Graphics</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/mouse-drag-drop.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/mouse-drag-drop.gif" border="0" height="90" width="90">Mouse Drag and Drop</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/general-path.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/general-path.gif" border="0" height="90" width="90">Show General Path</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/different-strokes.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/different-strokes.gif" border="0" height="90" width="90">Show Different Strokes</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/textured-paint.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/textured-paint.gif" border="0" height="90" width="90">Show Textured Paint</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/text-like-curve.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/text-like-curve.gif" border="0" height="90" width="90">Draw text like a curve</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/transparent-text.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/transparent-text.gif" border="0" height="90" width="90">Show Transparent Text</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/imageio-reader-writer.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/image-reader-writer-format.gif" border="0" height="90" width="90">Show Image Reader and Image Writer by image format</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/image-reader-image-writ.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/image-reader-writer.gif" border="0" height="90" width="90">Show Image Reader and Image Writer by MIME Type</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/line-break-text-layout.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/break-line.gif" border="0" height="90" width="90">Break a Line for text layout</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/texthitinfo.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/textHitInfo.gif" border="0" height="90" width="90">TextHitInfo Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/affine-transform.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/affine-transform.gif" border="0" height="90" width="90">Affine Transform Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/other-image.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/other-image-effects.gif" border="0" height="90" width="90">Show Other Image Effects</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/image-effect.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/image-effect.gif" border="0" height="90" width="90">Show Image Effect</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/flip-image.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/flip-image.gif" border="0" height="90" width="90">How to flip image</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/display-image-using-toolkit.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/display-image-toolkit.gif" border="0" height="90" width="90">Display Image using Toolkit.getImage()</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/image-scale.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/image-scale.gif" border="0" height="90" width="90">Show Image Scale</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/generate-image-files.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/generate-image-files-.gif" border="0" height="90" width="90">Generate Image Files</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/use-image-i-o-rary.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/use-image-I-O-library.gif" border="0" height="90" width="90">Use of Image I/O library</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/crop-image.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/crop-image.gif" border="0" height="90" width="90">Crop Image</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/icon-changes-runtime.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/changes-runtime.gif" border="0" height="90" width="90">Icon Changes at runtime</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/icon-showing-color-gradient.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/color-gradient.gif" border="0" height="90" width="90">Icon showing Color Gradient</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/calendar-icon.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/calendar-icon.gif" border="0" height="90" width="90">Show Calendar Icon</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/icon-displayer.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/icon-displayer.gif" border="0" height="90" width="90">Show Icon Displayer</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/handle-text-key.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/handle-text.gif" border="0" height="90" width="90">How to handle the text using Key Listener Interface</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/convert-temperature.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/convert-temperature.gif" border="0" height="90" width="90">Convert Temperature</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/login-form-swing.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/login-form-swing.gif" border="0" height="90" width="90">Login Form in Swing</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/draw-mandelbrot.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/draw-mandelbrot.gif" border="0" height="90" width="90">Draw a Mandelbrot</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/font-derivation.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/font-derivation.gif" border="0" height="90" width="90">Font Derivation</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/display-font-cente.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/display-font-center.gif" border="0" height="90" width="90">How to display the font in center</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/display-different-fonts.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/display-different-fonts.gif" border="0" height="90" width="90">Display Different Fonts</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/string-oval.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/string-oval.gif" border="0" height="90" width="90">Show String in Oval</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/graphics-full-screen.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/graphics-full-screen.gif" border="0" height="90" width="90">Show Graphics on full Screen</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/text-texture.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/text-texture.gif" border="0" height="90" width="90">Text Texture Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/text-effect.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/text-effect.gif" border="0" height="90" width="90">Show Text effect</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/another-gradient-pain.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/another--gradient-paint.gif" border="0" height="90" width="90">Another Example of Gradient Paint</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/round-gradient-paint.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/round-gradient-paint.gif" border="0" height="90" width="90">Round gradient Paint Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/gradient-paint.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/gradient-paint.gif" border="0" height="90" width="90">Simple Gradient Paint Example</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/shadow-string.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/shadow-string.gif" border="0" height="90" width="90">Display the Shadow of the string</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/oval-icons.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/oval-icons.gif" border="0" height="90" width="90">Show Oval Icons</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/clipping-image.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/clip-image.gif" border="0" height="90" width="90">Clip of image</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/different-curves-quadc.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/draw-different.gif" border="0" height="90" width="90">Draw different curves with QuadCurve2D</a></div>
+
+
+		<div class="relatdtutorialsdiv"><a href="http://www.roseindia.net/java/example/java/swing/graphics2D/font-paint.shtml" style="display:block;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/font-paint.gif" border="0" height="90" width="90">Simple Font Paint Example</a></div>
+
+ 
+			
+</div>
+
+<iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/likebox.htm" scrolling="no" style="border:none; overflow:hidden; width:600px; height:300px;" allowtransparency="true" frameborder="0"></iframe>
+
+
+
+
+
+
+	
+
+
+
+<div style="width:600px;">
+
+	<style>
+
+		.ui-tabs .ui-tabs-panel {
+			background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+			border-width: 0;
+			display: block;
+			padding: 10px 1px 2px 1px;
+		}
+
+	#tabs-2,#tabs-3,#tabs-4{
+		text-align:left;
+		background:white;
+	}
+	#tabs-3{
+		text-align:left;
+	}
+
+	.categorylinks {
+		PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 5px auto 10px 18px; PADDING-TOP: 0px
+	}
+	.categorylinks LI {
+		PADDING-BOTTOM: 1px
+	}
+	.categorylinks LI A {
+		PADDING-RIGHT: 1px; DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN-LEFT: -1px; 
+		/*COLOR: #003366; */
+		COLOR: #D10026;
+		PADDING-TOP: 0px; BORDER-BOTTOM: #ececec 1px solid; TEXT-DECORATION: none
+	}
+	.categorylinks A:visited {
+		/*COLOR: #003366;*/
+		COLOR: grey;
+	}
+	.categorylinks A:hover {
+		BACKGROUND: #FFEBDD; COLOR: #003366; TEXT-DECORATION: none
+	}
+
+
+	</style>
+
+
+
+		<!-- Tabs -->
+		<div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="tabstutorials">
+			<ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+				<li aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active"><a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1">Popular</a></li>
+				<li aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"><a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2">Latest</a></li>
+				<li aria-selected="false" aria-labelledby="ui-id-3" aria-controls="tabs-3" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"><a id="ui-id-3" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-3">Frameworks</a></li>
+				<li aria-selected="false" aria-labelledby="ui-id-4" aria-controls="tabs-4" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"><a id="ui-id-4" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-4">Categories</a></li>
+			</ul>
+			<div aria-hidden="false" aria-expanded="true" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" id="tabs-1">
+			
+				<a href="http://www.roseindia.net/hibernate/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Hibernate.gif" title="Hibernate" border="0"></a>
+				<a href="http://www.roseindia.net/struts/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Struts-2.gif" title="Struts 2" border="0"></a>
+				<a href="http://www.roseindia.net/spring/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Spring.gif" title="Spring" border="0"></a>
+				<a href="http://www.roseindia.net/java/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Java.gif" title="Java" border="0"></a>
+				<a href="http://www.roseindia.net/ajax/jquery/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/jQuery.gif" title="jQuery" border="0"></a>
+				<a href="http://www.roseindia.net/html/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/html.gif" title="HTML" border="0"></a>
+				<a href="http://www.roseindia.net/ajax/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/ajax.gif" title="Ajax" border="0"></a>
+				<a href="http://www.roseindia.net/jpa/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/jpa.gif" title="JPA" border="0"></a>
+				<a href="http://www.roseindia.net/jsp/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/jsp.gif" title="JSP" border="0"></a>
+
+				<a href="http://www.roseindia.net/php/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/php.gif" title="PHP" border="0"></a>
+				<a href="http://www.roseindia.net/technology/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Technology.gif" title="Technology" border="0"></a>
+				<a href="http://www.roseindia.net/jsf/index.shtml"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/jsf.gif" title="JSF" border="0"></a>
+
+
+				
+
+				
+				
+			</div>
+
+			<div aria-hidden="true" aria-expanded="false" style="display: none;" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" id="tabs-2">
+
+
+
+        		<ul class="categorylinks">
+
+
+		
+
+
+				<li><a href="http://www.roseindia.net/answers/viewqa/JavaScriptQuestions/31893-Mobile-Automation-using-Appium.html">Mobile Automation using Appium</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/answers/viewqa/Java-Beginners/31892-java-pattern.html">java pattern</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/answers/viewqa/Java-Beginners/31891-album-maker.html">album maker</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/java/java9/Java9Features-FirstVersion.shtml">Java 9 Features</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/java/java9/index.shtml">Java 9 Tutorial, news and examples</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/answers/viewqa/JSP-Servlet/31890-Inserting-id-in-place-of-name-to-database.html">Inserting id in place of name to database</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/java/imageprocessing/How-to-read-content-of-JPEG-file-in-Java.shtml">How to read content of JPEG file in Java?</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/java/imageprocessing/index.shtml">Image Processing Tutorials in Java Programming Language</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/answers/viewqa/Java-Beginners/31889-ArrayList.html">ArrayList</a></li>
+
+				
+				<li><a href="http://www.roseindia.net/answers/viewqa/Java-Beginners/31888-Unexpected-Behaviour-of-ArrayList.html">Unexpected Behaviour of ArrayList</a></li>
+
+				
+
+
+
+        		</ul>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.roseindia.net/latest.shtml">More...</a></span>
+				
+			</div>
+
+			<div aria-hidden="true" aria-expanded="false" style="display: none;" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-3" id="tabs-3">
+        		 <ul class="categorylinks">
+
+						<li><a href="http://www.roseindia.net/hibernate/">Hibernate</a></li>
+						<li><a href="http://www.roseindia.net/struts/">Struts 1.x</a></li>
+						<li><a href="http://www.roseindia.net/struts/struts2/">Struts 2</a></li>
+						<li><a href="http://www.roseindia.net/jsf/">JSF</a></li>
+						<li><a href="http://www.roseindia.net/javafx/">JavaFX</a></li>
+						<li><a href="http://www.roseindia.net/ajax/">Ajax</a></li>
+
+						<li><a href="http://www.roseindia.net/spring/">Spring 2.5</a></li>
+						<li><a href="http://www.roseindia.net/tutorial/spring/spring3/index.html">Spring 3</a></li>
+						<li><a href="http://www.roseindia.net/dojo/">DOJO</a></li>
+						<li><a href="http://www.roseindia.net/tutorials/ibatis/">iBatis</a></li>
+						<li><a href="http://www.roseindia.net/flex/">Flex 3</a></li>
+						<li><a href="http://www.roseindia.net/tutorial/flex/flex4/index.html">Flex 4</a></li>
+
+        		 </ul>
+			</div>
+
+			<div aria-hidden="true" aria-expanded="false" style="display: none;" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-4" id="tabs-4">
+
+        		 <ul class="categorylinks">
+						<li><a href="http://www.roseindia.net/programming-tutorial/Hibernate-Tutorials">Hibernate Framework<span class="counttopic">(&nbsp;1057&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/Struts-Tutorials">Struts Framework<span class="counttopic">(&nbsp;836&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/springframework">Spring Framework<span class="counttopic">(&nbsp;567&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/xml">XML<span class="counttopic">(&nbsp;196&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/Ajax">Ajax<span class="counttopic">(&nbsp;528&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/JavaScript/JavaScript-Tutorial">JavaScript<span class="counttopic">(&nbsp;109&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/core-java">Java<span class="counttopic">(&nbsp;1806&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/Web-Services-Tutorials">Web Services<span class="counttopic">(&nbsp;71&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/Database-Tutorials">Database<span class="counttopic">(&nbsp;145&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/technology">Technology<span class="counttopic">(&nbsp;90&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/Web-Development">Web Development<span class="counttopic">(&nbsp;503&nbsp;)</span></a></li>
+						<li><a href="http://www.roseindia.net/programming-tutorial/PHP">PHP<span class="counttopic">(&nbsp;406&nbsp;)</span></a></li>
+        		 </ul>
+
+			</div>
+
+		</div>
+
+<script type="text/javascript">
+		// Tabs
+		$('#tabstutorials').tabs();
+
+</script>
+
+</div>
+
+
+<div class="postcommentshow_tutorial">
+	<div class="postcomment_tutorial">
+		<p><a href="http://www.roseindia.net/answers/askquestions/askquestion.html"><b>Ask Questions?</b></a>  &nbsp;&nbsp;&nbsp;<b><a href="http://www.roseindia.net/discussion/19839-How-to-Create-Text-Area-In-Java.html">Discuss: How to Create Text Area In Java</a> &nbsp; 
+		
+		<a href="http://www.roseindia.net/tutorialhelp/allcomments/3899"><b>View All Comments</b></a>
+		
+		
+		</b>
+		<br><br><b>Post your Comment</b>
+
+		</p><br>
+		<form id="commentForm" name="commentForm" action="/discussion/savecomments.html" method="post">
+		
+		<input name="articleid" value="19839" type="hidden">
+		<input name="commentOrder" value="1" type="hidden">
+		<input name="commentLevel" value="1" type="hidden">
+		
+		
+
+		<span class="writelvltxt_tutorial">Your Name (<span style="color:red">*</span>) :</span>
+		<input class="writefrmtxt_tutorial" id="name" name="name" type="text"><br clear="all">
+		<div class="label.error" id="errmsg"></div>
+
+		<span class="writelvltxt_tutorial">Your Email :</span>
+		<input class="writefrmtxt_tutorial" id="email" name="email" type="text"><br clear="all">
+		
+		<span class="writelvltxt_tutorial">Subject (<span style="color:red">*</span>):</span>
+
+		<input class="writefrmtxt_tutorial" id="subject" name="subject" type="text"><br clear="all">
+		
+		<span class="writelvltxt_tutorial">Your Comment (<span style="color:red">*</span>):</span>
+		<textarea class="writefrmtxt_tutorial" rows="8" id="comment" name="comment"></textarea><br clear="all">
+		
+		<span class="writelvltxt_tutorial">&nbsp;</span>
+		<img src="How%20to%20Create%20Text%20Area%20In%20Java_files/Captcha.jpg" id="siimage" name="siimage" border="0"> 
+		
+		<a href="#" title="Refresh Image" onclick="document.getElementById('siimage').src = '/Captcha.jpg?sid=' + Math.random(); return false"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/refresh.gif" alt="Reload Image" onclick="this.blur()" border="0" align="bottom"></a> 
+		
+		<br clear="all">
+		<span class="writelvltxt_tutorial">&nbsp;</span>
+
+		<input class="writefrmtxtCaptcha_tutorial" id="captchavalue" name="captchavalue" type="text"><br clear="all">
+		<span class="writelvltxt_tutorial">&nbsp;</span>
+		<div name="divStatus" id="divStatus"></div>
+		<input class="writefrmbtn_tutorial" value="submit" type="submit">
+		</form>
+	</div>
+</div>
+
+
+
+
+					<div class="topicpostcomment">
+						<div class="topicCommentTitle">Comments </div>
+					
+		
+						<div class="topicpostcommentShow">
+							<div class="topicpostcommentLeft"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/commentuser.gif"></div>
+							<div class="topicpostcommentRight">
+								<b>RavenX</b><br>
+								July 7, 2011<br>
+								code
+								<br>
+								<hr>
+								how about a text are with scroll bars...
+							</div>
+						</div>
+		
+						<div class="topicpostcommentShow">
+							<div class="topicpostcommentLeft"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/commentuser.gif"></div>
+							<div class="topicpostcommentRight">
+								<b>Mohammad Faisal</b><br>
+								August 13, 2011<br>
+								How to fill JFrame with JTextArea?
+								<br>
+								<hr>
+								I want to make an editor like Notepad. So, how can I make 
+JTextArea stick to the JFrame whenever I maximize or restore the frame 
+to a specific height or width?
+							</div>
+						</div>
+		
+						
+						
+
+						
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+
+		
+
+		
+<div class="rightSecPage">
+			<div class="rightSecPagebox">
+				
+			
+
+		<div class="rightbigcolumn_ads_nobackground">
+			
+		
+	<!-- ValueClick Media 300x250 Medium Rectangle CODE for Programming Tutorials -->
+	<script language="javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/get.js"></script><a href="http://media.fastclick.net/w/click.here?cid=550502&amp;mid=1069906&amp;m=6&amp;sid=53719&amp;c=0&amp;tp=8&amp;UD=WhI3NzA1MDI0NTMwODAwNzI1NzCIAdKmQZAB5swhmAHXowOgAQaoAQjwAQCyAg00MS42OS4xMDUuMTc0&amp;upsid=770502453080072570" target="_blank"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/media1069906.gif" alt="" border="0" height="250" width="300"></a>
+ <noscript><a href="http://media.fastclick.net/w/click.here?sid=53719&m=6&c=1" target="_blank"> <img src="http://media.fastclick.net/w/get.media?sid=53719&m=6&tp=8&d=s&c=1" width=300 height=250 border=1></a></noscript> <!-- ValueClick Media 300x250 Medium Rectangle CODE for Programming Tutorials -->
+
+
+
+
+		</div>
+
+			<div class="rightSecAds">
+			
+
+		<script type="text/javascript"><!--
+google_ad_client = "pub-0714075272818912";
+/* 160x600, created 4/7/11Questions-Ads13-120x160 */
+google_ad_slot = "5639908007";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/show_ads.js">
+</script><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="160"></iframe></ins></ins>
+		
+			
+			</div>
+
+
+
+		<div class="rightbigcolumn_ads_nobackground">
+			
+
+		<script type="text/javascript"><!--
+	e9 = new Object();
+    e9.size = "336x280,300x250,300x600";
+    e9.noAd = 1;
+//--></script>
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/tags.js"></script><div align="center"><iframe src="How%20to%20Create%20Text%20Area%20In%20Java_files/a_002.htm" id="tfasyncframe_10" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" allowtransparency="true" align="middle" frameborder="0" height="250" width="300"> </iframe></div>
+
+
+
+		</div>
+
+			<div class="rightSecPagetitle">Programming Tutorials</div>
+			<div class="rightmenucategories">
+			    <ul>
+	                <li><a href="http://www.roseindia.net/programming-tutorial/" target="_blank">Tutorials Directory</a></li>
+					<li><a href="http://www.roseindia.net/programming-tutorial/android/" target="_blank">Android Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/java/master-java/index.shtml" target="_blank">Core Java</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/JSP-Tutorials/" target="_blank">JSP Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Servlets-Tutorials/" target="_blank">Servlets Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Database-Tutorials/" target="_blank">Database Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/JDBC-Tutorials/" target="_blank">JDBC Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Struts-Tutorials/" target="_blank">Struts Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Hibernate-Tutorials/" target="_blank">Hibernate Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/springframework/" target="_blank">Spring Framework</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/JPA/" target="_blank">JPA Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Enterprise-Java/jsf/" target="_blank">JSF Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Enterprise-Java/" target="_blank">Enterprise Java</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Enterprise-Java/JEE-Technology/" target="_blank">JEE Technologies</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/J2ME-Tutorials/" target="_blank">J2ME Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/xml/" target="_blank">XML Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Web-Services-Tutorials/" target="_blank">Web Services Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Web-Development" target="_blank">Web Development</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/PHP/" target="_blank">PHP Tutorial  Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Web-Gaphics-Designing/" target="_blank">Web Graphics Designing</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/technology/" target="_blank">Technology Tutorials</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/technology/cloudcomputing/" target="_blank">Cloud Computing</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/technology/vehicle-tracking/" target="_blank">Vehicle Tracking Technology</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/tutorials/" target="_blank">Software Technology Tutorial</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/Enterprise-Java/jsf/jsf-tutorials-examples/" target="_blank">JSF Tutorials &amp; Examples</a></li>
+                    <li><a href="http://www.roseindia.net/management/softwareprojectmanagement/index.html" target="_blank">Software Project Management</a></li>
+                    <li><a href="http://www.roseindia.net/programming-tutorial/programmingquestions/" target="_blank">Programming Questions</a></li>
+                    <li><a href="http://www.roseindia.net/maven2/index.shtml" target="_blank">Maven2 Tutorial</a></li>
+					<li><a href="http://www.roseindia.net/programming-tutorial/JavaScript/" target="_blank">JavaScript</a></li>
+					<li><a href="http://www.roseindia.net/programming-tutorial/careers/" target="_blank">Careers Guide</a></li>
+
+
+
+
+
+					<li>
+					<a href="http://www.roseindia.net/programming-tutorial/" style="color:#D10026">  &gt;&gt;&gt;<b>More Tutorials...</b></a></li>
+
+				</ul>
+				</div>
+				
+
+
+
+
+
+
+			</div>
+			
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<div style="width:950px;height:100px;">
+<a href="http://www.dmca.com/Protection/Status.aspx?ID=58df33d0-3cb1-450c-96cb-038defb8dcca" title="DMCA"> <img src="How%20to%20Create%20Text%20Area%20In%20Java_files/dmca_protected_sml_120m.png" alt="DMCA.com"></a>
+</div>
+
+<div class="footer">
+	<div class="footerShow">
+
+
+<script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/spcjs.js"></script><script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/spc.js"></script><script type="text/javascript" src="How%20to%20Create%20Text%20Area%20In%20Java_files/fl.js"></script>
+
+
+
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(1);
+// ]]> --></script><a href="http://lightroses.net/ads/adserver/www/delivery/ck.php?oaparams=2__bannerid=1__zoneid=1__cb=0253f6c385__oadest=http%3A%2F%2Fwww.hairfallguru.com" target="_blank"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/23dbf222cf0c960a7d50709dc4eb55bb.jpg" alt="" title="" border="0" height="90" width="728"></a><div id="beacon_0253f6c385" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="How%20to%20Create%20Text%20Area%20In%20Java_files/lg.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+
+
+
+
+
+		<span class="footerh1">Services</span>
+		<div class="footerLink">
+			<ul><a href="http://www.roseindia.net/services/software/index.shtml">Software Solutions</a><br>
+				<li><a href="http://www.roseindia.net/services/software/jsf-development.shtml">JSF Development</a></li>
+				<li><a href="http://www.roseindia.net/services/outsourcing/">Outsourcing</a></li>
+				<li><a href="http://www.roseindia.net/services/erp/erp.shtml">ERP</a></li>
+				<li><a href="http://www.roseindia.net/services/m-commerce/mobile-commerce.shtml">M-Commerce</a></li>
+				<li><a href="http://www.roseindia.net/services/flexdevelopment/flex-development-company-india.shtml">Flex Development</a></li>
+			</ul>
+			<ul><a href="http://www.roseindia.net/services/webdevelopement/web-developement-services.shtml">Website Development</a><br>
+				<li><a href="http://www.roseindia.net/services/webdesigning/">Web Designing</a></li>
+				<li><a href="http://www.roseindia.net/services/webdesigning/Website-Redesigning.shtml">Web Redesigning</a></li>
+				<li><a href="http://www.roseindia.net/services/webdevelopement/web-developement-services.shtml">Web Development</a></li>
+				<li><a href="http://www.roseindia.net/services/webdesigning/webdesigning.shtml#WebandGraphicDesign">Logo Design</a></li>
+				<li><a href="http://www.roseindia.net/services/webdesigning/Web-Designing-Cost.shtml">Web Design Packages</a></li>		
+				<li><a href="http://www.roseindia.net/services/webdevelopement/domain-registration.shtml">Domain Registration</a></li>
+			</ul>
+			<ul><a href="http://www.roseindia.net/services/webpromotion/Website-Promotion-Services.shtml">Web Promotion Services</a><br>
+				<li><a href="http://www.roseindia.net/services/seo/seo.shtml">SEO Services</a></li>
+				<li><a href="http://www.roseindia.net/webpromotion/searchengineoptimization.shtml">Search Eng. Optimization</a></li>		
+				<li><a href="http://www.roseindia.net/webpromotion/websubmission.shtml">Search Eng. Submission</a></li>
+				<li><a href="http://www.roseindia.net/webpromotion/search_engine_optimization_tips.shtml">SEO Tips</a></li>
+				<li><a href="http://www.roseindia.net/services/webpromotion/Website-Promotion-Services.shtml">SEO Portfolio</a></li>
+				<li><a href="http://www.roseindia.net/services/webpromotion/webpromotionplan.shtml">Web Promotion Plans</a></li>
+			</ul>
+			<ul><a href="http://www.roseindia.net/services/articles/writing/index.shtml">Content Development</a><br>
+				<li><a href="http://www.roseindia.net/services/articles/writing/index.shtml">Content Development</a></li>
+				<li><a href="http://www.roseindia.net/services/articles/writing/article-writing/index.shtml">Article Writing</a></li>
+				<li><a href="http://www.roseindia.net/services/articles/writing/Blog-Writing/index.shtml">Blog Writing</a></li>
+				<li><a href="http://www.roseindia.net/services/articles/writing/News-Articles/index.shtml">News Writing</a></li>
+				<li><a href="http://www.roseindia.net/services/articles/writing/SEO-Copywriting/index.shtml">SEO Copywriting</a></li>		
+				<li><a href="http://www.roseindia.net/services/technicaldocument/technicaldocumentation.shtml">Technical Documentation </a></li>
+				<li><a href="http://www.roseindia.net/services/articles/articlemarketing/articlemarketing.shtml">Article Marketing</a></li>
+			</ul>
+			<ul><a href="http://www.roseindia.net/services/webhosting/index.shtml">Web Hosting Services</a><br>
+				<li><a href="http://www.roseindia.net/webhosting/aspdotnethosting.shtml">ASP.NET Hosting</a></li>
+				<li><a href="http://www.roseindia.net/webhosting/UnixWebHosting.shtml">Unix Hosting</a></li>
+				<li><a href="http://www.roseindia.net/webhosting/ecommercewebhosting.shtml">E-Commerce Hosting</a></li>
+				<li><a href="http://www.roseindia.net/webhosting/WindowsWebHosting.shtml">Windows Hosting</a></li>
+				<li><a href="http://www.roseindia.net/services/webhosting/hosting-plan.shtml">Hosting Plan</a></li>
+			</ul>
+			<ul><a href="http://www.roseindia.net/services/ecomerce/services/ECommerce-Solutions-Services.shtml">E-Commerce Solutions</a><br>
+				<li><a href="http://www.roseindia.net/services/crm/CRM-solutions.shtml">CRM</a></li>
+			</ul>
+		</div>
+		<br clear="all">
+		<a href="http://www.roseindia.net/">Home</a>
+		
+		<a href="http://www.roseindia.net/sitemap/privacypolicy.shtml">Privacy Policy</a><br>
+		© All Rights are Reserved for Rose India 
+	</div>
+*****
+</div>
+
+
+
+
+
+
+   
+
+
+<div class="clear"></div>
+
+<div class="clear"></div>
+
+
+
+
+</body></html>

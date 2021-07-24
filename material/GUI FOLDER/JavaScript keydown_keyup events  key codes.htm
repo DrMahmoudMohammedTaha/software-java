@@ -1,0 +1,205 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="KEYWORDS" content="javascript,event handler,event handling,keyboard event,javascript keyboard event,event property,keyCode,key codes,keydown,onkeydown,keyup,onkeyup,chrome keycode,opera keycode,firefox keycode,safari keycode,msie keycode,chrome,firefox,safari,explorer,msie,opera">
+<title>JavaScript keydown/keyup events: key codes</title>
+</head>
+
+<body bgcolor="#FFFFFF" link="#0000FF" text="#000000" vlink="#660099">
+<a name="top"></a>
+
+<script src="JavaScript%20keydown_keyup%20events%20%20key%20codes_files/ca-pub-5507865760857847.js" type="text/javascript" async=""></script><script type="text/javascript"><!--
+google_ad_client = "pub-5507865760857847";
+/* 728x90_20101016 */
+google_ad_slot = "7989268040";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="JavaScript%20keydown_keyup%20events%20%20key%20codes_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins>
+
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td valign="top" width="568">
+
+<h3><font color="#000099" face="Verdana,Arial,Helvetica,sans-serif">
+Key codes of keydown and keyup events
+</font></h3>
+
+<!-- navlinks -->
+<table border="0" cellpadding="1" cellspacing="1">
+<tbody><tr><td valign="top"><nobr><font face="Arial,Helvetica"><small><img src="JavaScript%20keydown_keyup%20events%20%20key%20codes_files/bt.gif" border="0" height="9" width="9">
+
+<script>if(self==top)document.write('<a target=_top href="index.htm">Contents</a> |')
+else document.write('<a target=_top href="'+self.location.pathname+'">Hide Contents</a> |')
+</script><a target="_top" href="http://www.javascripter.net/faq/index.htm">Contents</a> |
+
+<a href="http://www.javascripter.net/faq/startpag.htm">JavaScript FAQ</a> |
+<a href="http://www.javascripter.net/faq/keyboardmouseevents.htm">Keyboard &amp; Mouse Events FAQ</a>
+</small></font></nobr></td><td valign="baseline">&nbsp;</td><td valign="baseline" width="99"><!--g:plusone size="medium"--><!--/g:plusone--></td>
+</tr></tbody></table>
+<!-- navlinks end -->
+
+<p>
+<b>Question:</b> Are the <code>keyCode</code> values of <code>keydown/keyup</code> events standardized across browsers? 
+
+</p><p>
+<b>Answer:</b> 
+No, unfortunately they are not. The table below shows the <code>event.keyCode</code> 
+values for <code><b>keydown</b></code> and <code><b>keyup</b></code> events in 
+Opera 11, Internet Exlorer 8.0, Firefox 3.6, Safari 5.0, and Google Chrome 10.
+
+(If you are interested in key codes for older browsers, please refer 
+to the W3C Working Group Note 
+<a target="_blank" href="http://dev.w3.org/2006/webapi/DOM-Level-3-Events/html/Note-KeyProps.html">Legacy Keyboard Event Properties</a>.) 
+
+Common key codes that are relatively safe to use across browsers are shown in black. 
+Key codes that differ across browsers are shown in red.
+
+<b><i>Do not</i></b> use this table for <i>character codes</i> <nobr>of <code><b>keypress</b></code></nobr> events:
+<code>keypress</code> character codes are not key-specific and may be enirely different from <code>keydown/keyup</code> key codes.
+
+</p><pre>      keydown/keyup event.keyCode                    
+Opera   MSIE  Firefox  Safari  Chrome    Key pressed
+_________________________________________________________
+
+  8       8       8       8       8      Backspace
+  9       9       9       9       9      Tab
+ 13      13      13      13      13      Enter
+ 16      16      16      16      16      Shift
+ 17      17      17      17      17      Ctrl
+ 18      18      18      18      18      Alt
+ 19      19      19      19      19      Pause, Break
+ 20      20      20      20      20      CapsLock
+ 27      27      27      27      27      Esc
+ 32      32      32      32      32      Space
+ 33      33      33      33      33      Page Up
+ 34      34      34      34      34      Page Down
+ 35      35      35      35      35      End
+ 36      36      36      36      36      Home
+ 37      37      37      37      37      Left arrow
+ 38      38      38      38      38      Up arrow
+ 39      39      39      39      39      Right arrow
+ 40      40      40      40      40      Down arrow
+         44      44      44      44      PrntScrn <font face="serif">(see below<sup>†</sup>)</font>
+ 45      45      45      45      45      Insert
+ 46      46      46      46      46      Delete
+ 48-57   48-57   48-57   48-57   48-57   0 to 9
+ 65-90   65-90   65-90   65-90   65-90   A to Z  
+112-123 112-123 112-123 112-123 112-123  F1 to F12 
+144     144     144     144     144      NumLock
+145     145     145     145     145      ScrollLock
+
+188     188     188     188     188      , &lt;
+190     190     190     190     190      . &gt;
+191     191     191     191     191      / ?
+192     192     192     192     192      ` ~
+219     219     219     219     219      [ { <font face="serif">(see below<sup>‡</sup>)</font>
+220     220     220     220     220      \ |
+221     221     221     221     221      ] }
+222     222     222     222     222      ' "
+</pre>
+
+<sup>†</sup><nobr>In most browsers, pressing the PrntScrn key fires <code><b>keyup</b></code> events only.</nobr>
+<br>
+<sup>‡</sup><nobr><b><i>Caution!</i></b> Key code 219 also corresponds to the Win Key (Start) in Opera.</nobr>
+
+
+
+<p>The following key codes differ across browsers:
+
+</p><pre>      keydown/keyup event.keyCode                    
+Opera   MSIE  Firefox  Safari  Chrome    Key pressed
+_________________________________________________________ <font color="red">
+
+ 59     186      59     186     186      <font color="black">; :             </font>
+ 61     187     107     187     187      <font color="black">= +             </font>
+109     189     109     189     189      <font color="black">- _             </font>
+219      91      91      91      91      <font color="black">WIN Key (Start) </font>
+  0      93      93      93      93      <font color="black">WIN Menu        </font></font>
+
+
+Opera    All Others (NumLock On/Off)     Key pressed
+_________________________________________________________<font color="red">
+
+48/45       96/45                        <font color="black">Numpad 0 Ins    </font>
+49/35       97/35                        <font color="black">Numpad 1 End    </font>
+50/40       98/40                        <font color="black">Numpad 2 Down   </font>
+51/34       99/34                        <font color="black">Numpad 3 Pg Down</font>
+52/37      100/37                        <font color="black">Numpad 4 Left   </font>
+53/12      101/12                        <font color="black">Numpad 5        </font>
+54/39      102/39                        <font color="black">Numpad 6 Right  </font>
+55/36      103/36                        <font color="black">Numpad 7 Home   </font>
+56/38      104/38                        <font color="black">Numpad 8 Up     </font>
+57/33      105/33                        <font color="black">Numpad 9 Pg Up  </font>
+42/42      106/106                       <font color="black">Numpad *        </font>
+43/43      107/107                       <font color="black">Numpad +        </font>
+45/45      109/109  <font color="black"> (45 is also <b>Ins</b>)    Numpad -        </font>
+78/46      110/46   <font color="black"> (78 is also <b>N</b>)      Numpad . Del    </font>
+47/47      111/111                       <font color="black">Numpad /        </font></font>
+</pre>
+
+<p>
+See also:
+<br><a href="http://www.javascripter.net/faq/keyboardeventproperties.htm#top">What event properties can I use to analyze keyboard events?</a>
+<br><a href="http://www.javascripter.net/faq/onkeydown.htm#top">Which key did the user press?</a>
+<br><a href="http://www.javascripter.net/faq/onkeypress.htm#top">Which character did the user type?</a>
+<br><a href="http://www.javascripter.net/faq/keyeventconstantsfirefox.htm">KeyEvent object</a> <i>(predefined key code constants in Firefox)</i>
+</p>
+
+</td>
+
+<td valign="top">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5507865760857847";
+/* 160x600_20110328 */
+google_ad_slot = "2729105170";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="JavaScript%20keydown_keyup%20events%20%20key%20codes_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="160"></iframe></ins></ins>
+
+<p>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5507865760857847";
+/* 160x600_20110328 */
+google_ad_slot = "2729105170";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="JavaScript%20keydown_keyup%20events%20%20key%20codes_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="160"></iframe></ins></ins>
+
+</p></td>
+</tr>
+</tbody></table>
+
+
+<!--Page content ends here; don't delete this comment.-->
+
+</p><p>
+<!--script type="text/javascript"--><!--
+google_ad_client = "pub-5507865760857847";
+/* 728x90_20101016 */
+google_ad_slot = "7989268040";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+<!--/script-->
+<!--script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js"-->
+<!--/script-->
+
+</p><p>
+<font face="Arial,Helvetica,sans-serif" size="2">
+<a href="http://www.javascripter.net/faq/legal.htm">Copyright</a>
+© 1999-2011, <a target="_top" href="http://www.javascripter.net/">JavaScripter.net</a>.
+</font>
+
+
+
+</p></body></html>

@@ -1,0 +1,217 @@
+header, footer, section, nav, article {  
+    display: block;  
+}
+
+BODY {
+	margin: 5;  
+	width: 940px; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+H1#Article {
+	text-align: center;
+	color: #990033;
+	font-size: 28px;
+}
+
+.Logo_Text {
+
+	color: #3B88CF;
+}
+
+.Logo_Text2 {
+
+	color: black;
+}
+
+H2 {
+	text-align: center;
+	color: blue;
+}
+
+HEADER#Banner {
+	width: 940px;
+	height: 100px;
+	margin: 5px auto;
+	background-image: url('logo.jpg');
+ 	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+FOOTER {
+	float: left;
+	width: 940px;
+	height: 40px;
+	margin: 5px auto;
+	text-align: center;
+
+}
+
+FOOTER.course_links {
+	text-align: right;
+ 	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20pt;
+
+}
+
+#left_menu
+{
+
+	float: left;
+	padding: 0px;
+	width: 180px;
+	font-size: 12px;
+	font-family: Arial;
+
+}
+
+#left_menu H3
+{
+	//width: 225px;
+	width: 165px;
+	height: 25px; 
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 15px;
+	padding-top: 5px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #00CCFF;	
+}
+
+
+#left_menu ul {
+	background-color: #F6EEDA;
+	margin-top: -15px;
+	list-style: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+
+}
+
+
+#left_menu ul li {
+	border: 0px;
+	margin-top: 15px;
+	margin-left: -25px;
+	margin-bottom: 10px;
+}
+
+
+SECTION#Wrapper {
+	float: left;
+	width: 700px;
+	//height: 700px;
+	margin-top: 5px;
+	margin-left: 40px;
+	margin-right: 5px;
+	margin-bottom: 50px;
+}
+
+ARTICLE#Article_1 {
+	width: 730px;
+	height: 300px;
+	background-color: #ADAAAA;
+}
+
+HEADER#Header_Article_1 {
+	width: 730px;
+	height: 40px;
+	//background-color: #DCDCDC;
+}
+
+SECTION#Section_Article_1 {
+	width: 680px;
+	height: 200px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background-color: #F8EBEB;
+}
+
+.TextAlignment {
+	text-align: center;
+}
+
+.TextAlignmentBold {
+	text-align: center;
+	font-weight: bold;
+}
+
+.indent_small {
+	margin-left: 4em;
+	font-weight: bold;
+}
+
+.indent_small_no_bold {
+	margin-left: 4em;
+}
+
+.indent_big {
+	margin-left: 8em;
+	font-weight: bold;
+}
+
+.indent_big_no_bold {
+	margin-left: 8em;
+}
+
+.indent_bigger {
+	margin-left: 12em;
+	font-weight: bold;
+}
+
+.LeftRightMargins {
+	margin-left: 4em;
+	margin-right: 4em;
+	font-weight: bold;
+}
+
+.links_background {
+	text-align: top;
+ 	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	background-color: #EDEDED;
+
+}
+
+.links_content {
+ 	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	text-align: top;
+margin-left: 2em;
+}
+
+
+.header {
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight:bold;
+	background-color: #00CCFF;
+}
+
+.course_links {
+ 	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	text-align: right;
+}
+
+.TextIndent1 {
+	margin-left: 3em;
+}
+.TextIndent2 {
+	margin-left: 2em;
+}
+
+.TextIndent3 {
+	margin-left: 5em;
+}
+
+.LinkBackColor {
+	background-color:Lime;
+}

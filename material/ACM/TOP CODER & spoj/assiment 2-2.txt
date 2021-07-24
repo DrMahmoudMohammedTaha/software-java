@@ -1,0 +1,21 @@
+
+public class ComboLength {
+
+public static  int howLong(String moves)
+{int max=0;
+int j=1;
+for (int i=0;i<moves.length()-1;i++)
+if (moves.charAt(i)==moves.charAt(i+1))
+{j++;
+if (j>max)
+    max=j;}
+else {j=1;}
+    System.out.println(j+" "+max);
+if (j==1&&max==0)
+    for (int i=0;i<moves.length();i++)
+        if (moves.charAt(i)=='A')
+            return 1;
+return max;
+}
+   
+}

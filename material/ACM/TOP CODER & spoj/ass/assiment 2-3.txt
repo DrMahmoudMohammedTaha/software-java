@@ -1,0 +1,41 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package order;
+
+/**
+ *
+ * @author HP
+ */
+public class Order {
+ public static int[] evenOdd (int[] nums)       
+ {int []are=new int[nums.length];
+ int []aro=new int[nums.length];
+ int j=0,k=0;
+     for(int i=0;i<nums.length;i++)
+     {if (nums[i]%2==0)
+         are[j++]=nums[i];
+     else
+         aro[k++]=nums[i];
+     
+     
+     }
+ for(int f =0;f<j;f++)
+         nums[f]=are[f];
+     int w=j;
+     for(int f=j;f<nums.length;f++)
+         nums[f]=aro[f-w];
+     return nums;    
+ }
+     
+ 
+ 
+    public static void main(String[] args) {
+       int arr[]={4,6,5,7,8,4,3,9,0};
+       arr=evenOdd(arr);
+       for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+       
+    }
+}

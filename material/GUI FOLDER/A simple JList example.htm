@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--Converted with LaTeX2HTML 97.1 (release) (July 13th, 1997)
+ by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippman, Marek Rouchal, Martin Wilck and others -->
+<html><head>
+<title>A simple JList example</title>
+<meta name="description" content="A simple JList example">
+<meta name="keywords" content="HCI_Handout_CALLER">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="STYLESHEET" href="A%20simple%20JList%20example_files/HCI_Handout_CALLER.css">
+<link rel="next" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node145.html">
+<link rel="previous" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node142.html">
+<link rel="up" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node140.html">
+<link rel="next" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node144.html">
+</head>
+<body>
+<!--Navigation Panel-->
+<a name="tex2html1739" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node144.html">
+<img alt="next" src="A%20simple%20JList%20example_files/next_motif.gif" border="0" align="BOTTOM" height="24" width="37"></a> 
+<a name="tex2html1737" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node140.html">
+<img alt="up" src="A%20simple%20JList%20example_files/up_motif.gif" border="0" align="BOTTOM" height="24" width="26"></a> 
+<a name="tex2html1731" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node142.html">
+<img alt="previous" src="A%20simple%20JList%20example_files/previous_motif.gif" border="0" align="BOTTOM" height="24" width="63"></a>   
+<br>
+<b> Next:</b> <a name="tex2html1740" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node144.html">Dynamically Updating a List</a>
+<b> Up:</b> <a name="tex2html1738" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node140.html">List   JList</a>
+<b> Previous:</b> <a name="tex2html1732" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node142.html">Practical List Design and</a>
+<br>
+<br>
+<!--End of Navigation Panel-->
+<h2><a name="SECTION000123000000000000000">
+A simple <tt>JList</tt> example</a>
+</h2>
+<p>
+The <tt>ListExample.java</tt> creates a simple list box example using the
+Swing API:
+</p><p></p><ul>
+<li> This example generates a static list from which the user
+can make a selection.
+</li><li> This code provides no mechanism to
+detect the selections made,
+</li><li> nor does it include the capability to scroll
+the list -- The <tt>JList</tt> class does not provide this: use <tt>
+JScrollPane</tt>.
+</li><li> We will add these features later
+</li></ul>
+<p>
+The List created looks like this:
+</p><p></p><p><img src="A%20simple%20JList%20example_files/list.gif">
+</p>
+<p>
+<b>A Simple JList</b>
+</p>
+<p>
+The full code listing for this program is:
+</p><p></p><pre>// Imports
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+class ListExample
+		extends 	JFrame
+ {
+	// Instance attributes used in this example
+	private	JPanel		topPanel;
+	private	JList		listbox;
+
+	// Constructor of main frame
+	public ListExample()
+	{
+		// Set the frame characteristics
+		setTitle( "Simple ListBox Application" );
+		setSize( 300, 100 );
+		setBackground( Color.gray );
+
+		// Create a panel to hold all other components
+		topPanel = new JPanel();
+		topPanel.setLayout( new BorderLayout() );
+		getContentPane().add( topPanel );
+
+		// Create some items to add to the list
+		String	listData[] =
+		{
+			"Item 1",
+			"Item 2",
+			"Item 3",
+			"Item 4"
+		};
+
+		// Create a new listbox control
+		listbox = new JList( listData );
+		topPanel.add( listbox, BorderLayout.CENTER );
+	}
+
+	// Main entry point for this example
+	public static void main( String args[] )
+	{
+		// Create an instance of the test application
+		ListExample mainFrame	= new ListExample();
+		mainFrame.setVisible( true );
+	}
+}
+</pre>
+<p>
+<br></p><hr>
+<!--Table of Child-Links-->
+<a name="CHILD_LINKS">&nbsp;</a>
+<ul>
+<li><a name="tex2html1741" href="http://www.cs.cf.ac.uk/Dave/HCI/HCI_Handout_CALLER/node144.html#SECTION000123100000000000000">
+Dynamically Updating a List</a>
+</li></ul>
+<!--End of Table of Child-Links-->
+<br><hr>
+<address>
+<i>Dave Marshall</i>
+<br><i>4/14/1999</i>
+</address>
+
+
+</body></html>
