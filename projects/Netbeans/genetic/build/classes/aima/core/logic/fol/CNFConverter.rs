@@ -1,0 +1,9 @@
+aima.core.logic.fol.CNFConverter
+aima.core.logic.fol.StandardizeQuantiferVariables
+aima.core.logic.fol.CNFConstructor
+aima.core.logic.fol.ImplicationsOut
+aima.core.logic.fol.StandardizeQuantiferVariables$1
+aima.core.logic.fol.NegationsIn
+aima.core.logic.fol.DistributeOrOverAnd
+aima.core.logic.fol.RemoveQuantifiers
+aima.core.logic.fol.CNFConstructor$ArgData

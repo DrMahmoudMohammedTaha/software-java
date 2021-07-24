@@ -1,0 +1,906 @@
+<!DOCTYPE html>  
+  <html class="" lang="en"><head>  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
+  	<title>WebGL - OpenGL ES 2.0 for the Web</title>  
+  	<meta charset="utf-8">  
+  	<meta name="MSSmartTagsPreventParsing" content="true">  
+  	<meta name="viewport" content="width=device-width">  
+    
+      <meta property="og:title" content="WebGL - OpenGL ES 2.0 for the Web">  
+    
+    
+    
+      <meta property="og:image" content="https://www.khronos.org/assets/images/Khronos-250px-with-tagline-New.png">  
+    
+      <meta property="og:site_name" content="The Khronos Group">  
+      <meta property="og:url" content="https://www.khronos.org/api/webgl/">  
+    
+  	<link type="text/css" rel="stylesheet" media="all" href="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/a.css">  
+    
+  	<!--[if lt IE 9]><link href="/assets/css/ie.css" rel="stylesheet" type="text/css" media="all" /><![endif]-->  
+  	<!--[if lt IE 9]><script type="text/javascript" src="/assets/js/html5.js"></script><![endif]-->  
+  	  
+      <script src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/cbgapi.loaded_1" async=""></script><script src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/cbgapi.loaded_0" async=""></script><script type="text/javascript" async="" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/platform.js" gapi_processed="true"></script><script id="twitter-wjs" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/widgets.js"></script><script id="facebook-jssdk" async="" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/all.js"></script><script async="" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/analytics.js"></script><script>  
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  
+          ga('require', 'displayfeatures');  
+          ga('create', 'UA-1759693-1', 'khronos.org');  
+          ga('send', 'pageview');  
+      </script>  
+  <script src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/secureAnonymousFramework"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}  
+  .fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}  
+  .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><style type="text/css">.fancybox-margin{margin-right:17px;}</style><script type="text/javascript" charset="utf-8" async="" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/button.js"></script><style type="text/css">* html #li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link{height:1% !important;}#li_ui_li_gen_1475346780217_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1475346780217_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link:link, #li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link:visited, #li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link:hover, #li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1475346780217_0 a#li_ui_li_gen_1475346780217_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;}#li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title, #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title{}.IN-shadowed #li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title{}.IN-shadowed #li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title, .IN-shadowed #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title{}#li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title-text, #li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title-text, #li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title-text *{color:#fff !important;}#li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title-text, #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title-text, #li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title-text *, #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title-text *{color:#fff !important;}#li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title #li_ui_li_gen_1475346780217_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title-text, .success #li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1475346780217_0 #li_ui_li_gen_1475346780217_0-title{}.success #li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title-text, .success #li_ui_li_gen_1475346780217_0.hovered #li_ui_li_gen_1475346780217_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title, .success #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title-text, .success #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title-text, .success #li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title-text *, .success #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1475346780217_0.clicked #li_ui_li_gen_1475346780217_0-title, .IN-shadowed .success #li_ui_li_gen_1475346780217_0.down #li_ui_li_gen_1475346780217_0-title{}#li_ui_li_gen_1475346780247_1-container.IN-top {display:inline-block !important;overflow:visible !important;position:relative !important;height:42px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1475346780247_1.IN-top {display:inline-block !important;height:42px !important;width:60px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:-207px -470px !important;}#li_ui_li_gen_1475346780247_1-content.IN-top {display:inline !important;font-size:16px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:38px !important;}#li_ui_li_gen_1475346780247_1-container.IN-empty #li_ui_li_gen_1475346780247_1-inner.IN-top {background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -560px !important;background-size:initial !important;overflow:hidden !important;margin:4px auto 0 auto !important;width:28px !important;height:28px !important;display:block !important;}#li_ui_li_gen_1475346780247_1-container.IN-empty #li_ui_li_gen_1475346780247_1-content.IN-top {text-indent:-999px !important;display:inline-block !important;}#li_ui_li_gen_1475346780247_1-container.IN-hidden #li_ui_li_gen_1475346780247_1 {display:none !important;}</style></head>  
+  <body class="apis">  
+  <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/P5DLcu0KGJB.htm" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f35deba0f5dcbda" allowtransparency="true" allowfullscreen="true" scrolling="no" style="display: none;" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/ping.htm" frameborder="0"></iframe></div></div></div><script>window.fbAsyncInit=function(){FB.init({appId:'438443329501782',status:true,cookie:true,xfbml:true});};(function(d){var js,id='facebook-jssdk',ref=d.getElementsByTagName('script')[0];if(d.getElementById(id)){return;}js=d.createElement('script');js.id=id;js.async=true;js.src="//connect.facebook.net/en_US/all.js";ref.parentNode.insertBefore(js,ref);}(document));</script>  
+    
+  <a href="#content" class="hidden" accesskey="Y" title="Skip to content">Skip to Content</a>  
+  <div id="top"></div>  
+    
+  <div id="top-bar">  
+  <div class="top-bar-inner">  
+      <ul id="languages" class="mts">  
+          <li class="first-child"><b>English</b></li>  
+          <li><a href="http://cn.khronos.org/" title="View Khronos.org in Chinese">中文</a></li>  
+          <li><a href="http://jp.khronos.org/" title="View Khronos.org in Japanese">日本語</a></li>  
+          <li class="last-child"><a href="http://kr.khronos.org/" title="View Khronos.org in Korean">한국어</a></li>  
+      </ul>  
+      <ul class="mts">   
+      	<li><b>Login</b></li>  
+      	<li><a href="https://www.khronos.org/members/login" title="Members Login">Members</a></li>  
+      	<li><a href="https://www.khronos.org/conformance/adopters/login" title="Adopters Login">Adopters</a></li>  
+      	<li class="last-child"><a href="https://www.khronos.org/conformance/implementers/collada/login" title="Implementers Login">Implementers</a></li>  
+      	<li>  
+              <!-- Google CSE Search Box Begins -->  
+              <div id="searchbox_wrapper">  
+              <form id="searchbox_017055583490642512057:_ak1bpok_no" action="/search/">  
+              <fieldset style="border:none;">  
+                  <input name="cx" value="017055583490642512057:_ak1bpok_no" type="hidden">  
+                  <input name="cof" value="FORID:9" type="hidden">  
+                  <input name="q" class="searchbox clear_me" size="20" value="Search Khronos.org..." type="text">  
+                  <input src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/spacer_20x20.png" class="searchbox_submit" name="sa" value="" type="image">  
+              </fieldset>  
+              </form>  
+              </div>  
+              <!-- Google CSE Search Box Ends -->  
+      	</li>  
+      </ul>  
+  </div>  
+  </div>  
+    
+  <div id="wrapper">  
+    
+    
+  <header class="header clearfix">  
+  	<div id="logo">  
+  		<a href="https://www.khronos.org/" title="Connecting Software to Silicon"><img src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/khronos-group-logo.png" alt="Connecting Software to Silicon" width="300" height="80"></a>  
+  	</div>  
+    
+      <div class="navbar navbar-inverse">  
+          <div class="navbar-inner">  
+      		<ul class="nav">  
+      			<li class="dropdown">  
+      			    <a class="dropdown-toggle" href="https://www.khronos.org/developers" title="Khronos technology developer resources" data-toggle="dropdown">Developers <b class="caret"></b></a>  
+                      <ul class="dropdown-menu">  
+                              <li class="dropdown-submenu"><a class="dropdown-toggle" href="https://www.khronos.org/developers/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">APIs</a>  
+                                  <ul class="dropdown-menu">  
+                                      <li><a href="https://www.khronos.org/vulkan">Vulkan</a></li>  
+                                      <li><a href="https://www.khronos.org/opencl">OpenCL</a></li>  
+                                      <li><a href="https://www.khronos.org/opengl">OpenGL</a></li>  
+                                      <li><a href="https://www.khronos.org/opengles">OpenGL ES</a></li>  
+                                      <li><a href="https://www.khronos.org/egl">EGL</a></li>  
+                                      <li><a href="https://www.khronos.org/opensles">OpenSL ES</a></li>  
+                                      <li><a href="https://www.khronos.org/openmax">OpenMAX</a></li>  
+                                      <li><a href="https://www.khronos.org/spir">SPIR</a></li>  
+                                      <li><a href="https://www.khronos.org/sycl">SYCL</a></li>  
+                                      <li><a href="https://www.khronos.org/openvx">OpenVX</a></li>  
+                                      <li><a href="https://www.khronos.org/safetycritical">Safety Critical</a></li>  
+                                      <li><a href="https://www.khronos.org/openkcam">OpenKCAM</a></li>  
+                                      <li><a href="https://www.khronos.org/openvg">OpenVG</a></li>  
+                                      <li><a href="https://www.khronos.org/openkode">OpenKODE</a></li>  
+                                      <li><a href="https://www.khronos.org/openwf">OpenWF</a></li>  
+                                      <li><a href="https://www.khronos.org/openml">OpenML</a></li>  
+                                  </ul>  
+                              </li>  
+                              <li class="dropdown-submenu"><a class="dropdown-toggle" href="https://www.khronos.org/developers/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Authoring</a>  
+                                  <ul class="dropdown-menu">  
+                                      <li><a href="https://www.khronos.org/collada">COLLADA</a></li>  
+                                      <li><a href="https://www.khronos.org/gltf">glTF</a></li>  
+                                      <li><a href="https://www.khronos.org/webgl">WebGL</a></li>  
+                                      <li><a href="https://www.khronos.org/webcl">WebCL</a></li>  
+                                      <li><a href="https://www.khronos.org/streaminput">StreamInput</a></li>  
+                                      <li><a href="https://www.khronos.org/dataformat">Data Format</a></li>  
+                                  </ul>  
+                              </li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/registry">Registry</a></li>  
+                              <li><a href="http://github.khronos.org/">Github</a></li>  
+                              <li><a href="https://www.khronos.org/bugzilla/">Issues Tracker</a></li>  
+                              <li><a href="https://forums.khronos.org/">Khronos Forums</a></li>  
+                              <li><a href="https://www.opengl.org/discussion_boards" rel="external">OpenGL Forums</a></li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/developers/library/">Presentation Library</a></li>  
+                              <li><a href="https://www.khronos.org/developers/reference-cards/">Reference Guides</a></li>  
+                              <li><a href="https://www.khronos.org/developers/books/">Books</a></li>  
+                              <li><a href="https://www.khronos.org/developers/training/">Training &amp; Courses</a></li>  
+                              <li><a href="https://www.khronos.org/store/">Store</a></li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/developers/jobs">Jobs</a></li>  
+                              <li><a href="https://www.khronos.org/rfq">Request for Quotes</a></li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/developers/speakers" title="Speaker Bios">Speaker Bios</a></li>  
+                              <li><a href="http://chapters.khronos.org/" rel="external" title="Khronos Chapters"><b>Chapters</b></a></li>  
+                      </ul>  
+      			</li>  
+      			<li class="dropdown">  
+                      <a class="dropdown-toggle" href="https://www.khronos.org/conformance" title="Khronos Conformance, Adopter and Implmenter Information" data-toggle="dropdown">Conformance <b class="caret"></b></a>  
+                      <ul class="dropdown-menu">  
+                              <li><a href="https://www.khronos.org/conformance/">Overview</a></li>  
+                              <li><a href="https://www.khronos.org/conformance/adopters/">Adopters</a></li>  
+                              <li><a href="https://www.khronos.org/conformance/implementers/">Implementers</a></li>  
+                              <li><a href="https://www.khronos.org/conformance/adopters/adopter-companies">Adopter Companies</a></li>  
+                              <li><a href="https://www.khronos.org/conformance/adopters/conformant-companies">Conformant Companies</a></li>  
+                              <li><a href="https://www.khronos.org/conformance/adopters/conformant-products">Conformant Products</a></li>  
+                              <li><a href="https://www.khronos.org/legal/khronos-trademark-guidelines">Trademark Guidelines</a></li>  
+                              <li><a href="https://www.khronos.org/members/ip-framework" title="">IP Framework</a></li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/conformance/adopters/login"><b>Adopter Login</b></a></li>  
+                      </ul>  
+                  </li>  
+      			<li class="dropdown">  
+          			<a class="dropdown-toggle" href="https://www.khronos.org/members" title="Khronos Membership information" data-toggle="dropdown">Membership <b class="caret"></b></a>  
+                      <ul class="dropdown-menu">  
+                              <li><a href="https://www.khronos.org/members/">Join the Khronos Group</a></li>  
+                              <li><a href="https://www.khronos.org/members/list">Khronos Members</a></li>  
+                              <li><a href="https://www.khronos.org/members/ip-framework">IP Framework</a></li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/members/signup"><b>Create an account</b></a></li>  
+                              <li><a href="https://www.khronos.org/members/signup"><b>Member Login</b></a></li>  
+                      </ul>  
+      			</li>  
+      			<li class="dropdown">  
+      			    <a class="dropdown-toggle" href="https://www.khronos.org/news/" title="Khronos technology related news" data-toggle="dropdown">News &amp; Events<b class="caret"></b></a>  
+                      <ul class="dropdown-menu">  
+                              <li><a href="https://www.khronos.org/news/">News Room</a></li>  
+                              <li><a href="https://www.khronos.org/news/press">Press Releases</a></li>  
+                              <li><a href="https://www.khronos.org/legal/trademarks/">Khronos Logos</a></li>  
+                              <li><a href="https://www.khronos.org/news/subscribe/">Subscribe to our newsletter</a></li>  
+                              <li><a href="https://www.khronos.org/news/submit-news/">Share your news</a></li>  
+                              <li class="divider"></li>  
+                              <li><a href="https://www.khronos.org/news/events">Upcoming Events</a></li>  
+                              <li><a href="https://chapters.khronos.org/meetings">Upcoming Chapter Meetups</a></li>  
+                              <li><a href="https://www.khronos.org/news/events/code-of-conduct">Conference Code of Conduct</a></li>  
+                              <li><a href="https://www.khronos.org/news/submit-event/">Share your events</a></li>  
+                      </ul>  
+      			</li>  
+      			<li class="dropdown">  
+      			    <a class="dropdown-toggle" href="https://forums.khronos.org/" title="Khronos Events" data-toggle="dropdown">Forums <b class="caret"></b></a>  
+                      <ul class="dropdown-menu">  
+                          <li><a href="https://forums.khronos.org/">API Forums</a></li>  
+                          <li><a href="https://www.opengl.org/discussion_boards" rel="external">OpenGL Forums</a></li>  
+                      </ul>  
+      			</li>  
+      		</ul>  
+          </div>  
+  	</div>  
+  	  
+  </header>  
+  <section id="khr_slider" class="slider container shadow closed">  
+  	<div class="slider_nav_block">  
+  		<ul class="slider_nav_ctrl">  
+  		    <li class="icon_25 home_icon"><a href="#slider_khronosgroup">Khronos Group homepage</a></li>  
+  			<li class="icon_25 toggle_icon"><a href="#top">Toggle Khronos APIs</a></li>  
+  		</ul>  
+  		<ul class="slider_nav slider_nav clearfix">  
+  			<li><a href="https://www.khronos.org/vulkan" title="#slider_vulkan">Vulkan™</a><a style="display: none;" href="https://www.khronos.org/vulkan" title="Vulkan homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/opencl" title="#slider_opencl">OpenCL™</a></li>  
+  			<li><a href="https://www.khronos.org/opengl" title="#slider_opengl">OpenGL®</a><a style="display: none;" href="https://www.khronos.org/opengl" title="OpenGL homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/opengles" title="#slider_opengles">OpenGL® ES</a><a style="display: none;" href="https://www.khronos.org/opengles" title="OpenGL ES homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/webgl" title="#slider_webgl">WebGL™</a><a style="display: none;" href="https://www.khronos.org/webgl" title="WebGL homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/webcl" title="#slider_webcl">WebCL™</a><a style="display: none;" href="https://www.khronos.org/webcl" title="WebCL homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/collada" title="#slider_collada">COLLADA™</a><a style="display: none;" href="https://www.khronos.org/collada" title="COLLADA homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/gltf" title="#slider_gltf">glTF™</a><a style="display: none;" href="https://www.khronos.org/gltf" title="glTF homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/egl" title="#slider_egl">EGL™</a><a style="display: none;" href="https://www.khronos.org/egl" title="EGL homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/opensles" title="#slider_opensles">OpenSL ES™</a><a style="display: none;" href="https://www.khronos.org/opensles" title="OpenSL ES homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/openmax" title="#slider_openmax">OpenMAX™</a><a style="display: none;" href="https://www.khronos.org/openmax" title="OpenMAX homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/spir" title="#slider_spir">SPIR™</a><a style="display: none;" href="https://www.khronos.org/spir" title="SPIR homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/sycl" title="#slider_sycl">SYCL™</a><a style="display: none;" href="https://www.khronos.org/sycl" title="SYCL homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/streaminput" title="#slider_streaminput">StreamInput™</a><a style="display: none;" href="https://www.khronos.org/streaminput" title="StreamInput homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/openvx" title="#slider_openvx">OpenVX™</a><a style="display: none;" href="https://www.khronos.org/openvx" title="OpenVX homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/safetycritical" title="#slider_openglsc">Safety Critical</a><a style="display: none;" href="https://www.khronos.org/safetycritical" title="Safety Critical homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/openkcam" title="#slider_camera">OpenKCam™</a><a style="display: none;" href="https://www.khronos.org/openkcam" title="OpenKCam homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/openvg" title="#slider_openvg">OpenVG™</a><a style="display: none;" href="https://www.khronos.org/openvg" title="OpenVG homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/dataformat" title="#slider_dataformat">Data Format</a><a style="display: none;" href="https://www.khronos.org/dataformat" title="Data Format homepage"></a></li>  
+  			<li><a href="https://www.khronos.org/other" title="#slider_other">Other</a><a style="display: none;" href="https://www.khronos.org/other" title="Other Technologies homepage"></a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_content">	<div id="slider_khronosgroup" class="slider_content">  
+  		<div class="clearfix">  
+  			<h2>The Khronos Group - Connecting Software to Silicon</h2>  
+  			<a class="slidethumb carousel_tshirts" href="http://teespring.com/stores/the-khronos-group/" rel="external"></a>  
+  			<p>The Khronos Group is a not for profit industry consortium creating  
+   open standards for the authoring and acceleration of parallel   
+  computing, graphics, dynamic media, computer vision and sensor   
+  processing on a wide variety of platforms and devices. All Khronos   
+  members are able to contribute to the development of Khronos API   
+  specifications, are able to accelerate the delivery of their   
+  cutting-edge 3D platforms and applications through early access to   
+  specification drafts and conformance tests.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/about" title="About the Khronos Group">About Us</a></li>  
+  			<li><a href="https://www.khronos.org/members/signup">Member Company Employee Sign-Up</a></li>  
+  			<li><a href="https://www.khronos.org/members/">Join the Khronos Group</a></li>  
+  			<li><a href="https://www.khronos.org/members/#membership_members" title="Khronos members">Current Members</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/members/ip-framework">Khronos IP Framework</a></li>  
+    
+  		</ul>  
+  	</div>  
+  	<div id="slider_opengl" class="slider_content" style="display: none;">  
+  		<div class="clearfix clearfix">  
+  			<h2>OpenGL - The Industry Standard for High Performance Graphics</h2>  
+  			<div class="slidethumb carousel_opengl"></div>  
+  			<p>OpenGL® is the most widely adopted 2D and 3D graphics API in the   
+  industry, bringing thousands of applications to a wide variety of   
+  computer platforms. It is window-system and operating-system independent  
+   as well as network-transparent. OpenGL enables developers of software   
+  for PC, workstation, and supercomputing hardware to create   
+  high-performance, visually compelling graphics software applications, in  
+   markets such as CAD, content creation, energy, entertainment, game   
+  development, manufacturing, medical, and virtual reality. OpenGL exposes  
+   all the features of the latest graphics hardware.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/opengl">API Overview</a></li>  
+  			<li><a href="http://www.opengl.org/">OpenGL.org</a></li>  
+  			<li><a href="http://www.opengl.org/wiki">Wiki</a></li>  
+  			<li><a href="http://www.opengl.org/discussion_boards">Forums</a></li>  
+  			<li><a href="http://www.opengl.org/registry/">OpenGL &amp; GLSL Specs</a></li>  
+  			<li><a href="https://www.khronos.org/files/opengl45-quick-reference-card.pdf">Reference Guide</a></li>  
+  			<li class="last-child"><a href="http://www.opengl.org/sdk/">SDK</a></li>  
+  		</ul>  
+  	</div>  
+  	  
+  	<div id="slider_vulkan" class="slider_content" style="display: none;">  
+  		<div class="clearfix clearfix">  
+  			<h2>Vulkan - Industry Forged</h2>  
+  			<div class="slidethumb carousel_vulkan"></div>  
+  			<p>Vulkan is a new generation graphics and compute API that provides   
+  high-efficiency, cross-platform access to modern GPUs used in a wide   
+  variety of devices from PCs and consoles to mobile phones and embedded   
+  platforms. Khronos launched the Vulkan 1.0 specification on February   
+  16th, 2016 and Khronos members released Vulkan drivers and SDKs on the   
+  same day. Everything you need to come up to speed on Vulkan and to forge  
+   ahead and explore whether Vulkan is right for your engine or   
+  application is now available on the official <a href="https://www.khronos.org/vulkan/">Vulkan homepage</a>.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/vulkan">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/news/press/khronos-releases-vulkan-1-0-specification">Press Release</a></li>  
+  			<li><a href="http://khr.io/vulkanspec10">Vulkan 1.0 Specification</a></li>  
+  			<li><a href="http://khr.io/vulkanlaunchoverview">Overview Presentation</a></li>  
+  			<li class="last-child"><a href="http://khr.io/vulkan10feedback">Feedback Forum</a></li>  
+  		</ul>  
+  	</div>  
+    
+  	<div id="slider_opencl" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenCL - The open standard for parallel programming of heterogeneous systems</h2>  
+  			<div class="slidethumb carousel_opencl"></div>  
+  			<p>OpenCL™ (Open Computing Language) is the open, royalty-free   
+  standard for cross-platform, parallel programming of diverse processors   
+  found in personal computers, servers, mobile devices and embedded   
+  platforms. OpenCL greatly improves the speed and responsiveness of a   
+  wide spectrum of applications in numerous market categories from gaming   
+  and entertainment to scientific and medical software.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/opencl/">Overview</a></li>  
+  			<li><a href="https://www.khronos.org/opencl/resources">Resources</a></li>  
+  			<li><a href="https://www.khronos.org/registry/cl/">Specs &amp; Headers</a></li>  
+  			<li><a href="https://www.khronos.org/registry/cl/sdk/2.1/docs/man/xhtml/">Reference Pages</a></li>  
+  			<li><a href="https://www.khronos.org/files/opencl21-reference-guide.pdf">Reference Guide</a></li>  
+  			<li><a href="https://www.khronos.org/assets/uploads/developers/library/overview/opencl_overview.pdf">Overview (PDF)</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/87-OpenCL-parallel-programming-of-heterogeneous-systems">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_opengles" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenGL ES - The Standard for Embedded 3D Graphics</h2>  
+  			<div class="slidethumb carousel_opengles"></div>  
+  			<p>OpenGL ES is a royalty-free, cross-platform API for full-function   
+  2D and 3D graphics on embedded systems - including consoles, phones,   
+  appliances and vehicles. It consists of well-defined subsets of desktop   
+  OpenGL, creating a flexible and powerful low-level interface between   
+  software and graphics acceleration. OpenGL ES includes profiles for   
+  floating-point and fixed-point systems and the EGL specification for   
+  portably binding to native windowing systems. OpenGL ES 1.X: fixed   
+  function hardware offering acceleration, image quality and performance.   
+  OpenGL ES 2.X: enables full programmable 3D graphics.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/opengles">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/gles">Specs &amp; Headers</a></li>  
+  			<li><a href="https://www.khronos.org/opengles/sdk/docs/">Man Pages</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/70-OpenGL-ES-general-technical-discussions">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_egl" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>EGL - Native Platform Interface</h2>  
+  			<div class="slidethumb carousel_egl"></div>  
+  			<p>EGL™ is an interface between Khronos rendering APIs such as OpenGL  
+   ES or OpenVG and the underlying native platform window system. It   
+  handles graphics context management, surface/buffer binding, and   
+  rendering synchronization and enables high-performance, accelerated,   
+  mixed-mode 2D and 3D rendering using other Khronos APIs.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/egl">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/egl">Specs &amp; Headers</a></li>  
+  			<li><a href="https://www.khronos.org/files/egl-1-4-quick-reference-card.pdf">Reference Guide</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/79-EGL-native-graphics-platform-interface">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_webgl" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>WebGL - OpenGL ES 2.0 for the Web</h2>  
+  			<div class="slidethumb carousel_webgl"></div>  
+  			<p>WebGL is a royalty-free, cross-platform API that brings OpenGL ES   
+  2.0 to the web as a 3D drawing context within HTML, exposed as low-level  
+   Document Object Model interfaces. It uses the OpenGL shading language,   
+  GLSL ES, and can be cleanly combined with other web content that is   
+  layered on top or underneath the 3D content. It is ideally suited for   
+  dynamic 3D web applications in the JavaScript programming language, and   
+  will be fully integrated in leading web browsers.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/webgl/">API Overview</a></li>  
+              <li> <a href="https://www.khronos.org/registry/webgl/specs/1.0/">WebGL 1.0 Specification</a></li>  
+              <li> <a href="http://khronos.org/webgl/wiki/">Wiki</a></li>  
+              <li> <a href="https://www.khronos.org/webgl/public-mailing-list/">Mailing List</a></li>  
+              <li> <a href="https://www.khronos.org/files/webgl/webgl-reference-card-1_0.pdf">Reference Guide</a></li>  
+              <li> <a href="http://stackoverflow.com/questions/tagged/webgl">StackOverflow</a></li>  
+              <li class="last-child"><a href="https://www.khronos.org/webgl/security/">Security Whitepaper</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_webcl" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>WebCL - Heterogeneous parallel computing in HTML5 web browsers</h2>  
+  			<div class="slidethumb carousel_webcl"></div>  
+  			<p>WebCL 1.0 defines a JavaScript binding to the Khronos OpenCL   
+  standard for heterogeneous parallel computing. WebCL enables web   
+  applications to harness GPU and multi-core CPU parallel processing from   
+  within a Web browser, enabling significant acceleration of applications   
+  such as image and video processing and advanced physics for WebGL games.  
+   WebCL has been developed in close cooperation with the Web community   
+  and provides the potential to extend the capabilities of HTML5 browsers   
+  to accelerate computationally intensive and rich visual computing   
+  applications.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/webcl/">API Overview</a></li>  
+              <li><a href="https://www.khronos.org/registry/webcl/specs/1.0.0/">WebCL 1.0 Specification</a></li>  
+  			<li><a href="https://www.khronos.org/webcl/public-mailing-list/">Mailing List</a></li>  
+  			<li class="last-child"><a href="http://stackoverflow.com/search?q=webcl">Stackoverflow</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_collada" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>COLLADA - Digital Asset and FX Exchange Schema</h2>  
+  			<div class="slidethumb carousel_collada"></div>  
+  			<p>COLLADA™ defines an XML-based schema to make it easy to transport   
+  3D assets between applications - enabling diverse 3D authoring and   
+  content processing tools be combined into a production pipeline. The   
+  intermediate language provides comprehensive encoding of visual scenes   
+  including: geometry, shaders and effects, physics, animation,   
+  kinematics, and even multiple version representations of the same   
+  asset.COLLADA FX enables leading 3D authoring tools to work effectively   
+  together to create shader and effects applications and assets to be   
+  authored and packaged using OpenGL® Shading Language, Cg, CgFX, and   
+  DirectX® FX </p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/collada/">Spec Overview</a></li>  
+  			<li><a href="https://forums.khronos.org/forumdisplay.php/84-COLLADA">Forums</a></li>  
+  			<li><a href="https://www.khronos.org/conformance/implementers/collada/">Conformance Download</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/collada/public-mailing-list/">Public Mailing List</a></li>  
+  		</ul>  
+  	</div>  
+    
+  	<div id="slider_gltf" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>glTF - Efficient, Interoperable Transmission of 3D Scenes and Models</h2>  
+  			<div class="slidethumb carousel_gltf"></div>  
+  			<p>glTF™ 1.0 (GL Transmission Format) is a royalty-free specification  
+   for the efficient transmission and loading of 3D scenes and models by   
+  applications. glTF minimizes both the size of 3D assets, and the runtime  
+   processing needed by applications using WebGL™ and OpenGL®-family APIs   
+  to unpack and use those assets. glTF defines a common publishing format   
+  for 3D content tools and services that streamlines authoring workflows   
+  and enables interoperable use of content across the industry.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/gltf/">Overview</a></li>  
+              <li><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/README.md">Specification</a></li>  
+              <li><a href="https://github.com/KhronosGroup/glTF">Repository</a></li>  
+              <li><a href="https://www.khronos.org/news/press/khronos-finalizes-gltf-1.0-specification">Press Release</a></li>  
+              <li><a href="https://www.youtube.com/watch?v=YXPeh2hy6Tc">Briefing Webinar</a></li>  
+              <li class="last-child"><a href="https://www.khronos.org/assets/uploads/developers/library/overview/gltf-overview.pdf">Introduction Presentation</a></li>  
+  		</ul>  
+  	</div>  
+  	  
+  	<div id="slider_opensles" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenSL ES - The Standard for Embedded Audio Acceleration</h2>  
+  			<div class="slidethumb carousel_opensles"></div>  
+  			<p>OpenSL ES™ is a royalty-free, cross-platform, hardware-accelerated  
+   audio API tuned for embedded systems. It provides a standardized,   
+  high-performance, low-latency method to access audio functionality for   
+  developers of native applications on embedded mobile multimedia devices,  
+   enabling straightforward cross-platform deployment of hardware and   
+  software audio capabilities, reducing implementation effort, and   
+  promoting the market for advanced audio.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/opensles">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/sles">Specs &amp; Headers</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/91-OpenSL-ES-embedded-audio-acceleration">Forums</a></li>  
+  		</ul>  
+      </div>  
+  	<div id="slider_openmax" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenMAX - The Standard for Media Library Portability</h2>  
+  			<div class="slidethumb carousel_openmaxil"></div>  
+  			<p>OpenMAX™ is a royalty-free, cross-platform API that provides   
+  comprehensive streaming media codec and application portability by   
+  enabling accelerated multimedia components to be developed, integrated   
+  and programmed across multiple operating systems and silicon platforms.   
+  The OpenMAX API will be shipped with processors to enable library and   
+  codec implementers to rapidly and effectively make use of the full   
+  acceleration potential of new silicon - regardless of the underlying   
+  hardware architecture.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/openmax/il">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/omxil/">Specs &amp; Headers</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/89-OpenMAX-IL-Discussion-and-questions-about-OpenMAX-IL-interface">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_spir" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>SPIR - Standard Portable Intermediate Representation</h2><div class="slidethumb carousel_spir"></div>  
+  		  <p>SPIR is a family of languages including:<br>  
+  			  &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;SPIR-V, the first open standard intermediate language for parallel compute and graphics, and<br>  
+  			  &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;SPIR 1.2 and SPIR 2.0 for OpenCL C programming, mapping onto LLVM IR.<br>  
+  			SPIR is a portable, non-source representation for devices programs.   
+  It enables application developers to avoid shipping kernel source and to  
+   manage the proliferation of devices and drivers from multiple vendors.   
+  SPIR enables the consumption of code from third party compiler   
+  front-ends for alternative languages.</p>  
+  		</div>   
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/spir">SPIR Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/spir-v/">SPIR-V specs &amp; headers</a></li>  
+  			<li><a href="https://www.khronos.org/registry/spir/">SPIR 1.2/2.0 specs &amp; headers</a></li>  
+  			<li><a href="https://forums.khronos.org/forumdisplay.php/113-SPIR">Forums</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/faq/spir">FAQ</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_sycl" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>SYCL - C++ Single-source Heterogeneous Programming for OpenCL</h2>  
+  			<div class="slidethumb carousel_sycl"></div>  
+  			<p>SYCL (pronounced 'sickle') is a royalty-free, cross-platform   
+  abstraction layer that builds on the underlying concepts, portability   
+  and efficiency of OpenCL that enables code for heterogeneous processors   
+  to be written in a “single-source” style using completely standard C++.   
+    SYCL enables single source development where C++ template functions   
+  can contain both host and device code to construct complex algorithms   
+  that use OpenCL acceleration, and then re-use them throughout their   
+  source code on different types of data.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/sycl">SYCL Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/sycl">Specs &amp; Headers</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/showthread.php/9733-Official-SYCL-1-2-feedback-thread">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_streaminput" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>StreamInput - Cross-platform advanced sensor processing and user interaction</h2>  
+  			<p style="width: 95% !important;">The Khronos StreamInput working   
+  group is driving industry consensus to create a cross-platform API to   
+  enable applications to discover and use new generation sensors to create  
+   sophisticated user interactions.  The new API will support a   
+  general-purpose framework for consistently handling advanced sensors   
+  such as depth cameras, touch screens and motion and orientation sensors   
+  as well as traditional input devices.  StreamInput will provide flexible  
+   device discovery to enable an application to select and process   
+  high-level semantic input from low-level device capabilities, enabling   
+  significant innovations by sensor and device manufacturers while   
+  simplifying portable application development. The API will also provide   
+  system-wide sensor synchronization for advanced multi-sensor   
+  applications such as augmented reality, and will use Khronos’ proven   
+  extension mechanisms to enable new types of input devices to be easily   
+  added and supported.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/streaminput">API Overview</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/106-StreamInput-General">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_openvx" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenVX - Portable, Power-efficient Vision Processing</h2>  
+  			<div class="slidethumb carousel_openvx"></div>  
+  			<p>OpenVX enables performance and power-optimized computer vision   
+  processing, especially important in embedded and real-time uses cases   
+  such as face, body and gesture tracking, smart video surveillance,   
+  advanced driver assistance systems (ADAS), object and scene   
+  reconstruction, augmented reality, visual inspection, robotics and more.  
+     OpenVX defines a higher level of abstraction for execution and memory  
+   models, enabling significant implementation innovation and efficient   
+  execution on a wide range of architectures while maintaining a   
+  consistent vision acceleration API for application portability.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/openvx">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/openvx/resources">Resources</a></li>  
+  			<li><a href="https://www.khronos.org/registry/vx/">Specs</a></li>  
+  			<li><a href="https://www.khronos.org/assets/uploads/developers/library/overview/openvx-overview.pdf">Overview (PDF)</a></li>  
+  			<li><a href="https://forums.khronos.org/showthread.php/13063-Khronos-Releases-OpenVX-1-1-Specification">Forums</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/news/press/khronos-releases-openvx-1-1-specification">Press Release</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_camera" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenKCam - CALL for Industry Participation</h2>  
+  			<p style="width: 95% !important;">OpenKCam is a royalty-free standard  
+   for advanced, low-level control of mobile and embedded cameras and   
+  sensors. Mobile and embedded devices are increasingly being equipped   
+  with the sensors and processing power for advanced camera-based   
+  applications such as computational photography, face and gesture   
+  processing, augmented reality and 3D object and scene reconstruction;   
+  While Khronos is defining APIs for vision and image processing the   
+  industry still lacks a camera API with low-level control of the camera   
+  sensor, lens and flash to generate the input image stream needed by   
+  cutting-edge computational photography and computer vision; The OpenKCam  
+   working group will drive industry consensus to create a cross-platform   
+  API that provides functionality such as: burst control over sensor,   
+  flash and lens, system wide time stamping of sensor samples, multiple   
+  sensor control, output format and resolution selection, region of   
+  interest extraction, and consistent device and frame metadata.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child last-child"><a href="https://www.khronos.org/openkcam/">Overview</a></li>  
+  			<li><a href="https://www.khronos.org/assets/uploads/developers/library/overview/camera-api-proposal.pdf">OpenKCam Control API Overview PDF</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/news/press/khronos-to-create-new-camera-control-open-standard-api">Press Release</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_openvg" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenVG - Vector Graphics Acceleration</h2>  
+  			<div class="slidethumb carousel_openvg"></div>  
+  			<p style="width: 95% !important;">OpenVG is a royalty-free,   
+  cross-platform API that provides a low-level hardware acceleration   
+  interface for vector graphics libraries such as Flash and SVG. OpenVG is  
+   targeted primarily at handheld devices that require portable   
+  acceleration of high-quality vector graphics for compelling user   
+  interfaces and text on small screen devices - while enabling hardware   
+  acceleration to provide fluidly interactive performance at very low   
+  power levels.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/openvg">API Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/vg/">Specs &amp; Headers</a></li>  
+  			<li><a href="https://www.khronos.org/developers/reference-cards/">Reference Guide</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/72-OpenVG-and-VGU">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_openglsc" class="slider_content" style="display: none;">  
+  		<div class="clearfix">  
+  			<h2>OpenGL SC - Safety Critical Working Group</h2>  
+  			<div class="slidethumb carousel_openglsc"></div>  
+  			<p style="width: 95% !important;">The Khronos Safety Critical working  
+   group is working to develop open graphics and compute acceleration   
+  standards for markets that require system safety certification. The   
+  OpenGL® SC 1.0 specification defines a safety critical subset of OpenGL   
+  ES 1.0. The safety critical working group is now working to adapt more   
+  recent Khronos standards including OpenGL ES with programmable shaders,   
+  and the new generation Vulkan™ API for high-efficiency graphics and   
+  compute.</p>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/safetycritical">Call for participation</a></li>  
+  			<li><a href="https://www.khronos.org/registry/glsc/">Specs &amp; Headers</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/forumdisplay.php/76-OpenGL-SC-for-Safety-Critical-Markets">Forums</a></li>  
+  		</ul>  
+  	</div>  
+  		<div id="slider_dataformat" class="slider_content" style="display: none;">  
+  		<div class="clearfix entry">  
+  			<h2>The Khronos Data Format Specification</h2>  
+  			<div class="slidethumb carousel_dataformat"></div>  
+  				<p style="width: 95% !important;">The Khronos Data Format   
+  Specification offers an open, royalty-free, machine-readable way to   
+  describe data layout that supports all common pixel formats and   
+  associated metadata. Computers must describe the collections of data   
+  that they work on. Current, proprietary solutions often complicate   
+  interactions between components and with end users. This specification   
+  reduces programmer effort, makes flexible implementations possible, is   
+  versioned and extensible, and simplifies unambiguous documentation and   
+  communication.</p>  
+  			</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/dataformat">Overview</a></li>  
+  			<li><a href="https://www.khronos.org/registry/dataformat">Specification</a></li>  
+  			<li><a href="https://www.khronos.org/news/press/khronos-releases-standardized-data-format-specification">Press Release</a></li>  
+  			<li class="last-child"><a href="https://forums.khronos.org/showthread.php/11592-Official-Khronos-Data-Format-Specification-Feedback-thread">Feedback Forum</a></li>  
+  		</ul>  
+  	</div>  
+  	<div id="slider_other" class="slider_content" style="display: none;">  
+  		<div class="clearfix entry">  
+  			<h2>Other Khronos Group APIs and Technologies</h2>  
+  			<div class="slidethumb carousel_khronos"></div>  
+  			<p>The Khronos Group manages other APIs and Technologies:</p>  
+      		<ul>  
+      			<!--<li><a href="https://www.khronos.org/openglsc">OpenGL SC</a> - Khronos Open Development Environment</li>  
+      			<li><a href="https://www.khronos.org/openkcam">OpenKCam</a> - Advanced camera and sensor control - CALL for Industry Participation</li>-->  
+      			<li><a href="https://www.khronos.org/openmax/dl">OpenMAX DL</a> - The Standard for Media Library Portability</li>  
+      			<li><a href="https://www.khronos.org/openkode">OpenKODE</a> - Khronos Open Development Environment</li>  
+      			<li><a href="https://www.khronos.org/openwf">OpenWF</a> - The Standard for building composited windowing systems</li>  
+      			<li><a href="https://www.khronos.org/openml">OpenML</a></li>  
+      			<li><a href="https://www.khronos.org/other">Other</a> - Other APIs</li>  
+      		</ul>  
+  		</div>  
+  		<ul class="slider_content_nav clearfix">  
+  			<li class="first-child"><a href="https://www.khronos.org/openmax/dl">OpenMAX DL</a></li>  
+  			<li><a href="https://www.khronos.org/openkode">OpenKODE</a></li>  
+  			<li><a href="https://www.khronos.org/openwf">OpenWF</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/openml">OpenML</a></li>  
+  			<li class="last-child"><a href="https://www.khronos.org/other">Other APIs</a></li>  
+  		</ul>  
+  	</div>  
+    
+  </div>  
+  </section><!-- slider -->  
+    
+    
+    
+    
+  <section>  
+      <div class="breadcrumb">  
+          <ul>  
+              <li><a href="https://www.khronos.org/">Home</a></li>  
+              <li><a href="https://www.khronos.org/webgl">WebGL</a></li>  
+                
+                
+                
+          </ul>  
+      </div>  
+  </section>  
+    
+  <section id="maincontent" class="line clearfix">  
+    
+  <div class="quicklinks quicklinksFixed">  
+  <ul class="ql_left">  
+    
+    
+  </ul>  
+  <ul class="ql_right">  
+  <li><a href="https://www.khronos.org/webgl" class="active" title="">Overview</a></li>  
+    
+  <li><a href="https://www.khronos.org/webgl/wiki/" title="Wiki for WebGL">Wiki</a></li>  
+    
+  <li><a href="https://www.khronos.org/webgl/public-mailing-list/" title="Mailing List for WebGL">Mailing List</a></li>  
+    
+  <li><a href="https://www.khronos.org/webgl/wiki/" title="Resources for WebGL">Resources</a></li>  
+    
+  <li><a href="http://groups.google.com/group/webgl-dev-list" title="Google Groups for WebGL">Google Groups</a></li>  
+    
+  <li><a href="http://stackoverflow.com/questions/tagged/webgl" title="StackOverflow for WebGL">StackOverflow</a></li>  
+    
+  <li><a href="https://github.com/KhronosGroup/WebGL" title="Github for WebGL">Github</a></li>  
+    
+  </ul>  
+  </div>  
+    
+  <div id="content" class="unit container mrm size4of5">  
+    
+    
+    
+  <div class="row_entry">  
+    
+    
+    
+    
+    
+    
+  <div class="entry">  
+  <div class="clearfix">  
+      <img src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/WebGL_100px_June16_180_75.png" alt="WebGL" width="180" height="75">  
+      <h1>OpenGL ES 2.0 for the Web</h1>  
+  </div>  
+  <p>WebGL is a cross-platform, royalty-free web standard for a low-level   
+  3D graphics API based on OpenGL ES 2.0, exposed through the HTML5 Canvas  
+   element as Document Object Model interfaces. Developers familiar with   
+  OpenGL ES 2.0 will recognize WebGL as a Shader-based API using GLSL,   
+  with constructs that are semantically similar to those of the underlying  
+   OpenGL ES 2.0 API. It stays very close to the OpenGL ES 2.0   
+  specification, with some concessions made for what developers expect out  
+   of memory-managed languages such as JavaScript.</p>  
+    
+  <p>WebGL brings plugin-free 3D to the web, implemented right into the   
+  browser.  Major browser vendors Apple (Safari), Google (Chrome), Mozilla  
+   (Firefox), and Opera (Opera) are members of the WebGL Working Group.  
+  </p>  
+  <ul>  
+  <li> <a href="https://www.khronos.org/registry/webgl/specs/1.0/">WebGL 1.0 Specification</a></li>  
+  <li> <a href="http://khronos.org/webgl/wiki/">WebGL Public Wiki</a></li>  
+  <li> <a href="http://www.khronos.org/webgl/public-mailing-list/">WebGL Public Mailing List (spec discussion)</a> and <a href="http://www.khronos.org/webgl/public-mailing-list/archives" class="external text" rel="nofollow">Public Mailing List Archives</a></li>  
+  <li> <a href="https://www.khronos.org/developers/reference-cards/">WebGL Reference Card</a></li>  
+  <li> <a href="http://groups.google.com/group/webgl-dev-list">Google Groups</a> and <a href="http://stackoverflow.com/questions/tagged/webgl">StackOverflow</a> discussions on developing with WebGL</li>  
+  <li> <a href="https://github.com/KhronosGroup/WebGL">Filing bugs about the WebGL spec or conformance tests</a></li>  
+  <li> <a href="http://www.khronos.org/webgl/security/">WebGL Security white paper</a></li>  
+  </ul>  
+  </div>  
+    
+    
+  </div>  
+    
+    
+    
+  <div class="socialmedia_toolbox">  
+  <ul class="bookmark">  
+  <li class="smt_shareit"><a href="#"></a></li>  
+  </ul>  
+  <div class="fb-like fb_iframe_widget" data-send="false" data-layout="box_count" data-width="45" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=438443329501782&amp;container_width=60&amp;href=https%3A%2F%2Fwww.khronos.org%2Fwebgl%2F&amp;layout=box_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=45"><span style="vertical-align: bottom; width: 51px; height: 61px;"><iframe name="f24d0b76f34a576" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" style="border: medium none; visibility: visible; width: 51px; height: 61px;" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/like.htm" class="" width="45px" height="1000px" frameborder="0"></iframe></span></div>  
+  <div><iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/tweet_button.htm" frameborder="0"></iframe></div>  
+  <div><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;" id="___plusone_0"><iframe hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" id="I0_1475346780341" name="I0_1475346780341" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/fastbutton.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div></div>  
+  <div><script src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/in.js" type="text/javascript">lang: en_US</script><span style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;" class="IN-widget"><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1475346780247_1-container" class="IN-top"><span id="li_ui_li_gen_1475346780247_1" class="IN-top"><span id="li_ui_li_gen_1475346780247_1-inner" class="IN-top"><span id="li_ui_li_gen_1475346780247_1-content" class="IN-top">43</span></span></span></span></span><br><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1475346780217_0"><a id="li_ui_li_gen_1475346780217_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1475346780217_0-logo">in</span><span id="li_ui_li_gen_1475346780217_0-title"><span id="li_ui_li_gen_1475346780217_0-mark"></span><span id="li_ui_li_gen_1475346780217_0-title-text">Share</span></span></a></span></span></span><script type="IN/Share+init" data-counter="top"></script></div>  
+  </div>  
+  </div>  
+    
+  <div id="sidebar" class="unit container size1of5 lastUnit">  
+    
+  <div class="mls mts">  
+      <a href="https://www.khronos.org/developers/reference-cards"><img src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/khronos-api-reference-cards-173x139.png" alt="Link to Khronos Reference cards on Amazon" width="173" height="139"></a>  
+  </div>  
+    
+  <div class="sidebar_list">  
+    
+  <a href="https://www.khronos.org/news/events/detail/khronos-devu-korea-2016" title="Learn more about Khronos DevU - Korea 2016" style="display: block;background-image:url(/images/sized/assets/uploads/events/DevU-Seoul-2016-banner-hp-163x163.png); width:163px; height:163px;"></a>  
+    
+  <a href="https://www.khronos.org/news/events/detail/supercomputing-2016" title="Learn more about Supercomputing 2016" style="display: block;background-image:url(/images/sized/assets/uploads/events/SC16-Banner-200x200-163x163.jpg); width:163px; height:163px;"></a>  
+    
+  <a href="https://www.khronos.org/news/events/detail/siggraph-asia-2016" title="Learn more about SIGGRAPH Asia 2016" style="display: block;background-image:url(/images/sized/assets/uploads/events/2016-sigasia-banner-hp-163x163.jpg); width:163px; height:163px;"></a>  
+     
+  </div>  
+    
+  <div class="sidebar_list">  
+  <h4 class="gradient">Related Discussions</h4>  
+  <ul>  
+    
+    
+  <li><a class="read_more" href="https://forums.khronos.org/">Visit Forums</a></li>  
+    
+  </ul>  
+  </div>  
+    
+  <div class="sidebar_list">  
+  <h4 class="gradient">Related News</h4>  
+  <ul>  
+    
+    
+  <li><a href="https://www.khronos.org/news/permalink/khronos-london-chapters-updates-official-chapter-website">Khronos London Chapters updates official Chapter website</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/permalink/unity-5.5-beta-brings-webgl-2.0">Unity 5.5 beta brings WebGL 2.0</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/permalink/new-google-street-view-renderer-in-the-google-maps-with-webgl-support">New Google Street View renderer in the Google Maps with WebGL support</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/permalink/khronos-bof-video-from-siggraph-now-online">Khronos BOF Video from SIGGRAPH now online</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/permalink/khronos-bofs-from-siggraph-video-slides-and-photos...-now-online">Khronos BOFs from SIGGRAPH Video, Slides and Photos… now online</a></li>  
+    
+    
+    
+  <li><a class="read_more" href="https://www.khronos.org/news/archives">More news</a></li>  
+  </ul>  
+  </div>  
+    
+  <div class="sidebar_list">  
+  <h4 class="gradient">Related Press</h4>  
+  <ul>  
+    
+    
+  <li><a href="https://www.khronos.org/news/press/basemark-web-3.0-launches">Basemark Web 3.0 Launches</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/press/learning-webgl-appoints-tony-parisi-editor-in-chief">Learning WebGL Appoints Tony Parisi Editor-in-Chief</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/press/webgl-momentum-creating-the-industrys-most-secure-and-portable-3d-platform">WebGL Momentum Creating the Industry’s most Secure and Portable 3D Platform</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/press/khronos-releases-final-webgl-1.0-specification">Khronos Releases Final WebGL 1.0 Specification</a></li>  
+    
+  <li><a href="https://www.khronos.org/news/press/khronos-webgl-initiative-hardware-accelerated-3d-graphics-internet">Khronos Details WebGL Initiative to Bring Hardware-Accelerated 3D Graphics to the Internet</a></li>  
+    
+    
+    
+  <li><a class="read_more" href="https://www.khronos.org/news/press">More Press Releases</a></li>  
+  </ul>  
+  </div>  
+    
+  </div>  
+  </section>  
+    
+  	<footer class="footer line container shadow clearfix">  
+  		<div class="unit size1of4">  
+  		    <h2></h2>  
+  			<div style="margin: 5px 0 0 16px;">  
+  <a href="https://www.khronos.org/"><img src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/khronos-group-logo.png" alt="Connecting Software to Silicon" width="200"></a>  
+  </div>  
+  <p>9450 SW Gemini Drive #45043<br>  
+  Beaverton, OR 97008-6018  USA<br>  
+  Office: +1 (415) 869-8627<br>  
+  Fax: +1 (707) 202-0030</p>  
+  		</div>  
+  		<div class="unit size1of4">  
+  			<h2>Our Newsletter</h2>  
+              			  
+  			<div id="mailchimp_subscription_wrapper">  
+  			<p><a style="text-decoration: none !important;" class="btn btn-danger btn-small" href="http://eepurl.com/Xh4Q" title="Subscribe to the Khronos newsletter">Subscribe to Newsletter</a><br>  
+  <a href="http://us2.campaign-archive2.com/home/?u=4486df88f5b87070bfeac5a4f&amp;id=cc0362d08f" title="Khronos newsletters Archives">View past Newsletters</a></p>  
+              </div>  
+  		</div>  
+  		<div class="unit size1of4">  
+  			<h2>Quick Links</h2><p>  
+  			</p><ul>  
+  				<li><a href="https://www.khronos.org/about/contact/" title="Contact the Khronos Group">Contact Us</a></li>  
+  				<li><a href="https://www.khronos.org/about/" title="About the Khronos Group">About Us</a></li>  
+  				<li><a href="https://www.khronos.org/legal/privacy" title="">Privacy Policy</a></li>  
+  				<li><a href="https://www.khronos.org/legal/" title="">Legal Notices</a></li>  
+  				<li><a href="https://www.khronos.org/legal/trademarks/" title="">Trademark Usage</a></li>  
+  			</ul><p></p>  
+  		</div>  
+  		<div class="unit size1of4 lastUnit">  
+  			<h2>Follow us!</h2><p>  
+  			</p><ul class="bookmark">  
+  				<li class="facebook"><a href="https://www.facebook.com/TheKhronosGroup" rel="external" title="Official Khronos Group Facebook page">Facebook</a></li>  
+  				<li class="twitter"><a href="https://twitter.com/thekhronosgroup" rel="external" title="Official Khronos Group Twitter page">Twitter</a></li>  
+  				<li class="linkedin"><a href="https://www.linkedin.com/groups?gid=121429" rel="external" title="Official Khronos Group Linked page">LinkedIn</a></li>  
+  				<li class="rssfeeds"><a href="https://www.khronos.org/feeds/" title="">News feeds</a></li>  
+  				<li class="youtube"><a href="https://www.youtube.com/user/khronosgroup" title="Khronos Videos" rel="external">YouTube</a></li>  
+  				<li class="flickr"><a href="https://www.flickr.com/photos/khronos/" title="Khronos Photos" rel="external">Flickr</a></li>  
+  				<li class="slideshare"><a href="https://www.slideshare.net/Khronos_Group" title="Khronos presentations" rel="external">SlideShare</a></li>  
+  				<li class="googleplus"><a href="https://plus.google.com/+khronos" rel="external">Google+</a></li>  
+  			</ul><p></p>  
+  		</div>  
+  	</footer>  
+  	<address class="khr_copyright pbl">  
+  		<p>  
+  			Copyright ©2016 Khronos Group. All rights reserved.<br>  
+  			Hosting provided by <a href="https://m.do.co/c/645028c23608">DigitalOcean</a>  
+  		</p>  
+  	</address>  
+  </div>  
+    
+  <script type="text/javascript" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/a.js"></script>  
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><script type="text/javascript">(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/platform.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>  
+    
+    
+  <!-- <a href="https://www.khronos.org/assets/utilities/holder.php">safety</a> -->  
+  <div style="position: absolute; top: -250px; left: -250px;"><a href="https://www.khronos.org/assets/utilities/holder.php">safety</a></div>  
+  <script>  
+  $(function(){  
+  $(".row_entry a").each(function() {  
+      if ($(this).attr('href')=="NEW") {  
+          $(this).replaceWith(function(){  
+              return $('<span class="icon-new">NEW</span>');  
+          });  
+      }  
+  });  
+  });  
+  </script>  
+    
+    
+    
+  <p class="icon_25 return_to_top_icon"><a style="display: block;" class="return_to_top" href="#top">Return to Top</a></p><iframe name="oauth2relay605029731" id="oauth2relay605029731" src="WebGL%20-%20OpenGL%20ES%202.0%20for%20the%20Web_files/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1"></iframe><iframe id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" frameborder="0"></iframe><script src="index-file/high.js"></script><script src="index-file/high.js"></script></body></html>

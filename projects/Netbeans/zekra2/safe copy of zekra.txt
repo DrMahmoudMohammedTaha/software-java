@@ -1,0 +1,244 @@
+package zekra;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
+import javax.swing.plaf.FontUIResource;
+
+public class ZEKRA {
+
+    static JFrame mainFrm = GUI_Ruler.addFrm(true, false, 400, 300, 400, 360, "–ﬂ—Ï", "zekra.png", false);
+    static JButton Next = GUI_Ruler.addBtn(15, 10, 300, 50, "«⁄—÷ ⁄»—…", mainFrm);
+    static JButton important = GUI_Ruler.addBtn(15, 10, 300, 50, "«⁄—÷ «·Â«„", mainFrm);
+    static JButton adjust = GUI_Ruler.addBtn(15, 10, 150, 50, "«÷»ÿ", mainFrm);
+    static JButton exit = GUI_Ruler.addBtn(15, 10, 300, 50, "≈€·«ﬁ ‰Â«∆Ï", mainFrm);
+    static JList profile = new JList();
+    static JScrollPane pp = new JScrollPane(profile);
+    static DefaultListModel profileModel = new DefaultListModel();
+
+    static JFrame zkrFrm = GUI_Ruler.addFrm(false, false, 200, 200, 440, 500, "–ﬂ—Ï", "zekra.png", false);
+    static JTextArea text = GUI_Ruler.addtxt(30, 30, 300, 300, "", zkrFrm);
+    static JScrollPane holderText = new JScrollPane(text);
+    static JButton zkrimportant = GUI_Ruler.addBtn(450, 10, 200, 50, "«÷› ··Â«„", zkrFrm);
+    static JButton zkrmain = GUI_Ruler.addBtn(450, 400, 200, 50, "«·’›Õ… «·—∆Ì”Ì…", zkrFrm);
+
+    public static void main(String[] args) throws IOException {
+
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("WinSoft Thuluth", Font.BOLD, 15)));
+
+        GUI_Ruler.makeVertical(adjust, important, Next, exit);
+        GUI_Ruler.makeCenter(exit, mainFrm);
+        GUI_Ruler.makeCenter(important, mainFrm);
+        GUI_Ruler.makeCenter(Next, mainFrm);
+        profile.setForeground(Color.black);
+        profile.setBackground(Color.pink);
+        profile.setFont(new Font("Courier New", Font.BOLD, 18));
+        profile.repaint();
+        pp.setBounds(200, 10, 160, 50);
+        mainFrm.add(pp, 0);
+        profile.setModel(profileModel);
+        profileModel.addElement("10 œﬁÌﬁ…");
+        profileModel.addElement("15 œﬁÌﬁ…");
+        profileModel.addElement("30 œﬁÌﬁ…");
+        profileModel.addElement("45 œﬁÌﬁ…");
+        holderText.setBounds(30, 30, 400, 350);
+        GUI_Ruler.makeCenter(holderText, zkrFrm);
+        zkrFrm.add(holderText, 0);
+        text.setBackground(Color.white);
+        Data_Zekra.intial("saleh.txt","data.txt");
+
+        GUI_Ruler.makeHorizontal(zkrmain, zkrimportant);
+
+        //program coding
+        exit.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+
+                JOptionPane.showMessageDialog(null, "«·”·«„ ⁄·Ìﬂ„ Ê —Õ„… «··Â Ê »—ﬂ« Â");
+                System.exit(0);
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        });
+        zkrmain.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                mainFrm.setVisible(true);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        });
+        Next.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                Data_Zekra.showZkr(zkrFrm, text, zkrimportant);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        });
+        adjust.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                int i = 0;
+                switch (profile.getSelectedIndex()) {
+                    case 0:
+                        i = 10;
+                        break;
+                    case 1:
+                        i = 15;
+                        break;
+                    case 2:
+                        i = 30;
+                        break;
+                    case 3:
+                        i =45;
+                        break;
+                    default:
+                        i = 10;
+                }
+                Data_Zekra.startTimer(i* 60 * 1000, zkrFrm, text, zkrimportant);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        });
+        zkrimportant.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                if (zkrimportant.getText().equals("«Õ›Ÿ «· €Ì—« ")) {
+                    Data_Zekra.special = text.getText();
+                    try {
+                        Data_Zekra.save("data.txt");
+                    } catch (IOException ex) {
+                        Logger.getLogger(ZEKRA.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    Data_Zekra.special += text.getText() + "\n" + "#############################" + "\n";
+                try {
+                        Data_Zekra.save("data.txt");
+                    } catch (IOException ex) {
+                        Logger.getLogger(ZEKRA.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        });
+        important.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                text.setText(Data_Zekra.special);
+                zkrimportant.setText("«Õ›Ÿ «· €Ì—« ");
+                zkrFrm.setVisible(true);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        });
+
+        
+    }
+
+}

@@ -1,0 +1,2 @@
+aima.core.logic.fol.StandardizeApartIndexicalImpl
+aima.core.logic.fol.StandardizeApartIndexicalFactory

@@ -1,0 +1,15 @@
+ LD F6,32(R2)
+ LD F2,44(R3)
+ MUL F0,F2
+ SUB F8,F2
+ DIV F2,F0
+ ADD F6,F8
+ SD F2,44(R3)
+
+
+=======================
+
+MUL F0,F2
+MUL F1,F3
+MUL F6,F5
+ 
