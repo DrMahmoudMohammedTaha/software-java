@@ -1,0 +1,28 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>E:\Programming Track\software projects\Netbeans Projects\Phonetics Quiz\dist\Phonetics_Quiz.jar</jar>
+  <outfile>E:\Programming Track\software projects\Phonetics Exams\Phonetics Exam.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon></icon>
+  <jre>
+    <path></path>
+    <minVersion>1.1.1_11</minVersion>
+    <maxVersion>9.1.1_22</maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <splash>
+    <file>D:\FUN\private\fatimah_elzahra_by_saurukent-d4h05jq.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>false</timeoutErr>
+  </splash>
+</launch4jConfig>
