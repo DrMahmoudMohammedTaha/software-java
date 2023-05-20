@@ -45,7 +45,7 @@ public class Quran_Tests {
         mp.setBounds(15, 70, 350, 240);
         mainFrm.add(mp, 0);
 
-        DefaultListModel missionModel = new DefaultListModel();
+        final DefaultListModel missionModel = new DefaultListModel();
         list.setModel(missionModel);
 
         ButtonGroup g = new ButtonGroup();
